@@ -1,283 +1,324 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BRB Investimentos - Plataforma Completa</title>
-
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="css/style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BRB Investimentos - Plataforma Completa</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
-    <header>
-        <nav>
-            <div class="logo">
-                <a href="#home">
-                    <img src="img/quartinho(1).png" alt="BRB Investimentos" />
-                </a>
-            </div>
 
-            <ul class="nav-links" id="mobileMenu">
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle">
-                        Para Você <span class="chevron">▾</span>
-                    </a>
+  <!-- ===== HEADER ===== -->
+  <header id="site-header">
+    <nav>
+      <div class="logo">
+        <a href="#home" aria-label="BRB Investimentos - Início">
+          <img src="img/quartinho(1).png" alt="BRB Investimentos" />
+        </a>
+      </div>
 
-                    <ul class="dropdown-menu">
-                        <li><a href="sobre.html">Teste 1</a></li>
-                        <li><a href="#op2">Teste 2</a></li>
-                        <li><a href="#op3">Teste 3</a></li>
-                        <li><a href="#op1">Teste 4</a></li>
-                        <li><a href="#op2">Teste 5</a></li>
-                        <li><a href="#op3">Teste 6</a></li>
-                        <li><a href="#op1">Teste 7</a></li>
-                        <li><a href="#op2">Teste 8</a></li>
-                    </ul>
-                </li>
+      <ul class="nav-links" id="mobileMenu" role="menubar">
 
-                <li><a href="#portfolio">Novidades</a></li>
-                <li><a href="#partnership">O BRB</a></li>
-            </ul>
+        <li class="dropdown" role="none">
+          <a href="#" class="dropdown-toggle" role="menuitem" aria-haspopup="true" aria-expanded="false">
+            Investimentos <span class="chevron" aria-hidden="true">▾</span>
+          </a>
+          <ul class="dropdown-menu" role="menu">
+            <li role="none"><a href="#fundos"     role="menuitem">Fundos de Investimento</a></li>
+            <li role="none"><a href="#plataforma" role="menuitem">Plataforma de Investimentos</a></li>
+            <li role="none"><a href="#carteiras"  role="menuitem">Carteiras Recomendadas</a></li>
+          </ul>
+        </li>
 
-            <div class="nav-buttons">
-                <button class="account-link">Acesse seus Invesitmentos</button>
-            </div>
+        <li class="dropdown" role="none">
+          <a href="#" class="dropdown-toggle" role="menuitem" aria-haspopup="true" aria-expanded="false">
+            Conteúdo <span class="chevron" aria-hidden="true">▾</span>
+          </a>
+          <ul class="dropdown-menu" role="menu">
+            <li role="none"><a href="#promocoes" role="menuitem">Promoções</a></li>
+            <li role="none"><a href="#tutoriais" role="menuitem">Tutoriais</a></li>
+          </ul>
+        </li>
 
-            <button class="mobile-menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+        <li class="dropdown" role="none">
+          <a href="#" class="dropdown-toggle" role="menuitem" aria-haspopup="true" aria-expanded="false">
+            Institucional <span class="chevron" aria-hidden="true">▾</span>
+          </a>
+          <ul class="dropdown-menu" role="menu">
+            <li role="none"><a href="#portfolio" role="menuitem">O BRB</a></li>
+            <li role="none"><a href="https://novo.brb.com.br/sobre-o-brb/" role="menuitem" target="_blank" rel="noopener noreferrer">Sobre o BRB</a></li>
+            <li role="none"><a href="https://www.bcb.gov.br/"              role="menuitem" target="_blank" rel="noopener noreferrer">Banco Central ↗</a></li>
+            <li role="none"><a href="https://www.b3.com.br/"               role="menuitem" target="_blank" rel="noopener noreferrer">B3 ↗</a></li>
+            <li role="none"><a href="https://www.anbima.com.br/"           role="menuitem" target="_blank" rel="noopener noreferrer">ANBIMA ↗</a></li>
+            <li role="none"><a href="https://www.cvm.gov.br/"              role="menuitem" target="_blank" rel="noopener noreferrer">CVM ↗</a></li>
+          </ul>
+        </li>
 
-            <div class="menu-overlay" aria-hidden="true"></div>
-        </nav>
-    </header>
+      </ul>
 
-    <section id="home">
-        <div class="home-content">
-            <div class="home-text">
-                <h1>
-                    A SUA<br />
-                    Plataforma<br />
-                    <span class="highlight">COMPLETA</span>
-                </h1>
+      <div class="nav-buttons">
+        <button class="account-link" type="button">Acesse seus Investimentos</button>
+      </div>
 
-                <p class="subtitle">
-                    Tudo o que você precisa para investir com <span class="emphasis">segurança e praticidade.</span>
-                </p>
-            </div>
+      <button class="mobile-menu-toggle" type="button"
+        aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
 
-           <div class="home-phone">
-  <div class="hero-carousel" aria-label="Carrossel de destaques">
-    <div class="hero-carousel__viewport">
-      <div class="hero-carousel__track">
+      <div class="menu-overlay" aria-hidden="true"></div>
+    </nav>
+  </header>
 
-        <div class="hero-carousel__slide">
-          <img src="img\ipê_branco.jpg" alt="Ipê Branco" />
+  <!-- ===== HERO ===== -->
+  <section id="home">
+    <div class="home-content">
+
+      <!-- Texto esquerdo -->
+      <div class="home-text">
+        <p class="home-eyebrow">BRB Investimentos</p>
+        <h1>
+          A SUA<br />
+          Plataforma<br />
+          <span class="highlight">COMPLETA</span>
+        </h1>
+        <p class="subtitle">
+          Tudo o que você precisa para investir com
+          <span class="emphasis">segurança e praticidade.</span>
+        </p>
+        <div class="hero-ctas">
+          <button class="btn-primary" type="button">Abrir conta grátis</button>
+          <a href="#portfolio" class="btn-ghost">Conhecer produtos →</a>
+        </div>
+      </div>
+
+      <!-- Composição de cards flutuantes -->
+      <div class="hero-visual" aria-hidden="true">
+
+        <!-- Card principal — rentabilidade com mini-gráfico -->
+        <div class="hcard hcard--main">
+          <div class="hcard__label">Rentabilidade acumulada</div>
+          <div class="hcard__value">+%</div>
+          <div class="hcard__sub">últimos 12 meses</div>
+          <div class="hcard__chart">
+            <svg viewBox="0 0 160 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <polyline
+                points="0,45 20,38 40,30 60,34 80,22 100,18 120,12 140,8 160,4"
+                stroke="rgba(145,212,250,0.9)" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round"/>
+              <polyline
+                points="0,45 20,38 40,30 60,34 80,22 100,18 120,12 140,8 160,4 160,50 0,50"
+                fill="url(#chartGrad)"/>
+              <defs>
+                <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%"   stop-color="rgba(145,212,250,0.22)"/>
+                  <stop offset="100%" stop-color="rgba(145,212,250,0)"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
         </div>
 
-        <div class="hero-carousel__slide">
-          <img src="img\ipê_roxo.jpg" alt="Ipê Roxo" />
+        <!-- Card produtos -->
+        <div class="hcard hcard--products">
+          <div class="hcard__label">Produtos disponíveis</div>
+          <ul class="hcard__products-list">
+            <li><span class="hcard__tag hcard__tag--blue">Renda Fixa</span></li>
+            <li><span class="hcard__tag hcard__tag--gold">Ações</span></li>
+            <li><span class="hcard__tag hcard__tag--teal">FIIs</span></li>
+            <li><span class="hcard__tag hcard__tag--navy">Fundos</span></li>
+            <li><span class="hcard__tag hcard__tag--blue">BDRs</span></li>
+            <li><span class="hcard__tag hcard__tag--navy">Cripto</span></li>
+          </ul>
         </div>
 
-        <div class="hero-carousel__slide">
-          <img src="img\ipê- rosa.jpg" alt="Ipê Rosa" />
+        <!-- Card patrimônio -->
+        <div class="hcard hcard--patrimony">
+          <div class="hcard__icon">🏦</div>
+          <div class="hcard__value hcard__value--sm">R$ 5bi+</div>
+          <div class="hcard__sub">sob custódia</div>
         </div>
 
+        <!-- Card clientes -->
+        <div class="hcard hcard--clients">
+          <div class="hcard__avatars">
+            <span>👤</span><span>👤</span><span>👤</span>
+          </div>
+          <div class="hcard__value hcard__value--sm">+100k</div>
+          <div class="hcard__sub">clientes ativos</div>
+        </div>
+
+        <!-- Orbs decorativos -->
+        <div class="hero-orb hero-orb--1"></div>
+        <div class="hero-orb hero-orb--2"></div>
+      </div>
+
+    </div>
+
+    <div class="scroll-indicator" aria-hidden="true"><span></span></div>
+  </section>
+
+  <!-- ===== PORTFÓLIO ===== -->
+  <section id="portfolio">
+    <div class="portfolio-content">
+      <div class="portfolio-visual">
+        <div class="large-number" aria-hidden="true">+600</div>
+        <div class="portfolio-text">
+          <h2><span class="accent-line">Portfólio</span><br />diversificado</h2>
+          <ul class="portfolio-list" role="list">
+            <li data-id="1" tabindex="0">Renda Variável</li>
+            <li data-id="2" tabindex="0">Fundos</li>
+            <li data-id="3" tabindex="0">Criptoativos</li>
+            <li data-id="4" tabindex="0">Renda Fixa</li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="content-portifolio" aria-live="polite">
+        <h2>Nosso Portfólio Diversificado</h2>
+        <p>O portfólio de investimentos do BRB é estruturado para atender diferentes perfis e objetivos financeiros, combinando segurança, diversificação e potencial de crescimento. A estratégia busca equilíbrio entre ativos de renda fixa e renda variável, permitindo ao investidor acessar oportunidades em diferentes mercados, sempre com gestão responsável e alinhada às melhores práticas do mercado financeiro.</p>
       </div>
     </div>
+  </section>
 
-    <button class="hero-carousel__btn hero-carousel__btn--prev" type="button" aria-label="Anterior">‹</button>
-    <button class="hero-carousel__btn hero-carousel__btn--next" type="button" aria-label="Próximo">›</button>
+  <!-- ===== MARQUEE ===== -->
+  <section class="marquee-section" aria-label="Tecnologia e produtos">
+    <div class="marquee-container">
+      <div class="marquee-hero">
+        <h2 class="marquee-title">Invista com a BRB Investimentos</h2>
+        <p class="marquee-subtitle">Tecnologia, produtos e soluções para você investir com segurança e estratégia.</p>
+      </div>
 
-    <div class="hero-carousel__dots" aria-label="Navegação do carrossel">
-      <button class="hero-carousel__dot" type="button" aria-label="Slide 1"></button>
-      <button class="hero-carousel__dot" type="button" aria-label="Slide 2"></button>
-      <button class="hero-carousel__dot" type="button" aria-label="Slide 3"></button>
+      <p class="marquee-label">TECNOLOGIA E CONTEÚDO</p>
+      <div class="marquee marquee-top" aria-hidden="true">
+        <div class="marquee-track">
+          <div class="marquee-group">
+            <span class="marquee-word">NEGÓCIOS <span class="marquee-dot">✦</span></span>
+            <span class="marquee-word">MERCADO <span class="marquee-dot">✦</span></span>
+            <span class="marquee-word">ANÁLISE <span class="marquee-dot">✦</span></span>
+            <span class="marquee-word">TECNOLOGIA <span class="marquee-dot">✦</span></span>
+            <span class="marquee-word">INOVAÇÃO <span class="marquee-dot">✦</span></span>
+            <span class="marquee-word">GENIALIDADE <span class="marquee-dot">✦</span></span>
+          </div>
+          <div class="marquee-group" aria-hidden="true">
+            <span class="marquee-word">NEGÓCIOS <span class="marquee-dot">✦</span></span>
+            <span class="marquee-word">MERCADO <span class="marquee-dot">✦</span></span>
+            <span class="marquee-word">ANÁLISE <span class="marquee-dot">✦</span></span>
+            <span class="marquee-word">TECNOLOGIA <span class="marquee-dot">✦</span></span>
+            <span class="marquee-word">INOVAÇÃO <span class="marquee-dot">✦</span></span>
+            <span class="marquee-word">GENIALIDADE <span class="marquee-dot">✦</span></span>
+          </div>
+        </div>
+      </div>
+
+      <p class="marquee-label marquee-label-bottom">PRODUTOS E SOLUÇÕES</p>
+      <div class="marquee marquee-bottom reverse" aria-hidden="true">
+        <div class="marquee-track">
+          <div class="marquee-group">
+            <div class="logo-pill">CDB</div><div class="logo-pill">Renda Fixa</div>
+            <div class="logo-pill">Ações</div><div class="logo-pill">FIIs</div>
+            <div class="logo-pill">Fundos</div><div class="logo-pill">BDRs</div>
+            <div class="logo-pill">Tesouro</div>
+          </div>
+          <div class="marquee-group" aria-hidden="true">
+            <div class="logo-pill">CDB</div><div class="logo-pill">Renda Fixa</div>
+            <div class="logo-pill">Ações</div><div class="logo-pill">FIIs</div>
+            <div class="logo-pill">Fundos</div><div class="logo-pill">BDRs</div>
+            <div class="logo-pill">Tesouro</div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-    </section>
+  </section>
 
-    <section id="portfolio">
-        <div class="portfolio-content">
-            <div class="portfolio-visual">
-                <div class="large-number">+600</div>
-
-                <div class="portfolio-text">
-                    <h2>
-                        <span class="accent-line">Portfólio</span><br />
-                        diversificado
-                    </h2>
-
-                    <ul class="portfolio-list">
-                        <li data-id="1">Renda Variável</li>
-                        <li data-id="2">Fundos</li>
-                        <li data-id="3">Criptoativos</li>
-                        <li data-id="4">Renda Fixa</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div id="content-portifolio">
-                <h2>Nosso Portfólio Diversificado</h2>
-
-                <p>
-                    O portfólio de investimentos do BRB é estruturado para atender diferentes perfis e objetivos financeiros,
-                    combinando segurança, diversificação e potencial de crescimento. A estratégia busca equilíbrio entre ativos
-                    de renda fixa e renda variável, permitindo ao investidor acessar oportunidades em diferentes mercados,
-                    sempre com gestão responsável e alinhada às melhores práticas do mercado financeiro.
-                </p>
-            </div>
+  <!-- ===== STATS ===== -->
+  <section id="additional">
+    <div class="additional-content">
+      <h2>Investir nunca foi tão acessível</h2>
+      <p>Há mais de 50 anos conectando brasileiros às melhores oportunidades do mercado financeiro.</p>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number" data-target="100" data-prefix="+" data-suffix="k">+100k</div>
+          <div class="stat-label">Clientes Ativos</div>
         </div>
-    </section>
-
-    <!-- Marquee Section -->
-    <section class="marquee-section">
-        <div class="marquee-container">
-
-            <div class="marquee-hero">
-                <h2 class="marquee-title">Invista com a BRB Investimentos</h2>
-                <p class="marquee-subtitle">Tecnologia, produtos e soluções para você investir com segurança e estratégia.</p>
-            </div>
-
-            <p class="marquee-label">TECNOLOGIA E CONTEÚDO</p>
-
-            <div class="marquee marquee-top">
-                <div class="marquee-track">
-
-                    <div class="marquee-group">
-                        <span class="marquee-word">NEGÓCIOS <span class="marquee-dot">✦</span></span>
-                        <span class="marquee-word">MERCADO <span class="marquee-dot">✦</span></span>
-                        <span class="marquee-word">ANÁLISE <span class="marquee-dot">✦</span></span>
-                        <span class="marquee-word">TECNOLOGIA <span class="marquee-dot">✦</span></span>
-                        <span class="marquee-word">INOVAÇÃO <span class="marquee-dot">✦</span></span>
-                        <span class="marquee-word">GENIALIDADE <span class="marquee-dot">✦</span></span>
-                    </div>
-
-                    <div class="marquee-group" aria-hidden="true">
-                        <span class="marquee-word">NEGÓCIOS <span class="marquee-dot">✦</span></span>
-                        <span class="marquee-word">MERCADO <span class="marquee-dot">✦</span></span>
-                        <span class="marquee-word">ANÁLISE <span class="marquee-dot">✦</span></span>
-                        <span class="marquee-word">TECNOLOGIA <span class="marquee-dot">✦</span></span>
-                        <span class="marquee-word">INOVAÇÃO <span class="marquee-dot">✦</span></span>
-                        <span class="marquee-word">GENIALIDADE <span class="marquee-dot">✦</span></span>
-                    </div>
-
-                </div>
-            </div>
-
-            <p class="marquee-label marquee-label-bottom">PRODUTOS E SOLUÇÕES</p>
-
-            <div class="marquee marquee-bottom reverse">
-                <div class="marquee-track">
-
-                    <div class="marquee-group">
-                        <div class="logo-pill">CDB</div>
-                        <div class="logo-pill">Renda Fixa</div>
-                        <div class="logo-pill">Ações</div>
-                        <div class="logo-pill">FIIs</div>
-                        <div class="logo-pill">Fundos</div>
-                        <div class="logo-pill">BDRs</div>
-                        <div class="logo-pill">Tesouro</div>
-                    </div>
-
-                    <div class="marquee-group" aria-hidden="true">
-                        <div class="logo-pill">CDB</div>
-                        <div class="logo-pill">Renda Fixa</div>
-                        <div class="logo-pill">Ações</div>
-                        <div class="logo-pill">FIIs</div>
-                        <div class="logo-pill">Fundos</div>
-                        <div class="logo-pill">BDRs</div>
-                        <div class="logo-pill">Tesouro</div>
-                    </div>
-
-                </div>
-            </div>
-
+        <div class="stat-card">
+          <div class="stat-number" data-target="5" data-prefix="R$ " data-suffix="bi">R$ 5bi</div>
+          <div class="stat-label">Patrimônio sob Custódia</div>
         </div>
-    </section>
-
-    <section id="additional">
-        <div class="additional-content">
-            <h2>Investir nunca foi tão acessível</h2>
-            <p>hjxjkhzxvdksfjgsçdgjubhsdçiugsçdiugbsçduivbsçdvubjsçvdubsçdvubsdçvubsdçvubsdvçbskjb</p>
-
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-number">+100k</div>
-                    <div class="stat-label">Clientes Ativos</div>
-                </div>
-
-                <div class="stat-card">
-                    <div class="stat-number">R$ 5bi</div>
-                    <div class="stat-label">Patrimônio sob Custódia</div>
-                </div>
-
-                <div class="stat-card">
-                    <div class="stat-number">+50</div>
-                    <div class="stat-label">Anos de Tradição</div>
-                </div>
-            </div>
+        <div class="stat-card">
+          <div class="stat-number" data-target="50" data-prefix="+" data-suffix="">+50</div>
+          <div class="stat-label">Anos de Tradição</div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <footer>
-        <div class="footer-content">
-                <div class="footer-logo">
-                    <img src="img\LOGO BRB INVESTIMENTOS VETORIZADA BRANCA-01.png" alt="BRB Investimentos" />
-                </div>
-        
-            <div class="footer-column">
-                <h4>Produtos</h4>
-                <ul>
-                    <li><a href="#">Renda Fixa</a></li>
-                    <li><a href="#">Ações</a></li>
-                    <li><a href="#">Fundos</a></li>
-                    <li><a href="#">FIIs</a></li>
-                </ul>
-            </div>
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-content">
 
-            <div class="footer-column">
-                <h4>Institucional</h4>
-                <ul>
-                    <li><a href="https://novo.brb.com.br/sobre-o-brb/">Sobre o BRB</a></li>
-                    <li><a href="https://novo.brb.com.br/atendimento/">Contato</a></li>
-                </ul>
-            </div>
+      <div class="footer-brand">
+        <img src="img/LOGO BRB INVESTIMENTOS VETORIZADA BRANCA-01.png" alt="BRB Investimentos" class="footer-logo-img" />
+        <p class="footer-brand-text">Investindo no futuro dos brasileiros com segurança, tecnologia e tradição.</p>
+      </div>
 
-            <div class="footer-column">
-                <h4>Suporte</h4>
-                <ul>
-                    <li><a href="#">Termos de Uso</a></li>
-                    <li><a href="#">Política de Privacidade</a></li>
-                </ul>
-            </div>
-        </div>
+      <div class="footer-column">
+        <h4>Produtos</h4>
+        <ul>
+          <li><a href="#">Renda Fixa</a></li>
+          <li><a href="#">Ações</a></li>
+          <li><a href="#">Fundos</a></li>
+          <li><a href="#">FIIs</a></li>
+          <li><a href="#">BDRs</a></li>
+          <li><a href="#">Tesouro Direto</a></li>
+        </ul>
+      </div>
 
-        <div class="footer-bottom">
-            <div class="footer-left">
-                <img class="footer-mark" src="https://framerusercontent.com/images/ZRAogsRUCyrDvJX2BCEBRqoGhWY.svg?width=142&height=33" alt="Banco Central" />
-                <img class="footer-mark" src="https://framerusercontent.com/images/mHJ8wt4h7RrXbxoN3I2zNtlIMw.svg?width=90&height=41" alt="B3" />
-            </div>
+      <div class="footer-column">
+        <h4>Quem Somos</h4>
+        <ul>
+          <li><a href="https://novo.brb.com.br/sobre-o-brb/" target="_blank" rel="noopener noreferrer">Sobre o BRB</a></li>
+          <li><a href="#">Nossa História</a></li>
+          <li><a href="#">Governança</a></li>
+          <li><a href="#">Trabalhe Conosco</a></li>
+          <li><a href="#">Imprensa</a></li>
+        </ul>
+      </div>
 
-            <div class="footer-center">
-                <p class="brbdireitos">© 2026 BRB Investimentos - CNPJ 52.297.366/0001-78</p>
-                <p class="footer-address">BL B - Centro Empresarial CNC - SAUN Quadra 5, Lote C, 2º andar - Brasília/DF</p>
-            </div>
+      <div class="footer-column">
+        <h4>Fale Conosco</h4>
+        <ul>
+          <li><a href="https://novo.brb.com.br/atendimento/" target="_blank" rel="noopener noreferrer">Central de Atendimento</a></li>
+          <li><a href="#">Ouvidoria</a></li>
+          <li><a href="#">Termos de Uso</a></li>
+          <li><a href="#">Política de Privacidade</a></li>
+        </ul>
+      </div>
 
-            <div class="footer-right footer-certificados">
-                <img src="img/distribuicao-geral.jpg" alt="ANBIMA 1" />
-                <img src="img/mk-custodia.jpg" alt="ANBIMA 2" />
-                <img src="img/art-gestao.jpg" alt="ANBIMA 3" />
-                <img src="img/art-administracao.jpg" alt="ANBIMA 4" />
-            </div>
-        </div>
-    </footer>
+    </div>
 
-    <div class="whatsapp-btn" title="Fale conosco no WhatsApp"></div>
+    <div class="footer-bottom">
+      <div class="footer-left">
+        <img class="footer-mark" src="https://framerusercontent.com/images/ZRAogsRUCyrDvJX2BCEBRqoGhWY.svg?width=142&height=33" alt="Banco Central" />
+        <img class="footer-mark" src="https://framerusercontent.com/images/mHJ8wt4h7RrXbxoN3I2zNtlIMw.svg?width=90&height=41" alt="B3" />
+      </div>
+      <div class="footer-center">
+        <p class="brbdireitos">© 2026 BRB Investimentos — CNPJ 52.297.366/0001-78</p>
+        <p class="footer-address">BL B - Centro Empresarial CNC - SAUN Quadra 5, Lote C, 2º andar - Brasília/DF</p>
+      </div>
+      <div class="footer-right footer-certificados">
+        <img src="img/distribuicao-geral.jpg" alt="ANBIMA Distribuição" />
+        <img src="img/mk-custodia.jpg"         alt="ANBIMA Custódia" />
+        <img src="img/art-gestao.jpg"           alt="ANBIMA Gestão" />
+        <img src="img/art-administracao.jpg"    alt="ANBIMA Administração" />
+      </div>
+    </div>
+  </footer>
 
-    <script src="script.js"></script>
+  <!-- ===== WHATSAPP BTN ===== -->
+  <button class="whatsapp-btn" type="button" title="Fale conosco no WhatsApp" aria-label="Abrir WhatsApp"></button>
+
+  <script src="script.js"></script>
 </body>
 </html>
