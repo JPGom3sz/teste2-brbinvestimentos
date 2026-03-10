@@ -5,7 +5,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   // ============================================================
-  // 1. HEADER — esconder ao rolar para baixo, mostrar ao rolar para cima
+  //  HEADER — esconder ao rolar para baixo, mostrar ao rolar para cima
   // ============================================================
   const header = document.getElementById('site-header');
   let lastScroll = 0;
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // ============================================================
-  // 2. MENU MOBILE
+  //  MENU MOBILE
   // ============================================================
   const mobileToggle = document.querySelector('.mobile-menu-toggle');
   const navLinks     = document.querySelector('.nav-links');
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // ============================================================
-  // 3. ROLAGEM SUAVE para âncoras internas
+  //  ROLAGEM SUAVE para âncoras internas
   // ============================================================
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // ============================================================
-  // 4. LOGO — recarregar a página
+  //  LOGO — recarregar a página
   // ============================================================
   document.querySelector('.logo a')?.addEventListener('click', (e) => {
     e.preventDefault();
@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // ============================================================
-  // 5. BOTÃO — Acesse seus Investimentos
+  //  BOTÃO — Acesse seus Investimentos
   // ============================================================
   document.querySelector('.account-link')?.addEventListener('click', () => {
     window.open('https://brb.genialinvestimentos.com.br/auth/login', '_blank', 'noopener,noreferrer');
@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // ============================================================
-  // 6. BOTÃO — Abrir conta grátis (hero CTA)
+  //  BOTÃO — Abrir conta grátis (hero CTA)
   // ============================================================
   document.querySelector('.btn-primary')?.addEventListener('click', () => {
     window.open('https://brb.genialinvestimentos.com.br/auth/login', '_blank', 'noopener,noreferrer');
@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // ============================================================
-  // 7. WHATSAPP — botão flutuante
+  //  WHATSAPP — botão flutuante
   // ============================================================
   document.querySelector('.whatsapp-btn')?.addEventListener('click', () => {
     const phone   = '5561999999999';
@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // ============================================================
-  // 8. PORTFÓLIO — troca de conteúdo com fade
+  //  PORTFÓLIO — troca de conteúdo com fade
   // ============================================================
   const portfolioData = {
     1: {
@@ -171,7 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // ============================================================
-  // 9. STAT CARDS — entrada escalonada ao entrar na viewport
+  //  STAT CARDS — entrada escalonada ao entrar na viewport
   // ============================================================
   const cardObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry, i) => {
@@ -186,7 +186,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // ============================================================
-  // 10. CONTADOR ANIMADO — stat-numbers
+  //  CONTADOR ANIMADO — stat-numbers
   // ============================================================
   const counterObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -216,7 +216,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.stat-number').forEach(el => counterObserver.observe(el));
 
 
-  console.log('✅ BRB Investimentos — scripts carregados.');
+  console.log('BRB Investimentos — scripts carregados.');
 });
 
 
