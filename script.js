@@ -216,6 +216,50 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.stat-number').forEach(el => counterObserver.observe(el));
 
 
+  // ============================================================
+  //  HERO CAROUSEL
+  // ============================================================
+  const track   = document.getElementById('carouselTrack');
+  const slides  = track ? track.querySelectorAll('.carousel-slide') : [];
+  const dots    = document.querySelectorAll('.cdot');
+  const prevBtn = document.getElementById('carouselPrev');
+  const nextBtn = document.getElementById('carouselNext');
+  let current = 0;
+  let autoplayTimer;
+
+  const goTo = (index) => {
+    if (!track || slides.length === 0) return;
+    current = (index + slides.length) % slides.length;
+    track.style.transform = `translateX(-${current * 100}%)`;
+    dots.forEach((d, i) => {
+      d.classList.toggle('active', i === current);
+      d.setAttribute('aria-selected', i === current ? 'true' : 'false');
+    });
+  };
+
+  const startAutoplay = () => {
+    clearInterval(autoplayTimer);
+    autoplayTimer = setInterval(() => goTo(current + 1), 5000);
+  };
+
+  prevBtn?.addEventListener('click', () => { goTo(current - 1); startAutoplay(); });
+  nextBtn?.addEventListener('click', () => { goTo(current + 1); startAutoplay(); });
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => { goTo(Number(dot.dataset.index)); startAutoplay(); });
+  });
+
+  const wrapper = document.querySelector('.carousel-track-wrapper');
+  if (wrapper) {
+    let startX = 0;
+    wrapper.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+    wrapper.addEventListener('touchend', e => {
+      const diff = startX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 40) { goTo(diff > 0 ? current + 1 : current - 1); startAutoplay(); }
+    }, { passive: true });
+  }
+
+  if (slides.length > 0) startAutoplay();
+
   console.log('BRB Investimentos — scripts carregados.');
 });
 
