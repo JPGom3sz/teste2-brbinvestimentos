@@ -260,6 +260,64 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (slides.length > 0) startAutoplay();
 
+  // ============================================================
+  //  CARROSSEL DE ASSESSORES — navegação manual com setas
+  // ============================================================
+  const assessoresTrack = document.getElementById('assessoresTrack');
+  const assessorCards = assessoresTrack ? assessoresTrack.querySelectorAll('.assessor-card') : [];
+  const assessorPrevBtn = document.querySelector('.assessores-carousel-btn--prev');
+  const assessorNextBtn = document.querySelector('.assessores-carousel-btn--next');
+  let assessorPage = 0;
+  const cardsPerPage = 5;
+  const totalPages = Math.ceil(assessorCards.length / cardsPerPage);
+
+  const updateAssessoresCarousel = (pageIndex) => {
+    if (!assessoresTrack || assessorCards.length === 0) return;
+    
+    // Limitar a página
+    assessorPage = Math.max(0, Math.min(pageIndex, totalPages - 1));
+    
+    // Deslocar por página: cada página = 5 cards
+    const carouselWidth = assessoresTrack.parentElement.offsetWidth;
+    const offsetPixels = assessorPage * carouselWidth;
+    assessoresTrack.style.transform = `translateX(-${offsetPixels}px)`;
+    
+    // Atualizar estado dos botões
+    if (assessorPrevBtn) {
+      assessorPrevBtn.style.opacity = assessorPage === 0 ? '0.5' : '1';
+      assessorPrevBtn.style.cursor = assessorPage === 0 ? 'not-allowed' : 'pointer';
+      assessorPrevBtn.style.pointerEvents = assessorPage === 0 ? 'none' : 'auto';
+    }
+    
+    if (assessorNextBtn) {
+      const isLastPage = assessorPage >= totalPages - 1;
+      assessorNextBtn.style.opacity = isLastPage ? '0.5' : '1';
+      assessorNextBtn.style.cursor = isLastPage ? 'not-allowed' : 'pointer';
+      assessorNextBtn.style.pointerEvents = isLastPage ? 'none' : 'auto';
+    }
+  };
+
+  if (assessorPrevBtn) {
+    assessorPrevBtn.addEventListener('click', () => {
+      if (assessorPage > 0) {
+        updateAssessoresCarousel(assessorPage - 1);
+      }
+    });
+  }
+
+  if (assessorNextBtn) {
+    assessorNextBtn.addEventListener('click', () => {
+      if (assessorPage < totalPages - 1) {
+        updateAssessoresCarousel(assessorPage + 1);
+      }
+    });
+  }
+
+  // Inicializar carrossel de assessores
+  if (assessorCards.length > 0) {
+    updateAssessoresCarousel(0);
+  }
+
   console.log('BRB Investimentos — scripts carregados.');
 });
 
