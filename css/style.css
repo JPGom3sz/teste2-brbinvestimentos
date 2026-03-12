@@ -15,10 +15,94 @@
 /* ============================================================
    2. FONTE CUSTOMIZADA
    ============================================================ */
+@font-face{
+  font-family: 'Cera Pro';
+  src: url('../fonts/Cera Pro Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
 @font-face {
   font-family: 'Cera Pro';
-  src: url('./fonts/Cera Pro Regular.otf') format('opentype');
-  font-weight: normal; font-style: normal; font-display: swap;
+  src: url('../fonts/Cera Pro Thin.otf') format('opentype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Cera Pro';
+  src: url('../fonts/Cera Pro Thin Italic.otf') format('opentype');
+  font-weight: 100;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Cera Pro';
+  src: url('../fonts/Cera Pro Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Cera Pro';
+  src: url('../fonts/Cera Pro Light Italic.otf') format('opentype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Cera Pro';
+  src: url('../fonts/Cera Pro Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Cera Pro';
+  src: url('../fonts/Cera Pro Regular Italic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Cera Pro';
+  src: url('../fonts/Cera Pro Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Cera Pro';
+  src: url('../fonts/Cera Pro Medium Italic.otf') format('opentype');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Cera Pro';
+  src: url('../fonts/Cera Pro Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Cera Pro';
+  src: url('../fonts/Cera Pro Bold Italic.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Cera Pro';
+  src: url('../fonts/Cera Pro Black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Cera Pro';
+  src: url('../fonts/Cera Pro Black Italic.otf') format('opentype');
+  font-weight: 900;
+  font-style: italic;
 }
 
 /* ============================================================
@@ -290,18 +374,21 @@ nav {
   margin: 0 auto;
   padding: 5rem var(--px) 4rem;
   display: grid;
-  grid-template-columns: 1fr 1.1fr;
-  gap: 4rem; align-items: center;
+  grid-template-columns: minmax(320px, 0.9fr) minmax(680px, 1.35fr);
+  gap: 3rem; align-items: center;
   position: relative; z-index: 1; flex: 1;
 }
 
 .hero-carousel {
-  width: 100%;
+  width: calc(100% + 170px);
+  max-width: none;
+  margin-right: -170px;
   animation: fadeInRight 0.9s ease-out 0.2s both;
   display: flex;
   flex-direction: column;
   gap: 1rem;
   align-self: center;
+  justify-self: start;
 }
 
 .carousel-track-wrapper {
@@ -427,7 +514,7 @@ nav {
 .portfolio-visual { position: relative; }
 
 .large-number {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cera Pro', 'Montserrat';
   font-size: clamp(8rem, 13vw, 15rem); font-weight: 900;
   color: var(--primary-blue); opacity: 0.08;
   position: absolute; top: -50px; left: -40px;
@@ -437,7 +524,7 @@ nav {
 .portfolio-text { position: relative; z-index: 1; }
 
 .portfolio-text h2 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cera Pro', 'Montserrat';
   font-size: clamp(2.2rem, 3.5vw, 3rem); color: var(--deep-navy);
   font-weight: 900; line-height: 1.2; margin-bottom: 1rem;
 }
@@ -473,6 +560,13 @@ nav {
   margin-bottom: 1.5rem; font-weight: 700;
 }
 #content-portifolio p { font-size: 1.05rem; line-height: 1.85; color: var(--text-dark); }
+
+.portfolio-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 2rem;
+}
 
 .portfolio-btn {
   display: inline-block;
@@ -655,7 +749,7 @@ nav {
 }
 
 .assessores-header h2 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cera Pro', 'Montserrat';
   font-size: clamp(2.2rem, 4vw, 3.2rem);
   font-weight: 900; color: var(--deep-navy);
   margin-bottom: 1.2rem; line-height: 1.15;
@@ -780,7 +874,7 @@ nav {
   font-size: 2rem; font-weight: 900;
   color: var(--primary-blue); opacity: 0.3;
   letter-spacing: -0.02em;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cera Pro', 'Montserrat';
 }
 
 /* Badge de certificação */

@@ -127,40 +127,64 @@ document.addEventListener('DOMContentLoaded', () => {
   //  PORTFÓLIO — troca de conteúdo com fade
   // ============================================================
   const portfolioData = {
+    default: {
+      titulo: 'Nosso Portfólio Diversificado',
+      descricao: 'O portfólio de investimentos do BRB é estruturado para atender diferentes perfis e objetivos financeiros, combinando segurança, diversificação e potencial de crescimento. A estratégia busca equilíbrio entre ativos de renda fixa e renda variável, permitindo ao investidor acessar oportunidades em diferentes mercados, sempre com gestão responsável e alinhada às melhores práticas do mercado financeiro.',
+      botaoTexto: 'Explorar produtos →',
+      botaoLink: '#'
+    },
     1: {
-      titulo:   'Renda Variável',
-      descricao: 'A renda variável oferece acesso a ativos com maior potencial de valorização no longo prazo. No portfólio do BRB, essa classe é utilizada de forma estratégica, considerando cenários econômicos, fundamentos das empresas e diversificação, com foco em crescimento consistente e controle de riscos.'
+      titulo: 'Renda Variável',
+      descricao: 'A renda variável oferece acesso a ativos com maior potencial de valorização no longo prazo. No portfólio do BRB, essa classe é utilizada de forma estratégica, considerando cenários econômicos, fundamentos das empresas e diversificação, com foco em crescimento consistente e controle de riscos.',
+      botaoTexto: 'Ver produtos de Renda Variável →',
+      botaoLink: '#'
     },
     2: {
-      titulo:   'Fundos',
-      descricao: 'Os fundos de investimento permitem diversificação imediata com gestão profissional. O BRB oferece acesso a uma ampla grade de fundos, desde multimercados e de renda fixa até fundos de ações e internacionais, atendendo a diferentes perfis de risco e objetivos de retorno.'
+      titulo: 'Fundos',
+      descricao: 'Os fundos de investimento permitem diversificação imediata com gestão profissional. O BRB oferece acesso a uma ampla grade de fundos, desde multimercados e de renda fixa até fundos de ações e internacionais, atendendo a diferentes perfis de risco e objetivos de retorno.',
+      botaoTexto: 'Ver produtos de Fundos →',
+      botaoLink: '#'
     },
     3: {
-      titulo:   'Criptoativos',
-      descricao: 'Os criptoativos representam uma nova fronteira de diversificação. Com estrutura regulatória e segurança, o BRB disponibiliza exposição ao mercado cripto de forma prática, permitindo ao investidor acessar esse universo sem abrir mão da solidez de uma instituição financeira consolidada.'
+      titulo: 'Criptoativos',
+      descricao: 'Os criptoativos representam uma nova fronteira de diversificação. Com estrutura regulatória e segurança, o BRB disponibiliza exposição ao mercado cripto de forma prática, permitindo ao investidor acessar esse universo sem abrir mão da solidez de uma instituição financeira consolidada.',
+      botaoTexto: 'Ver produtos de Criptoativos →',
+      botaoLink: '#'
     },
     4: {
-      titulo:   'Renda Fixa',
-      descricao: 'A renda fixa é a base de estabilidade do portfólio, oferecendo previsibilidade e segurança. O BRB trabalha com títulos que buscam preservar o capital, gerar rentabilidade consistente e atuar como elemento de equilíbrio frente às oscilações do mercado.'
+      titulo: 'Renda Fixa',
+      descricao: 'A renda fixa é a base de estabilidade do portfólio, oferecendo previsibilidade e segurança. O BRB trabalha com títulos que buscam preservar o capital, gerar rentabilidade consistente e atuar como elemento de equilíbrio frente às oscilações do mercado.',
+      botaoTexto: 'Ver produtos de Renda Fixa →',
+      botaoLink: '#'
     }
   };
 
   const contentBox   = document.getElementById('content-portifolio');
   const portfolioLis = document.querySelectorAll('.portfolio-list li');
 
-  const renderPortfolio = (id) => {
+  const renderPortfolio = (id = 'default') => {
     const data = portfolioData[id];
     if (!data || !contentBox) return;
 
     contentBox.classList.add('is-fading');
     setTimeout(() => {
-      contentBox.innerHTML = `<h2>${data.titulo}</h2><p>${data.descricao}</p>`;
+      contentBox.innerHTML = `
+        <h2>${data.titulo}</h2>
+        <p>${data.descricao}</p>
+        <div class="portfolio-actions">
+          <a href="${data.botaoLink}" class="portfolio-btn">${data.botaoTexto}</a>
+        </div>
+      `;
       contentBox.classList.remove('is-fading');
     }, 280);
 
     portfolioLis.forEach(li => li.classList.remove('is-active'));
-    document.querySelector(`.portfolio-list li[data-id="${id}"]`)?.classList.add('is-active');
+    if (id !== 'default') {
+      document.querySelector(`.portfolio-list li[data-id="${id}"]`)?.classList.add('is-active');
+    }
   };
+
+  renderPortfolio();
 
   portfolioLis.forEach(li => {
     li.addEventListener('click', () => renderPortfolio(li.dataset.id));
