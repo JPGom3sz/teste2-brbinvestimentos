@@ -92,9 +92,9 @@ document.addEventListener('DOMContentLoaded', () => {
   //  LOGO — recarregar a página
   // ============================================================
   document.querySelector('.logo a')?.addEventListener('click', (e) => {
-    e.preventDefault();
-    location.reload();
-  });
+  e.preventDefault();
+  window.location.href = 'index.html';
+});
 
 
   // ============================================================
