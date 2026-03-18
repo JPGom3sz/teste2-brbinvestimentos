@@ -129,33 +129,25 @@ document.addEventListener('DOMContentLoaded', () => {
   const portfolioData = {
     default: {
       titulo: 'Nosso Portfólio Diversificado',
-      descricao: 'O portfólio de investimentos do BRB é estruturado para atender diferentes perfis e objetivos financeiros, combinando segurança, diversificação e potencial de crescimento. A estratégia busca equilíbrio entre ativos de renda fixa e renda variável, permitindo ao investidor acessar oportunidades em diferentes mercados, sempre com gestão responsável e alinhada às melhores práticas do mercado financeiro.',
-      botaoTexto: 'Explorar produtos →',
-      botaoLink: '#'
+      descricao: 'O portfólio da BRB Investimentos é estruturado para atender diferentes perfis e objetivos financeiros, combinando segurança, diversificação e potencial de crescimento. A estratégia busca equilíbrio entre ativos de renda fixa e renda variável, permitindo ao investidor acessar oportunidades em diferentes mercados, sempre com gestão responsável e alinhada às melhores práticas do mercado financeiro.',
     },
     1: {
       titulo: 'Renda Variável',
-      descricao: 'A renda variável oferece acesso a ativos com maior potencial de valorização no longo prazo. No portfólio do BRB, essa classe é utilizada de forma estratégica, considerando cenários econômicos, fundamentos das empresas e diversificação, com foco em crescimento consistente e controle de riscos.',
-      botaoTexto: 'Ver produtos de Renda Variável →',
-      botaoLink: '#'
+      descricao: 'Os produtos de renda variável da BRB Investimentos incluem ações de empresas listadas, fundos de investimento em ações (FIAs), fundos multimercado e ETFs. Esses instrumentos permitem ao investidor participar do desempenho de diferentes setores da economia, com potencial de valorização no longo prazo e recebimento de proventos, como dividendos. Além disso, oferecem diversificação e gestão profissional, possibilitando estratégias alinhadas ao perfil de risco e aos objetivos financeiros de cada investidor.',
+
     },
     2: {
       titulo: 'Fundos',
-      descricao: 'Os fundos de investimento permitem diversificação imediata com gestão profissional. O BRB oferece acesso a uma ampla grade de fundos, desde multimercados e de renda fixa até fundos de ações e internacionais, atendendo a diferentes perfis de risco e objetivos de retorno.',
-      botaoTexto: 'Ver produtos de Fundos →',
-      botaoLink: '#'
+      descricao: 'Os fundos de investimento oferecem diversificação imediata com gestão profissional, permitindo ao investidor acessar uma variedade de estratégias de forma prática. A BRB Investimentos disponibiliza uma ampla gama de fundos, incluindo multimercados, renda fixa, ações e internacionais, atendendo a diferentes perfis de risco e objetivos de retorno, com foco em consistência e eficiência na gestão dos recursos.',
+
     },
     3: {
-      titulo: 'Criptoativos',
-      descricao: 'Os criptoativos representam uma nova fronteira de diversificação. Com estrutura regulatória e segurança, o BRB disponibiliza exposição ao mercado cripto de forma prática, permitindo ao investidor acessar esse universo sem abrir mão da solidez de uma instituição financeira consolidada.',
-      botaoTexto: 'Ver produtos de Criptoativos →',
-      botaoLink: '#'
+      titulo: 'xxx',
+      descricao: 'xxx',
     },
     4: {
       titulo: 'Renda Fixa',
-      descricao: 'A renda fixa é a base de estabilidade do portfólio, oferecendo previsibilidade e segurança. O BRB trabalha com títulos que buscam preservar o capital, gerar rentabilidade consistente e atuar como elemento de equilíbrio frente às oscilações do mercado.',
-      botaoTexto: 'Ver produtos de Renda Fixa →',
-      botaoLink: '#'
+      descricao: 'Os produtos de renda fixa do BRB incluem títulos públicos, debêntures, CDBs, LCIs/LCAs e fundos de renda fixa. Esses instrumentos oferecem previsibilidade de retorno e proteção do capital, sendo indicados para perfis que buscam segurança e estabilidade. Com gestão profissional, a BRB Investimentos seleciona ativos que equilibram rentabilidade e risco, garantindo consistência para o portfólio do investidor.',
     }
   };
 
@@ -172,7 +164,6 @@ document.addEventListener('DOMContentLoaded', () => {
         <h2>${data.titulo}</h2>
         <p>${data.descricao}</p>
         <div class="portfolio-actions">
-          <a href="${data.botaoLink}" class="portfolio-btn">${data.botaoTexto}</a>
         </div>
       `;
       contentBox.classList.remove('is-fading');

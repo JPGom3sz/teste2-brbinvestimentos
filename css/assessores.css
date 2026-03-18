@@ -184,7 +184,7 @@ img { display: block; max-width: 100%; }
 .nav-links a {
   color: var(--brb-text);
   text-decoration: none;
-  font-size: .78rem;
+  font-size: 0.90rem;
   font-weight: 500;
   letter-spacing: .04em;
   padding: .55rem .9rem;
@@ -202,29 +202,82 @@ img { display: block; max-width: 100%; }
 .chevron { font-size: .6rem; opacity: .65; }
 
 /* Dropdown */
-.dropdown { position: relative; }
 
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: calc(100% + 12px);
-  left: 50%;
-  transform: translateX(-50%);
-  background: #0d1f38;
-  border: 1px solid var(--brb-border);
-  border-radius: var(--r-sm);
-  min-width: 220px;
-  list-style: none;
-  padding: .5rem 0;
-  box-shadow: 0 20px 50px rgba(0,0,0,.6);
-  z-index: 100;
+.nav-links .dropdown { position: relative; }
+.nav-links .dropdown-toggle {
+  display: inline-flex; align-items: center; gap: 0.3rem; cursor: pointer;
+}
+.nav-links .chevron {
+  font-size: 0.6em; opacity: 0.55;
+  transition: transform var(--ease); display: inline-block;
 }
 
-.dropdown:hover .dropdown-menu,
-.dropdown.is-open .dropdown-menu { display: block; }
+/*
+  Ponte invisível: padding-top 12px cria zona hover transparente
+  entre o link e o menu. visibility/opacity em vez de display:none
+  mantém o elemento no DOM e permite transição + ponte funcional.
+*/
+.nav-links .dropdown-menu {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute; top: 100%;
+  left: 50%; transform: translateX(-50%);
+  padding-top: 12px;
+  min-width: 230px;
+  list-style: none;
+  z-index: 999;
+  transition: opacity 0.18s ease, visibility 0.18s ease;
+}
 
-.dropdown-menu li + li { border-top: 1px solid rgba(255,255,255,.04); }
-.dropdown-menu a { display: block; padding: .7rem 1.2rem; border-radius: 0; }
+/* Caixa visual — fica após o padding-top invisível */
+.nav-links .dropdown-menu::after {
+  content: '';
+  position: absolute; inset: 12px 0 0 0;
+  border-radius: 10px;
+  background: var(--brb-navy-4);
+  border: 1px solid rgba(0,86,168,0.12);
+  box-shadow: 0 16px 48px rgba(0,31,63,0.13);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Setinha decorativa */
+.nav-links .dropdown-menu::before {
+  content: '';
+  position: absolute; top: 7px; left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 10px; height: 10px;
+  background: var(--brb-navy-4);
+  border-top: 1px solid rgba(0,86,168,0.12);
+  border-left: 1px solid rgba(0,86,168,0.12);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.nav-links .dropdown:hover .dropdown-menu,
+.nav-links .dropdown.is-open .dropdown-menu {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.nav-links .dropdown-menu li { position: relative; z-index: 2; }
+.nav-links .dropdown-menu li + li { border-top: 1px solid rgba(0,86,168,0.07); }
+.nav-links .dropdown-menu a {
+  display: block; padding: 10px 18px;
+  font-weight: 500; font-size: 0.82rem; color: rgba(255, 255, 255, 0.65);
+  transition: background var(--ease), color var(--ease);
+}
+.nav-links .dropdown-menu a:hover {
+  background: var(--light-blue); color: var(--primary-blue);
+}
+.nav-links .dropdown:hover .chevron,
+.nav-links .dropdown.is-open .chevron { transform: rotate(180deg); }
+
+
+
+
 
 .nav-buttons { display: flex; align-items: center; gap: .75rem; flex-shrink: 0; }
 

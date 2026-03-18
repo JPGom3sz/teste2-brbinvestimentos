@@ -123,7 +123,7 @@ nav {
 .nav-links a {
   color: #000;
   font-weight: 500;
-  font-size: 0.78rem;
+  font-size: 0.90rem;
   letter-spacing: 0.04em;
   padding: 0.52rem 0.9rem;
   border-radius: 8px;
@@ -562,15 +562,6 @@ nav {
 /* Imagem */
 .sn-about__image-wrapper {
   position: relative;
-}
-
-.sn-about__image {
-  position: relative;
-  border-radius: 20px;
-  overflow: hidden;
-  background: linear-gradient(135deg, var(--light-blue), #dbeeff);
-  aspect-ratio: 4 / 3;
-  box-shadow: 0 20px 60px rgba(0, 86, 168, 0.15);
 }
 
 .sn-about__image img {
