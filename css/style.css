@@ -1080,6 +1080,38 @@ nav {
   color: var(--accent-gold); margin-bottom: 0.5rem;
   font-variant-numeric: tabular-nums;
 }
+
+.assessores-cta-wrapper {
+  text-align: center;
+  margin-top: 3rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid rgba(0,86,168,0.1);
+}
+
+.stats-cta-simulation-btn {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background: var(--primary-blue);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(0,86,168,0.2);
+}
+
+.stats-cta-simulation-btn:hover {
+  background: var(--deep-navy);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,86,168,0.35);
+}
+
+
+
+
+
+
 .stat-label { font-size: 0.95rem; opacity: 0.72; font-weight: 500; }
 
 /* ============================================================

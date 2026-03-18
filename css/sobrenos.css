@@ -470,83 +470,256 @@ nav {
 /* ============================================================
    9. MISSÃO / VISÃO / VALORES
    ============================================================ */
-.sn-mvv {
+/* ============================================================
+   7. SEÇÃO ABOUT COM ABAS (inspirado na Genial)
+   ============================================================ */
+.sn-about {
   background: #f4f7fb;
-  padding: 7rem var(--px);
+  padding: 6rem var(--px);
 }
-.sn-mvv__inner {
+.sn-about__inner {
   max-width: var(--container);
   margin: 0 auto;
 }
-.sn-mvv__grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+
+/* Abas de navegação */
+.sn-about__tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 2px solid #e0e6ed;
+  margin-bottom: 3.5rem;
 }
 
-.sn-mvv__card {
-  background: #fff;
-  border-radius: 20px;
-  padding: 2.5rem 2rem;
-  border: 1px solid rgba(0,0,0,0.06);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.sn-about__tab {
+  flex: 1;
+  max-width: 320px;
+  padding: 1.2rem 2rem;
+  background: transparent;
+  border: none;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #666;
+  cursor: pointer;
   position: relative;
-  overflow: hidden;
+  transition: color 0.3s ease;
+  font-family: 'Cera Pro', 'Montserrat', sans-serif;
 }
-.sn-mvv__card::before {
+
+.sn-about__tab::after {
   content: '';
   position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 4px;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
   background: var(--primary-blue);
-  border-radius: 20px 20px 0 0;
-}
-.sn-mvv__card--visao::before { background: var(--bright-blue); }
-.sn-mvv__card--valores::before { background: var(--accent-gold); }
-
-.sn-mvv__card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 48px rgba(0,0,0,0.1);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
 }
 
-.sn-mvv__card-icon {
-  width: 52px; height: 52px;
+.sn-about__tab:hover {
   color: var(--primary-blue);
+}
+
+.sn-about__tab--active {
+  color: var(--deep-navy);
+}
+
+.sn-about__tab--active::after {
+  transform: scaleX(1);
+}
+
+/* Conteúdo das abas */
+.sn-about__content {
+  display: none;
+  opacity: 0;
+  animation: fadeIn 0.4s ease forwards;
+}
+
+.sn-about__content--active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Layout: imagem à esquerda, texto à direita */
+.sn-about__layout {
+  display: grid;
+  grid-template-columns: 45% 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+/* Imagem */
+.sn-about__image-wrapper {
+  position: relative;
+}
+
+.sn-about__image {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--light-blue), #dbeeff);
+  aspect-ratio: 4 / 3;
+  box-shadow: 0 20px 60px rgba(0, 86, 168, 0.15);
+}
+
+.sn-about__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.sn-about__image--map {
+  aspect-ratio: 4 / 3;
+}
+
+/* Vídeo */
+.sn-about__video-wrapper {
+  position: relative;
+}
+
+.sn-about__video {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #000;
+  aspect-ratio: 16 / 9;
+  box-shadow: 0 20px 60px rgba(0, 86, 168, 0.15);
+}
+
+.sn-about__video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.sn-about__video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Placeholder caso não tenha imagem */
+.sn-about__image:empty::before {
+  content: 'BRB';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4rem;
+  font-weight: 900;
+  color: var(--primary-blue);
+  opacity: 0.15;
+}
+
+/* Texto */
+.sn-about__text h2 {
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 900;
+  color: var(--primary-blue);
+  margin-bottom: 1.8rem;
+  line-height: 1.2;
+}
+
+.sn-about__text p {
+  font-size: 1.05rem;
+  color: #444;
+  line-height: 1.8;
   margin-bottom: 1.5rem;
 }
-.sn-mvv__card--visao .sn-mvv__card-icon { color: var(--bright-blue); }
-.sn-mvv__card--valores .sn-mvv__card-icon { color: var(--accent-gold); }
 
-.sn-mvv__card h3 {
-  font-size: 1.4rem;
-  font-weight: 800;
-  color: var(--deep-navy);
-  margin-bottom: 1rem;
+.sn-about__text p:last-of-type {
+  margin-bottom: 0;
 }
-.sn-mvv__card p {
+
+/* Endereço */
+.sn-about__address {
+  margin-top: 2.5rem;
+  padding: 2rem;
+  background: white;
+  border-radius: 16px;
+  border: 1px solid rgba(0, 86, 168, 0.1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.sn-about__address h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+  margin-bottom: 0.8rem;
+}
+
+.sn-about__address p {
   font-size: 0.95rem;
   color: #555;
   line-height: 1.7;
+  margin-bottom: 0;
 }
 
-.sn-mvv__values-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
+.sn-about__address strong {
+  color: var(--deep-navy);
+  font-weight: 700;
 }
-.sn-mvv__values-list li {
-  display: flex;
-  align-items: center;
-  gap: 0.7rem;
-  font-size: 0.93rem;
-  color: #333;
-  font-weight: 500;
+
+/* Responsivo */
+@media (max-width: 968px) {
+  .sn-about__tabs {
+    flex-direction: column;
+  }
+  
+  .sn-about__tab {
+    max-width: 100%;
+    text-align: center;
+  }
+  
+  .sn-about__layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .sn-about__image,
+  .sn-about__video {
+    max-width: 500px;
+    margin: 0 auto;
+  }
 }
-.sn-mvv__values-list li span {
-  color: var(--accent-gold);
-  font-size: 0.7em;
-  flex-shrink: 0;
+
+@media (max-width: 600px) {
+  .sn-about {
+    padding: 4rem var(--px);
+  }
+  
+  .sn-about__tabs {
+    margin-bottom: 2.5rem;
+  }
+  
+  .sn-about__tab {
+    padding: 1rem;
+    font-size: 0.95rem;
+  }
+  
+  .sn-about__text h2 {
+    font-size: 1.8rem;
+  }
+  
+  .sn-about__text p {
+    font-size: 0.95rem;
+  }
 }
 
 /* ============================================================
