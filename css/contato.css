@@ -2,6 +2,11 @@
    CONTATO - BRB INVESTIMENTOS
    ============================================================ */
 
+   body {
+  font-family: 'Cera Pro', 'Montserrat', sans-serif;
+  background: #f9f9f9;
+}
+
 /* ===== HERO CONTATO ===== */
 .contato-hero {
   background: linear-gradient(135deg, var(--deep-navy) 0%, var(--primary-blue) 100%);

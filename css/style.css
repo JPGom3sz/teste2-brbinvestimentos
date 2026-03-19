@@ -229,7 +229,7 @@ nav {
 
 /*
   Ponte invisível: padding-top 12px cria zona hover transparente
-  entre o link e o menu. visibility/opacity em vez de display:none
+  entre o link e o menu visibility/opacity em vez de display:none
   mantém o elemento no DOM e permite transição + ponte funcional.
 */
 .nav-links .dropdown-menu {
@@ -281,7 +281,7 @@ nav {
 .nav-links .dropdown-menu li + li { border-top: 1px solid rgba(0,86,168,0.07); }
 .nav-links .dropdown-menu a {
   display: block; padding: 10px 18px;
-  font-weight: 500; font-size: 0.82rem; color: rgba(26,42,58,0.65);
+  font-weight: 500; font-size: 0.82rem; color: rgba(0, 0, 0, 0.65);
   transition: background var(--ease), color var(--ease);
 }
 .nav-links .dropdown-menu a:hover {
