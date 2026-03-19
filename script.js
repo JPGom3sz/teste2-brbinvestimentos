@@ -142,8 +142,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     },
     3: {
-      titulo: 'xxx',
-      descricao: 'xxx',
+      titulo: 'Previdência',
+      descricao: 'Os planos de previdência da BRB Investimentos são voltados para o planejamento financeiro de longo prazo, auxiliando na construção de uma aposentadoria mais segura. Com opções como PGBL e VGBL, esses produtos oferecem benefícios fiscais e flexibilidade de contribuições, adaptando-se a diferentes perfis de investidores. Além disso, contam com gestão profissional e diversificação de ativos, buscando equilibrar rentabilidade e segurança ao longo do tempo. Dessa forma, a BRB Investimentos proporciona uma solução eficiente para quem deseja garantir estabilidade financeira no futuro.',
     },
     4: {
       titulo: 'Renda Fixa',
