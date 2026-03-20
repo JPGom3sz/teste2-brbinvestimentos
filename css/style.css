@@ -176,10 +176,10 @@ nav {
   list-style: none;
   align-items: center;
   margin-left: auto;
-  transform: translateX(18px); /* joga os links mais pra direita */
+  transform: translateX(18px);
 }
 
-.nav-links a {
+.nav-links > li > a {
   color: #000;
   font-weight: 500;
   font-size: 0.90rem;
@@ -192,13 +192,108 @@ nav {
   gap: 0.3rem;
   white-space: nowrap;
 }
-.nav-links a:hover,
-.nav-links a.active {
+
+.nav-links > li > a:hover,
+.nav-links > li > a.active {
   color: var(--primary-blue);
   background: var(--light-blue);
 }
 
-/* Botão CTA header */
+/* -------------------------------------
+   CORREÇÃO DOS BUGS DO DROPDOWN
+-------------------------------------- */
+.nav-links .dropdown { 
+  position: relative; 
+}
+
+.nav-links .dropdown-toggle {
+  display: inline-flex; align-items: center; gap: 0.3rem; cursor: pointer;
+}
+
+.nav-links .chevron {
+  font-size: 0.6rem; opacity: 0.55;
+  transition: transform var(--ease); display: inline-block;
+}
+
+/* O Menu principal agora é uma caixa sólida */
+.nav-links .dropdown-menu {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute; 
+  top: calc(100% + 12px); /* Mantém a distância do topo */
+  left: 50%; 
+  transform: translateX(-50%) translateY(-10px); /* Efeito de deslizar para cima */
+  min-width: 230px;
+  list-style: none;
+  z-index: 999;
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid rgba(0,86,168,0.12);
+  box-shadow: 0 16px 48px rgba(0,31,63,0.13);
+  padding: 0.5rem 0;
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+}
+
+/* Ponte Invisível: Impede que o menu feche ao passar o mouse pelo espaço vazio */
+.nav-links .dropdown-menu::before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  height: 20px; /* Cobre o gap entre o link e a caixa */
+  background: transparent;
+}
+
+/* Setinha decorativa colada na caixa (sem conflito de z-index) */
+.nav-links .dropdown-menu::after {
+  content: '';
+  position: absolute;
+  bottom: 100%; 
+  left: 50%;
+  transform: translateX(-50%) translateY(50%) rotate(45deg);
+  width: 12px; height: 12px;
+  background: #fff;
+  border-top: 1px solid rgba(0,86,168,0.12);
+  border-left: 1px solid rgba(0,86,168,0.12);
+  z-index: 1;
+}
+
+/* Estados de Hover / Abertura */
+.nav-links .dropdown:hover .dropdown-menu,
+.nav-links .dropdown.is-open .dropdown-menu {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+.nav-links .dropdown:hover .chevron,
+.nav-links .dropdown.is-open .chevron { 
+  transform: rotate(180deg); 
+}
+
+/* Estilização interna dos links do dropdown */
+.nav-links .dropdown-menu li { position: relative; z-index: 2; }
+.nav-links .dropdown-menu li + li { border-top: 1px solid rgba(0,86,168,0.07); }
+
+.nav-links .dropdown-menu a {
+  display: block; 
+  padding: 10px 18px;
+  font-weight: 500; 
+  font-size: 0.82rem; 
+  color: rgba(0, 0, 0, 0.65);
+  transition: background var(--ease), color var(--ease);
+  border-radius: 0; /* Remove bordas arredondadas herdadas no meio do menu */
+}
+
+.nav-links .dropdown-menu a:hover {
+  background: var(--light-blue); 
+  color: var(--primary-blue);
+}
+
+
 .nav-buttons { display: flex; align-items: center; flex-shrink: 0; }
 
 .account-link {
@@ -216,79 +311,6 @@ nav {
   background: var(--bright-blue); transform: translateY(-1px);
   box-shadow: 0 6px 20px rgba(0,86,168,0.3);
 }
-
-/* Dropdown */
-.nav-links .dropdown { position: relative; }
-.nav-links .dropdown-toggle {
-  display: inline-flex; align-items: center; gap: 0.3rem; cursor: pointer;
-}
-.nav-links .chevron {
-  font-size: 0.6rem; opacity: 0.55;
-  transition: transform var(--ease); display: inline-block;
-}
-
-/*
-  Ponte invisível: padding-top 12px cria zona hover transparente
-  entre o link e o menu visibility/opacity em vez de display:none
-  mantém o elemento no DOM e permite transição + ponte funcional.
-*/
-.nav-links .dropdown-menu {
-  visibility: hidden;
-  opacity: 0;
-  pointer-events: none;
-  position: absolute; top: 100%;
-  left: 50%; transform: translateX(-50%);
-  padding-top: 12px;
-  min-width: 230px;
-  list-style: none;
-  z-index: 999;
-  transition: opacity 0.18s ease, visibility 0.18s ease;
-}
-
-/* Caixa visual — fica após o padding-top invisível */
-.nav-links .dropdown-menu::after {
-  content: '';
-  position: absolute; inset: 12px 0 0 0;
-  border-radius: 10px;
-  background: #fff;
-  border: 1px solid rgba(0,86,168,0.12);
-  box-shadow: 0 16px 48px rgba(0,31,63,0.13);
-  z-index: -1;
-  pointer-events: none;
-}
-
-/* Setinha decorativa */
-.nav-links .dropdown-menu::before {
-  content: '';
-  position: absolute; top: 7px; left: 50%;
-  transform: translateX(-50%) rotate(45deg);
-  width: 10px; height: 10px;
-  background: #fff;
-  border-top: 1px solid rgba(0,86,168,0.12);
-  border-left: 1px solid rgba(0,86,168,0.12);
-  z-index: 1;
-  pointer-events: none;
-}
-
-.nav-links .dropdown:hover .dropdown-menu,
-.nav-links .dropdown.is-open .dropdown-menu {
-  visibility: visible;
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.nav-links .dropdown-menu li { position: relative; z-index: 2; }
-.nav-links .dropdown-menu li + li { border-top: 1px solid rgba(0,86,168,0.07); }
-.nav-links .dropdown-menu a {
-  display: block; padding: 10px 18px;
-  font-weight: 500; font-size: 0.82rem; color: rgba(0, 0, 0, 0.65);
-  transition: background var(--ease), color var(--ease);
-}
-.nav-links .dropdown-menu a:hover {
-  background: var(--light-blue); color: var(--primary-blue);
-}
-.nav-links .dropdown:hover .chevron,
-.nav-links .dropdown.is-open .chevron { transform: rotate(180deg); }
 
 /* Mobile toggle */
 .mobile-menu-toggle {
@@ -679,6 +701,7 @@ nav {
 }
 
 .app-title {
+  text-align: justify;
   font-size: clamp(1.5rem, 2.5vw, 2rem);
   font-weight: 900;
   color: var(--text-dark);

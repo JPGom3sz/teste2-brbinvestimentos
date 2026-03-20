@@ -12,72 +12,54 @@
 
   <!-- ===== HEADER ===== -->
  <header id="site-header">
-    <nav>
-      <div class="logo">
-        <a href="index.html" aria-label="BRB Investimentos - Início">
-          <img src="img/quartinho(1).png" alt="BRB Investimentos" />
+  <nav>
+    <div class="logo">
+      <a href="index.html" aria-label="BRB Investimentos - Início">
+        <img src="img/quartinho(1).png" alt="BRB Investimentos" />
+      </a>
+    </div>
+
+    <ul class="nav-links" id="mobileMenu" role="menubar">
+
+      <li class="dropdown" role="none">
+        <a href="#" class="dropdown-toggle" role="menuitem" aria-haspopup="true" aria-expanded="false">
+          Conteúdo <span class="chevron" aria-hidden="true">▾</span>
         </a>
-      </div>
+        <ul class="dropdown-menu" role="menu">
+          <li role="none"><a href="tutoriais.html" role="menuitem">Tutoriais</a></li>
+        </ul>
+      </li>
 
-      <ul class="nav-links" id="mobileMenu" role="menubar">
+      <li role="none">
+        <a href="sobrenos.html" role="menuitem">Sobre nós</a>
+      </li>
 
-        <li class="dropdown" role="none">
-           <a href="sobrenos.html" class="dropdown-toggle" role="menuitem">
-            Sobre nós 
-          </a>
+      <li class="dropdown" role="none">
+        <a href="#" class="dropdown-toggle" role="menuitem" aria-haspopup="true" aria-expanded="false">
+          Para Aprender <span class="chevron" aria-hidden="true">▾</span>
+        </a>
+        <ul class="dropdown-menu" role="menu">
+          <li role="none"><a href="https://analisa.genialinvestimentos.com.br/" role="menuitem" target="_blank" rel="noopener noreferrer">Genial analisa</a></li>
+        </ul>
+      </li>
 
-          <a href="#" class="dropdown-toggle" role="menuitem" aria-haspopup="true" aria-expanded="false">
-            Investimentos <span class="chevron" aria-hidden="true">▾</span>
-          </a>
-          <ul class="dropdown-menu" role="menu">
-            <li role="none"><a href="#fundos"     role="menuitem">Fundos de Investimento</a></li>
-            <li role="none"><a href="#plataforma" role="menuitem">Plataforma de Investimentos</a></li>
-          </ul>
-        </li>
+      <li role="none">
+        <a href="contato.html" role="menuitem">Contato</a>
+      </li>
 
-        <li class="dropdown" role="none">
-          <a href="#" class="dropdown-toggle" role="menuitem" aria-haspopup="true" aria-expanded="false">
-            Conteúdo <span class="chevron" aria-hidden="true">▾</span>
-          </a>
-          <ul class="dropdown-menu" role="menu">
-            <li role="none"><a href="#promocoes" role="menuitem">Promoções</a></li>
-            <li role="none"><a href="tutoriais.html" role="menuitem">Tutoriais</a></li>
-            <li role="none"><a href="#carteiras"  role="menuitem">Carteiras Recomendadas</a></li>
-          </ul>
-        </li>
+    </ul>
 
-        <li class="dropdown" role="none">
-          <a href="#" class="dropdown-toggle" role="menuitem" aria-haspopup="true" aria-expanded="false">
-            Para Aprender <span class="chevron" aria-hidden="true">▾</span>
-          </a>
-          <ul class="dropdown-menu" role="menu">
-            <li role="none"><a href="https://novo.brb.com.br/sobre-o-brb/" role="menuitem" target="_blank" rel="noopener noreferrer">Sobre a BRB Investimentos</a></li>
-            <li role="none"><a href="https://analisa.genialinvestimentos.com.br/" role="menuitem" target="_blank" rel="noopener noreferrer">Genial analisa</a></li>
-          </ul>
-        </li>
+    <div class="nav-buttons">
+      <button class="account-link" type="button">Acesse seus Investimentos</button>
+    </div>
 
-        <li class="dropdown" role="none">
-         
-        </li>
+    <button class="mobile-menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
 
-        <li role="none">
-          <a href="contato.html" role="menuitem">Contato</a>
-        </li>
-
-      </ul>
-
-      <div class="nav-buttons">
-        <button class="account-link" type="button">Acesse seus Investimentos</button>
-      </div>
-
-      <button class="mobile-menu-toggle" type="button"
-        aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
-        <span></span><span></span><span></span>
-      </button>
-
-      <div class="menu-overlay" aria-hidden="true"></div>
-    </nav>
-  </header>
+    <div class="menu-overlay" aria-hidden="true"></div>
+  </nav>
+</header>
 
   <!-- ===== HERO ===== -->
   <section id="home">
@@ -240,8 +222,8 @@
 
       <!-- Texto direito -->
       <div class="app-text">
-        <p class="app-eyebrow">ABRA SUA CONTA</p>
-        <h2 class="app-title">A EXPERIÊNCIA DE INVESTIR<br />COM QUEM ENTENDE.<br />A SUA JORNADA PARA<br />O SUCESSO FINANCEIRO.</h2>
+        <p class="app-eyebrow">DÊ O PRIMEIRO PASSO</p>
+        <h2 class="app-title">ACESSE O MELHOR DO MERCADO<br />FINANCEIRO COM A SOLIDEZ,<br />O PLANEJAMENTO E A<br />ASSESSORIA QUE VOCÊ MERECE.</h2>
 
         <div class="app-qr-row">
           <!-- QR code — substitua o src pela sua imagem -->
@@ -291,10 +273,10 @@
       <div class="footer-column">
         <h4>Produtos</h4>
         <ul>
-          <li><a href="#">Renda Fixa</a></li>
-          <li><a href="#">Fundos</a></li>
-          <li><a href="#">xxx</a></li>
-          <li><a href="#">Renda Fixa</a></li>
+          <li><a href="index.html#portfolio">Renda Fixa</a></li>
+          <li><a href="index.html#portfolio">Fundos</a></li>
+          <li><a href="index.html#portfolio">Previdência</a></li>
+          <li><a href="index.html#portfolio">Renda Fixa</a></li>
         </ul>
       </div>
 

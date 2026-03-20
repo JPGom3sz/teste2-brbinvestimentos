@@ -147,7 +147,8 @@
   border-radius: 6px;
 }
 
-.tutorial-card__link {
+
+.btn-baixar-pdf { 
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -158,16 +159,16 @@
   cursor: pointer;
 }
 
-.tutorial-card__link:hover {
+.btn-baixar-pdf:hover {
   color: var(--deep-navy);
   gap: 0.7rem;
 }
 
-.tutorial-card__link svg {
+.btn-baixar-pdf svg {
   transition: transform 0.3s ease;
 }
 
-.tutorial-card__link:hover svg {
+.btn-baixar-pdf:hover svg {
   transform: translateY(2px);
 }
 

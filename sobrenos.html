@@ -10,88 +10,79 @@
 
   <!-- ===== HEADER ===== -->
   <header id="site-header">
-    <nav>
-      <div class="logo">
-        <a href="index.html" aria-label="BRB Investimentos - Início">
-          <img src="img/quartinho(1).png" alt="BRB Investimentos" />
+  <nav>
+    <div class="logo">
+      <a href="index.html" aria-label="BRB Investimentos - Início">
+        <img src="img/quartinho(1).png" alt="BRB Investimentos" />
+      </a>
+    </div>
+
+    <ul class="nav-links" id="mobileMenu" role="menubar">
+
+      <li class="dropdown" role="none">
+        <a href="#" class="dropdown-toggle" role="menuitem" aria-haspopup="true" aria-expanded="false">
+          Conteúdo <span class="chevron" aria-hidden="true">▾</span>
         </a>
-      </div>
+        <ul class="dropdown-menu" role="menu">
+          <li role="none"><a href="tutoriais.html" role="menuitem">Tutoriais</a></li>
+        </ul>
+      </li>
 
-      <ul class="nav-links" id="mobileMenu" role="menubar">
+      <li role="none">
+        <a href="sobrenos.html" role="menuitem">Sobre nós</a>
+      </li>
 
-       <a href="sobrenos.html" class="dropdown-toggle" role="menuitem">
-            Sobre nós 
-          </a>
+      <li class="dropdown" role="none">
+        <a href="#" class="dropdown-toggle" role="menuitem" aria-haspopup="true" aria-expanded="false">
+          Para Aprender <span class="chevron" aria-hidden="true">▾</span>
+        </a>
+        <ul class="dropdown-menu" role="menu">
+          <li role="none"><a href="https://analisa.genialinvestimentos.com.br/" role="menuitem" target="_blank" rel="noopener noreferrer">Genial analisa</a></li>
+        </ul>
+      </li>
 
-          <a href="#" class="dropdown-toggle" role="menuitem" aria-haspopup="true" aria-expanded="false">
-            Investimentos <span class="chevron" aria-hidden="true">▾</span>
-          </a>
-          <ul class="dropdown-menu" role="menu">
-            <li role="none"><a href="#fundos"     role="menuitem">Fundos de Investimento</a></li>
-            <li role="none"><a href="#plataforma" role="menuitem">Plataforma de Investimentos</a></li>
-          </ul>
-        </li>
+      <li role="none">
+        <a href="contato.html" role="menuitem">Contato</a>
+      </li>
 
-        <li class="dropdown" role="none">
-          <a href="#" class="dropdown-toggle" role="menuitem" aria-haspopup="true" aria-expanded="false">
-            Conteúdo <span class="chevron" aria-hidden="true">▾</span>
-          </a>
-          <ul class="dropdown-menu" role="menu">
-            <li role="none"><a href="#promocoes" role="menuitem">Promoções</a></li>
-            <li role="none"><a href="tutoriais.html" role="menuitem">Tutoriais</a></li>
-            <li role="none"><a href="#carteiras"  role="menuitem">Carteiras Recomendadas</a></li>
-          </ul>
-        </li>
+    </ul>
 
-        <li class="dropdown" role="none">
-          <a href="#" class="dropdown-toggle" role="menuitem" aria-haspopup="true" aria-expanded="false">
-            Para Aprender <span class="chevron" aria-hidden="true">▾</span>
-          </a>
-          <ul class="dropdown-menu" role="menu">
-            <li role="none"><a href="https://novo.brb.com.br/sobre-o-brb/" role="menuitem" target="_blank" rel="noopener noreferrer">Sobre a BRB Investimentos</a></li>
-            <li role="none"><a href="https://analisa.genialinvestimentos.com.br/" role="menuitem" target="_blank" rel="noopener noreferrer">Genial analisa</a></li>
-          </ul>
-        </li>
+    <div class="nav-buttons">
+      <button class="account-link" type="button">Acesse seus Investimentos</button>
+    </div>
 
-        <li role="none">
-          <a href="contato.html" role="menuitem">Contato</a>
-        </li>
+    <button class="mobile-menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
 
-      </ul>
+    <div class="menu-overlay" aria-hidden="true"></div>
+  </nav>
+</header>
 
-      <div class="nav-buttons">
-        <button class="account-link" type="button">Acesse seus Investimentos</button>
-      </div>
-
-      <button class="mobile-menu-toggle" type="button"
-        aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
-        <span></span><span></span><span></span>
-      </button>
-
-      <div class="menu-overlay" aria-hidden="true"></div>
-    </nav>
-  </header>
 
   <!-- ===== HERO ===== -->
-  <section class="sn-hero" id="home">
-    <div class="sn-hero__bg-text" aria-hidden="true">Investi</div>
-    <div class="sn-hero__inner">
-      <div class="sn-hero__tag">Quem somos</div>
-      <h1 class="sn-hero__title">
-        Investir com <em>propósito</em><br>é a nossa essência.
-      </h1>
-      <p class="sn-hero__desc">
-        Nascemos do coração de Brasília para levar o melhor do mercado financeiro
-        a quem acredita que o futuro se constrói com planejamento e confiança.
-      </p>
-      <a href="#missao" class="sn-hero__cta">Conheça nossa história ↓</a>
-    </div>
-    <div class="sn-hero__deco" aria-hidden="true">
-      <span class="deco-ring deco-ring--1"></span>
-      <span class="deco-ring deco-ring--2"></span>
-      <span class="deco-ring deco-ring--3"></span>
-    </div>
-  </section>
+ <section class="sn-hero" id="home">
+  
+  <div class="sn-hero__content">
+    <div class="sn-hero__tag">Quem somos</div>
+
+    <h1 class="sn-hero__title">
+      Investir com <em>propósito</em><br>é a nossa essência.
+    </h1>
+
+    <p class="sn-hero__desc">
+      Nascemos do coração de Brasília para levar o melhor do mercado financeiro
+      a quem acredita que o futuro se constrói com planejamento e confiança.
+    </p>
+
+    <a href="#missao" class="sn-hero__cta">Conheça nossa história ↓</a>
+  </div>
+
+  <div class="sn-hero__image-wrapper" aria-hidden="true">
+    <img src="img/Plataforma Mockup.png" alt="Mockup da Plataforma de Investimentos" class="sn-hero__image">
+  </div>
+
+</section>
 
   <!-- ===== STATS ===== -->
   <section class="sn-stats">
@@ -183,20 +174,8 @@ São mais de 600 mil investidores que já confiam na BRB Investimentos. Mais do 
               sede no moderno Centro Empresarial CNC, em Brasília/DF. Nossa localização privilegiada nos coloca próximos 
               aos principais órgãos reguladores e ao centro de decisões que movem o mercado financeiro nacional.
             </p>
-            <p>
-              Com uma estrutura física que reflete nosso compromisso com excelência e inovação, oferecemos um ambiente 
-              preparado para atender investidores que buscam atendimento presencial, além de toda infraestrutura tecnológica 
-              que suporta nossa plataforma digital disponível 24 horas por dia, 7 dias por semana, para todo o Brasil.
-            </p>
-            <div class="sn-about__address">
-              <h4>Endereço</h4>
-              <p>
-                <strong>BRB Investimentos</strong><br>
-                BL B - Centro Empresarial CNC<br>
-                SAUN Quadra 5, Lote C, 2º andar<br>
-                Brasília/DF - CEP 70040-250
-              </p>
-            </div>
+            
+            
           </div>
 
         </div>
@@ -320,8 +299,8 @@ São mais de 600 mil investidores que já confiam na BRB Investimentos. Mais do 
       <div class="sn-why__grid">
         <div class="sn-why__card" data-animate>
           <div class="sn-why__icon"></div>
-          <h4>Solidez Institucional</h4>
-          <p>Pertencemos ao Grupo BRB, um dos maiores conglomerados financeiros do Brasil, com décadas de solidez e credibilidade reconhecida pelo mercado.</p>
+          <h4>Força de um grande grupo</h4>
+          <p>Fazemos parte do Grupo BRB, um dos maiores conglomerados financeiros do Brasil, com estrutura sólida para impulsionar sua jornada de investimentos.</p>
         </div>
         <div class="sn-why__card" data-animate>
           <div class="sn-why__icon"></div>
@@ -358,11 +337,15 @@ São mais de 600 mil investidores que já confiam na BRB Investimentos. Mais do 
     <div class="sn-cta__inner">
       <h2>Pronto para começar<br>sua jornada?</h2>
       <p>Abra sua conta gratuitamente e descubra como é fácil<br>investir com quem entende do assunto.</p>
-      <div class="sn-cta__actions">
-        <button class="sn-cta__btn sn-cta__btn--primary">Abrir minha conta</button>
-        <button class="sn-cta__btn sn-cta__btn--outline">Entre em contato conosco</button>
-      </div>
-    </div>
+      <<div class="sn-cta__actions">
+  <a href="https://brb.genialinvestimentos.com.br/auth/login" class="sn-cta__btn sn-cta__btn--primary">
+    Abrir minha conta
+  </a>
+
+  <a href="contato.html" class="sn-cta__btn sn-cta__btn--outline">
+    Entre em contato conosco
+  </a>
+</div>
   </section>
 
   <!-- ===== FOOTER ===== -->

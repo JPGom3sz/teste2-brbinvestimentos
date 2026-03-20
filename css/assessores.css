@@ -704,6 +704,7 @@ img { display: block; max-width: 100%; }
 
 .as-diff__card {
   background: var(--brb-navy-3);
+  text-align: justify;
   border: 1px solid var(--brb-border-s);
   border-radius: var(--r);
   padding: 2rem 1.8rem;
