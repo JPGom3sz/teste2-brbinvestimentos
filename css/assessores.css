@@ -883,15 +883,33 @@ img { display: block; max-width: 100%; }
 }
 
 .as-team__avatar {
-  width: 64px; height: 64px;
+  width: 140px;  /* Ajuste final para 140px */
+  height: 140px;
   border-radius: 50%;
   background: rgba(26,74,138,.4);
-  border: 1.5px solid rgba(58,127,212,.35);
-  display: flex; align-items: center; justify-content: center;
+  border: 2px solid rgba(58,127,212,.35); 
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
   color: rgba(58,127,212,.7);
+  overflow: hidden; 
+  flex-shrink: 0;
+  margin: 0 auto; 
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
 }
-.as-team__avatar svg { width: 36px; height: 36px; }
 
+/* Continua igual... */
+.as-team__avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  object-position: center top; 
+}
+
+.as-team__avatar svg { 
+  width: 64px; /* Aumentei o bonequinho um pouco mais para acompanhar */
+  height: 64px; 
+}
 .as-team__cert {
   position: absolute; top: .9rem; right: .9rem;
   background: var(--brb-blue);
