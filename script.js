@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     4: {
       titulo: 'Renda Fixa',
-      descricao: 'Os produtos de renda fixa do BRB incluem títulos públicos, debêntures, CDBs, LCIs/LCAs e fundos de renda fixa. Esses instrumentos oferecem previsibilidade de retorno e proteção do capital, sendo indicados para perfis que buscam segurança e estabilidade. Com gestão profissional, a BRB Investimentos seleciona ativos que equilibram rentabilidade e risco, garantindo consistência para o portfólio do investidor.',
+      descricao: 'Os produtos de renda fixa da BRB Investimentos incluem títulos públicos, debêntures, CDBs, LCIs/LCAs e fundos de renda fixa. Esses instrumentos oferecem previsibilidade de retorno e proteção do capital, sendo indicados para perfis que buscam segurança e estabilidade. Com gestão profissional, a BRB Investimentos seleciona ativos que equilibram rentabilidade e risco, garantindo consistência para o portfólio do investidor.',
     }
   };
 
