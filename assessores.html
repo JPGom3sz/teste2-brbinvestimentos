@@ -64,9 +64,19 @@
 
   <!-- ===== HERO ===== -->
   <section class="as-hero" id="home">
-    <div class="as-hero__grid" aria-hidden="true"></div>
-    <div class="as-hero__orb as-hero__orb--1" aria-hidden="true"></div>
-    <div class="as-hero__orb as-hero__orb--2" aria-hidden="true"></div>
+    <!--
+      IMAGEM DE FUNDO: substitua "img/hero-bg.jpg" pelo caminho da sua imagem.
+      O prédio ficará posicionado à esquerda (object-position: left center).
+    -->
+    <img
+      src="img\Predio BRB PeB.png"
+      alt=""
+      class="as-hero__bg-img"
+      aria-hidden="true"
+    />
+
+    <!-- Overlay escuro para garantir legibilidade do texto -->
+    <div class="as-hero__overlay" aria-hidden="true"></div>
 
     <div class="as-hero__inner">
 
@@ -94,74 +104,12 @@
 
         <div class="as-hero__actions">
           <a href="https://wa.me/5561999999999?text=Ol%C3%A1%21+Gostaria+de+falar+com+um+assessor+de+investimentos." target="_blank" rel="noopener noreferrer" class="as-btn as-btn--primary">
-            <svg viewBox="0 0 24 24" fill="currentColor" class="as-btn__icon"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.131.558 4.13 1.534 5.865L.057 23.447a.5.5 0 0 0 .625.585l5.76-1.508A11.955 11.955 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.896 0-3.67-.522-5.184-1.43l-.37-.22-3.419.895.912-3.328-.24-.386A9.944 9.944 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-            Entre em contato conosco
+            Conheça nossa Plataforma
           </a>
           <a href="#equipe" class="as-btn as-btn--ghost">Conhecer a equipe ↓</a>
         </div>
       </div>
 
-      <div class="as-hero__visual">
-        <!-- Painel principal -->
-        <div class="as-hero__panel">
-          <div class="as-hero__panel-header">
-            <div class="as-hero__panel-dots" aria-hidden="true">
-              <span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span>
-            </div>
-            <span>Visão da sua carteira</span>
-            <span class="as-hero__panel-live">● LIVE</span>
-          </div>
-
-          <div class="as-hero__chart-wrap">
-            <svg class="as-hero__chart-svg" viewBox="0 0 320 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-              <defs>
-                <linearGradient id="cg" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#3a7fd4" stop-opacity=".4"/>
-                  <stop offset="100%" stop-color="#3a7fd4" stop-opacity="0"/>
-                </linearGradient>
-              </defs>
-              <path d="M0 82 Q30 74 55 62 Q80 50 105 44 Q130 38 155 32 Q180 24 205 20 Q230 16 255 12 L320 8 L320 100 L0 100Z" fill="url(#cg)"/>
-              <path d="M0 82 Q30 74 55 62 Q80 50 105 44 Q130 38 155 32 Q180 24 205 20 Q230 16 255 12 L320 8" stroke="#3a7fd4" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-              <circle cx="105" cy="44" r="4" fill="#3a7fd4"/>
-              <circle cx="205" cy="20" r="4" fill="#3a7fd4"/>
-              <circle cx="320" cy="8" r="5.5" fill="#5baadc" stroke="white" stroke-width="2"/>
-            </svg>
-          </div>
-
-          <div class="as-hero__panel-stats">
-            <div class="as-hero__pstat">
-              <span class="as-hero__pstat-label">Retorno anual</span>
-              <span class="as-hero__pstat-val as-hero__pstat-val--up">↑ </span>
-            </div>
-            <div class="as-hero__pstat">
-              <span class="as-hero__pstat-label">Patrimônio sob gestão</span>
-              <span class="as-hero__pstat-val">x</span>
-            </div>
-            <div class="as-hero__pstat">
-              <span class="as-hero__pstat-label">Investidores ativos</span>
-              <span class="as-hero__pstat-val">x</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Chip flutuante topo -->
-        <div class="as-hero__chip as-hero__chip--top">
-          <div class="as-hero__chip-icon">
-            <svg viewBox="0 0 20 20" fill="none"><path d="M10 2l2.5 5.1L18 8l-4 3.9 0.9 5.6L10 15l-4.9 2.5 0.9-5.6L2 8l5.5-0.9L10 2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
-          </div>
-          <span>Assessoria Premium BRB</span>
-        </div>
-
-        <!-- Chip flutuante base -->
-        <div class="as-hero__chip as-hero__chip--bottom">
-          <div class="as-hero__chip-icon as-hero__chip-icon--green">
-            <svg viewBox="0 0 20 20" fill="none"><polyline points="18 6 11 13 7 9 2 14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><polyline points="13 6 18 6 18 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <div>
-           
-          </div>
-        </div>
-      </div>
     </div>
 
     <!-- Barra de credenciais -->
@@ -423,7 +371,65 @@ O acesso às modalidades disponíveis de investimentos são simples."</p>
     </div>
   </section>
 
- 
+  <!-- ===== CTA ===== -->
+  <section class="as-cta">
+    <div class="as-cta__bg-mesh" aria-hidden="true"></div>
+    <div class="as-cta__inner">
+      <div class="as-cta__text">
+        <p class="as-eyebrow">Não fique de fora</p>
+        <h2 class="as-cta__h">Comece a investir com quem entende do seu futuro.</h2>
+        <p class="as-cta__desc">
+          Nossos assessores estão prontos para transformar seus objetivos em realidade. 
+          Estratégias personalizadas, acompanhamento dedicado e total transparência em cada passo.
+        </p>
+        <div class="as-cta__btns">
+          <a href="https://wa.me/5561999999999?text=Ol%C3%A1%21+Quero+come%C3%A7ar+a+investir+com+a+BRB." target="_blank" rel="noopener noreferrer" class="as-btn as-btn--primary">
+            <svg viewBox="0 0 24 24" fill="currentColor" class="as-btn__icon"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.131.558 4.13 1.534 5.865L.057 23.447a.5.5 0 0 0 .625.585l5.76-1.508A11.955 11.955 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.896 0-3.67-.522-5.184-1.43l-.37-.22-3.419.895.912-3.328-.24-.386A9.944 9.944 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+            Invista Já
+          </a>
+          <a href="contato.html" class="as-btn as-btn--ghost">Entre em Contato para Saber Mais</a>
+        </div>
+      </div>
+
+      <div class="as-cta__visual">
+        <div class="as-cta__ring">
+          <svg viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="80" cy="80" r="70" stroke="rgba(58,127,212,.15)" stroke-width="2"/>
+            <circle cx="80" cy="80" r="55" stroke="rgba(58,127,212,.25)" stroke-width="2"/>
+            <circle cx="80" cy="80" r="40" stroke="rgba(91,170,220,.4)" stroke-width="3"/>
+            <circle cx="80" cy="80" r="12" fill="url(#ctaGlow)"/>
+            <defs>
+              <radialGradient id="ctaGlow" cx="50%" cy="50%">
+                <stop offset="0%" stop-color="#5baadc" stop-opacity="1"/>
+                <stop offset="100%" stop-color="#3a7fd4" stop-opacity=".6"/>
+              </radialGradient>
+            </defs>
+            <animateTransform
+              attributeName="transform"
+              type="rotate"
+              from="0 80 80"
+              to="360 80 80"
+              dur="20s"
+              repeatCount="indefinite"/>
+          </svg>
+        </div>
+        <div class="as-cta__mini-stats">
+          <div>
+            <span>CEA®</span>
+            <p>Certificados</p>
+          </div>
+          <div>
+            <span>CFP®</span>
+            <p>Planejadores</p>
+          </div>
+          <div>
+            <span>CNPI®</span>
+            <p>Analistas</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- ===== FOOTER ===== -->
   <footer>

@@ -414,8 +414,40 @@ img { display: block; max-width: 100%; }
 .as-btn--lg { padding: 1.1rem 2.2rem; font-size: .84rem; }
 
 /* ============================================================
-   HERO
+   HERO — imagem de fundo cobrindo tudo, prédio à esquerda
    ============================================================ */
+
+/* Imagem de fundo */
+.as-hero__bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left center;
+  pointer-events: none;
+  user-select: none;
+  display: block;
+  max-width: none;
+}
+
+/* Overlay gradiente para legibilidade */
+.as-hero__overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(to right,
+      rgba(4,12,26,.78) 0%,
+      rgba(4,12,26,.55) 55%,
+      rgba(4,12,26,.25) 100%),
+    linear-gradient(to bottom,
+      rgba(4,12,26,.35) 0%,
+      transparent 25%,
+      transparent 70%,
+      rgba(4,12,26,.55) 100%);
+}
+
 .as-hero {
   position: relative;
   min-height: 100vh;
@@ -424,51 +456,27 @@ img { display: block; max-width: 100%; }
   align-items: stretch;
   padding-top: var(--hh);
   overflow: hidden;
-  background: linear-gradient(140deg, #040c1a 0%, #07152a 55%, #091a34 100%);
+  background: var(--brb-navy);
 }
 
 /* Grade de linhas fina */
-.as-hero__grid {
-  position: absolute; inset: 0; pointer-events: none;
-  background-image:
-    linear-gradient(rgba(58,127,212,.055) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(58,127,212,.055) 1px, transparent 1px);
-  background-size: 60px 60px;
-  mask-image: radial-gradient(ellipse 80% 70% at 60% 40%, black 30%, transparent 100%);
-}
-
-/* Orbes de luz */
-.as-hero__orb {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(100px);
-  pointer-events: none;
-}
-
-.as-hero__orb--1 {
-  width: 600px; height: 600px;
-  background: radial-gradient(circle, rgba(26,74,138,.55) 0%, transparent 70%);
-  top: -120px; right: -80px;
-}
-
-.as-hero__orb--2 {
-  width: 400px; height: 400px;
-  background: radial-gradient(circle, rgba(32,96,176,.3) 0%, transparent 70%);
-  bottom: 60px; left: 5%;
-}
-
 .as-hero__inner {
   flex: 1;
   max-width: var(--max-w);
   width: 100%;
   margin: 0 auto;
-  padding: 5rem 2rem 3rem;
+  padding: 6rem 2rem 4rem;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  grid-template-columns: 1fr;
+  gap: 0;
   align-items: center;
   position: relative;
   z-index: 1;
+}
+
+/* Limita o texto para não sobrepor o prédio à esquerda */
+.as-hero__text {
+  max-width: 580px;
 }
 
 /* Label */
@@ -1047,7 +1055,11 @@ img { display: block; max-width: 100%; }
   gap: 5rem; align-items: center;
 }
 
-.as-cta .as-eyebrow { color: rgba(255,255,255,.6); }
+.as-cta .as-eyebrow {
+  color: var(--brb-cyan);
+  font-size: .75rem;
+  letter-spacing: .22em;
+}
 
 .as-cta__h {
   font-family: var(--ff-display);
@@ -1191,11 +1203,8 @@ footer {
   .menu-overlay.active { display: block; }
 
   /* Hero */
-  .as-hero__inner { grid-template-columns: 1fr; padding: 3rem 1.5rem 2rem; gap: 2.5rem; }
-  .as-hero__visual { order: -1; }
-  .as-hero__panel { max-width: 100%; }
-  .as-hero__chip--top { top: -14px; left: -10px; }
-  .as-hero__chip--bottom { bottom: -14px; right: -10px; }
+  .as-hero__inner { padding: 3rem 1.5rem 2rem; }
+  .as-hero__text { max-width: 100%; }
 
   /* Sections */
   .as-diff__grid { grid-template-columns: 1fr 1fr; }
@@ -1223,4 +1232,29 @@ footer {
   .footer-content { grid-template-columns: 1fr; }
   .as-hero__certs { display: none; }
   .as-cta__visual { display: none; }
+}
+
+/* ============================================================
+   RESPONSIVIDADE EXTRA — hero imagem + fixes
+   ============================================================ */
+@media (max-width: 768px) {
+  .as-hero__bg-img { object-position: center center; }
+  .as-hero__overlay {
+    background:
+      linear-gradient(to bottom,
+        rgba(4,12,26,.65) 0%,
+        rgba(4,12,26,.55) 100%);
+  }
+  .as-hero__title { font-size: clamp(2.2rem, 8vw, 3rem); }
+  .as-hero__desc { font-size: .85rem; }
+  .as-hero__actions { flex-direction: column; gap: .75rem; }
+  .as-hero__actions .as-btn { width: 100%; justify-content: center; }
+  .as-cta__btns { flex-direction: column; }
+  .as-cta__btns .as-btn { width: 100%; justify-content: center; }
+}
+
+@media (max-width: 480px) {
+  .as-hero__inner { padding: 2.5rem 1.2rem 3rem; }
+  .as-cta__h { font-size: 1.6rem; }
+  .footer-bottom { gap: 1rem; }
 }
