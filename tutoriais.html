@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tutoriais - BRB Investimentos</title>
+  <title>Guias Praticos - BRB Investimentos</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/tutoriais.css" />
@@ -12,73 +12,61 @@
 <body>
 
   <!-- ===== HEADER ===== -->
-  <header id="site-header">
-    <nav>
-      <div class="logo">
-        <a href="index.html" aria-label="BRB Investimentos - Início">
-          <img src="img/quartinho(1).png" alt="BRB Investimentos" />
+  <!-- ===== HEADER ===== -->
+ <header id="site-header">
+  <nav>
+    <div class="logo">
+      <a href="index.html" aria-label="BRB Investimentos - Início">
+        <img src="img/quartinho(1).png" alt="BRB Investimentos" />
+      </a>
+    </div>
+
+    <ul class="nav-links" id="mobileMenu" role="menubar">
+
+      <li class="dropdown" role="none">
+        <a href="#" class="dropdown-toggle" role="menuitem" aria-haspopup="true" aria-expanded="false">
+          Conteúdo <span class="chevron" aria-hidden="true">▾</span>
         </a>
-      </div>
+        <ul class="dropdown-menu" role="menu">
+          <li role="none"><a href="tutoriais.html" role="menuitem">Guias Práticos </a></li>
+        </ul>
+      </li>
 
-      <ul class="nav-links" id="mobileMenu" role="menubar">
+      <li role="none">
+        <a href="sobrenos.html" role="menuitem">Sobre nós</a>
+      </li>
 
-        <li class="dropdown" role="none">
-          <a href="sobrenos.html" class="dropdown-toggle" role="menuitem">
-            Sobre nós 
-          </a>
+      <li class="dropdown" role="none">
+        <a href="#" class="dropdown-toggle" role="menuitem" aria-haspopup="true" aria-expanded="false">
+          Para Aprender <span class="chevron" aria-hidden="true">▾</span>
+        </a>
+        <ul class="dropdown-menu" role="menu">
+          <li role="none"><a href="https://analisa.genialinvestimentos.com.br/" role="menuitem" target="_blank" rel="noopener noreferrer">Genial analisa</a></li>
+        </ul>
+      </li>
 
-          <a href="#" class="dropdown-toggle" role="menuitem" aria-haspopup="true" aria-expanded="false">
-            Investimentos <span class="chevron" aria-hidden="true">▾</span>
-          </a>
-          <ul class="dropdown-menu" role="menu">
-            <li role="none"><a href="#fundos"     role="menuitem">Fundos de Investimento</a></li>
-            <li role="none"><a href="#plataforma" role="menuitem">Plataforma de Investimentos</a></li>
-          </ul>
-        </li>
+      <li role="none">
+        <a href="contato.html" role="menuitem">Contato</a>
+      </li>
 
-        <li class="dropdown" role="none">
-          <a href="#" class="dropdown-toggle" role="menuitem" aria-haspopup="true" aria-expanded="false">
-            Conteúdo <span class="chevron" aria-hidden="true">▾</span>
-          </a>
-          <ul class="dropdown-menu" role="menu">
-            <li role="none"><a href="tutoriais.html" role="menuitem">Tutoriais</a></li>
-          </ul>
-        </li>
+    </ul>
 
-        <li class="dropdown" role="none">
-          <a href="#" class="dropdown-toggle" role="menuitem" aria-haspopup="true" aria-expanded="false">
-            Para Aprender <span class="chevron" aria-hidden="true">▾</span>
-          </a>
-          <ul class="dropdown-menu" role="menu">
-           
-            <li role="none"><a href="https://analisa.genialinvestimentos.com.br/" role="menuitem" target="_blank" rel="noopener noreferrer">Genial analisa</a></li>
-          </ul>
-        </li>
+    <div class="nav-buttons">
+      <button class="account-link" type="button">Acesse seus Investimentos</button>
+    </div>
 
-        <li role="none">
-          <a href="contato.html" role="menuitem">Contato</a>
-        </li>
+    <button class="mobile-menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
 
-      </ul>
-
-      <div class="nav-buttons">
-        <button class="account-link" type="button">Acesse seus Investimentos</button>
-      </div>
-
-      <button class="mobile-menu-toggle" type="button"
-        aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
-        <span></span><span></span><span></span>
-      </button>
-
-      <div class="menu-overlay" aria-hidden="true"></div>
-    </nav>
-  </header>
-
+    <div class="menu-overlay" aria-hidden="true"></div>
+  </nav>
+</header>
   <!-- ===== HERO TUTORIAIS ===== -->
   <section class="tutoriais-hero">
     <div class="tutoriais-hero__content">
       <p class="tutoriais-hero__eyebrow">CENTRAL DE AJUDA</p>
-      <h1 class="tutoriais-hero__title">Tutoriais</h1>
+      <h1 class="tutoriais-hero__title">Guias Práticos</h1>
       <p class="tutoriais-hero__subtitle">Aprenda a utilizar a plataforma BRB Investimentos com nossos guias práticos e passo a passo detalhados.</p>
     </div>
   </section>
@@ -202,7 +190,7 @@
           </svg>
         </div>
         <h3 class="tutorial-card__title">Resgate de CDB</h3>
-        <p class="tutorial-card__desc">Aprenda como utilizar o Sistema de Transferência de Valores Mobiliários de forma simples e prática.</p>
+        <p class="tutorial-card__desc">Aprenda como realizar o resgate de CDB de forma simples e prática.</p>
         <div class="tutorial-card__footer">
           <span class="tutorial-card__badge">PDF</span>
            <a href="pdfs\Passo a passo-ResgatedeCDB.pdf" download class="btn-baixar-pdf"> 
@@ -229,7 +217,7 @@
           </svg>
         </div>
         <h3 class="tutorial-card__title">Informes de rendimentos</h3>
-        <p class="tutorial-card__desc">Aprenda como utilizar o Sistema de Transferência de Valores Mobiliários de forma simples e prática.</p>
+        <p class="tutorial-card__desc">Aprenda como acessar e utilizar os informes de rendimentos de forma simples e prática, facilitando a consulta das suas informações financeiras e a organização para a declaração de impostos.</p>
         <div class="tutorial-card__footer">
           <span class="tutorial-card__badge">PDF</span>
            <a href="pdfs\Passo a passo-Informes-de-Rendimentos.pdf" download class="btn-baixar-pdf"> 
@@ -254,7 +242,7 @@
           </svg>
         </div>
         <h3 class="tutorial-card__title">Passo a Passo STVM IN</h3>
-        <p class="tutorial-card__desc">Aprenda como utilizar o Sistema de Transferência de Valores Mobiliários de forma simples e prática.</p>
+        <p class="tutorial-card__desc">Aprenda o passo a passo do STVM IN de forma simples e prática, entendendo como utilizar o Sistema de Transferência de Valores Mobiliários com clareza e segurança.</p>
         <div class="tutorial-card__footer">
           <span class="tutorial-card__badge">PDF</span>
            <a href="pdfs\Passo a passo-STVM.pdf" download class="btn-baixar-pdf"> 
@@ -279,12 +267,12 @@
             <path d="M24 36V42" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
           </svg>
         </div>
-        <h3 class="tutorial-card__title">Passo a Passo STVM OUT</h3>
-        <p class="tutorial-card__desc">Aprenda como utilizar o Sistema de Transferência de Valores Mobiliários de forma simples e prática.</p>
+        <h3 class="tutorial-card__title">Como acessar a Home Broker</h3>
+        <p class="tutorial-card__desc">Aprenda como acessar a Home Broker de forma simples e prática, entendendo os principais passos para entrar na plataforma e começar a operar com facilidade e segurança.</p>
         <div class="tutorial-card__footer">
           <span class="tutorial-card__badge">PDF</span>
           
-        <a href="pdfs\Passo a passo-Transferencia-de-Recurso.pdf" download class="btn-baixar-pdf"> 
+        <a href="pdfs\Passo a passo - Como acessar a Home Broker.pdf" download class="btn-baixar-pdf"> 
       <span>Baixar tutorial</span>
       <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
         <path d="M8 12L3 7L4.4 5.6L7 8.2V0H9V8.2L11.6 5.6L13 7L8 12Z"/>
