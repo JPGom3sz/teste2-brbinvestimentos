@@ -5,7 +5,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   // ============================================================
-  //  HEADER — esconder ao rolar para baixo, mostrar ao rolar para cima
+  // HEADER — esconder ao rolar para baixo, mostrar ao subir
   // ============================================================
   const header = document.getElementById('site-header');
   let lastScroll = 0;
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // ============================================================
-  //  MENU MOBILE
+  // MENU MOBILE
   // ============================================================
   const mobileToggle = document.querySelector('.mobile-menu-toggle');
   const navLinks     = document.querySelector('.nav-links');
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // ============================================================
-  //  ROLAGEM SUAVE para âncoras internas
+  // ROLAGEM SUAVE para âncoras internas
   // ============================================================
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -89,16 +89,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // ============================================================
-  //  LOGO — recarregar a página
+  // LOGO — redireciona para index
   // ============================================================
   document.querySelector('.logo a')?.addEventListener('click', (e) => {
-  e.preventDefault();
-  window.location.href = 'index.html';
-});
+    e.preventDefault();
+    window.location.href = 'index.html';
+  });
 
 
   // ============================================================
-  //  BOTÃO — Acesse seus Investimentos
+  // BOTÃO — Acesse seus Investimentos
   // ============================================================
   document.querySelector('.account-link')?.addEventListener('click', () => {
     window.open('https://brb.genialinvestimentos.com.br/auth/login', '_blank', 'noopener,noreferrer');
@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // ============================================================
-  //  BOTÃO — Abrir conta grátis (hero CTA)
+  // BOTÃO — Abrir conta (hero CTA)
   // ============================================================
   document.querySelector('.btn-primary')?.addEventListener('click', () => {
     window.open('https://brb.genialinvestimentos.com.br/auth/login', '_blank', 'noopener,noreferrer');
@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // ============================================================
-  //  WHATSAPP — botão flutuante
+  // WHATSAPP — botão flutuante
   // ============================================================
   document.querySelector('.whatsapp-btn')?.addEventListener('click', () => {
     const phone   = '5561999999999';
@@ -124,31 +124,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // ============================================================
-  //  PORTFÓLIO — troca de conteúdo com fade
+  // PORTFÓLIO — troca de conteúdo com fade
   // ============================================================
   const portfolioData = {
     default: {
-      titulo: 'Nosso Portfólio Diversificado',
+      titulo:    'Nosso Portfólio Diversificado',
       descricao: 'O portfólio da BRB Investimentos é estruturado para atender diferentes perfis e objetivos financeiros, combinando segurança, diversificação e potencial de crescimento. A estratégia busca equilíbrio entre ativos de renda fixa e renda variável, permitindo ao investidor acessar oportunidades em diferentes mercados, sempre com gestão responsável e alinhada às melhores práticas do mercado financeiro.',
     },
     1: {
-      titulo: 'Renda Variável',
-      descricao: 'Os produtos de renda variável da BRB Investimentos incluem ações de empresas listadas, fundos de investimento em ações (FIAs), fundos multimercado e ETFs. Esses instrumentos permitem ao investidor participar do desempenho de diferentes setores da economia, com potencial de valorização no longo prazo e recebimento de proventos, como dividendos. Além disso, oferecem diversificação e gestão profissional, possibilitando estratégias alinhadas ao perfil de risco e aos objetivos financeiros de cada investidor.',
-
+      titulo:    'Renda Variável',
+      descricao: 'Os produtos de renda variável da BRB Investimentos incluem ações de empresas listadas, fundos de investimento em ações (FIAs), fundos multimercado e ETFs. Esses instrumentos permitem ao investidor participar do desempenho de diferentes setores da economia, com potencial de valorização no longo prazo e recebimento de proventos, como dividendos.',
     },
     2: {
-      titulo: 'Fundos',
-      descricao: 'Os fundos de investimento oferecem diversificação imediata com gestão profissional, permitindo ao investidor acessar uma variedade de estratégias de forma prática. A BRB Investimentos disponibiliza uma ampla gama de fundos, incluindo multimercados, renda fixa, ações e internacionais, atendendo a diferentes perfis de risco e objetivos de retorno, com foco em consistência e eficiência na gestão dos recursos.',
-
+      titulo:    'Fundos',
+      descricao: 'Os fundos de investimento oferecem diversificação imediata com gestão profissional, permitindo ao investidor acessar uma variedade de estratégias de forma prática. A BRB Investimentos disponibiliza uma ampla gama de fundos, incluindo multimercados, renda fixa, ações e internacionais, atendendo a diferentes perfis de risco e objetivos de retorno.',
     },
     3: {
-      titulo: 'Previdência',
-      descricao: 'Os planos de previdência da BRB Investimentos são voltados para o planejamento financeiro de longo prazo, auxiliando na construção de uma aposentadoria mais segura. Com opções como PGBL e VGBL, esses produtos oferecem benefícios fiscais e flexibilidade de contribuições, adaptando-se a diferentes perfis de investidores. Além disso, contam com gestão profissional e diversificação de ativos, buscando equilibrar rentabilidade e segurança ao longo do tempo. Dessa forma, a BRB Investimentos proporciona uma solução eficiente para quem deseja garantir estabilidade financeira no futuro.',
+      titulo:    'Previdência',
+      descricao: 'Os planos de previdência da BRB Investimentos são voltados para o planejamento financeiro de longo prazo, auxiliando na construção de uma aposentadoria mais segura. Com opções como PGBL e VGBL, esses produtos oferecem benefícios fiscais e flexibilidade de contribuições, adaptando-se a diferentes perfis de investidores.',
     },
     4: {
-      titulo: 'Renda Fixa',
-      descricao: 'inserir texto novo',
-    }
+      titulo:    'Renda Fixa',
+      descricao: 'Os produtos de renda fixa da BRB Investimentos oferecem segurança e previsibilidade de retorno, ideais para investidores que buscam preservação de capital e rendimento consistente. Inclui CDBs, LCIs, LCAs, Tesouro Direto e debêntures, com diferentes prazos e rentabilidades para atender ao seu perfil.',
+    },
   };
 
   const contentBox   = document.getElementById('content-portifolio');
@@ -160,12 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     contentBox.classList.add('is-fading');
     setTimeout(() => {
-      contentBox.innerHTML = `
-        <h2>${data.titulo}</h2>
-        <p>${data.descricao}</p>
-        <div class="portfolio-actions">
-        </div>
-      `;
+      contentBox.innerHTML = `<h2>${data.titulo}</h2><p>${data.descricao}</p>`;
       contentBox.classList.remove('is-fading');
     }, 280);
 
@@ -180,13 +173,16 @@ document.addEventListener('DOMContentLoaded', () => {
   portfolioLis.forEach(li => {
     li.addEventListener('click', () => renderPortfolio(li.dataset.id));
     li.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); renderPortfolio(li.dataset.id); }
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        renderPortfolio(li.dataset.id);
+      }
     });
   });
 
 
   // ============================================================
-  //  STAT CARDS — entrada escalonada ao entrar na viewport
+  // STAT CARDS — entrada escalonada ao entrar na viewport
   // ============================================================
   const cardObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry, i) => {
@@ -201,7 +197,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // ============================================================
-  //  CONTADOR ANIMADO — stat-numbers
+  // CONTADOR ANIMADO — stat-numbers
   // ============================================================
   const counterObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -232,7 +228,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // ============================================================
-  //  HERO CAROUSEL
+  // HERO CAROUSEL
   // ============================================================
   const track   = document.getElementById('carouselTrack');
   const slides  = track ? track.querySelectorAll('.carousel-slide') : [];
@@ -259,10 +255,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   prevBtn?.addEventListener('click', () => { goTo(current - 1); startAutoplay(); });
   nextBtn?.addEventListener('click', () => { goTo(current + 1); startAutoplay(); });
+
   dots.forEach(dot => {
     dot.addEventListener('click', () => { goTo(Number(dot.dataset.index)); startAutoplay(); });
   });
 
+  // Swipe no mobile
   const wrapper = document.querySelector('.carousel-track-wrapper');
   if (wrapper) {
     let startX = 0;
@@ -274,64 +272,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   if (slides.length > 0) startAutoplay();
-
-  // ============================================================
-  //  CARROSSEL DE ASSESSORES — navegação manual com setas
-  // ============================================================
-  const assessoresTrack = document.getElementById('assessoresTrack');
-  const assessorCards = assessoresTrack ? assessoresTrack.querySelectorAll('.assessor-card') : [];
-  const assessorPrevBtn = document.querySelector('.assessores-carousel-btn--prev');
-  const assessorNextBtn = document.querySelector('.assessores-carousel-btn--next');
-  let assessorPage = 0;
-  const cardsPerPage = 5;
-  const totalPages = Math.ceil(assessorCards.length / cardsPerPage);
-
-  const updateAssessoresCarousel = (pageIndex) => {
-    if (!assessoresTrack || assessorCards.length === 0) return;
-    
-    // Limitar a página
-    assessorPage = Math.max(0, Math.min(pageIndex, totalPages - 1));
-    
-    // Deslocar por página: cada página = 5 cards
-    const carouselWidth = assessoresTrack.parentElement.offsetWidth;
-    const offsetPixels = assessorPage * carouselWidth;
-    assessoresTrack.style.transform = `translateX(-${offsetPixels}px)`;
-    
-    // Atualizar estado dos botões
-    if (assessorPrevBtn) {
-      assessorPrevBtn.style.opacity = assessorPage === 0 ? '0.5' : '1';
-      assessorPrevBtn.style.cursor = assessorPage === 0 ? 'not-allowed' : 'pointer';
-      assessorPrevBtn.style.pointerEvents = assessorPage === 0 ? 'none' : 'auto';
-    }
-    
-    if (assessorNextBtn) {
-      const isLastPage = assessorPage >= totalPages - 1;
-      assessorNextBtn.style.opacity = isLastPage ? '0.5' : '1';
-      assessorNextBtn.style.cursor = isLastPage ? 'not-allowed' : 'pointer';
-      assessorNextBtn.style.pointerEvents = isLastPage ? 'none' : 'auto';
-    }
-  };
-
-  if (assessorPrevBtn) {
-    assessorPrevBtn.addEventListener('click', () => {
-      if (assessorPage > 0) {
-        updateAssessoresCarousel(assessorPage - 1);
-      }
-    });
-  }
-
-  if (assessorNextBtn) {
-    assessorNextBtn.addEventListener('click', () => {
-      if (assessorPage < totalPages - 1) {
-        updateAssessoresCarousel(assessorPage + 1);
-      }
-    });
-  }
-
-  // Inicializar carrossel de assessores
-  if (assessorCards.length > 0) {
-    updateAssessoresCarousel(0);
-  }
 
   console.log('BRB Investimentos — scripts carregados.');
 });
@@ -350,14 +290,5 @@ function throttle(fn, limit = 100) {
       inThrottle = true;
       setTimeout(() => { inThrottle = false; }, limit);
     }
-  };
-}
-
-/** Debounce: aguarda `wait`ms de silêncio */
-function debounce(fn, wait = 150) {
-  let timer;
-  return function (...args) {
-    clearTimeout(timer);
-    timer = setTimeout(() => fn.apply(this, args), wait);
   };
 }
