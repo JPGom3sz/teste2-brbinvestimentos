@@ -340,6 +340,64 @@ nav {
   display: block;
 }
 
+
+/* Estilo para o item que contém o submenu */
+.has-submenu {
+  position: relative;
+}
+
+.has-submenu a {
+  display: flex !important;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chevron-right {
+  font-size: 0.7rem;
+  opacity: 0.5;
+}
+
+/* Esconder o submenu por padrão */
+.submenu {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 100%; /* Joga o menu para a direita */
+  min-width: 200px;
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 86, 168, 0.12);
+  box-shadow: 10px 16px 48px rgba(0, 31, 63, 0.1);
+  list-style: none;
+  padding: 0.5rem 0;
+  transition: all 0.2s ease;
+  transform: translateX(10px);
+}
+
+/* Mostrar o submenu ao passar o mouse no pai (li) */
+.has-submenu:hover > .submenu {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Ajuste de cor no hover do item pai quando o mouse está no submenu */
+.has-submenu:hover > a {
+  background: var(--light-blue);
+  color: var(--primary-blue);
+}
+
+/* Ponte invisível para o submenu não fechar no gap */
+.submenu::before {
+  content: '';
+  position: absolute;
+  right: 100%;
+  top: 0;
+  width: 10px;
+  height: 100%;
+}
+
 /* ============================================================
    6. UTILITÁRIOS
    ============================================================ */

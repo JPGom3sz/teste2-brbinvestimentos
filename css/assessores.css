@@ -324,6 +324,97 @@ img {
   display: block;
 }
 
+
+
+
+
+/* ============================================================
+   SUBMENU - TEMÁTICA BRB ASSESSORES
+   ============================================================ */
+
+.has-submenu {
+    position: relative;
+}
+
+/* Ajuste no link pai para alinhar a seta lateral */
+.nav-links .dropdown-menu .has-submenu > a {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 12px;
+}
+
+.chevron-right {
+    font-size: 0.8rem;
+    opacity: 0.4;
+    transition: transform var(--ease), opacity var(--ease);
+}
+
+/* Estilização do Submenu (2º Nível) */
+.nav-links .submenu {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: calc(100% + 5px); /* Pequeno gap para não encostar */
+    min-width: 200px;
+    list-style: none;
+    z-index: 1000;
+    
+    /* Visual seguindo o padrão da header */
+    background: rgba(17, 36, 68, 0.98); /* --brb-navy-4 com leve transparência */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: var(--r-sm);
+    border: 1px solid var(--brb-border);
+    box-shadow: 12px 16px 40px rgba(0, 0, 0, 0.4);
+    
+    padding: 0.5rem 0;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    transform: translateX(10px);
+}
+
+/* Mostrar ao hover */
+.has-submenu:hover > .submenu {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(0);
+}
+
+/* Feedback visual no item pai e na seta */
+.has-submenu:hover > a {
+    background: rgba(58, 127, 212, 0.15) !important;
+    color: var(--brb-white) !important;
+}
+
+.has-submenu:hover > a .chevron-right {
+    opacity: 1;
+    transform: translateX(3px);
+    color: var(--brb-cyan);
+}
+
+/* Itens internos do submenu */
+.submenu li + li {
+    border-top: 1px solid var(--brb-border-s) !important;
+}
+
+.submenu a {
+    font-size: 0.78rem !important; /* Ligeiramente menor para hierarquia */
+    padding: 8px 16px !important;
+}
+
+/* Ponte invisível para evitar que o menu feche ao mover o mouse */
+.submenu::after {
+    content: '';
+    position: absolute;
+    right: 100%;
+    top: 0;
+    width: 15px;
+    height: 100%;
+    background: transparent;
+}
 /* ============================================================
    HELPERS COMPARTILHADOS
    ============================================================ */
