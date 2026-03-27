@@ -116,11 +116,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // ============================================================
   // WHATSAPP — botão flutuante
   // ============================================================
-  document.querySelector('.whatsapp-btn')?.addEventListener('click', () => {
-    const phone   = '5561999999999';
-    const message = encodeURIComponent('Olá! Gostaria de saber mais sobre investimentos BRB.');
-    window.open(`https://wa.me/${phone}?text=${message}`, '_blank', 'noopener,noreferrer');
-  });
+  // document.querySelector('.whatsapp-btn')?.addEventListener('click', () => {
+   //  const phone   = '5561999999999';
+   //  const message = encodeURIComponent('Olá! Gostaria de saber mais sobre investimentos BRB.');
+    // window.open(`https://wa.me/${phone}?text=${message}`, '_blank', 'noopener,noreferrer');
+  // });
 
 
   // ============================================================
