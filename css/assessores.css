@@ -917,6 +917,251 @@ img {
 }
 
 /* ============================================================
+   CARD ASSESSORES
+   ============================================================ */
+
+/* ============================================================
+   ASSESSORIA SECTION 
+   ============================================================ */
+.assessoria-section {
+  background: linear-gradient(160deg, var(--brb-navy) 0%, var(--brb-navy-3) 100%);
+  padding: 6rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.assessoria-section::before {
+  content: '';
+  position: absolute;
+  top: -200px;
+  right: -200px;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(58, 127, 212, 0.08), transparent 70%);
+  pointer-events: none;
+}
+
+.assessoria-container {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.assessoria-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.assessoria-header h2 {
+  font-family: var(--ff-display);
+  font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+  font-weight: 700;
+  color: var(--brb-white);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.assessoria-header p {
+  font-size: 1.05rem;
+  color: var(--brb-text);
+  max-width: 560px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* Grid dos Cartões */
+.planos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  align-items: stretch;
+  margin-bottom: 3.5rem;
+}
+
+/* Cartão */
+.plano-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--brb-border);
+  border-radius: var(--r);
+  padding: 2.5rem 2rem;
+  transition: transform var(--ease), box-shadow var(--ease), border-color var(--ease), background var(--ease);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.plano-card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.plano-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: transparent;
+  transition: background var(--ease);
+}
+
+.plano-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--brb-blue-light);
+  background: rgba(58, 127, 212, 0.08);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
+.plano-card:hover::before {
+  background: linear-gradient(90deg, var(--brb-blue), var(--brb-cyan));
+}
+
+.plano-badge {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--brb-navy);
+  background: var(--brb-cyan);
+  padding: 0.3rem 0.75rem;
+  border-radius: 20px;
+  margin-bottom: 1.5rem;
+  align-self: flex-start;
+}
+
+/* Ícone */
+.plano-icone-container {
+  width: 56px;
+  height: 56px;
+  background: rgba(58, 127, 212, 0.18);
+  border: 1px solid var(--brb-border);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  color: var(--brb-cyan);
+  transition: background var(--ease), transform var(--ease);
+}
+
+.plano-card:hover .plano-icone-container {
+  background: rgba(58, 127, 212, 0.3);
+  transform: scale(1.08);
+}
+
+.plano-icone-container svg {
+  width: 28px;
+  height: 28px;
+}
+
+/* Textos */
+.plano-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--brb-white);
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.plano-patrimonio {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--brb-cyan);
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--brb-border);
+}
+
+/* Lista */
+.plano-beneficios {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.plano-beneficios li {
+  font-size: 0.88rem;
+  color: var(--brb-text);
+  margin-bottom: 0.9rem;
+  display: flex;
+  align-items: flex-start;
+  line-height: 1.55;
+  gap: 0.6rem;
+}
+
+.plano-beneficios li::before {
+  content: '✓';
+  flex-shrink: 0;
+  color: var(--brb-cyan);
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-top: 1px;
+}
+
+/* CTA da seção */
+.assessoria-cta-row {
+  text-align: center;
+}
+
+.assessoria-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2.5rem;
+  background: var(--brb-blue);
+  color: var(--brb-white);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  border-radius: var(--r-sm);
+  text-decoration: none;
+  transition: background var(--ease), transform var(--ease), box-shadow var(--ease);
+  box-shadow: 0 6px 20px rgba(26, 74, 138, 0.4);
+}
+
+.assessoria-cta-btn:hover {
+  background: var(--brb-blue-mid);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(26, 74, 138, 0.55);
+}
+
+/* Responsivo */
+@media (max-width: 968px) {
+  .planos-grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3rem;
+  }
+
+  .assessoria-section {
+    padding: 5rem 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .assessoria-header h2 {
+    font-size: 1.7rem;
+  }
+
+  .plano-card {
+    padding: 2rem 1.5rem;
+  }
+}
+
+
+
+
+/* ============================================================
    FOOTER
    ============================================================ */
 footer {

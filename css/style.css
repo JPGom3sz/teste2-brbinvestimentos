@@ -1343,21 +1343,44 @@ footer {
   .large-number { font-size: 7rem; top: -20px; left: -10px; }
 
   /* App download */
+  #app-download {
+    padding: 4rem 1.5rem;
+  }
+
   .app-content {
     grid-template-columns: 1fr;
-    gap: 3rem;
+    gap: 2.5rem;
     text-align: center;
   }
 
   .app-mockup {
-    order: 2;
+    order: 1;
     width: 100%;
-    max-width: 320px;
+    max-width: 260px;
     margin: 0 auto;
   }
 
-  .app-text    { order: 1; }
-  .app-qr-row  { justify-content: center; }
+  .app-mockup__img {
+    width: 100%;
+    height: auto;
+  }
+
+  .app-text    { order: 2; }
+
+  .app-title {
+    font-size: clamp(1.2rem, 5vw, 1.6rem);
+    text-align: center;
+    word-break: break-word;
+    hyphens: auto;
+    line-height: 1.35;
+  }
+
+  .app-qr-row  {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
   .app-store-btns { justify-content: center; }
 
   /* Assessores */
