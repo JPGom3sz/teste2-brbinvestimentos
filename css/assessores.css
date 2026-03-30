@@ -1265,7 +1265,7 @@ footer {
   margin: 0 auto;
   padding: 4rem 2rem 2rem;
   display: grid;
-  grid-template-columns: 1.6fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1.8fr 1fr 1fr 1fr 1fr 1.2fr;
   gap: 2.5rem;
 }
 
