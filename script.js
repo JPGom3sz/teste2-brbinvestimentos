@@ -52,8 +52,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   menuOverlay?.addEventListener('click', closeMenu);
 
-  // Fechar ao clicar em links comuns (não dropdown-toggle)
-  document.querySelectorAll('.nav-links a:not(.dropdown-toggle)').forEach(link => {
+  // Fechar ao clicar em links finais de navegação.
+  // Exclui: dropdown-toggle (abre dropdown) e has-submenu > a (abre submenu)
+  document.querySelectorAll('.nav-links a:not(.dropdown-toggle):not(.has-submenu > a)').forEach(link => {
     link.addEventListener('click', closeMenu);
   });
 
@@ -63,6 +64,16 @@ document.addEventListener('DOMContentLoaded', () => {
       if (window.innerWidth > 968) return;
       e.preventDefault();
       toggle.closest('.dropdown').classList.toggle('is-open');
+    });
+  });
+
+  // Submenu mobile: toggle por clique nos itens has-submenu
+  document.querySelectorAll('.nav-links .has-submenu > a').forEach(link => {
+    link.addEventListener('click', (e) => {
+      if (window.innerWidth > 968) return;
+      e.preventDefault();
+      e.stopPropagation();
+      link.closest('.has-submenu').classList.toggle('is-open');
     });
   });
 
@@ -108,19 +119,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // ============================================================
   // BOTÃO — Abrir conta (hero CTA)
   // ============================================================
-  document.querySelector('.btn-primary')?.addEventListener('click', () => {
+  document.querySelector('.btn-primary[data-cta="open-account"]')?.addEventListener('click', () => {
     window.open('https://brb.genialinvestimentos.com.br/auth/login', '_blank', 'noopener,noreferrer');
   });
-
-
-  // ============================================================
-  // WHATSAPP — botão flutuante
-  // ============================================================
-  // document.querySelector('.whatsapp-btn')?.addEventListener('click', () => {
-   //  const phone   = '5561999999999';
-   //  const message = encodeURIComponent('Olá! Gostaria de saber mais sobre investimentos BRB.');
-    // window.open(`https://wa.me/${phone}?text=${message}`, '_blank', 'noopener,noreferrer');
-  // });
 
 
   // ============================================================

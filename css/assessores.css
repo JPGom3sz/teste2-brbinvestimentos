@@ -1436,6 +1436,30 @@ footer {
 
   .nav-links .dropdown.is-open .dropdown-menu { display: block; }
 
+  /* Submenu mobile */
+  .nav-links .has-submenu > .submenu {
+    position: static !important;
+    transform: none !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    box-shadow: none;
+    border: none;
+    border-radius: 6px;
+    background: rgba(0,86,168,0.08);
+    padding: 0.2rem 0 0.2rem 1rem;
+    margin-top: 0.2rem;
+    display: none;
+  }
+
+  .nav-links .has-submenu.is-open > .submenu { display: block; }
+  .nav-links .has-submenu > .submenu::before { display: none !important; }
+  .nav-links .has-submenu > .submenu a {
+    font-size: 0.82rem;
+    padding: 0.5rem 0.75rem;
+    color: var(--deep-navy);
+  }
+
   /* Cor dos links dentro do dropdown mobile */
   .nav-links .dropdown-menu a {
     color: var(--brb-cyan);
@@ -1494,4 +1518,40 @@ footer {
 @media (max-width: 480px) {
   .as-hero__inner { padding: 2.5rem 1.2rem 3rem; }
   .footer-bottom  { gap: 1rem; }
+}
+
+/* ============================================================
+   FOOTER SOCIAL
+   ============================================================ */
+.footer-social {
+  display: flex;
+  gap: 0.65rem;
+  margin-top: 1.4rem;
+}
+
+.footer-social-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.14);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.65);
+  transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+  text-decoration: none;
+}
+
+.footer-social-btn:hover {
+  background: var(--primary-blue);
+  border-color: var(--primary-blue);
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+.footer-social-btn svg {
+  width: 17px;
+  height: 17px;
+  fill: currentColor;
 }
