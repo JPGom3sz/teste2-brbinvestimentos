@@ -116,7 +116,15 @@
 </p>
         <!-- CTA -->
         <div class="hero-ctas">
-          <button class="btn-primary" type="button" data-cta="open-account">Abra sua conta</button>
+          <!-- 
+            LINK MOBILE — troque o valor de data-mobile-href pelo link desejado para celular 
+          -->
+          <button
+            class="btn-primary"
+            type="button"
+            data-cta="open-account"
+            data-mobile-href="https://onelink.to/sfb3cy"
+          >Abra sua conta</button>
         </div>
       </div>
 
@@ -243,7 +251,7 @@
         <h2>Nosso time de <span class="assessores-highlight"> Especialistas </span></h2>
         <p class="assessores-subtitle">Profissionais dedicados a orientar cada passo da sua jornada de investimentos com expertise, ética e resultados comprovados.</p>
         <div class="assessores-cta-wrapper">
-          <a href="assessores.html" class="assessores-cta-btn">Conheça toda nossa equipe</a>
+          <a href="assessores.html" class="assessores-cta-btn">Conheça nossa equipe</a>
         </div>
       </div>
     </div>
@@ -387,5 +395,28 @@
  
 
   <script src="script.js"></script>
+  <script>
+    /* ===================================================
+       BOTÃO "ABRA SUA CONTA" — comportamento por dispositivo
+       Desktop → rola até a seção #app-download
+       Mobile  → abre o link definido em data-mobile-href
+    =================================================== */
+    document.querySelectorAll('[data-cta="open-account"]').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var isMobile = window.innerWidth <= 768;
+        if (isMobile) {
+          var mobileLink = btn.getAttribute('data-mobile-href');
+          if (mobileLink) {
+            window.open(mobileLink, '_blank', 'noopener,noreferrer');
+          }
+        } else {
+          var target = document.getElementById('app-download');
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+      });
+    });
+  </script>
 </body>
 </html>

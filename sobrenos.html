@@ -364,7 +364,19 @@
       <h2>Pronto para começar<br>sua jornada?</h2>
       <p>Abra sua conta gratuitamente e descubra como é fácil<br>investir com quem entende do assunto.</p>
       <div class="sn-cta__actions">
-        <a href="https://brb.genialinvestimentos.com.br/auth/login" class="sn-cta__btn sn-cta__btn--primary" target="_blank" rel="noopener noreferrer">
+        <!-- 
+          LINK MOBILE — troque o valor de data-mobile-href pelo link desejado para celular
+          No desktop, rola até a seção #app-download (na página index.html o usuário é redirecionado)
+          Aqui no Sobre Nós, no desktop abre o link padrão da conta; no mobile abre o link mobile.
+        -->
+        <a
+          
+          class="sn-cta__btn sn-cta__btn--primary js-open-account-sobrenos"
+          data-desktop-href="index.html#app-download"
+          data-mobile-href="https://onelink.to/sfb3cy"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Abrir minha conta
         </a>
         <a href="contato.html" class="sn-cta__btn sn-cta__btn--outline">
@@ -459,6 +471,26 @@
 
   <script src="script.js"></script>
   <script>
+    /* ===================================================
+       BOTÃO "ABRIR MINHA CONTA" — comportamento por dispositivo
+       Desktop → abre o link padrão (data-desktop-href)
+       Mobile  → abre o link definido em data-mobile-href
+    =================================================== */
+    document.querySelectorAll('.js-open-account-sobrenos').forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        var isMobile = window.innerWidth <= 768;
+        if (isMobile) {
+          var mobileHref = link.getAttribute('data-mobile-href');
+          if (mobileHref) window.open(mobileHref, '_blank', 'noopener,noreferrer');
+        } else {
+          var desktopHref = link.getAttribute('data-desktop-href');
+          if (desktopHref) window.location.href = desktopHref;
+        }
+      });
+    });
+    
+
     // Animação de scroll
     const animEls = document.querySelectorAll('[data-animate]');
     const observer = new IntersectionObserver((entries) => {
