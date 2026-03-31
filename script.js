@@ -119,8 +119,21 @@ document.addEventListener('DOMContentLoaded', () => {
   // ============================================================
   // BOTÃO — Abrir conta (hero CTA)
   // ============================================================
-  document.querySelector('.btn-primary[data-cta="open-account"]')?.addEventListener('click', () => {
-    window.open('index.html#app-download', '_blank', 'noopener,noreferrer');
+  document.querySelector('.btn-primary[data-cta="open-account"]')?.addEventListener('click', (e) => {
+    e.preventDefault();
+    const appSection = document.getElementById('app-download');
+    if (appSection) {
+      // Calcular posição central da seção
+      const sectionTop = appSection.offsetTop;
+      const sectionHeight = appSection.offsetHeight;
+      const windowHeight = window.innerHeight;
+      const scrollTo = sectionTop + (sectionHeight / 2) - (windowHeight / 2);
+      
+      window.scrollTo({
+        top: Math.max(0, scrollTo),
+        behavior: 'smooth'
+      });
+    }
   });
 
 
@@ -153,7 +166,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     5: {
       titulo:    'Criptoativos',
-      descricao: 'Em breve...',}
+      descricao: 'A BRB Investimentos está sempre evoluindo para oferecer o que há de mais moderno no mercado financeiro. Em breve, você terá acesso a uma nova classe de ativos diretamente na nossa plataforma: os Criptoativos.',}
   };
   
 

@@ -1335,6 +1335,25 @@ footer {
   .large-number  { font-size: 9rem; }
 }
 
+/* Tablets retrato — 768px */
+@media (max-width: 768px) {
+  .home-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .app-title {
+    font-size: 1.5rem;
+  }
+
+  .app-content {
+    gap: 2rem;
+  }
+
+  .app-mockup {
+    max-width: 300px;
+  }
+}
+
 /* Mobile — 968px */
 @media (max-width: 968px) {
 
@@ -1456,6 +1475,23 @@ footer {
     grid-row: 1;
   }
 
+  .home-text h1 {
+    font-size: clamp(2.2rem, 8vw, 3.5rem);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+
+  .home-eyebrow {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+  }
+
+  .subtitle {
+    font-size: clamp(0.95rem, 3vw, 1.1rem);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
   .hero-carousel {
     grid-column: 1;
     grid-row: 2;
@@ -1465,6 +1501,12 @@ footer {
 
   .hero-ctas {
     justify-content: center;
+    gap: 1rem;
+  }
+
+  .btn-primary {
+    padding: 0.9rem 2rem;
+    font-size: 0.95rem;
   }
 
   .carousel-track-wrapper {
@@ -1496,7 +1538,7 @@ footer {
   .app-mockup {
     order: 1;
     width: 100%;
-    max-width: 260px;
+    max-width: 280px;
     margin: 0 auto;
   }
 
@@ -1505,23 +1547,44 @@ footer {
     height: auto;
   }
 
-  .app-text    { order: 2; }
+  .app-text { order: 2; }
+
+  .app-eyebrow {
+    font-size: 0.75rem;
+    margin-bottom: 1rem;
+  }
 
   .app-title {
-    font-size: clamp(1.2rem, 5vw, 1.6rem);
+    font-size: clamp(1.3rem, 5.5vw, 1.8rem);
     text-align: center;
     word-break: break-word;
     hyphens: auto;
-    line-height: 1.35;
+    line-height: 1.4;
+    margin-bottom: 1.5rem;
   }
 
-  .app-qr-row  {
+  .app-qr-row {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    gap: 1rem;
   }
 
-  .app-store-btns { justify-content: center; }
+  .app-qr-img {
+    max-width: 120px;
+    width: 100%;
+  }
+
+  .app-qr-text {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .app-store-btns { 
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
 
   /* Assessores */
   #assessores { min-height: 500px; }
@@ -1581,8 +1644,43 @@ footer {
 @media (max-width: 480px) {
   :root { --px: 1.25rem; }
 
-  .logo img       { width: 95px; }
-  .home-text h1   { font-size: 2.1rem; }
+  .logo img { width: 95px; }
+  
+  .home-text h1 { 
+    font-size: 2.1rem;
+    line-height: 1.15;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+  }
+
+  .btn-primary {
+    padding: 0.85rem 1.75rem;
+    font-size: 0.9rem;
+  }
+
+  .app-title {
+    font-size: 1.25rem !important;
+    line-height: 1.45;
+    br {
+      display: none;
+    }
+  }
+
+  .app-mockup {
+    max-width: 240px;
+  }
+
+  .app-qr-img {
+    max-width: 100px;
+  }
+
+  .app-store-btn {
+    width: 100%;
+    max-width: 240px;
+    font-size: 0.85rem;
+  }
 
   .footer-content {
     grid-template-columns: 1fr;
@@ -1596,9 +1694,11 @@ footer {
     align-items: center;
   }
 
-  .app-store-btn { width: 100%; max-width: 220px; }
-
   #additional { padding: 5rem 1.25rem; }
+
+  #app-download {
+    padding: 3rem 1.25rem;
+  }
 }
 
 /* ============================================================
