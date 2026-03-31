@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // BOTÃO — Abrir conta (hero CTA)
   // ============================================================
   document.querySelector('.btn-primary[data-cta="open-account"]')?.addEventListener('click', () => {
-    window.open('https://brb.genialinvestimentos.com.br/auth/login', '_blank', 'noopener,noreferrer');
+    window.open('index.html#app-download', '_blank', 'noopener,noreferrer');
   });
 
 
@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ============================================================
   const portfolioData = {
     default: {
-      titulo:    'Nosso Portfólio Diversificado',
+      titulo:    'Conheça nossos produtos',
       descricao: 'O portfólio da BRB Investimentos é estruturado para atender diferentes perfis e objetivos financeiros, combinando segurança, diversificação e potencial de crescimento. A estratégia busca equilíbrio entre ativos de renda fixa e renda variável, permitindo ao investidor acessar oportunidades em diferentes mercados, sempre com gestão responsável e alinhada às melhores práticas do mercado financeiro.',
     },
     1: {
@@ -151,6 +151,9 @@ document.addEventListener('DOMContentLoaded', () => {
       titulo:    'Previdência',
       descricao: 'Os planos de previdência da BRB Investimentos são voltados para o planejamento financeiro de longo prazo, auxiliando na construção de uma aposentadoria mais segura. Com opções como PGBL e VGBL, esses produtos oferecem benefícios fiscais e flexibilidade de contribuições, adaptando-se a diferentes perfis de investidores.',
     },
+    5: {
+      titulo:    'Criptoativos',
+      descricao: 'Em breve...',}
   };
   
 
