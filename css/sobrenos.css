@@ -1191,6 +1191,33 @@ footer {
   .sn-stats__inner {
     gap: 2rem;
   }
+
+  /* Hero: evita imagem cortada em notebooks */
+  .sn-hero {
+    flex-direction: column;
+    justify-content: center;
+    min-height: auto;
+  }
+
+  .sn-hero__content {
+    padding: calc(var(--header-h) + 3rem) 2rem 2rem clamp(2rem, 5vw, 4rem);
+    text-align: left;
+    max-width: 100%;
+  }
+
+  .sn-hero__image-wrapper {
+    width: 100%;
+    height: 50vh;
+    min-height: 320px;
+    flex: none;
+    justify-content: center;
+  }
+
+  .sn-hero__image {
+    object-position: center top;
+    mask-image: linear-gradient(to bottom, transparent 0%, black 20%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 20%);
+  }
 }
 
 @media (max-width: 992px) {
@@ -1206,6 +1233,7 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-width: 100%;
   }
 
   .sn-hero__desc {
@@ -1215,7 +1243,9 @@ footer {
 
   .sn-hero__image-wrapper {
     height: 50vh;
+    min-height: 280px;
     width: 100%;
+    flex: none;
   }
 
   .sn-hero__image {

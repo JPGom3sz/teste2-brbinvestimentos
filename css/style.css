@@ -1327,12 +1327,41 @@ footer {
    14. RESPONSIVO
    ============================================================ */
 
-/* Tablets — 1200px */
+/* Notebooks / Tablets — 1200px */
 @media (max-width: 1200px) {
   :root { --px: 2rem; }
 
   .home-text h1  { font-size: 3rem; }
   .large-number  { font-size: 9rem; }
+
+  /* Corrige o carrossel que vazava para fora da tela */
+  .home-content {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+
+  .hero-carousel {
+    width: 100%;
+    margin-right: 0;
+  }
+}
+
+/* Notebooks menores — 1024px */
+@media (max-width: 1024px) {
+  .home-content {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 4rem var(--px) 2.5rem;
+  }
+
+  .hero-carousel {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .home-text h1 {
+    font-size: clamp(2.2rem, 3.5vw, 3rem);
+  }
 }
 
 /* Tablets retrato — 768px */
