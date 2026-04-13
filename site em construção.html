@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Em Construção | BRB Investimentos</title>
+    <style>
+        :root {
+            --brb-navy: #060f1e;
+            --brb-blue: #1a4a8a;
+            --brb-cyan: #5baadc;
+            --brb-white: #ffffff;
+            --brb-text: rgba(255, 255, 255, 0.82);
+            --ease: 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif; /* Fallback para Cera Pro */
+            background-color: var(--brb-navy);
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(26, 74, 138, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(91, 170, 220, 0.1) 0%, transparent 40%);
+            color: var(--brb-white);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .maintenance-container {
+            padding: 2rem;
+            max-width: 600px;
+            z-index: 10;
+        }
+
+
+
+        
+        .logo {
+            width: 180px;
+            margin-bottom: 2.5rem;
+            filter: drop-shadow(0 0 15px rgba(91, 170, 220, 0.2));
+            animation: fadeIn 1s ease-out;
+        }
+
+        .card {
+             background: rgba(255, 255, 255, 0.03);
+             backdrop-filter: blur(15px);
+             -webkit-backdrop-filter: blur(15px);
+             border: 1px solid rgba(58, 127, 212, 0.2);
+             padding: 3rem 2rem;
+             border-radius: 24px;
+             box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+             animation: slideUp 0.8s var(--ease);
+  
+  /* NOVAS REGRAS PARA CENTRALIZAÇÃO */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza horizontalmente */
+    justify-content: center; /* Centraliza verticalmente */
+    text-align: center; /* Garante que o texto fique centralizado */
+}
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+            color: var(--brb-white);
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: var(--brb-text);
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .loader {
+            width: 48px;
+            height: 48px;
+             border: 3px solid rgba(91, 170, 220, 0.2);
+             border-radius: 50%;
+             display: inline-block;
+             position: relative;
+             box-sizing: border-box;
+             animation: rotation 1s linear infinite;
+             margin: 1.5rem auto; 
+
+        }
+        .loader::after {
+            content: '';  
+            box-sizing: border-box;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: var(--brb-cyan);
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        @keyframes rotation {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+       .badge, h1, p {
+        margin-left: auto;
+     margin-right: auto;
+}
+    </style>
+</head>
+<body>
+
+    <div class="maintenance-container">
+        <img src="img\LOGO BRANCA.png" alt="BRB Investimentos" class="logo">
+
+        <div class="card">
+            <span class="badge">Novidades em breve</span>
+            <div class="loader"></div>
+            <h1>Estamos preparando algo novo para você.</h1>
+            <p>O portal da <strong>BRB Investimentos</strong> está passando por atualizações para oferecer uma experiência de investimento ainda mais completa e segura.</p>
+            
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
