@@ -110,7 +110,7 @@ header {
   left: 0;
   right: 0;
   height: var(--header-h);
-  background: var(--brb-navy);
+  background: var(--brb-navy); /* Cor de fundo alterada para o Navy dos assessores */
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   z-index: 1000;
@@ -125,24 +125,26 @@ header.header-hidden {
 
 nav {
   position: relative;
-  max-width: var(--container);
+  max-width: 1850px; 
   height: 100%;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 2rem 0 1rem; 
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
+.logo {
+  z-index: 2;
+  margin-left: 0;
+  margin-top: -10px;
+}
 
 .logo img {
-  margin-top: -0.9rem;
-  margin-right: 80rem;
-  height: 130px;
- 
+  height: 120px;
 }
 
 .nav-links {
-  color: var(--brb-white);
   display: flex;
   gap: 0.4rem;
   list-style: none;
@@ -150,15 +152,15 @@ nav {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-
- 
+  z-index: 1;
+  text-decoration: none;
 }
 
 .nav-links > li > a {
-  color: #ffffff;
-  text-decoration: none !important;
+  color: #ffffff; 
+  text-decoration: none;
   font-weight: 600;
-  font-size: 1.05rem;
+  font-size: 0.92rem;
   letter-spacing: 0.02em;
   padding: 0.65rem 1rem;
   border-radius: 8px;
@@ -171,13 +173,14 @@ nav {
 
 .nav-links > li > a:hover,
 .nav-links > li > a.active {
-  color: var(--brb-white);
+  color: var(--brb-white); /* Hover com as variáveis  */
   background: var(--brb-blue);
 }
 
 /* Dropdown */
 .nav-links .dropdown {
   position: relative;
+  text-decoration: none;
 }
 
 .nav-links .dropdown-toggle {
@@ -195,7 +198,6 @@ nav {
 }
 
 .nav-links .dropdown-menu {
-
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
@@ -206,7 +208,7 @@ nav {
   min-width: 240px;
   list-style: none;
   z-index: 999;
-  background:var(--brb-navy-4);
+  background: var(--brb-navy-4); /* Fundo escuro do dropdown */
   border-radius: 12px;
   border: 1px solid rgba(0, 86, 168, 0.12);
   box-shadow: 0 16px 48px rgba(0, 31, 63, 0.15);
@@ -214,7 +216,6 @@ nav {
   transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
 }
 
-/* Ponte invisível: evita que o menu feche ao passar o mouse pelo gap */
 .nav-links .dropdown-menu::before {
   content: '';
   position: absolute;
@@ -225,7 +226,6 @@ nav {
   background: transparent;
 }
 
-/* Seta decorativa */
 .nav-links .dropdown-menu::after {
   content: '';
   position: absolute;
@@ -234,7 +234,7 @@ nav {
   transform: translateX(-50%) translateY(50%) rotate(45deg);
   width: 12px;
   height: 12px;
-  background: #141f3f;
+  background: #141f3f; /* Seta decorativa escura */
   border-top: 1px solid rgba(0, 86, 168, 0.12);
   border-left: 1px solid rgba(0, 86, 168, 0.12);
   z-index: 1;
@@ -254,6 +254,7 @@ nav {
 }
 
 .nav-links .dropdown-menu li {
+
   position: relative;
   z-index: 2;
 }
@@ -263,24 +264,24 @@ nav {
 }
 
 .nav-links .dropdown-menu a {
-  
-  text-decoration: none !important;
+  text-decoration: none;
   display: block;
   padding: 11px 20px;
   font-weight: 500;
-  font-size: 1.03rem;
-  color: white;
+  font-size: 0.92rem;
+  color: white; /* Texto dos links internos em branco */
   transition: background var(--ease), color var(--ease);
 }
 
 .nav-links .dropdown-menu a:hover {
-  background: rgba(58, 127, 212, 0.15) !important;
-    
+  background: rgba(58, 127, 212, 0.15) !important; /* Hover escuro com azul suave */
+  color: var(--brb-white);
 }
 
 .nav-buttons {
   display: flex;
-  border: 1px solid red;
+  margin-left: auto;
+  z-index: 2;
 }
 
 .account-link {
@@ -322,7 +323,7 @@ nav {
   display: block;
   width: 26px;
   height: 2.5px;
-  background: var(--text-dark);
+  background: #ffffff; /* Ajustado para branco para aparecer no fundo escuro */
   border-radius: 2px;
   transition: var(--ease);
 }
@@ -344,140 +345,79 @@ nav {
   display: block;
 }
 
-/* Estilo para o item que contém o submenu */
 .has-submenu {
   position: relative;
 }
 
-.has-submenu a {
+.has-submenu > a {
   display: flex !important;
   justify-content: space-between;
   align-items: center;
+  padding-right: 12px;
 }
 
 .chevron-right {
-  font-size: 0.7rem;
-  opacity: 0.5;
+  font-size: 0.8rem;
+  opacity: 0.4;
+  transition: transform var(--ease), opacity var(--ease);
 }
 
 .submenu {
   position: absolute;
-  left: 100%;
+  left: calc(100% + 5px);
   top: -8px;
-  min-width: 180px;
-  background: #fff;
+  min-width: 200px;
+  background: rgba(17, 36, 68, 0.98); /* Fundo com leve transparência e blur */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-radius: 10px;
-  border: 1px solid rgba(0, 86, 168, 0.12);
-  box-shadow: 0 12px 36px rgba(0, 31, 63, 0.13);
+  border: 1px solid var(--brb-border);
+  box-shadow: 12px 16px 40px rgba(0, 0, 0, 0.4);
   padding: 0.5rem 0;
   list-style: none;
   opacity: 0;
   visibility: hidden;
   transform: translateX(-10px);
   transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+  z-index: 1000;
 }
 
-.has-submenu:hover .submenu {
+.has-submenu:hover > .submenu {
   opacity: 1;
   visibility: visible;
+  pointer-events: auto;
   transform: translateX(0);
 }
 
-.submenu li + li {
-  border-top: 1px solid rgba(0, 86, 168, 0.07);
-}
-
-.submenu a {
-  padding: 10px 16px;
-  font-size: 0.82rem;
-}
-
-
-
-/* ============================================================
-   SUBMENU - TEMÁTICA BRB ASSESSORES
-   ============================================================ */
-
-.has-submenu {
-    position: relative;
-}
-
-/* Ajuste no link pai para alinhar a seta lateral */
-.nav-links .dropdown-menu .has-submenu > a {
-    display: flex !important;
-    justify-content: space-between;
-    align-items: center;
-    padding-right: 12px;
-}
-
-.chevron-right {
-    font-size: 0.8rem;
-    opacity: 0.4;
-    transition: transform var(--ease), opacity var(--ease);
-}
-
-/* Estilização do Submenu (2º Nível) */
-.nav-links .submenu {
-    visibility: hidden;
-    opacity: 0;
-    pointer-events: none;
-    position: absolute;
-    top: 0;
-    left: calc(100% + 5px); /* Pequeno gap para não encostar */
-    min-width: 200px;
-    list-style: none;
-    z-index: 1000;
-    background: rgba(17, 36, 68, 0.98); /* --brb-navy-4 com leve transparência */
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-radius: var(--r-sm);
-    border: 1px solid var(--brb-border);
-    box-shadow: 12px 16px 40px rgba(0, 0, 0, 0.4);
-    
-    padding: 0.5rem 0;
-    transition: opacity 0.2s ease, transform 0.2s ease;
-    transform: translateX(10px);
-}
-
-/* Mostrar ao hover */
-.has-submenu:hover > .submenu {
-    visibility: visible;
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateX(0);
-}
-
-/* Feedback visual no item pai e na seta */
+/* Efeitos de hover específicos para o item que abre o submenu */
 .has-submenu:hover > a {
-    background: rgba(58, 127, 212, 0.15) !important;
-    color: var(--brb-white) !important;
+  background: rgba(58, 127, 212, 0.15) !important;
+  color: var(--brb-white) !important;
 }
 
 .has-submenu:hover > a .chevron-right {
-    opacity: 1;
-    transform: translateX(3px);
-    color: var(--brb-cyan);
+  opacity: 1;
+  transform: translateX(3px);
+  color: var(--brb-cyan);
 }
 
-/* Itens internos do submenu */
 .submenu li + li {
-    border-top: 1px solid var(--brb-border-s) !important;
+  border-top: 1px solid var(--brb-border-s) !important;
 }
 
 .submenu a {
-    font-size: 0.78rem !important; /* Ligeiramente menor para hierarquia */
-    padding: 8px 16px !important;
+  padding: 8px 16px !important;
+  font-size: 0.78rem !important;
 }
 
-/* Ponte invisível para evitar que o menu feche ao mover o mouse */
 .submenu::after {
-    content: '';
-    position: absolute;
-    right: 100%;
-    top: 0;
-    width: 15px;
-    height: 100%;
-    background: transparent;
+  content: '';
+  position: absolute;
+  right: 100%;
+  top: 0;
+  width: 15px;
+  height: 100%;
+  background: transparent;
 }
 /* ============================================================
    HELPERS COMPARTILHADOS

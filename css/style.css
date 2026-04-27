@@ -137,7 +137,7 @@ nav {
 }
 
 .logo img {
-  height: 55px;
+  height: 50px;
 }
 
 .nav-links {
@@ -154,7 +154,7 @@ nav {
 .nav-links > li > a {
   color: #1A1A1A;
   font-weight: 600;
-  font-size: 1.05rem;
+  font-size: 0.92rem;
   letter-spacing: 0.02em;
   padding: 0.65rem 1rem;
   border-radius: 8px;
@@ -259,7 +259,7 @@ nav {
   display: block;
   padding: 11px 20px;
   font-weight: 500;
-  font-size: 1.03rem;
+  font-size: 0.92rem;
   color: rgba(0, 0, 0, 0.7);
   transition: background var(--ease), color var(--ease);
 }
@@ -469,12 +469,18 @@ nav {
 }
 
 .home-text h1 {
-  font-size: clamp(3.2rem, 4.2vw, 4.6rem); 
-  color: #fff;
+  font-weight: 1000;
+  font-family: 'Cera Pro', 'Montserrat', sans-serif;
+  color: white;
+  font-size: 4.1rem; 
   line-height: 1.1;
-  margin-bottom: 1.5rem;
-  font-weight: 900;
-  letter-spacing: -0.02em;
+  text-align: left;
+  max-width: 600px; 
+  text-wrap: nowrap; 
+}
+
+.home-text h1 span.highlight {
+  margin-top: 5px;
 }
 
 .home-text h1 .highlight {
@@ -484,7 +490,7 @@ nav {
 }
 
 .home-text .subtitle {
-  font-size: clamp(1rem, 1.4vw, 1.12rem);
+  font-size: clamp(rem, 1.4vw, 1.12rem);
   color: rgba(255, 255, 255, 0.82);
   font-weight: 300;
   line-height: 1.8;
@@ -527,18 +533,51 @@ nav {
   background: linear-gradient(135deg, #ffffff 0%, #b5e5ff 100%);
 }
 
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.55);
+  border-radius: 12px;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.85rem 1.8rem;
+  white-space: nowrap;
+  transition: border-color var(--ease), background var(--ease), color var(--ease), transform var(--ease);
+  backdrop-filter: blur(4px);
+}
+
+.btn-outline:hover {
+  border-color: var(--accent-gold);
+  background: rgba(145, 212, 250, 0.12);
+  color: var(--accent-gold);
+  transform: translateY(-2px);
+}
+
+.desktop-only {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .desktop-only {
+    display: block;
+  }
+}
+
 /* ============================================================
    7. HERO CAROUSEL
    ============================================================ */
 .home-content {
-  max-width: 1850px;
+  max-width: 1850px; /*distancia do texto*/
   width: 100%;
   margin: 0 auto;
   padding: 5rem 2rem 4rem 1rem; 
   display: grid;
-  grid-template-columns: 1fr minmax(300px, 750px);
-  /* ALTERAÇÃO sutil aqui: gap reduzido de 3rem para 1.5rem para trazer o carrossel ligeiramente para a esquerda */
-  gap: 1.5rem; 
+  grid-template-columns: 1fr minmax(300px, 850px);
   align-items: center;
   position: relative;
   z-index: 1;
@@ -546,15 +585,16 @@ nav {
 }
 
 .hero-carousel {
-  width: calc(120% + 10px);
+  width: 100%; 
   max-width: none;
-  margin-right: -170px;
+  margin-right: 0; 
   animation: fadeInRight 0.9s ease-out 0.2s both;
   display: flex;
   flex-direction: column;
   gap: 1rem;
   align-self: center;
-  justify-self: start;
+
+  justify-self: end; 
 }
 
 .carousel-track-wrapper {
@@ -588,7 +628,7 @@ nav {
 .carousel-img {
   width: 100%;
   height: 100%;
-  object-fit: contain; 
+  object-fit: cover; 
   display: block;
 }
 
@@ -709,9 +749,39 @@ nav {
   color: #3182ce;
   font-size: 24px;
 }
-.floating-card-container :hover {
-  transform: translateY(-4px);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
+.benefit-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  flex: 1;
+  border-radius: 8px; 
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); 
+  cursor: pointer;
+}
+
+/* 2. O Hover propriamente dito */
+.benefit-item:hover {
+  background: rgba(255, 255, 255, 0.05); 
+  transform: translateY(-8px); 
+}
+
+
+.benefit-item:hover i {
+  color: #63b3ed; 
+  transform: scale(1.1); 
+  transition: all 0.3s ease;
+}
+
+.benefit-item:hover .benefit-text strong {
+  color: #afd6fc; 
+  transition: color 0.3s ease;
+}
+
+
+.benefit-card:hover {
+  border-color: rgba(49, 130, 206, 0.4); 
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5);
+  transition: all 0.5s ease;
 }
 
 

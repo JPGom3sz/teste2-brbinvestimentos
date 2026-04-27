@@ -122,21 +122,22 @@ header.header-hidden {
 
 nav {
   position: relative;
-  max-width: var(--container);
+  max-width: 1850px; 
   height: 100%;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 2rem 0 1rem; 
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
+.logo {
+  z-index: 2;
+  margin-left: 0;
+}
 
 .logo img {
-  border: 1px solid red;
-  margin-right: 80rem;
-  height: 55px;
- 
- 
+  height: 50px;
 }
 
 .nav-links {
@@ -144,18 +145,16 @@ nav {
   gap: 0.4rem;
   list-style: none;
   align-items: center;
-
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-
- 
+  z-index: 1;
 }
 
 .nav-links > li > a {
   color: #1A1A1A;
   font-weight: 600;
-  font-size: 1.05rem;
+  font-size: 0.92rem;
   letter-spacing: 0.02em;
   padding: 0.65rem 1rem;
   border-radius: 8px;
@@ -210,7 +209,6 @@ nav {
   transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
 }
 
-/* Ponte invisível: evita que o menu feche ao passar o mouse pelo gap */
 .nav-links .dropdown-menu::before {
   content: '';
   position: absolute;
@@ -221,7 +219,6 @@ nav {
   background: transparent;
 }
 
-/* Seta decorativa */
 .nav-links .dropdown-menu::after {
   content: '';
   position: absolute;
@@ -262,7 +259,7 @@ nav {
   display: block;
   padding: 11px 20px;
   font-weight: 500;
-  font-size: 1.03rem;
+  font-size: 0.92rem;
   color: rgba(0, 0, 0, 0.7);
   transition: background var(--ease), color var(--ease);
 }
@@ -274,7 +271,8 @@ nav {
 
 .nav-buttons {
   display: flex;
-  border: 1px solid red;
+  margin-left: auto;
+  z-index: 2;
 }
 
 .account-link {
@@ -338,7 +336,6 @@ nav {
   display: block;
 }
 
-/* Estilo para o item que contém o submenu */
 .has-submenu {
   position: relative;
 }
@@ -385,6 +382,7 @@ nav {
   padding: 10px 16px;
   font-size: 0.82rem;
 }
+
 
 
 
