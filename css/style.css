@@ -122,21 +122,22 @@ header.header-hidden {
 
 nav {
   position: relative;
-  max-width: var(--container);
+  max-width: 1850px; 
   height: 100%;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 2rem 0 1rem; 
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
+.logo {
+  z-index: 2;
+  margin-left: 0;
+}
 
 .logo img {
-  border: 1px solid red;
-  margin-right: 80rem;
   height: 55px;
- 
- 
 }
 
 .nav-links {
@@ -144,12 +145,10 @@ nav {
   gap: 0.4rem;
   list-style: none;
   align-items: center;
-
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-
- 
+  z-index: 1;
 }
 
 .nav-links > li > a {
@@ -210,7 +209,6 @@ nav {
   transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
 }
 
-/* Ponte invisível: evita que o menu feche ao passar o mouse pelo gap */
 .nav-links .dropdown-menu::before {
   content: '';
   position: absolute;
@@ -221,7 +219,6 @@ nav {
   background: transparent;
 }
 
-/* Seta decorativa */
 .nav-links .dropdown-menu::after {
   content: '';
   position: absolute;
@@ -274,7 +271,8 @@ nav {
 
 .nav-buttons {
   display: flex;
-  border: 1px solid red;
+  margin-left: auto;
+  z-index: 2;
 }
 
 .account-link {
@@ -338,7 +336,6 @@ nav {
   display: block;
 }
 
-/* Estilo para o item que contém o submenu */
 .has-submenu {
   position: relative;
 }
@@ -386,49 +383,73 @@ nav {
   font-size: 0.82rem;
 }
 
-
-
-
-
-
 /* ============================================================
    6. HERO SECTION
    ============================================================ */
+.main-hero-wrapper {
+  position: relative;
+  margin-bottom: 80px;
+}
+
 #home {
-  min-height: 100vh;
+  min-height: calc(100vh - 100px);
   background: var(--gradient-blue);
   position: relative;
   overflow: hidden;
   padding-top: var(--header-h);
+  padding-bottom: 100px;
   display: flex;
   flex-direction: column;
 }
 
-#home::before {
-  content: '';
+.hero-bg-glow {
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(ellipse at 10% 60%, rgba(0, 128, 216, 0.18) 0%, transparent 55%),
-    radial-gradient(ellipse at 90% 20%, rgba(145, 212, 250, 0.10) 0%, transparent 50%),
-    radial-gradient(ellipse at 50% 110%, rgba(0, 62, 120, 0.4) 0%, transparent 60%);
   pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
 }
 
-#home::after {
+.hero-bg-glow::before, .hero-bg-glow::after {
   content: '';
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  z-index: 0;
+}
+
+.hero-bg-glow::before {
+  width: 600px;
+  height: 600px;
+  background: rgba(145, 212, 250, 0.12);
+  top: -10%;
+  left: -5%;
+}
+
+.hero-bg-glow::after {
+  width: 550px;
+  height: 550px;
+  background: rgba(0, 128, 216, 0.2);
+  bottom: -5%;
+  right: 5%;
+}
+
+.hero-bg-grid {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
   background-size: 60px 60px;
+  -webkit-mask-image: radial-gradient(ellipse at center, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 75%);
+  mask-image: radial-gradient(ellipse at center, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 75%);
   pointer-events: none;
+  z-index: 0;
 }
 
 .home-eyebrow {
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: 900;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--light-blue);
@@ -438,6 +459,8 @@ nav {
 
 .home-text {
   animation: fadeInLeft 0.9s ease-out both;
+  max-width: 650px; 
+  margin-left: 0;
 }
 
 @keyframes fadeInLeft {
@@ -446,16 +469,18 @@ nav {
 }
 
 .home-text h1 {
-  font-size: clamp(2.4rem, 4.5vw, 4rem);
+  font-size: clamp(3.2rem, 4.2vw, 4.6rem); 
   color: #fff;
   line-height: 1.1;
   margin-bottom: 1.5rem;
   font-weight: 900;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
 }
 
 .home-text h1 .highlight {
   color: var(--accent-gold);
+  text-shadow: 0 0 25px rgba(145, 212, 250, 0.3);
+  font-weight: 900;
 }
 
 .home-text .subtitle {
@@ -482,7 +507,7 @@ nav {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: var(--accent-gold);
+  background: linear-gradient(135deg, #b5e5ff 0%, var(--accent-gold) 100%);
   color: var(--deep-navy);
   border: none;
   border-radius: 12px;
@@ -498,30 +523,22 @@ nav {
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 14px 32px rgba(145, 212, 250, 0.45);
-  background: #b5e5ff;
+  box-shadow: 0 14px 32px rgba(145, 212, 250, 0.5);
+  background: linear-gradient(135deg, #ffffff 0%, #b5e5ff 100%);
 }
-
-
-
-
 
 /* ============================================================
    7. HERO CAROUSEL
    ============================================================ */
-@keyframes fadeInRight {
-  from { opacity: 0; transform: translateX(50px); }
-  to   { opacity: 1; transform: translateX(0); }
-}
-
 .home-content {
-  max-width: var(--container);
+  max-width: 1850px;
   width: 100%;
   margin: 0 auto;
-  padding: 5rem var(--px) 4rem;
+  padding: 5rem 2rem 4rem 1rem; 
   display: grid;
-  grid-template-columns: minmax(320px, 0.9fr) minmax(180px, 1.35fr);
-  gap: 3rem;
+  grid-template-columns: 1fr minmax(300px, 750px);
+  /* ALTERAÇÃO sutil aqui: gap reduzido de 3rem para 1.5rem para trazer o carrossel ligeiramente para a esquerda */
+  gap: 1.5rem; 
   align-items: center;
   position: relative;
   z-index: 1;
@@ -544,11 +561,9 @@ nav {
   width: 100%;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow:
-  0 30px 80px rgba(0, 0, 0, 0.4),
-  0 0 0 1px rgba(255, 255, 255, 0.08);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.08);
   position: relative;
- height: 420px;
+  height: 420px;
   aspect-ratio: 16 / 9; 
   height: auto;
 }
@@ -629,7 +644,18 @@ nav {
   background: var(--accent-gold);
   width: 26px;
   border-radius: 4px;
-  
+}
+
+/* ============================================================
+   8. BLOCO FLUTUANTE (QUEBRA DE SEÇÃO)
+   ============================================================ */
+.hero-floating-section {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  transform: translateY(50%); 
+  z-index: 100;
 }
 
 .floating-card-container {
@@ -637,23 +663,19 @@ nav {
   margin: 0 auto;
   padding: 0 20px;
   position: relative;
-  z-index: 99; /* Garante que fique acima das fotos de fundo */
 }
 
 .benefit-card {
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
-  background: #0a2a5e; /* Tom de azul escuro da imagem */
+  background: rgba(10, 42, 94, 0.90); 
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   padding: 30px 20px;
   border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  
-  /* Faz o card subir para a div anterior */
-  margin-top: -60px; 
-  
-  /* Opcional: Efeito de borda sutil */
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .benefit-item {
@@ -664,7 +686,6 @@ nav {
   padding: 0 15px;
 }
 
-/* Linha divisória entre os itens (opcional, igual à imagem) */
 .benefit-item:not(:last-child) {
   border-right: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -678,34 +699,25 @@ nav {
 }
 
 .benefit-text p {
-  color: #a0aec0; /* Cor de texto mais suave */
+  color: #a0aec0;
   font-size: 13px;
   line-height: 1.4;
   margin: 0;
 }
 
-/* Ajuste para ícones (se estiver usando imagens ou fontes de ícone) */
 .benefit-item i {
-  color: #3182ce; /* Cor azul do ícone */
+  color: #3182ce;
   font-size: 24px;
 }
-
-/* Responsividade: No mobile, os cards empilham */
-@media (max-width: 768px) {
-  .benefit-card {
-    flex-direction: column;
-    margin-top: -40px;
-    gap: 25px;
-  }
-  .benefit-item:not(:last-child) {
-    border-right: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding-bottom: 15px;
-  }
+.floating-card-container :hover {
+  transform: translateY(-4px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
 }
 
+
+
 /* ============================================================
-   7. STATS (ADDITIONAL)
+   9. STATS E PORTFÓLIO
    ============================================================ */
 #additional {
   padding: 6rem var(--px);
@@ -821,12 +833,8 @@ nav {
   box-shadow: 0 10px 30px rgba(0, 86, 168, 0.4);
 }
 
-
-/* ============================================================
-   8. PORTFÓLIO
-   ============================================================ */
 #portfolio {
-  padding: 7rem var(--px);
+  padding: 10rem var(--px) 7rem;
   background: linear-gradient(135deg, #f8fbff 0%, #ffffff 100%);
 }
 
@@ -880,7 +888,6 @@ nav {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
-  
 }
 
 .portfolio-list li {
@@ -927,11 +934,8 @@ nav {
   font-weight: 400;
 }
 
-
-
-
 /* ============================================================
-   9. ASSESSORES
+   10. ASSESSORES
    ============================================================ */
 #assessores {
   position: relative;
@@ -1005,7 +1009,7 @@ nav {
 
 
 /* ============================================================
-   10. APP DOWNLOAD
+   11. APP DOWNLOAD
    ============================================================ */
 #app-download {
   padding: 6rem var(--px);
@@ -1133,9 +1137,8 @@ nav {
 
 
 /* ============================================================
-   11. FOOTER
+   12. FOOTER E WHATSAPP
    ============================================================ */
-   
 footer {
   background: var(--gradient-blue);
   color: #fff;
@@ -1146,8 +1149,7 @@ footer {
   max-width: var(--container);
   margin: 0 auto 3rem;
   display: grid;
-  grid-template-columns: 1.2fr 1fr 1fr 1.2fr 1fr
-  1fr;
+  grid-template-columns: 1.2fr 1fr 1fr 1.2fr 1fr 1fr;
   gap: 3rem;
 }
 
@@ -1239,8 +1241,6 @@ footer {
   gap: 2rem;
 }
 
-
-
 .footer-left {
   display: flex;
   align-items: center;
@@ -1295,10 +1295,6 @@ footer {
   opacity: 1;
 }
 
-
-/* ============================================================
-   12. WHATSAPP BUTTON
-   ============================================================ */
 .whatsapp-btn {
   position: fixed;
   bottom: 2rem;
@@ -1420,15 +1416,27 @@ footer {
     justify-content: center;
   }
 
-  /* Benefits Bar */
-  .benefits-container {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    padding: 1.5rem;
+  .main-hero-wrapper {
+    margin-bottom: 220px; 
+  }
+  
+  #home {
+    padding-bottom: 120px;
+  }
+
+  .hero-floating-section {
+    transform: translateY(35%); 
   }
 
   .benefit-card {
-    padding: 1rem 1.2rem;
+    flex-direction: column;
+    gap: 25px;
+  }
+  
+  .benefit-item:not(:last-child) {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 15px;
   }
 
   /* Hero */
@@ -1550,9 +1558,6 @@ footer {
   }
 
   .app-store-btn { width: 100%; max-width: 240px; }
-  
-  .benefit-content h3 { font-size: 0.95rem; }
-  .benefit-content p { font-size: 0.78rem; }
 }
 
 /* ============================================================
