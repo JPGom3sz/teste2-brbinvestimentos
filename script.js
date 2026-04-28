@@ -108,9 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ============================================================
   // BOTÃO — Abrir conta (hero CTA)
   // ============================================================
-  document.querySelector('.btn-primary')?.addEventListener('click', () => {
-    window.open('https://brb.genialinvestimentos.com.br/auth/login', '_blank', 'noopener,noreferrer');
-  });
+ 
 
 
   // ============================================================
@@ -304,3 +302,7 @@ function throttle(fn, limit = 100) {
     }
   };
 }
+
+
+
+

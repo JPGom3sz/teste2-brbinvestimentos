@@ -25,7 +25,7 @@
           </a>
           <ul class="dropdown-menu">
             <li class="has-submenu">
-              <a href="#">Renda Fixa <span class="chevron-right">▸</span></a>
+              <a href="renda-fixa.html">Renda Fixa <span class="chevron-right">▸</span></a>
               <ul class="submenu">
                 <li><a href="site em construção.html">CDB</a></li>
                 <li><a href="site em construção.html">LCI/LCA</a></li>
@@ -119,12 +119,13 @@
             Conheça a Plataforma <span class="emphasis">BRB Investimentos.</span> <br>
           </p>
           <div class="hero-ctas">
-            <button
-              class="btn-primary"
-              type="button"
-              data-cta="open-account"
-              data-mobile-href="https://onelink.to/sfb3cy"
-            >Abra sua conta</button>
+          <button
+  class="btn-primary"
+  id="botao-conta"
+  type="button"
+  data-desktop-href="#mockup-link" 
+  data-mobile-href="https://onelink.to/sfb3cy"
+>Abra sua conta</button>
             <a
               href="assessores.html"
               class="btn-outline"
@@ -285,15 +286,15 @@
 
   <section id="app-download">
     <div class="app-content">
-      <div class="app-mockup">
+      <div class="app-mockup" id="mockup-link">
         <img src="img/Telas APP BRB (23.5 x 50 cm).png" alt="App BRB Investimentos" class="app-mockup__img" />
       </div>
 
       <div class="app-text">
-        <p class="app-eyebrow">DÊ O PRIMEIRO PASSO</p>
+        <p class="app-eyebrow"> DÊ O PRIMEIRO PASSO</p>
         <h2 class="app-title">ACESSE O MELHOR DO MERCADO<br />FINANCEIRO COM A SOLIDEZ,<br />O PLANEJAMENTO E A<br />ASSESSORIA QUE VOCÊ MERECE.</h2>
 
-        <div class="app-qr-row">
+        <div class="app-qr-row"> 
           <img src="img/qrcode download app.png" alt="QR Code para baixar o app" class="app-qr-img" />
           <p class="app-qr-text">
             Descubra a Plataforma BRB Investimentos. Conta dedicada, acesso a produtos de alta performance, assessoria especializada e ferramentas de análise avançadas. Baixe o app e comece a investir hoje.
@@ -339,7 +340,7 @@
       <div class="footer-column">
         <h4>Produtos</h4>
         <ul>
-          <li><a href="index.html#portfolio">Renda Fixa</a></li>
+          <li><a href="renda-fixa.html">Renda Fixa</a></li>
           <li><a href="index.html#portfolio">Fundos</a></li>
           <li><a href="index.html#portfolio">Previdência</a></li>
           <li><a href="index.html#portfolio">Renda Variável</a></li>
@@ -402,6 +403,62 @@
       </div>
     </div>
   </footer>
+  <script>
+    /* ===================================================
+       BOTÃO "ABRIR MINHA CONTA" — comportamento por dispositivo
+       Desktop → abre o link padrão (data-desktop-href)
+       Mobile  → abre o link definido em data-mobile-href
+    =================================================== */
+   
+    document.querySelectorAll('.btn-primary').forEach(function(link) { // <-- CORREÇÃO: Adicionado o ponto (.) antes da classe
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        var isMobile = window.innerWidth <= 768;
+        
+        if (isMobile) {
+          var mobileHref = link.getAttribute('data-mobile-href');
+          // <-- CORREÇÃO: Parâmetros do window.open ajustados para abrir com segurança em nova aba
+          if (mobileHref) window.open(mobileHref, '_blank', 'noopener,noreferrer'); 
+        } else {
+          var desktopHref = link.getAttribute('data-desktop-href');
+          if (desktopHref) window.location.href = desktopHref;
+        }
+      });
+    });
+    
+
+    // Animação de scroll (Tudo certo aqui)
+    const animEls = document.querySelectorAll('[data-animate]');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('is-visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    animEls.forEach(el => observer.observe(el));
+
+    // Sistema de abas (Tudo certo aqui)
+    const tabs     = document.querySelectorAll('.sn-about__tab');
+    const contents = document.querySelectorAll('.sn-about__content');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const targetTab = tab.dataset.tab;
+
+        tabs.forEach(t => t.classList.remove('sn-about__tab--active'));
+        contents.forEach(c => c.classList.remove('sn-about__content--active'));
+
+        tab.classList.add('sn-about__tab--active');
+
+        const targetContent = document.getElementById(`tab-${targetTab}`);
+        if (targetContent) {
+          targetContent.classList.add('sn-about__content--active');
+        }
+      });
+    });
+  </script>
 
   <script src="script.js"></script>
 </body>
