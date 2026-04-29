@@ -465,6 +465,7 @@ nav {
   animation: fadeInLeft 0.9s ease-out both;
   max-width: 650px; 
   margin-left: 0;
+  margin-top: -20px;
 }
 
 @keyframes fadeInLeft {
@@ -476,6 +477,7 @@ nav {
   font-weight: 1000;
   font-family: 'Cera Pro', 'Montserrat', sans-serif;
   color: white;
+ 
   font-size: 4.1rem; 
   line-height: 1.1;
   text-align: left;
@@ -494,9 +496,10 @@ nav {
 }
 
 .home-text .subtitle {
-  font-size: clamp(rem, 1.4vw, 1.12rem);
+  font-size: clamp(1.1rem, 1.4vw, 1.12rem);
   color: rgba(255, 255, 255, 0.82);
   font-weight: 300;
+  margin-top: 30px;
   line-height: 1.8;
   margin-bottom: 2.5rem;
 }
@@ -511,6 +514,7 @@ nav {
   align-items: center;
   gap: 1.2rem;
   flex-wrap: wrap;
+  margin-top: -30px;
 }
 
 .btn-primary {
