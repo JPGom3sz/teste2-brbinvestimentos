@@ -1012,6 +1012,35 @@ nav {
   font-weight: 400;
 }
 
+.portfolio-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  padding: 0.75rem 1.75rem;
+  background: var(--primary-blue);
+  color: #fff;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 6px;
+  letter-spacing: 0.01em;
+  transition: background 0.22s ease, transform 0.18s ease, box-shadow 0.22s ease;
+  box-shadow: 0 4px 14px rgba(0, 86, 168, 0.25);
+}
+
+.portfolio-cta-btn:hover {
+  background: #004090;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 86, 168, 0.35);
+}
+
+.portfolio-cta-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 10px rgba(0, 86, 168, 0.2);
+}
+
 /* ============================================================
    10. ASSESSORES
    ============================================================ */

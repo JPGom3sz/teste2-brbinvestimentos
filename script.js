@@ -124,37 +124,42 @@ document.addEventListener('DOMContentLoaded', () => {
   // ============================================================
   // PORTFÓLIO — troca de conteúdo com fade
   // ============================================================
-  // ============================================================
-  // PORTFÓLIO — troca de conteúdo com fade
-  // ============================================================
+
   const portfolioData = {
     default: {
       titulo:    'Conheça nossos produtos',
       descricao: 'O portfólio da BRB Investimentos é estruturado para atender diferentes perfis e objetivos financeiros, combinando segurança, diversificação e potencial de crescimento. A estratégia busca equilíbrio entre ativos de renda fixa e renda variável, permitindo ao investidor acessar oportunidades em diferentes mercados, sempre com gestão responsável e alinhada às melhores práticas do mercado financeiro.',
+      link:      null,
     },
     1: {
       titulo:    'Renda Fixa',
       descricao: 'Os produtos de renda fixa da BRB Investimentos oferecem segurança e previsibilidade de retorno, ideais para investidores que buscam preservação de capital e rendimento consistente. Inclui CDBs, LCIs, LCAs, Tesouro Direto e debêntures, com diferentes prazos e rentabilidades para atender ao seu perfil.',
+      link:      'renda-fixa.html',
     },
     2: {
       titulo:    'Renda Variável',
       descricao: 'Os produtos de renda variável da BRB Investimentos incluem ações de empresas listadas, fundos de investimento em ações (FIAs), fundos multimercado e ETFs. Esses instrumentos permitem ao investidor participar do desempenho de diferentes setores da economia, com potencial de valorização no longo prazo e recebimento de proventos, como dividendos.',
+      link:      'renda-variavel.html',
     },
     3: {
       titulo:    'Fundos',
       descricao: 'Os fundos de investimento oferecem diversificação imediata com gestão profissional, permitindo ao investidor acessar uma variedade de estratégias de forma prática. A BRB Investimentos disponibiliza uma ampla gama de fundos, incluindo multimercados, renda fixa, ações e internacionais, atendendo a diferentes perfis de risco e objetivos de retorno.',
+      link:      'fundos.html',
     },
     4: {
       titulo:    'Previdência',
       descricao: 'Os planos de previdência da BRB Investimentos são voltados para o planejamento financeiro de longo prazo, auxiliando na construção de uma aposentadoria mais segura. Com opções como PGBL e VGBL, esses produtos oferecem benefícios fiscais e flexibilidade de contribuições, adaptando-se a diferentes perfis de investidores.',
+      link:      'previdencia.html',
     },
     5: {
       titulo:    'Mercado Futuro',
       descricao: 'O mercado de futuros permite aos investidores negociar contratos para a compra ou venda de ativos em uma data futura, com o objetivo de especular sobre as variações de preços ou hedging de riscos. A BRB Investimentos oferece acesso a esse mercado com ferramentas e suporte especializado.',
+      link:      'mercado-futuro.html',
     },
     6: {
       titulo:    'Criptoativos',
       descricao: 'A BRB Investimentos está sempre evoluindo para oferecer o que há de mais moderno no mercado financeiro. Em breve, você terá acesso a uma nova classe de ativos diretamente na nossa plataforma: os Criptoativos.',
+      link:      'criptoativos.html',
     },
   };
   
@@ -166,9 +171,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const data = portfolioData[id];
     if (!data || !contentBox) return;
 
+    const btnHTML = data.link
+      ? `<a href="${data.link}" class="portfolio-cta-btn">Saiba mais sobre ${data.titulo} <span aria-hidden="true">→</span></a>`
+      : '';
+
     contentBox.classList.add('is-fading');
     setTimeout(() => {
-      contentBox.innerHTML = `<h2>${data.titulo}</h2><p>${data.descricao}</p>`;
+      contentBox.innerHTML = `<h2>${data.titulo}</h2><p>${data.descricao}</p>${btnHTML}`;
       contentBox.classList.remove('is-fading');
     }, 280);
 
