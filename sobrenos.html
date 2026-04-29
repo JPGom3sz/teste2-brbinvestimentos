@@ -10,101 +10,73 @@
 <body>
 
   <!-- ===== HEADER ===== -->
-  <header id="site-header">
+ <header id="site-header">
     <nav>
       <div class="logo">
         <a href="index.html" aria-label="BRB Investimentos - Início">
           <img src="img/quartinho(1).png" alt="BRB Investimentos" />
         </a>
       </div>
-
-      <ul class="nav-links" id="mobileMenu" role="menubar">
-
-      
-    <li class="dropdown">
-     <a href="" class="dropdown-toggle">
-    Produtos e Serviços <span class="chevron" aria-hidden="true">▾</span>
-  </a>
   
-  <ul class="dropdown-menu">
-    <li class="has-submenu">
-      <a href="#">Renda Fixa <span class="chevron-right">▸</span></a>
-      <ul class="submenu">
-        <li><a href="site em construção.html">CDB</a></li>
-        <li><a href="site em construção.html">LCI/LCA</a></li>
-        <li><a href="site em construção.html">CRI/CRA</a></li>
-        <li><a href="site em construção.html">Outros</a></li>
-      </ul>
-    </li>
-   
+      <ul class="nav-links" id="mobileMenu" role="menubar">
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropdown-toggle">
+            Produtos e Serviços <span class="chevron" aria-hidden="true">▾</span>
+          </a>
+          <ul class="dropdown-menu">
+            <li class="has-submenu">
+              <a href="renda-fixa.html">Renda Fixa <span class="chevron-right"></span></a>
+            </li>
+            <li class="has-submenu">
+              <a href="javascript:void(0)">Renda Variável <span class="chevron-right"></span></a>             
+            </li>  
+            <li class="has-submenu">
+              <a href="javascript:void(0)">Previdência <span class="chevron-right"></span></a>             
+            </li> 
+            <li class="has-submenu">
+              <a href="site em construção.html">Fundos <span class="chevron-right"></span></a>
+            </li>
 
-    <li class="has-submenu">
-      <a href="#">Renda Variável <span class="chevron-right">▸</span></a>
-      <ul class="submenu">
-        <li><a href="site em construção.html">Ações</a></li>
-        <li><a href="site em construção.html">FII</a></li>
-        <li><a href="site em construção.html">Opções</a></li>
-        <li><a href="site em construção.html">Outros</a></li>
-      </ul>
-    </li>
-
-     <li class="has-submenu">
-      <a href="#">Previdência <span class="chevron-right">▸</span></a>
-      <ul class="submenu">
-        <li><a href="site em construção.html">BRB Prev</a></li>
-        <li><a href="site em construção.html">Outros</a></li>
-      </ul>
-    </li>
-
-    <li class="has-submenu">
-      <a href="site em construção.html">Fundos <span class="chevron-right">▸</span></a>
-      <ul class="submenu">
-        <li><a href="fundos.html">Fundos BRB</a></li>
-        <li><a href="site em construção.html">Outros</a></li>
-      </ul>
-    </li>
-
-     <li class="has-submenu">
-      <a href="site em construção.html">Mercado Futuro <span class="chevron-right">▸</span></a>
-      <ul class="submenu">
-      
-      </ul>
-
-  </ul>
-</li>
-
-
-
+            <li class="has-submenu">
+              <a href="site em construção.html">Mercado Futuro <span class="chevron-right"></span></a>
+            </li>
+          </ul>
+        </li>
+  
         <li class="dropdown" role="none">
-          <a href="#" class="dropdown-toggle" role="menuitem" aria-haspopup="true" aria-expanded="false">
+          <a href="javascript:void(0)" class="dropdown-toggle" role="menuitem" aria-haspopup="true" aria-expanded="false">
             Conteúdo <span class="chevron" aria-hidden="true">▾</span>
           </a>
           <ul class="dropdown-menu" role="menu">
             <li role="none"><a href="https://analisa.genialinvestimentos.com.br/" role="menuitem" target="_blank" rel="noopener noreferrer">Genial analisa</a></li>
-            <li role="none"><a href="newsletter.html" role="menuitem" target="_blank" rel="noopener noreferrer">Newsletter</a></li>
+            <li role="none"><a href="newsletter.html" role="menuitem" rel="noopener noreferrer">Newsletter</a></li>
             <li role="none"><a href="tutoriais.html" role="menuitem">Guias Práticos</a></li>
-            <li role="none"><a href="#" role="menuitem">Educação Investidora</a></li>
+            <li role="none"><a href="javascript:void(0)" role="menuitem">Educação Investidora</a></li>
           </ul>
         </li>
-
+  
         <li role="none">
-          <a href="sobrenos.html" role="menuitem">Sobre nós</a>
-        </li>
-
+  <a href="sobrenos.html" role="menuitem" class="active">Sobre nós</a>
+</li>
+  
         <li role="none">
           <a href="contato.html" role="menuitem">Contato</a>
         </li>
-
       </ul>
-
+  
       <div class="nav-buttons">
-        <button class="account-link" type="button">Acesse seus Investimentos</button>
+        <button 
+          class="account-link" 
+          type="button"
+          data-desktop-href="INSIRA_O_LINK_DO_PORTAL_AQUI"
+          data-mobile-href="INSIRA_O_LINK_DO_APP_AQUI"
+        >Acesse seus Investimentos</button>
       </div>
-
+  
       <button class="mobile-menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
         <span></span><span></span><span></span>
       </button>
-
+  
       <div class="menu-overlay" aria-hidden="true"></div>
     </nav>
   </header>
