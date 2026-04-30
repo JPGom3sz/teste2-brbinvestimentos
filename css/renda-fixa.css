@@ -90,6 +90,21 @@
   transition: transform var(--ease), box-shadow var(--ease);
 }
 
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--header-h);
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: 1000;
+  border-bottom: 1px solid rgba(0, 86, 168, 0.10);
+  box-shadow: 0 2px 20px rgba(0, 31, 63, 0.08);
+  transition: transform var(--ease), box-shadow var(--ease);
+}
+
 header.header-hidden {
   transform: translateY(-100%);
 }
@@ -127,8 +142,8 @@ nav {
 
 .nav-links > li > a {
   color: rgba(10, 10, 10, 0.85);
-  font-weight: 500;
-  font-size: 0.85rem;
+  font-weight: 520;
+  font-size: 0.90rem;
   letter-spacing: 0.02em;
   padding:  0.5rem 0.9rem;
   border-radius: 6px;
@@ -183,7 +198,7 @@ nav {
   min-width: 240px;
   list-style: none;
   z-index: 999;
-  background: #fff;
+  background: #ffffff;
   border-radius: 12px;
   border: 1px solid rgba(0, 86, 168, 0.12);
   box-shadow: 0 16px 48px rgba(0, 31, 63, 0.15);
@@ -240,8 +255,8 @@ nav {
 .nav-links .dropdown-menu a {
   display: block;
   padding: 11px 20px;
-  font-weight: 500;
-  font-size: 0.75rem;
+  font-weight: 550;
+  font-size: 0.79rem;
   color: rgba(0, 0, 0, 0.7);
   transition: background var(--ease), color var(--ease);
 }

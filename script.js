@@ -8,16 +8,20 @@ document.addEventListener('DOMContentLoaded', () => {
   // HEADER — esconder ao rolar para baixo, mostrar ao subir
   // ============================================================
   const header = document.getElementById('site-header');
+  const ticker = document.getElementById('cotacaoBar');
   let lastScroll = 0;
 
   window.addEventListener('scroll', throttle(() => {
     const current = window.pageYOffset;
     if (current <= 10) {
       header.classList.remove('header-hidden');
+      ticker?.classList.remove('ticker-hidden');
     } else if (current > lastScroll) {
       header.classList.add('header-hidden');
+      ticker?.classList.add('ticker-hidden');
     } else {
       header.classList.remove('header-hidden');
+      ticker?.classList.remove('ticker-hidden');
     }
     lastScroll = current;
   }, 80));
@@ -124,6 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ============================================================
   // PORTFÓLIO — troca de conteúdo com fade
   // ============================================================
+  
 
   const portfolioData = {
     default: {
@@ -293,6 +298,11 @@ document.addEventListener('DOMContentLoaded', () => {
   if (slides.length > 0) startAutoplay();
 
   console.log('BRB Investimentos — scripts carregados.');
+
+  // ============================================================
+  // TICKER COTAÇÃO — API Banco Central do Brasil (PTAX)
+  // ============================================================
+  iniciarCotacaoTicker();
 });
 
 
@@ -310,6 +320,106 @@ function throttle(fn, limit = 100) {
       setTimeout(() => { inThrottle = false; }, limit);
     }
   };
+}
+
+
+// ============================================================
+// TICKER COTAÇÃO — Banco Central do Brasil (PTAX)
+// ============================================================
+
+async function iniciarCotacaoTicker() {
+  const contentEl = document.getElementById('cotacaoContent');
+  if (!contentEl) return;
+
+  // Monta a data no formato MM-DD-YYYY exigido pela API do BCB
+  const formatarData = (date) => {
+    const mm = String(date.getMonth() + 1).padStart(2, '0');
+    const dd = String(date.getDate()).padStart(2, '0');
+    const yyyy = date.getFullYear();
+    return `${mm}-${dd}-${yyyy}`;
+  };
+
+  // Tenta buscar a cotação retroativamente até 7 dias (fins de semana e feriados não têm dados)
+  const buscarCotacao = async (moeda, nome) => {
+    for (let diasAtras = 0; diasAtras <= 7; diasAtras++) {
+      const data = new Date();
+      data.setDate(data.getDate() - diasAtras);
+      const dataFormatada = formatarData(data);
+
+      const url = moeda === 'USD'
+        ? `https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?@dataCotacao=%27${dataFormatada}%27&$top=1&$orderby=dataHoraCotacao%20desc&$format=json&$select=cotacaoCompra,cotacaoVenda,dataHoraCotacao`
+        : `https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoMoedaDia(moeda=@moeda,dataCotacao=@dataCotacao)?@moeda=%27${moeda}%27&@dataCotacao=%27${dataFormatada}%27&$top=1&$orderby=dataHoraCotacao%20desc&$format=json&$select=cotacaoCompra,cotacaoVenda,dataHoraCotacao`;
+
+      try {
+        const res = await fetch(url);
+        if (!res.ok) continue;
+        const json = await res.json();
+        if (json.value && json.value.length > 0) {
+          const item = json.value[0];
+          return {
+            nome,
+            moeda,
+            compra: item.cotacaoCompra.toFixed(4).replace('.', ','),
+            venda:  item.cotacaoVenda.toFixed(4).replace('.', ','),
+            hora:   item.dataHoraCotacao.slice(11, 16),
+            data:   dataFormatada,
+          };
+        }
+      } catch (_) { /* segue tentando */ }
+    }
+    return null;
+  };
+
+  // Formata R$ com 4 casas para ficar no padrão PTAX
+  const formatarBRL = (val) => `R$ ${val}`;
+
+  const renderTicker = (cotacoes) => {
+    if (!cotacoes.length) {
+      contentEl.innerHTML = '<span class="cotacao-erro">Cotação indisponível no momento.</span>';
+      return;
+    }
+
+    // Duplica o conteúdo para o loop infinito do ticker
+    const itemsHTML = cotacoes.map(c => `
+      <span class="cotacao-item">
+        <span class="cotacao-item-flag">${c.flag}</span>
+        <span class="cotacao-item-name">${c.moeda}/BRL</span>
+        <span class="cotacao-item-buy">Compra: <span>${formatarBRL(c.compra)}</span></span>
+        <span class="cotacao-item-sell">Venda: <span>${formatarBRL(c.venda)}</span></span>
+        <span class="cotacao-item-time">PTAX ${c.hora}</span>
+      </span>
+      <span class="cotacao-separator" aria-hidden="true"></span>
+    `).join('');
+
+    // Duplica para o scroll infinito ser contínuo
+    contentEl.innerHTML = itemsHTML + itemsHTML;
+  };
+
+  // Busca paralela USD + EUR
+  const [usd, eur] = await Promise.all([
+    buscarCotacao('USD', 'Dólar'),
+    buscarCotacao('EUR', 'Euro'),
+  ]);
+
+  const cotacoes = [
+    usd ? { ...usd, flag: '🇺🇸' } : null,
+    eur ? { ...eur, flag: '🇪🇺' } : null,
+  ].filter(Boolean);
+
+  renderTicker(cotacoes);
+
+  // Atualiza a cada 5 minutos
+  setInterval(async () => {
+    const [usdAtual, eurAtual] = await Promise.all([
+      buscarCotacao('USD', 'Dólar'),
+      buscarCotacao('EUR', 'Euro'),
+    ]);
+    const atualizadas = [
+      usdAtual ? { ...usdAtual, flag: '🇺🇸' } : null,
+      eurAtual ? { ...eurAtual, flag: '🇪🇺' } : null,
+    ].filter(Boolean);
+    renderTicker(atualizadas);
+  }, 5 * 60 * 1000);
 }
 
 
