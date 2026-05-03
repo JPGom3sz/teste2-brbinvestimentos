@@ -29,13 +29,12 @@
   --hh:             72px;
   --r:              14px;
   --r-sm:           10px;
-  --ease:           0.32s cubic-bezier(0.4, 0, 0.2, 1);
+  --ease:          0.25s ease;
   --ff-body:        'Cera Pro', 'Montserrat';
   --ff-display:     'Cera Pro', 'Montserrat';
   --container:     1400px;
   --px:            3rem;
   --header-h:      75px;
-  --ease:          0.25s ease;
   --card-bg:       rgba(255, 255, 255, 0.06);
   --card-border:   rgba(255, 255, 255, 0.13);
 }
@@ -85,7 +84,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: var(--hh);
+  scroll-padding-top: var(--header-h);
 }
 
 body {
@@ -137,11 +136,10 @@ nav {
 .logo {
   z-index: 2;
   margin-left: 0;
-  margin-top: -10px;
 }
 
 .logo img {
-  height: 120px;
+  height: 50px;
 }
 
 .nav-links {
@@ -514,7 +512,7 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  padding-top: var(--hh);
+  padding-top: var(--header-h);
   overflow: hidden;
   background: var(--brb-navy);
 }
@@ -1270,8 +1268,7 @@ footer {
   max-width: var(--container);
   margin: 0 auto 3rem;
   display: grid;
-  grid-template-columns: 1.2fr 1fr 1fr 1.2fr 1fr
-  1fr;
+  grid-template-columns: 1.2fr 1fr 1fr 1.2fr 1fr 1fr;
   gap: 3rem;
 }
 
@@ -1454,30 +1451,46 @@ footer {
    ============================================================ */
 @media (max-width: 968px) {
 
+  /* ── Header mobile (padrão unificado) ── */
+  header { height: 90px; }
+  nav { padding: 0 1.5rem; }
+  .logo img { height: 72px; }
+  .logo { margin-top: 0; }
+
   .nav-links {
-    display: none;
     position: fixed;
-    top: var(--hh);
-    left: 0;
-    right: 0;
-    background: #0d1f38;
+    top: var(--header-h);
+    right: -100%;
+    left: auto;
+    width: min(320px, 85vw);
+    height: calc(100vh - var(--header-h));
+    background: var(--deep-navy);
     flex-direction: column;
-    padding: 1.2rem;
-    gap: 0.3rem;
-    border-bottom: 1px solid var(--brb-border);
-    z-index: 850;
-    max-height: calc(100vh - var(--hh));
+    align-items: stretch;
+    padding: 1.5rem 0;
     overflow-y: auto;
+    transition: right 0.3s ease;
+    z-index: 1001;
+    gap: 0;
+    transform: none;
+    display: flex;
   }
 
-  .nav-links.active { display: flex; }
+  .nav-links.active { right: 0; }
 
-  .nav-links a {
-    width: 100%;
-    padding: 0.7rem 1rem;
+  .nav-links > li > a {
+    border-radius: 0;
+    padding: 0.85rem 1.5rem;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.9rem;
   }
 
-  /* Dropdown mobile — sobrescreve completamente o comportamento desktop */
+  .nav-links > li > a:hover,
+  .nav-links > li > a.active {
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+  }
+
   .nav-links .dropdown-menu {
     position: static !important;
     transform: none !important;
@@ -1486,10 +1499,8 @@ footer {
     pointer-events: auto !important;
     box-shadow: none;
     border: none;
-    background: rgba(58, 127, 212, 0.12);
-    border-radius: 8px;
-    padding: 0.3rem 0 0.3rem 1rem;
-    margin-top: 0.3rem;
+    border-radius: 0;
+    background: rgba(255, 255, 255, 0.05);
     display: none;
   }
 
@@ -1497,46 +1508,12 @@ footer {
   .nav-links .dropdown-menu::after { display: none !important; }
 
   .nav-links .dropdown.is-open .dropdown-menu { display: block; }
-
-  /* Submenu mobile */
-  .nav-links .has-submenu > .submenu {
-    position: static !important;
-    transform: none !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    pointer-events: auto !important;
-    box-shadow: none;
-    border: none;
-    border-radius: 6px;
-    background: rgba(0,86,168,0.08);
-    padding: 0.2rem 0 0.2rem 1rem;
-    margin-top: 0.2rem;
-    display: none;
-  }
-
-  .nav-links .has-submenu.is-open > .submenu { display: block; }
-  .nav-links .has-submenu > .submenu::before { display: none !important; }
-  .nav-links .has-submenu > .submenu a {
-    font-size: 0.82rem;
-    padding: 0.5rem 0.75rem;
-    color: var(--deep-navy);
-  }
-
-  /* Cor dos links dentro do dropdown mobile */
-  .nav-links .dropdown-menu a {
-    color: var(--brb-cyan);
-    font-size: 0.88rem;
-    font-weight: 600;
-    padding: 0.65rem 0.75rem;
-  }
-
-  .nav-links .dropdown-menu a:hover {
-    background: rgba(58, 127, 212, 0.2);
-    color: var(--brb-white);
-  }
+  .nav-links .dropdown-menu a { color: rgba(255, 255, 255, 0.75); padding-left: 2.5rem; }
 
   .mobile-menu-toggle { display: flex; }
   .nav-buttons { display: none; }
+  .menu-overlay { display: block; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
+  .menu-overlay.active { opacity: 1; pointer-events: auto; }
 
   /* Hero */
   .as-hero__inner { padding: 3rem 1.5rem 2rem; }
@@ -1551,8 +1528,8 @@ footer {
   .as-steps__arrow { display: none; }
 
   .footer-content { grid-template-columns: 1fr 1fr; }
-  .footer-bottom  { grid-template-columns: 1fr; text-align: center; }
-  .footer-left, .footer-right { justify-content: center; }
+  .footer-bottom  { flex-direction: column; text-align: center; gap: 1.5rem; padding: 1.8rem 0 2rem; }
+  .footer-left, .footer-right.footer-certificados { justify-content: center; flex-wrap: wrap; }
 }
 
 @media (max-width: 768px) {
@@ -1574,7 +1551,11 @@ footer {
   .as-diff__grid { grid-template-columns: 1fr; }
   .as-team__grid { grid-template-columns: 1fr; }
   .as-hero__certs { display: none; }
-  .footer-content { grid-template-columns: 1fr; }
+  .footer-content { grid-template-columns: 1fr; gap: 1.5rem; }
+  .footer-certificados img { height: 36px; }
+  .footer-social { justify-content: center; }
+  .footer-logo-img { margin: 0 auto 1rem; }
+  .footer-brand-text { text-align: center; max-width: 100%; }
 }
 
 @media (max-width: 480px) {
@@ -1582,38 +1563,3 @@ footer {
   .footer-bottom  { gap: 1rem; }
 }
 
-/* ============================================================
-   FOOTER SOCIAL
-   ============================================================ */
-.footer-social {
-  display: flex;
-  gap: 0.65rem;
-  margin-top: 1.4rem;
-}
-
-.footer-social-btn {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.14);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgba(255,255,255,0.65);
-  transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
-  text-decoration: none;
-}
-
-.footer-social-btn:hover {
-  background: var(--primary-blue);
-  border-color: var(--primary-blue);
-  color: #fff;
-  transform: translateY(-3px);
-}
-
-.footer-social-btn svg {
-  width: 17px;
-  height: 17px;
-  fill: currentColor;
-}

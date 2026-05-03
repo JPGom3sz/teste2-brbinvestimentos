@@ -1286,42 +1286,47 @@ footer {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 968px) {
   :root { --px: 1.25rem; }
 
-  /* Nav mobile */
+  /* ── Header mobile (padrão unificado) ── */
+  nav { padding: 0 1.5rem; }
+  .logo img { height: 42px; }
+
   .nav-links {
-    display: none;
     position: fixed;
     top: var(--header-h);
-    left: 0;
-    right: 0;
-    background: #fff;
+    right: -100%;
+    left: auto;
+    width: min(320px, 85vw);
+    height: calc(100vh - var(--header-h));
+    background: var(--deep-navy);
     flex-direction: column;
-    gap: 0.3rem;
-    padding: 1.2rem 1.5rem;
-    border-bottom: 1px solid rgba(0, 86, 168, 0.1);
-    box-shadow: 0 8px 30px rgba(0, 31, 63, 0.1);
-    z-index: 999;
-    overflow-y: auto;
-    max-height: calc(100vh - var(--header-h));
-    margin-left: 0;
     align-items: stretch;
+    padding: 1.5rem 0;
+    overflow-y: auto;
+    transition: right 0.3s ease;
+    z-index: 1001;
+    gap: 0;
     transform: none;
+    display: flex;
   }
 
-  .nav-links.active { display: flex; }
-
-  .nav-links > li { width: 100%; }
+  .nav-links.active { right: 0; }
 
   .nav-links > li > a {
-    padding: 0.75rem 1rem;
-    display: flex;
+    border-radius: 0;
+    padding: 0.85rem 1.5rem;
     font-size: 0.9rem;
-    border-radius: 8px;
+    color: rgba(255, 255, 255, 0.85);
   }
 
-  /* Dropdown mobile — sobrescreve completamente o comportamento desktop */
+  .nav-links > li > a:hover,
+  .nav-links > li > a.active {
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+  }
+
   .nav-links .dropdown-menu {
     position: static !important;
     transform: none !important;
@@ -1330,10 +1335,8 @@ footer {
     pointer-events: auto !important;
     box-shadow: none;
     border: none;
-    background: var(--light-blue);
-    border-radius: 8px;
-    padding: 0.3rem 0 0.3rem 1rem;
-    margin-top: 0.3rem;
+    border-radius: 0;
+    background: rgba(255, 255, 255, 0.05);
     display: none;
   }
 
@@ -1341,63 +1344,31 @@ footer {
   .nav-links .dropdown-menu::after { display: none !important; }
 
   .nav-links .dropdown.is-open .dropdown-menu { display: block; }
-
-  /* Submenu mobile */
-  .nav-links .has-submenu > .submenu {
-    position: static !important;
-    transform: none !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    pointer-events: auto !important;
-    box-shadow: none;
-    border: none;
-    border-radius: 6px;
-    background: rgba(0,86,168,0.08);
-    padding: 0.2rem 0 0.2rem 1rem;
-    margin-top: 0.2rem;
-    display: none;
-  }
-
-  .nav-links .has-submenu.is-open > .submenu { display: block; }
-  .nav-links .has-submenu > .submenu::before { display: none !important; }
-  .nav-links .has-submenu > .submenu a {
-    font-size: 0.82rem;
-    padding: 0.5rem 0.75rem;
-    color: var(--deep-navy);
-  }
-  .nav-links .dropdown-menu a {
-    color: var(--primary-blue);
-    font-size: 0.88rem;
-    font-weight: 600;
-    padding: 0.65rem 0.75rem;
-  }
-
-  .nav-links .dropdown-menu a:hover {
-    background: rgba(0, 86, 168, 0.1);
-    color: var(--deep-navy);
-  }
+  .nav-links .dropdown-menu a { color: rgba(255, 255, 255, 0.75); padding-left: 2.5rem; }
 
   .mobile-menu-toggle {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     gap: 5px;
     background: none;
     border: none;
     cursor: pointer;
-    padding: 0.4rem;
+    padding: 0.5rem;
     margin-left: auto;
   }
 
   .mobile-menu-toggle span {
     display: block;
-    width: 24px;
-    height: 2px;
+    width: 26px;
+    height: 2.5px;
     background: var(--deep-navy);
     border-radius: 2px;
   }
 
-  .nav-buttons  { display: none; }
+  .nav-buttons { display: none; }
+  .menu-overlay { display: block; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
+  .menu-overlay.active { opacity: 1; pointer-events: auto; }
 
   .sn-why__grid   { grid-template-columns: 1fr; }
 

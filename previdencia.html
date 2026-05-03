@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Previdência Privada — BRB Investimentos</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/produtos-base.css" />
+  <link rel="stylesheet" href="css/previdencia.css" />
+</head>
+<body>
+
+  <!-- ===================================================
+       HEADER
+  ==================================================== -->
+  <header id="site-header">
+    <nav>
+      <div class="logo">
+        <a href="index.html" aria-label="BRB Investimentos — Início">
+          <img src="img/quartinho(1).png" alt="BRB Investimentos" />
+        </a>
+      </div>
+
+      <ul class="nav-links" id="mobileMenu" role="menubar">
+
+        <li class="dropdown" role="none">
+          <a href="javascript:void(0)" class="dropdown-toggle active" role="menuitem"
+             aria-haspopup="true" aria-expanded="false">
+            Produtos e Serviços <span class="chevron" aria-hidden="true">▾</span>
+          </a>
+          <ul class="dropdown-menu" role="menu">
+            <li role="none" class="has-submenu"><a href="renda-fixa.html" role="menuitem">Renda Fixa <span class="chevron-right"></span></a></li>
+            <li role="none" class="has-submenu"><a href="renda-variavel.html" role="menuitem">Renda Variável <span class="chevron-right"></span></a></li>
+            <li role="none" class="has-submenu"><a href="previdencia.html" role="menuitem">Previdência <span class="chevron-right"></span></a></li>
+            <li role="none" class="has-submenu"><a href="fundos.html" role="menuitem">Fundos <span class="chevron-right"></span></a></li>
+            <li role="none" class="has-submenu"><a href="mercado-futuro.html" role="menuitem">Mercado Futuro <span class="chevron-right"></span></a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown" role="none">
+          <a href="javascript:void(0)" class="dropdown-toggle" role="menuitem"
+             aria-haspopup="true" aria-expanded="false">
+            Conteúdo <span class="chevron" aria-hidden="true">▾</span>
+          </a>
+          <ul class="dropdown-menu" role="menu">
+            <li role="none"><a href="https://analisa.genialinvestimentos.com.br/" role="menuitem" target="_blank" rel="noopener noreferrer">Genial Analisa</a></li>
+            <li role="none"><a href="newsletter.html" role="menuitem">Newsletter</a></li>
+            <li role="none"><a href="tutoriais.html" role="menuitem">Guias Práticos</a></li>
+            <li role="none"><a href="javascript:void(0)" role="menuitem">Educação Investidora</a></li>
+          </ul>
+        </li>
+
+        <li role="none"><a href="sobrenos.html" role="menuitem">Sobre nós</a></li>
+        <li role="none"><a href="contato.html" role="menuitem">Contato</a></li>
+
+      </ul>
+
+      <div class="nav-buttons">
+        <button class="account-link" type="button">Acesse seus Investimentos</button>
+      </div>
+
+      <button class="mobile-menu-toggle" type="button"
+              aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <div class="menu-overlay" aria-hidden="true"></div>
+    </nav>
+  </header>
+
+
+  <!-- ===================================================
+       HERO
+  ==================================================== -->
+  <section class="pv-hero" id="topo">
+    <div class="pv-hero-inner">
+      <div class="pv-hero-badge">🌅 Previdência Privada</div>
+      <h1>
+        Construa seu <span class="highlight">futuro</span><br>
+        com planejamento
+      </h1>
+      <p class="hero-desc">
+        A Previdência Privada da BRB Investimentos é a forma mais inteligente de planejar sua
+        aposentadoria, com benefícios fiscais, flexibilidade de aportes e acesso a estratégias de longo prazo.
+      </p>
+      <div class="pv-hero-ctas">
+        <button class="btn-pv-primary"
+          onclick="window.open('https://brb.genialinvestimentos.com.br/auth/login','_blank','noopener,noreferrer')">
+          Planejar agora →
+        </button>
+        <button class="btn-pv-outline"
+          onclick="document.getElementById('produtos').scrollIntoView({behavior:'smooth'})">
+          Ver planos
+        </button>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===================================================
+       VANTAGENS
+  ==================================================== -->
+  <section class="pv-advantages">
+    <div class="section-header reveal">
+      <div class="section-tag">Por que escolher</div>
+      <h2>Vantagens da Previdência na BRB Investimentos</h2>
+      <p>Planejamento de longo prazo com benefícios fiscais, sucessão patrimonial simplificada e flexibilidade total.</p>
+    </div>
+
+    <div class="advantages-grid">
+      <div class="adv-card reveal">
+        <div class="adv-icon">💸</div>
+        <h3>Benefício Fiscal no IR</h3>
+        <p>Com o PGBL, você pode deduzir até 12% da renda bruta tributável anual na declaração completa do Imposto de Renda, reduzindo o imposto a pagar ou aumentando a restituição.</p>
+      </div>
+      <div class="adv-card reveal">
+        <div class="adv-icon">🕐</div>
+        <h3>Diferimento Tributário</h3>
+        <p>O imposto só é pago no resgate, permitindo que os recursos cresçam de forma mais eficiente ao longo dos anos, sem o impacto do come-cotas semestral dos fundos convencionais.</p>
+      </div>
+      <div class="adv-card reveal">
+        <div class="adv-icon">📜</div>
+        <h3>Planejamento Sucessório</h3>
+        <p>Os recursos de previdência privada podem ser transferidos diretamente aos beneficiários sem passar pelo inventário, com mais agilidade e menos custos para a família.</p>
+      </div>
+      <div class="adv-card reveal">
+        <div class="adv-icon">🔄</div>
+        <h3>Portabilidade</h3>
+        <p>Você pode migrar entre planos ou gestoras sem pagar imposto na transferência. A portabilidade permite buscar sempre as melhores condições disponíveis no mercado.</p>
+      </div>
+      <div class="adv-card reveal">
+        <div class="adv-icon">📊</div>
+        <h3>Estratégias Diversificadas</h3>
+        <p>Fundos de previdência com diferentes perfis de risco: conservador, moderado e arrojado. Você escolhe a estratégia mais adequada a cada fase da sua vida.</p>
+      </div>
+      <div class="adv-card reveal">
+        <div class="adv-icon">🗓️</div>
+        <h3>Flexibilidade de Aportes</h3>
+        <p>Contribua mensalmente, faça aportes extras quando quiser e ajuste as contribuições de acordo com sua situação financeira — sem burocracia.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===================================================
+       PLANOS
+  ==================================================== -->
+  <section class="pv-products" id="produtos">
+    <div style="max-width: var(--container); margin: 0 auto;">
+      <div class="section-header reveal">
+        <div class="section-tag">Nossos Planos</div>
+        <h2>Escolha o plano ideal para o seu momento de vida</h2>
+        <p>PGBL ou VGBL — cada um com características únicas para diferentes perfis tributários e objetivos.</p>
+      </div>
+
+      <div class="products-grid">
+
+        <div class="product-card featured reveal">
+          <div class="product-icon">📋</div>
+          <div class="product-info">
+            <h3>PGBL — Plano Gerador de Benefício Livre</h3>
+            <p>Indicado para quem faz a declaração completa do IR e contribui para o INSS ou regime próprio. Permite deduzir até 12% da renda bruta tributável por ano. O IR incide sobre o valor total resgatado (principal + rendimentos) na saída. Ideal para acumulação de longo prazo com benefício fiscal imediato.</p>
+          </div>
+          <div class="product-tag popular">Mais Indicado</div>
+        </div>
+
+        <div class="product-card reveal">
+          <div class="product-icon">🔒</div>
+          <div class="product-info">
+            <h3>VGBL — Vida Gerador de Benefício Livre</h3>
+            <p>Ideal para quem faz a declaração simplificada do IR, é isento ou deseja investir acima de 12% da renda. O IR incide apenas sobre os rendimentos (não sobre o principal) no momento do resgate.</p>
+          </div>
+          <div class="product-tag safe">IR só nos Rendimentos</div>
+        </div>
+
+        <div class="product-card reveal">
+          <div class="product-icon">📉</div>
+          <div class="product-info">
+            <h3>Tabela Regressiva</h3>
+            <p>A alíquota de IR diminui conforme o tempo de permanência no plano: começa em 35% e chega a 10% após 10 anos. Quanto mais tempo o dinheiro fica investido, menor o imposto. Ideal para objetivos de longo prazo.</p>
+          </div>
+          <div class="product-tag safe">Longo Prazo</div>
+        </div>
+
+        <div class="product-card reveal">
+          <div class="product-icon">📈</div>
+          <div class="product-info">
+            <h3>Tabela Progressiva</h3>
+            <p>Segue a tabela progressiva do IR (0% a 27,5%), com retenção de 15% na fonte no resgate. Pode ser interessante para quem tem renda mais baixa e prevê resgates no curto ou médio prazo.</p>
+          </div>
+          <div class="product-tag moderate">Curto / Médio Prazo</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===================================================
+       FAQ
+  ==================================================== -->
+  <section class="pv-faq" id="entenda">
+    <div class="faq-layout">
+
+      <div class="faq-left reveal">
+        <div class="section-tag" style="margin-bottom: 1rem;">Entenda</div>
+        <h2>Tire suas dúvidas sobre Previdência</h2>
+        <p>Esclareça suas principais dúvidas sobre previdência privada e comece a planejar sua aposentadoria com mais segurança.</p>
+        <button class="faq-cta" onclick="window.location.href='assessores.html'">
+          Conheça nossa equipe →
+        </button>
+      </div>
+
+      <div class="faq-list reveal">
+
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span>Qual a diferença entre PGBL e VGBL?</span>
+            <div class="faq-icon" aria-hidden="true">+</div>
+          </button>
+          <div class="faq-body">
+            <div class="faq-body-inner">
+              A principal diferença está na tributação. No <strong>PGBL</strong>, há dedução de até 12% da renda bruta, mas o IR incide sobre todo o valor resgatado (principal + rendimentos). No <strong>VGBL</strong>, não há dedução fiscal, mas o IR incide apenas sobre os rendimentos. O PGBL é mais vantajoso para quem usa a declaração completa com alta renda tributável; o VGBL para autônomos, isentos ou quem já maximizou os 12%.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span>Qual tabela de IR escolher: progressiva ou regressiva?</span>
+            <div class="faq-icon" aria-hidden="true">+</div>
+          </button>
+          <div class="faq-body">
+            <div class="faq-body-inner">
+              A escolha depende do horizonte de investimento e da renda esperada no resgate. A <strong>tabela regressiva</strong> cai de 35% até 10% após 10 anos — ideal para quem tem horizonte longo. A <strong>tabela progressiva</strong> segue as alíquotas do IR da pessoa física — pode ser vantajosa para quem prevê resgates em parcelas pequenas. A decisão deve ser feita com apoio de um assessor, pois após a contratação só é possível migrar de progressiva para regressiva.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span>Posso resgatar antes de me aposentar?</span>
+            <div class="faq-icon" aria-hidden="true">+</div>
+          </button>
+          <div class="faq-body">
+            <div class="faq-body-inner">
+              Sim, é possível fazer resgates parciais ou totais a qualquer momento, respeitando o período de carência do plano (geralmente 60 dias). No entanto, resgates antecipados podem resultar em alíquotas de IR mais elevadas no regime regressivo. A previdência é mais eficiente quando mantida por longos períodos.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span>O que é a portabilidade de previdência?</span>
+            <div class="faq-icon" aria-hidden="true">+</div>
+          </button>
+          <div class="faq-body">
+            <div class="faq-body-inner">
+              A portabilidade permite transferir os recursos acumulados de um plano para outro sem pagar imposto. Você pode migrar entre planos da mesma seguradora ou trocar de seguradora. A operação não é considerada resgate para fins fiscais. Lembre-se: só é possível migrar de PGBL para PGBL e de VGBL para VGBL.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span>Como a previdência ajuda no planejamento sucessório?</span>
+            <div class="faq-icon" aria-hidden="true">+</div>
+          </button>
+          <div class="faq-body">
+            <div class="faq-body-inner">
+              Os planos de previdência permitem a indicação de beneficiários. Em caso de falecimento do titular, os recursos são transferidos diretamente a eles sem necessidade de inventário, de forma mais rápida e com menor custo. Isso torna a previdência privada um instrumento eficiente de planejamento patrimonial e sucessório.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span>Existe proteção do FGC na previdência privada?</span>
+            <div class="faq-icon" aria-hidden="true">+</div>
+          </button>
+          <div class="faq-body">
+            <div class="faq-body-inner">
+              Os planos de previdência privada não contam com cobertura do FGC. Porém, são regulados pela SUSEP e seguem regras rigorosas de solvência e reservas obrigatórias. Em caso de insolvência da seguradora, existe um mecanismo de proteção específico do setor. É importante escolher planos de seguradoras com solidez e histórico reconhecidos no mercado.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===================================================
+       PASSO A PASSO
+  ==================================================== -->
+  <section class="pv-steps">
+    <div class="steps-inner" style="max-width: var(--container); margin: 0 auto;">
+      <div class="section-header">
+        <div class="section-tag">Passo a passo</div>
+        <h2>Como contratar um plano de Previdência</h2>
+        <p>Planeje sua aposentadoria de forma simples, segura e com benefícios fiscais reais.</p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card reveal">
+          <div class="step-number">01</div>
+          <h3>Abra sua conta</h3>
+          <p>Crie sua conta na BRB Investimentos de forma 100% digital. Leva menos de 5 minutos.</p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-number">02</div>
+          <h3>Defina seu perfil</h3>
+          <p>Com apoio de nossa equipe, identifique o melhor plano, tabela de IR e perfil de risco para o seu objetivo.</p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-number">03</div>
+          <h3>Contrate o plano</h3>
+          <p>Escolha entre PGBL e VGBL, defina o valor de contribuição e formalize a contratação pela plataforma.</p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-number">04</div>
+          <h3>Contribua e acompanhe</h3>
+          <p>Faça seus aportes regulares e acompanhe a evolução do seu patrimônio previdenciário em tempo real.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===================================================
+       CTA FINAL
+  ==================================================== -->
+  <section class="pv-cta-section">
+    <div class="cta-box reveal">
+      <div class="section-tag" style="margin-bottom: 1.2rem;">BRB Investimentos</div>
+      <h2>Comece hoje a construir a aposentadoria que você merece</h2>
+      <p>Quanto antes você começar, maior será o impacto dos juros compostos e dos benefícios fiscais na construção do seu patrimônio.</p>
+      <div class="cta-buttons">
+        <button class="btn-cta-primary"
+          onclick="window.open('https://brb.genialinvestimentos.com.br/auth/login','_blank','noopener,noreferrer')">
+          Acessar minha conta
+        </button>
+        <button class="btn-cta-secondary"
+          onclick="window.location.href='assessores.html'">
+          Falar com um assessor
+        </button>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===================================================
+       FOOTER
+  ==================================================== -->
+  <footer>
+    <div class="footer-content">
+
+      <div class="footer-brand">
+        <img src="img/LOGO BRANCA.png" alt="BRB Investimentos" class="footer-logo-img" />
+        <p class="footer-brand-text">Investindo no futuro dos brasileiros com segurança, tecnologia e tradição.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/brbinvestimentos/" class="footer-social-btn" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="#" class="footer-social-btn" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/share/1CRVbq4UXf/?mibextid=wwXIfr" class="footer-social-btn" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-column">
+        <h4>Produtos</h4>
+        <ul>
+          <li><a href="renda-fixa.html">Renda Fixa</a></li>
+          <li><a href="fundos.html">Fundos</a></li>
+          <li><a href="previdencia.html">Previdência</a></li>
+          <li><a href="renda-variavel.html">Renda Variável</a></li>
+          <li><a href="mercado-futuro.html">Mercado Futuro</a></li>
+          <li><a href="javascript:void(0)">Criptoativos</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>Quem Somos</h4>
+        <ul>
+          <li><a href="sobrenos.html#missao">Nossa Missão</a></li>
+          <li><a href="sobrenos.html#historia">Nossa História</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>Fale Conosco</h4>
+        <ul>
+          <li><a href="https://novo.brb.com.br/atendimento/" target="_blank" rel="noopener noreferrer">Central de Atendimento</a></li>
+          <li><a href="https://novo.brb.com.br/atendimento/ouvidoria-brb/" target="_blank" rel="noopener noreferrer">Ouvidoria BRB</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>Institucional</h4>
+        <ul>
+          <li><a href="https://www.anbima.com.br/" target="_blank" rel="noopener noreferrer">Anbima</a></li>
+          <li><a href="https://www.b3.com.br/" target="_blank" rel="noopener noreferrer">B3</a></li>
+          <li><a href="https://www.gov.br/cvm/" target="_blank" rel="noopener noreferrer">CVM</a></li>
+          <li><a href="https://www.fgc.org.br/" target="_blank" rel="noopener noreferrer">FGC</a></li>
+          <li><a href="https://www.bcb.gov.br/" target="_blank" rel="noopener noreferrer">Bacen</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column regulatorio">
+        <h4>Regulatórios</h4>
+        <ul>
+          <li><a href="pdfs/Política de Privacidade.pdf" target="_blank" rel="noopener noreferrer">Política de Privacidade</a></li>
+          <li><a href="pdfs/4. Termo Abertura Conta Corrente  PF.pdf" target="_blank" rel="noopener noreferrer">Termos de Abertura de Conta Genial</a></li>
+          <li><a href="pdfs/RPA_B3_Genial_Janeiro_2026.pdf" target="_blank" rel="noopener noreferrer">Regras e Parâmetros de Atuação</a></li>
+          <li><a href="pdfs/CONTRATO DE INTERMEDIAÇÃO.pdf" target="_blank" rel="noopener noreferrer">Contrato de Intermediação</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-left">
+        <img class="footer-mark" src="https://framerusercontent.com/images/ZRAogsRUCyrDvJX2BCEBRqoGhWY.svg?width=142&height=33" alt="Banco Central" />
+        <img class="footer-mark" src="https://framerusercontent.com/images/mHJ8wt4h7RrXbxoN3I2zNtlIMw.svg?width=90&height=41" alt="B3" />
+      </div>
+      <div class="footer-center">
+        <p class="brbdireitos">© 2026 BRB Investimentos</p>
+        <p class="footer-address">BL B — Centro Empresarial CNC — SAUN Quadra 5, Lote C, 2º andar — Brasília/DF</p>
+      </div>
+      <div class="footer-right footer-certificados">
+        <img src="img/distribuicao-geral.jpg" alt="Certificado Anbima Distribuição" />
+        <img src="img/art-administracao.jpg" alt="Certificado Anbima Administração" />
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="script.js"></script>
+
+  <script>
+    document.querySelectorAll('.faq-trigger').forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        const item   = trigger.closest('.faq-item');
+        const isOpen = item.classList.contains('is-open');
+
+        document.querySelectorAll('.faq-item.is-open').forEach(i => {
+          i.classList.remove('is-open');
+          i.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
+        });
+
+        if (!isOpen) {
+          item.classList.add('is-open');
+          trigger.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('is-visible'), i * 80);
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+  </script>
+
+</body>
+</html>

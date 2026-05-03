@@ -46,6 +46,7 @@
        RENDA FIXA PAGE — estilos específicos
     ============================================================ */
     :root {
+      --ease:          0.25s ease;
       --primary-blue:  #0056A8;
       --deep-navy:     #001F3F;
       --bright-blue:   #0080D8;
@@ -87,22 +88,7 @@
   z-index: 1000;
   border-bottom: 1px solid rgba(0, 86, 168, 0.10);
   box-shadow: 0 2px 20px rgba(0, 31, 63, 0.08);
-  transition: transform var(--ease), box-shadow var(--ease);
-}
-
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: var(--header-h);
-  background: rgba(255, 255, 255, 0.98);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  z-index: 1000;
-  border-bottom: 1px solid rgba(0, 86, 168, 0.10);
-  box-shadow: 0 2px 20px rgba(0, 31, 63, 0.08);
-  transition: transform var(--ease), box-shadow var(--ease);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 header.header-hidden {
@@ -155,13 +141,6 @@ nav {
   transition: background 0.2s, color 0.2s;
 }
 /* Efeito de fundo para a página atual */
-.nav-links > li > a.active {
-  background: rgba(58, 127, 212, 0.15); /* Fundo sutil azul (pode trocar pela sua variável se preferir) */
-  color: #ffffff; /* Garante que o texto fique legível */
-  border-radius: 8px; /* Mantém o arredondamento do seu layout */
-}
-
-
 .nav-links > li > a:hover,
 .nav-links > li > a.active {
   color: var(--primary-blue);
@@ -1200,11 +1179,28 @@ footer {
       .faq-layout { grid-template-columns: 1fr; gap: 2.5rem; }
       .steps-grid { grid-template-columns: 1fr 1fr; }
 
+      /* ── Footer ── */
+      footer { padding: 3rem var(--px) 1.5rem; }
+      .footer-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+      }
+      .footer-brand { grid-column: 1 / -1; }
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+        padding: 1.8rem 0 2rem;
+      }
+      .footer-left { justify-content: center; flex-wrap: wrap; }
+      .footer-right.footer-certificados { justify-content: center; flex-wrap: wrap; }
+
       .mobile-menu-toggle { display: flex; margin-left: auto; }
       .nav-links {
         position: fixed;
         top: var(--header-h);
         right: -100%;
+        left: auto;
         width: min(320px, 85vw);
         height: calc(100vh - var(--header-h));
         background: var(--deep-navy);
@@ -1212,33 +1208,54 @@ footer {
         align-items: stretch;
         padding: 1.5rem 0;
         overflow-y: auto;
-        transition: right 0.3s;
+        transition: right 0.3s ease;
         z-index: 1001;
         gap: 0;
+        transform: none;
+        display: flex;
       }
       .nav-links.active { right: 0; }
-      .nav-links > li > a { border-radius: 0; padding: 0.85rem 1.5rem; }
+      .nav-links > li > a {
+        border-radius: 0;
+        padding: 0.85rem 1.5rem;
+        color: rgba(255, 255, 255, 0.85);
+      }
+      .nav-links > li > a:hover,
+      .nav-links > li > a.active {
+        background: rgba(255, 255, 255, 0.08);
+        color: #fff;
+      }
       .nav-buttons { display: none; }
       .menu-overlay { display: block; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
       .menu-overlay.active { opacity: 1; pointer-events: auto; }
-      .dropdown-menu, .submenu {
-        position: static;
-        opacity: 1;
-        pointer-events: auto;
-        transform: none;
+      .nav-links .dropdown-menu {
+        position: static !important;
+        transform: none !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
         box-shadow: none;
+        border: none;
         border-radius: 0;
-        background: rgba(255,255,255,0.05);
+        background: rgba(255, 255, 255, 0.05);
         display: none;
       }
-      .dropdown.is-open .dropdown-menu { display: block; }
-      .has-submenu:hover .submenu { display: none; }
-      .dropdown-menu li a, .submenu li a { color: rgba(255,255,255,0.75); padding-left: 2.5rem; }
+      .nav-links .dropdown-menu::before,
+      .nav-links .dropdown-menu::after { display: none !important; }
+      .nav-links .dropdown.is-open .dropdown-menu { display: block; }
+      .nav-links .dropdown-menu a { color: rgba(255, 255, 255, 0.75); padding-left: 2.5rem; }
     }
 
     @media (max-width: 600px) {
       .steps-grid { grid-template-columns: 1fr; }
       .cta-buttons { flex-direction: column; align-items: center; }
+
+      /* ── Footer mobile pequeno ── */
+      .footer-content { grid-template-columns: 1fr; gap: 1.5rem; }
+      .footer-certificados img { height: 36px; }
+      .footer-social { justify-content: center; }
+      .footer-logo-img { margin: 0 auto 1rem; }
+      .footer-brand-text { text-align: center; max-width: 100%; }
     }
 
     /* Scroll reveal animation */
