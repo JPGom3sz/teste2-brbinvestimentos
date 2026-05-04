@@ -174,16 +174,17 @@ nav {
 
 .nav-links > li > a {
   color: rgba(10, 10, 10, 0.85);
-  font-weight: 500;
-  font-size: 0.85rem;
+  font-weight: 520;
+  font-size: 0.90rem;
   letter-spacing: 0.02em;
-  padding: 0.5rem 0.9rem;
+  padding:  0.5rem 0.9rem;
   border-radius: 6px;
+  transition: color var(--ease), background var(--ease);
   display: flex;
   align-items: center;
   gap: 0.3rem;
   white-space: nowrap;
-  transition: background 0.2s ease, color 0.2s ease;
+  transition: background 0.2s, color 0.2s;
 }
 
 .nav-links > li > a:hover,
@@ -843,7 +844,7 @@ footer {
 @media (max-width: 480px) {
   :root { --px: 1.25rem; }
 
-  .logo img { height: 38px; }
+  .logo img { height: 50px; }
 
   .hero-newsletter {
     padding: calc(var(--header-h) + 30px) 1.25rem 30px;

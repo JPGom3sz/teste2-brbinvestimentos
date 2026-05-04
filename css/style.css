@@ -1692,7 +1692,7 @@ footer {
 
   /* ── Header ── */
   nav { padding: 0 1.5rem; }
-  .logo img { height: 82px; }
+  .logo img { height: 50px; }
 
   /* Menu desliza da direita (padrão unificado) */
   .nav-links {
@@ -1847,7 +1847,7 @@ footer {
 @media (max-width: 480px) {
   :root { --px: 1.2rem; }
 
-  .logo img { height: 38px; }
+  .logo img { height: 50px; }
   .home-text h1 { font-size: 2rem; }
   .main-hero-wrapper { margin-bottom: 320px; }
   .footer-content { grid-template-columns: 1fr; }
