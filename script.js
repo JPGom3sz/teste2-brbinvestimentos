@@ -109,20 +109,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 
-  // ============================================================
-  // BOTÃO — Abrir conta (hero CTA)
-  // ============================================================
- 
-
-
-  // ============================================================
-  // WHATSAPP — botão flutuante
-  // ============================================================
-  // document.querySelector('.whatsapp-btn')?.addEventListener('click', () => {
-   //  const phone   = '5561999999999';
-   //  const message = encodeURIComponent('Olá! Gostaria de saber mais sobre investimentos BRB.');
-    // window.open(`https://wa.me/${phone}?text=${message}`, '_blank', 'noopener,noreferrer');
-  // });
 
 
   // ============================================================
@@ -132,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const portfolioData = {
     default: {
-      titulo:    'Conheça nossos produtos',
+      titulo:    'Conheça nossos principais produtos',
       descricao: 'O portfólio da BRB Investimentos é estruturado para atender diferentes perfis e objetivos financeiros, combinando segurança, diversificação e potencial de crescimento. A estratégia busca equilíbrio entre ativos de renda fixa e renda variável, permitindo ao investidor acessar oportunidades em diferentes mercados, sempre com gestão responsável e alinhada às melhores práticas do mercado financeiro.',
       link:      null,
     },
@@ -164,7 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
     6: {
       titulo:    'Criptoativos',
       descricao: 'A BRB Investimentos está sempre evoluindo para oferecer o que há de mais moderno no mercado financeiro. Em breve, você terá acesso a uma nova classe de ativos diretamente na nossa plataforma: os Criptoativos.',
-      link:      'criptoativos.html',
+      link:      'javascript:void(0)',
     },
   };
   
@@ -331,7 +317,7 @@ async function iniciarCotacaoTicker() {
   const contentEl = document.getElementById('cotacaoContent');
   if (!contentEl) return;
 
-  // Monta a data no formato MM-DD-YYYY exigido pela API do BCB
+  // data no formato MM-DD-YYYY exigido pela API do BCB
   const formatarData = (date) => {
     const mm = String(date.getMonth() + 1).padStart(2, '0');
     const dd = String(date.getDate()).padStart(2, '0');
@@ -339,7 +325,7 @@ async function iniciarCotacaoTicker() {
     return `${mm}-${dd}-${yyyy}`;
   };
 
-  // Tenta buscar a cotação retroativamente até 7 dias (fins de semana e feriados não têm dados)
+  // buscar a cotação retroativa até 7 dias (fim de semana e feriados não têm dados)
   const buscarCotacao = async (moeda, nome) => {
     for (let diasAtras = 0; diasAtras <= 7; diasAtras++) {
       const data = new Date();
@@ -391,8 +377,8 @@ async function iniciarCotacaoTicker() {
       <span class="cotacao-separator" aria-hidden="true"></span>
     `).join('');
 
-    // Duplica para o scroll infinito ser contínuo
-    contentEl.innerHTML = itemsHTML + itemsHTML;
+    // Duplicar para o scroll infinito ser contínuo
+    contentEl.innerHTML = itemsHTML + itemsHTML + itemsHTML;
   };
 
   // Busca paralela USD + EUR

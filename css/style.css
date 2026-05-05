@@ -505,7 +505,7 @@ nav {
 }
 
 .home-text .subtitle {
-  font-size: clamp(1.1rem, 1.4vw, 1.12rem);
+  font-size: clamp(1.3rem, 1.4vw, 1.12rem);
   color: rgba(255, 255, 255, 0.82);
   font-weight: 300;
   margin-top: 30px;
@@ -966,7 +966,7 @@ header.header-hidden ~ .cotacao-ticker-bar,
    ============================================================ */
 #additional {
   padding: 6rem var(--px);
-  background: #fff;
+  background: rgb(241, 241, 241);
   text-align: center;
 }
 
