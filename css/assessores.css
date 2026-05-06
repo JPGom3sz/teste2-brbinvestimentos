@@ -109,7 +109,7 @@ header {
   left: 0;
   right: 0;
   height: var(--header-h);
-  background: var(--brb-navy); /* Cor de fundo alterada para o Navy dos assessores */
+  background: #060f1e;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   z-index: 1000;
@@ -135,11 +135,12 @@ nav {
 
 .logo {
   z-index: 2;
-  margin-left: 0;
+  margin-left: -10px;
+  margin-top: -10px;
 }
 
 .logo img {
-  height: 60px;
+  height: 130px;
 }
 
 .nav-links {
@@ -151,34 +152,40 @@ nav {
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;
-  text-decoration: none;
 }
 
 .nav-links > li > a {
-  color: #ffffff; 
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.92rem;
+  color: rgb(255, 255, 255);
+  font-weight: 520;
+  font-size: 0.90rem;
   letter-spacing: 0.02em;
-  padding: 0.65rem 1rem;
-  border-radius: 8px;
+  padding:  0.5rem 0.9rem;
+  border-radius: 6px;
   transition: color var(--ease), background var(--ease);
   display: flex;
   align-items: center;
-  gap: 0.35rem;
+  gap: 0.3rem;
   white-space: nowrap;
+  transition: background 0.2s, color 0.2s;
+  text-decoration: none;
 }
+/* Efeito de fundo para a página atual */
+.nav-links > li > a.active {
+  background: rgba(58, 127, 212, 0.15); /* Fundo sutil azul (pode trocar pela sua variável se preferir) */
+  color: #ffffff; /* Garante que o texto fique legível */
+  border-radius: 8px; /* Mantém o arredondamento do seu layout */
+}
+
 
 .nav-links > li > a:hover,
 .nav-links > li > a.active {
-  color: var(--brb-white); /* Hover com as variáveis  */
-  background: var(--brb-blue);
+  color: var(--primary-blue);
+  background: var(--light-blue);
 }
 
 /* Dropdown */
 .nav-links .dropdown {
   position: relative;
-  text-decoration: none;
 }
 
 .nav-links .dropdown-toggle {
@@ -206,7 +213,7 @@ nav {
   min-width: 240px;
   list-style: none;
   z-index: 999;
-  background: var(--brb-navy-4); /* Fundo escuro do dropdown */
+  background: #112444;
   border-radius: 12px;
   border: 1px solid rgba(0, 86, 168, 0.12);
   box-shadow: 0 16px 48px rgba(0, 31, 63, 0.15);
@@ -232,7 +239,7 @@ nav {
   transform: translateX(-50%) translateY(50%) rotate(45deg);
   width: 12px;
   height: 12px;
-  background: #141f3f; /* Seta decorativa escura */
+  background: #151133;
   border-top: 1px solid rgba(0, 86, 168, 0.12);
   border-left: 1px solid rgba(0, 86, 168, 0.12);
   z-index: 1;
@@ -252,7 +259,6 @@ nav {
 }
 
 .nav-links .dropdown-menu li {
-
   position: relative;
   z-index: 2;
 }
@@ -265,16 +271,17 @@ nav {
   text-decoration: none;
   display: block;
   padding: 11px 20px;
-  font-weight: 500;
-  font-size: 0.92rem;
-  color: white; /* Texto dos links internos em branco */
+  font-weight: 550;
+  font-size: 0.79rem;
+  color: rgb(255, 255, 255);
   transition: background var(--ease), color var(--ease);
 }
 
 .nav-links .dropdown-menu a:hover {
-  background: rgba(58, 127, 212, 0.15) !important; /* Hover escuro com azul suave */
-  color: var(--brb-white);
+  background: rgba(58, 127, 212, 0.15) !important; /* Fundo sutil azul para o hover */
+  color: var(--brb-cyan) !important; /* Garante que o texto fique legível no hover */
 }
+
 
 .nav-buttons {
   display: flex;
@@ -282,29 +289,24 @@ nav {
   z-index: 2;
 }
 
-.account-link {
-  display: inline-flex;
-  align-items: center;
-  background: var(--primary-blue);
-  color: var(--text-light);
-  border: none;
-  cursor: pointer;
-  font-family: inherit;
-  font-weight: 700;
-  font-size: 0.80rem;
-  white-space: nowrap;
-  padding: 0.70rem 1.6rem;
-  border-radius: 8px;
-  letter-spacing: 0.03em;
-  transition: background var(--ease), transform var(--ease), box-shadow var(--ease);
-}
-
-.account-link:hover {
-  background: var(--bright-blue);
-  transform: translateY(-1px);
-  box-shadow: 0 8px 24px rgba(0, 86, 168, 0.35);
-}
-
+ .account-link {
+      background: var(--primary-blue);
+      color: #fff;
+      border: none;
+      padding: 0.55rem 1.2rem;
+      border-radius: 7px;
+      font-size: 0.83rem;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      white-space: nowrap;
+    }
+    .account-link:hover {
+      background: var(--bright-blue);
+      transform: translateY(-1px);
+    }
+    
 /* Hamburger */
 .mobile-menu-toggle {
   display: none;
@@ -321,7 +323,7 @@ nav {
   display: block;
   width: 26px;
   height: 2.5px;
-  background: #ffffff; /* Ajustado para branco para aparecer no fundo escuro */
+  background: rgba(255, 255, 255, 0.88);
   border-radius: 2px;
   transition: var(--ease);
 }
@@ -347,76 +349,49 @@ nav {
   position: relative;
 }
 
-.has-submenu > a {
+.has-submenu a {
   display: flex !important;
   justify-content: space-between;
   align-items: center;
-  padding-right: 12px;
 }
 
 .chevron-right {
-  font-size: 0.8rem;
-  opacity: 0.4;
-  transition: transform var(--ease), opacity var(--ease);
+  font-size: 0.7rem;
+  opacity: 0.5;
 }
 
 .submenu {
   position: absolute;
-  left: calc(100% + 5px);
+  left: 100%;
   top: -8px;
-  min-width: 200px;
-  background: rgba(17, 36, 68, 0.98); /* Fundo com leve transparência e blur */
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  min-width: 180px;
+  background: #fff;
   border-radius: 10px;
-  border: 1px solid var(--brb-border);
-  box-shadow: 12px 16px 40px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(0, 86, 168, 0.12);
+  box-shadow: 0 12px 36px rgba(0, 31, 63, 0.13);
   padding: 0.5rem 0;
   list-style: none;
   opacity: 0;
   visibility: hidden;
   transform: translateX(-10px);
   transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
-  z-index: 1000;
 }
 
-.has-submenu:hover > .submenu {
+.has-submenu:hover .submenu {
   opacity: 1;
   visibility: visible;
-  pointer-events: auto;
   transform: translateX(0);
 }
 
-/* Efeitos de hover específicos para o item que abre o submenu */
-.has-submenu:hover > a {
-  background: rgba(58, 127, 212, 0.15) !important;
-  color: var(--brb-white) !important;
-}
-
-.has-submenu:hover > a .chevron-right {
-  opacity: 1;
-  transform: translateX(3px);
-  color: var(--brb-cyan);
-}
-
 .submenu li + li {
-  border-top: 1px solid var(--brb-border-s) !important;
+  border-top: 1px solid rgba(0, 86, 168, 0.07);
 }
 
 .submenu a {
-  padding: 8px 16px !important;
-  font-size: 0.78rem !important;
+  padding: 10px 16px;
+  font-size: 0.802rem;
 }
 
-.submenu::after {
-  content: '';
-  position: absolute;
-  right: 100%;
-  top: 0;
-  width: 15px;
-  height: 100%;
-  background: transparent;
-}
 /* ============================================================
    HELPERS COMPARTILHADOS
    ============================================================ */
@@ -834,29 +809,36 @@ nav {
 
 .as-team__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.4rem;
+  /* Reduzido de 300px para 260px para deixar os cards mais estreitos */
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem; 
+  justify-content: center; 
+  max-width: 1000px; /* Reduzido de 1200px para compactar o visual */
+  margin: 0 auto;
 }
 
 .as-team__card {
   background: var(--brb-navy-3);
   border: 1px solid var(--brb-border-s);
   border-radius: var(--r);
-  overflow: hidden;
+  overflow: visible; /* Garante que a foto saia do topo */
   display: flex;
   flex-direction: column;
-  transition: border-color var(--ease), transform var(--ease), box-shadow var(--ease);
+  height: 100%; 
+  max-width: 320px; /* Impede que cresçam demais */
+  margin: 0 auto;
+  transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 .as-team__card:hover {
-  border-color: var(--brb-border);
   transform: translateY(-5px);
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+  border-color: var(--brb-blue-light); 
 }
 
 .as-team__top {
-  height: 130px;
+  height: 80px; /* Reduzido para ficar mais proporcional ao novo tamanho */
   background: linear-gradient(135deg, #0e2540 0%, #153456 100%);
+  border-radius: var(--r) var(--r) 0 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -864,19 +846,18 @@ nav {
 }
 
 .as-team__avatar {
-  width: 140px;
-  height: 140px;
+  width: 110px; /* Reduzido de 150px para 110px */
+  height: 110px; 
   border-radius: 50%;
-  background: rgba(26, 74, 138, 0.4);
-  border: 2px solid rgba(58, 127, 212, 0.35);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgba(58, 127, 212, 0.7);
+  background: #1a4a8a;
+  border: 3px solid var(--brb-navy-3); 
+  position: absolute;
+  top: 25px; /* Ajuste preciso para a foto descer e centralizar na borda */
+  left: 50%;
+  transform: translateX(-50%);
   overflow: hidden;
-  flex-shrink: 0;
-  margin: 0 auto;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 2;
 }
 
 .as-team__avatar img {
@@ -886,16 +867,12 @@ nav {
   object-position: center top;
 }
 
-.as-team__avatar svg {
-  width: 64px;
-  height: 64px;
-}
-
 .as-team__body {
-  padding: 1.5rem 1.6rem 1.8rem;
+  padding: 4rem 1.2rem 1.5rem; /* Ajustado para compensar a bolinha menor */
   flex: 1;
   display: flex;
   flex-direction: column;
+  text-align: center; 
 }
 
 .as-team__role {
@@ -1685,4 +1662,298 @@ header.header-hidden ~ .cotacao-ticker-bar,
   background: linear-gradient(90deg, var(--primary-blue, #0056A8), var(--accent-gold, #F5A623));
   transition: width 0.1s ease;
   border-radius: 0 2px 2px 0;
+}
+
+
+
+/* ============================================================
+   MELHORIAS FINAIS — assessores.css
+   ============================================================ */
+
+/* LOGO MOBILE */
+@media (max-width: 968px) {
+  .logo img { height: 90px !important; width: auto; }
+  .logo     { margin-top: -4px !important; }
+}
+@media (max-width: 480px) {
+  .logo img { height: 80px !important; }
+}
+
+/* HERO ANIMAÇÕES */
+.as-hero__label   { animation: heroUp 0.65s 0.10s both; }
+.as-hero__title   { animation: heroUp 0.65s 0.25s both; }
+.as-hero__desc    { animation: heroUp 0.65s 0.40s both; }
+.as-hero__certs   { animation: heroUp 0.65s 0.50s both; }
+.as-hero__actions { animation: heroUp 0.65s 0.60s both; }
+.as-hero__stats   { animation: heroUp 0.65s 0.72s both; }
+@keyframes heroUp {
+  from { opacity:0; transform:translateY(22px); }
+  to   { opacity:1; transform:translateY(0);    }
+}
+
+/* HERO STATS */
+.as-hero__stats {
+  display: flex;
+  gap: 2.2rem;
+  margin-top: 2rem;
+  padding-top: 1.8rem;
+  border-top: 1px solid rgba(58,127,212,0.15);
+}
+.as-hero__stat-num {
+  font-size: 1.75rem;
+  font-weight: 900;
+  color: var(--brb-white);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.as-hero__stat-num span { color: var(--brb-cyan); }
+.as-hero__stat-label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--brb-muted);
+  margin-top: 0.35rem;
+}
+@media (max-width: 600px) {
+  .as-hero__stats    { gap: 1.4rem; }
+  .as-hero__stat-num { font-size: 1.35rem; }
+}
+
+/* EYEBROW COM LINHA */
+.as-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+.as-eyebrow::before {
+  content: '';
+  width: 18px;
+  height: 1.5px;
+  background: var(--brb-cyan);
+  display: inline-block;
+  flex-shrink: 0;
+}
+.as-eyebrow--center { text-align: center; }
+.as-eyebrow--center::before { display: none; }
+
+/* BOTÃO RIPPLE */
+.as-btn--primary { position: relative; overflow: hidden; }
+.as-btn--primary::after {
+  content: '';
+  position: absolute; top:50%; left:50%;
+  width: 0; height: 0;
+  background: rgba(255,255,255,0.13);
+  border-radius: 50%;
+  transform: translate(-50%,-50%);
+  transition: width 0.5s, height 0.5s;
+}
+.as-btn--primary:hover::after { width:280px; height:280px; }
+
+/* ============================================================
+   EQUIPE — estrutura original + overlay de hover
+   ============================================================ */
+
+/* O card precisa de overflow:hidden para o overlay funcionar
+   e position:relative para posicionar o overlay */
+.as-team__card {
+  overflow: hidden !important;   /* overlay fica contido */
+  position: relative !important;
+  cursor: pointer;
+}
+
+/* Overlay que sobe de baixo ao hover */
+.tc-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, #0c2650 0%, #081833 100%);
+  border-radius: var(--r);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.6rem 1.4rem;
+  text-align: center;
+  gap: 0.75rem;
+  /* começa abaixo do card */
+  transform: translateY(100%);
+  transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  border: 1px solid rgba(58,127,212,0.4);
+  z-index: 10;
+}
+
+.as-team__card:hover .tc-overlay,
+.as-team__card.is-flipped .tc-overlay {
+  transform: translateY(0);
+}
+
+.tc-overlay-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--brb-white);
+  margin: 0;
+}
+
+.tc-overlay-certs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  justify-content: center;
+}
+
+.tc-overlay-certs span {
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #060f1e;
+  background: var(--brb-cyan);
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+}
+
+.tc-overlay-bio {
+  font-size: 0.78rem;
+  line-height: 1.72;
+  color: rgba(255,255,255,0.8);
+  margin: 0;
+}
+
+/* Mobile: tap para ativar overlay */
+@media (max-width: 968px) {
+  .tc-overlay { transform: translateY(100%); }
+  .as-team__card.is-flipped .tc-overlay { transform: translateY(0); }
+  /* no hover no mobile */
+  .as-team__card:hover .tc-overlay { transform: translateY(100%); }
+  .as-team__card.is-flipped .tc-overlay { transform: translateY(0) !important; }
+}
+
+/* ============================================================
+   STEPS — sem artefatos visuais
+   ============================================================ */
+.as-steps::before     { display: none !important; }
+.as-steps__item::before,
+.as-steps__item::after { display: none !important; }
+
+.as-steps__item {
+  transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+.as-steps__item:hover {
+  border-color: rgba(58,127,212,0.45) !important;
+  transform: translateY(-5px) !important;
+  box-shadow: 0 20px 44px rgba(0,0,0,0.32) !important;
+}
+.as-steps__item:hover .as-steps__num {
+  -webkit-text-stroke-color: rgba(91,170,220,0.55) !important;
+}
+
+/* ============================================================
+   DIFERENCIAIS — glow suave no ícone
+   ============================================================ */
+.as-diff__icon { position: relative; }
+.as-diff__icon::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 14px;
+  background: var(--brb-blue);
+  opacity: 0;
+  filter: blur(14px);
+  transition: opacity 0.35s;
+  z-index: -1;
+}
+.as-diff__card:hover .as-diff__icon::after { opacity: 0.28; }
+
+/* ============================================================
+   DEPOIMENTOS — desktop grid / mobile carrossel
+   ============================================================ */
+.as-tgrid--desktop {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.4rem;
+}
+.as-tgrid--mobile { display: none; }
+
+.as-testimonials__carousel { overflow: hidden; position: relative; }
+.as-testimonials__track {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(0.23,1,0.32,1);
+}
+.as-testimonials__track .as-tcard { flex: 0 0 100%; min-width: 0; }
+
+.as-testimonials__nav {
+  display: flex; justify-content: center; gap: 0.75rem; margin-top: 1.2rem;
+}
+.as-testimonials__btn {
+  width: 38px; height: 38px; border-radius: 50%;
+  background: rgba(255,255,255,0.07); border: 1px solid var(--brb-border);
+  color: var(--brb-white); font-size: 1rem; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.25s, border-color 0.25s;
+}
+.as-testimonials__btn:hover { background: var(--brb-blue); border-color: var(--brb-blue); }
+
+.as-testimonials__dots { display:flex; justify-content:center; gap:0.5rem; margin-top:1rem; }
+.as-testimonials__dot {
+  width:7px; height:7px; border-radius:50%;
+  background: rgba(58,127,212,0.3); border:none; cursor:pointer;
+  transition: background 0.3s, transform 0.3s; padding:0;
+}
+.as-testimonials__dot.active { background:var(--brb-cyan); transform:scale(1.3); }
+
+.as-tcard {
+  transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+.as-tcard:hover {
+  border-color: rgba(58,127,212,0.3) !important;
+  transform: translateY(-3px);
+  box-shadow: 0 14px 36px rgba(0,0,0,0.28);
+}
+
+/* Estrelas douradas */
+.as-tcard__stars {
+  background: linear-gradient(90deg,#f5c842,#f5a623);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ============================================================
+   PLANOS — badge "Mais popular" sem quebrar layout
+   ============================================================ */
+/* Remove qualquer ::after problemático anterior */
+.plano-card--destaque::after { display: none !important; }
+
+/* Badge via elemento no HTML (mais confiável) */
+.plano-badge-top {
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, var(--brb-blue), var(--brb-cyan));
+  color: white;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.28rem 1rem;
+  border-radius: 50px;
+  white-space: nowrap;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+  .as-tgrid--desktop { display: none !important; }
+  .as-tgrid--mobile  { display: block !important; }
+}
+@media (max-width: 968px) {
+  .as-diff__grid  { grid-template-columns: 1fr 1fr; }
+  .as-tgrid--desktop { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .as-diff__grid { grid-template-columns: 1fr; }
 }

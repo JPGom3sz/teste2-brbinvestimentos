@@ -347,11 +347,43 @@ nav {
 .pv-hero p.hero-desc { font-size: 1.05rem; color: rgba(255,255,255,0.75); max-width: 520px; margin-bottom: 2.5rem; line-height: 1.75; }
 .pv-hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
 
-.btn-pv-primary { background: var(--primary-blue); color: #fff; border: none; padding: 0.9rem 2rem; border-radius: 8px; font-size: 0.95rem; font-weight: 700; font-family: inherit; cursor: pointer; transition: all 0.2s; }
-.btn-pv-primary:hover { background: var(--bright-blue); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,128,216,0.35); }
-.btn-pv-outline { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,0.4); padding: 0.9rem 1.8rem; border-radius: 8px; font-size: 0.95rem; font-weight: 600; font-family: inherit; cursor: pointer; transition: all 0.2s; }
-.btn-pv-outline:hover { border-color: var(--accent-gold); color: var(--accent-gold); }
+.btn-rf-primary {
+      background: var(--primary-blue);
+      color: #fff;
+      border: none;
+      padding: 0.9rem 2rem;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      font-family: inherit;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .btn-rf-primary:hover {
+      background: var(--bright-blue);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,128,216,0.35);
+    }
 
+    .btn-rf-outline {
+      background: transparent;
+      color: #fff;
+      border: 1.5px solid rgba(255,255,255,0.4);
+      padding: 0.9rem 1.8rem;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-rf-outline:hover {
+      border-color: var(--accent-gold);
+      color: var(--accent-gold);
+    }
 /* ── VANTAGENS ── */
 .pv-advantages { background: #fff; padding: 6rem var(--px); }
 .section-header { text-align: center; max-width: 600px; margin: 0 auto 3.5rem; }

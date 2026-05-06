@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="css/produtos-base.css" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/previdencia.css" />
+  <link rel="stylesheet" href="css/mobile-nav.css" />
 </head>
 <body>
   <div class="reading-progress" aria-hidden="true"><div class="reading-progress__bar" id="readingBar"></div></div>
@@ -69,6 +70,7 @@
       </button>
 
       <div class="menu-overlay" aria-hidden="true"></div>
+      <button class="mobile-menu-close" type="button" aria-label="Fechar menu">&times;</button>
     </nav>
   </header>
 
@@ -78,7 +80,7 @@
   ==================================================== -->
   <section class="pv-hero" id="topo">
     <div class="pv-hero-inner">
-      <div class="pv-hero-badge">🌅 Previdência Privada</div>
+      <div class="pv-hero-badge"> Previdência Privada</div>
       <h1>
         Construa seu <span class="highlight">futuro</span><br>
         com planejamento
@@ -88,14 +90,12 @@
         aposentadoria, com benefícios fiscais, flexibilidade de aportes e acesso a estratégias de longo prazo.
       </p>
       <div class="pv-hero-ctas">
-        <button class="btn-pv-primary"
-          onclick="window.open('https://brb.genialinvestimentos.com.br/auth/login','_blank','noopener,noreferrer')">
-          Planejar agora →
-        </button>
-        <button class="btn-pv-outline"
-          onclick="document.getElementById('produtos').scrollIntoView({behavior:'smooth'})">
-          Ver planos
-        </button>
+        <button class="btn-rf-primary" onclick="window.open('https://brb.genialinvestimentos.com.br/auth/login','_blank','noopener,noreferrer')">
+            Comece a investir
+          </button>
+          <button class="btn-rf-outline" onclick="document.getElementById('produtos').scrollIntoView({behavior:'smooth'})">
+            Ver produtos
+          </button>
       </div>
     </div>
   </section>
@@ -233,9 +233,9 @@
         <div class="section-tag" style="margin-bottom: 1rem;">Entenda</div>
         <h2>Tire suas dúvidas sobre Previdência</h2>
         <p>Esclareça suas principais dúvidas sobre previdência privada e comece a planejar sua aposentadoria com mais segurança.</p>
-        <button class="faq-cta" onclick="window.location.href='assessores.html'">
-          Conheça nossa equipe →
-        </button>
+        <button class="btn-rf-primary" onclick="window.open('assessores.html#equipe')">
+            Conheça nossa equipe
+          </button>
       </div>
 
       <div class="faq-list reveal">
@@ -368,7 +368,7 @@
           Acessar minha conta
         </button>
         <button class="btn-cta-secondary"
-          onclick="window.location.href='assessores.html'">
+          onclick="window.location.href='https://forms.office.com/r/1EsKit6Ce9'">
           Falar com um assessor
         </button>
       </div>

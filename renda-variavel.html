@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="css/style-enhance.css" />
   <link rel="stylesheet" href="css/produtos-base.css" />
   <link rel="stylesheet" href="css/renda-variavel.css" />
+  <link rel="stylesheet" href="css/mobile-nav.css" />
 </head>
 <body>
 
@@ -67,6 +68,7 @@
         <span></span><span></span><span></span>
       </button>
       <div class="menu-overlay" aria-hidden="true"></div>
+      <button class="mobile-menu-close" type="button" aria-label="Fechar menu">&times;</button>
     </nav>
   </header>
 
@@ -77,7 +79,7 @@
   <section class="rv-hero" id="topo">
     <div class="diagonal-line" aria-hidden="true"></div>
     <div class="rv-hero-inner">
-      <div class="rv-hero-badge">📈 Renda Variável</div>
+      <div class="rv-hero-badge"> Renda Variável</div>
       <h1>
         Invista no <span class="highlight">potencial</span><br>
         do mercado
@@ -87,14 +89,12 @@
         com análise especializada, plataforma completa e o suporte de quem entende do mercado.
       </p>
       <div class="rv-hero-ctas">
-        <button class="btn-rv-primary"
-          onclick="window.open('https://brb.genialinvestimentos.com.br/auth/login','_blank','noopener,noreferrer')">
-          Comece a investir →
-        </button>
-        <button class="btn-rv-outline"
-          onclick="document.getElementById('produtos').scrollIntoView({behavior:'smooth'})">
-          Ver produtos
-        </button>
+        <button class="btn-rf-primary" onclick="window.open('https://brb.genialinvestimentos.com.br/auth/login','_blank','noopener,noreferrer')">
+            Comece a investir
+          </button>
+          <button class="btn-rf-outline" onclick="document.getElementById('produtos').scrollIntoView({behavior:'smooth'})">
+            Ver produtos
+          </button>
       </div>
 
       <!-- Live market mini-ticker -->
@@ -297,9 +297,9 @@
         <div class="section-tag" style="margin-bottom: 1rem;">Entenda</div>
         <h2>Tire suas dúvidas sobre Renda Variável</h2>
         <p>Reunimos as perguntas mais frequentes para ajudar você a investir com mais confiança e clareza.</p>
-        <button class="faq-cta" onclick="window.location.href='assessores.html'">
-          Conheça nossa equipe →
-        </button>
+       <button class="btn-rf-primary" onclick="window.open('assessores.html#equipe')">
+            Conheça nossa equipe
+          </button>
       </div>
 
       <div class="faq-list reveal">
@@ -425,7 +425,7 @@
           Acessar minha conta
         </button>
         <button class="btn-cta-secondary"
-          onclick="window.location.href='assessores.html'">
+          onclick="window.location.href='https://forms.office.com/r/1EsKit6Ce9'">
           Falar com um assessor
         </button>
       </div>

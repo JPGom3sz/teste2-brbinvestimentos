@@ -1763,7 +1763,7 @@ footer {
   .main-hero-wrapper { margin-bottom: 260px; }
   #home { padding-bottom: 140px; padding-top: calc(var(--header-h)); }
 
-  .hero-floating-section { transform: translateY(40%); }
+  .hero-floating-section { display: none; }
 
   .benefit-card {
     flex-direction: column;

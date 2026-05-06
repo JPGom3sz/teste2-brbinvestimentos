@@ -6,6 +6,8 @@
   <title>Assessoria de Investimentos — BRB Investimentos</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/assessores.css" />
+  <link rel="stylesheet" href="css/style-enhance-assessores.css" />
+  <link rel="stylesheet" href="css/mobile-nav.css" />
 </head>
 
 <body>
@@ -15,18 +17,16 @@
     <div class="reading-progress__bar" id="readingBar"></div>
   </div>
 
-  <header id="site-header">
+   <header id="site-header">
     <nav>
       <div class="logo">
         <a href="index.html" aria-label="BRB Investimentos - Início">
           <img src="img/LOGO BRANCA.png" alt="BRB Investimentos" />
         </a>
       </div>
-
+  
       <ul class="nav-links" id="mobileMenu" role="menubar">
-
-      
-    <li class="dropdown">
+        <li class="dropdown">
           <a href="javascript:void(0)" class="dropdown-toggle">
             Produtos e Serviços <span class="chevron" aria-hidden="true">▾</span>
           </a>
@@ -35,54 +35,57 @@
               <a href="renda-fixa.html">Renda Fixa <span class="chevron-right"></span></a>
             </li>
             <li class="has-submenu">
-              <a href="javascript:void(0)">Renda Variável <span class="chevron-right"></span></a>             
+              <a href="renda-variavel.html">Renda Variável <span class="chevron-right"></span></a>             
             </li>  
             <li class="has-submenu">
-              <a href="javascript:void(0)">Previdência <span class="chevron-right"></span></a>             
+              <a href="previdencia.html">Previdência <span class="chevron-right"></span></a>             
             </li> 
             <li class="has-submenu">
-              <a href="site em construção.html">Fundos <span class="chevron-right"></span></a>
+              <a href="fundos.html">Fundos <span class="chevron-right"></span></a>
             </li>
 
             <li class="has-submenu">
-              <a href="site em construção.html">Mercado Futuro <span class="chevron-right"></span></a>
+              <a href="mercado-futuro.html">Mercado Futuro <span class="chevron-right"></span></a>
             </li>
           </ul>
         </li>
-
-
-
+  
         <li class="dropdown" role="none">
-          <a href="#" class="dropdown-toggle" role="menuitem" aria-haspopup="true" aria-expanded="false">
+          <a href="javascript:void(0)" class="dropdown-toggle" role="menuitem" aria-haspopup="true" aria-expanded="false">
             Conteúdo <span class="chevron" aria-hidden="true">▾</span>
           </a>
           <ul class="dropdown-menu" role="menu">
             <li role="none"><a href="https://analisa.genialinvestimentos.com.br/" role="menuitem" target="_blank" rel="noopener noreferrer">Genial analisa</a></li>
-            <li role="none"><a href="newsletter.html" role="menuitem" target="_blank" rel="noopener noreferrer">Newsletter</a></li>
+            <li role="none"><a href="newsletter.html" role="menuitem" rel="noopener noreferrer">Newsletter</a></li>
             <li role="none"><a href="tutoriais.html" role="menuitem">Guias Práticos</a></li>
-            <li role="none"><a href="#" role="menuitem">Educação Investidora</a></li>
+            <li role="none"><a href="javascript:void(0)" role="menuitem">Educação Investidora</a></li>
           </ul>
         </li>
-
+  
         <li role="none">
           <a href="sobrenos.html" role="menuitem">Sobre nós</a>
         </li>
-
+  
         <li role="none">
           <a href="contato.html" role="menuitem">Contato</a>
         </li>
-
       </ul>
-
+  
       <div class="nav-buttons">
-        <button class="account-link" type="button">Acesse seus Investimentos</button>
+        <button 
+          class="account-link" 
+          type="button"
+          data-desktop-href="INSIRA_O_LINK_DO_PORTAL_AQUI"
+          data-mobile-href="INSIRA_O_LINK_DO_APP_AQUI"
+        >Acesse seus Investimentos</button>
       </div>
-
+  
       <button class="mobile-menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
         <span></span><span></span><span></span>
       </button>
-
+  
       <div class="menu-overlay" aria-hidden="true"></div>
+      <button class="mobile-menu-close" type="button" aria-label="Fechar menu">&times;</button>
     </nav>
   </header>
 
@@ -128,12 +131,28 @@
         </div>
 
         <div class="as-hero__actions">
-          <a href="#equipe" class="as-btn as-btn--ghost">Conhecer a equipe ↓</a>
+          <a href="#equipe" class="as-btn as-btn--ghost">Conhecer a equipe </a>
           
           <a href="https://forms.office.com/r/1EsKit6Ce9" target="_blank" rel="noopener noreferrer" class="as-btn as-btn--primary">
             Quero receber contato
           </a>
         </div>
+
+        <div class="as-hero__stats">
+          <div>
+            <div class="as-hero__stat-num">7<span>+</span></div>
+            <div class="as-hero__stat-label">Especialistas certificados</div>
+          </div>
+          <div>
+            <div class="as-hero__stat-num"><span>+</span>30</div>
+            <div class="as-hero__stat-label">Anos de experiência BRB</div>
+          </div>
+          <div>
+            <div class="as-hero__stat-num">R$3<span>B+</span></div>
+            <div class="as-hero__stat-label">Em patrimônio gerido</div>
+          </div>
+        </div>
+
       </div>
 
     </div>
@@ -150,60 +169,73 @@
   </section>
 
 
- <!-- ===== EQUIPE ===== -->
+<!-- ===== EQUIPE ===== -->
   <section class="as-team" id="equipe">
     <div class="as-team__inner">
       <p class="as-eyebrow">Nossa Equipe</p>
       <h2 class="as-title">Especialistas que colocam<br /><em>seu futuro em primeiro lugar.</em></h2>
       <p class="as-team__sub">Profissionais certificados, com experiência comprovada e dedicação total ao crescimento do seu patrimônio.</p>
 
+      <!-- ÚNICO GRID PARA TODOS OS CARDS -->
       <div class="as-team__grid">
-
+        
+        <!-- 1º Card Adicionado (Mikael / Novo Especialista) -->
         <div class="as-team__card" data-animate>
           <div class="as-team__top">
             <div class="as-team__avatar">
-            <img src="img\Pedro.jpg" alt="Foto do especialista Pedro Aleixo">
-           </div>
+              <img src="img/mikael.png" alt="Foto do especialista">
+            </div>
+          </div>
+          <div class="as-team__body" id="mikael">
+            <p class="as-team__role">Mikael Veras</p>
+            <p class="as-team__bio">Gerente de Distribuição de Fundos de Investimento na BRB DTVM | CEA</p>
+          </div>
+        </div>
+
+        <!-- 2º Card -->
+        <div class="as-team__card" data-animate>
+          <div class="as-team__top">
+            <div class="as-team__avatar">
+              <img src="img/Pedro.jpg" alt="Foto do especialista Pedro Silva">
+            </div>
           </div>
           <div class="as-team__body">
             <p class="as-team__role">Pedro Silva</p>
-            <p class="as-team__bio">Gerente de Negócios Especialista em Investimentos | Private & Alta Renda. Certificado CEA/Anbima.
-Economista com Especialização em Finanças/IBMEC</p>
+            <p class="as-team__bio">Gerente de Negócios Especialista em Investimentos | Private & Alta Renda. Certificado CEA/Anbima. Economista com Especialização em Finanças/IBMEC</p>
           </div>
         </div>
 
+        <!-- 3º Card -->
         <div class="as-team__card" data-animate>
           <div class="as-team__top">
             <div class="as-team__avatar">
-            <img src="img\CLERTON.jpg" alt="Foto do especialista Clêrton de Albuquerque">
-           </div>
-          
+              <img src="img/CLERTON.jpg" alt="Foto do especialista Clêrton Albuquerque">
+            </div>
           </div>
           <div class="as-team__body">
-            <p class="as-team__role">Clerton Albuquerque </p>
-            <p class="as-team__bio">Gerente de Negócios Especialista em Investimentos | Private & Alta Renda. Certificado CEA/Anbima.
-Administrador/Universidade Estadual de Goiás</p>
+            <p class="as-team__role">Clêrton Albuquerque</p>
+            <p class="as-team__bio">Gerente de Negócios Especialista em Investimentos | Private & Alta Renda. Certificado CEA/Anbima. Administrador/Universidade Estadual de Goiás</p>
           </div>
         </div>
 
-        <div class="as-team__card" data-animate>
-          <div class="as-team__top">
-           <div class="as-team__avatar">
-            <img src="img\Luis.png" alt="Foto do especialista Luis Filipe">
-           </div>
-          
-          </div>
-          <div class="as-team__body">
-            <p class="as-team__role">Luis Siscato </p>
-            <p class="as-team__bio">Gerente de Negócios Especialista em Investimentos | Private & Alta Renda. Certificado CEA/Anbima e CNPI/Apimec.
-Engenheiro Civil</p>
-          </div>
-        </div>
-
+        <!-- 4º Card -->
         <div class="as-team__card" data-animate>
           <div class="as-team__top">
             <div class="as-team__avatar">
-               <img src="img/sam.png" alt="Foto do especialista sam">
+              <img src="img/Luis.png" alt="Foto do especialista Luis Siscato">
+            </div>
+          </div>
+          <div class="as-team__body">
+            <p class="as-team__role">Luis Siscato</p>
+            <p class="as-team__bio">Gerente de Negócios Especialista em Investimentos | Private & Alta Renda. Certificado CEA/Anbima e CNPI/Apimec. Engenheiro Civil</p>
+          </div>
+        </div>
+
+        <!-- 5º Card -->
+        <div class="as-team__card" data-animate>
+          <div class="as-team__top">
+            <div class="as-team__avatar">
+              <img src="img/sam.png" alt="Foto do especialista Sam Bastos">
             </div>
           </div>
           <div class="as-team__body">
@@ -212,85 +244,35 @@ Engenheiro Civil</p>
           </div>
         </div>
 
+        <!-- 6º Card -->
         <div class="as-team__card" data-animate>
           <div class="as-team__top">
             <div class="as-team__avatar">
-               <img src="img\rafael.png" alt="Foto do especialista rafael">
+              <img src="img/rafael.png" alt="Foto do especialista Rafael Barbosa">
             </div>
           </div>
           <div class="as-team__body">
             <p class="as-team__role">Rafael Barbosa</p>
-            <p class="as-team__bio"> Especialista em Investimentos, Certificações CEA e CFG pela Anbima. 
-Mestrando em Economia pela Fundação Getúlio Vargas.</p>
+            <p class="as-team__bio">Especialista em Investimentos, Certificações CEA e CFG pela Anbima. Mestrando em Economia pela Fundação Getúlio Vargas.</p>
           </div>
         </div>
 
+        <!-- 7º Card -->
         <div class="as-team__card" data-animate>
           <div class="as-team__top">
             <div class="as-team__avatar">
-             <img src="img\ERICK.jpg" alt="Foto do especialista erick">
+              <img src="img/ERICK.jpg" alt="Foto do especialista Erick Rodrigo">
             </div>
           </div>
           <div class="as-team__body">
             <p class="as-team__role">Erick Rodrigo</p>
-            <p class="as-team__bio">Especialista Sênior em Investimentos | Private & Alta Renda. Certificado CEA/Anbima. 
-Economista com Especialização em Corporate Finance/IBMEC</p>
-       
+            <p class="as-team__bio">Especialista Sênior em Investimentos | Private & Alta Renda. Certificado CEA/Anbima. Economista com Especialização em Corporate Finance/IBMEC</p>
           </div>
         </div>
 
       </div>
     </div>
   </section>
-
-
-
-
-
-
-
-
-
- 
-
-  <!-- ===== COMO FUNCIONA ===== -->
-  <section class="as-steps" id="como-funciona">
-    <div class="as-steps__inner">
-      <p class="as-eyebrow">Processo</p>
-      <h2 class="as-title">Sua plataforma para investir melhor.<br /><em>Do planejamento à execução.</em></h2>
-
-      <div class="as-steps__track">
-
-        <div class="as-steps__item" data-animate>
-          <div class="as-steps__num">01</div>
-          <h3>Diagnóstico financeiro</h3>
-          <p>Analisamos seus objetivos, perfil de risco e horizonte de investimento para entender seu momento atual e orientar as melhores decisões na sua jornada financeira.</p>
-        </div>
-
-        <div class="as-steps__arrow" aria-hidden="true">
-          <svg viewBox="0 0 44 16" fill="none"><path d="M0 8H40M33 2L41 8L33 14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-
-        <div class="as-steps__item" data-animate>
-          <div class="as-steps__num">02</div>
-          <h3>Estratégia personalizada</h3>
-          <p>Seu assessor estrutura uma carteira sob medida com os melhores produtos do mercado para atingir seus objetivos</p>
-        </div>
-
-        <div class="as-steps__arrow" aria-hidden="true">
-          <svg viewBox="0 0 44 16" fill="none"><path d="M0 8H40M33 2L41 8L33 14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-
-        <div class="as-steps__item" data-animate>
-          <div class="as-steps__num">03</div>
-          <h3>Execução e acompanhamento</h3>
-          <p>A carteira entra em operação com monitoramento ativo. Relatórios periódicos e ajustes sempre que o mercado exigir.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
 
    <!-- ===== DIFERENCIAIS ===== -->
   <section class="as-diff" id="diferenciais">
@@ -364,51 +346,77 @@ Economista com Especialização em Corporate Finance/IBMEC</p>
       <p class="as-eyebrow as-eyebrow--center">Depoimentos</p>
       <h2 class="as-title as-title--center">O que dizem os clientes que já investem<br /><em>com a nossa assessoria.</em></h2>
 
-      <div class="as-tgrid">
-
+      <!-- Grid estático desktop -->
+      <div class="as-tgrid as-tgrid--desktop">
         <div class="as-tcard" data-animate>
           <div class="as-tcard__stars">★★★★★</div>
           <p>"Gostaria de ressaltar o excelente atendimento do funcionário Pedro, sempre esclarecedor, solicito e acolhedor."</p>
           <div class="as-tcard__author">
             <div class="as-tcard__av">UA</div>
-            <div>
-              <strong>Usuário Anônimo</strong>
-          
-            </div>
+            <div><strong>Usuário Anônimo</strong></div>
           </div>
         </div>
-
         <div class="as-tcard" data-animate>
           <div class="as-tcard__stars">★★★★★</div>
           <p>"Estou muito satisfeito com a plataforma. Fácil de usar, os poucos problemas foram resolvidos com rapidez e só tenho elogios."</p>
           <div class="as-tcard__author">
             <div class="as-tcard__av">UA</div>
-            <div>
-              <strong>Usuário Anônimo</strong>
-             
-            </div>
+            <div><strong>Usuário Anônimo</strong></div>
           </div>
         </div>
-
         <div class="as-tcard" data-animate>
           <div class="as-tcard__stars">★★★★★</div>
-          <p>"Estou gostando muito da experiência. Eu lamento não ter começado a investir antes, embora tenha sido por falta de conhecimento da minha parte.
-O acesso às modalidades disponíveis de investimentos são simples."</p>
+          <p>"Estou gostando muito da experiência. Lamento não ter começado a investir antes. O acesso às modalidades disponíveis de investimentos são simples."</p>
           <div class="as-tcard__author">
             <div class="as-tcard__av">UA</div>
-            <div>
-              <strong>Usuário Anônimo</strong>
-              
+            <div><strong>Usuário Anônimo</strong></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carrossel mobile -->
+      <div class="as-testimonials__carousel as-tgrid--mobile">
+        <div class="as-testimonials__track" id="testimonialsTrack">
+          <div class="as-tcard">
+            <div class="as-tcard__stars">★★★★★</div>
+            <p>"Gostaria de ressaltar o excelente atendimento do funcionário Pedro, sempre esclarecedor, solicito e acolhedor."</p>
+            <div class="as-tcard__author">
+              <div class="as-tcard__av">UA</div>
+              <div><strong>Usuário Anônimo</strong></div>
+            </div>
+          </div>
+          <div class="as-tcard">
+            <div class="as-tcard__stars">★★★★★</div>
+            <p>"Estou muito satisfeito com a plataforma. Fácil de usar, os poucos problemas foram resolvidos com rapidez e só tenho elogios."</p>
+            <div class="as-tcard__author">
+              <div class="as-tcard__av">UA</div>
+              <div><strong>Usuário Anônimo</strong></div>
+            </div>
+          </div>
+          <div class="as-tcard">
+            <div class="as-tcard__stars">★★★★★</div>
+            <p>"Estou gostando muito da experiência. Lamento não ter começado a investir antes. O acesso às modalidades disponíveis de investimentos são simples."</p>
+            <div class="as-tcard__author">
+              <div class="as-tcard__av">UA</div>
+              <div><strong>Usuário Anônimo</strong></div>
             </div>
           </div>
         </div>
-
+        <div class="as-testimonials__nav">
+          <button class="as-testimonials__btn" id="testPrev" aria-label="Anterior">←</button>
+          <button class="as-testimonials__btn" id="testNext" aria-label="Próximo">→</button>
+        </div>
+        <div class="as-testimonials__dots" id="testimonialsDots">
+          <button class="as-testimonials__dot active" data-index="0"></button>
+          <button class="as-testimonials__dot" data-index="1"></button>
+          <button class="as-testimonials__dot" data-index="2"></button>
+        </div>
       </div>
+
     </div>
   </section>
 
-
-  <section class="assessoria-section" id="card-beneficios">
+   <section class="assessoria-section" id="card-beneficios">
     <div class="assessoria-container">
 
       <div class="assessoria-header">
@@ -436,6 +444,7 @@ O acesso às modalidades disponíveis de investimentos são simples."</p>
   </div>
 
   <div class="plano-card plano-card--destaque" data-animate>
+    <span class="plano-badge-top"></span>
     <div class="plano-icone-container">
       <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
@@ -578,5 +587,41 @@ O acesso às modalidades disponíveis de investimentos são simples."</p>
   <script>
     (function(){var bar=document.getElementById("readingBar");if(bar){window.addEventListener("scroll",function(){bar.style.width=(window.scrollY/(document.body.scrollHeight-window.innerHeight)*100)+"%";});}})();
   </script>
+
+  <script>
+    /* ── Carousel mobile depoimentos ── */
+    (function(){
+      var track = document.getElementById('testimonialsTrack');
+      var dots  = document.querySelectorAll('.as-testimonials__dot');
+      if(!track) return;
+      var cur = 0;
+      var cards = track.querySelectorAll('.as-tcard');
+      var timer;
+      function go(n){
+        cur = (n + cards.length) % cards.length;
+        var w = track.parentElement.getBoundingClientRect().width;
+        track.style.transform = 'translateX(-'+(cur*w)+'px)';
+        dots.forEach(function(d,i){ d.classList.toggle('active', i===cur); });
+      }
+      var prev = document.getElementById('testPrev');
+      var next = document.getElementById('testNext');
+      if(prev) prev.addEventListener('click', function(){ go(cur-1); reset(); });
+      if(next) next.addEventListener('click', function(){ go(cur+1); reset(); });
+      dots.forEach(function(d){ d.addEventListener('click', function(){ go(+d.dataset.index); reset(); }); });
+      function reset(){ clearInterval(timer); timer = setInterval(function(){ go(cur+1); }, 5000); }
+      reset();
+    })();
+
+    /* ── Overlay de equipe no mobile (toque) ── */
+    (function(){
+      if(!('ontouchstart' in window)) return;
+      document.querySelectorAll('.as-team__card').forEach(function(card){
+        card.addEventListener('click', function(){
+          var open = card.classList.contains('is-flipped');
+          document.querySelectorAll('.as-team__card.is-flipped').forEach(function(c){ c.classList.remove('is-flipped'); });
+          if(!open) card.classList.add('is-flipped');
+        });
+      });
+    })();
+  </script>
 </body>
-</html>

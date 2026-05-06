@@ -19,25 +19,10 @@
 .nav-links > li > a {
   position: relative;
   background: transparent !important;
-  color: rgba(20, 20, 20, 0.92) !important;
+  color: rgba(255, 255, 255, 0.78) !important;
   padding: 0.5rem 0.7rem;
   font-weight: 550;
   letter-spacing: 0.01em;
-}
-
-/* Mobile: nav slide-out has dark background — force links to white */
-@media (max-width: 968px) {
-  .nav-links > li > a {
-    color: rgba(255, 255, 255, 0.88) !important;
-  }
-  .nav-links > li > a:hover,
-  .nav-links > li > a.active {
-    color: #ffffff !important;
-    background: rgba(255, 255, 255, 0.08) !important;
-  }
-  .nav-links > li > a::after {
-    display: none;
-  }
 }
 
 .nav-links > li > a::after {
@@ -140,7 +125,7 @@
 }
 
 .btn-primary::after {
-  content: '';
+  content: '↓';
   position: absolute;
   inset: 0;
   background: linear-gradient(110deg, transparent 35%, rgba(255,255,255,0.35) 50%, transparent 65%);
@@ -159,7 +144,7 @@
 }
 
 .btn-outline::after {
-  content: ' →';
+  content: '↓';
   display: inline-block;
   transform: translateX(-4px);
   opacity: 0;

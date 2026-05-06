@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="css/produtos-base.css" />
   <link rel="stylesheet" href="css/mercado-futuro.css" />
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/mobile-nav.css" />
 </head>
 <body>
   <div class="reading-progress"><div class="reading-progress__bar" id="readingBar"></div></div>
@@ -69,6 +70,7 @@
       </button>
 
       <div class="menu-overlay" aria-hidden="true"></div>
+      <button class="mobile-menu-close" type="button" aria-label="Fechar menu">&times;</button>
     </nav>
   </header>
 
@@ -78,7 +80,7 @@
   ==================================================== -->
   <section class="mf-hero" id="topo">
     <div class="mf-hero-inner">
-      <div class="mf-hero-badge">⚡ Mercado Futuro</div>
+      <div class="mf-hero-badge"> Mercado Futuro</div>
       <h1>
         Opere com <span class="highlight">precisão</span><br>
         no mercado
@@ -89,14 +91,12 @@
         para operadores experientes.
       </p>
       <div class="mf-hero-ctas">
-        <button class="btn-mf-primary"
-          onclick="window.open('https://brb.genialinvestimentos.com.br/auth/login','_blank','noopener,noreferrer')">
-          Começar a operar →
-        </button>
-        <button class="btn-mf-outline"
-          onclick="document.getElementById('produtos').scrollIntoView({behavior:'smooth'})">
-          Ver contratos
-        </button>
+       <button class="btn-rf-primary" onclick="window.open('https://brb.genialinvestimentos.com.br/auth/login','_blank','noopener,noreferrer')">
+            Comece a investir
+          </button>
+          <button class="btn-rf-outline" onclick="document.getElementById('produtos').scrollIntoView({behavior:'smooth'})">
+            Ver produtos
+          </button>
       </div>
     </div>
   </section>
@@ -242,7 +242,11 @@
           <tr><td><strong>Café Arábica</strong></td><td>ICF</td><td class="val-dn">-0,65%</td><td><span class="badge badge-high">Alto</span></td><td>~R$ 1.800</td></tr>
         </tbody>
       </table>
+      <div class="texto informativo">
+     <p class="text-info"> * Valores de referência sujeitos a alterações. Consulte a plataforma para visualizar as variações e margens de garantia em tempo real.</p>
     </div>
+    </div>
+    
   </section>
 
 
@@ -256,9 +260,9 @@
         <div class="section-tag" style="margin-bottom: 1rem;">Entenda</div>
         <h2>Tire suas dúvidas sobre Mercado Futuro</h2>
         <p>Antes de operar contratos futuros, entenda os conceitos fundamentais e os riscos envolvidos.</p>
-        <button class="faq-cta" onclick="window.location.href='assessores.html'">
-          Conheça nossa equipe →
-        </button>
+        <button class="btn-rf-primary" onclick="window.open('assessores.html#equipe')">
+            Conheça nossa equipe
+          </button>
       </div>
 
       <div class="faq-list reveal">
@@ -391,7 +395,7 @@
           Acessar minha conta
         </button>
         <button class="btn-cta-secondary"
-          onclick="window.location.href='assessores.html'">
+          onclick="window.location.href='https://forms.office.com/r/1EsKit6Ce9'"">
           Falar com um assessor
         </button>
       </div>

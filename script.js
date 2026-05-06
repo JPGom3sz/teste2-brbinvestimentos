@@ -59,12 +59,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileToggle = document.querySelector('.mobile-menu-toggle');
   const navLinks     = document.querySelector('.nav-links');
   const menuOverlay  = document.querySelector('.menu-overlay');
+  const closeBtn     = document.querySelector('.mobile-menu-close');
 
   const openMenu = () => {
     navLinks.classList.add('active');
     mobileToggle.classList.add('active');
     menuOverlay.classList.add('active');
     mobileToggle.setAttribute('aria-expanded', 'true');
+    if (closeBtn) closeBtn.classList.add('visible');
     document.body.style.overflow = 'hidden';
   };
 
@@ -73,6 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
     mobileToggle.classList.remove('active');
     menuOverlay.classList.remove('active');
     mobileToggle.setAttribute('aria-expanded', 'false');
+    if (closeBtn) closeBtn.classList.remove('visible');
     document.body.style.overflow = '';
   };
 
@@ -81,6 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
   );
 
   menuOverlay?.addEventListener('click', closeMenu);
+  closeBtn?.addEventListener('click', closeMenu);
 
   // Fechar ao clicar em links comuns (não dropdown-toggle)
   document.querySelectorAll('.nav-links a:not(.dropdown-toggle)').forEach(link => {
@@ -176,7 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
     6: {
       titulo:    'Criptoativos',
       descricao: 'A BRB Investimentos está sempre evoluindo para oferecer o que há de mais moderno no mercado financeiro. Em breve, você terá acesso a uma nova classe de ativos diretamente na nossa plataforma: os Criptoativos.',
-      link:      'javascript:void(0)',
+      link:      'site-em-construção.html',
     },
   };
   
