@@ -478,20 +478,12 @@ nav {
   font-weight: 1000;
   font-family: 'Cera Pro', 'Montserrat', sans-serif;
   color: white;
+ 
   font-size: 4.1rem; 
   line-height: 1.1;
   text-align: left;
   max-width: 600px; 
-  text-wrap: nowrap;
-  white-space: nowrap;
-}
-
-/* Previne overflow em telas menores que 1600px */
-@media (max-width: 1600px) {
-  .home-text h1 {
-    white-space: normal;
-    text-wrap: wrap;
-  }
+  text-wrap: nowrap; 
 }
 
 .home-text h1 span.highlight {
@@ -505,7 +497,7 @@ nav {
 }
 
 .home-text .subtitle {
-  font-size: clamp(1.3rem, 1.4vw, 1.12rem);
+  font-size: clamp(1.1rem, 1.4vw, 1.12rem);
   color: rgba(255, 255, 255, 0.82);
   font-weight: 300;
   margin-top: 30px;
@@ -966,7 +958,7 @@ header.header-hidden ~ .cotacao-ticker-bar,
    ============================================================ */
 #additional {
   padding: 6rem var(--px);
-  background: rgb(241, 241, 241);
+  background: #fff;
   text-align: center;
 }
 
@@ -1600,66 +1592,17 @@ footer {
    ============================================================ */
 
 /* ============================================================
-   13a-extra. NOTEBOOKS INTERMEDIÁRIOS — 1500px
-   ============================================================ */
-@media (max-width: 1500px) {
-  .home-text h1 {
-    font-size: 3.6rem;
-    text-wrap: wrap;
-    white-space: normal;
-  }
-
-  .home-content {
-    grid-template-columns: 1fr minmax(280px, 760px);
-    gap: 2rem;
-  }
-}
-
-/* ============================================================
    13a. NOTEBOOKS COMPACTOS — 1280px
    ============================================================ */
 @media (max-width: 1280px) {
   :root { --px: 2rem; }
 
-  .home-text h1 {
-    font-size: 3.2rem;
-    text-wrap: wrap;
-    white-space: normal;
-    max-width: 100%;
-  }
-
-  .large-number { font-size: 10rem; }
+  .home-text h1 { font-size: 3.4rem; }
+  .large-number  { font-size: 10rem; }
 
   .home-content {
-    grid-template-columns: 1fr minmax(260px, 660px);
-    gap: 1.5rem;
-    padding: 4rem 1.5rem 3rem 1.5rem;
-  }
-
-  .hero-carousel {
-    max-width: 100%;
-  }
-}
-
-/* ============================================================
-   13a-b. NOTEBOOKS MENORES — 1150px
-   ============================================================ */
-@media (max-width: 1150px) {
-  .home-text h1 {
-    font-size: 2.9rem;
-    text-wrap: wrap;
-    white-space: normal;
-    max-width: 100%;
-  }
-
-  .home-content {
-    grid-template-columns: 1fr minmax(240px, 580px);
-    gap: 1.2rem;
-    padding: 3.5rem 1.5rem 3rem;
-  }
-
-  .home-text .subtitle {
-    font-size: 1rem;
+    grid-template-columns: 1fr minmax(280px, 720px);
+    gap: 2rem;
   }
 }
 
@@ -1692,7 +1635,7 @@ footer {
 
   /* ── Header ── */
   nav { padding: 0 1.5rem; }
-  .logo img { height: 50px; }
+  .logo img { height: 42px; }
 
   /* Menu desliza da direita (padrão unificado) */
   .nav-links {
@@ -1847,7 +1790,7 @@ footer {
 @media (max-width: 480px) {
   :root { --px: 1.2rem; }
 
-  .logo img { height: 50px; }
+  .logo img { height: 38px; }
   .home-text h1 { font-size: 2rem; }
   .main-hero-wrapper { margin-bottom: 320px; }
   .footer-content { grid-template-columns: 1fr; }

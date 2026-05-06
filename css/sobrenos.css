@@ -1291,7 +1291,7 @@ footer {
 
   /* ── Header mobile (padrão unificado) ── */
   nav { padding: 0 1.5rem; }
-  .logo img { height: 50px; }
+  .logo img { height: 42px; }
 
   .nav-links {
     position: fixed;
