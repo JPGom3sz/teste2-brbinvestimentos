@@ -608,7 +608,7 @@ footer { background: var(--gradient-blue); color: #fff; padding: 4rem var(--px) 
     }
     .product-card.expanded .product-detail { max-height: 300px; padding: 1.2rem 0 0; }
     .product-detail-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
-    .product-detail-list li { font-size: 0.9rem; color: #555; display: flex; align-items: flex-start; gap: 0.6rem; }
+    .product-detail-list li { font-size: 0.9rem; color: #cfc7c7; display: flex; align-items: flex-start; gap: 0.6rem; }
     .product-detail-list li::before { content: '→'; color: var(--primary-blue); font-weight: 700; flex-shrink: 0; }
 
     /* Floating CTA */
