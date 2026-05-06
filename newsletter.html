@@ -12,6 +12,10 @@
 </head>
 <body>
 
+  <div class="reading-progress" aria-hidden="true">
+    <div class="reading-progress__bar" id="readingBar"></div>
+  </div>
+
   <!-- ===================================================
        HEADER
   ==================================================== -->
@@ -270,5 +274,8 @@
     }
   </script>
 
+  <script>
+    (function(){var bar=document.getElementById("readingBar");if(bar){window.addEventListener("scroll",function(){bar.style.width=(window.scrollY/(document.body.scrollHeight-window.innerHeight)*100)+"%";});}})();
+  </script>
 </body>
 </html>
