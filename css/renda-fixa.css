@@ -1269,3 +1269,91 @@ footer {
       transform: translateY(0);
     }
 
+
+
+/* ================================================================
+   MELHORIAS INTERATIVAS — adicionadas via script
+   ================================================================ */
+/* ── ENHANCED LAYER ── */
+    .reading-progress { position:fixed; top:0; left:0; right:0; height:3px; z-index:2000; }
+    .reading-progress__bar { height:100%; width:0%; background:linear-gradient(90deg,var(--primary-blue),var(--accent-gold)); transition:width 0.1s linear; }
+
+    /* Comparador de taxas */
+    .rf-comparator {
+      background: #fff;
+      padding: 5rem var(--px);
+    }
+    .rf-comparator__inner { max-width: 900px; margin: 0 auto; }
+    .rf-comparator h2 { font-size: clamp(1.8rem, 3.5vw, 2.5rem); font-weight: 900; color: var(--deep-navy); margin-bottom: 0.5rem; }
+    .rf-comparator p { color: #666; margin-bottom: 2.5rem; }
+
+    .comparator-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .comparator-card {
+      background: var(--light-blue);
+      border: 2px solid rgba(0,86,168,0.08);
+      border-radius: 16px;
+      padding: 1.5rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .comparator-card::before {
+      content: '';
+      position: absolute; top:0; left:0; right:0;
+      height: 3px;
+      background: var(--primary-blue);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+    .comparator-card:hover, .comparator-card.active {
+      border-color: var(--primary-blue);
+      background: #fff;
+      box-shadow: 0 8px 32px rgba(0,86,168,0.12);
+      transform: translateY(-4px);
+    }
+    .comparator-card:hover::before, .comparator-card.active::before { transform: scaleX(1); }
+    .comparator-card__name { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin-bottom: 0.5rem; }
+    .comparator-card__rate { font-size: 1.8rem; font-weight: 900; color: var(--primary-blue); line-height: 1; margin-bottom: 0.3rem; }
+    .comparator-card__label { font-size: 0.78rem; color: #666; }
+    .comparator-card__badge { display:inline-block; margin-top:0.5rem; font-size:0.72rem; font-weight:700; padding:0.2rem 0.6rem; border-radius:50px; background:rgba(0,86,168,0.1); color:var(--primary-blue); }
+
+    .comparator-note {
+      font-size: 0.82rem; color: #999; text-align: center; margin-top: 1rem;
+    }
+
+    /* Product card expand */
+    .product-card { cursor: pointer; }
+    .product-card .product-detail {
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1), padding 0.3s ease;
+      padding: 0; border-top: 0px solid rgba(0,86,168,0.08);
+    }
+    .product-card.expanded .product-detail {
+      max-height: 300px; padding: 1.2rem 0 0;
+      border-top-width: 1px; margin-top: 1rem;
+    }
+    .product-detail-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+    .product-detail-list li { font-size: 0.9rem; color: #555; display: flex; align-items: flex-start; gap: 0.6rem; }
+    .product-detail-list li::before { content: '→'; color: var(--primary-blue); font-weight: 700; flex-shrink: 0; }
+    .product-expand-hint { font-size: 0.78rem; color: var(--primary-blue); font-weight: 700; margin-top: 1rem; opacity: 0.7; transition: opacity 0.2s; }
+    .product-card:hover .product-expand-hint { opacity: 1; }
+
+    /* Floating CTA */
+    .floating-cta {
+      position: fixed; bottom: 2rem; right: 2rem; z-index: 200;
+      background: var(--primary-blue); color: #fff; font-weight: 700; font-size: 0.95rem;
+      padding: 0.9rem 1.8rem; border-radius: 50px;
+      box-shadow: 0 8px 32px rgba(0,86,168,0.35);
+      cursor: pointer; border: none;
+      transform: translateY(80px); opacity: 0;
+      transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1), opacity 0.3s ease, box-shadow 0.25s ease;
+    }
+    .floating-cta.visible { transform: translateY(0); opacity: 1; }
+    .floating-cta:hover { box-shadow: 0 14px 40px rgba(0,86,168,0.45); transform: translateY(-3px); }

@@ -10,21 +10,47 @@ document.addEventListener('DOMContentLoaded', () => {
   const header = document.getElementById('site-header');
   const ticker = document.getElementById('cotacaoBar');
   let lastScroll = 0;
+  let scrollDelta = 0;
+
+  const HIDE_THRESHOLD  = 80;   // px rolados para baixo antes de esconder
+  const SHOW_THRESHOLD  = 60;   // px rolados para cima antes de mostrar
+  const TOP_ZONE        = 120;  // sempre visível no topo da página
+
+  const showHeader = () => {
+    header.classList.remove('header-hidden');
+    ticker?.classList.remove('ticker-hidden');
+  };
+  const hideHeader = () => {
+    header.classList.add('header-hidden');
+    ticker?.classList.add('ticker-hidden');
+  };
 
   window.addEventListener('scroll', throttle(() => {
     const current = window.pageYOffset;
-    if (current <= 10) {
-      header.classList.remove('header-hidden');
-      ticker?.classList.remove('ticker-hidden');
-    } else if (current > lastScroll) {
-      header.classList.add('header-hidden');
-      ticker?.classList.add('ticker-hidden');
-    } else {
-      header.classList.remove('header-hidden');
-      ticker?.classList.remove('ticker-hidden');
+
+    // Sempre visível perto do topo
+    if (current < TOP_ZONE) {
+      showHeader();
+      scrollDelta = 0;
+      lastScroll = current;
+      return;
     }
+
+    const diff = current - lastScroll;
+    scrollDelta += diff;
+
+    if (scrollDelta > HIDE_THRESHOLD) {
+      // Rolou bastante para baixo — esconde
+      hideHeader();
+      scrollDelta = 0;
+    } else if (scrollDelta < -SHOW_THRESHOLD) {
+      // Rolou bastante para cima — mostra
+      showHeader();
+      scrollDelta = 0;
+    }
+
     lastScroll = current;
-  }, 80));
+  }, 60));
 
 
   // ============================================================
@@ -109,20 +135,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 
-  // ============================================================
-  // BOTÃO — Abrir conta (hero CTA)
-  // ============================================================
- 
-
-
-  // ============================================================
-  // WHATSAPP — botão flutuante
-  // ============================================================
-  // document.querySelector('.whatsapp-btn')?.addEventListener('click', () => {
-   //  const phone   = '5561999999999';
-   //  const message = encodeURIComponent('Olá! Gostaria de saber mais sobre investimentos BRB.');
-    // window.open(`https://wa.me/${phone}?text=${message}`, '_blank', 'noopener,noreferrer');
-  // });
 
 
   // ============================================================
@@ -132,7 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const portfolioData = {
     default: {
-      titulo:    'Conheça nossos produtos',
+      titulo:    'Conheça nossos principais produtos',
       descricao: 'O portfólio da BRB Investimentos é estruturado para atender diferentes perfis e objetivos financeiros, combinando segurança, diversificação e potencial de crescimento. A estratégia busca equilíbrio entre ativos de renda fixa e renda variável, permitindo ao investidor acessar oportunidades em diferentes mercados, sempre com gestão responsável e alinhada às melhores práticas do mercado financeiro.',
       link:      null,
     },
@@ -164,7 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
     6: {
       titulo:    'Criptoativos',
       descricao: 'A BRB Investimentos está sempre evoluindo para oferecer o que há de mais moderno no mercado financeiro. Em breve, você terá acesso a uma nova classe de ativos diretamente na nossa plataforma: os Criptoativos.',
-      link:      'criptoativos.html',
+      link:      'javascript:void(0)',
     },
   };
   
@@ -331,7 +343,7 @@ async function iniciarCotacaoTicker() {
   const contentEl = document.getElementById('cotacaoContent');
   if (!contentEl) return;
 
-  // Monta a data no formato MM-DD-YYYY exigido pela API do BCB
+  // data no formato MM-DD-YYYY exigido pela API do BCB
   const formatarData = (date) => {
     const mm = String(date.getMonth() + 1).padStart(2, '0');
     const dd = String(date.getDate()).padStart(2, '0');
@@ -339,7 +351,7 @@ async function iniciarCotacaoTicker() {
     return `${mm}-${dd}-${yyyy}`;
   };
 
-  // Tenta buscar a cotação retroativamente até 7 dias (fins de semana e feriados não têm dados)
+  // buscar a cotação retroativa até 7 dias (fim de semana e feriados não têm dados)
   const buscarCotacao = async (moeda, nome) => {
     for (let diasAtras = 0; diasAtras <= 7; diasAtras++) {
       const data = new Date();
@@ -391,8 +403,8 @@ async function iniciarCotacaoTicker() {
       <span class="cotacao-separator" aria-hidden="true"></span>
     `).join('');
 
-    // Duplica para o scroll infinito ser contínuo
-    contentEl.innerHTML = itemsHTML + itemsHTML;
+    // Duplicar para o scroll infinito ser contínuo
+    contentEl.innerHTML = itemsHTML + itemsHTML + itemsHTML;
   };
 
   // Busca paralela USD + EUR
@@ -425,3 +437,339 @@ async function iniciarCotacaoTicker() {
 
 
 
+
+
+
+// ============================================================
+// LÓGICA DAS PÁGINAS DE PRODUTOS — carregada condicionalmente
+// ============================================================
+document.addEventListener('DOMContentLoaded', () => {
+
+  // ── renda-variavel ──
+  if (document.querySelector('.rv-hero')) {
+    // ── FAQ accordion ──
+        document.querySelectorAll('.faq-trigger').forEach(trigger => {
+          trigger.addEventListener('click', () => {
+            const item = trigger.closest('.faq-item');
+            const isOpen = item.classList.contains('is-open');
+            document.querySelectorAll('.faq-item.is-open').forEach(i => {
+              i.classList.remove('is-open');
+              i.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
+            });
+            if (!isOpen) { item.classList.add('is-open'); trigger.setAttribute('aria-expanded', 'true'); }
+          });
+        });
+    
+        // ── Scroll reveal ──
+        const revealObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry, i) => {
+            if (entry.isIntersecting) {
+              setTimeout(() => entry.target.classList.add('is-visible'), i * 80);
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    
+        // ── Expandable product cards ──
+        document.querySelectorAll('.product-card').forEach(card => {
+          card.addEventListener('click', () => {
+            const isExp = card.classList.contains('expanded');
+            document.querySelectorAll('.product-card.expanded').forEach(c => c.classList.remove('expanded'));
+            if (!isExp) card.classList.add('expanded');
+          });
+        });
+    
+        // ── Product tabs / filter ──
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+          btn.addEventListener('click', () => {
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const tab = btn.dataset.tab;
+            document.querySelectorAll('.product-card').forEach(card => {
+              if (tab === 'all') { card.style.display = ''; return; }
+              const prof = card.dataset.profile || '';
+              card.style.display = prof.includes(tab) ? '' : 'none';
+            });
+          });
+        });
+    
+        // ── Reading progress bar ──
+        const bar = document.getElementById('readingBar');
+        window.addEventListener('scroll', () => {
+          const scrolled = window.scrollY;
+          const total = document.body.scrollHeight - window.innerHeight;
+          bar.style.width = (scrolled / total * 100) + '%';
+        });
+    
+        // ── Floating CTA ──
+        const floatingCta = document.getElementById('floatingCta');
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > 600) floatingCta.classList.add('visible');
+          else floatingCta.classList.remove('visible');
+        });
+    
+        // ── Live market ticker ──
+        function setTicker(id, chgId, value, change) {
+          const el = document.getElementById(id);
+          const chgEl = document.getElementById(chgId);
+          if (el) { el.textContent = value; el.style.animation = 'none'; el.offsetHeight; el.style.animation = 'numberReveal .4s ease'; }
+          if (chgEl) {
+            chgEl.textContent = change;
+            chgEl.className = 'rv-ticker-change ' + (parseFloat(change) >= 0 ? 'up' : 'down');
+          }
+        }
+    
+        function fmtBRL(n, prefix='') {
+          return prefix + n.toLocaleString('pt-BR', {minimumFractionDigits:2, maximumFractionDigits:2});
+        }
+        function fmtPct(n) {
+          return (n >= 0 ? '+' : '') + n.toFixed(2).replace('.',',') + '%';
+        }
+    
+        async function fetchTickers() {
+          // Tudo via AwesomeAPI — CORS aberto, sem key, confirmado funcionando
+          try {
+            const r = await fetch('https://economia.awesomeapi.com.br/json/last/USD-BRL,BTC-USD,EUR-BRL,XAU-USD');
+            const d = await r.json();
+    
+            const usd = d['USDBRL'];
+            if (usd) setTicker('tk-usd','tk-usd-chg',
+              'R$ '+parseFloat(usd.bid).toFixed(2).replace('.',','),
+              fmtPct(parseFloat(usd.pctChange)));
+    
+            const btc = d['BTCUSD'];
+            if (btc) setTicker('tk-btc','tk-btc-chg',
+              '$ '+Math.round(parseFloat(btc.bid)).toLocaleString('pt-BR'),
+              fmtPct(parseFloat(btc.pctChange)));
+    
+            const eur = d['EURBRL'];
+            if (eur) setTicker('tk-eur','tk-eur-chg',
+              'R$ '+parseFloat(eur.bid).toFixed(2).replace('.',','),
+              fmtPct(parseFloat(eur.pctChange)));
+    
+            const xau = d['XAUUSD'];
+            if (xau) setTicker('tk-xau','tk-xau-chg',
+              '$ '+parseFloat(xau.bid).toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g,'.'),
+              fmtPct(parseFloat(xau.pctChange)));
+    
+          } catch(e) { console.warn('Ticker error:', e); }
+        }
+    
+            // Inicializa e atualiza a cada 60 segundos
+        fetchTickers();
+        setInterval(fetchTickers, 60000);
+  }
+
+  // ── renda-fixa ──
+  if (document.querySelector('.rf-hero')) {
+    // Header hide/show
+        const header = document.getElementById('site-header');
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+          const current = window.pageYOffset;
+          if (current <= 10) header.classList.remove('header-hidden');
+          else if (current > lastScroll) header.classList.add('header-hidden');
+          else header.classList.remove('header-hidden');
+          lastScroll = current;
+        });
+    
+        // Mobile menu
+        const toggle = document.querySelector('.mobile-menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        const overlay = document.querySelector('.menu-overlay');
+        const closeMenu = () => { navLinks.classList.remove('active'); toggle.setAttribute('aria-expanded','false'); overlay.classList.remove('active'); document.body.style.overflow = ''; };
+        toggle?.addEventListener('click', () => { const open = navLinks.classList.toggle('active'); toggle.setAttribute('aria-expanded', open); overlay.classList.toggle('active', open); document.body.style.overflow = open ? 'hidden' : ''; });
+        overlay?.addEventListener('click', closeMenu);
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+        document.querySelectorAll('.dropdown-toggle').forEach(t => { t.addEventListener('click', e => { if (window.innerWidth > 968) return; e.preventDefault(); t.closest('.dropdown').classList.toggle('is-open'); }); });
+    
+        // FAQ
+        document.querySelectorAll('.faq-trigger').forEach(trigger => {
+          trigger.addEventListener('click', () => {
+            const item = trigger.closest('.faq-item');
+            const isOpen = item.classList.contains('is-open');
+            document.querySelectorAll('.faq-item.is-open').forEach(i => i.classList.remove('is-open'));
+            if (!isOpen) item.classList.add('is-open');
+            trigger.setAttribute('aria-expanded', !isOpen);
+          });
+        });
+    
+        // Scroll reveal
+        const revealObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry, i) => {
+            if (entry.isIntersecting) { setTimeout(() => entry.target.classList.add('is-visible'), i * 80); revealObserver.unobserve(entry.target); }
+          });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    
+        // Product card expand
+        document.querySelectorAll('.product-card').forEach(card => {
+          card.addEventListener('click', () => {
+            const isExp = card.classList.contains('expanded');
+            document.querySelectorAll('.product-card.expanded').forEach(c => c.classList.remove('expanded'));
+            if (!isExp) card.classList.add('expanded');
+          });
+        });
+    
+        // Comparator cards
+        document.querySelectorAll('.comparator-card').forEach(card => {
+          card.addEventListener('click', () => {
+            document.querySelectorAll('.comparator-card').forEach(c => c.classList.remove('active'));
+            card.classList.add('active');
+            const product = card.dataset.product;
+            document.querySelectorAll('.product-card').forEach(p => p.classList.remove('expanded'));
+            const target = document.getElementById(product);
+            if (target) { target.scrollIntoView({behavior:'smooth', block:'center'}); target.classList.add('expanded'); }
+          });
+        });
+    
+        // Reading progress
+        const bar = document.getElementById('readingBar');
+        window.addEventListener('scroll', () => { const s = window.scrollY; const t = document.body.scrollHeight - window.innerHeight; bar.style.width = (s/t*100)+'%'; });
+    
+        // Floating CTA
+        const floatingCta = document.getElementById('floatingCta');
+        window.addEventListener('scroll', () => { if (window.scrollY > 600) floatingCta.classList.add('visible'); else floatingCta.classList.remove('visible'); });
+  }
+
+  // ── fundos ──
+  if (document.querySelector('.fd-hero')) {
+    // FAQ
+        document.querySelectorAll('.faq-trigger').forEach(trigger => {
+          trigger.addEventListener('click', () => {
+            const item = trigger.closest('.faq-item'); const isOpen = item.classList.contains('is-open');
+            document.querySelectorAll('.faq-item.is-open').forEach(i => { i.classList.remove('is-open'); i.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false'); });
+            if (!isOpen) { item.classList.add('is-open'); trigger.setAttribute('aria-expanded', 'true'); }
+          });
+        });
+    
+        // Scroll reveal
+        const revealObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry, i) => { if (entry.isIntersecting) { setTimeout(() => entry.target.classList.add('is-visible'), i * 80); revealObserver.unobserve(entry.target); } });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    
+        // Fund filter
+        document.querySelectorAll('.fund-pill').forEach(pill => {
+          pill.addEventListener('click', () => {
+            document.querySelectorAll('.fund-pill').forEach(p => p.classList.remove('active'));
+            pill.classList.add('active');
+            const risk = pill.dataset.risk;
+            document.querySelectorAll('.product-card').forEach(card => {
+              if (risk === 'all') { card.style.display = ''; return; }
+              card.style.display = (card.dataset.risk || '').includes(risk) ? '' : 'none';
+            });
+          });
+        });
+    
+        // Card expand
+        document.querySelectorAll('.product-card').forEach(card => {
+          card.addEventListener('click', () => {
+            const isExp = card.classList.contains('expanded');
+            document.querySelectorAll('.product-card.expanded').forEach(c => c.classList.remove('expanded'));
+            if (!isExp) card.classList.add('expanded');
+          });
+        });
+    
+        // Reading progress + floating CTA
+        const bar = document.getElementById('readingBar');
+        const floatingCta = document.getElementById('floatingCta');
+        window.addEventListener('scroll', () => {
+          bar.style.width = (window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100) + '%';
+          if (window.scrollY > 600) floatingCta.classList.add('visible'); else floatingCta.classList.remove('visible');
+        });
+  }
+
+  // ── previdencia ──
+  if (document.querySelector('.pv-hero')) {
+    document.querySelectorAll('.faq-trigger').forEach(trigger => {
+          trigger.addEventListener('click', () => {
+            const item   = trigger.closest('.faq-item');
+            const isOpen = item.classList.contains('is-open');
+    
+            document.querySelectorAll('.faq-item.is-open').forEach(i => {
+              i.classList.remove('is-open');
+              i.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
+            });
+    
+            if (!isOpen) {
+              item.classList.add('is-open');
+              trigger.setAttribute('aria-expanded', 'true');
+            }
+          });
+        });
+    
+        const revealObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry, i) => {
+            if (entry.isIntersecting) {
+              setTimeout(() => entry.target.classList.add('is-visible'), i * 80);
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1 });
+    
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    
+    function calcularSimulador() {
+          const aporte = parseFloat(document.getElementById('simAporte').value) || 500;
+          const anos = parseInt(document.getElementById('simAnos').value) || 20;
+          const rent = parseFloat(document.getElementById('simRent').value) / 100 / 12;
+          const meses = anos * 12;
+          const total = aporte * ((Math.pow(1 + rent, meses) - 1) / rent);
+          const investido = aporte * meses;
+          const juros = total - investido;
+          const fmt = v => 'R$ ' + v.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+          document.getElementById('simTotal').textContent = fmt(total);
+          document.getElementById('simInvestido').textContent = fmt(investido);
+          document.getElementById('simJuros').textContent = fmt(juros);
+        }
+        calcularSimulador();
+        document.querySelectorAll('#simAporte,#simAnos,#simRent').forEach(el => el.addEventListener('input', calcularSimulador));
+        const bar = document.getElementById('readingBar');
+        const fc = document.getElementById('floatingCta');
+        window.addEventListener('scroll', () => {
+          bar.style.width = (window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100) + '%';
+          if (window.scrollY > 600) fc.classList.add('visible'); else fc.classList.remove('visible');
+        });
+  }
+
+  // ── mercado-futuro ──
+  if (document.querySelector('.mf-hero')) {
+    document.querySelectorAll('.faq-trigger').forEach(trigger => {
+          trigger.addEventListener('click', () => {
+            const item   = trigger.closest('.faq-item');
+            const isOpen = item.classList.contains('is-open');
+    
+            document.querySelectorAll('.faq-item.is-open').forEach(i => {
+              i.classList.remove('is-open');
+              i.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
+            });
+    
+            if (!isOpen) {
+              item.classList.add('is-open');
+              trigger.setAttribute('aria-expanded', 'true');
+            }
+          });
+        });
+    
+        const revealObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry, i) => {
+            if (entry.isIntersecting) {
+              setTimeout(() => entry.target.classList.add('is-visible'), i * 80);
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1 });
+    
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    
+    const bar = document.getElementById('readingBar');
+        const fc = document.getElementById('floatingCta');
+        window.addEventListener('scroll', () => {
+          bar.style.width = (window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100) + '%';
+          if (window.scrollY > 600) fc.classList.add('visible'); else fc.classList.remove('visible');
+        });
+  }
+
+});

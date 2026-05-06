@@ -139,7 +139,7 @@ nav {
 }
 
 .logo img {
-  height: 50px;
+  height: 60px;
 }
 
 .nav-links {
@@ -1452,9 +1452,9 @@ footer {
 @media (max-width: 968px) {
 
   /* ── Header mobile (padrão unificado) ── */
-  header { height: 90px; }
+  header { height: var(--header-h); }
   nav { padding: 0 1.5rem; }
-  .logo img { height: 72px; }
+  .logo img { height: 60px; }
   .logo { margin-top: 0; }
 
   .nav-links {
@@ -1563,3 +1563,126 @@ footer {
   .footer-bottom  { gap: 1rem; }
 }
 
+
+/* ============================================================
+   TICKER DE COTAÇÃO — BRB Investimentos
+   (copiado de style.css para páginas com CSS próprio)
+   ============================================================ */
+:root {
+  --ticker-h: 38px;
+}
+
+.cotacao-ticker-bar {
+  width: 100%;
+  background: #0a2a5e;
+  border-bottom: 1px solid rgba(255,255,255,0.10);
+  height: var(--ticker-h);
+  overflow: hidden;
+  position: fixed;
+  top: var(--header-h);
+  left: 0;
+  right: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  transition: transform 0.25s ease;
+}
+
+header.header-hidden ~ .cotacao-ticker-bar,
+.cotacao-ticker-bar.ticker-hidden {
+  transform: translateY(calc(-1 * (var(--header-h) + var(--ticker-h))));
+}
+
+.cotacao-ticker-inner {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 1700px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  gap: 1.2rem;
+  overflow: hidden;
+  height: 100%;
+}
+
+.cotacao-label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #4db8ff;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  white-space: nowrap;
+  flex-shrink: 0;
+  border-right: 1px solid rgba(255,255,255,0.15);
+  padding-right: 1.2rem;
+}
+
+.cotacao-ticker-track {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.cotacao-ticker-content {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  animation: ticker-scroll 28s linear infinite;
+  white-space: nowrap;
+  will-change: transform;
+}
+
+.cotacao-ticker-content:hover { animation-play-state: paused; }
+
+@keyframes ticker-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.cotacao-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0 1.5rem;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.85);
+}
+
+.cotacao-item-flag { font-size: 1rem; }
+.cotacao-item-name { font-weight: 700; color: #fff; }
+.cotacao-item-buy span, .cotacao-item-sell span { color: #4db8ff; font-weight: 600; }
+.cotacao-item-time { color: rgba(255,255,255,0.45); font-size: 0.68rem; }
+.cotacao-separator { display: inline-block; width: 1px; height: 16px; background: rgba(255,255,255,0.15); margin: 0 0.5rem; vertical-align: middle; }
+.cotacao-loading { color: rgba(255,255,255,0.5); font-size: 0.75rem; padding: 0 1rem; }
+
+/* Adjust hero to account for ticker */
+.as-hero { padding-top: calc(var(--header-h) + var(--ticker-h)); }
+
+@media (max-width: 968px) {
+  .cotacao-ticker-bar { display: none; }
+  .as-hero { padding-top: var(--header-h); }
+}
+
+/* ================================================================
+   READING PROGRESS BAR
+   ================================================================ */
+.reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  z-index: 9999;
+  pointer-events: none;
+  background: transparent;
+}
+.reading-progress__bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--primary-blue, #0056A8), var(--accent-gold, #F5A623));
+  transition: width 0.1s ease;
+  border-radius: 0 2px 2px 0;
+}

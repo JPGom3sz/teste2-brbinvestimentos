@@ -5,88 +5,70 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Renda Fixa — BRB Investimentos</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style-enhance.css" />
   <link rel="stylesheet" href="css/renda-fixa.css" />
 </head>
 <body>
 
-  <!-- ============================================================
+  <div class="reading-progress" aria-hidden="true">
+    <div class="reading-progress__bar" id="readingBar"></div>
+  </div>
+
+  <!-- ===================================================
        HEADER
-  ============================================================ -->
- <header id="site-header">
+  ==================================================== -->
+  <header id="site-header">
     <nav>
       <div class="logo">
         <a href="index.html" aria-label="BRB Investimentos - Início">
           <img src="img/quartinho(1).png" alt="BRB Investimentos" />
         </a>
       </div>
-  
       <ul class="nav-links" id="mobileMenu" role="menubar">
         <li class="dropdown">
           <a href="javascript:void(0)" class="dropdown-toggle active">
             Produtos e Serviços <span class="chevron" aria-hidden="true">▾</span>
           </a>
           <ul class="dropdown-menu">
-            <li class="has-submenu">
-              <a href="renda-fixa.html">Renda Fixa <span class="chevron-right"></span></a>
-            </li>
-            <li class="has-submenu">
-              <a href="renda-variavel.html">Renda Variável <span class="chevron-right"></span></a>             
-            </li>  
-            <li class="has-submenu">
-              <a href="previdencia.html">Previdência <span class="chevron-right"></span></a>             
-            </li> 
-            <li class="has-submenu">
-              <a href="fundos.html">Fundos <span class="chevron-right"></span></a>
-            </li>
-
-            <li class="has-submenu">
-              <a href="mercado-futuro.html">Mercado Futuro <span class="chevron-right"></span></a>
-            </li>
+            <li class="has-submenu"><a href="renda-fixa.html">Renda Fixa <span class="chevron-right"></span></a></li>
+            <li class="has-submenu"><a href="renda-variavel.html">Renda Variável <span class="chevron-right"></span></a></li>
+            <li class="has-submenu"><a href="previdencia.html">Previdência <span class="chevron-right"></span></a></li>
+            <li class="has-submenu"><a href="fundos.html">Fundos <span class="chevron-right"></span></a></li>
+            <li class="has-submenu"><a href="mercado-futuro.html">Mercado Futuro <span class="chevron-right"></span></a></li>
           </ul>
         </li>
-  
         <li class="dropdown" role="none">
           <a href="javascript:void(0)" class="dropdown-toggle" role="menuitem" aria-haspopup="true" aria-expanded="false">
             Conteúdo <span class="chevron" aria-hidden="true">▾</span>
           </a>
           <ul class="dropdown-menu" role="menu">
             <li role="none"><a href="https://analisa.genialinvestimentos.com.br/" role="menuitem" target="_blank" rel="noopener noreferrer">Genial analisa</a></li>
-            <li role="none"><a href="newsletter.html" role="menuitem" rel="noopener noreferrer">Newsletter</a></li>
+            <li role="none"><a href="newsletter.html" role="menuitem">Newsletter</a></li>
             <li role="none"><a href="tutoriais.html" role="menuitem">Guias Práticos</a></li>
-            <li role="none"><a href="javascript:void(0)" role="menuitem">Educação Investidora</a></li>
+            <li role="none"><a href="site em construção.html" role="menuitem">Educação Investidora</a></li>
           </ul>
         </li>
-  
-        <li role="none">
-          <a href="sobrenos.html" role="menuitem">Sobre nós</a>
-        </li>
-  
-        <li role="none">
-          <a href="contato.html" role="menuitem">Contato</a>
-        </li>
+        <li role="none"><a href="sobrenos.html" role="menuitem">Sobre nós</a></li>
+        <li role="none"><a href="contato.html" role="menuitem">Contato</a></li>
       </ul>
-  
       <div class="nav-buttons">
-        <button 
-          class="account-link" 
-          type="button"
-          data-desktop-href="INSIRA_O_LINK_DO_PORTAL_AQUI"
-          data-mobile-href="INSIRA_O_LINK_DO_APP_AQUI"
-        >Acesse seus Investimentos</button>
+        <button class="account-link" type="button"
+          onclick="window.open('https://brb.genialinvestimentos.com.br/auth/login','_blank','noopener,noreferrer')">
+          Acesse seus Investimentos
+        </button>
       </div>
-  
       <button class="mobile-menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
         <span></span><span></span><span></span>
       </button>
-  
       <div class="menu-overlay" aria-hidden="true"></div>
     </nav>
   </header>
 
 
-  <!-- ============================================================
+  <!-- ===================================================
        HERO
-  ============================================================ -->
+  ==================================================== -->
   <section class="rf-hero" id="topo">
     <div class="rf-hero-inner">
       <div class="rf-hero-text">
@@ -107,14 +89,53 @@
           </button>
         </div>
       </div>
-
-     
+    </div>
   </section>
 
 
-  <!-- ============================================================
+  <!-- ===================================================
+       COMPARADOR DE RENTABILIDADE
+  ==================================================== -->
+  <section class="rf-comparator">
+    <div class="rf-comparator__inner">
+      <div class="section-tag" style="margin-bottom:0.8rem;">Rentabilidades estimadas</div>
+      <h2>Compare os principais produtos</h2>
+      <p>Taxas indicativas do mercado. Clique para ver detalhes de cada produto.</p>
+
+      <div class="comparator-grid">
+        <div class="comparator-card" data-product="cdb">
+          <div class="comparator-card__name">CDB</div>
+          <div class="comparator-card__rate">115%</div>
+          <div class="comparator-card__label">do CDI</div>
+          <div class="comparator-card__badge">Proteção FGC</div>
+        </div>
+        <div class="comparator-card" data-product="lci">
+          <div class="comparator-card__name">LCI / LCA</div>
+          <div class="comparator-card__rate">95%</div>
+          <div class="comparator-card__label">do CDI líquido</div>
+          <div class="comparator-card__badge">Isento de IR ✓</div>
+        </div>
+        <div class="comparator-card" data-product="tesouro">
+          <div class="comparator-card__name">Tesouro IPCA+</div>
+          <div class="comparator-card__rate">IPCA+6%</div>
+          <div class="comparator-card__label">ao ano</div>
+          <div class="comparator-card__badge">Garantia Gov. Federal</div>
+        </div>
+        <div class="comparator-card" data-product="debenture">
+          <div class="comparator-card__name">Debênture</div>
+          <div class="comparator-card__rate">IPCA+8%</div>
+          <div class="comparator-card__label">ao ano</div>
+          <div class="comparator-card__badge">Isento IR (incent.)</div>
+        </div>
+      </div>
+      <p class="comparator-note">* Taxas indicativas. Consulte nossa plataforma para as condições atuais de cada emissor.</p>
+    </div>
+  </section>
+
+
+  <!-- ===================================================
        VANTAGENS
-  ============================================================ -->
+  ==================================================== -->
   <section class="rf-advantages">
     <div class="section-header reveal">
       <div class="section-tag">Por que escolher</div>
@@ -157,15 +178,15 @@
   </section>
 
 
-  <!-- ============================================================
+  <!-- ===================================================
        PRODUTOS
-  ============================================================ -->
+  ==================================================== -->
   <section class="rf-products" id="produtos">
     <div style="max-width: var(--container); margin: 0 auto;">
       <div class="section-header reveal">
         <div class="section-tag">Nossos Produtos</div>
         <h2>Escolha o produto certo para o seu perfil</h2>
-        <p>Diferentes instrumentos para diferentes objetivos. Conheça cada um e encontre o ideal para você.</p>
+        <p>Clique em cada card para ver detalhes e características de cada instrumento.</p>
       </div>
 
       <div class="products-grid">
@@ -174,45 +195,90 @@
           <div class="product-icon">🏛️</div>
           <div class="product-info">
             <h3>CDB — Certificado de Depósito Bancário</h3>
-            <p>Título de renda fixa emitido por bancos. Ao investir em um CDB, você empresta dinheiro à instituição financeira e recebe uma remuneração sobre esse valor. Pode ser pré-fixado, pós-fixado (atrelado ao CDI) ou híbrido (IPCA+). Conta com proteção do FGC até R$ 250 mil.</p>
+            <p>Título de renda fixa emitido por bancos. Pode ser pré-fixado, pós-fixado (atrelado ao CDI) ou híbrido (IPCA+). Conta com proteção do FGC até R$ 250 mil.</p>
+          </div>
+          <div class="product-detail">
+            <ul class="product-detail-list">
+              <li>Rendimento: pré, pós ou híbrido (IPCA+)</li>
+              <li>Proteção FGC até R$ 250 mil por CPF/instituição</li>
+              <li>Liquidez: diária ou no vencimento</li>
+              <li>IR regressivo: de 22,5% (até 180 dias) a 15% (acima de 720 dias)</li>
+            </ul>
           </div>
           <div class="product-tag popular">Mais Popular</div>
+          <p class="product-expand-hint">Clique para ver mais ↓</p>
         </div>
 
         <div class="product-card reveal" id="lci-lca">
           <div class="product-icon">🌾</div>
           <div class="product-info">
             <h3>LCI / LCA</h3>
-            <p>Letras de Crédito Imobiliário e do Agronegócio. São isentas de IR para pessoa física, o que eleva o retorno líquido. Têm prazo mínimo de 90 dias e cobertura do FGC.</p>
+            <p>Letras de Crédito Imobiliário e do Agronegócio. São isentas de IR para pessoa física, o que eleva o retorno líquido. Têm prazo mínimo e cobertura do FGC.</p>
+          </div>
+          <div class="product-detail">
+            <ul class="product-detail-list">
+              <li>100% isento de Imposto de Renda para PF</li>
+              <li>Prazo mínimo de 90 dias (LCI) ou 90 dias (LCA)</li>
+              <li>Proteção FGC até R$ 250 mil</li>
+              <li>Rentabilidade pré, pós ou híbrida</li>
+            </ul>
           </div>
           <div class="product-tag safe">Isento de IR</div>
+          <p class="product-expand-hint">Clique para ver mais ↓</p>
         </div>
 
         <div class="product-card reveal" id="cri-cra">
           <div class="product-icon">🏗️</div>
           <div class="product-info">
             <h3>CRI / CRA</h3>
-            <p>Certificados de Recebíveis Imobiliários e do Agronegócio. Emitidos por securitizadoras, também são isentos de IR. Não possuem cobertura do FGC, por isso é importante avaliar o risco do emissor.</p>
+            <p>Certificados de Recebíveis Imobiliários e do Agronegócio. Emitidos por securitizadoras, também são isentos de IR. Não possuem cobertura do FGC.</p>
+          </div>
+          <div class="product-detail">
+            <ul class="product-detail-list">
+              <li>Isento de IR para pessoa física</li>
+              <li>Taxas mais atrativas que CDB/LCI</li>
+              <li>Sem cobertura FGC — avalie o risco do emissor</li>
+              <li>Indicado para investidores com perfil moderado+</li>
+            </ul>
           </div>
           <div class="product-tag safe">Isento de IR</div>
+          <p class="product-expand-hint">Clique para ver mais ↓</p>
         </div>
 
         <div class="product-card reveal" id="tesouro">
           <div class="product-icon">🇧🇷</div>
           <div class="product-info">
             <h3>Tesouro Direto</h3>
-            <p>Títulos emitidos pelo governo federal, considerados os mais seguros do mercado. Disponíveis em diversas modalidades: Tesouro Selic, Tesouro IPCA+ e Tesouro Prefixado.</p>
+            <p>Títulos emitidos pelo governo federal, considerados os mais seguros do mercado. Disponíveis em diversas modalidades: Selic, IPCA+ e Prefixado.</p>
+          </div>
+          <div class="product-detail">
+            <ul class="product-detail-list">
+              <li>Tesouro Selic: liquidez diária, risco baixíssimo</li>
+              <li>Tesouro IPCA+: proteção contra inflação + ganho real</li>
+              <li>Tesouro Prefixado: taxa conhecida no momento da compra</li>
+              <li>Investimento mínimo: ~R$ 30,00</li>
+            </ul>
           </div>
           <div class="product-tag moderate">Baixo Risco</div>
+          <p class="product-expand-hint">Clique para ver mais ↓</p>
         </div>
 
         <div class="product-card reveal">
           <div class="product-icon">📋</div>
           <div class="product-info">
             <h3>Debêntures</h3>
-            <p>Títulos de dívida emitidos por empresas. As debêntures incentivadas (Lei 12.431) são isentas de IR. Oferecem taxas atrativas em troca de prazo mais longo e risco de crédito do emissor.</p>
+            <p>Títulos de dívida emitidos por empresas. As debêntures incentivadas (Lei 12.431) são isentas de IR. Oferecem taxas atrativas em troca de prazo mais longo.</p>
+          </div>
+          <div class="product-detail">
+            <ul class="product-detail-list">
+              <li>Debêntures incentivadas: isento de IR para PF</li>
+              <li>Taxas superiores: IPCA+6% a IPCA+10% típico</li>
+              <li>Prazos mais longos: 3 a 10 anos</li>
+              <li>Liquidez via mercado secundário</li>
+            </ul>
           </div>
           <div class="product-tag moderate">Renda Fixa Privada</div>
+          <p class="product-expand-hint">Clique para ver mais ↓</p>
         </div>
 
       </div>
@@ -220,9 +286,9 @@
   </section>
 
 
-  <!-- ============================================================
+  <!-- ===================================================
        FAQ
-  ============================================================ -->
+  ==================================================== -->
   <section class="rf-faq" id="entenda">
     <div class="faq-layout">
       <div class="faq-left reveal">
@@ -235,7 +301,6 @@
       </div>
 
       <div class="faq-list reveal">
-
         <div class="faq-item">
           <button class="faq-trigger" aria-expanded="false">
             <span>O que é e como funciona a Renda Fixa?</span>
@@ -247,7 +312,6 @@
             </div>
           </div>
         </div>
-
         <div class="faq-item">
           <button class="faq-trigger" aria-expanded="false">
             <span>Renda Fixa tem algum risco?</span>
@@ -255,11 +319,10 @@
           </button>
           <div class="faq-body">
             <div class="faq-body-inner">
-              Todo investimento tem algum nível de risco, mas os produtos de renda fixa costumam ser os mais seguros disponíveis. Os títulos do Tesouro Direto têm risco praticamente nulo, pois são garantidos pelo governo federal. CDBs, LCIs e LCAs de bancos têm proteção do FGC até R$ 250 mil por CPF. Debêntures e CRIs/CRAs não contam com o FGC, mas podem oferecer taxas mais atrativas. É importante diversificar entre emissores para reduzir o risco de crédito.
+              Todo investimento tem algum nível de risco, mas os produtos de renda fixa costumam ser os mais seguros disponíveis. Os títulos do Tesouro Direto têm risco praticamente nulo, pois são garantidos pelo governo federal. CDBs, LCIs e LCAs de bancos têm proteção do FGC até R$ 250 mil por CPF. Debêntures e CRIs/CRAs não contam com o FGC, mas podem oferecer taxas mais atrativas.
             </div>
           </div>
         </div>
-
         <div class="faq-item">
           <button class="faq-trigger" aria-expanded="false">
             <span>Qual a diferença entre pré-fixado, pós-fixado e híbrido?</span>
@@ -267,13 +330,12 @@
           </button>
           <div class="faq-body">
             <div class="faq-body-inner">
-              <strong>Pré-fixado:</strong> a taxa de juros é definida no momento da aplicação (ex.: 12% a.a.). Você sabe exatamente quanto vai receber.<br><br>
-              <strong>Pós-fixado:</strong> a rentabilidade acompanha um índice de mercado, geralmente o CDI (ex.: 105% do CDI). O retorno final depende da variação do índice.<br><br>
-              <strong>Híbrido:</strong> combina uma taxa fixa com um indexador, geralmente o IPCA (ex.: IPCA + 6% a.a.). Garante proteção contra a inflação mais um ganho real.
+              <strong>Pré-fixado:</strong> a taxa é definida na aplicação (ex.: 12% a.a.). Você sabe exatamente quanto vai receber.<br><br>
+              <strong>Pós-fixado:</strong> acompanha um índice de mercado, geralmente o CDI (ex.: 105% do CDI). O retorno final depende da variação do índice.<br><br>
+              <strong>Híbrido:</strong> combina taxa fixa com indexador, geralmente o IPCA (ex.: IPCA + 6% a.a.). Garante proteção contra a inflação mais um ganho real.
             </div>
           </div>
         </div>
-
         <div class="faq-item">
           <button class="faq-trigger" aria-expanded="false">
             <span>Quais produtos são isentos de Imposto de Renda?</span>
@@ -285,7 +347,6 @@
             </div>
           </div>
         </div>
-
         <div class="faq-item">
           <button class="faq-trigger" aria-expanded="false">
             <span>Posso resgatar meu dinheiro antes do vencimento?</span>
@@ -293,11 +354,10 @@
           </button>
           <div class="faq-body">
             <div class="faq-body-inner">
-              Depende do produto. Alguns CDBs oferecem liquidez diária, permitindo resgate a qualquer momento. LCIs e LCAs têm prazo mínimo de carência de 90 dias. Títulos do Tesouro Direto podem ser vendidos pelo preço de mercado (com risco de ágio ou deságio). Debêntures e CRIs/CRAs geralmente têm liquidez no vencimento, mas podem ser negociados no mercado secundário. Sempre verifique as condições de cada produto antes de aplicar.
+              Depende do produto. Alguns CDBs oferecem liquidez diária. LCIs e LCAs têm prazo mínimo de carência de 90 dias. Títulos do Tesouro Direto podem ser vendidos pelo preço de mercado. Debêntures e CRIs/CRAs geralmente têm liquidez no vencimento, mas podem ser negociados no mercado secundário.
             </div>
           </div>
         </div>
-
         <div class="faq-item">
           <button class="faq-trigger" aria-expanded="false">
             <span>Como a BRB Investimentos seleciona os produtos ofertados?</span>
@@ -309,15 +369,14 @@
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
 
-  <!-- ============================================================
+  <!-- ===================================================
        COMO COMEÇAR
-  ============================================================ -->
+  ==================================================== -->
   <section class="rf-steps">
     <div class="steps-inner">
       <div class="section-header">
@@ -352,9 +411,9 @@
   </section>
 
 
-  <!-- ============================================================
+  <!-- ===================================================
        CTA FINAL
-  ============================================================ -->
+  ==================================================== -->
   <section class="rf-cta-section">
     <div class="cta-box reveal">
       <div class="section-tag" style="margin-bottom: 1.2rem;">BRB Investimentos</div>
@@ -372,72 +431,26 @@
   </section>
 
 
-  <!-- ============================================================
+  <!-- ===================================================
        FOOTER
-  ============================================================ -->
+  ==================================================== -->
   <footer>
     <div class="footer-content">
       <div class="footer-brand">
         <img src="img/LOGO BRANCA.png" alt="BRB Investimentos" class="footer-logo-img" />
         <p class="footer-brand-text">Investindo no futuro dos brasileiros com segurança, tecnologia e tradição.</p>
         <div class="footer-social">
-          <a href="https://www.instagram.com/brbinvestimentos/" class="footer-social-btn" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
-           <a href="#" class="footer-social-btn" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
-          <a href="https://www.facebook.com/share/1CRVbq4UXf/?mibextid=wwXIfr" class="footer-social-btn" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+          <a href="https://www.instagram.com/brbinvestimentos/" class="footer-social-btn" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+          <a href="https://youtube.com/@brbinvestimentos?si=MmAK0HAz0J-XOkLa" class="footer-social-btn" aria-label="YouTube" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+          <a href="https://www.facebook.com/share/1CRVbq4UXf/?mibextid=wwXIfr" class="footer-social-btn" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
         </div>
       </div>
-
-      <div class="footer-column">
-        <h4>Produtos</h4>
-        <ul>
-          <li><a href="renda-fixa.html">Renda Fixa</a></li>
-          <li><a href="index.html#portfolio">Fundos</a></li>
-          <li><a href="index.html#portfolio">Previdência</a></li>
-          <li><a href="index.html#portfolio">Renda Variável</a></li>
-          <li><a href="index.html#portfolio">Mercado Futuro</a></li>
-          <li><a href="index.html#portfolio">Criptoativos</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-column">
-        <h4>Quem Somos</h4>
-        <ul>
-          <li><a href="sobrenos.html#missao">Nossa Missão</a></li>
-          <li><a href="sobrenos.html#historia">Nossa História</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-column">
-        <h4>Fale Conosco</h4>
-        <ul>
-          <li><a href="https://novo.brb.com.br/atendimento/" target="_blank" rel="noopener noreferrer">Central de Atendimento</a></li>
-          <li><a href="https://novo.brb.com.br/atendimento/ouvidoria-brb/" target="_blank" rel="noopener noreferrer">Ouvidoria BRB</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-column">
-        <h4>Institucional</h4>
-        <ul>
-          <li><a href="https://www.anbima.com.br/" target="_blank">Anbima</a></li>
-          <li><a href="https://www.b3.com.br/" target="_blank">B3</a></li>
-          <li><a href="https://www.gov.br/cvm/" target="_blank">CVM</a></li>
-          <li><a href="https://www.fgc.org.br/" target="_blank">FGC</a></li>
-          <li><a href="https://www.bcb.gov.br/" target="_blank">Bacen</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-column regulatorio">
-        <h4>Regulatórios</h4>
-        <ul>
-           <li><a href="pdfs/Política de Privacidade.pdf" target="_blank">Política de Privacidade</a></li>
-          <li><a href="pdfs/4. Termo Abertura Conta Corrente  PF.pdf" target="_blank">Termos de Abertura de conta Genial</a></li>
-          <li><a href="pdfs/RPA_B3_Genial_Janeiro_2026.pdf" target="_blank">Regras e parametros de atuaçao </a></li>
-          <li><a href="pdfs/Termo de Renda Fixa.pdf" target="_blank">Termo de Renda Fixa</a></li>
-          <li><a href="pdfs/CONTRATO DE INTERMEDIAÇÃO.pdf" target="_blank">Contrato de intermediaçao</a></li>
-        </ul>
-      </div>
+      <div class="footer-column"><h4>Produtos</h4><ul><li><a href="renda-fixa.html">Renda Fixa</a></li><li><a href="fundos.html">Fundos</a></li><li><a href="previdencia.html">Previdência</a></li><li><a href="renda-variavel.html">Renda Variável</a></li><li><a href="mercado-futuro.html">Mercado Futuro</a></li></ul></div>
+      <div class="footer-column"><h4>Quem Somos</h4><ul><li><a href="sobrenos.html#missao">Nossa Missão</a></li><li><a href="sobrenos.html#historia">Nossa História</a></li></ul></div>
+      <div class="footer-column"><h4>Fale Conosco</h4><ul><li><a href="https://novo.brb.com.br/atendimento/" target="_blank" rel="noopener noreferrer">Central de Atendimento</a></li><li><a href="https://novo.brb.com.br/atendimento/ouvidoria-brb/" target="_blank" rel="noopener noreferrer">Ouvidoria BRB</a></li></ul></div>
+      <div class="footer-column"><h4>Institucional</h4><ul><li><a href="https://www.anbima.com.br/" target="_blank">Anbima</a></li><li><a href="https://www.b3.com.br/" target="_blank">B3</a></li><li><a href="https://www.gov.br/cvm/" target="_blank">CVM</a></li><li><a href="https://www.fgc.org.br/" target="_blank">FGC</a></li><li><a href="https://www.bcb.gov.br/" target="_blank">Bacen</a></li></ul></div>
+      <div class="footer-column regulatorio"><h4>Regulatórios</h4><ul><li><a href="pdfs/Política de Privacidade.pdf" target="_blank">Política de Privacidade</a></li><li><a href="pdfs/4. Termo Abertura Conta Corrente  PF.pdf" target="_blank">Termos de Abertura de conta</a></li><li><a href="pdfs/RPA_B3_Genial_Janeiro_2026.pdf" target="_blank">Regras e Parâmetros de Atuação</a></li><li><a href="pdfs/Termo de Renda Fixa.pdf" target="_blank">Termo de Renda Fixa</a></li><li><a href="pdfs/CONTRATO DE INTERMEDIAÇÃO.pdf" target="_blank">Contrato de Intermediação</a></li></ul></div>
     </div>
-
     <div class="footer-bottom">
       <div class="footer-left">
         <img class="footer-mark" src="https://framerusercontent.com/images/ZRAogsRUCyrDvJX2BCEBRqoGhWY.svg?width=142&height=33" alt="Banco Central" />
@@ -454,69 +467,11 @@
     </div>
   </footer>
 
+  <button class="floating-cta" id="floatingCta"
+    onclick="window.open('https://brb.genialinvestimentos.com.br/auth/login','_blank','noopener,noreferrer')">
+     Investir agora
+  </button>
 
-  <script>
-    // Header hide/show on scroll
-    const header = document.getElementById('site-header');
-    let lastScroll = 0;
-    window.addEventListener('scroll', () => {
-      const current = window.pageYOffset;
-      if (current <= 10) header.classList.remove('header-hidden');
-      else if (current > lastScroll) header.classList.add('header-hidden');
-      else header.classList.remove('header-hidden');
-      lastScroll = current;
-    });
-
-    // Mobile menu
-    const toggle = document.querySelector('.mobile-menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    const overlay = document.querySelector('.menu-overlay');
-    const close = () => {
-      navLinks.classList.remove('active');
-      toggle.setAttribute('aria-expanded','false');
-      overlay.classList.remove('active');
-      document.body.style.overflow = '';
-    };
-    toggle?.addEventListener('click', () => {
-      const open = navLinks.classList.toggle('active');
-      toggle.setAttribute('aria-expanded', open);
-      overlay.classList.toggle('active', open);
-      document.body.style.overflow = open ? 'hidden' : '';
-    });
-    overlay?.addEventListener('click', close);
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
-
-    // Dropdown mobile toggle
-    document.querySelectorAll('.dropdown-toggle').forEach(t => {
-      t.addEventListener('click', e => {
-        if (window.innerWidth > 968) return;
-        e.preventDefault();
-        t.closest('.dropdown').classList.toggle('is-open');
-      });
-    });
-
-    // FAQ accordion
-    document.querySelectorAll('.faq-trigger').forEach(trigger => {
-      trigger.addEventListener('click', () => {
-        const item = trigger.closest('.faq-item');
-        const isOpen = item.classList.contains('is-open');
-        document.querySelectorAll('.faq-item.is-open').forEach(i => i.classList.remove('is-open'));
-        if (!isOpen) item.classList.add('is-open');
-        trigger.setAttribute('aria-expanded', !isOpen);
-      });
-    });
-
-    // Scroll reveal
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry, i) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => entry.target.classList.add('is-visible'), i * 80);
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-  </script>
-
+  <script src="script.js"></script>
 </body>
 </html>
