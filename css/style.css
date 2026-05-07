@@ -328,6 +328,11 @@ nav {
 .mobile-menu-toggle.active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
 .mobile-menu-toggle.active span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
 
+/* Botão fechar menu mobile — oculto por padrão em todas as telas */
+.mobile-menu-close {
+  display: none;
+}
+
 /* Overlay mobile */
 .menu-overlay {
   display: none;
@@ -869,7 +874,7 @@ header.header-hidden ~ .cotacao-ticker-bar,
   bottom: 0;
   left: 0;
   width: 100%;
-  transform: translateY(50%); 
+  transform: translateY(82%); 
   z-index: 100;
 }
 
@@ -887,7 +892,7 @@ header.header-hidden ~ .cotacao-ticker-bar,
   background: rgba(10, 42, 94, 0.90); 
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  padding: 30px 20px;
+  padding: 18px 20px;
   border-radius: 12px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
   border: 1px solid rgba(255, 255, 255, 0.15);
@@ -908,21 +913,21 @@ header.header-hidden ~ .cotacao-ticker-bar,
 .benefit-text strong {
   display: block;
   color: #fff;
-  font-size: 16px;
-  margin-bottom: 5px;
+  font-size: 14px;
+  margin-bottom: 3px;
   font-family: 'Cera Pro', 'Montserrat', sans-serif;
 }
 
 .benefit-text p {
   color: #a0aec0;
-  font-size: 13px;
+  font-size: 12px;
   line-height: 1.4;
   margin: 0;
 }
 
 .benefit-item i {
   color: #3182ce;
-  font-size: 24px;
+  font-size: 20px;
 }
 .benefit-item {
   display: flex;
@@ -1803,7 +1808,7 @@ footer {
   .additional-content h2 { font-size: 2rem; }
 
   /* ── Portfólio ── */
-  #portfolio { padding: 4rem 1.5rem; }
+  #portfolio { padding: 2.5rem 1.5rem 4rem; }
   .portfolio-content { grid-template-columns: 1fr; gap: 2.5rem; }
   .large-number { font-size: 7rem; top: -25px; left: -10px; }
   .portfolio-text h2 { font-size: 2rem; }

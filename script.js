@@ -59,14 +59,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileToggle = document.querySelector('.mobile-menu-toggle');
   const navLinks     = document.querySelector('.nav-links');
   const menuOverlay  = document.querySelector('.menu-overlay');
-  const closeBtn     = document.querySelector('.mobile-menu-close');
 
   const openMenu = () => {
     navLinks.classList.add('active');
     mobileToggle.classList.add('active');
     menuOverlay.classList.add('active');
     mobileToggle.setAttribute('aria-expanded', 'true');
-    if (closeBtn) closeBtn.classList.add('visible');
     document.body.style.overflow = 'hidden';
   };
 
@@ -75,7 +73,6 @@ document.addEventListener('DOMContentLoaded', () => {
     mobileToggle.classList.remove('active');
     menuOverlay.classList.remove('active');
     mobileToggle.setAttribute('aria-expanded', 'false');
-    if (closeBtn) closeBtn.classList.remove('visible');
     document.body.style.overflow = '';
   };
 
@@ -84,7 +81,6 @@ document.addEventListener('DOMContentLoaded', () => {
   );
 
   menuOverlay?.addEventListener('click', closeMenu);
-  closeBtn?.addEventListener('click', closeMenu);
 
   // Fechar ao clicar em links comuns (não dropdown-toggle)
   document.querySelectorAll('.nav-links a:not(.dropdown-toggle)').forEach(link => {
@@ -567,26 +563,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ── renda-fixa ──
   if (document.querySelector('.rf-hero')) {
-    // Header hide/show
-        const header = document.getElementById('site-header');
-        let lastScroll = 0;
-        window.addEventListener('scroll', () => {
-          const current = window.pageYOffset;
-          if (current <= 10) header.classList.remove('header-hidden');
-          else if (current > lastScroll) header.classList.add('header-hidden');
-          else header.classList.remove('header-hidden');
-          lastScroll = current;
-        });
-    
-        // Mobile menu
-        const toggle = document.querySelector('.mobile-menu-toggle');
-        const navLinks = document.querySelector('.nav-links');
-        const overlay = document.querySelector('.menu-overlay');
-        const closeMenu = () => { navLinks.classList.remove('active'); toggle.setAttribute('aria-expanded','false'); overlay.classList.remove('active'); document.body.style.overflow = ''; };
-        toggle?.addEventListener('click', () => { const open = navLinks.classList.toggle('active'); toggle.setAttribute('aria-expanded', open); overlay.classList.toggle('active', open); document.body.style.overflow = open ? 'hidden' : ''; });
-        overlay?.addEventListener('click', closeMenu);
-        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
-        document.querySelectorAll('.dropdown-toggle').forEach(t => { t.addEventListener('click', e => { if (window.innerWidth > 968) return; e.preventDefault(); t.closest('.dropdown').classList.toggle('is-open'); }); });
+    // Mobile menu já tratado pelo bloco global acima (mobileToggle, navLinks, menuOverlay, openMenu, closeMenu)
     
         // FAQ
         document.querySelectorAll('.faq-trigger').forEach(trigger => {

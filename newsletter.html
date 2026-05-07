@@ -123,47 +123,87 @@
     <div class="container newsletter-grid">
 
       <div class="newsletter-left">
-        <h2>A visão dos nossos especialistas direto no seu e-mail.</h2>
-        <p>Preencha seus dados abaixo e selecione os temas que mais combinam com o seu perfil de investidor. É rápido e gratuito.</p>
+        <span class="section-tag">Fique por dentro</span>
+        <h2>A visão dos nossos especialistas <span>direto no seu e-mail.</span></h2>
+        <p>Preencha seus dados ao lado e selecione os temas que mais combinam com o seu perfil de investidor. É rápido e gratuito.</p>
+
+        <ul class="nl-features">
+          <li>
+            <span class="nl-features__dot"></span>
+            <span>Relatórios matinais com o resumo do mercado antes da abertura do pregão</span>
+          </li>
+          <li>
+            <span class="nl-features__dot"></span>
+            <span>Carteiras recomendadas atualizadas pelos nossos analistas certificados</span>
+          </li>
+          <li>
+            <span class="nl-features__dot"></span>
+            <span>Alertas de oportunidades em renda fixa, ações e fundos</span>
+          </li>
+          <li>
+            <span class="nl-features__dot"></span>
+            <span>Conteúdo educativo para todos os níveis de experiência</span>
+          </li>
+        </ul>
+
+        <div class="nl-frequency">
+          <span class="nl-frequency__icon">📅</span>
+          Envios <strong>de segunda a sexta</strong>, pontualmente às 8h
+        </div>
       </div>
 
-      <form class="newsletter-form" novalidate>
+      <div class="newsletter-form-wrap">
+        <form class="newsletter-form" novalidate id="newsletterForm">
 
-        <div class="input-group">
-          <input type="text" name="nome" placeholder="Nome completo" required autocomplete="name" />
+          <h3>Assine gratuitamente</h3>
+          <p class="form-sub">Leva menos de 1 minuto. Sem spam, prometemos.</p>
+
+          <div class="input-group">
+            <input type="text" name="nome" id="f-nome" placeholder="Nome completo" required autocomplete="name" />
+            <label for="f-nome">Nome completo</label>
+          </div>
+
+          <div class="input-group">
+            <input type="email" name="email" id="f-email" placeholder="Seu melhor e-mail" required autocomplete="email" />
+            <label for="f-email">Seu melhor e-mail</label>
+          </div>
+
+          <div class="input-group">
+            <input type="tel" name="telefone" id="f-tel" placeholder="Telefone (opcional)"
+                   pattern="[0-9()\s\-]*" inputmode="numeric" autocomplete="tel" />
+            <label for="f-tel">Telefone (opcional)</label>
+          </div>
+
+          <div class="checkbox-group">
+            <span class="group-label">Temas de interesse</span>
+            <label>
+              <input type="checkbox" name="analises" />
+              Análises e relatórios BRB Investimentos
+            </label>
+            <label>
+              <input type="checkbox" name="carteiras" />
+              Carteiras recomendadas
+            </label>
+          </div>
+
+          <div class="privacy">
+            <label>
+              <input type="checkbox" name="privacidade" required />
+              Ao prosseguir, você autoriza a coleta de dados e concorda com a
+              <a href="pdfs/Política de Privacidade.pdf" target="_blank" rel="noopener noreferrer">política de privacidade</a>.
+            </label>
+          </div>
+
+          <button type="submit" class="btn-primary" id="submitBtn">Assinar agora →</button>
+
+        </form>
+
+        <div class="form-success" id="formSuccess" role="status" aria-live="polite">
+          <div class="form-success__icon">✓</div>
+          <h3>Você está dentro!</h3>
+          <p>Bem-vindo(a) à newsletter BRB Investimentos.<br>Fique de olho na sua caixa de entrada a partir de amanhã.</p>
         </div>
-
-        <div class="input-group">
-          <input type="email" name="email" placeholder="Digite seu e-mail" required autocomplete="email" />
-        </div>
-
-        <div class="input-group">
-          <input type="tel" name="telefone" placeholder="Telefone (opcional)"
-                 pattern="[0-9()\s\-]*" inputmode="numeric" autocomplete="tel" />
-        </div>
-
-        <div class="checkbox-group">
-          <label>
-            <input type="checkbox" name="analises" />
-            Análises e relatórios BRB Investimentos
-          </label>
-          <label>
-            <input type="checkbox" name="carteiras" />
-            Carteiras recomendadas
-          </label>
-        </div>
-
-        <div class="privacy">
-          <label>
-            <input type="checkbox" name="privacidade" required />
-            Ao prosseguir, você autoriza a coleta de dados e concorda com a
-            <a href="pdfs/Política de Privacidade.pdf" target="_blank" rel="noopener noreferrer">política de privacidade</a>.
-          </label>
-        </div>
-
-        <button type="submit" class="btn-primary">Assine agora</button>
-
-      </form>
+      </div>
 
     </div>
   </section>
@@ -234,16 +274,7 @@
         </ul>
       </div>
 
-      <div class="footer-column">
-        <h4>Regulatórios</h4>
-        <ul>
-          <li><a href="pdfs/Política de Privacidade.pdf" target="_blank" rel="noopener noreferrer">Política de Privacidade</a></li>
-          <li><a href="pdfs/4. Termo Abertura Conta Corrente  PF.pdf" target="_blank" rel="noopener noreferrer">Termos de Abertura de Conta Genial</a></li>
-          <li><a href="pdfs/RPA_B3_Genial_Janeiro_2026.pdf" target="_blank" rel="noopener noreferrer">Regras e Parâmetros de Atuação</a></li>
-          <li><a href="pdfs/Termo de Renda Fixa.pdf" target="_blank" rel="noopener noreferrer">Termo de Renda Fixa</a></li>
-          <li><a href="pdfs/CONTRATO DE INTERMEDIAÇÃO.pdf" target="_blank" rel="noopener noreferrer">Contrato de Intermediação</a></li>
-        </ul>
-      </div>
+     
 
     </div>
 
@@ -267,17 +298,67 @@
   <script src="script.js"></script>
 
   <script>
-    // Máscara simples no campo de telefone — permite só números, parênteses e espaço
+    /* Máscara de telefone */
     const telInput = document.querySelector('input[name="telefone"]');
     if (telInput) {
       telInput.addEventListener('input', function () {
         this.value = this.value.replace(/[^0-9()\s\-]/g, '');
       });
     }
-  </script>
 
-  <script>
-    (function(){var bar=document.getElementById("readingBar");if(bar){window.addEventListener("scroll",function(){bar.style.width=(window.scrollY/(document.body.scrollHeight-window.innerHeight)*100)+"%";});}})();
+    /* Reading progress bar */
+    (function(){
+      var bar = document.getElementById("readingBar");
+      if (bar) {
+        window.addEventListener("scroll", function () {
+          bar.style.width = Math.min(window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100, 100) + "%";
+        });
+      }
+    })();
+
+    /* Scroll reveal */
+    document.querySelectorAll('.reveal').forEach(el => {
+      new IntersectionObserver((entries, obs) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); obs.unobserve(e.target); } });
+      }, { threshold: 0.12 }).observe(el);
+    });
+
+    /* Form submit com loading + success */
+    const form      = document.getElementById('newsletterForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const success   = document.getElementById('formSuccess');
+
+    if (form) {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const email      = form.querySelector('input[name="email"]');
+        const privacidade = form.querySelector('input[name="privacidade"]');
+
+        if (!email.value || !email.checkValidity()) {
+          email.focus();
+          email.style.borderColor = '#ef4444';
+          setTimeout(() => email.style.borderColor = '', 2000);
+          return;
+        }
+        if (!privacidade.checked) {
+          privacidade.closest('label').style.color = '#ef4444';
+          setTimeout(() => privacidade.closest('label').style.color = '', 2000);
+          return;
+        }
+
+        submitBtn.classList.add('loading');
+        submitBtn.textContent = 'Enviando...';
+
+        setTimeout(() => {
+          form.style.display = 'none';
+          success.classList.add('show');
+        }, 1800);
+      });
+
+      form.querySelectorAll('input').forEach(inp => {
+        inp.addEventListener('input', () => { inp.style.borderColor = ''; });
+      });
+    }
   </script>
 </body>
 </html>

@@ -344,6 +344,11 @@ nav {
 .mobile-menu-toggle.active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
 .mobile-menu-toggle.active span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
 
+/* Botão fechar menu mobile — oculto em todas as telas */
+.mobile-menu-close {
+  display: none;
+}
+
 /* Fundo escuro que aparece ao abrir o menu mobile */
 .menu-overlay {
   display: none;
@@ -908,4 +913,305 @@ footer {
   background: linear-gradient(90deg, var(--primary-blue, #0056A8), var(--accent-gold, #F5A623));
   transition: width 0.1s ease;
   border-radius: 0 2px 2px 0;
+}
+
+
+/* ============================================================
+   MELHORIAS DO FORMULÁRIO (adicionadas ao layout original)
+   ============================================================ */
+
+/* Coluna esquerda: section-tag pill */
+.section-tag {
+  display: inline-block;
+  background: var(--light-blue);
+  color: var(--primary-blue);
+  padding: 0.35rem 1rem;
+  border-radius: 50px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.newsletter-left h2 span { color: var(--primary-blue); }
+
+/* Lista de benefícios */
+.nl-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  margin-top: 1.5rem;
+}
+
+.nl-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+  font-size: 0.92rem;
+  color: var(--text-dark);
+  line-height: 1.5;
+}
+
+.nl-features__dot {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--primary-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.nl-features__dot::after {
+  content: '✓';
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+/* Badge de frequência */
+.nl-frequency {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  padding: 0.7rem 1.2rem;
+  background: #fff;
+  border: 1px solid rgba(0, 86, 168, 0.12);
+  border-radius: 12px;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  box-shadow: 0 2px 12px rgba(0,31,63,0.06);
+}
+
+.nl-frequency strong { color: var(--deep-navy); font-weight: 700; }
+.nl-frequency__icon  { font-size: 1.1rem; }
+
+/* ── Form card ── */
+.newsletter-form-wrap {
+  width: 100%;
+  max-width: 480px;
+}
+
+.newsletter-form {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 2.8rem;
+  box-shadow: 0 4px 6px rgba(0,31,63,0.04), 0 20px 40px rgba(0,31,63,0.08), 0 0 0 1px rgba(0,86,168,0.06);
+  position: relative;
+  overflow: hidden;
+}
+
+.newsletter-form::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-blue), var(--bright-blue));
+  border-radius: 20px 20px 0 0;
+}
+
+.newsletter-form h3 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--deep-navy);
+  margin-bottom: 0.4rem;
+}
+
+.newsletter-form .form-sub {
+  font-size: 0.83rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+/* ── Floating labels ── */
+.input-group {
+  position: relative;
+  margin-bottom: 1.6rem;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 1.1rem 1rem 0.5rem;
+  background: #f7f9fc;
+  border: 1.5px solid #dde3eb;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  color: var(--text-dark);
+  transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+
+.input-group input:focus {
+  border-color: var(--primary-blue);
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(0, 86, 168, 0.10);
+}
+
+.input-group label {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.88rem;
+  color: #8a9ab0;
+  pointer-events: none;
+  transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  font-family: inherit;
+}
+
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+  top: 0.55rem;
+  font-size: 0.68rem;
+  transform: none;
+  color: var(--primary-blue);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.input-group input::placeholder { color: transparent; }
+.input-group input:not(:placeholder-shown):valid { border-color: #22c55e; }
+
+/* ── Custom checkboxes ── */
+.checkbox-group .group-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #8a9ab0;
+  margin-bottom: 0.8rem;
+  display: block;
+}
+
+.checkbox-group input[type="checkbox"],
+.privacy input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #c8d3df;
+  border-radius: 5px;
+  flex-shrink: 0;
+  position: relative;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+  background: #fff;
+}
+
+.checkbox-group input[type="checkbox"]:checked,
+.privacy input[type="checkbox"]:checked {
+  background: var(--primary-blue);
+  border-color: var(--primary-blue);
+}
+
+.checkbox-group input[type="checkbox"]::after,
+.privacy input[type="checkbox"]::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 9'%3E%3Cpath d='M1 4l3.5 3.5L11 1' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E") center/10px no-repeat;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: opacity 0.15s, transform 0.15s;
+}
+
+.checkbox-group input[type="checkbox"]:checked::after,
+.privacy input[type="checkbox"]:checked::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ── Botão com shimmer ── */
+.btn-primary {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  background: var(--primary-blue);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.25s, transform 0.15s, box-shadow 0.25s;
+  letter-spacing: 0.02em;
+}
+
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 60%; height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.22), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.5s ease;
+}
+
+.btn-primary:hover {
+  background: var(--bright-blue);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(0, 86, 168, 0.35);
+}
+
+.btn-primary:hover::after { left: 160%; }
+.btn-primary:active { transform: translateY(0); }
+
+.btn-primary.loading { pointer-events: none; opacity: 0.8; }
+.btn-primary.loading::before {
+  content: '';
+  display: inline-block;
+  width: 14px; height: 14px;
+  border: 2px solid rgba(255,255,255,0.4);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── Estado de sucesso ── */
+.form-success {
+  display: none;
+  text-align: center;
+  padding: 3rem 2rem;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 6px rgba(0,31,63,0.04), 0 20px 40px rgba(0,31,63,0.08);
+}
+
+.form-success.show { display: block; }
+
+.form-success__icon {
+  width: 64px; height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  font-size: 1.8rem;
+  color: #fff;
+  animation: popIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+@keyframes popIn { from { transform: scale(0); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+.form-success h3 { font-size: 1.3rem; font-weight: 800; color: var(--deep-navy); margin-bottom: 0.6rem; }
+.form-success p  { font-size: 0.9rem; color: var(--text-muted); }
+
+/* Responsivo mobile */
+@media (max-width: 968px) {
+  .newsletter-form-wrap { max-width: 100%; }
+  .newsletter-form { padding: 2rem; }
+}
+@media (max-width: 480px) {
+  .newsletter-form { padding: 1.6rem; }
 }
