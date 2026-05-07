@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Fechar com Escape
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeMenu();
+    if (e.key === 'Escape') closeMenu();  closeMenu();
   });
 
 

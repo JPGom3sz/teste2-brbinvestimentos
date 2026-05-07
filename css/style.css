@@ -781,9 +781,7 @@ header.header-hidden ~ .cotacao-ticker-bar,
   will-change: transform;
 }
 
-.cotacao-ticker-content:hover {
-  animation-play-state: paused;
-}
+
 
 @keyframes ticker-scroll {
   0%   { transform: translateX(0); }
