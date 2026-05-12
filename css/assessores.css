@@ -140,7 +140,7 @@ nav {
 }
 
 .logo img {
-  height: 130px;
+  height: 150px;
 }
 
 .nav-links {
@@ -157,7 +157,7 @@ nav {
 .nav-links > li > a {
   color: rgb(255, 255, 255);
   font-weight: 520;
-  font-size: 0.90rem;
+  font-size: 16px;
   letter-spacing: 0.02em;
   padding:  0.5rem 0.9rem;
   border-radius: 6px;
@@ -272,14 +272,14 @@ nav {
   display: block;
   padding: 11px 20px;
   font-weight: 550;
-  font-size: 0.79rem;
+  font-size: 14px;
   color: rgb(255, 255, 255);
   transition: background var(--ease), color var(--ease);
 }
 
 .nav-links .dropdown-menu a:hover {
-  background: rgba(58, 127, 212, 0.15) !important; /* Fundo sutil azul para o hover */
-  color: var(--brb-cyan) !important; /* Garante que o texto fique legível no hover */
+  background: rgba(58, 127, 212, 0.15) !important; 
+  color: var(--brb-cyan) !important; 
 }
 
 
@@ -394,7 +394,7 @@ nav {
 
 .submenu a {
   padding: 10px 16px;
-  font-size: 0.802rem;
+  font-size: 16px;
 }
 
 /* ============================================================
@@ -710,7 +710,7 @@ nav {
 }
 
 .as-diff__card h3 {
-  font-size: 0.95rem;
+  font-size: 16px;
   font-weight: 700;
   color: var(--brb-white);
   margin-bottom: 0.7rem;
@@ -718,7 +718,7 @@ nav {
 }
 
 .as-diff__card p {
-  font-size: 0.82rem;
+  font-size: 14px;
   line-height: 1.8;
   color: var(--brb-text);
 }
@@ -991,9 +991,7 @@ nav {
   color: var(--brb-white);
 }
 
-/* ============================================================
-   CARD ASSESSORES
-   ============================================================ */
+
 
 /* ============================================================
    ASSESSORIA SECTION 
@@ -1048,11 +1046,13 @@ nav {
 
 /* Grid dos Cartões */
 .planos-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+  display: flex;
+  justify-content: center; 
   align-items: stretch;
-  margin-bottom: 3.5rem;
+  gap: 2rem; 
+  flex-wrap: wrap; 
+  margin: 0 auto; 
+  max-width: 1200px; 
 }
 
 /* Cartão */
@@ -1195,6 +1195,7 @@ nav {
   color: var(--brb-white);
   font-size: 0.95rem;
   font-weight: 700;
+  margin-top: 2.5rem;
   letter-spacing: 0.02em;
   border-radius: var(--r-sm);
   text-decoration: none;
@@ -1548,7 +1549,6 @@ footer {
 
 /* ============================================================
    TICKER DE COTAÇÃO — BRB Investimentos
-   (copiado de style.css para páginas com CSS próprio)
    ============================================================ */
 :root {
   --ticker-h: 38px;

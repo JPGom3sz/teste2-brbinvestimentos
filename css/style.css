@@ -138,7 +138,7 @@ nav {
 }
 
 .logo img {
-  height: 50px;
+  height: 60px;
 }
 
 .nav-links {
@@ -155,7 +155,7 @@ nav {
 .nav-links > li > a {
   color: rgba(10, 10, 10, 0.85);
   font-weight: 520;
-  font-size: 0.90rem;
+  font-size: 16px;
   letter-spacing: 0.02em;
   padding:  0.5rem 0.9rem;
   border-radius: 6px;
@@ -268,7 +268,7 @@ nav {
   display: block;
   padding: 11px 20px;
   font-weight: 550;
-  font-size: 0.79rem;
+  font-size: 13px;
   color: rgba(0, 0, 0, 0.7);
   transition: background var(--ease), color var(--ease);
 }
@@ -750,7 +750,7 @@ header.header-hidden ~ .cotacao-ticker-bar,
   display: flex;
   align-items: center;
   gap: 0.4rem;
-  font-size: 0.72rem;
+  font-size: 13px;
   font-weight: 700;
   color: #4db8ff;
   text-transform: uppercase;
@@ -911,14 +911,14 @@ header.header-hidden ~ .cotacao-ticker-bar,
 .benefit-text strong {
   display: block;
   color: #fff;
-  font-size: 14px;
+  font-size: 18px;
   margin-bottom: 3px;
   font-family: 'Cera Pro', 'Montserrat', sans-serif;
 }
 
 .benefit-text p {
   color: #a0aec0;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.4;
   margin: 0;
 }
@@ -1110,6 +1110,7 @@ header.header-hidden ~ .cotacao-ticker-bar,
   pointer-events: none;
   letter-spacing: -0.05em;
   z-index: 0;
+  white-space: nowrap; 
 }
 
 .portfolio-text {
@@ -1168,7 +1169,7 @@ header.header-hidden ~ .cotacao-ticker-bar,
 }
 
 #content-portifolio h2 {
-  font-size: 1.8rem;
+  font-size: 35px;
   font-weight: 800;
   color: var(--deep-navy);
   margin-bottom: 1.2rem;
@@ -1176,7 +1177,7 @@ header.header-hidden ~ .cotacao-ticker-bar,
 }
 
 #content-portifolio p {
-  font-size: 1rem;
+  font-size: 20px;
   line-height: 1.8;
   color: rgba(26, 26, 26, 0.7);
   font-weight: 400;
@@ -1265,7 +1266,7 @@ header.header-hidden ~ .cotacao-ticker-bar,
 }
 
 .assessores-inner h2 {
-  font-size: 3.2rem;
+  font-size: 80px;
   font-weight: 900;
   line-height: 1.15;
   color: #fff;
@@ -1312,7 +1313,7 @@ header.header-hidden ~ .cotacao-ticker-bar,
 
 .app-mockup__img {
   width: 100%;
-  max-width: 450px;
+  max-width: 420px;
   margin-right: 55px;
   height: auto;
   filter: drop-shadow(0 20px 60px rgba(29, 118, 207, 0.2));
@@ -1323,7 +1324,7 @@ header.header-hidden ~ .cotacao-ticker-bar,
 }
 
 .app-eyebrow {
-  font-size: 0.78rem;
+  font-size: 0.82rem;
   font-weight: 700;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -1357,7 +1358,7 @@ header.header-hidden ~ .cotacao-ticker-bar,
 }
 
 .app-qr-text {
-  font-size: 0.92rem;
+  font-size: 16px;
   line-height: 1.7;
   color: rgba(26, 26, 26, 0.7);
   font-weight: 400;

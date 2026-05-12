@@ -8,16 +8,19 @@
   <link rel="stylesheet" href="css/style-enhance.css" />
   <link rel="stylesheet" href="css/sobrenos.css" />
   <link rel="stylesheet" href="css/mobile-nav.css" />
-</head>
-<body>
+
+
+  <!-- Cursor -->
+  <div class="cur-dot" id="curDot"></div>
+  <div class="cur-ring" id="curRing"></div>
 
   <div class="reading-progress" aria-hidden="true">
     <div class="reading-progress__bar" id="readingBar"></div>
   </div>
 
-  <!-- ===================================================
+  <!-- ═══════════════════════════════════════════
        HEADER
-  ==================================================== -->
+  ═══════════════════════════════════════════ -->
   <header id="site-header">
     <nav>
 
@@ -35,21 +38,12 @@
             Produtos e Serviços <span class="chevron" aria-hidden="true">▾</span>
           </a>
           <ul class="dropdown-menu" role="menu">
-            <li role="none" class="has-submenu">
-              <a href="renda-fixa.html" role="menuitem">Renda Fixa <span class="chevron-right"></span></a>
-            </li>
-            <li role="none" class="has-submenu">
-              <a href="renda-variavel.html" role="menuitem">Renda Variável <span class="chevron-right"></span></a>
-            </li>
-            <li role="none" class="has-submenu">
-              <a href="previdencia.html" role="menuitem">Previdência <span class="chevron-right"></span></a>
-            </li>
-            <li role="none" class="has-submenu">
-              <a href="fundos.html" role="menuitem">Fundos <span class="chevron-right"></span></a>
-            </li>
-            <li role="none" class="has-submenu">
-              <a href="mercado-futuro.html" role="menuitem">Mercado Futuro <span class="chevron-right"></span></a>
-            </li>
+            <li role="none" class="has-submenu"><a href="renda-fixa.html" role="menuitem">Renda Fixa <span class="chevron-right"></span></a></li>
+            <li role="none" class="has-submenu"><a href="renda-variavel.html" role="menuitem">Renda Variável <span class="chevron-right"></span></a></li>
+            <li role="none" class="has-submenu"><a href="previdencia.html" role="menuitem">Previdência <span class="chevron-right"></span></a></li>
+            <li role="none" class="has-submenu"><a href="fundos.html" role="menuitem">Fundos <span class="chevron-right"></span></a></li>
+            <li role="none" class="has-submenu"><a href="mercado-futuro.html" role="menuitem">Mercado Futuro <span class="chevron-right"></span></a></li>
+            <li role="none" class="has-submenu"><a href="javascript:void(0)" role="menuitem">Tesouro Direto <span class="chevron-right"></span></a></li>
           </ul>
         </li>
 
@@ -66,13 +60,8 @@
           </ul>
         </li>
 
-        <li role="none">
-          <a href="sobrenos.html" role="menuitem" class="active">Sobre nós</a>
-        </li>
-
-        <li role="none">
-          <a href="contato.html" role="menuitem">Contato</a>
-        </li>
+        <li role="none"><a href="sobrenos.html" role="menuitem" class="active">Sobre nós</a></li>
+        <li role="none"><a href="contato.html" role="menuitem">Contato</a></li>
 
       </ul>
 
@@ -80,7 +69,6 @@
         <button class="account-link" type="button">Acesse seus Investimentos</button>
       </div>
 
-      <!-- Botão hambúrguer — visível só no mobile -->
       <button class="mobile-menu-toggle" type="button"
               aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
         <span></span><span></span><span></span>
@@ -92,8 +80,18 @@
     </nav>
   </header>
 
-  <!-- ===== HERO ===== -->
+
+  <!-- ═══════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════ -->
   <section class="sn-hero" id="home">
+
+    <!-- Orbs animados -->
+    <div class="sn-hero__orbs" aria-hidden="true">
+      <div class="sn-hero__orb sn-hero__orb--a"></div>
+      <div class="sn-hero__orb sn-hero__orb--b"></div>
+      <div class="sn-hero__orb sn-hero__orb--c"></div>
+    </div>
 
     <div class="sn-hero__content">
       <div class="sn-hero__tag">Quem somos</div>
@@ -112,37 +110,57 @@
 
     <div class="sn-hero__image-wrapper" aria-hidden="true">
       <img src="img/Plataforma Mockup.png" alt="Mockup da Plataforma de Investimentos" class="sn-hero__image" />
+
+      <!-- Badge flutuante -->
+      <div class="sn-hero__badge">
+        <div class="sn-hero__badge-icon">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="sn-hero__badge-label">
+          <strong>+600 mil</strong>
+          <span>investidores confiam em nós</span>
+        </div>
+      </div>
     </div>
 
   </section>
 
 
-  <!-- ===== STATS ===== -->
+  <!-- ═══════════════════════════════════════════
+       STATS com count-up
+  ═══════════════════════════════════════════ -->
   <section class="sn-stats">
     <div class="sn-stats__inner">
-      <div class="sn-stats__item" data-animate>
-        <span class="sn-stats__num">+600<span class="sn-stats__unit"></span></span>
+
+      <div class="sn-stats__item" data-animate data-countup="600" data-prefix="+" data-suffix="">
+        <span class="sn-stats__num" id="stat-0">+600</span>
         <p>Produtos Variados</p>
       </div>
+
       <div class="sn-stats__divider" aria-hidden="true"></div>
-      <div class="sn-stats__item" data-animate>
-        <span class="sn-stats__num">R$&nbsp;3.8<span class="sn-stats__unit">bi</span></span>
+
+      <div class="sn-stats__item" data-animate data-countup="3.8" data-prefix="R$&nbsp;" data-suffix="bi" data-decimal="1">
+        <span class="sn-stats__num" id="stat-1">R$&nbsp;3.8<span class="sn-stats__unit">bi</span></span>
         <p>sob custódia</p>
       </div>
+
       <div class="sn-stats__divider" aria-hidden="true"></div>
-      <div class="sn-stats__item" data-animate>
-        <span class="sn-stats__num">+600<span class="sn-stats__unit">mil</span></span>
+
+      <div class="sn-stats__item" data-animate data-countup="600" data-prefix="+" data-suffix="mil">
+        <span class="sn-stats__num" id="stat-2">+600<span class="sn-stats__unit">mil</span></span>
         <p>investidores em todo o Brasil</p>
       </div>
+
     </div>
   </section>
 
 
-  <!-- ===== QUEM SOMOS (COM ABAS) ===== -->
+  <!-- ═══════════════════════════════════════════
+       QUEM SOMOS (ABAS)
+  ═══════════════════════════════════════════ -->
   <section class="sn-about" id="missao">
     <div class="sn-about__inner">
 
-      <!-- Abas de navegação -->
       <div class="sn-about__tabs">
         <button class="sn-about__tab sn-about__tab--active" data-tab="quem-somos">Quem somos</button>
         <button class="sn-about__tab" data-tab="onde-estamos">Onde estamos</button>
@@ -209,38 +227,42 @@
   </section>
 
 
-  <!-- ===== MARQUEE DECORATIVO ===== -->
+  <!-- ═══════════════════════════════════════════
+       MARQUEE
+  ═══════════════════════════════════════════ -->
   <div class="sn-marquee" aria-hidden="true">
     <div class="sn-marquee__track">
-      <span>Transparência</span>
-      <span class="sn-marquee__dot">◆</span>
-      <span>Inovação</span>
-      <span class="sn-marquee__dot">◆</span>
-      <span>Confiança</span>
-      <span class="sn-marquee__dot">◆</span>
-      <span>Excelência</span>
-      <span class="sn-marquee__dot">◆</span>
-      <span>Segurança</span>
-      <span class="sn-marquee__dot">◆</span>
-      <span>Crescimento</span>
-      <span class="sn-marquee__dot">◆</span>
-      <span>Transparência</span>
-      <span class="sn-marquee__dot">◆</span>
-      <span>Inovação</span>
-      <span class="sn-marquee__dot">◆</span>
-      <span>Confiança</span>
-      <span class="sn-marquee__dot">◆</span>
-      <span>Excelência</span>
-      <span class="sn-marquee__dot">◆</span>
-      <span>Segurança</span>
-      <span class="sn-marquee__dot">◆</span>
-      <span>Crescimento</span>
-      <span class="sn-marquee__dot">◆</span>
+      <span>Transparência</span><span class="sn-marquee__dot">◆</span>
+      <span>Inovação</span><span class="sn-marquee__dot">◆</span>
+      <span>Confiança</span><span class="sn-marquee__dot">◆</span>
+      <span>Excelência</span><span class="sn-marquee__dot">◆</span>
+      <span>Segurança</span><span class="sn-marquee__dot">◆</span>
+      <span>Crescimento</span><span class="sn-marquee__dot">◆</span>
+      <span>Transparência</span><span class="sn-marquee__dot">◆</span>
+      <span>Inovação</span><span class="sn-marquee__dot">◆</span>
+      <span>Confiança</span><span class="sn-marquee__dot">◆</span>
+      <span>Excelência</span><span class="sn-marquee__dot">◆</span>
+      <span>Segurança</span><span class="sn-marquee__dot">◆</span>
+      <span>Crescimento</span><span class="sn-marquee__dot">◆</span>
+      <span>Transparência</span><span class="sn-marquee__dot">◆</span>
+      <span>Inovação</span><span class="sn-marquee__dot">◆</span>
+      <span>Confiança</span><span class="sn-marquee__dot">◆</span>
+      <span>Excelência</span><span class="sn-marquee__dot">◆</span>
+      <span>Segurança</span><span class="sn-marquee__dot">◆</span>
+      <span>Crescimento</span><span class="sn-marquee__dot">◆</span>
+      <span>Transparência</span><span class="sn-marquee__dot">◆</span>
+      <span>Inovação</span><span class="sn-marquee__dot">◆</span>
+      <span>Confiança</span><span class="sn-marquee__dot">◆</span>
+      <span>Excelência</span><span class="sn-marquee__dot">◆</span>
+      <span>Segurança</span><span class="sn-marquee__dot">◆</span>
+      <span>Crescimento</span><span class="sn-marquee__dot">◆</span>
     </div>
   </div>
 
 
-  <!-- ===== NOSSA HISTÓRIA (TIMELINE) ===== -->
+  <!-- ═══════════════════════════════════════════
+       TIMELINE
+  ═══════════════════════════════════════════ -->
   <section class="sn-timeline" id="historia">
     <div class="sn-timeline__inner">
       <div class="sn-section-header sn-section-header--light">
@@ -264,7 +286,7 @@
           <div class="sn-timeline__card">
             <div class="sn-timeline__card-year">2021</div>
             <h4>O Lançamento</h4>
-            <p>Nasce oficialmente a BRB Investimentos. Operando em parceria estratégica com a Genial Investimentos, a plataforma estreou oferecendo um home broker 100% integrado ao aplicativo e um portfólio inicial com mais de 600 fundos e produtos de renda fixa e variável.</p>
+            <p>Nasce oficialmente a BRB Investimentos. Operando em parceria estratégica com a Genial Investimentos, a plataforma estreou com home broker 100% integrado e mais de 600 fundos e produtos de renda fixa e variável.</p>
           </div>
         </div>
 
@@ -272,7 +294,7 @@
           <div class="sn-timeline__card">
             <div class="sn-timeline__card-year">2023</div>
             <h4>Aceleração</h4>
-            <p>A plataforma ganha forte tração no varejo. Até o fim do segundo trimestre de 2023, alcançou a marca de 31,5 mil contas abertas e acumulou R$ 748 milhões em Ativos sob Custódia (AuC).</p>
+            <p>A plataforma ganha forte tração no varejo. Até o fim do segundo trimestre de 2023, alcançou 31,5 mil contas abertas e acumulou R$ 748 milhões em Ativos sob Custódia (AuC).</p>
           </div>
           <div class="sn-timeline__dot"></div>
         </div>
@@ -282,7 +304,7 @@
           <div class="sn-timeline__card">
             <div class="sn-timeline__card-year">2024</div>
             <h4>Marco Histórico</h4>
-            <p>A BRB Investimentos atinge seu primeiro grande recorde: R$ 2 bilhões em ativos sob custódia. Esse volume representou um salto de 100% de crescimento apenas ao longo dos meses de 2024.</p>
+            <p>A BRB Investimentos atinge seu primeiro grande recorde: R$ 2 bilhões em ativos sob custódia. Um salto de 100% de crescimento ao longo de 2024.</p>
           </div>
         </div>
 
@@ -309,7 +331,9 @@
   </section>
 
 
-  <!-- ===== POR QUE BRB ===== -->
+  <!-- ═══════════════════════════════════════════
+       POR QUE BRB — com ícones SVG reais
+  ═══════════════════════════════════════════ -->
   <section class="sn-why" id="porqueBRB">
     <div class="sn-why__inner">
       <div class="sn-section-header">
@@ -318,56 +342,99 @@
       </div>
 
       <div class="sn-why__grid">
+
+        <!-- 1 -->
         <div class="sn-why__card" data-animate>
-          <div class="sn-why__icon"></div>
+          <div class="sn-why__icon-wrap">
+            <svg viewBox="0 0 24 24">
+              <!-- Institution/Building icon -->
+              <rect x="3" y="9" width="18" height="12" rx="1"/><path d="M3 9l9-6 9 6"/><line x1="9" y1="21" x2="9" y2="13"/><line x1="15" y1="21" x2="15" y2="13"/>
+            </svg>
+          </div>
           <h4>Força de um grande grupo</h4>
           <p>Fazemos parte do Grupo BRB, um dos maiores conglomerados financeiros do Brasil, com estrutura sólida para impulsionar sua jornada de investimentos.</p>
         </div>
+
+        <!-- 2 -->
         <div class="sn-why__card" data-animate>
-          <div class="sn-why__icon"></div>
+          <div class="sn-why__icon-wrap">
+            <svg viewBox="0 0 24 24">
+              <!-- Shield check -->
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/>
+            </svg>
+          </div>
           <h4>Segurança Total</h4>
-          <p>Conte com ativos selecionados sob as normas da CVM e ANBIMA. E, para sua estratégia de renda fixa, oferecemos opções que contam com a proteção do FGC, garantindo a solidez que o seu patrimônio merece.</p>
+          <p>Ativos selecionados sob normas da CVM e ANBIMA. Para renda fixa, opções com proteção do FGC — garantindo a solidez que o seu patrimônio merece.</p>
         </div>
+
+        <!-- 3 -->
         <div class="sn-why__card" data-animate>
-          <div class="sn-why__icon"></div>
+          <div class="sn-why__icon-wrap">
+            <svg viewBox="0 0 24 24">
+              <!-- Grid / Portfolio -->
+              <rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/>
+            </svg>
+          </div>
           <h4>Plataforma Completa</h4>
-          <p>De renda fixa a ações, de fundos a derivativos, uma plataforma única com todos os produtos do mercado financeiro para qualquer perfil de investidor.</p>
+          <p>De renda fixa a ações, de fundos a derivativos — uma plataforma única com todos os produtos do mercado financeiro para qualquer perfil de investidor.</p>
         </div>
+
+        <!-- 4 -->
         <div class="sn-why__card" data-animate>
-          <div class="sn-why__icon"></div>
+          <div class="sn-why__icon-wrap">
+            <svg viewBox="0 0 24 24">
+              <!-- Users -->
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
           <h4>Atendimento Humano</h4>
-          <p>Especialistas dedicados a entender seu momento de vida e seus objetivos financeiros, construindo junto com você a melhor estratégia de investimento.</p>
+          <p>Especialistas dedicados a entender seu momento de vida e objetivos financeiros, construindo junto com você a melhor estratégia de investimento.</p>
         </div>
+
+        <!-- 5 -->
         <div class="sn-why__card" data-animate>
-          <div class="sn-why__icon"></div>
+          <div class="sn-why__icon-wrap">
+            <svg viewBox="0 0 24 24">
+              <!-- Book open -->
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><line x1="12" y1="6" x2="16" y2="6"/><line x1="12" y1="10" x2="16" y2="10"/>
+            </svg>
+          </div>
           <h4>Educação Financeira</h4>
           <p>Conteúdo de qualidade, carteiras recomendadas e ferramentas de análise para que você tome as melhores decisões com autonomia e conhecimento.</p>
         </div>
+
+        <!-- 6 -->
         <div class="sn-why__card" data-animate>
-          <div class="sn-why__icon"></div>
+          <div class="sn-why__icon-wrap">
+            <svg viewBox="0 0 24 24">
+              <!-- Lightning bolt -->
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+            </svg>
+          </div>
           <h4>Tecnologia de Ponta</h4>
-          <p>Plataforma ágil, intuitiva e segura disponível 24h. Execute suas operações com rapidez e acompanhe sua carteira em tempo real, onde estiver.</p>
+          <p>Plataforma ágil, intuitiva e segura disponível 24h. Execute operações com rapidez e acompanhe sua carteira em tempo real, onde estiver.</p>
         </div>
+
       </div>
     </div>
   </section>
 
 
-  <!-- ===== CTA FINAL ===== -->
+  <!-- ═══════════════════════════════════════════
+       CTA FINAL com blobs
+  ═══════════════════════════════════════════ -->
   <section class="sn-cta">
+    <!-- Blobs animados de fundo -->
+    <div class="sn-cta__blob sn-cta__blob--1" aria-hidden="true"></div>
+    <div class="sn-cta__blob sn-cta__blob--2" aria-hidden="true"></div>
+
     <div class="sn-cta__deco-text" aria-hidden="true">INVISTA</div>
     <div class="sn-cta__inner">
       <h2>Pronto para começar<br>sua jornada?</h2>
       <p>Abra sua conta gratuitamente e descubra como é fácil<br>investir com quem entende do assunto.</p>
       <div class="sn-cta__actions">
-        <!-- 
-          LINK MOBILE — troque o valor de data-mobile-href pelo link desejado para celular
-          No desktop, rola até a seção #app-download (na página index.html o usuário é redirecionado)
-          Aqui no Sobre Nós, no desktop abre o link padrão da conta; no mobile abre o link mobile.
-        -->
         <a
-          
-          class="sn-cta__btn sn-cta__btn--primary js-open-account-sobrenos"
+          class="sn-cta__btn sn-cta__btn--primary js-open-account-sobrenos js-magnetic"
           data-desktop-href="#mockup-link"
           data-mobile-href="https://onelink.to/sfb3cy"
           target="_blank"
@@ -375,7 +442,7 @@
         >
           Abrir minha conta
         </a>
-        <a href="contato.html" class="sn-cta__btn sn-cta__btn--outline">
+        <a href="contato.html" class="sn-cta__btn sn-cta__btn--outline js-magnetic">
           Entre em contato conosco
         </a>
       </div>
@@ -383,16 +450,24 @@
   </section>
 
 
-  <!-- ===== FOOTER ===== -->
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
   <footer>
     <div class="footer-content">
       <div class="footer-brand">
         <img src="img/LOGO BRANCA.png" alt="BRB Investimentos" class="footer-logo-img" />
         <p class="footer-brand-text">Investindo no futuro dos brasileiros com segurança, tecnologia e tradição.</p>
         <div class="footer-social">
-          <a href="https://www.instagram.com/brbinvestimentos/" class="footer-social-btn" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
-           <a href="#" class="footer-social-btn" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
-          <a href="https://www.facebook.com/share/1CRVbq4UXf/?mibextid=wwXIfr" class="footer-social-btn" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+          <a href="https://www.instagram.com/brbinvestimentos/" class="footer-social-btn" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="#" class="footer-social-btn" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/share/1CRVbq4UXf/?mibextid=wwXIfr" class="footer-social-btn" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
         </div>
       </div>
 
@@ -438,13 +513,11 @@
       <div class="footer-column regulatorio">
         <h4>Regulatórios</h4>
         <ul>
-           <li><a href="pdfs/Política de Privacidade.pdf" target="_blank">Política de Privacidade</a></li>
-          <li><a href="pdfs\4. Termo Abertura Conta Corrente  PF.pdf" target="_blank">Termos de Abertura de conta Genial</a></li>
-          <li><a href="pdfs\RPA_B3_Genial_Janeiro_2026.pdf" target="_blank">Regras e parametros de atuaçao </a></li>
-          <li><a href="pdfs\Termo de Renda Fixa.pdf" target="_blank">Termo de Renda Fixa</a></li>
-          <li><a href="pdfs\CONTRATO DE INTERMEDIAÇÃO.pdf" target="_blank">Contrato de intermediaçao</a></li>
-
-        </ul>
+          <li><a href="pdfs/Política de Privacidade.pdf" target="_blank">Política de Privacidade</a></li>
+          <li><a href="pdfs/4. Termo Abertura Conta Corrente  PF.pdf" target="_blank">Termos de Abertura de conta Genial</a></li>
+          <li><a href="pdfs/RPA_B3_Genial_Janeiro_2026.pdf" target="_blank">Regras e parâmetros de atuação</a></li>
+          <li><a href="pdfs/Termo de Renda Fixa.pdf" target="_blank">Termo de Renda Fixa</a></li>
+          <li><a href="pdfs/CONTRATO DE INTERMEDIAÇÃO.pdf" target="_blank">Contrato de intermediação</a></li>
         </ul>
       </div>
     </div>
@@ -465,62 +538,178 @@
     </div>
   </footer>
 
+
+  <!-- ═══════════════════════════════════════════
+       SCRIPTS
+  ═══════════════════════════════════════════ -->
   <script src="script.js"></script>
   <script>
-    /* ===================================================
-       BOTÃO "ABRIR MINHA CONTA" — comportamento por dispositivo
-       Desktop → abre o link padrão (data-desktop-href)
-       Mobile  → abre o link definido em data-mobile-href
-    =================================================== */
-    document.querySelectorAll('.js-open-account-sobrenos').forEach(function(link) {
-      link.addEventListener('click', function(e) {
+  (function () {
+    'use strict';
+
+    /* ── Reading progress ── */
+    const bar = document.getElementById('readingBar');
+    if (bar) {
+      window.addEventListener('scroll', function () {
+        const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
+        bar.style.width = Math.min(pct, 100) + '%';
+      });
+    }
+
+    /* ── Cursor customizado (desktop only) ── */
+    const dot  = document.getElementById('curDot');
+    const ring = document.getElementById('curRing');
+    let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
+
+    if (dot && ring && window.matchMedia('(pointer: fine)').matches) {
+      document.body.classList.add('cursor-active');
+
+      document.addEventListener('mousemove', function (e) {
+        mouseX = e.clientX; mouseY = e.clientY;
+        dot.style.left  = mouseX + 'px';
+        dot.style.top   = mouseY + 'px';
+      });
+
+      (function animate() {
+        ringX += (mouseX - ringX) * 0.14;
+        ringY += (mouseY - ringY) * 0.14;
+        ring.style.left = ringX + 'px';
+        ring.style.top  = ringY + 'px';
+        requestAnimationFrame(animate);
+      })();
+
+      document.querySelectorAll('a, button, .sn-why__card, .sn-timeline__card, .sn-stats__item').forEach(function(el) {
+        el.addEventListener('mouseenter', function() { document.body.classList.add('hovering'); });
+        el.addEventListener('mouseleave', function() { document.body.classList.remove('hovering'); });
+      });
+    }
+
+    /* ── Botão Abrir Minha Conta (mobile vs desktop) ── */
+    document.querySelectorAll('.js-open-account-sobrenos').forEach(function (link) {
+      link.addEventListener('click', function (e) {
         e.preventDefault();
         var isMobile = window.innerWidth <= 768;
         if (isMobile) {
-          var mobileHref = link.getAttribute('data-mobile-href');
-          if (mobileHref) window.open(mobileHref, '_blank', 'noopener,noreferrer');
+          var mh = link.getAttribute('data-mobile-href');
+          if (mh) window.open(mh, '_blank', 'noopener,noreferrer');
         } else {
-          var desktopHref = link.getAttribute('data-desktop-href');
-          if (desktopHref) window.location.href = desktopHref;
+          var dh = link.getAttribute('data-desktop-href');
+          if (dh) window.location.href = dh;
         }
       });
     });
-    
 
-    // Animação de scroll
-    const animEls = document.querySelectorAll('[data-animate]');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
+    /* ── Intersection Observer: scroll reveal ── */
+    var animEls = document.querySelectorAll('[data-animate]');
+    var revealObs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
         if (e.isIntersecting) {
           e.target.classList.add('is-visible');
-          observer.unobserve(e.target);
+          revealObs.unobserve(e.target);
         }
       });
     }, { threshold: 0.12 });
-    animEls.forEach(el => observer.observe(el));
+    animEls.forEach(function(el) { revealObs.observe(el); });
 
-    // Sistema de abas
-    const tabs     = document.querySelectorAll('.sn-about__tab');
-    const contents = document.querySelectorAll('.sn-about__content');
+    /* ── Count-up animado nos stats ── */
+    var statItems = document.querySelectorAll('[data-countup]');
+    var statObs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (!e.isIntersecting) return;
+        statObs.unobserve(e.target);
 
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        const targetTab = tab.dataset.tab;
+        var el       = e.target;
+        var numEl    = el.querySelector('.sn-stats__num');
+        var target   = parseFloat(el.dataset.countup);
+        var prefix   = el.dataset.prefix || '';
+        var suffix   = el.dataset.suffix || '';
+        var decimal  = parseInt(el.dataset.decimal) || 0;
+        var duration = 1800;
+        var start    = null;
 
-        tabs.forEach(t => t.classList.remove('sn-about__tab--active'));
-        contents.forEach(c => c.classList.remove('sn-about__content--active'));
+        function step(ts) {
+          if (!start) start = ts;
+          var progress = Math.min((ts - start) / duration, 1);
+          var ease     = 1 - Math.pow(1 - progress, 3);
+          var current  = target * ease;
+          var display  = decimal ? current.toFixed(decimal) : Math.round(current);
+          numEl.innerHTML = prefix + display + (suffix ? '<span class="sn-stats__unit">' + suffix + '</span>' : '');
+          if (progress < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      });
+    }, { threshold: 0.5 });
+    statItems.forEach(function(el) { statObs.observe(el); });
+
+    /* ── Sistema de abas com fade ── */
+    var tabs     = document.querySelectorAll('.sn-about__tab');
+    var contents = document.querySelectorAll('.sn-about__content');
+
+    tabs.forEach(function(tab) {
+      tab.addEventListener('click', function() {
+        var target = tab.dataset.tab;
+
+        tabs.forEach(function(t) { t.classList.remove('sn-about__tab--active'); });
+        contents.forEach(function(c) { c.classList.remove('sn-about__content--active'); });
 
         tab.classList.add('sn-about__tab--active');
-
-        const targetContent = document.getElementById(`tab-${targetTab}`);
-        if (targetContent) {
-          targetContent.classList.add('sn-about__content--active');
-        }
+        var targetEl = document.getElementById('tab-' + target);
+        if (targetEl) targetEl.classList.add('sn-about__content--active');
       });
     });
-  </script>
-  <script>
-    (function(){var bar=document.getElementById("readingBar");if(bar){window.addEventListener("scroll",function(){bar.style.width=(window.scrollY/(document.body.scrollHeight-window.innerHeight)*100)+"%";});}})();
+
+    /* ── Tilt 3D nos cards (why BRB) ── */
+    document.querySelectorAll('.sn-why__card').forEach(function(card) {
+      card.addEventListener('mousemove', function(e) {
+        var rect   = card.getBoundingClientRect();
+        var cx     = rect.left + rect.width  / 2;
+        var cy     = rect.top  + rect.height / 2;
+        var dx     = (e.clientX - cx) / (rect.width  / 2);
+        var dy     = (e.clientY - cy) / (rect.height / 2);
+        var tiltX  = dy * -6;
+        var tiltY  = dx *  6;
+        card.style.transform = 'perspective(700px) rotateX(' + tiltX + 'deg) rotateY(' + tiltY + 'deg) scale(1.02)';
+      });
+
+      card.addEventListener('mouseleave', function() {
+        card.style.transform = '';
+      });
+    });
+
+    /* ── Magnetic buttons ── */
+    document.querySelectorAll('.js-magnetic').forEach(function(btn) {
+      btn.addEventListener('mousemove', function(e) {
+        var rect = btn.getBoundingClientRect();
+        var dx   = (e.clientX - rect.left - rect.width  / 2) * 0.22;
+        var dy   = (e.clientY - rect.top  - rect.height / 2) * 0.22;
+        btn.style.transform = 'translate(' + dx + 'px, ' + dy + 'px)';
+      });
+
+      btn.addEventListener('mouseleave', function() {
+        btn.style.transform = '';
+      });
+    });
+
+    /* ── Header hide-on-scroll ── */
+    var header    = document.getElementById('site-header');
+    var lastScroll = 0;
+    window.addEventListener('scroll', function() {
+      var current = window.scrollY;
+      if (current > lastScroll && current > 100) {
+        header.classList.add('header-hidden');
+      } else {
+        header.classList.remove('header-hidden');
+      }
+      lastScroll = current;
+    }, { passive: true });
+
+    /* ── Dropdown nav ── */
+    document.querySelectorAll('.nav-links .dropdown').forEach(function(drop) {
+      drop.addEventListener('mouseenter', function() { drop.classList.add('is-open'); });
+      drop.addEventListener('mouseleave', function() { drop.classList.remove('is-open'); });
+    });
+
+  })();
   </script>
 </body>
 </html>

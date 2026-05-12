@@ -39,6 +39,7 @@
             <li role="none" class="has-submenu"><a href="previdencia.html" role="menuitem">Previdência <span class="chevron-right"></span></a></li>
             <li role="none" class="has-submenu"><a href="fundos.html" role="menuitem">Fundos <span class="chevron-right"></span></a></li>
             <li role="none" class="has-submenu"><a href="mercado-futuro.html" role="menuitem">Mercado Futuro <span class="chevron-right"></span></a></li>
+            <li role="none" class="has-submenu"><a href="javascript:void(0)">Tesouro Direto <span class="chevron-right"></span></a></li>
           </ul>
         </li>
 
@@ -94,7 +95,7 @@
        <button class="btn-rf-primary" onclick="window.open('https://brb.genialinvestimentos.com.br/auth/login','_blank','noopener,noreferrer')">
             Comece a investir
           </button>
-          <button class="btn-rf-outline" onclick="document.getElementById('produtos').scrollIntoView({behavior:'smooth'})">
+          <button class="btn-rf-outline" onclick="document.getElementById('produtos-educativo').scrollIntoView({behavior:'smooth'})">
             Ver produtos
           </button>
       </div>
@@ -117,13 +118,315 @@
   </div>
 
 
+<!-- ===================================================
+        PRODUTOS — Mercado Futuro BRB
+  ==================================================== -->
+
+<section class="edu-section" id="produtos-educativo">
+  <div class="edu-inner">
+
+    <div class="edu-header">
+      <div class="edu-tag">Derivativos</div>
+      <h2>Invista com <span class="edu-highlight">conhecimento</span></h2>
+      <p>Entenda como funciona o Mercado Futuro na BRB Investimentos. Opere contratos de índices, dólar e commodities com alavancagem e agilidade. Clique em um card para aprender mais.</p>
+    </div>
+
+    <div class="edu-grid">
+
+      <!-- CONTRATOS DE ÍNDICE -->
+      <div class="edu-card" data-modal="cdb" role="button" tabindex="0" aria-label="Saiba mais sobre Contratos de Índice">
+        <div class="edu-card__stripe edu-card__stripe--cdb"></div>
+        <div class="edu-card__body">
+          <div class="edu-card__icon edu-card__icon--cdb">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0056A8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="7" width="20" height="14" rx="2"/>
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+            </svg>
+          </div>
+          <div class="edu-card__label">Mercado Futuro</div>
+          <div class="edu-card__title">Índice (WIN/IND)</div>
+          <div class="edu-card__desc">Negocie a expectativa futura do Ibovespa. Ideal para Day Trade ou proteção (hedge) de carteiras de ações.</div>
+          <div class="edu-card__attrs">
+            <span class="edu-attr edu-attr--cdb">⚡ Alavancagem</span>
+            <span class="edu-attr edu-attr--cdb">📉 Hedge</span>
+            <span class="edu-attr edu-attr--cdb">Alta Liquidez</span>
+          </div>
+        </div>
+        <div class="edu-card__cta edu-card__cta--cdb">
+          <span>Saiba mais</span>
+          <div class="edu-card__arrow edu-card__arrow--cdb">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONTRATOS DE DÓLAR -->
+      <div class="edu-card" data-modal="lci" role="button" tabindex="0" aria-label="Saiba mais sobre Contratos de Dólar">
+        <div class="edu-card__stripe edu-card__stripe--lci"></div>
+        <div class="edu-card__body">
+          <div class="edu-card__icon edu-card__icon--lci">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22V12M12 12C12 12 7 10 4 6c4 0 8 2 8 6zM12 12c0 0 5-2 8-6-4 0-8 2-8 6z"/>
+              <path d="M5 20h14"/>
+            </svg>
+          </div>
+          <div class="edu-card__label">Mercado Futuro</div>
+          <div class="edu-card__title">Dólar (WDO/DOL)</div>
+          <div class="edu-card__desc">Opere a variação da moeda americana. Utilize para especular sobre o câmbio ou proteger compromissos em dólar.</div>
+          <div class="edu-card__attrs">
+            <span class="edu-attr edu-attr--lci">💵 Câmbio</span>
+            <span class="edu-attr edu-attr--lci">💹 Volatilidade</span>
+            <span class="edu-attr edu-attr--lci">Ajustes Diários</span>
+          </div>
+        </div>
+        <div class="edu-card__cta edu-card__cta--lci">
+          <span>Saiba mais</span>
+          <div class="edu-card__arrow edu-card__arrow--lci">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- COMMODITIES -->
+      <div class="edu-card" data-modal="debenture" role="button" tabindex="0" aria-label="Saiba mais sobre Commodities">
+        <div class="edu-card__stripe edu-card__stripe--deb"></div>
+        <div class="edu-card__body">
+          <div class="edu-card__icon edu-card__icon--deb">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/>
+              <polyline points="16 7 22 7 22 13"/>
+            </svg>
+          </div>
+          <div class="edu-card__label">Mercado Futuro</div>
+          <div class="edu-card__title">Commodities</div>
+          <div class="edu-card__desc">Negocie contratos de Boi Gordo, Milho e Café. Conecte sua estratégia ao setor que move a economia do país.</div>
+          <div class="edu-card__attrs">
+            <span class="edu-attr edu-attr--deb">🌾 Agronegócio</span>
+            <span class="edu-attr edu-attr--deb">🐂 Ativos Reais</span>
+            <span class="edu-attr edu-attr--deb">Sazonalidade</span>
+          </div>
+        </div>
+        <div class="edu-card__cta edu-card__cta--deb">
+          <span>Saiba mais</span>
+          <div class="edu-card__arrow edu-card__arrow--deb">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /edu-grid -->
+  </div><!-- /edu-inner -->
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+      OVERLAY + MODAIS — Mercado Futuro
+════════════════════════════════════════════════ -->
+<div class="edu-overlay" id="eduOverlay" role="dialog" aria-modal="true" aria-labelledby="eduModalTitle">
+
+  <!-- MODAL ÍNDICE -->
+  <div class="edu-modal" id="modal-cdb" style="display:none">
+    <div class="edu-modal__header">
+      <button class="edu-modal__close" aria-label="Fechar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="edu-modal__pill edu-modal__pill--cdb">Contratos Futuros de Índice</div>
+      <h2 class="edu-modal__title" id="eduModalTitle">O que é o Futuro de Índice?</h2>
+      <p class="edu-modal__subtitle">Negocie a pontuação do Ibovespa para uma data futura com agilidade operacional.</p>
+    </div>
+    <div class="edu-modal__body">
+      <div class="edu-modal__explainer">
+        <div class="edu-modal__explainer-icon edu-modal__explainer-icon--cdb">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#0056A8" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+          </svg>
+        </div>
+        <p>No <strong>Mercado Futuro</strong> da BRB Investimentos, você opera a expectativa do índice Ibovespa. Ao contrário do mercado à vista, você não compra as ações, mas sim contratos que derivam do valor do índice, permitindo lucrar tanto na alta quanto na queda.</p>
+      </div>
+      <div class="edu-modal__section">
+        <div class="edu-modal__section-title edu-modal__section-title--cdb">Como funciona</div>
+        <ul class="edu-modal__list edu-modal__list--cdb">
+          <li>Operações via código WIN (Mini Índice) ou IND (Índice Cheio)</li>
+          <li>Ajuste Diário: os lucros ou prejuízos são creditados ou debitados diariamente na conta</li>
+          <li>Margem de Garantia: você não precisa do valor total do contrato, apenas uma fração como garantia</li>
+          <li>Vencimento: os contratos possuem datas de validade específicas (meses pares)</li>
+        </ul>
+      </div>
+      <div class="edu-modal__section">
+        <div class="edu-modal__section-title edu-modal__section-title--cdb">Por que escolher</div>
+        <ul class="edu-modal__list edu-modal__list--cdb">
+          <li>Alavancagem: movimente valores maiores do que você tem em conta para maximizar retornos</li>
+          <li>Hedge: proteja sua carteira de ações contra quedas generalizadas do mercado</li>
+          <li>Liquidez Imediata: facilidade para entrar e sair de operações em segundos</li>
+          <li>Ideal para estratégias de curtíssimo prazo (Day Trade)</li>
+        </ul>
+      </div>
+      <div class="edu-modal__attrs-grid">
+        <div class="edu-modal__attr-item">
+          <div class="attr-label">Tributação</div>
+          <div class="attr-value">20% Day Trade / 15% Swing Trade</div>
+        </div>
+        <div class="edu-modal__attr-item">
+          <div class="attr-label">Garantia</div>
+          <div class="attr-value">Margem B3 <small>e corretora</small></div>
+        </div>
+        <div class="edu-modal__attr-item">
+          <div class="attr-label">Ativo-objeto</div>
+          <div class="attr-value">Índice Bovespa</div>
+        </div>
+        <div class="edu-modal__attr-item">
+          <div class="attr-label">Risco</div>
+          <div class="attr-value">Alto <small>(Alavancado)</small></div>
+        </div>
+      </div>
+    </div>
+    <div class="edu-modal__footer">
+      <a class="edu-modal__btn edu-modal__btn--cdb" href="taxas.html">
+        Ver Plataformas de Trading
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- MODAL DÓLAR -->
+  <div class="edu-modal" id="modal-lci" style="display:none">
+    <div class="edu-modal__header">
+      <button class="edu-modal__close" aria-label="Fechar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="edu-modal__pill edu-modal__pill--lci">Contratos Futuros de Dólar</div>
+      <h2 class="edu-modal__title">O que é o Futuro de Dólar?</h2>
+      <p class="edu-modal__subtitle">Opere a variação da moeda mais importante do mundo diretamente na B3.</p>
+    </div>
+    <div class="edu-modal__body">
+      <div class="edu-modal__explainer">
+        <div class="edu-modal__explainer-icon edu-modal__explainer-icon--lci">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22V12M12 12C12 12 7 10 4 6c4 0 8 2 8 6zM12 12c0 0 5-2 8-6-4 0-8 2-8 6z"/><path d="M5 20h14"/>
+          </svg>
+        </div>
+        <p>Os contratos de <strong>Dólar Futuro</strong> permitem negociar a cotação da moeda americana para uma data futura. É um dos ativos mais líquidos do mercado brasileiro, utilizado tanto por investidores individuais quanto por grandes empresas.</p>
+      </div>
+      <div class="edu-modal__section">
+        <div class="edu-modal__section-title edu-modal__section-title--lci">Como funciona</div>
+        <ul class="edu-modal__list edu-modal__list--lci">
+          <li>Operações via código WDO (Mini Dólar) ou DOL (Dólar Cheio)</li>
+          <li>Cada ponto de variação no Mini Dólar equivale a R$ 10,00 por contrato</li>
+          <li>Liquidado apenas financeiramente (você não recebe a moeda física)</li>
+          <li>Vencimento mensal (primeiro dia útil de cada mês)</li>
+        </ul>
+      </div>
+      <div class="edu-modal__section">
+        <div class="edu-modal__section-title edu-modal__section-title--lci">Por que escolher</div>
+        <ul class="edu-modal__list edu-modal__list--lci">
+          <li>Proteção Cambial: ideal para quem possui despesas ou viagens em dólar</li>
+          <li>Alta Volatilidade: oportunidades frequentes de lucro com as oscilações diárias</li>
+          <li>Diversificação: exposição a um ativo descorrelacionado da bolsa brasileira</li>
+          <li>Acessibilidade: com margens reduzidas, é possível operar contratos de alto valor</li>
+        </ul>
+      </div>
+      <div class="edu-modal__attrs-grid">
+        <div class="edu-modal__attr-item">
+          <div class="attr-label">Liquidação</div>
+          <div class="attr-value">Financeira <small>(Ajuste Diário)</small></div>
+        </div>
+        <div class="edu-modal__attr-item">
+          <div class="attr-label">Risco</div>
+          <div class="attr-value">Crítico <small>(Alta Volatilidade)</small></div>
+        </div>
+        <div class="edu-modal__attr-item">
+          <div class="attr-label">Vencimento</div>
+          <div class="attr-value">Mensal</div>
+        </div>
+        <div class="edu-modal__attr-item">
+          <div class="attr-label">Ativo-objeto</div>
+          <div class="attr-value">Dólar Comercial</div>
+        </div>
+      </div>
+    </div>
+    <div class="edu-modal__footer">
+      <a class="edu-modal__btn edu-modal__btn--lci" href="taxas.html">
+        Consultar Margens de Garantia
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- MODAL COMMODITIES -->
+  <div class="edu-modal" id="modal-debenture" style="display:none">
+    <div class="edu-modal__header">
+      <button class="edu-modal__close" aria-label="Fechar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="edu-modal__pill edu-modal__pill--deb">Commodities Agrícolas</div>
+      <h2 class="edu-modal__title">O que são Commodities Futuras?</h2>
+      <p class="edu-modal__subtitle">Negocie o futuro do agronegócio: Boi Gordo, Milho, Café e Soja.</p>
+    </div>
+    <div class="edu-modal__body">
+      <div class="edu-modal__explainer">
+        <div class="edu-modal__explainer-icon edu-modal__explainer-icon--deb">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/>
+          </svg>
+        </div>
+        <p>Investir em <strong>Commodities</strong> na BRB Investimentos permite que você lucre com a variação de preços de produtos essenciais. É a ponte entre o mercado financeiro e a economia real do campo.</p>
+      </div>
+      <div class="edu-modal__section">
+        <div class="edu-modal__section-title edu-modal__section-title--deb">Como funciona</div>
+        <ul class="edu-modal__list edu-modal__list--deb">
+          <li>Contratos padronizados: cada ativo tem seu tamanho de lote (ex: 450 sacas de milho)</li>
+          <li>Os preços são influenciados por fatores climáticos, safras e demanda global</li>
+          <li>Utilizado por produtores para garantir o preço de venda da colheita futura</li>
+          <li>Especulação: busque lucros com a tendência de preços desses insumos</li>
+        </ul>
+      </div>
+      <div class="edu-modal__section">
+        <div class="edu-modal__section-title edu-modal__section-title--deb">Por que escolher</div>
+        <ul class="edu-modal__list edu-modal__list--deb">
+          <li>Ativos Reais: proteção contra a inflação e crises financeiras sistêmicas</li>
+          <li>Diversificação: ativos que não dependem diretamente do desempenho de empresas</li>
+          <li>Alavancagem: controle grandes volumes de mercadoria com baixa margem</li>
+          <li>Sazonalidade: aproveite ciclos históricos de preços de cada cultura</li>
+        </ul>
+      </div>
+      <div class="edu-modal__attrs-grid">
+        <div class="edu-modal__attr-item">
+          <div class="attr-label">Principais Ativos</div>
+          <div class="attr-value">BGI (Boi), CCM (Milho), KFE (Café)</div>
+        </div>
+        <div class="edu-modal__attr-item">
+          <div class="attr-label">Fator de Risco</div>
+          <div class="attr-value">Oferta/Demanda Global</div>
+        </div>
+        <div class="edu-modal__attr-item">
+          <div class="attr-label">Perfil</div>
+          <div class="attr-value">Arrojado</div>
+        </div>
+        <div class="edu-modal__attr-item">
+          <div class="attr-label">Liquidação</div>
+          <div class="attr-value">Financeira <small>(B3)</small></div>
+        </div>
+      </div>
+    </div>
+    <div class="edu-modal__footer">
+      <a class="edu-modal__btn edu-modal__btn--deb" href="taxas.html">
+        Ver Cotações de Commodities
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+ 
+
   <!-- ===================================================
        VANTAGENS
   ==================================================== -->
   <section class="mf-advantages">
     <div class="section-header reveal">
       <div class="section-tag">Por que escolher</div>
-      <h2>Vantagens do Mercado Futuro na BRB</h2>
+      <h2>Vantagens do Mercado Futuro na BRB Investimentos</h2>
       <p>Acesse um dos mercados mais líquidos e sofisticados do mundo com a estrutura e o suporte da BRB Investimentos.</p>
     </div>
 
@@ -162,91 +465,67 @@
   </section>
 
 
+  
+
+
+  
+
   <!-- ===================================================
-       CONTRATOS DISPONÍVEIS
+       PASSO A PASSO
   ==================================================== -->
-  <section class="mf-products" id="produtos">
-    <div style="max-width: var(--container); margin: 0 auto;">
-      <div class="section-header reveal">
-        <div class="section-tag">Contratos Disponíveis</div>
-        <h2>Os principais contratos do Mercado Futuro</h2>
-        <p>Escolha o contrato mais alinhado à sua estratégia e perfil de operação.</p>
+  <section class="mf-steps">
+    <div class="steps-inner" style="max-width: var(--container); margin: 0 auto;">
+      <div class="section-header">
+        <div class="section-tag">Passo a passo</div>
+        <h2>Como começar a operar no Mercado Futuro</h2>
+        <p>Habilite-se para operar contratos futuros de forma segura e estruturada com o suporte da BRB Investimentos.</p>
       </div>
 
-      <div class="products-grid">
-
-        <div class="product-card featured reveal">
-          <div class="product-icon">📊</div>
-          <div class="product-info">
-            <h3>Mini Índice (WIN) — Ibovespa Futuro</h3>
-            <p>O contrato mais negociado do mercado futuro brasileiro. Permite especular ou fazer hedge sobre o desempenho do Ibovespa com margem reduzida. Cada ponto do WIN equivale a R$0,20, com liquidação financeira na data de vencimento. Ideal para day traders e investidores que buscam exposição ao mercado de ações com alta liquidez.</p>
-          </div>
-          <div class="product-tag popular">Mais Negociado</div>
+      <div class="steps-grid">
+        <div class="step-card reveal">
+          <div class="step-number">01</div>
+          <h3>Abra sua conta</h3>
+          <p>Crie sua conta na BRB Investimentos de forma 100% digital. Leva menos de 5 minutos.</p>
         </div>
-
-        <div class="product-card reveal">
-          <div class="product-icon">💵</div>
-          <div class="product-info">
-            <h3>Mini Dólar (WDO) — Câmbio Futuro</h3>
-            <p>Contrato referenciado na taxa de câmbio BRL/USD. Utilizado para especulação ou proteção cambial, com altíssima liquidez. Cada contrato representa USD 10.000 com liquidação financeira em reais.</p>
-          </div>
-          <div class="product-tag moderate">Proteção Cambial</div>
+        <div class="step-card reveal">
+          <div class="step-number">02</div>
+          <h3>Perfil arrojado</h3>
+          <p>Complete o suitability com perfil arrojado e assine o termo de ciência de risco para derivativos.</p>
         </div>
-
-        <div class="product-card reveal">
-          <div class="product-icon">📈</div>
-          <div class="product-info">
-            <h3>DI Futuro — Juros</h3>
-            <p>Contratos baseados na taxa DI. Amplamente usados por instituições financeiras para hedge de taxas de juros e por especuladores que apostam na trajetória da Selic e na curva de juros da economia brasileira.</p>
-          </div>
-          <div class="product-tag moderate">Juros / Selic</div>
+        <div class="step-card reveal">
+          <div class="step-number">03</div>
+          <h3>Deposite margem</h3>
+          <p>Transfira o valor de margem necessário para garantir suas posições junto à câmara de compensação da B3.</p>
         </div>
-
-        <div class="product-card reveal">
-          <div class="product-icon">🌾</div>
-          <div class="product-info">
-            <h3>Commodities Agropecuárias</h3>
-            <p>Contratos futuros de boi gordo, milho, soja, café e açúcar. Permitem ao produtor rural travar preços de venda e ao especulador aproveitar oscilações nos mercados agrícolas.</p>
-          </div>
-          <div class="product-tag safe">Agronegócio</div>
+        <div class="step-card reveal">
+          <div class="step-number">04</div>
+          <h3>Opere com disciplina</h3>
+          <p>Acesse a plataforma, defina seu plano com stop loss e take profit, e opere com responsabilidade.</p>
         </div>
-
-        <div class="product-card reveal">
-          <div class="product-icon">🌍</div>
-          <div class="product-info">
-            <h3>Contratos Internacionais</h3>
-            <p>Através da nossa plataforma, acesse contratos referenciados em mercados internacionais como S&P 500, petróleo, ouro e outros ativos globais. Diversifique suas estratégias além do mercado doméstico.</p>
-          </div>
-          <div class="product-tag moderate">Mercados Globais</div>
-        </div>
-
       </div>
     </div>
   </section>
 
 
-  
-  <!-- TABELA DE CONTRATOS -->
-  <section class="mf-contracts-table">
-    <div class="mf-contracts-table__inner">
-      <div class="section-tag" style="margin-bottom:.8rem;">Visão Geral</div>
-      <h2 style="font-size:clamp(1.8rem,3.5vw,2.5rem);font-weight:900;color:var(--deep-navy);margin-bottom:.5rem;">Principais contratos do Mercado Futuro</h2>
-      <p style="color:#666;margin-bottom:2rem;">Referências de mercado. Consulte sua plataforma para cotações em tempo real.</p>
-      <table class="contracts-tbl">
-        <thead><tr><th>Contrato</th><th>Código</th><th>Variação Aprox.</th><th>Risco</th><th>Margem típica</th></tr></thead>
-        <tbody>
-          <tr><td><strong>Mini Índice Ibovespa</strong></td><td>WIN</td><td class="val-up">+0,84%</td><td><span class="badge badge-high">Alto</span></td><td>~R$ 1.200</td></tr>
-          <tr><td><strong>Mini Dólar</strong></td><td>WDO</td><td class="val-dn">-0,18%</td><td><span class="badge badge-high">Alto</span></td><td>~R$ 800</td></tr>
-          <tr><td><strong>DI Futuro</strong></td><td>DI1</td><td class="val-up">+0,02%</td><td><span class="badge badge-med">Médio</span></td><td>~R$ 2.000</td></tr>
-          <tr><td><strong>Boi Gordo</strong></td><td>BGI</td><td class="val-up">+1,20%</td><td><span class="badge badge-med">Médio</span></td><td>~R$ 3.500</td></tr>
-          <tr><td><strong>Café Arábica</strong></td><td>ICF</td><td class="val-dn">-0,65%</td><td><span class="badge badge-high">Alto</span></td><td>~R$ 1.800</td></tr>
-        </tbody>
-      </table>
-      <div class="texto informativo">
-     <p class="text-info"> * Valores de referência sujeitos a alterações. Consulte a plataforma para visualizar as variações e margens de garantia em tempo real.</p>
+  <!-- ===================================================
+       CTA FINAL
+  ==================================================== -->
+  <section class="mf-cta-section">
+    <div class="cta-box reveal">
+      <div class="section-tag" style="margin-bottom: 1.2rem;">BRB Investimentos</div>
+      <h2>Pronto para operar no mercado mais dinâmico?</h2>
+      <p>Acesse a plataforma BRB Investimentos, habilite-se para o mercado futuro e comece a operar com toda a estrutura e suporte que você precisa.</p>
+      <div class="cta-buttons">
+        <button class="btn-cta-primary"
+          onclick="window.open('https://brb.genialinvestimentos.com.br/auth/login','_blank','noopener,noreferrer')">
+          Acessar minha conta
+        </button>
+        <button class="btn-cta-secondary"
+          onclick="window.location.href='https://forms.office.com/r/1EsKit6Ce9'">
+          Falar com um assessor
+        </button>
+      </div>
     </div>
-    </div>
-    
   </section>
 
 
@@ -343,64 +622,6 @@
     </div>
   </section>
 
-
-  <!-- ===================================================
-       PASSO A PASSO
-  ==================================================== -->
-  <section class="mf-steps">
-    <div class="steps-inner" style="max-width: var(--container); margin: 0 auto;">
-      <div class="section-header">
-        <div class="section-tag">Passo a passo</div>
-        <h2>Como começar a operar no Mercado Futuro</h2>
-        <p>Habilite-se para operar contratos futuros de forma segura e estruturada com o suporte da BRB.</p>
-      </div>
-
-      <div class="steps-grid">
-        <div class="step-card reveal">
-          <div class="step-number">01</div>
-          <h3>Abra sua conta</h3>
-          <p>Crie sua conta na BRB Investimentos de forma 100% digital. Leva menos de 5 minutos.</p>
-        </div>
-        <div class="step-card reveal">
-          <div class="step-number">02</div>
-          <h3>Perfil arrojado</h3>
-          <p>Complete o suitability com perfil arrojado e assine o termo de ciência de risco para derivativos.</p>
-        </div>
-        <div class="step-card reveal">
-          <div class="step-number">03</div>
-          <h3>Deposite margem</h3>
-          <p>Transfira o valor de margem necessário para garantir suas posições junto à câmara de compensação da B3.</p>
-        </div>
-        <div class="step-card reveal">
-          <div class="step-number">04</div>
-          <h3>Opere com disciplina</h3>
-          <p>Acesse a plataforma, defina seu plano com stop loss e take profit, e opere com responsabilidade.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ===================================================
-       CTA FINAL
-  ==================================================== -->
-  <section class="mf-cta-section">
-    <div class="cta-box reveal">
-      <div class="section-tag" style="margin-bottom: 1.2rem;">BRB Investimentos</div>
-      <h2>Pronto para operar no mercado mais dinâmico?</h2>
-      <p>Acesse a plataforma BRB Investimentos, habilite-se para o mercado futuro e comece a operar com toda a estrutura e suporte que você precisa.</p>
-      <div class="cta-buttons">
-        <button class="btn-cta-primary"
-          onclick="window.open('https://brb.genialinvestimentos.com.br/auth/login','_blank','noopener,noreferrer')">
-          Acessar minha conta
-        </button>
-        <button class="btn-cta-secondary"
-          onclick="window.location.href='https://forms.office.com/r/1EsKit6Ce9'"">
-          Falar com um assessor
-        </button>
-      </div>
-    </div>
-  </section>
 
 
   <!-- ===================================================

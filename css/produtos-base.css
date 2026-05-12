@@ -1,26 +1,3 @@
-/* ============================================================
-   produtos-base.css — BRB Investimentos
-   Estilos compartilhados entre todas as páginas de produtos:
-   Fundos, Mercado Futuro, Previdência, Renda Variável
-   
-   Estrutura:
-     1. Fontes (Cera Pro)
-     2. Variáveis
-     3. Reset + Base
-     4. Header / Nav
-     5. Componentes compartilhados
-        5a. Cabeçalho de seção
-        5b. Cards de vantagem
-        5c. Grid de produtos
-        5d. FAQ accordion
-        5e. Steps (passo a passo)
-        5f. CTA final
-     6. Footer
-     7. Animação de entrada (reveal)
-     8. Responsividade (1280 / 1024 / 968 / 600 / 480)
-     9. Acessibilidade
-   ============================================================ */
-
 
 /* ============================================================
    1. FONTES

@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Taxas dos Produtos — BRB Investimentos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/produtos-base.css" />
+
+  <style>
+    /* ── Variáveis locais ── */
+    :root {
+      --cdb:  #0056A8;
+      --lci:  #059669;
+      --deb:  #7c3aed;
+      --bg:   #f5f7fa;
+    }
+
+    /* ── Reset rápido ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); }
+
+    /* ══════════════════════════════════════
+       HERO DA PÁGINA DE TAXAS
+    ══════════════════════════════════════ */
+    .tx-hero {
+      background: linear-gradient(135deg, #001e3c 0%, #003d75 100%);
+      padding: calc(var(--header-h, 75px) + 4rem) clamp(1.5rem,5vw,3rem) 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tx-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 80% at 80% 50%, rgba(0,128,216,0.18) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 60% at 10% 80%, rgba(0,86,168,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .tx-hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .tx-hero-text .tx-hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.18);
+      color: #91d4fa;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.35rem 1rem;
+      border-radius: 50px;
+      margin-bottom: 1.2rem;
+    }
+
+    .tx-hero-text h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.15;
+      margin-bottom: 0.8rem;
+    }
+
+    .tx-hero-text h1 span { color: #91d4fa; }
+
+    .tx-hero-text p {
+      color: rgba(255,255,255,0.65);
+      font-size: 1rem;
+      max-width: 500px;
+      line-height: 1.7;
+    }
+
+    .tx-hero-meta {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.4rem;
+    }
+
+    .tx-hero-meta .update-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.6);
+    }
+
+    .tx-hero-meta .update-badge strong {
+      color: #91d4fa;
+      font-weight: 700;
+    }
+
+    .tx-hero-meta .update-badge::before {
+      content: '';
+      width: 7px;
+      height: 7px;
+      background: #10b981;
+      border-radius: 50%;
+      flex-shrink: 0;
+      box-shadow: 0 0 0 3px rgba(16,185,129,0.25);
+    }
+
+    /* ══════════════════════════════════════
+       FILTROS / ABAS
+    ══════════════════════════════════════ */
+    .tx-filters {
+      background: #fff;
+      border-bottom: 1px solid rgba(0,86,168,0.08);
+      position: sticky;
+      top: var(--header-h, 75px);
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(0,31,63,0.05);
+    }
+
+    .tx-filters-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 clamp(1.5rem,5vw,3rem);
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .tx-filters-inner::-webkit-scrollbar { display: none; }
+
+    .tx-tab {
+      flex-shrink: 0;
+      padding: 1.1rem 1.4rem;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #6b7280;
+      border-bottom: 2.5px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .tx-tab:hover { color: #001F3F; }
+
+    .tx-tab.is-active { color: var(--tab-color, #0056A8); border-bottom-color: var(--tab-color, #0056A8); }
+
+    .tx-tab .tx-tab-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--tab-color, #0056A8);
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    .tx-tab.is-active .tx-tab-dot { opacity: 1; }
+
+    /* ══════════════════════════════════════
+       CONTEÚDO PRINCIPAL
+    ══════════════════════════════════════ */
+    .tx-main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem clamp(1.5rem,5vw,3rem) 6rem;
+    }
+
+    /* Painel de produto */
+    .tx-panel { display: none; }
+    .tx-panel.is-active { display: block; }
+
+    /* Cabeçalho do painel */
+    .tx-panel-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .tx-panel-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .tx-panel-icon--cdb { background: rgba(0,86,168,0.1); }
+    .tx-panel-icon--lci { background: rgba(5,150,105,0.1); }
+    .tx-panel-icon--deb { background: rgba(124,58,237,0.1); }
+
+    .tx-panel-title {
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: #001F3F;
+      line-height: 1.2;
+    }
+
+    .tx-panel-sub {
+      font-size: 0.88rem;
+      color: #6b7280;
+      margin-top: 0.2rem;
+    }
+
+    /* ── Aviso de indexador ── */
+    .tx-indexer-bar {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
+    .tx-indexer-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      color: #374151;
+    }
+
+    .tx-indexer-pill strong {
+      font-weight: 800;
+      font-size: 0.92rem;
+    }
+
+    /* ── Tabela de taxas ── */
+    .tx-table-wrap {
+      background: #fff;
+      border-radius: 16px;
+      border: 1px solid rgba(0,86,168,0.08);
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,31,63,0.05);
+      margin-bottom: 1.5rem;
+    }
+
+    .tx-table-head {
+      display: grid;
+      padding: 0.9rem 1.6rem;
+      background: #f9fafb;
+      border-bottom: 1px solid #e5e7eb;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #9ca3af;
+    }
+
+    .tx-table-head--cdb,
+    .tx-table-row--cdb  { grid-template-columns: 2fr 1.2fr 1fr 1.2fr 1fr; }
+
+    .tx-table-head--lci,
+    .tx-table-row--lci  { grid-template-columns: 2fr 1.2fr 1fr 1.2fr 1fr; }
+
+    .tx-table-head--deb,
+    .tx-table-row--deb  { grid-template-columns: 2fr 1fr 1fr 1.2fr 1fr; }
+
+    .tx-table-row {
+      display: grid;
+      padding: 1.1rem 1.6rem;
+      border-bottom: 1px solid rgba(0,86,168,0.05);
+      align-items: center;
+      transition: background 0.15s;
+    }
+
+    .tx-table-row:last-child { border-bottom: none; }
+    .tx-table-row:hover { background: #f9fafb; }
+
+    .tx-table-row .col-name {
+      font-weight: 700;
+      font-size: 0.92rem;
+      color: #001F3F;
+    }
+
+    .tx-table-row .col-name small {
+      display: block;
+      font-weight: 500;
+      font-size: 0.75rem;
+      color: #9ca3af;
+      margin-top: 0.15rem;
+    }
+
+    .tx-table-row .col-rate {
+      font-weight: 800;
+      font-size: 1rem;
+    }
+
+    .col-rate--cdb { color: var(--cdb); }
+    .col-rate--lci { color: var(--lci); }
+    .col-rate--deb { color: var(--deb); }
+
+    .tx-table-row .col-text {
+      font-size: 0.85rem;
+      color: #374151;
+    }
+
+    .tx-badge {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 0.22rem 0.6rem;
+      border-radius: 50px;
+    }
+
+    .tx-badge--fgc  { background: rgba(0,86,168,0.08); color: #0056A8; }
+    .tx-badge--ir   { background: rgba(5,150,105,0.1); color: #059669; }
+    .tx-badge--risco { background: rgba(239,68,68,0.08); color: #ef4444; }
+
+    /* ── Nota de rodapé da tabela ── */
+    .tx-table-note {
+      font-size: 0.78rem;
+      color: #9ca3af;
+      line-height: 1.6;
+      margin-bottom: 2.5rem;
+    }
+
+    /* ── Seção de contexto (CDI, IPCA) ── */
+    .tx-context {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+
+    .tx-context-card {
+      background: #fff;
+      border: 1px solid rgba(0,86,168,0.08);
+      border-radius: 14px;
+      padding: 1.3rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .tx-context-card .ctx-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #9ca3af;
+    }
+
+    .tx-context-card .ctx-value {
+      font-size: 1.7rem;
+      font-weight: 900;
+      color: #001F3F;
+      line-height: 1;
+    }
+
+    .tx-context-card .ctx-desc {
+      font-size: 0.78rem;
+      color: #6b7280;
+    }
+
+    /* ── CTA de conversão ── */
+    .tx-cta-block {
+      background: linear-gradient(135deg, #001e3c 0%, #003d75 100%);
+      border-radius: 20px;
+      padding: 2.5rem 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+      position: relative;
+      overflow: hidden;
+      margin-top: 1rem;
+    }
+
+    .tx-cta-block::before {
+      content: '';
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(ellipse, rgba(0,128,216,0.2) 0%, transparent 70%);
+      right: -100px;
+      top: -100px;
+      pointer-events: none;
+    }
+
+    .tx-cta-block h3 {
+      font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+
+    .tx-cta-block p {
+      font-size: 0.92rem;
+      color: rgba(255,255,255,0.65);
+      max-width: 440px;
+    }
+
+    .tx-cta-btn {
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: #fff;
+      color: #001F3F;
+      font-weight: 800;
+      font-size: 0.95rem;
+      font-family: inherit;
+      padding: 0.95rem 2rem;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+      position: relative;
+      z-index: 1;
+    }
+
+    .tx-cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    }
+
+    /* ── Disclaimer legal ── */
+    .tx-legal {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid #e5e7eb;
+      font-size: 0.78rem;
+      color: #9ca3af;
+      line-height: 1.7;
+    }
+
+    .tx-legal strong { color: #6b7280; }
+
+    /* ── Responsivo ── */
+    @media (max-width: 900px) {
+      .tx-context { grid-template-columns: 1fr 1fr; }
+      .tx-table-head--cdb,
+      .tx-table-row--cdb,
+      .tx-table-head--lci,
+      .tx-table-row--lci,
+      .tx-table-head--deb,
+      .tx-table-row--deb {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+      .tx-table-head > *:nth-child(4),
+      .tx-table-head > *:nth-child(5),
+      .tx-table-row > *:nth-child(4),
+      .tx-table-row > *:nth-child(5) { display: none; }
+    }
+
+    @media (max-width: 600px) {
+      .tx-hero-meta { align-items: flex-start; }
+      .tx-context { grid-template-columns: 1fr; }
+      .tx-cta-block { flex-direction: column; align-items: flex-start; }
+      .tx-panel-header { flex-wrap: wrap; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══ HEADER (igual ao site) ══ -->
+  <header id="site-header">
+    <nav>
+      <div class="logo">
+        <a href="index.html" aria-label="BRB Investimentos - Início">
+          <img src="img/quartinho(1).png" alt="BRB Investimentos" />
+        </a>
+      </div>
+      <ul class="nav-links" id="mobileMenu" role="menubar">
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropdown-toggle active">
+            Produtos e Serviços <span class="chevron" aria-hidden="true">▾</span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="renda-fixa.html">Renda Fixa</a></li>
+            <li><a href="renda-variavel.html">Renda Variável</a></li>
+            <li><a href="previdencia.html">Previdência</a></li>
+            <li><a href="fundos.html">Fundos</a></li>
+            <li><a href="mercado-futuro.html">Mercado Futuro</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropdown-toggle">
+            Conteúdo <span class="chevron" aria-hidden="true">▾</span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="https://analisa.genialinvestimentos.com.br/" target="_blank" rel="noopener noreferrer">Genial Analisa</a></li>
+            <li><a href="newsletter.html">Newsletter</a></li>
+            <li><a href="tutoriais.html">Guias Práticos</a></li>
+          </ul>
+        </li>
+        <li><a href="sobrenos.html">Sobre nós</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+      <div class="nav-buttons">
+        <button class="account-link" type="button"
+          onclick="window.open('https://brb.genialinvestimentos.com.br/auth/login','_blank','noopener,noreferrer')">
+          Acesse seus Investimentos
+        </button>
+      </div>
+      <button class="mobile-menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="menu-overlay" aria-hidden="true"></div>
+    </nav>
+  </header>
+
+
+  <!-- ══ HERO ══ -->
+  <section class="tx-hero">
+    <div class="tx-hero-inner">
+      <div class="tx-hero-text">
+        <div class="tx-hero-tag">Rentabilidades BRB Investimentos</div>
+        <h1>Taxas dos nossos<br><span>produtos de renda fixa</span></h1>
+        <p>Confira as taxas indicativas praticadas pela BRB Investimentos para cada produto. Todas as condições são atualizadas periodicamente conforme o mercado.</p>
+      </div>
+      <div class="tx-hero-meta">
+        <div class="update-badge">
+          Atualizado em &nbsp;<strong id="updateDate">—</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ CONTEXTO DE MERCADO ══ -->
+  <div style="background:#fff; border-bottom:1px solid rgba(0,86,168,0.07); padding: 1.5rem clamp(1.5rem,5vw,3rem);">
+    <div style="max-width:1200px; margin:0 auto;">
+      <div class="tx-context" style="margin-bottom:0">
+        <div class="tx-context-card">
+          <div class="ctx-label">CDI atual</div>
+          <div class="ctx-value">13,15%</div>
+          <div class="ctx-desc">ao ano — referência pós-fixada</div>
+        </div>
+        <div class="tx-context-card">
+          <div class="ctx-label">IPCA acumulado 12m</div>
+          <div class="ctx-value">5,06%</div>
+          <div class="ctx-desc">Índice Nacional de Preços ao Consumidor</div>
+        </div>
+        <div class="tx-context-card">
+          <div class="ctx-label">Selic meta</div>
+          <div class="ctx-value">13,25%</div>
+          <div class="ctx-desc">ao ano — taxa básica de juros</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ══ FILTROS / ABAS ══ -->
+  <div class="tx-filters" role="tablist" aria-label="Filtrar por produto">
+    <div class="tx-filters-inner">
+      <button class="tx-tab is-active" data-tab="cdb" role="tab" aria-selected="true" aria-controls="panel-cdb"
+              style="--tab-color:#0056A8">
+        <span class="tx-tab-dot"></span> CDB
+      </button>
+      <button class="tx-tab" data-tab="lci" role="tab" aria-selected="false" aria-controls="panel-lci"
+              style="--tab-color:#059669">
+        <span class="tx-tab-dot"></span> LCI / LCA
+      </button>
+      <button class="tx-tab" data-tab="debenture" role="tab" aria-selected="false" aria-controls="panel-debenture"
+              style="--tab-color:#7c3aed">
+        <span class="tx-tab-dot"></span> Debênture Incentivada
+      </button>
+    </div>
+  </div>
+
+
+  <!-- ══ CONTEÚDO ══ -->
+  <main class="tx-main">
+
+    <!-- ─── PAINEL CDB ─── -->
+    <div class="tx-panel is-active" id="panel-cdb" role="tabpanel" aria-labelledby="tab-cdb">
+
+      <div class="tx-panel-header">
+        <div class="tx-panel-icon tx-panel-icon--cdb">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0056A8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="7" width="20" height="14" rx="2"/>
+            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+          </svg>
+        </div>
+        <div>
+          <div class="tx-panel-title">CDB — Certificado de Depósito Bancário</div>
+          <div class="tx-panel-sub">Taxas indicativas. Sujeitas a disponibilidade e prazo no momento da aplicação.</div>
+        </div>
+      </div>
+
+      <div class="tx-indexer-bar">
+        <div class="tx-indexer-pill">Pós-fixado &nbsp;<strong>% do CDI</strong></div>
+        <div class="tx-indexer-pill">Pré-fixado &nbsp;<strong>% a.a.</strong></div>
+        <div class="tx-indexer-pill">Híbrido &nbsp;<strong>IPCA + %</strong></div>
+      </div>
+
+      <div class="tx-table-wrap">
+        <div class="tx-table-head tx-table-head--cdb">
+          <span>Produto / Emissor</span>
+          <span>Taxa</span>
+          <span>Prazo</span>
+          <span>Liquidez</span>
+          <span>Garantia</span>
+        </div>
+
+        <div class="tx-table-row tx-table-row--cdb">
+          <div class="col-name">CDB Pós-fixado<small>BRB Banco — % do CDI</small></div>
+          <div class="col-rate col-rate--cdb">120% CDI</div>
+          <div class="col-text">360 dias</div>
+          <div class="col-text">No vencimento</div>
+          <div><span class="tx-badge tx-badge--fgc">FGC</span></div>
+        </div>
+
+        <div class="tx-table-row tx-table-row--cdb">
+          <div class="col-name">CDB Liquidez Diária<small>BRB Banco — resgate a qualquer momento</small></div>
+          <div class="col-rate col-rate--cdb">105% CDI</div>
+          <div class="col-text">D+0</div>
+          <div class="col-text">Diária</div>
+          <div><span class="tx-badge tx-badge--fgc">FGC</span></div>
+        </div>
+
+        <div class="tx-table-row tx-table-row--cdb">
+          <div class="col-name">CDB Pré-fixado<small>BRB Banco — taxa travada na contratação</small></div>
+          <div class="col-rate col-rate--cdb">14,50% a.a.</div>
+          <div class="col-text">180 dias</div>
+          <div class="col-text">No vencimento</div>
+          <div><span class="tx-badge tx-badge--fgc">FGC</span></div>
+        </div>
+
+        <div class="tx-table-row tx-table-row--cdb">
+          <div class="col-name">CDB IPCA+<small>BRB Banco — proteção contra a inflação</small></div>
+          <div class="col-rate col-rate--cdb">IPCA + 7,8%</div>
+          <div class="col-text">720 dias</div>
+          <div class="col-text">No vencimento</div>
+          <div><span class="tx-badge tx-badge--fgc">FGC</span></div>
+        </div>
+
+        <div class="tx-table-row tx-table-row--cdb">
+          <div class="col-name">CDB Curto Prazo<small>BRB Banco — ideal para reserva de emergência</small></div>
+          <div class="col-rate col-rate--cdb">100% CDI</div>
+          <div class="col-text">90 dias</div>
+          <div class="col-text">No vencimento</div>
+          <div><span class="tx-badge tx-badge--fgc">FGC</span></div>
+        </div>
+
+      </div>
+
+      <p class="tx-table-note">* Taxas indicativas sujeitas a alteração sem aviso prévio. IR cobrado conforme tabela regressiva: 22,5% (até 180 dias) → 15% (acima de 720 dias). Aplicação mínima a partir de R$ 500. FGC garante até R$ 250 mil por CPF e por instituição.</p>
+
+      <div class="tx-cta-block">
+        <div>
+          <h3>Pronto para investir em CDB?</h3>
+          <p>Abra sua conta na BRB Investimentos e comece com a taxa que mais faz sentido para o seu perfil e objetivo.</p>
+        </div>
+        <a class="tx-cta-btn" href="https://brb.genialinvestimentos.com.br/auth/login" target="_blank" rel="noopener noreferrer">
+          Investir agora
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+
+    </div><!-- /panel-cdb -->
+
+
+    <!-- ─── PAINEL LCI/LCA ─── -->
+    <div class="tx-panel" id="panel-lci" role="tabpanel" aria-labelledby="tab-lci">
+
+      <div class="tx-panel-header">
+        <div class="tx-panel-icon tx-panel-icon--lci">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22V12M12 12C12 12 7 10 4 6c4 0 8 2 8 6zM12 12c0 0 5-2 8-6-4 0-8 2-8 6z"/>
+            <path d="M5 20h14"/>
+          </svg>
+        </div>
+        <div>
+          <div class="tx-panel-title">LCI / LCA — Letras de Crédito</div>
+          <div class="tx-panel-sub">Isentas de IR para pessoa física. Taxas indicativas sujeitas a disponibilidade.</div>
+        </div>
+      </div>
+
+      <div class="tx-indexer-bar">
+        <div class="tx-indexer-pill">✓ Isentos de IR para PF</div>
+        <div class="tx-indexer-pill">Pós-fixado &nbsp;<strong>% do CDI líquido</strong></div>
+        <div class="tx-indexer-pill">Carência &nbsp;<strong>mínima 90 dias</strong></div>
+      </div>
+
+      <div class="tx-table-wrap">
+        <div class="tx-table-head tx-table-head--lci">
+          <span>Produto / Tipo</span>
+          <span>Taxa Líquida</span>
+          <span>Prazo</span>
+          <span>Liquidez</span>
+          <span>Garantia</span>
+        </div>
+
+        <div class="tx-table-row tx-table-row--lci">
+          <div class="col-name">LCI Pós-fixada<small>BRB Banco — Letra de Crédito Imobiliário</small></div>
+          <div class="col-rate col-rate--lci">105% CDI</div>
+          <div class="col-text">360 dias</div>
+          <div class="col-text">No vencimento</div>
+          <div><span class="tx-badge tx-badge--fgc">FGC</span></div>
+        </div>
+
+        <div class="tx-table-row tx-table-row--lci">
+          <div class="col-name">LCA Pós-fixada<small>BRB Banco — Letra de Crédito do Agronegócio</small></div>
+          <div class="col-rate col-rate--lci">103% CDI</div>
+          <div class="col-text">270 dias</div>
+          <div class="col-text">No vencimento</div>
+          <div><span class="tx-badge tx-badge--fgc">FGC</span></div>
+        </div>
+
+        <div class="tx-table-row tx-table-row--lci">
+          <div class="col-name">LCI Pré-fixada<small>BRB Banco — taxa travada, sem IR</small></div>
+          <div class="col-rate col-rate--lci">13,20% a.a.</div>
+          <div class="col-text">180 dias</div>
+          <div class="col-text">No vencimento</div>
+          <div><span class="tx-badge tx-badge--fgc">FGC</span></div>
+        </div>
+
+        <div class="tx-table-row tx-table-row--lci">
+          <div class="col-name">LCA IPCA+<small>BRB Banco — proteção real contra a inflação</small></div>
+          <div class="col-rate col-rate--lci">IPCA + 6,5%</div>
+          <div class="col-text">720 dias</div>
+          <div class="col-text">No vencimento</div>
+          <div><span class="tx-badge tx-badge--fgc">FGC</span></div>
+        </div>
+
+      </div>
+
+      <p class="tx-table-note">* Taxas líquidas para pessoa física — sem desconto de IR. Para pessoa jurídica, incide IR conforme tabela regressiva. Carência mínima de 90 dias. FGC garante até R$ 250 mil por CPF e por instituição financeira.</p>
+
+      <div class="tx-cta-block">
+        <div>
+          <h3>Invista isento de IR com LCI ou LCA</h3>
+          <p>Aproveite a isenção de Imposto de Renda e maximize seu rendimento líquido na BRB Investimentos.</p>
+        </div>
+        <a class="tx-cta-btn" href="https://brb.genialinvestimentos.com.br/auth/login" target="_blank" rel="noopener noreferrer">
+          Investir agora
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+
+    </div><!-- /panel-lci -->
+
+
+    <!-- ─── PAINEL DEBÊNTURE ─── -->
+    <div class="tx-panel" id="panel-debenture" role="tabpanel" aria-labelledby="tab-debenture">
+
+      <div class="tx-panel-header">
+        <div class="tx-panel-icon tx-panel-icon--deb">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/>
+            <polyline points="16 7 22 7 22 13"/>
+          </svg>
+        </div>
+        <div>
+          <div class="tx-panel-title">Debênture Incentivada</div>
+          <div class="tx-panel-sub">Isentas de IR para PF (Lei 12.431). Rentabilidade real acima da inflação.</div>
+        </div>
+      </div>
+
+      <div class="tx-indexer-bar">
+        <div class="tx-indexer-pill">✓ Isentas de IR (Lei 12.431)</div>
+        <div class="tx-indexer-pill">Indexador &nbsp;<strong>IPCA + spread</strong></div>
+        <div class="tx-indexer-pill">Sem garantia FGC</div>
+      </div>
+
+      <div class="tx-table-wrap">
+        <div class="tx-table-head tx-table-head--deb">
+          <span>Emissor / Projeto</span>
+          <span>Taxa</span>
+          <span>Vencimento</span>
+          <span>Pagamento</span>
+          <span>Rating</span>
+        </div>
+
+        <div class="tx-table-row tx-table-row--deb">
+          <div class="col-name">Debênture Energia<small>Infraestrutura — setor elétrico</small></div>
+          <div class="col-rate col-rate--deb">IPCA + 8,0%</div>
+          <div class="col-text">2032</div>
+          <div class="col-text">Semestral</div>
+          <div class="col-text">AA</div>
+        </div>
+
+        <div class="tx-table-row tx-table-row--deb">
+          <div class="col-name">Debênture Saneamento<small>Infraestrutura — setor de saneamento</small></div>
+          <div class="col-rate col-rate--deb">IPCA + 7,5%</div>
+          <div class="col-text">2030</div>
+          <div class="col-text">Semestral</div>
+          <div class="col-text">AAA</div>
+        </div>
+
+        <div class="tx-table-row tx-table-row--deb">
+          <div class="col-name">Debênture Rodovias<small>Infraestrutura — concessões rodoviárias</small></div>
+          <div class="col-rate col-rate--deb">IPCA + 8,5%</div>
+          <div class="col-text">2035</div>
+          <div class="col-text">Anual</div>
+          <div class="col-text">AA+</div>
+        </div>
+
+        <div class="tx-table-row tx-table-row--deb">
+          <div class="col-name">Debênture Transmissão<small>Infraestrutura — transmissão de energia</small></div>
+          <div class="col-rate col-rate--deb">IPCA + 7,8%</div>
+          <div class="col-text">2031</div>
+          <div class="col-text">Semestral</div>
+          <div class="col-text">AA</div>
+        </div>
+
+      </div>
+
+      <p class="tx-table-note">* Taxas indicativas. Debêntures incentivadas (Lei 12.431) são isentas de IR para pessoa física. Não contam com garantia do FGC — o risco é do emissor. Rating segundo agências de classificação de risco independentes. Consulte o prospecto e lâmina de cada emissão antes de investir.</p>
+
+      <div class="tx-cta-block">
+        <div>
+          <h3>Invista em infraestrutura com isenção de IR</h3>
+          <p>Acesse as debêntures incentivadas disponíveis na BRB Investimentos e proteja seu patrimônio da inflação.</p>
+        </div>
+        <a class="tx-cta-btn" href="https://brb.genialinvestimentos.com.br/auth/login" target="_blank" rel="noopener noreferrer">
+          Investir agora
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+
+    </div><!-- /panel-debenture -->
+
+
+    <!-- ── Disclaimer legal ── -->
+    <div class="tx-legal">
+      <p><strong>Aviso legal:</strong> As informações apresentadas nesta página têm caráter exclusivamente informativo e educacional, não constituindo oferta, solicitação, recomendação ou aconselhamento de investimento. Taxas indicativas sujeitas a alteração sem aviso prévio conforme condições de mercado. Rentabilidade passada não garante rentabilidade futura. Antes de investir, leia o prospecto, o regulamento e a lâmina do produto. BRB Investimentos — CNPJ: Genial Investimentos Corretora de Valores Mobiliários S.A. Autorizada pela CVM e membro da B3.</p>
+    </div>
+
+  </main>
+
+
+  <!-- ══ FOOTER (igual ao site) ══ -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-brand">
+        <img src="img/LOGO BRANCA.png" alt="BRB Investimentos" class="footer-logo-img" />
+        <p class="footer-brand-text">Investindo no futuro dos brasileiros com segurança, tecnologia e tradição.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/brbinvestimentos/" class="footer-social-btn" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="https://youtube.com/@brbinvestimentos" class="footer-social-btn" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-column"><h4>Produtos</h4><ul><li><a href="renda-fixa.html">Renda Fixa</a></li><li><a href="fundos.html">Fundos</a></li><li><a href="previdencia.html">Previdência</a></li><li><a href="renda-variavel.html">Renda Variável</a></li><li><a href="mercado-futuro.html">Mercado Futuro</a></li></ul></div>
+      <div class="footer-column"><h4>Quem Somos</h4><ul><li><a href="sobrenos.html#missao">Nossa Missão</a></li><li><a href="sobrenos.html#historia">Nossa História</a></li></ul></div>
+      <div class="footer-column"><h4>Fale Conosco</h4><ul><li><a href="https://novo.brb.com.br/atendimento/" target="_blank" rel="noopener noreferrer">Central de Atendimento</a></li><li><a href="https://novo.brb.com.br/atendimento/ouvidoria-brb/" target="_blank" rel="noopener noreferrer">Ouvidoria BRB</a></li></ul></div>
+      <div class="footer-column"><h4>Institucional</h4><ul><li><a href="https://www.anbima.com.br/" target="_blank">Anbima</a></li><li><a href="https://www.b3.com.br/" target="_blank">B3</a></li><li><a href="https://www.gov.br/cvm/" target="_blank">CVM</a></li><li><a href="https://www.fgc.org.br/" target="_blank">FGC</a></li><li><a href="https://www.bcb.gov.br/" target="_blank">Bacen</a></li></ul></div>
+      <div class="footer-column regulatorio"><h4>Regulatórios</h4><ul><li><a href="pdfs/Política de Privacidade.pdf" target="_blank">Política de Privacidade</a></li><li><a href="pdfs/Termo de Renda Fixa.pdf" target="_blank">Termo de Renda Fixa</a></li><li><a href="pdfs/CONTRATO DE INTERMEDIAÇÃO.pdf" target="_blank">Contrato de Intermediação</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-left">
+        <img class="footer-mark" src="https://framerusercontent.com/images/ZRAogsRUCyrDvJX2BCEBRqoGhWY.svg?width=142&height=33" alt="Banco Central" />
+        <img class="footer-mark" src="https://framerusercontent.com/images/mHJ8wt4h7RrXbxoN3I2zNtlIMw.svg?width=90&height=41" alt="B3" />
+      </div>
+      <div class="footer-center">
+        <p class="brbdireitos">© 2026 BRB Investimentos</p>
+        <p class="footer-address">BL B - Centro Empresarial CNC - SAUN Quadra 5, Lote C, 2º andar — Brasília/DF</p>
+      </div>
+      <div class="footer-right footer-certificados">
+        <img src="img/distribuicao-geral.jpg" alt="Certificado Anbima" />
+        <img src="img/art-administracao.jpg" alt="Certificado Administração" />
+      </div>
+    </div>
+  </footer>
+
+  <button class="floating-cta" id="floatingCta"
+    onclick="window.open('https://brb.genialinvestimentos.com.br/auth/login','_blank','noopener,noreferrer')">
+    Investir agora
+  </button>
+
+  <script src="script.js"></script>
+  <script>
+    // ── Data de atualização automática ──
+    const d = new Date();
+    const opts = { day: '2-digit', month: 'long', year: 'numeric' };
+    document.getElementById('updateDate').textContent =
+      d.toLocaleDateString('pt-BR', opts);
+
+    // ── Sistema de abas ──
+    const tabs   = document.querySelectorAll('.tx-tab');
+    const panels = document.querySelectorAll('.tx-panel');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const key = tab.dataset.tab;
+
+        tabs.forEach(t => { t.classList.remove('is-active'); t.setAttribute('aria-selected', 'false'); });
+        panels.forEach(p => p.classList.remove('is-active'));
+
+        tab.classList.add('is-active');
+        tab.setAttribute('aria-selected', 'true');
+        document.getElementById('panel-' + key).classList.add('is-active');
+      });
+    });
+  </script>
+</body>
+</html>

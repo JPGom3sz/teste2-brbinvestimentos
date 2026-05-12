@@ -174,6 +174,11 @@ document.addEventListener('DOMContentLoaded', () => {
       link:      'mercado-futuro.html',
     },
     6: {
+      titulo:    'Tesouro Direto',
+      descricao: 'O Tesouro Direto é um programa do Tesouro Nacional que permite a compra e venda de títulos públicos diretamente pelo investidor, com rentabilidade vinculada à inflação e prazos variáveis. A BRB Investimentos oferece acesso a esse mercado com suporte especializado.',
+      link:      'tesouro-direto.html',
+    },
+    7: {
       titulo:    'Criptoativos',
       descricao: 'A BRB Investimentos está sempre evoluindo para oferecer o que há de mais moderno no mercado financeiro. Em breve, você terá acesso a uma nova classe de ativos diretamente na nossa plataforma: os Criptoativos.',
       link:      'site-em-construção.html',
@@ -754,3 +759,136 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
+
+
+
+
+
+/* ═══════════════════════════════════════════════════════════
+   MODAL EDUCATIVO DE PRODUTOS — BRB Investimentos
+   Adicionar ao final do script.js (ou incluir separado antes de </body>)
+════════════════════════════════════════════════════════════ */
+ 
+(function () {
+  const overlay   = document.getElementById('eduOverlay');
+  const cards     = document.querySelectorAll('.edu-card');
+  const closebtns = document.querySelectorAll('.edu-modal__close');
+  let   activeModal = null;
+ 
+  function openModal(productKey) {
+    // Esconde todos os modais antes de abrir o correto
+    document.querySelectorAll('.edu-modal').forEach(m => m.style.display = 'none');
+ 
+    const modal = document.getElementById('modal-' + productKey);
+    if (!modal) return;
+ 
+    modal.style.display = 'block';
+    modal.scrollTop = 0;
+    activeModal = modal;
+ 
+    overlay.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  }
+ 
+  function closeModal() {
+    overlay.classList.remove('is-open');
+    document.body.style.overflow = '';
+ 
+    // Aguarda a animação de saída terminar para esconder o modal
+    setTimeout(() => {
+      if (activeModal) activeModal.style.display = 'none';
+      activeModal = null;
+    }, 320);
+  }
+ 
+  // Abrir ao clicar em um card
+  cards.forEach(card => {
+    const key = card.dataset.modal;
+ 
+    card.addEventListener('click', () => openModal(key));
+ 
+    // Acessibilidade: Enter e Space também abrem o modal
+    card.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openModal(key);
+      }
+    });
+  });
+ 
+  // Fechar ao clicar no botão X
+  closebtns.forEach(btn => btn.addEventListener('click', closeModal));
+ 
+  // Fechar ao clicar fora do modal (no overlay)
+  overlay.addEventListener('click', e => {
+    if (e.target === overlay) closeModal();
+  });
+ 
+  // Fechar com a tecla Escape
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && overlay.classList.contains('is-open')) {
+      closeModal();
+    }
+  });
+})();
+
+
+(function () {
+  const overlay   = document.getElementById('eduOverlay');
+  const cards     = document.querySelectorAll('.edu-card');
+  const closebtns = document.querySelectorAll('.edu-modal__close');
+  let   activeModal = null;
+
+  if (!overlay) return; // sair se a seção não estiver na página
+
+  function openModal(productKey) {
+    document.querySelectorAll('.edu-modal').forEach(m => (m.style.display = 'none'));
+
+    const modal = document.getElementById('modal-' + productKey);
+    if (!modal) return;
+
+    modal.style.display = 'block';
+    modal.scrollTop = 0;
+    activeModal = modal;
+
+    overlay.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+
+    // Foco no título para acessibilidade
+    const title = modal.querySelector('.edu-modal__title');
+    if (title) { title.setAttribute('tabindex', '-1'); title.focus(); }
+  }
+
+  function closeModal() {
+    overlay.classList.remove('is-open');
+    document.body.style.overflow = '';
+    setTimeout(() => {
+      if (activeModal) activeModal.style.display = 'none';
+      activeModal = null;
+    }, 320);
+  }
+
+  // Abrir ao clicar no card
+  cards.forEach(card => {
+    const key = card.dataset.modal;
+    card.addEventListener('click', () => openModal(key));
+    card.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(key); }
+    });
+  });
+
+  // Fechar ao clicar no X
+  closebtns.forEach(btn => btn.addEventListener('click', closeModal));
+
+  // Fechar ao clicar fora do modal
+  overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
+
+  // Fechar com Escape
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && overlay.classList.contains('is-open')) closeModal();
+  });
+})();
+
+
+
+
