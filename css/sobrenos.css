@@ -137,7 +137,7 @@ nav {
 }
 
 .logo img {
-  height: 60px;
+  height: 50px;
 }
 
 .nav-links {
@@ -154,7 +154,7 @@ nav {
 .nav-links > li > a {
   color: rgba(10, 10, 10, 0.85);
   font-weight: 520;
-  font-size: 16px;
+  font-size: 0.90rem;
   letter-spacing: 0.02em;
   padding:  0.5rem 0.9rem;
   border-radius: 6px;
@@ -267,7 +267,7 @@ nav {
   display: block;
   padding: 11px 20px;
   font-weight: 550;
-  font-size: 13px;
+  font-size: 0.79rem;
   color: rgba(0, 0, 0, 0.7);
   transition: background var(--ease), color var(--ease);
 }
@@ -326,11 +326,6 @@ nav {
 .mobile-menu-toggle.active span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
 .mobile-menu-toggle.active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
 .mobile-menu-toggle.active span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
-
-/* Botão fechar menu mobile — oculto por padrão em todas as telas */
-.mobile-menu-close {
-  display: none;
-}
 
 /* Overlay mobile */
 .menu-overlay {
@@ -391,6 +386,7 @@ nav {
   padding: 10px 16px;
   font-size: 0.802rem;
 }
+
 
 
 
@@ -1494,217 +1490,3 @@ footer {
   transition: width 0.1s ease;
   border-radius: 0 2px 2px 0;
 }
-
-
-
-
- /* ── Hero orbs flutuantes ── */
-    .sn-hero__orbs { position: absolute; inset: 0; pointer-events: none; overflow: hidden; z-index: 1; }
-    .sn-hero__orb  { position: absolute; border-radius: 50%; filter: blur(72px); }
-    .sn-hero__orb--a {
-      width: 440px; height: 440px;
-      background: rgba(0,128,216,.13); top: -80px; right: 22%;
-      animation: orbFloat 13s ease-in-out infinite;
-    }
-    .sn-hero__orb--b {
-      width: 300px; height: 300px;
-      background: rgba(145,212,250,.09); bottom: 50px; right: 4%;
-      animation: orbFloat 10s ease-in-out -4s infinite reverse;
-    }
-    .sn-hero__orb--c {
-      width: 260px; height: 260px;
-      background: rgba(0,56,120,.15); top: 38%; left: 8%;
-      animation: orbFloat 17s ease-in-out -9s infinite;
-    }
-    @keyframes orbFloat {
-      0%,100% { transform: translate(0,0) scale(1); }
-      33%      { transform: translate(22px,-26px) scale(1.06); }
-      66%      { transform: translate(-14px,18px) scale(.96); }
-    }
-
-    /* ── Hero grid sutil (sobrepõe gradient) ── */
-    .sn-hero::before {
-      content: '';
-      position: absolute; inset: 0; z-index: 1;
-      background-image:
-        linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
-      background-size: 48px 48px;
-      pointer-events: none;
-    }
-
-    /* ── Badge flutuante no hero ── */
-    .sn-hero__badge {
-      position: absolute; bottom: 13%; right: 5.5%; z-index: 3;
-      background: rgba(255,255,255,.10); backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border: 1px solid rgba(255,255,255,.2); border-radius: 18px;
-      padding: 1rem 1.5rem; display: flex; align-items: center; gap: 1rem;
-      animation: badgeFloat 7s ease-in-out infinite;
-    }
-    @keyframes badgeFloat { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-10px);} }
-    .sn-hero__badge-icon {
-      width: 44px; height: 44px; border-radius: 12px; flex-shrink: 0;
-      background: linear-gradient(135deg, var(--primary-blue), var(--bright-blue));
-      display: flex; align-items: center; justify-content: center;
-    }
-    .sn-hero__badge-icon svg { width: 22px; height: 22px; stroke: #fff; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-    .sn-hero__badge-label { line-height: 1.3; }
-    .sn-hero__badge-label strong { display: block; font-size: 1.05rem; font-weight: 800; color: #fff; letter-spacing: -.01em; }
-    .sn-hero__badge-label span  { font-size: .71rem; color: rgba(255,255,255,.62); font-weight: 400; }
-
-    /* ── Stats: linha de acento + hover lift ── */
-    .sn-stats__item { cursor: default; border-radius: 14px; transition: background .3s ease; }
-    .sn-stats__item:hover { background: #eef5ff; }
-    .sn-stats__item::after {
-      content: ''; position: absolute; bottom: 0; left: 50%;
-      transform: translateX(-50%); width: 0; height: 3px;
-      background: linear-gradient(90deg, var(--primary-blue), var(--accent-gold));
-      border-radius: 99px; transition: width .42s cubic-bezier(.4,0,.2,1);
-    }
-    .sn-stats__item { position: relative; }
-    .sn-stats__item:hover::after { width: 48%; }
-    .sn-stats__num { transition: color .3s ease; }
-    .sn-stats__item:hover .sn-stats__num { color: var(--bright-blue); }
-
-    /* ── Tabs estilo pílula ── */
-    .sn-about__tabs {
-      border-bottom: none !important;
-      background: #d8e8f5; padding: .4rem;
-      border-radius: 14px; display: inline-flex !important;
-      gap: .35rem !important; width: auto;
-    }
-    .sn-about__tab {
-      flex: none !important; max-width: none !important;
-      border-radius: 10px !important; padding: .8rem 1.8rem !important;
-      font-size: .88rem !important;
-      transition: background .25s ease, color .25s ease, box-shadow .25s ease;
-    }
-    .sn-about__tab::after { display: none !important; }
-    .sn-about__tab--active {
-      background: #fff !important; color: var(--primary-blue) !important;
-      box-shadow: 0 2px 14px rgba(0,31,63,.12) !important;
-    }
-    .sn-about__tab:not(.sn-about__tab--active):hover { background: rgba(255,255,255,.55); }
-
-    /* ── Why cards: ícone animado + barra topo ── */
-    .sn-why__card { position: relative; overflow: hidden; border-radius: 20px; }
-    .sn-why__card::after {
-      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-      background: linear-gradient(90deg, var(--primary-blue), var(--accent-gold));
-      transform: scaleX(0); transform-origin: left;
-      transition: transform .4s cubic-bezier(.4,0,.2,1);
-    }
-    .sn-why__card:hover::after { transform: scaleX(1); }
-
-    .sn-why__icon-wrap {
-      width: 54px; height: 54px; border-radius: 15px; margin-bottom: 1.4rem;
-      background: linear-gradient(135deg, rgba(0,86,168,.09), rgba(0,128,216,.04));
-      border: 1px solid rgba(0,86,168,.12);
-      display: flex; align-items: center; justify-content: center;
-      transition: background .35s ease, transform .35s cubic-bezier(.34,1.56,.64,1), border-color .35s ease;
-    }
-  
-    .sn-why__icon-wrap svg {
-      width: 24px; height: 24px; stroke: var(--primary-blue); fill: none;
-      stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
-      transition: stroke .35s ease;
-    }
-    .sn-why__card:hover .sn-why__icon-wrap svg { stroke: #2601fa; }
-
-    /* ── Timeline: dot pulse ── */
-    .sn-timeline__dot {
-      position: relative;
-      transition: transform .3s ease, box-shadow .3s ease;
-    }
-    .sn-timeline__dot::after {
-      content: ''; position: absolute; inset: -7px; border-radius: 50%;
-      border: 1px solid rgba(145,212,250,.35);
-      animation: dotPulse 2.8s ease-in-out infinite;
-    }
-    @keyframes dotPulse { 0%,100%{opacity:.3;transform:scale(1);} 50%{opacity:.9;transform:scale(1.35);} }
-    .sn-timeline__card:hover .sn-timeline__dot,
-    .sn-timeline__item:hover .sn-timeline__dot { transform: scale(1.25); }
-    .sn-timeline__card:hover {
-      transform: scale(1.025) translateY(-4px) !important;
-      box-shadow: 0 22px 50px rgba(0,0,0,.22) !important;
-    }
-
-    /* ── Badge de ano na timeline ── */
-    .sn-timeline__card-year {
-      display: inline-flex; align-items: center; gap: .4rem;
-      font-size: .7rem; font-weight: 900; letter-spacing: .14em;
-      text-transform: uppercase; color: var(--accent-gold);
-      margin-bottom: .7rem;
-    }
-    .sn-timeline__card-year::before {
-      content: ''; display: block;
-      width: 16px; height: 2px; border-radius: 2px;
-      background: var(--accent-gold);
-    }
-
-    /* ── CTA: blobs de fundo animados ── */
-    .sn-cta__blob {
-      position: absolute; border-radius: 50%; filter: blur(90px); pointer-events: none;
-    }
-    .sn-cta__blob--1 {
-      width: 620px; height: 620px; background: rgba(0,128,216,.09);
-      top: -220px; left: -100px;
-      animation: blobDrift 18s ease-in-out infinite;
-    }
-    .sn-cta__blob--2 {
-      width: 440px; height: 440px; background: rgba(145,212,250,.07);
-      bottom: -120px; right: -60px;
-      animation: blobDrift 15s ease-in-out -7s infinite reverse;
-    }
-    @keyframes blobDrift { 0%,100%{transform:translate(0,0) scale(1);} 50%{transform:translate(40px,-28px) scale(1.1);} }
-
-    /* ── CTA botão primário shimmer ── */
-    .sn-cta__btn--primary { position: relative; overflow: hidden; }
-    .sn-cta__btn--primary::before {
-      content: ''; position: absolute; inset: 0;
-      background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,.32) 50%, transparent 70%);
-      transform: translateX(-110%); transition: transform .55s ease;
-    }
-    .sn-cta__btn--primary:hover::before { transform: translateX(110%); }
-
-    /* ── CTA botão outline ── */
-    .sn-cta__btn--outline {
-      position: relative; overflow: hidden;
-      transition: transform .25s ease, box-shadow .25s ease, background .25s ease, border-color .25s ease !important;
-    }
-
-    /* ── Magnetic zone indicator ── */
-    .sn-cta__btn { transition: transform .3s cubic-bezier(.25,.46,.45,.94), box-shadow .3s ease; }
-
-    /* ── Footer social lift ── */
-    .footer-social-btn {
-      transition: background .25s ease, border-color .25s ease,
-                  transform .3s cubic-bezier(.34,1.56,.64,1) !important;
-    }
-    .footer-social-btn:hover { transform: translateY(-5px) scale(1.12) !important; }
-
-    /* ── Stagger delays para why cards ── */
-    .sn-why__card:nth-child(1)[data-animate] { transition-delay: 0s; }
-    .sn-why__card:nth-child(2)[data-animate] { transition-delay: .08s; }
-    .sn-why__card:nth-child(3)[data-animate] { transition-delay: .16s; }
-    .sn-why__card:nth-child(4)[data-animate] { transition-delay: .24s; }
-    .sn-why__card:nth-child(5)[data-animate] { transition-delay: .32s; }
-    .sn-why__card:nth-child(6)[data-animate] { transition-delay: .40s; }
-
-    /* ── Tilt 3D nos cards ── */
-    .sn-why__card { transform-style: preserve-3d; will-change: transform; }
-
-    /* ── Separador decorativo ── */
-    .sn-sep {
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(0,86,168,.15), transparent);
-      margin: 0;
-    }
-
-    /* ── Responsive ── */
-    @media (max-width: 768px) {
-      .sn-hero__badge { display: none; }
-      .cur-dot, .cur-ring { display: none; }
-      .sn-about__tabs { flex-direction: column !important; width: 100% !important; }
-    }

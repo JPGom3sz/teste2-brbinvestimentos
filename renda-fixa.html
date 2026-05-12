@@ -36,7 +36,6 @@
             <li class="has-submenu"><a href="previdencia.html">Previdência <span class="chevron-right"></span></a></li>
             <li class="has-submenu"><a href="fundos.html">Fundos <span class="chevron-right"></span></a></li>
             <li class="has-submenu"><a href="mercado-futuro.html">Mercado Futuro <span class="chevron-right"></span></a></li>
-            <li class="has-submenu"><a href="javascript:void(0)">Tesouro Direto <span class="chevron-right"></span></a></li>
           </ul>
         </li>
         <li class="dropdown" role="none">
@@ -63,6 +62,8 @@
         <span></span><span></span><span></span>
       </button>
       <div class="menu-overlay" aria-hidden="true"></div>
+      <!-- Botão fechar dentro do drawer -->
+      <button class="mobile-menu-close" type="button" aria-label="Fechar menu">✕</button>
     </nav>
   </header>
 
@@ -70,332 +71,68 @@
   <!-- ===================================================
        HERO
   ==================================================== -->
- <section class="rf-hero" id="topo">
-  <div class="rf-hero-inner">
-    
-    <div class="rf-hero-text">
-      <div class="rf-hero-badge">Renda Fixa</div>
-      <h1>
-        Invista com <span class="highlight">segurança</span><br>
-        e previsibilidade
-      </h1>
-      <p class="hero-desc">
-        Produtos de renda fixa da BRB Investimentos oferecem rendimentos estáveis, proteção do seu capital e acesso a diversas opções para cada perfil de investidor.
-      </p>
-      <div class="rf-hero-ctas">
-        <button class="btn-rf-primary" onclick="window.open('https://brb.genialinvestimentos.com.br/auth/login','_blank','noopener,noreferrer')">
-          Comece a investir
-        </button>
-        <button class="btn-rf-outline" onclick="document.getElementById('produtos-educativo').scrollIntoView({behavior:'smooth'})">
-          Ver produtos
-        </button>
+  <section class="rf-hero" id="topo">
+    <div class="rf-hero-inner">
+      <div class="rf-hero-text">
+        <div class="rf-hero-badge"> Renda Fixa</div>
+        <h1>
+          Invista com <span class="highlight">segurança</span><br>
+          e previsibilidade
+        </h1>
+        <p class="hero-desc">
+          Produtos de renda fixa da BRB Investimentos oferecem rendimentos estáveis, proteção do seu capital e acesso a diversas opções para cada perfil de investidor.
+        </p>
+        <div class="rf-hero-ctas">
+          <button class="btn-rf-primary" onclick="window.open('https://brb.genialinvestimentos.com.br/auth/login','_blank','noopener,noreferrer')">
+            Comece a investir
+          </button>
+          <button class="btn-rf-outline" onclick="document.getElementById('produtos').scrollIntoView({behavior:'smooth'})">
+            Ver produtos
+          </button>
+        </div>
       </div>
     </div>
-    </div>
-</section>
+  </section>
 
- <!-- ===================================================
-       PRODUTOS — com abas interativas - rennda fixa
+
+  <!-- ===================================================
+       COMPARADOR DE RENTABILIDADE
   ==================================================== -->
+  <section class="rf-comparator">
+    <div class="rf-comparator__inner">
+      <div class="section-tag" style="margin-bottom:0.8rem;">Rentabilidades estimadas</div>
+      <h2>Compare os principais produtos</h2>
+      <p>Taxas indicativas do mercado. Clique para ver detalhes de cada produto.</p>
 
-<section class="edu-section" id="produtos-educativo">
-  <div class="edu-inner">
-
-    <div class="edu-header">
-      <div class="edu-tag">Conheça os produtos</div>
-      <h2>Invista com <span class="edu-highlight">conhecimento</span></h2>
-      <p>Entenda como funciona cada produto de renda fixa disponível na BRB Investimentos e descubra qual combina com o seu perfil. Clique em um card para aprender mais.</p>
+      <div class="comparator-grid">
+        <div class="comparator-card" data-product="cdb">
+          <div class="comparator-card__name">CDB</div>
+          <div class="comparator-card__rate">120%</div>
+          <div class="comparator-card__label">do CDI</div>
+          <div class="comparator-card__badge">Proteção FGC</div>
+        </div>
+        <div class="comparator-card" data-product="lci">
+          <div class="comparator-card__name">LCI / LCA</div>
+          <div class="comparator-card__rate">105%</div>
+          <div class="comparator-card__label">do CDI líquido</div>
+          <div class="comparator-card__badge">Isento de IR ✓</div>
+        </div>
+        <div class="comparator-card" data-product="tesouro">
+          <div class="comparator-card__name">Tesouro IPCA+</div>
+          <div class="comparator-card__rate">%</div>
+          <div class="comparator-card__label">ao ano</div>
+          <div class="comparator-card__badge">Garantia Gov. Federal</div>
+        </div>
+        <div class="comparator-card" data-product="debenture">
+          <div class="comparator-card__name">Debênture</div>
+          <div class="comparator-card__rate">%</div>
+          <div class="comparator-card__label">ao ano</div>
+          <div class="comparator-card__badge">Isento IR (incent.)</div>
+        </div>
+      </div>
+      <p class="comparator-note">* Taxas indicativas. Consulte nossa plataforma para as condições atuais de cada emissor.</p>
     </div>
-
-    <div class="edu-grid">
-
-      <!-- CDB -->
-      <div class="edu-card" data-modal="cdb" role="button" tabindex="0" aria-label="Saiba mais sobre CDB">
-        <div class="edu-card__stripe edu-card__stripe--cdb"></div>
-        <div class="edu-card__body">
-          <div class="edu-card__icon edu-card__icon--cdb">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0056A8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="7" width="20" height="14" rx="2"/>
-              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
-            </svg>
-          </div>
-          <div class="edu-card__label">Renda Fixa</div>
-          <div class="edu-card__title">CDB</div>
-          <div class="edu-card__desc">Certificado de Depósito Bancário — empreste dinheiro ao banco e receba juros com proteção do FGC.</div>
-          <div class="edu-card__attrs">
-            <span class="edu-attr edu-attr--cdb">🛡 Proteção FGC</span>
-            <span class="edu-attr edu-attr--cdb">Liquidez variável</span>
-            <span class="edu-attr edu-attr--cdb">IR regressivo</span>
-          </div>
-        </div>
-        <div class="edu-card__cta edu-card__cta--cdb">
-          <span>Saiba mais</span>
-          <div class="edu-card__arrow edu-card__arrow--cdb">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-          </div>
-        </div>
-      </div>
-
-      <!-- LCI / LCA -->
-      <div class="edu-card" data-modal="lci" role="button" tabindex="0" aria-label="Saiba mais sobre LCI e LCA">
-        <div class="edu-card__stripe edu-card__stripe--lci"></div>
-        <div class="edu-card__body">
-          <div class="edu-card__icon edu-card__icon--lci">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 22V12M12 12C12 12 7 10 4 6c4 0 8 2 8 6zM12 12c0 0 5-2 8-6-4 0-8 2-8 6z"/>
-              <path d="M5 20h14"/>
-            </svg>
-          </div>
-          <div class="edu-card__label">Renda Fixa</div>
-          <div class="edu-card__title">LCI / LCA</div>
-          <div class="edu-card__desc">Letras de Crédito Imobiliário e do Agronegócio — isentas de Imposto de Renda para pessoas físicas.</div>
-          <div class="edu-card__attrs">
-            <span class="edu-attr edu-attr--lci">✓ Isento de IR</span>
-            <span class="edu-attr edu-attr--lci">🛡 Proteção FGC</span>
-            <span class="edu-attr edu-attr--lci">Carência 90 dias</span>
-          </div>
-        </div>
-        <div class="edu-card__cta edu-card__cta--lci">
-          <span>Saiba mais</span>
-          <div class="edu-card__arrow edu-card__arrow--lci">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-          </div>
-        </div>
-      </div>
-
-      <!-- DEBÊNTURE -->
-      <div class="edu-card" data-modal="debenture" role="button" tabindex="0" aria-label="Saiba mais sobre Debêntures">
-        <div class="edu-card__stripe edu-card__stripe--deb"></div>
-        <div class="edu-card__body">
-          <div class="edu-card__icon edu-card__icon--deb">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/>
-              <polyline points="16 7 22 7 22 13"/>
-            </svg>
-          </div>
-          <div class="edu-card__label">Renda Fixa</div>
-          <div class="edu-card__title">Debênture Incentivada</div>
-          <div class="edu-card__desc">Títulos emitidos por empresas para financiar infraestrutura — isentos de IR e com proteção contra a inflação.</div>
-          <div class="edu-card__attrs">
-            <span class="edu-attr edu-attr--deb">✓ Isento de IR</span>
-            <span class="edu-attr edu-attr--deb">📈 Proteção inflação</span>
-            <span class="edu-attr edu-attr--deb">Longo prazo</span>
-          </div>
-        </div>
-        <div class="edu-card__cta edu-card__cta--deb">
-          <span>Saiba mais</span>
-          <div class="edu-card__arrow edu-card__arrow--deb">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-          </div>
-        </div>
-      </div>
-
-    </div><!-- /edu-grid -->
-  </div><!-- /edu-inner -->
-</section>
-
-
-<!-- ═══════════════════════════════════════════════
-     OVERLAY + MODAIS — colar antes de </body>
-════════════════════════════════════════════════ -->
-<div class="edu-overlay" id="eduOverlay" role="dialog" aria-modal="true" aria-labelledby="eduModalTitle">
-
-  <!-- MODAL CDB -->
-  <div class="edu-modal" id="modal-cdb" style="display:none">
-    <div class="edu-modal__header">
-      <button class="edu-modal__close" aria-label="Fechar">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-      </button>
-      <div class="edu-modal__pill edu-modal__pill--cdb">Certificado de Depósito Bancário</div>
-      <h2 class="edu-modal__title" id="eduModalTitle">O que é um CDB?</h2>
-      <p class="edu-modal__subtitle">Uma das formas mais populares e seguras de investir em renda fixa no Brasil.</p>
-    </div>
-    <div class="edu-modal__body">
-      <div class="edu-modal__explainer">
-        <div class="edu-modal__explainer-icon edu-modal__explainer-icon--cdb">
-          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#0056A8" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
-          </svg>
-        </div>
-        <p>Ao investir em um CDB, você <strong>empresta dinheiro ao banco</strong> e recebe de volta o valor aplicado acrescido de juros ao final do prazo. O banco usa esse capital para financiar suas operações e te remunera por isso.</p>
-      </div>
-      <div class="edu-modal__section">
-        <div class="edu-modal__section-title edu-modal__section-title--cdb">Como funciona</div>
-        <ul class="edu-modal__list edu-modal__list--cdb">
-          <li>Você aplica um valor e define o prazo — pode ser dias, meses ou anos</li>
-          <li>A rentabilidade pode ser pós-fixada (% do CDI), pré-fixada ou híbrida (IPCA + taxa)</li>
-          <li>Ao vencimento, você resgata o valor corrigido pelos juros combinados</li>
-          <li>O IR é descontado automaticamente na fonte, com alíquota decrescente conforme o prazo</li>
-        </ul>
-      </div>
-      <div class="edu-modal__section">
-        <div class="edu-modal__section-title edu-modal__section-title--cdb">Por que escolher</div>
-        <ul class="edu-modal__list edu-modal__list--cdb">
-          <li>Proteção do FGC até R$ 250 mil por CPF — seguro mesmo que a instituição quebre</li>
-          <li>Disponível com liquidez diária para quem precisa de acesso rápido ao dinheiro</li>
-          <li>Ideal para reserva de emergência ou objetivos de curto e médio prazo</li>
-          <li>Rentabilidade historicamente superior à poupança, sem risco de renda variável</li>
-        </ul>
-      </div>
-      <div class="edu-modal__attrs-grid">
-        <div class="edu-modal__attr-item">
-          <div class="attr-label">Imposto de Renda</div>
-          <div class="attr-value">Tabela regressiva <small>(22,5% → 15%)</small></div>
-        </div>
-        <div class="edu-modal__attr-item">
-          <div class="attr-label">Garantia</div>
-          <div class="attr-value">FGC <small>até R$ 250 mil/CPF</small></div>
-        </div>
-        <div class="edu-modal__attr-item">
-          <div class="attr-label">Aplicação mínima</div>
-          <div class="attr-value">A partir de <small>R$ 100</small></div>
-        </div>
-        <div class="edu-modal__attr-item">
-          <div class="attr-label">Liquidez</div>
-          <div class="attr-value">Diária ou <small>no vencimento</small></div>
-        </div>
-      </div>
-    </div>
-    <div class="edu-modal__footer">
-      <a class="edu-modal__btn edu-modal__btn--cdb" href="taxas.html">
-        Ver taxas de CDB disponíveis
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      </a>
-      <p class="edu-modal__disclaimer">* Consulte a página de taxas para as condições vigentes de cada emissor.</p>
-    </div>
-  </div>
-
-  <!-- MODAL LCI/LCA -->
-  <div class="edu-modal" id="modal-lci" style="display:none">
-    <div class="edu-modal__header">
-      <button class="edu-modal__close" aria-label="Fechar">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-      </button>
-      <div class="edu-modal__pill edu-modal__pill--lci">Letras de Crédito</div>
-      <h2 class="edu-modal__title">O que são LCI e LCA?</h2>
-      <p class="edu-modal__subtitle">Investimentos isentos de IR — o benefício tributário que transforma cada real aplicado em mais rendimento.</p>
-    </div>
-    <div class="edu-modal__body">
-      <div class="edu-modal__explainer">
-        <div class="edu-modal__explainer-icon edu-modal__explainer-icon--lci">
-          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 22V12M12 12C12 12 7 10 4 6c4 0 8 2 8 6zM12 12c0 0 5-2 8-6-4 0-8 2-8 6z"/><path d="M5 20h14"/>
-          </svg>
-        </div>
-        <p><strong>LCI</strong> (Letra de Crédito Imobiliário) e <strong>LCA</strong> (Letra de Crédito do Agronegócio) são títulos emitidos por bancos para captar recursos destinados a setores estratégicos. Em troca, o governo garante <strong>isenção total de IR para pessoas físicas</strong>.</p>
-      </div>
-      <div class="edu-modal__section">
-        <div class="edu-modal__section-title edu-modal__section-title--lci">Como funciona</div>
-        <ul class="edu-modal__list edu-modal__list--lci">
-          <li>Você investe pelo prazo mínimo de carência (geralmente 90 dias) e resgata no vencimento</li>
-          <li>A rentabilidade segue o CDI, o IPCA ou uma taxa pré-fixada — sem nenhum desconto de IR</li>
-          <li>100% do rendimento vai para o seu bolso, ao contrário do CDB tributado</li>
-          <li>O banco destina os recursos ao mercado imobiliário (LCI) ou ao agronegócio (LCA)</li>
-        </ul>
-      </div>
-      <div class="edu-modal__section">
-        <div class="edu-modal__section-title edu-modal__section-title--lci">Por que escolher</div>
-        <ul class="edu-modal__list edu-modal__list--lci">
-          <li>Isenção total de IR — o rendimento bruto já é o rendimento líquido</li>
-          <li>Proteção do FGC até R$ 250 mil por CPF</li>
-          <li>Ideal para objetivos de médio prazo com data definida de resgate</li>
-          <li>Rentabilidade líquida frequentemente superior ao CDB equivalente</li>
-        </ul>
-      </div>
-      <div class="edu-modal__attrs-grid">
-        <div class="edu-modal__attr-item">
-          <div class="attr-label">Imposto de Renda</div>
-          <div class="attr-value" style="color:#059669">✓ Isento <small>para pessoa física</small></div>
-        </div>
-        <div class="edu-modal__attr-item">
-          <div class="attr-label">Garantia</div>
-          <div class="attr-value">FGC <small>até R$ 250 mil/CPF</small></div>
-        </div>
-        <div class="edu-modal__attr-item">
-          <div class="attr-label">Prazo mínimo</div>
-          <div class="attr-value">90 dias <small>de carência</small></div>
-        </div>
-        <div class="edu-modal__attr-item">
-          <div class="attr-label">Liquidez</div>
-          <div class="attr-value">No vencimento <small>ou mercado sec.</small></div>
-        </div>
-      </div>
-    </div>
-    <div class="edu-modal__footer">
-      <a class="edu-modal__btn edu-modal__btn--lci" href="taxas.html">
-        Ver taxas de LCI/LCA disponíveis
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      </a>
-      <p class="edu-modal__disclaimer">* Consulte a página de taxas para as condições vigentes de cada emissor.</p>
-    </div>
-  </div>
-
-  <!-- MODAL DEBÊNTURE -->
-  <div class="edu-modal" id="modal-debenture" style="display:none">
-    <div class="edu-modal__header">
-      <button class="edu-modal__close" aria-label="Fechar">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-      </button>
-      <div class="edu-modal__pill edu-modal__pill--deb">Debênture Incentivada</div>
-      <h2 class="edu-modal__title">O que é uma Debênture?</h2>
-      <p class="edu-modal__subtitle">Títulos de dívida corporativa com potencial de retorno superior e isenção de IR nas versões incentivadas.</p>
-    </div>
-    <div class="edu-modal__body">
-      <div class="edu-modal__explainer">
-        <div class="edu-modal__explainer-icon edu-modal__explainer-icon--deb">
-          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/>
-          </svg>
-        </div>
-        <p>Ao comprar uma debênture, você <strong>empresta dinheiro diretamente a uma empresa</strong>. As <strong>Debêntures Incentivadas</strong> (Lei 12.431) financiam projetos de infraestrutura — energia, transporte, saneamento — e são completamente isentas de IR para pessoas físicas.</p>
-      </div>
-      <div class="edu-modal__section">
-        <div class="edu-modal__section-title edu-modal__section-title--deb">Como funciona</div>
-        <ul class="edu-modal__list edu-modal__list--deb">
-          <li>Você compra o título e a empresa paga juros periódicos (semestral ou anual) durante o prazo</li>
-          <li>No vencimento, recebe o valor principal corrigido pelo IPCA mais o spread combinado</li>
-          <li>As debêntures incentivadas financiam projetos aprovados pelo governo — daí a isenção de IR</li>
-          <li>Podem ser negociadas no mercado secundário antes do vencimento, se necessário</li>
-        </ul>
-      </div>
-      <div class="edu-modal__section">
-        <div class="edu-modal__section-title edu-modal__section-title--deb">Por que escolher</div>
-        <ul class="edu-modal__list edu-modal__list--deb">
-          <li>Isenção de IR para pessoas físicas — 100% do rendimento fica com você</li>
-          <li>Proteção real contra a inflação: seu poder de compra é preservado ao longo do tempo</li>
-          <li>Rentabilidade historicamente superior a títulos bancários de prazo equivalente</li>
-          <li>Diversificação: exposição ao setor produtivo fora do sistema bancário tradicional</li>
-        </ul>
-      </div>
-      <div class="edu-modal__attrs-grid">
-        <div class="edu-modal__attr-item">
-          <div class="attr-label">Imposto de Renda</div>
-          <div class="attr-value" style="color:#7c3aed">✓ Isento <small>nas incentivadas (PF)</small></div>
-        </div>
-        <div class="edu-modal__attr-item">
-          <div class="attr-label">Garantia</div>
-          <div class="attr-value">Sem FGC <small>risco do emissor</small></div>
-        </div>
-        <div class="edu-modal__attr-item">
-          <div class="attr-label">Prazo típico</div>
-          <div class="attr-value">3 a 10 anos <small>longo prazo</small></div>
-        </div>
-        <div class="edu-modal__attr-item">
-          <div class="attr-label">Liquidez</div>
-          <div class="attr-value">Mercado sec. <small>ou no vencimento</small></div>
-        </div>
-      </div>
-    </div>
-    <div class="edu-modal__footer">
-      <a class="edu-modal__btn edu-modal__btn--deb" href="taxas.html">
-        Ver taxas de Debêntures disponíveis
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      </a>
-      <p class="edu-modal__disclaimer">* Consulte a página de taxas para as condições vigentes de cada emissor.</p>
-    </div>
-  </div>
-
-</div>
+  </section>
 
 
   <!-- ===================================================
@@ -404,7 +141,7 @@
   <section class="rf-advantages">
     <div class="section-header reveal">
       <div class="section-tag">Por que escolher</div>
-      <h2>Conheça as vantagens da Renda Fixa na BRB Investimentos</h2>
+      <h2>Conheça as vantagens da Renda Fixa na BRB</h2>
       <p>Com suporte especializado e uma plataforma completa, você tem as melhores condições do mercado ao seu alcance.</p>
     </div>
 
@@ -417,17 +154,17 @@
       <div class="adv-card reveal">
         <div class="adv-icon">🏦</div>
         <h3>Proteção do FGC</h3>
-        <p>CDBs, LCIs/LCAs são cobertos pelo Fundo Garantidor de Créditos até R$ 250 mil por CPF por instituição financeira.</p>
+        <p>CDBs, LCIs e LCAs são cobertos pelo Fundo Garantidor de Créditos até R$ 250 mil por CPF por instituição financeira.</p>
       </div>
       <div class="adv-card reveal">
         <div class="adv-icon">💡</div>
         <h3>Diversificação Inteligente</h3>
-        <p>Acesse diferentes emissores, prazos e indexadores para montar uma carteira equilibrada e com rentabilidade constante.</p>
+        <p>Acesse diferentes emissores, prazos e indexadores para montar uma carteira equilibrada com vencimentos escalonados.</p>
       </div>
       <div class="adv-card reveal">
         <div class="adv-icon">📊</div>
         <h3>Vantagem Tributária</h3>
-        <p>LCI/LCA, CRI/CRA e Debêntures Incentivadas são isentos de Imposto de Renda para pessoas físicas, maximizando o retorno líquido do seu investimento.</p>
+        <p>LCI e LCA são isentos de Imposto de Renda para pessoas físicas, maximizando o retorno líquido do seu investimento.</p>
       </div>
       <div class="adv-card reveal">
         <div class="adv-icon">🎯</div>
@@ -437,76 +174,121 @@
       <div class="adv-card reveal">
         <div class="adv-icon">📱</div>
         <h3>Gestão Fácil e Digital</h3>
-        <p>Invista, acompanhe seus rendimentos e acompanhe os seus recursos de forma simples através da plataforma BRB Investimentos.</p>
-      </div>
-    </div>
-  </section>
-
-
-  
-
-
- 
-
-
-  <!-- ===================================================
-       COMO COMEÇAR
-  ==================================================== -->
-  <section class="rf-steps">
-    <div class="steps-inner">
-      <div class="section-header">
-        <div class="section-tag">Passo a passo</div>
-        <h2>Como começar a investir em Renda Fixa</h2>
-        <p>Em poucos passos, você já pode ter acesso aos melhores produtos do mercado.</p>
-      </div>
-
-      <div class="steps-grid">
-        <div class="step-card reveal">
-          <div class="step-number">01</div>
-          <h3>Abra sua conta</h3>
-          <p>Crie sua conta na BRB Investimentos de forma 100% digital. Leva menos de 5 minutos.</p>
-        </div>
-        <div class="step-card reveal">
-          <div class="step-number">02</div>
-          <h3>Faça seu perfil</h3>
-          <p>Responda ao suitability para descobrir seu perfil de investidor e receber recomendações personalizadas.</p>
-        </div>
-        <div class="step-card reveal">
-          <div class="step-number">03</div>
-          <h3>Transfira recursos</h3>
-          <p>Na plataforma BRB Investimentos, você com a funcionalidade de transferir seus recursos da conta corrente BRB para sua conta de investimentos na plataforma</p>
-        </div>
-        <div class="step-card reveal">
-          <div class="step-number">04</div>
-          <h3>Escolha e invista</h3>
-          <p>Navegue pelo portfólio, compare produtos e aplique com segurança diretamente pela plataforma.</p>
-        </div>
+        <p>Invista, acompanhe seus rendimentos e resgate seus recursos de forma simples através da plataforma BRB Investimentos.</p>
       </div>
     </div>
   </section>
 
 
   <!-- ===================================================
-       CTA FINAL
+       PRODUTOS
   ==================================================== -->
-  <section class="rf-cta-section">
-    <div class="cta-box reveal">
-      <div class="section-tag" style="margin-bottom: 1.2rem;">BRB Investimentos</div>
-      <h2>Pronto para fazer seu dinheiro trabalhar por você?</h2>
-      <p>Acesse a plataforma e explore os melhores produtos de renda fixa disponíveis no mercado, com o suporte de especialistas da BRB Investimentos.</p>
-      <div class="cta-buttons">
-        <button class="btn-cta-primary" onclick="window.open('https://brb.genialinvestimentos.com.br/auth/login','_blank','noopener,noreferrer')">
-          Acessar minha conta
-        </button>
-        <button class="btn-cta-secondary" onclick="window.location.href='https://forms.office.com/r/1EsKit6Ce9'">
-          Falar com um assessor
-        </button>
+  <section class="rf-products" id="produtos">
+    <div style="max-width: var(--container); margin: 0 auto;">
+      <div class="section-header reveal">
+        <div class="section-tag">Nossos Produtos</div>
+        <h2>Escolha o produto certo para o seu perfil</h2>
+        <p>Clique em cada card para ver detalhes e características de cada instrumento.</p>
+      </div>
+
+      <div class="products-grid">
+
+        <div class="product-card featured reveal" id="cdb">
+          <div class="product-icon">🏛️</div>
+          <div class="product-info">
+            <h3>CDB — Certificado de Depósito Bancário</h3>
+            <p>Título de renda fixa emitido por bancos. Pode ser pré-fixado, pós-fixado (atrelado ao CDI) ou híbrido (IPCA+). Conta com proteção do FGC até R$ 250 mil.</p>
+          </div>
+          <div class="product-detail">
+            <ul class="product-detail-list">
+              <li>Rendimento: pré, pós ou híbrido (IPCA+)</li>
+              <li>Proteção FGC até R$ 250 mil por CPF/instituição</li>
+              <li>Liquidez: diária ou no vencimento</li>
+              <li>IR regressivo: de 22,5% (até 180 dias) a 15% (acima de 720 dias)</li>
+            </ul>
+          </div>
+          <div class="product-tag popular">Mais Popular</div>
+          <p class="product-expand-hint">Clique para ver mais ↓</p>
+        </div>
+
+        <div class="product-card reveal" id="lci-lca">
+          <div class="product-icon">🌾</div>
+          <div class="product-info">
+            <h3>LCI / LCA</h3>
+            <p>Letras de Crédito Imobiliário e do Agronegócio. São isentas de IR para pessoa física, o que eleva o retorno líquido. Têm prazo mínimo e cobertura do FGC.</p>
+          </div>
+          <div class="product-detail">
+            <ul class="product-detail-list">
+              <li>100% isento de Imposto de Renda para PF</li>
+              <li>Prazo mínimo de 90 dias (LCI) ou 90 dias (LCA)</li>
+              <li>Proteção FGC até R$ 250 mil</li>
+              <li>Rentabilidade pré, pós ou híbrida</li>
+            </ul>
+          </div>
+          <div class="product-tag safe">Isento de IR</div>
+          <p class="product-expand-hint">Clique para ver mais ↓</p>
+        </div>
+
+        <div class="product-card reveal" id="cri-cra">
+          <div class="product-icon">🏗️</div>
+          <div class="product-info">
+            <h3>CRI / CRA</h3>
+            <p>Certificados de Recebíveis Imobiliários e do Agronegócio. Emitidos por securitizadoras, também são isentos de IR. Não possuem cobertura do FGC.</p>
+          </div>
+          <div class="product-detail">
+            <ul class="product-detail-list">
+              <li>Isento de IR para pessoa física</li>
+              <li>Taxas mais atrativas que CDB/LCI</li>
+              <li>Sem cobertura FGC — avalie o risco do emissor</li>
+              <li>Indicado para investidores com perfil moderado+</li>
+            </ul>
+          </div>
+          <div class="product-tag safe">Isento de IR</div>
+          <p class="product-expand-hint">Clique para ver mais ↓</p>
+        </div>
+
+        <div class="product-card reveal" id="tesouro">
+          <div class="product-icon">🇧🇷</div>
+          <div class="product-info">
+            <h3>Tesouro Direto</h3>
+            <p>Títulos emitidos pelo governo federal, considerados os mais seguros do mercado. Disponíveis em diversas modalidades: Selic, IPCA+ e Prefixado.</p>
+          </div>
+          <div class="product-detail">
+            <ul class="product-detail-list">
+              <li>Tesouro Selic: liquidez diária, risco baixíssimo</li>
+              <li>Tesouro IPCA+: proteção contra inflação + ganho real</li>
+              <li>Tesouro Prefixado: taxa conhecida no momento da compra</li>
+              <li>Investimento mínimo: ~R$ 30,00</li>
+            </ul>
+          </div>
+          <div class="product-tag moderate">Baixo Risco</div>
+          <p class="product-expand-hint">Clique para ver mais ↓</p>
+        </div>
+
+        <div class="product-card reveal">
+          <div class="product-icon">📋</div>
+          <div class="product-info">
+            <h3>Debêntures</h3>
+            <p>Títulos de dívida emitidos por empresas. As debêntures incentivadas (Lei 12.431) são isentas de IR. Oferecem taxas atrativas em troca de prazo mais longo.</p>
+          </div>
+          <div class="product-detail">
+            <ul class="product-detail-list">
+              <li>Debêntures incentivadas: isento de IR para PF</li>
+              <li>Taxas superiores: IPCA+6% a IPCA+10% típico</li>
+              <li>Prazos mais longos: 3 a 10 anos</li>
+              <li>Liquidez via mercado secundário</li>
+            </ul>
+          </div>
+          <div class="product-tag moderate">Renda Fixa Privada</div>
+          <p class="product-expand-hint">Clique para ver mais ↓</p>
+        </div>
+
       </div>
     </div>
   </section>
 
 
-   <!-- ===================================================
+  <!-- ===================================================
        FAQ
   ==================================================== -->
   <section class="rf-faq" id="entenda">
@@ -563,7 +345,7 @@
           </button>
           <div class="faq-body">
             <div class="faq-body-inner">
-              Para pessoas físicas residentes no Brasil, são isentos de IR: LCI, LCA, CRI, CRA e Debêntures Incentivadas (emitidas conforme a Lei 12.431). Já o CDB, Letras de Crédito (LC), Letras Financeiras (LF), DGPE, Commercial Papers e Debentures convencionais seguem a tabela regressiva do IR, que começa em 22,5% para aplicações de até 180 dias e vai até 15% para aplicações acima de 720 dias.
+              Para pessoas físicas residentes no Brasil, são isentos de IR: LCI, LCA, CRI, CRA e debêntures incentivadas (emitidas conforme a Lei 12.431). Já o CDB e o Tesouro Direto seguem a tabela regressiva do IR, que começa em 22,5% para aplicações de até 180 dias e vai até 15% para aplicações acima de 720 dias.
             </div>
           </div>
         </div>
@@ -574,7 +356,7 @@
           </button>
           <div class="faq-body">
             <div class="faq-body-inner">
-              Depende do produto. Alguns CDBs oferecem liquidez diária. LCIs e LCAs têm prazo mínimo de carência de 90 dias. Ja os demais produtos, possuem liquidez no seu vencimento, apenas. Porem, o investidor pode tentar negociar esses titulos no mercado secundario.
+              Depende do produto. Alguns CDBs oferecem liquidez diária. LCIs e LCAs têm prazo mínimo de carência de 90 dias. Títulos do Tesouro Direto podem ser vendidos pelo preço de mercado. Debêntures e CRIs/CRAs geralmente têm liquidez no vencimento, mas podem ser negociados no mercado secundário.
             </div>
           </div>
         </div>
@@ -585,10 +367,67 @@
           </button>
           <div class="faq-body">
             <div class="faq-body-inner">
-              Nossa equipe de especialistas avalia criteriosamente cada produto antes de disponibilizá-lo na plataforma. Analisamos a solidez e o rating dos emissores, as condições de mercado, as taxas oferecidas e a aderência a diferentes perfis de risco. Assim, garantimos que você tenha acesso apenas a oportunidades que possuam rigor técnico e verdadeira atratividade.
+              Nossa equipe de especialistas avalia criteriosamente cada produto antes de disponibilizá-lo na plataforma. Analisamos a solidez e o rating dos emissores, as condições de mercado, as taxas oferecidas e a aderência a diferentes perfis de risco. Assim, garantimos que você tenha acesso apenas a oportunidades curadas com rigor técnico e transparência.
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===================================================
+       COMO COMEÇAR
+  ==================================================== -->
+  <section class="rf-steps">
+    <div class="steps-inner">
+      <div class="section-header">
+        <div class="section-tag">Passo a passo</div>
+        <h2>Como começar a investir em Renda Fixa</h2>
+        <p>Em poucos passos, você já pode ter acesso aos melhores produtos do mercado.</p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card reveal">
+          <div class="step-number">01</div>
+          <h3>Abra sua conta</h3>
+          <p>Crie sua conta na BRB Investimentos de forma 100% digital. Leva menos de 5 minutos.</p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-number">02</div>
+          <h3>Faça seu perfil</h3>
+          <p>Responda ao suitability para descobrir seu perfil de investidor e receber recomendações personalizadas.</p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-number">03</div>
+          <h3>Transfira recursos</h3>
+          <p>Faça uma transferência ou TED para sua conta na BRB Investimentos de qualquer banco.</p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-number">04</div>
+          <h3>Escolha e invista</h3>
+          <p>Navegue pelo portfólio, compare produtos e aplique com segurança diretamente pela plataforma.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===================================================
+       CTA FINAL
+  ==================================================== -->
+  <section class="rf-cta-section">
+    <div class="cta-box reveal">
+      <div class="section-tag" style="margin-bottom: 1.2rem;">BRB Investimentos</div>
+      <h2>Pronto para fazer seu dinheiro trabalhar por você?</h2>
+      <p>Acesse a plataforma e explore os melhores produtos de renda fixa disponíveis no mercado, com o suporte de especialistas da BRB.</p>
+      <div class="cta-buttons">
+        <button class="btn-cta-primary" onclick="window.open('https://brb.genialinvestimentos.com.br/auth/login','_blank','noopener,noreferrer')">
+          Acessar minha conta
+        </button>
+        <button class="btn-cta-secondary" onclick="window.location.href='https://forms.office.com/r/1EsKit6Ce9'">
+          Falar com um assessor
+        </button>
       </div>
     </div>
   </section>
@@ -636,5 +475,118 @@
   </button>
 
   <script src="script.js"></script>
+  
+  <script>
+  (function () {
+
+    /* ── 1. MOBILE MENU ── */
+    var toggle   = document.querySelector('.mobile-menu-toggle');
+    var nav      = document.querySelector('.nav-links');
+    var overlay  = document.querySelector('.menu-overlay');
+    var closeBtn = document.querySelector('.mobile-menu-close');
+
+    function openMenu() {
+      nav.classList.add('active');
+      overlay.classList.add('active');
+      toggle.setAttribute('aria-expanded', 'true');
+      toggle.classList.add('active');
+      if (closeBtn) closeBtn.classList.add('visible');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeMenu() {
+      nav.classList.remove('active');
+      overlay.classList.remove('active');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.classList.remove('active');
+      if (closeBtn) closeBtn.classList.remove('visible');
+      document.body.style.overflow = '';
+    }
+
+    if (toggle) {
+      toggle.addEventListener('click', function () {
+        nav.classList.contains('active') ? closeMenu() : openMenu();
+      });
+    }
+    if (overlay) overlay.addEventListener('click', closeMenu);
+    if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+
+    /* ── 2. MOBILE DROPDOWN (toque para abrir/fechar) ── */
+    document.querySelectorAll('.nav-links .dropdown-toggle').forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        var parent = btn.closest('.dropdown');
+        var isOpen = parent.classList.contains('is-open');
+        // Fecha todos
+        document.querySelectorAll('.nav-links .dropdown.is-open').forEach(function (d) {
+          d.classList.remove('is-open');
+        });
+        if (!isOpen) parent.classList.add('is-open');
+      });
+    });
+
+    /* ── 3. SCROLL REVEAL (IntersectionObserver com fallback) ── */
+    var reveals = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      var revealObs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            revealObs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+      reveals.forEach(function (el) { revealObs.observe(el); });
+    } else {
+      // Fallback: mostra tudo imediatamente
+      reveals.forEach(function (el) { el.classList.add('is-visible'); });
+    }
+
+    /* ── 4. FAQ ACCORDION ── */
+    document.querySelectorAll('.faq-trigger').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var item   = btn.closest('.faq-item');
+        var answer = item.querySelector('.faq-answer');
+        var isOpen = item.classList.contains('is-open');
+
+        document.querySelectorAll('.faq-item.is-open').forEach(function (open) {
+          open.classList.remove('is-open');
+          var a = open.querySelector('.faq-answer');
+          if (a) a.style.maxHeight = '0';
+          var t = open.querySelector('.faq-trigger');
+          if (t) t.setAttribute('aria-expanded', 'false');
+        });
+
+        if (!isOpen) {
+          item.classList.add('is-open');
+          btn.setAttribute('aria-expanded', 'true');
+          if (answer) answer.style.maxHeight = answer.scrollHeight + 'px';
+        }
+      });
+    });
+
+    /* ── 5. PRODUCT CARD EXPAND ── */
+    document.querySelectorAll('.product-card').forEach(function (card) {
+      card.addEventListener('click', function () {
+        card.classList.toggle('expanded');
+      });
+    });
+
+    /* ── 6. HEADER HIDE ON SCROLL ── */
+    var header    = document.getElementById('site-header');
+    var lastScroll = 0;
+    if (header) {
+      window.addEventListener('scroll', function () {
+        var curr = window.pageYOffset;
+        if (curr > lastScroll && curr > 80) {
+          header.classList.add('header-hidden');
+        } else {
+          header.classList.remove('header-hidden');
+        }
+        lastScroll = curr;
+      }, { passive: true });
+    }
+
+  })();
+  </script>
 </body>
 </html>

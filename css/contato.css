@@ -1,736 +1,434 @@
 /* ============================================================
-   CONTATO — BRB INVESTIMENTOS | Redesign para Cera Pro / Padrão
+   CONTATO - BRB INVESTIMENTOS
    ============================================================ */
 
-/* ===== TOKENS (Sincronizados com style.css) ===== */
-:root {
-  --primary-blue:  #0056A8;
-  --deep-navy:     #001F3F;
-  --bright-blue:   #0080D8;
-  --light-blue:    #E8F4FF;
-  --accent-blue:   #91d4fa; /* Adaptado para bater com o highlight da home */
-  --text-dark:     #1A1A1A;
-  --text-light:    #FFFFFF;
-  --gradient-blue: linear-gradient(135deg, #001e3c 0%, #003d75 100%);
-  --c-cream:       #f9f9f9;
-  --c-smoke:       #f1f1f1;
-  --c-mid:         rgba(26, 26, 26, 0.65);
-  --c-line:        rgba(0, 86, 168, 0.12);
-  --main-font:     'Cera Pro', 'Montserrat', sans-serif;
-  --ease-out:      0.25s ease;
+   body {
+  font-family: 'Cera Pro', 'Montserrat', sans-serif;
+  background: #f9f9f9;
 }
 
-/* ===== BASE ===== */
-.contato-page body {
-  font-family: var(--main-font);
-  background: var(--c-cream);
-  color: var(--text-dark);
-}
-
-/* ===== PROGRESS BAR ===== */
-.reading-progress { position: fixed; top:0; left:0; right:0; height:3px; z-index:9999; background: rgba(255,255,255,.1); }
-.reading-progress__bar { height:100%; background: var(--accent-blue); width:0%; transition: width .1s linear; }
-
-/* ============================================================
-   HERO — Alinhado com a Main Hero do Index
-   ============================================================ */
+/* ===== HERO CONTATO ===== */
 .contato-hero {
-  min-height: calc(100vh - 100px);
-  background: var(--gradient-blue);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  margin-top: calc(var(--header-h, 75px) + var(--ticker-h, 38px));
+  background: linear-gradient(135deg, var(--deep-navy) 0%, var(--primary-blue) 100%);
+  padding: 10rem var(--px) 6rem;
+  margin-top: var(--header-h);
+  text-align: center;
   position: relative;
   overflow: hidden;
 }
 
-/* Glow effects idênticos aos da home */
-.contato-hero::after, .contato-hero::before {
+.contato-hero::before {
   content: '';
   position: absolute;
-  border-radius: 50%;
-  filter: blur(120px);
-  z-index: 0;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: 
+  radial-gradient(circle at 20% 50%, rgba(145, 212, 250, 0.1) 0%, transparent 50%),
+  radial-gradient(circle at 80% 80%, rgba(145, 212, 250, 0.15) 0%, transparent 50%);
   pointer-events: none;
 }
-.contato-hero::before {
-  width: 600px;
-  height: 600px;
-  background: rgba(145, 212, 250, 0.12);
-  top: -10%;
-  left: -5%;
-}
-.contato-hero::after {
-  width: 550px;
-  height: 550px;
-  background: rgba(0, 128, 216, 0.2);
-  bottom: -5%;
-  right: 5%;
-}
 
-.contato-hero__left {
-  padding: 7rem 5rem 7rem var(--px, 3rem);
+.contato-hero__content {
+  max-width: 800px;
+  margin: 0 auto;
   position: relative;
-  z-index: 2;
-}
-
-.contato-hero__eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: .7rem;
-  font-family: var(--main-font);
-  font-size: 1.2rem;
-  font-weight: 900;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  color: var(--light-blue);
-  margin-bottom: 1.5rem;
-  opacity: 0;
-  transform: translateY(16px);
-  animation: fadeUp .7s ease-out .1s forwards;
+  z-index: 1;
 }
 
 .contato-hero__title {
-  font-family: var(--main-font);
-  font-size: clamp(3rem, 5vw, 4.5rem);
+  font-size: clamp(3rem, 6vw, 4.5rem);
   font-weight: 900;
-  color: var(--text-light);
+  color: #fff;
+  margin-bottom: 1.5rem;
   line-height: 1.1;
-  letter-spacing: -.02em;
-  margin: 0 0 2rem;
-  opacity: 0;
-  animation: fadeUp .8s ease-out .2s forwards;
-}
-
-.contato-hero__title em {
-  font-style: normal;
-  font-weight: 900;
-  color: var(--accent-blue);
-  text-shadow: 0 0 25px rgba(145, 212, 250, 0.3);
+  letter-spacing: -0.02em;
 }
 
 .contato-hero__subtitle {
-  font-size: 1.12rem;
-  color: rgba(255,255,255,.82);
-  line-height: 1.8;
-  max-width: 440px;
-  font-weight: 300;
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.7;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* ===== CARDS DE CONTATO ===== */
+.contato-info {
+  padding: 6rem var(--px);
+  background: #ffffff;
+}
+
+.contato-info__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.contato-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 3rem 2rem;
+  text-align: center;
+  border: 1px solid rgba(0, 86, 168, 0.08);
+  transition: all 0.3s ease;
   opacity: 0;
-  animation: fadeUp .8s ease-out .35s forwards;
+  transform: translateY(30px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
 }
 
-/* Estilo do botão padronizado com .btn-outline da home */
-.contato-hero__cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 2rem;
-  padding: 0.85rem 1.8rem;
-  background: transparent;
-  border: 2px solid rgba(255, 255, 255, 0.55);
-  border-radius: 12px;
-  color: #fff;
-  font-family: var(--main-font);
-  font-size: 0.95rem;
-  font-weight: 700;
-  text-decoration: none;
-  cursor: pointer;
-  backdrop-filter: blur(4px);
-  transition: all 0.25s ease;
-  opacity: 0;
-  animation: fadeUp .8s ease-out .5s forwards;
+.contato-card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.contato-hero__cta:hover {
-  border-color: var(--accent-blue);
-  background: rgba(145, 212, 250, 0.12);
-  color: var(--accent-blue);
-  transform: translateY(-2px);
+.contato-card.is-visible:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(0, 86, 168, 0.15);
+  border-color: var(--primary-blue);
 }
 
-.contato-hero__cta svg { width: 18px; height: 18px; transition: transform .3s; }
-.contato-hero__cta:hover svg { transform: translateX(4px); }
-
-/* Right panel — status card */
-.contato-hero__right {
-  padding: 7rem var(--px, 3rem) 7rem 4rem;
-  position: relative;
-  z-index: 2;
+.contato-card__icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, var(--light-blue), #dbeeff);
+  border-radius: 50%;
   display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 2rem;
+  color: var(--primary-blue);
+  transition: all 0.3s ease;
 }
 
-/* Glassmorphism batendo com seus cards flutuantes */
-.hero-status-card {
-  background: rgba(10, 42, 94, 0.90);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 12px;
-  padding: 2rem 2.5rem;
-  width: 100%;
-  opacity: 0;
-  animation: fadeUp .9s ease-out .4s forwards;
-  transition: all 0.4s ease;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+.contato-card:hover .contato-card__icon {
+  transform: scale(1.1);
 }
 
-.hero-status-card:hover {
-  border-color: rgba(49, 130, 206, 0.4);
-  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5);
-  transform: translateY(-4px);
+.contato-card__icon--whatsapp {
+  background: linear-gradient(135deg, #E8F5E9, #A5D6A7);
+  color: #2E7D32;
 }
 
-.hero-status-card__label {
-  font-size: .75rem;
-  font-weight: 700;
-  letter-spacing: .15em;
-  text-transform: uppercase;
-  color: var(--accent-blue);
+.contato-card__icon--phone {
+  background: linear-gradient(135deg, #FFF3E0, #FFCC80);
+  color: #E65100;
+}
+
+.contato-card__icon--email {
+  background: linear-gradient(135deg, #E3F2FD, #90CAF9);
+  color: #1565C0;
+}
+
+.contato-card__icon svg {
+  width: 36px;
+  height: 36px;
+}
+
+.contato-card h3 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--deep-navy);
   margin-bottom: 1rem;
 }
 
-.hero-status-card__value {
-  font-family: var(--main-font);
-  font-size: 1.8rem;
-  font-weight: 800;
-  color: #fff;
-  margin-bottom: .2rem;
-  line-height: 1.2;
-}
-
-.hero-status-card__sub {
-  font-size: .95rem;
-  color: rgba(255,255,255,.65);
-}
-
-/* Live status dot */
-.status-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: .5rem;
-  padding: .4rem 1rem;
-  border-radius: 100px;
-  font-size: .8rem;
-  font-weight: 700;
-  letter-spacing: .02em;
-}
-
-.status-pill--open {
-  background: rgba(34,197,94,.15);
-  color: #4ade80;
-}
-
-.status-pill--closed {
-  background: rgba(239,68,68,.12);
-  color: #f87171;
-}
-
-.status-pill__dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: currentColor;
-}
-
-.status-pill--open .status-pill__dot {
-  animation: pulse-dot 1.8s ease infinite;
-}
-
-@keyframes pulse-dot {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: .5; transform: scale(.75); }
-}
-
-.hero-deco-num { display: none; }
-
-/* ============================================================
-   CONTATO METHODS
-   ============================================================ */
-.contato-methods {
-  background: linear-gradient(135deg, #f8fbff 0%, #ffffff 100%);
-  padding: 7rem var(--px, 3rem);
-}
-
-.contato-methods__header {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  margin-bottom: 4rem;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.contato-methods__title {
-  font-family: var(--main-font);
-  font-size: clamp(2.2rem, 4vw, 3rem);
-  color: var(--deep-navy);
-  font-weight: 900;
-  line-height: 1.15;
-  margin: 0;
-  letter-spacing: -.02em;
-}
-
-.contato-methods__note {
+.contato-card__highlight {
   font-size: 1rem;
-  color: var(--c-mid);
-  max-width: 320px;
-  line-height: 1.6;
-  text-align: right;
-}
-
-/* Method row */
-.contact-row {
-  border-top: 1px solid var(--c-line);
-  display: grid;
-  grid-template-columns: 2fr 3fr auto;
-  align-items: center;
-  gap: 2rem;
-  padding: 2.8rem 0;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  cursor: default;
-  opacity: 0;
-  transform: translateX(-20px);
-}
-
-.contact-row.is-visible {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-.contact-row:last-child { border-bottom: 1px solid var(--c-line); }
-
-.contact-row:hover { 
-  padding-left: 1.5rem;
-  background: rgba(0, 86, 168, 0.02);
-  border-radius: 8px;
-}
-
-.contact-row__meta {
-  display: flex;
-  align-items: center;
-  gap: 1.4rem;
-}
-
-.contact-row__icon {
-  width: 58px;
-  height: 58px;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  transition: transform .3s;
-  background: var(--light-blue);
-  color: var(--primary-blue);
-  box-shadow: 0 8px 24px rgba(0, 86, 168, 0.1);
-}
-
-.contact-row:hover .contact-row__icon { transform: scale(1.08) translateY(-3px); }
-.contact-row__icon svg { width: 26px; height: 26px; }
-
-.contact-row__label {
-  font-size: .75rem;
-  font-weight: 700;
-  letter-spacing: .15em;
-  text-transform: uppercase;
-  color: var(--primary-blue);
-  margin-bottom: .3rem;
-}
-
-.contact-row__name {
-  font-family: var(--main-font);
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: var(--deep-navy);
-  line-height: 1;
-}
-
-.contact-row__content { flex: 1; }
-
-/* Phone list */
-.phone-list {
-  display: flex;
-  flex-direction: column;
-  gap: .8rem;
-}
-
-.phone-item {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.phone-item__region {
-  font-size: .9rem;
   font-weight: 600;
-  color: var(--c-mid);
-  width: 180px;
-  flex-shrink: 0;
+  color: var(--primary-blue);
+  margin-bottom: 0.5rem;
 }
 
-.phone-item__number {
-  font-family: var(--main-font);
-  font-size: 1.3rem;
-  font-weight: 800;
+.contato-card__time {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--deep-navy);
+  margin-bottom: 0;
+}
+
+.contato-card__link {
+  display: inline-block;
+  font-size: 1.1rem;
+  font-weight: 700;
   color: var(--primary-blue);
   text-decoration: none;
-  transition: color .2s;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
 }
 
-.phone-item__number:hover { color: var(--bright-blue); }
-
-.phone-note {
-  margin-top: 1rem;
-  font-size: .85rem;
-  color: var(--c-mid);
-  display: flex;
-  align-items: center;
-  gap: .5rem;
-  font-weight: 500;
+.contato-card__link:hover {
+  color: var(--deep-navy);
+  text-decoration: underline;
 }
 
-/* Hour display */
-.hours-display {
+.contato-card__note {
+  font-size: 0.99rem;
+  color: #999;
+  margin: 0;
+}
+
+/* ===== REDES SOCIAIS ===== */
+.contato-social {
+  background: #fff;
+  padding: 6rem var(--px);
+  text-align: center;
+}
+
+.contato-social__inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contato-social h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 900;
+  color: var(--deep-navy);
+  margin-bottom: 1rem;
+}
+
+.contato-social p {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 3rem;
+  line-height: 1.7;
+}
+
+.contato-social__links {
   display: flex;
-  align-items: center;
+  justify-content: center;
   gap: 1.5rem;
   flex-wrap: wrap;
 }
 
-.hours-block__days {
-  font-size: .85rem;
-  font-weight: 600;
-  color: var(--c-mid);
-  margin-bottom: .25rem;
-}
-
-.hours-block__time {
-  font-family: var(--main-font);
-  font-size: 1.6rem;
-  font-weight: 800;
+.social-btn {
+  width: 60px;
+  height: 60px;
+  background: var(--light-blue);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: var(--primary-blue);
-}
-
-/* Email */
-.email-link {
-  font-family: var(--main-font);
-  font-size: 1.3rem;
-  font-weight: 800;
-  color: var(--primary-blue);
+  transition: all 0.3s ease;
   text-decoration: none;
-  border-bottom: 2px solid transparent;
-  transition: all .2s;
-  display: inline-block;
 }
 
-.email-link:hover {
-  color: var(--bright-blue);
-  border-bottom-color: var(--bright-blue);
+.social-btn:hover {
+  background: var(--primary-blue);
+  color: #fff;
+  transform: translateY(-4px) scale(1.1);
+  box-shadow: 0 10px 30px rgba(0, 86, 168, 0.3);
 }
 
-/* Copy button */
-.btn-copy {
+.social-btn svg {
+  width: 28px;
+  height: 28px;
+}
+
+/* ===== ENDEREÇO ===== */
+.contato-address {
+  background: linear-gradient(135deg, var(--deep-navy) 0%, var(--primary-blue) 100%);
+  padding: 6rem var(--px);
+  position: relative;
+  overflow: hidden;
+}
+
+.contato-address::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: 
+    radial-gradient(circle at 30% 50%, rgba(145, 212, 250, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 70% 20%, rgba(145, 212, 250, 0.15) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.contato-address__inner {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.contato-address__content {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 24px;
+  padding: 3rem;
+  text-align: center;
+}
+
+.contato-address h2 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 2rem;
+}
+
+.address-info {
+  margin-bottom: 2.5rem;
+}
+
+.address-info p {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.8;
+  margin-bottom: 0.5rem;
+}
+
+.address-name {
+  font-size: 1.3rem !important;
+  margin-bottom: 1rem !important;
+}
+
+.address-actions {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-map {
   display: inline-flex;
   align-items: center;
-  gap: .5rem;
-  padding: .6rem 1.4rem;
-  background: transparent;
-  border: 2px solid var(--c-line);
-  border-radius: 8px;
-  font-size: .85rem;
+  gap: 0.8rem;
+  padding: 1rem 2.5rem;
+  background: var(--accent-gold);
+  color: var(--deep-navy);
+  font-size: 1rem;
   font-weight: 700;
-  color: var(--primary-blue);
-  cursor: pointer;
-  transition: all .2s;
-  white-space: nowrap;
-  font-family: var(--main-font);
-}
-
-.btn-copy:hover {
-  background: var(--primary-blue);
-  border-color: var(--primary-blue);
-  color: #fff;
-}
-
-.btn-copy svg { width: 14px; height: 14px; }
-.btn-copy.copied { background: #2E7D32; border-color: #2E7D32; color: #fff; }
-
-/* ============================================================
-   SOCIAL
-   ============================================================ */
-.contato-social {
-  background: var(--deep-navy);
-  overflow: hidden;
-  padding: 0;
-}
-
-.social-marquee-wrap {
-  border-top: 1px solid rgba(255,255,255,.08);
-  border-bottom: 1px solid rgba(255,255,255,.08);
-  padding: 1.6rem 0;
-  overflow: hidden;
-}
-
-.social-marquee {
-  display: flex;
-  gap: 0;
-  width: max-content;
-  animation: marquee 30s linear infinite;
-}
-
-.social-marquee:hover { animation-play-state: paused; }
-
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
-}
-
-.social-marquee__item {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  padding: 0 3rem;
   text-decoration: none;
-  color: rgba(255,255,255,.6);
-  font-family: var(--main-font);
-  font-size: 1.1rem;
-  font-weight: 600;
-  letter-spacing: .04em;
-  white-space: nowrap;
-  transition: color .2s;
-  flex-shrink: 0;
-}
-
-.social-marquee__item:hover { color: var(--accent-blue); }
-
-.social-marquee__item::after {
-  content: '✦';
-  font-size: .7rem;
-  opacity: .4;
-  margin-left: 1.5rem;
-}
-
-.social-marquee__item svg {
-  width: 20px;
-  height: 20px;
-  flex-shrink: 0;
-}
-
-/* Social main section */
-.social-main {
-  padding: 6rem var(--px, 3rem);
-  background: var(--deep-navy);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: center;
-}
-
-.social-main__eyebrow {
-  font-size: .78rem;
-  font-weight: 700;
-  letter-spacing: .15em;
-  text-transform: uppercase;
-  color: var(--accent-blue);
-  margin-bottom: 1.5rem;
-  display: flex;
-  align-items: center;
-  gap: .8rem;
-}
-
-.social-main__eyebrow::before {
-  content: '';
-  display: block;
-  width: 24px;
-  height: 2px;
-  background: var(--accent-blue);
-}
-
-.social-main__title {
-  font-family: var(--main-font);
-  font-size: clamp(2.2rem, 4vw, 3.5rem);
-  color: #fff;
-  font-weight: 900;
-  line-height: 1.15;
-  margin: 0 0 1.5rem;
-  letter-spacing: -.02em;
-}
-
-.social-main__body {
-  font-size: 1.05rem;
-  color: rgba(255,255,255,.7);
-  line-height: 1.75;
-  max-width: 400px;
-  font-weight: 400;
-}
-
-.social-main__right {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
-}
-
-.social-card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
-  padding: 2rem;
-  text-decoration: none;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  transition: all .3s ease;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-}
-
-.social-card:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: var(--accent-blue);
-  transform: translateY(-6px);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-}
-
-.social-card__icon {
-  width: 48px;
-  height: 48px;
   border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  transition: all 0.3s ease;
 }
 
-.social-card__icon--ig  { background: linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); color:#fff; }
-.social-card__icon--fb  { background: #1877F2; color:#fff; }
-.social-card__icon--yt  { background: #FF0000; color:#fff; }
-.social-card__icon svg  { width: 24px; height: 24px; }
-
-.social-card__platform {
-  font-size: .75rem;
-  font-weight: 700;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: var(--accent-blue);
-  margin-bottom: .4rem;
+.btn-map:hover {
+  background: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(145, 212, 250, 0.3);
 }
 
-.social-card__handle {
-  font-family: var(--main-font);
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #fff;
-}
-
-.social-card__arrow {
-  font-size: 1.4rem;
-  color: rgba(255,255,255,.3);
-  transition: transform .3s, color .3s;
-  font-weight: bold;
-}
-
-.social-card:hover .social-card__arrow {
-  transform: translate(4px,-4px);
-  color: var(--accent-blue);
-}
-
-/* ============================================================
-   ADDRESS - OCULTADO CONFORME SOLICITADO
-   ============================================================ */
-.contato-address {
-  display: none !important;
-}
-
-/* ============================================================
-   KEYFRAMES
-   ============================================================ */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-/* ============================================================
-   RESPONSIVO
-   ============================================================ */
-@media (max-width: 1100px) {
-  .contact-row {
-    grid-template-columns: 1.5fr 2fr auto;
-  }
-}
-
+/* ===== RESPONSIVO ===== */
 @media (max-width: 968px) {
   .contato-hero {
-    grid-template-columns: 1fr;
-    min-height: auto;
+    padding: 8rem var(--px) 4rem;
   }
 
-  .contato-hero__left {
-    padding: 5rem var(--px,1.5rem) 2rem;
-    text-align: center;
-  }
-  
-  .contato-hero__eyebrow {
-    justify-content: center;
-  }
-  
-  .contato-hero__subtitle {
-    margin: 0 auto;
-    text-align: center;
+  .contato-hero__title {
+    font-size: 2.5rem;
   }
 
-  .contato-hero__right {
-    padding: 2rem var(--px,1.5rem) 4rem;
+  .contato-info {
+    padding: 4rem var(--px);
   }
 
-  .contact-row {
-    grid-template-columns: 1fr;
+  .contato-info__container {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 1.5rem;
-    padding: 2.5rem 0;
   }
 
-  .contact-row:hover { padding-left: 0; background: transparent; }
-
-  .social-main {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-    text-align: center;
-  }
-  
-  .social-main__eyebrow {
-    justify-content: center;
-  }
-  .social-main__eyebrow::before { display: none; }
-  
-  .social-main__body {
-    margin: 0 auto;
+  .contato-social {
+    padding: 4rem var(--px);
   }
 
-  .social-main__right {
-    grid-template-columns: repeat(3, 1fr);
+  .contato-address {
+    padding: 4rem var(--px);
+  }
+
+  .contato-address__content {
+    padding: 2.5rem 2rem;
   }
 }
 
 @media (max-width: 600px) {
-  .contato-hero__left { padding: 4rem 1.5rem 2rem; }
-  .contato-hero__right { padding: 1.5rem 1.5rem 4rem; }
-  
-  .hero-status-card { padding: 1.5rem; }
+  .contato-hero {
+    padding: 7rem 1.5rem 3rem;
+  }
 
-  .contato-methods { padding: 4rem 1.5rem; }
-  .contato-methods__note { display: none; }
-  .contato-methods__header { justify-content: center; text-align: center; margin-bottom: 2.5rem; }
+  .contato-hero__title {
+    font-size: 2rem;
+  }
 
-  .contato-social { padding: 0; }
-  .social-main { padding: 4rem 1.5rem; }
-  .social-main__right { grid-template-columns: 1fr; }
+  .contato-hero__subtitle {
+    font-size: 1rem;
+  }
 
-  .hours-display { flex-direction: column; align-items: flex-start; gap: .8rem; }
+  .contato-info {
+    padding: 3rem 1.5rem;
+  }
 
-  .phone-item { flex-direction: column; align-items: flex-start; gap: .2rem; }
-  .phone-item__region { width: auto; }
+  .contato-info__container {
+    grid-template-columns: 1fr;
+  }
+
+  .contato-card {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .contato-social {
+    padding: 3rem 1.5rem;
+  }
+
+  .contato-social__links {
+    gap: 1rem;
+  }
+
+  .social-btn {
+    width: 55px;
+    height: 55px;
+  }
+
+  .contato-address {
+    padding: 3rem 1.5rem;
+  }
+
+  .contato-address__content {
+    padding: 2rem 1.5rem;
+  }
+
+  .address-info p {
+    font-size: 1rem;
+  }
+
+  .btn-map {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ============================================================
+   FOOTER SOCIAL
+   ============================================================ */
+.footer-social {
+  display: flex;
+  gap: 0.65rem;
+  margin-top: 1.4rem;
+}
+
+.footer-social-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.14);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.65);
+  transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+  text-decoration: none;
+}
+
+.footer-social-btn:hover {
+  background: var(--primary-blue);
+  border-color: var(--primary-blue);
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+.footer-social-btn svg {
+  width: 17px;
+  height: 17px;
+  fill: currentColor;
 }
 
 /* ============================================================
@@ -738,10 +436,9 @@
    ============================================================ */
 .reveal {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity .65s ease-out, transform .65s ease-out;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
-
 .reveal.is-visible {
   opacity: 1;
   transform: translateY(0);

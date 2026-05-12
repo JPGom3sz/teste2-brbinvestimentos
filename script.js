@@ -59,12 +59,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileToggle = document.querySelector('.mobile-menu-toggle');
   const navLinks     = document.querySelector('.nav-links');
   const menuOverlay  = document.querySelector('.menu-overlay');
+  const closeBtn     = document.querySelector('.mobile-menu-close');
 
   const openMenu = () => {
     navLinks.classList.add('active');
     mobileToggle.classList.add('active');
     menuOverlay.classList.add('active');
     mobileToggle.setAttribute('aria-expanded', 'true');
+    if (closeBtn) closeBtn.classList.add('visible');
     document.body.style.overflow = 'hidden';
   };
 
@@ -73,6 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
     mobileToggle.classList.remove('active');
     menuOverlay.classList.remove('active');
     mobileToggle.setAttribute('aria-expanded', 'false');
+    if (closeBtn) closeBtn.classList.remove('visible');
     document.body.style.overflow = '';
   };
 
@@ -81,6 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
   );
 
   menuOverlay?.addEventListener('click', closeMenu);
+  closeBtn?.addEventListener('click', closeMenu);
 
   // Fechar ao clicar em links comuns (não dropdown-toggle)
   document.querySelectorAll('.nav-links a:not(.dropdown-toggle)').forEach(link => {
@@ -98,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Fechar com Escape
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeMenu();  closeMenu();
+    if (e.key === 'Escape') closeMenu();
   });
 
 
@@ -174,11 +178,6 @@ document.addEventListener('DOMContentLoaded', () => {
       link:      'mercado-futuro.html',
     },
     6: {
-      titulo:    'Tesouro Direto',
-      descricao: 'O Tesouro Direto é um programa do Tesouro Nacional que permite a compra e venda de títulos públicos diretamente pelo investidor, com rentabilidade vinculada à inflação e prazos variáveis. A BRB Investimentos oferece acesso a esse mercado com suporte especializado.',
-      link:      'tesouro-direto.html',
-    },
-    7: {
       titulo:    'Criptoativos',
       descricao: 'A BRB Investimentos está sempre evoluindo para oferecer o que há de mais moderno no mercado financeiro. Em breve, você terá acesso a uma nova classe de ativos diretamente na nossa plataforma: os Criptoativos.',
       link:      'site-em-construção.html',
@@ -568,7 +567,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ── renda-fixa ──
   if (document.querySelector('.rf-hero')) {
-    // Mobile menu já tratado pelo bloco global acima (mobileToggle, navLinks, menuOverlay, openMenu, closeMenu)
+    // Header hide/show
+        const header = document.getElementById('site-header');
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+          const current = window.pageYOffset;
+          if (current <= 10) header.classList.remove('header-hidden');
+          else if (current > lastScroll) header.classList.add('header-hidden');
+          else header.classList.remove('header-hidden');
+          lastScroll = current;
+        });
+    
+        // Mobile menu
+        const toggle = document.querySelector('.mobile-menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        const overlay = document.querySelector('.menu-overlay');
+        const closeMenu = () => { navLinks.classList.remove('active'); toggle.setAttribute('aria-expanded','false'); overlay.classList.remove('active'); document.body.style.overflow = ''; };
+        toggle?.addEventListener('click', () => { const open = navLinks.classList.toggle('active'); toggle.setAttribute('aria-expanded', open); overlay.classList.toggle('active', open); document.body.style.overflow = open ? 'hidden' : ''; });
+        overlay?.addEventListener('click', closeMenu);
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+        document.querySelectorAll('.dropdown-toggle').forEach(t => { t.addEventListener('click', e => { if (window.innerWidth > 968) return; e.preventDefault(); t.closest('.dropdown').classList.toggle('is-open'); }); });
     
         // FAQ
         document.querySelectorAll('.faq-trigger').forEach(trigger => {
@@ -759,136 +777,3 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
-
-
-
-
-
-/* ═══════════════════════════════════════════════════════════
-   MODAL EDUCATIVO DE PRODUTOS — BRB Investimentos
-   Adicionar ao final do script.js (ou incluir separado antes de </body>)
-════════════════════════════════════════════════════════════ */
- 
-(function () {
-  const overlay   = document.getElementById('eduOverlay');
-  const cards     = document.querySelectorAll('.edu-card');
-  const closebtns = document.querySelectorAll('.edu-modal__close');
-  let   activeModal = null;
- 
-  function openModal(productKey) {
-    // Esconde todos os modais antes de abrir o correto
-    document.querySelectorAll('.edu-modal').forEach(m => m.style.display = 'none');
- 
-    const modal = document.getElementById('modal-' + productKey);
-    if (!modal) return;
- 
-    modal.style.display = 'block';
-    modal.scrollTop = 0;
-    activeModal = modal;
- 
-    overlay.classList.add('is-open');
-    document.body.style.overflow = 'hidden';
-  }
- 
-  function closeModal() {
-    overlay.classList.remove('is-open');
-    document.body.style.overflow = '';
- 
-    // Aguarda a animação de saída terminar para esconder o modal
-    setTimeout(() => {
-      if (activeModal) activeModal.style.display = 'none';
-      activeModal = null;
-    }, 320);
-  }
- 
-  // Abrir ao clicar em um card
-  cards.forEach(card => {
-    const key = card.dataset.modal;
- 
-    card.addEventListener('click', () => openModal(key));
- 
-    // Acessibilidade: Enter e Space também abrem o modal
-    card.addEventListener('keydown', e => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        openModal(key);
-      }
-    });
-  });
- 
-  // Fechar ao clicar no botão X
-  closebtns.forEach(btn => btn.addEventListener('click', closeModal));
- 
-  // Fechar ao clicar fora do modal (no overlay)
-  overlay.addEventListener('click', e => {
-    if (e.target === overlay) closeModal();
-  });
- 
-  // Fechar com a tecla Escape
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && overlay.classList.contains('is-open')) {
-      closeModal();
-    }
-  });
-})();
-
-
-(function () {
-  const overlay   = document.getElementById('eduOverlay');
-  const cards     = document.querySelectorAll('.edu-card');
-  const closebtns = document.querySelectorAll('.edu-modal__close');
-  let   activeModal = null;
-
-  if (!overlay) return; // sair se a seção não estiver na página
-
-  function openModal(productKey) {
-    document.querySelectorAll('.edu-modal').forEach(m => (m.style.display = 'none'));
-
-    const modal = document.getElementById('modal-' + productKey);
-    if (!modal) return;
-
-    modal.style.display = 'block';
-    modal.scrollTop = 0;
-    activeModal = modal;
-
-    overlay.classList.add('is-open');
-    document.body.style.overflow = 'hidden';
-
-    // Foco no título para acessibilidade
-    const title = modal.querySelector('.edu-modal__title');
-    if (title) { title.setAttribute('tabindex', '-1'); title.focus(); }
-  }
-
-  function closeModal() {
-    overlay.classList.remove('is-open');
-    document.body.style.overflow = '';
-    setTimeout(() => {
-      if (activeModal) activeModal.style.display = 'none';
-      activeModal = null;
-    }, 320);
-  }
-
-  // Abrir ao clicar no card
-  cards.forEach(card => {
-    const key = card.dataset.modal;
-    card.addEventListener('click', () => openModal(key));
-    card.addEventListener('keydown', e => {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(key); }
-    });
-  });
-
-  // Fechar ao clicar no X
-  closebtns.forEach(btn => btn.addEventListener('click', closeModal));
-
-  // Fechar ao clicar fora do modal
-  overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
-
-  // Fechar com Escape
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && overlay.classList.contains('is-open')) closeModal();
-  });
-})();
-
-
-
-
