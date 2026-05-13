@@ -5,13 +5,28 @@
    ================================================================ */
 
 /* ── Seleção de texto com cor da marca ── */
-::selection { background: rgba(0,86,168,0.18); color: var(--deep-navy); }
+::selection {
+  background: rgba(0,86,168,0.18);
+  color: var(--deep-navy);
+}
 
 /* ── Scrollbar refinada ── */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #f0f5fb; }
-::-webkit-scrollbar-thumb { background: #a0c4e8; border-radius: 99px; }
-::-webkit-scrollbar-thumb:hover { background: var(--primary-blue); }
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f0f5fb;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #a0c4e8;
+  border-radius: 99px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-blue);
+}
 
 /* ================================================================
    NAV — underline indicator, mais editorial
@@ -30,11 +45,13 @@
   .nav-links > li > a {
     color: rgba(255, 255, 255, 0.88) !important;
   }
+  
   .nav-links > li > a:hover,
   .nav-links > li > a.active {
     color: #ffffff !important;
     background: rgba(255, 255, 255, 0.08) !important;
   }
+  
   .nav-links > li > a::after {
     display: none;
   }
@@ -102,8 +119,14 @@
 }
 
 @keyframes glowPulse {
-  from { transform: scale(1) translate(0,0); opacity: 0.7; }
-  to   { transform: scale(1.12) translate(2%, -3%); opacity: 1; }
+  from {
+    transform: scale(1) translate(0,0);
+    opacity: 0.7;
+  }
+  to {
+    transform: scale(1.12) translate(2%, -3%);
+    opacity: 1;
+  }
 }
 
 /* Grid hero com linhas mais sutis */
@@ -117,19 +140,28 @@
 .home-text h1 {
   animation: slideUp 0.8s cubic-bezier(.22,1,.36,1) 0.1s both;
 }
+
 .home-text .subtitle {
   animation: slideUp 0.8s cubic-bezier(.22,1,.36,1) 0.25s both;
 }
+
 .hero-ctas {
   animation: slideUp 0.8s cubic-bezier(.22,1,.36,1) 0.38s both;
 }
+
 .hero-carousel {
   animation: slideUp 0.9s cubic-bezier(.22,1,.36,1) 0.15s both;
 }
 
 @keyframes slideUp {
-  from { opacity: 0; transform: translateY(28px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ── Botão primário: shimmer ── */
@@ -217,7 +249,6 @@
    ================================================================ */
 .portfolio-list li {
   position: relative;
-  padding-left: 0;
   border-left: 3px solid rgba(0,86,168,0.12);
   padding-left: 1rem;
   transition: border-color 0.22s ease, color 0.22s ease, padding-left 0.22s ease;
@@ -289,8 +320,14 @@
 }
 
 @keyframes numberReveal {
-  from { opacity: 0; transform: translateY(16px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .stats-highlight {
@@ -310,8 +347,6 @@
 .assessores-cta-btn:hover {
   letter-spacing: 0.02em;
 }
-
-
 
 /* ================================================================
    APP SECTION — fundo com padrão sutil
@@ -428,6 +463,7 @@
   height: 3px;
   z-index: 2000;
 }
+
 .reading-progress__bar {
   height: 100%;
   width: 0%;
@@ -480,6 +516,7 @@
   position: relative;
   overflow: hidden;
 }
+
 .as-btn--primary::after,
 .btn-cta--primary::after,
 .sn-cta__btn--primary::after,
@@ -491,6 +528,7 @@
   transform: translateX(-100%);
   transition: transform 0.5s ease;
 }
+
 .as-btn--primary:hover::after,
 .btn-cta--primary:hover::after,
 .sn-cta__btn--primary:hover::after,
@@ -507,6 +545,7 @@
   position: relative;
   gap: 0;
 }
+
 .btn-rf-primary::after {
   content: ' →';
   display: inline-block;
@@ -515,7 +554,87 @@
   transition: transform 0.22s ease, opacity 0.22s ease;
   white-space: pre;
 }
+
 .btn-rf-primary:hover::after {
   transform: translateX(4px);
+  opacity: 1;
+}
+
+/* ================================================================
+   BOTÕES DO PORTFÓLIO (Saiba Mais + Taxas)
+   ================================================================ */
+
+/* Wrapper para alinhar os botões lado a lado */
+.portfolio-btns {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap; 
+}
+
+/* Remove a margem extra do botão antigo para alinhar com o novo */
+.portfolio-btns .portfolio-cta-btn {
+  margin-top: 0;
+}
+
+/* ── Estilo do Novo Botão de Taxas (Outline) ── */
+.portfolio-cta-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.75rem;
+  background: transparent;
+  color: var(--primary-blue);
+  border: 2px solid var(--primary-blue);
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 6px;
+  letter-spacing: 0.01em;
+  position: relative;
+  overflow: hidden; 
+  z-index: 1;
+  transition: color 0.3s ease, border-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Efeito Hover Parte 1: Preenchimento de Fundo (Esquerda pra Direita) */
+.portfolio-cta-outline::before {
+  content: '';
+  position: absolute;
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0;
+  background: var(--primary-blue);
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Efeito Hover Parte 2: Setinha deslizando */
+.portfolio-cta-outline::after {
+  content: ' →';
+  display: inline-block;
+  transform: translateX(-10px);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  white-space: pre;
+}
+
+/* ── Disparando as animações no Hover ── */
+.portfolio-cta-outline:hover {
+  color: #ffffff;
+  transform: translateY(-2px); 
+  box-shadow: 0 6px 20px rgba(0, 86, 168, 0.2);
+}
+
+.portfolio-cta-outline:hover::before {
+  transform: scaleX(1); 
+}
+
+.portfolio-cta-outline:hover::after {
+  transform: translateX(4px); 
   opacity: 1;
 }

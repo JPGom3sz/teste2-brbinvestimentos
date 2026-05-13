@@ -16,30 +16,35 @@
   font-weight: 400;
   font-style: normal;
 }
+
 @font-face {
   font-family: 'Cera Pro';
   src: url('../fonts/Cera Pro Thin.otf') format('opentype');
   font-weight: 100;
   font-style: normal;
 }
+
 @font-face {
   font-family: 'Cera Pro';
   src: url('../fonts/Cera Pro Light.otf') format('opentype');
   font-weight: 300;
   font-style: normal;
 }
+
 @font-face {
   font-family: 'Cera Pro';
   src: url('../fonts/Cera Pro Medium.otf') format('opentype');
   font-weight: 500;
   font-style: normal;
 }
+
 @font-face {
   font-family: 'Cera Pro';
   src: url('../fonts/Cera Pro Bold.otf') format('opentype');
   font-weight: 700;
   font-style: normal;
 }
+
 @font-face {
   font-family: 'Cera Pro';
   src: url('../fonts/Cera Pro Black.otf') format('opentype');
@@ -48,7 +53,7 @@
 }
 
 /* ============================================================
-   3. VARIÁVEIS
+   3. VARIÁVEIS GLOBAIS
    ============================================================ */
 :root {
   --primary-blue:  #0056A8;
@@ -69,7 +74,7 @@
 }
 
 /* ============================================================
-   4. BASE
+   4. BASE E TIPOGRAFIA
    ============================================================ */
 html {
   scroll-behavior: smooth;
@@ -100,7 +105,7 @@ a {
 }
 
 /* ============================================================
-   5. HEADER / NAV
+   5. HEADER / NAV PRINCIPAL
    ============================================================ */
 header {
   position: fixed;
@@ -138,7 +143,7 @@ nav {
 }
 
 .logo img {
-  height: 50px;
+  height: 60px;
 }
 
 .nav-links {
@@ -155,24 +160,22 @@ nav {
 .nav-links > li > a {
   color: rgba(10, 10, 10, 0.85);
   font-weight: 520;
-  font-size: 0.90rem;
+  font-size: 16px;
   letter-spacing: 0.02em;
-  padding:  0.5rem 0.9rem;
+  padding: 0.5rem 0.9rem;
   border-radius: 6px;
-  transition: color var(--ease), background var(--ease);
   display: flex;
   align-items: center;
   gap: 0.3rem;
   white-space: nowrap;
-  transition: background 0.2s, color 0.2s;
-}
-/* Efeito de fundo para a página atual */
-.nav-links > li > a.active {
-  background: rgba(58, 127, 212, 0.15); /* Fundo sutil azul (pode trocar pela sua variável se preferir) */
-  color: #ffffff; /* Garante que o texto fique legível */
-  border-radius: 8px; /* Mantém o arredondamento do seu layout */
+  transition: color var(--ease), background var(--ease);
 }
 
+.nav-links > li > a.active {
+  background: rgba(58, 127, 212, 0.15); 
+  color: #ffffff; 
+  border-radius: 8px; 
+}
 
 .nav-links > li > a:hover,
 .nav-links > li > a.active {
@@ -180,7 +183,7 @@ nav {
   background: var(--light-blue);
 }
 
-/* Dropdown */
+/* ── Dropdowns ── */
 .nav-links .dropdown {
   position: relative;
 }
@@ -268,7 +271,7 @@ nav {
   display: block;
   padding: 11px 20px;
   font-weight: 550;
-  font-size: 0.79rem;
+  font-size: 13px;
   color: rgba(0, 0, 0, 0.7);
   transition: background var(--ease), color var(--ease);
 }
@@ -278,32 +281,33 @@ nav {
   color: var(--primary-blue);
 }
 
-
+/* ── Botões de Ação do Header ── */
 .nav-buttons {
   display: flex;
   margin-left: auto;
   z-index: 2;
 }
 
- .account-link {
-      background: var(--primary-blue);
-      color: #fff;
-      border: none;
-      padding: 0.55rem 1.2rem;
-      border-radius: 7px;
-      font-size: 0.83rem;
-      font-weight: 600;
-      font-family: inherit;
-      cursor: pointer;
-      transition: background 0.2s, transform 0.15s;
-      white-space: nowrap;
-    }
-    .account-link:hover {
-      background: var(--bright-blue);
-      transform: translateY(-1px);
-    }
+.account-link {
+  background: var(--primary-blue);
+  color: #fff;
+  border: none;
+  padding: 0.55rem 1.2rem;
+  border-radius: 7px;
+  font-size: 0.83rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.account-link:hover {
+  background: var(--bright-blue);
+  transform: translateY(-1px);
+}
     
-/* Hamburger */
+/* ── Hamburger / Menu Mobile ── */
 .mobile-menu-toggle {
   display: none;
   flex-direction: column;
@@ -328,7 +332,11 @@ nav {
 .mobile-menu-toggle.active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
 .mobile-menu-toggle.active span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
 
-/* Overlay mobile */
+.mobile-menu-close {
+  display: none;
+}
+
+/* Overlay do menu mobile */
 .menu-overlay {
   display: none;
   position: fixed;
@@ -341,6 +349,7 @@ nav {
   display: block;
 }
 
+/* ── Submenus ── */
 .has-submenu {
   position: relative;
 }
@@ -389,7 +398,7 @@ nav {
 }
 
 /* ============================================================
-   6. HERO SECTION
+   6. HERO SECTION PRINCIPAL
    ============================================================ */
 .main-hero-wrapper {
   position: relative;
@@ -415,7 +424,8 @@ nav {
   overflow: hidden;
 }
 
-.hero-bg-glow::before, .hero-bg-glow::after {
+.hero-bg-glow::before, 
+.hero-bg-glow::after {
   content: '';
   position: absolute;
   border-radius: 50%;
@@ -452,6 +462,19 @@ nav {
   z-index: 0;
 }
 
+.home-content {
+  max-width: 1850px; 
+  width: 100%;
+  margin: 0 auto;
+  padding: 5rem 2rem 4rem 1rem; 
+  display: grid;
+  grid-template-columns: 1fr minmax(300px, 850px);
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  flex: 1;
+}
+
 .home-eyebrow {
   font-size: 1.5rem;
   font-weight: 900;
@@ -486,14 +509,6 @@ nav {
   white-space: nowrap;
 }
 
-/* Previne overflow em telas menores que 1600px */
-@media (max-width: 1600px) {
-  .home-text h1 {
-    white-space: normal;
-    text-wrap: wrap;
-  }
-}
-
 .home-text h1 span.highlight {
   margin-top: 5px;
 }
@@ -518,6 +533,7 @@ nav {
   font-weight: 600;
 }
 
+/* ── Botões Hero ── */
 .hero-ctas {
   display: flex;
   align-items: center;
@@ -588,19 +604,6 @@ nav {
 /* ============================================================
    7. HERO CAROUSEL
    ============================================================ */
-.home-content {
-  max-width: 1850px; /*distancia do texto*/
-  width: 100%;
-  margin: 0 auto;
-  padding: 5rem 2rem 4rem 1rem; 
-  display: grid;
-  grid-template-columns: 1fr minmax(300px, 850px);
-  align-items: center;
-  position: relative;
-  z-index: 1;
-  flex: 1;
-}
-
 .hero-carousel {
   width: 100%; 
   max-width: none;
@@ -610,8 +613,12 @@ nav {
   flex-direction: column;
   gap: 1rem;
   align-self: center;
-
   justify-self: end; 
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to   { opacity: 1; transform: translateX(0); }
 }
 
 .carousel-track-wrapper {
@@ -620,9 +627,8 @@ nav {
   overflow: hidden;
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.08);
   position: relative;
-  height: 420px;
-  aspect-ratio: 16 / 9; 
   height: auto;
+  aspect-ratio: 16 / 9; 
 }
 
 .carousel-track {
@@ -649,7 +655,7 @@ nav {
   display: block;
 }
 
-/* Controls */
+/* Controles do Carrossel */
 .carousel-controls {
   display: flex;
   align-items: center;
@@ -704,7 +710,7 @@ nav {
 }
 
 /* ============================================================
-   TICKER COTAÇÃO DO DÓLAR
+   8. TICKER COTAÇÃO DO DÓLAR
    ============================================================ */
 .cotacao-ticker-bar {
   width: 100%;
@@ -723,7 +729,6 @@ nav {
   transition: transform var(--ease);
 }
 
-/* Sobe junto com a header ao rolar */
 header.header-hidden ~ .cotacao-ticker-bar,
 .cotacao-ticker-bar.ticker-hidden {
   transform: translateY(calc(-1 * (var(--header-h) + var(--ticker-h))));
@@ -745,7 +750,7 @@ header.header-hidden ~ .cotacao-ticker-bar,
   display: flex;
   align-items: center;
   gap: 0.4rem;
-  font-size: 0.72rem;
+  font-size: 13px;
   font-weight: 700;
   color: #4db8ff;
   text-transform: uppercase;
@@ -776,8 +781,6 @@ header.header-hidden ~ .cotacao-ticker-bar,
   will-change: transform;
 }
 
-
-
 @keyframes ticker-scroll {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
@@ -798,37 +801,15 @@ header.header-hidden ~ .cotacao-ticker-bar,
   border-right: none;
 }
 
-.cotacao-item-flag {
-  font-size: 1rem;
-}
-
-.cotacao-item-name {
-  font-weight: 700;
-  color: #fff;
-  font-size: 0.82rem;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-}
-
-.cotacao-item-buy {
-  color: rgba(255,255,255,0.75);
-  font-size: 0.75rem;
-}
-
-.cotacao-item-buy span {
-  color: #7ed8a4;
-  font-weight: 700;
-}
-
-.cotacao-item-sell {
-  color: rgba(255,255,255,0.75);
-  font-size: 0.75rem;
-}
-
-.cotacao-item-sell span {
-  color: #f4a261;
-  font-weight: 700;
-}
+.cotacao-item-flag { font-size: 1rem; }
+.cotacao-item-name { font-weight: 700; color: #fff; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.03em; }
+.cotacao-item-buy { color: rgba(255,255,255,0.75); font-size: 0.75rem; }
+.cotacao-item-buy span { color: #7ed8a4; font-weight: 700; }
+.cotacao-item-sell { color: rgba(255,255,255,0.75); font-size: 0.75rem; }
+.cotacao-item-sell span { color: #f4a261; font-weight: 700; }
+.cotacao-item-time { font-size: 0.7rem; color: rgba(255,255,255,0.4); font-style: italic; }
+.cotacao-loading { font-size: 0.78rem; color: rgba(255,255,255,0.4); font-style: italic; padding: 0 1rem; }
+.cotacao-erro { font-size: 0.78rem; color: rgba(255,100,100,0.7); padding: 0 1rem; }
 
 .cotacao-separator {
   display: inline-block;
@@ -840,34 +821,15 @@ header.header-hidden ~ .cotacao-ticker-bar,
   vertical-align: middle;
 }
 
-.cotacao-item-time {
-  font-size: 0.7rem;
-  color: rgba(255,255,255,0.4);
-  font-style: italic;
-}
-
-.cotacao-loading {
-  font-size: 0.78rem;
-  color: rgba(255,255,255,0.4);
-  font-style: italic;
-  padding: 0 1rem;
-}
-
-.cotacao-erro {
-  font-size: 0.78rem;
-  color: rgba(255,100,100,0.7);
-  padding: 0 1rem;
-}
-
 /* ============================================================
-   8. BLOCO FLUTUANTE (QUEBRA DE SEÇÃO)
+   9. BLOCO FLUTUANTE (Vantagens)
    ============================================================ */
 .hero-floating-section {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  transform: translateY(50%); 
+  transform: translateY(82%); 
   z-index: 100;
 }
 
@@ -885,10 +847,16 @@ header.header-hidden ~ .cotacao-ticker-bar,
   background: rgba(10, 42, 94, 0.90); 
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  padding: 30px 20px;
+  padding: 18px 20px;
   border-radius: 12px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
   border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.5s ease;
+}
+
+.benefit-card:hover {
+  border-color: rgba(49, 130, 206, 0.4); 
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5);
 }
 
 .benefit-item {
@@ -897,70 +865,53 @@ header.header-hidden ~ .cotacao-ticker-bar,
   gap: 15px;
   flex: 1;
   padding: 0 15px;
+  border-radius: 8px; 
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); 
+  cursor: pointer;
 }
 
 .benefit-item:not(:last-child) {
   border-right: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.benefit-text strong {
-  display: block;
-  color: #fff;
-  font-size: 16px;
-  margin-bottom: 5px;
-  font-family: 'Cera Pro', 'Montserrat', sans-serif;
-}
-
-.benefit-text p {
-  color: #a0aec0;
-  font-size: 13px;
-  line-height: 1.4;
-  margin: 0;
-}
-
-.benefit-item i {
-  color: #3182ce;
-  font-size: 24px;
-}
-.benefit-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 15px;
-  flex: 1;
-  border-radius: 8px; 
-  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); 
-  cursor: pointer;
-}
-
-/* 2. O Hover propriamente dito */
 .benefit-item:hover {
   background: rgba(255, 255, 255, 0.05); 
   transform: translateY(-8px); 
 }
 
+.benefit-item i {
+  color: #3182ce;
+  font-size: 20px;
+  transition: all 0.3s ease;
+}
 
 .benefit-item:hover i {
   color: #63b3ed; 
   transform: scale(1.1); 
-  transition: all 0.3s ease;
+}
+
+.benefit-text strong {
+  display: block;
+  color: #fff;
+  font-size: 18px;
+  margin-bottom: 3px;
+  font-family: 'Cera Pro', 'Montserrat', sans-serif;
+  transition: color 0.3s ease;
 }
 
 .benefit-item:hover .benefit-text strong {
   color: #afd6fc; 
-  transition: color 0.3s ease;
 }
 
-
-.benefit-card:hover {
-  border-color: rgba(49, 130, 206, 0.4); 
-  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5);
-  transition: all 0.5s ease;
+.benefit-text p {
+  color: #a0aec0;
+  font-size: 14px;
+  line-height: 1.4;
+  margin: 0;
 }
-
-
 
 /* ============================================================
-   9. STATS E PORTFÓLIO
+   10. SEÇÃO STATS
    ============================================================ */
 #additional {
   padding: 6rem var(--px);
@@ -1076,6 +1027,9 @@ header.header-hidden ~ .cotacao-ticker-bar,
   box-shadow: 0 10px 30px rgba(0, 86, 168, 0.4);
 }
 
+/* ============================================================
+   11. SEÇÃO PORTFÓLIO
+   ============================================================ */
 #portfolio {
   padding: 10rem var(--px) 7rem;
   background: linear-gradient(135deg, #f8fbff 0%, #ffffff 100%);
@@ -1105,6 +1059,7 @@ header.header-hidden ~ .cotacao-ticker-bar,
   pointer-events: none;
   letter-spacing: -0.05em;
   z-index: 0;
+  white-space: nowrap; 
 }
 
 .portfolio-text {
@@ -1163,7 +1118,7 @@ header.header-hidden ~ .cotacao-ticker-bar,
 }
 
 #content-portifolio h2 {
-  font-size: 1.8rem;
+  font-size: 35px;
   font-weight: 800;
   color: var(--deep-navy);
   margin-bottom: 1.2rem;
@@ -1171,12 +1126,11 @@ header.header-hidden ~ .cotacao-ticker-bar,
 }
 
 #content-portifolio p {
-  font-size: 1rem;
+  font-size: 20px;
   line-height: 1.8;
   color: rgba(26, 26, 26, 0.7);
   font-weight: 400;
 }
-
 
 .portfolio-cta-btn {
   display: inline-flex;
@@ -1208,7 +1162,7 @@ header.header-hidden ~ .cotacao-ticker-bar,
 }
 
 /* ============================================================
-   10. ASSESSORES
+   12. SEÇÃO ASSESSORES
    ============================================================ */
 #assessores {
   position: relative;
@@ -1260,7 +1214,7 @@ header.header-hidden ~ .cotacao-ticker-bar,
 }
 
 .assessores-inner h2 {
-  font-size: 3.2rem;
+  font-size: 80px;
   font-weight: 900;
   line-height: 1.15;
   color: #fff;
@@ -1280,9 +1234,8 @@ header.header-hidden ~ .cotacao-ticker-bar,
   font-weight: 400;
 }
 
-
 /* ============================================================
-   11. APP DOWNLOAD
+   13. APP DOWNLOAD
    ============================================================ */
 #app-download {
   padding: 6rem var(--px);
@@ -1307,7 +1260,7 @@ header.header-hidden ~ .cotacao-ticker-bar,
 
 .app-mockup__img {
   width: 100%;
-  max-width: 450px;
+  max-width: 420px;
   margin-right: 55px;
   height: auto;
   filter: drop-shadow(0 20px 60px rgba(29, 118, 207, 0.2));
@@ -1318,7 +1271,7 @@ header.header-hidden ~ .cotacao-ticker-bar,
 }
 
 .app-eyebrow {
-  font-size: 0.78rem;
+  font-size: 0.82rem;
   font-weight: 700;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -1352,7 +1305,7 @@ header.header-hidden ~ .cotacao-ticker-bar,
 }
 
 .app-qr-text {
-  font-size: 0.92rem;
+  font-size: 16px;
   line-height: 1.7;
   color: rgba(26, 26, 26, 0.7);
   font-weight: 400;
@@ -1408,9 +1361,8 @@ header.header-hidden ~ .cotacao-ticker-bar,
   letter-spacing: 0.02em;
 }
 
-
 /* ============================================================
-   12. FOOTER E WHATSAPP
+   14. FOOTER
    ============================================================ */
 footer {
   background: var(--gradient-blue);
@@ -1568,38 +1520,11 @@ footer {
   opacity: 1;
 }
 
-.whatsapp-btn {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  width: 58px;
-  height: 58px;
-  border-radius: 50%;
-  background: #25d366;
-  border: none;
-  cursor: pointer;
-  z-index: 800;
-  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
-  transition: transform var(--ease), box-shadow var(--ease);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.131.558 4.13 1.534 5.865L.057 23.447a.5.5 0 0 0 .625.585l5.76-1.508A11.955 11.955 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.896 0-3.67-.522-5.184-1.43l-.37-.22-3.419.895.912-3.328-.24-.386A9.944 9.944 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z'/%3E%3C/svg%3E");
-  background-size: 55%;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-.whatsapp-btn:hover {
-  transform: scale(1.15);
-  box-shadow: 0 8px 28px rgba(37, 211, 102, 0.6);
-}
-
-
 /* ============================================================
-   13. RESPONSIVO
+   15. MEDIA QUERIES (Responsividade)
    ============================================================ */
 
-/* ============================================================
-   13a-extra. NOTEBOOKS INTERMEDIÁRIOS — 1500px
-   ============================================================ */
+/* ── 1500px: Notebooks Grandes ── */
 @media (max-width: 1500px) {
   .home-text h1 {
     font-size: 3.6rem;
@@ -1613,9 +1538,7 @@ footer {
   }
 }
 
-/* ============================================================
-   13a. NOTEBOOKS COMPACTOS — 1280px
-   ============================================================ */
+/* ── 1280px: Notebooks Compactos ── */
 @media (max-width: 1280px) {
   :root { --px: 2rem; }
 
@@ -1639,9 +1562,7 @@ footer {
   }
 }
 
-/* ============================================================
-   13a-b. NOTEBOOKS MENORES — 1150px
-   ============================================================ */
+/* ── 1150px: Notebooks Menores ── */
 @media (max-width: 1150px) {
   .home-text h1 {
     font-size: 2.9rem;
@@ -1661,9 +1582,7 @@ footer {
   }
 }
 
-/* ============================================================
-   13b. TABLETS EM PAISAGEM — 1024px
-   ============================================================ */
+/* ── 1024px: Tablets em Paisagem ── */
 @media (max-width: 1024px) {
   :root { --px: 1.75rem; }
 
@@ -1676,23 +1595,18 @@ footer {
   }
 
   .stats-grid { grid-template-columns: repeat(3, 1fr); }
-
   .portfolio-content { gap: 3rem; }
   .portfolio-text h2 { font-size: 2.4rem; }
-
   .app-content { gap: 3rem; }
 }
 
-/* ============================================================
-   13c. MOBILE — 968px
-   ============================================================ */
+/* ── 968px: Mobile e Tablets em Retrato ── */
 @media (max-width: 968px) {
-
-  /* ── Header ── */
+  /* Header */
   nav { padding: 0 1.5rem; }
   .logo img { height: 50px; }
 
-  /* Menu desliza da direita (padrão unificado) */
+  /* Menu desliza da direita */
   .nav-links {
     position: fixed;
     top: var(--header-h);
@@ -1709,7 +1623,7 @@ footer {
     z-index: 1001;
     gap: 0;
     transform: none;
-    display: flex; /* sempre flex — visibilidade controlada pelo right */
+    display: flex;
   }
 
   .nav-links.active { right: 0; }
@@ -1750,17 +1664,16 @@ footer {
   .nav-buttons { display: none; }
   .mobile-menu-toggle { display: flex; flex-direction: column; justify-content: center; }
 
-  /* Overlay — só bloqueia quando active */
+  /* Overlay */
   .menu-overlay { display: block; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
   .menu-overlay.active { opacity: 1; pointer-events: auto; }
 
-  /* ── Ticker ── */
+  /* Ticker */
   .cotacao-ticker-bar { display: none; }
 
-  /* ── Hero ── */
+  /* Hero */
   .main-hero-wrapper { margin-bottom: 260px; }
   #home { padding-bottom: 140px; padding-top: calc(var(--header-h)); }
-
   .hero-floating-section { display: none; }
 
   .benefit-card {
@@ -1790,7 +1703,7 @@ footer {
   .hero-carousel { width: 100%; margin-right: 0; }
   .carousel-track-wrapper { height: auto; aspect-ratio: 16 / 10; }
 
-  /* ── Stats ── */
+  /* Stats */
   #additional { padding: 4rem 1.5rem; }
   .stats-grid {
     grid-template-columns: 1fr;
@@ -1800,13 +1713,13 @@ footer {
   }
   .additional-content h2 { font-size: 2rem; }
 
-  /* ── Portfólio ── */
-  #portfolio { padding: 4rem 1.5rem; }
+  /* Portfólio */
+  #portfolio { padding: 2.5rem 1.5rem 4rem; }
   .portfolio-content { grid-template-columns: 1fr; gap: 2.5rem; }
   .large-number { font-size: 7rem; top: -25px; left: -10px; }
   .portfolio-text h2 { font-size: 2rem; }
 
-  /* ── App ── */
+  /* App */
   #app-download { padding: 4rem 1.5rem; }
   .app-content {
     grid-template-columns: 1fr;
@@ -1819,14 +1732,14 @@ footer {
   .app-qr-row { flex-direction: column; align-items: center; text-align: center; }
   .app-store-btns { justify-content: center; }
 
-  /* ── Assessores ── */
+  /* Assessores */
   #assessores { min-height: 480px; }
   .assessores-content { padding: 4rem 1.5rem; }
   .assessores-inner { text-align: center; max-width: 100%; }
   .assessores-inner h2 { font-size: clamp(2rem, 6vw, 2.8rem); }
   .assessores-subtitle { font-size: 1rem; }
 
-  /* ── Footer ── */
+  /* Footer */
   .footer-content { grid-template-columns: 1fr 1fr; gap: 2rem; }
   .footer-brand { grid-column: 1 / -1; }
   .footer-bottom {
@@ -1839,9 +1752,7 @@ footer {
   .footer-right.footer-certificados { justify-content: center; flex-wrap: wrap; }
 }
 
-/* ============================================================
-   13d. MOBILE PEQUENO — 480px
-   ============================================================ */
+/* ── 480px: Mobile Pequeno ── */
 @media (max-width: 480px) {
   :root { --px: 1.2rem; }
 
@@ -1858,7 +1769,7 @@ footer {
 }
 
 /* ============================================================
-   14. ACESSIBILIDADE
+   16. ACESSIBILIDADE
    ============================================================ */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {

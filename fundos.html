@@ -1,376 +1,694 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fundos de Investimento — BRB Investimentos</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/style-enhance.css" />
-  <link rel="stylesheet" href="css/produtos-base.css" />
-  <link rel="stylesheet" href="css/fundos.css" />
-  <link rel="stylesheet" href="css/mobile-nav.css" />
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fundos de Investimento — BRB Investimentos</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style-enhance.css" />
+    <link rel="stylesheet" href="css/produtos-base.css" />
+    <link rel="stylesheet" href="css/fundos.css" />
+    <link rel="stylesheet" href="css/mobile-nav.css" />
+  </head>
+  <body>
 
-  <div class="reading-progress" aria-hidden="true">
-    <div class="reading-progress__bar" id="readingBar"></div>
-  </div>
+    <div class="reading-progress" aria-hidden="true">
+      <div class="reading-progress__bar" id="readingBar"></div>
+    </div>
 
-  <!-- HEADER -->
-  <header id="site-header">
-    <nav>
-      <div class="logo">
-        <a href="index.html" aria-label="BRB Investimentos — Início">
-          <img src="img/quartinho(1).png" alt="BRB Investimentos" />
-        </a>
-      </div>
-      <ul class="nav-links" id="mobileMenu" role="menubar">
-        <li class="dropdown" role="none">
-          <a href="javascript:void(0)" class="dropdown-toggle active" role="menuitem" aria-haspopup="true" aria-expanded="false">
-            Produtos e Serviços <span class="chevron" aria-hidden="true">▾</span>
+    <header id="site-header">
+      <nav>
+        <div class="logo">
+          <a href="index.html" aria-label="BRB Investimentos — Início">
+            <img src="img/quartinho(1).png" alt="BRB Investimentos" />
           </a>
-          <ul class="dropdown-menu" role="menu">
-            <li role="none" class="has-submenu"><a href="renda-fixa.html" role="menuitem">Renda Fixa <span class="chevron-right"></span></a></li>
-            <li role="none" class="has-submenu"><a href="renda-variavel.html" role="menuitem">Renda Variável <span class="chevron-right"></span></a></li>
-            <li role="none" class="has-submenu"><a href="previdencia.html" role="menuitem">Previdência <span class="chevron-right"></span></a></li>
-            <li role="none" class="has-submenu"><a href="fundos.html" role="menuitem">Fundos <span class="chevron-right"></span></a></li>
-            <li role="none" class="has-submenu"><a href="mercado-futuro.html" role="menuitem">Mercado Futuro <span class="chevron-right"></span></a></li>
-          </ul>
-        </li>
-        <li class="dropdown" role="none">
-          <a href="javascript:void(0)" class="dropdown-toggle" role="menuitem" aria-haspopup="true" aria-expanded="false">
-            Conteúdo <span class="chevron" aria-hidden="true">▾</span>
-          </a>
-          <ul class="dropdown-menu" role="menu">
-            <li role="none"><a href="https://analisa.genialinvestimentos.com.br/" role="menuitem" target="_blank" rel="noopener noreferrer">Genial Analisa</a></li>
-            <li role="none"><a href="newsletter.html" role="menuitem">Newsletter</a></li>
-            <li role="none"><a href="tutoriais.html" role="menuitem">Guias Práticos</a></li>
-            <li role="none"><a href="site em construção.html" role="menuitem">Educação Investidora</a></li>
-          </ul>
-        </li>
-        <li role="none"><a href="sobrenos.html" role="menuitem">Sobre nós</a></li>
-        <li role="none"><a href="contato.html" role="menuitem">Contato</a></li>
-      </ul>
-      <div class="nav-buttons">
-        <button class="account-link" type="button"
-          onclick="window.open('https://brb.genialinvestimentos.com.br/auth/login','_blank','noopener,noreferrer')">
-          Acesse seus Investimentos
+        </div>
+        
+        <ul class="nav-links" id="mobileMenu" role="menubar">
+          <li class="dropdown" role="none">
+            <a href="javascript:void(0)" class="dropdown-toggle active" role="menuitem" aria-haspopup="true" aria-expanded="false">
+              Produtos e Serviços 
+              <span class="chevron" aria-hidden="true">▾</span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+              <li role="none" class="has-submenu">
+                <a href="renda-fixa.html" role="menuitem">
+                  Renda Fixa <span class="chevron-right"></span>
+                </a>
+              </li>
+              <li role="none" class="has-submenu">
+                <a href="renda-variavel.html" role="menuitem">
+                  Renda Variável <span class="chevron-right"></span>
+                </a>
+              </li>
+              <li role="none" class="has-submenu">
+                <a href="previdencia.html" role="menuitem">
+                  Previdência <span class="chevron-right"></span>
+                </a>
+              </li>
+              <li role="none" class="has-submenu">
+                <a href="fundos.html" role="menuitem">
+                  Fundos <span class="chevron-right"></span>
+                </a>
+              </li>
+              <li role="none" class="has-submenu">
+                <a href="mercado-futuro.html" role="menuitem">
+                  Mercado Futuro <span class="chevron-right"></span>
+                </a>
+              </li>
+              <li role="none" class="has-submenu">
+                <a href="tesouro-direto.html" role="menuitem">
+                  Tesouro Direto <span class="chevron-right"></span>
+                </a>
+              </li>
+            </ul>
+          </li>
+          
+          <li class="dropdown" role="none">
+            <a href="javascript:void(0)" class="dropdown-toggle" role="menuitem" aria-haspopup="true" aria-expanded="false">
+              Conteúdo 
+              <span class="chevron" aria-hidden="true">▾</span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+              <li role="none">
+                <a href="https://analisa.genialinvestimentos.com.br/" role="menuitem" target="_blank" rel="noopener noreferrer">Genial Analisa</a>
+              </li>
+              <li role="none">
+                <a href="newsletter.html" role="menuitem">Newsletter</a>
+              </li>
+              <li role="none">
+                <a href="tutoriais.html" role="menuitem">Guias Práticos</a>
+              </li>
+              <li role="none">
+                <a href="site em construção.html" role="menuitem">Educação Investidora</a>
+              </li>
+            </ul>
+          </li>
+          
+          <li role="none"><a href="sobrenos.html" role="menuitem">Sobre nós</a></li>
+          <li role="none"><a href="contato.html" role="menuitem">Contato</a></li>
+        </ul>
+        
+        <div class="nav-buttons">
+          <button class="account-link" type="button" onclick="window.open('https://brb.genialinvestimentos.com.br/auth/login','_blank','noopener,noreferrer')">
+            Acesse seus Investimentos
+          </button>
+        </div>
+        
+        <button class="mobile-menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span>
+          <span></span>
+          <span></span>
         </button>
+        
+        <div class="menu-overlay" aria-hidden="true"></div>
+        <button class="mobile-menu-close" type="button" aria-label="Fechar menu">&times;</button>
+      </nav>
+    </header>
+
+    <section class="fd-hero" id="topo">
+      <div class="fd-hero-inner">
+        <div class="fd-hero-badge"> Fundos de Investimento</div>
+        <h1>
+          Diversifique com <span class="highlight">gestão</span><br>
+          profissional
+        </h1>
+        <p class="hero-desc">
+          Os Fundos de Investimento da BRB Investimentos reúnem o melhor da gestão ativa e passiva —
+          com acesso a estratégias sofisticadas, diversificação imediata e o respaldo de uma plataforma completa.
+        </p>
+        <div class="fd-hero-ctas">
+           <button class="btn-rf-primary" onclick="window.open('https://brb.genialinvestimentos.com.br/auth/login','_blank','noopener,noreferrer')">
+              Comece a investir
+            </button>
+            <button class="btn-rf-outline" onclick="document.getElementById('produtos-educativo').scrollIntoView({behavior:'smooth'})">
+              Ver produtos
+            </button>
+        </div>
       </div>
-      <button class="mobile-menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
-        <span></span><span></span><span></span>
-      </button>
-      <div class="menu-overlay" aria-hidden="true"></div>
-      <button class="mobile-menu-close" type="button" aria-label="Fechar menu">&times;</button>
-    </nav>
-  </header>
+    </section>
 
+    <section class="edu-section" id="produtos-educativo">
+      <div class="edu-inner">
+        <div class="edu-header">
+          <div class="edu-tag">Conheça os produtos</div>
+          <h2>Invista com <span class="edu-highlight">conhecimento</span></h2>
+          <p>Entenda como funciona cada categoria de Fundo de Investimento disponível na BRB Investimentos e descubra qual combina com o seu perfil. Clique em um card para aprender mais.</p>
+        </div>
 
-  <!-- HERO -->
-  <section class="fd-hero" id="topo">
-    <div class="fd-hero-inner">
-      <div class="fd-hero-badge"> Fundos de Investimento</div>
-      <h1>
-        Diversifique com <span class="highlight">gestão</span><br>
-        profissional
-      </h1>
-      <p class="hero-desc">
-        Os Fundos de Investimento da BRB Investimentos reúnem o melhor da gestão ativa e passiva —
-        com acesso a estratégias sofisticadas, diversificação imediata e o respaldo de uma plataforma completa.
-      </p>
-      <div class="fd-hero-ctas">
-         <button class="btn-rf-primary" onclick="window.open('https://brb.genialinvestimentos.com.br/auth/login','_blank','noopener,noreferrer')">
-            Comece a investir
+        <div class="edu-grid">
+          <div class="edu-card" data-modal="cdb" role="button" tabindex="0" aria-label="Saiba mais sobre Fundos de Renda Fixa">
+            <div class="edu-card__stripe edu-card__stripe--cdb"></div>
+            <div class="edu-card__body">
+              <div class="edu-card__icon edu-card__icon--cdb">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0056A8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="7" width="20" height="14" rx="2" />
+                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                </svg>
+              </div>
+              <div class="edu-card__label">Fundos</div>
+              <div class="edu-card__title">Renda Fixa</div>
+              <div class="edu-card__desc">Foco em títulos públicos e privados de baixo risco. Ideal para conservadores ou reserva de liquidez.</div>
+              <div class="edu-card__attrs">
+                <span class="edu-attr edu-attr--cdb">🛡️ Baixo Risco</span>
+                <span class="edu-attr edu-attr--cdb">💧 Alta Liquidez</span>
+                <span class="edu-attr edu-attr--cdb">🏦 Gestão Profissional</span>
+              </div>
+            </div>
+            <div class="edu-card__cta edu-card__cta--cdb">
+              <span>Saiba mais</span>
+              <div class="edu-card__arrow edu-card__arrow--cdb">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="edu-card" data-modal="lci" role="button" tabindex="0" aria-label="Saiba mais sobre Fundos Multimercado">
+            <div class="edu-card__stripe edu-card__stripe--lci"></div>
+            <div class="edu-card__body">
+              <div class="edu-card__icon edu-card__icon--lci">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22V12M12 12C12 12 7 10 4 6c4 0 8 2 8 6zM12 12c0 0 5-2 8-6-4 0-8 2-8 6z" />
+                  <path d="M5 20h14" />
+                </svg>
+              </div>
+              <div class="edu-card__label">Fundos</div>
+              <div class="edu-card__title">Multimercado</div>
+              <div class="edu-card__desc">Diversificação em vários mercados (juros, câmbio, ações) em um único produto com foco em retorno.</div>
+              <div class="edu-card__attrs">
+                <span class="edu-attr edu-attr--lci">🌐 Diversificação</span>
+                <span class="edu-attr edu-attr--lci">⚖️ Equilíbrio</span>
+                <span class="edu-attr edu-attr--lci">📈 Estratégias Ativas</span>
+              </div>
+            </div>
+            <div class="edu-card__cta edu-card__cta--lci">
+              <span>Saiba mais</span>
+              <div class="edu-card__arrow edu-card__arrow--lci">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="edu-card" data-modal="debenture" role="button" tabindex="0" aria-label="Saiba mais sobre Fundos de Ações">
+            <div class="edu-card__stripe edu-card__stripe--deb"></div>
+            <div class="edu-card__body">
+              <div class="edu-card__icon edu-card__icon--deb">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
+                  <polyline points="16 7 22 7 22 13" />
+                </svg>
+              </div>
+              <div class="edu-card__label">Fundos</div>
+              <div class="edu-card__title">Ações (FIA)</div>
+              <div class="edu-card__desc">Invista no mercado acionário com o suporte de gestores especialistas. Foco em longo prazo e valorização.</div>
+              <div class="edu-card__attrs">
+                <span class="edu-attr edu-attr--deb">🚀 Potencial de Ganho</span>
+                <span class="edu-attr edu-attr--deb">🏢 Sócio de Empresas</span>
+                <span class="edu-attr edu-attr--deb">📅 Longo Prazo</span>
+              </div>
+            </div>
+            <div class="edu-card__cta edu-card__cta--deb">
+              <span>Saiba mais</span>
+              <div class="edu-card__arrow edu-card__arrow--deb">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="edu-overlay" id="eduOverlay" role="dialog" aria-modal="true" aria-labelledby="eduModalTitle">
+
+      <div class="edu-modal" id="modal-cdb" style="display:none">
+        <div class="edu-modal__header">
+          <button class="edu-modal__close" aria-label="Fechar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
           </button>
-          <button class="btn-rf-outline" onclick="document.getElementById('produtos').scrollIntoView({behavior:'smooth'})">
-            Ver produtos
+          <div class="edu-modal__pill edu-modal__pill--cdb">Fundo de Renda Fixa</div>
+          <h2 class="edu-modal__title" id="eduModalTitle">O que é um Fundo de Renda Fixa?</h2>
+          <p class="edu-modal__subtitle">Segurança e previsibilidade sob a gestão de especialistas do BRB.</p>
+        </div>
+        <div class="edu-modal__body">
+          <div class="edu-modal__explainer">
+            <div class="edu-modal__explainer-icon edu-modal__explainer-icon--cdb">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#0056A8" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="7" width="20" height="14" rx="2" />
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+              </svg>
+            </div>
+            <p>Um <strong>Fundo de Renda Fixa</strong> aplica pelo menos 80% do seu patrimônio em ativos que buscam acompanhar taxas de juros (como o CDI) ou índices de inflação. É uma excelente alternativa para quem busca segurança e liquidez.</p>
+          </div>
+          <div class="edu-modal__section">
+            <div class="edu-modal__section-title edu-modal__section-title--cdb">Como funciona</div>
+            <ul class="edu-modal__list edu-modal__list--cdb">
+              <li>O gestor seleciona títulos públicos (Tesouro) e privados (CDBs, Debêntures)</li>
+              <li>Você compra cotas e o rendimento é refletido na valorização diária dessa cota</li>
+              <li>Possui tributação de IR (tabela regressiva) e IOF para resgates antes de 30 dias</li>
+              <li>Alguns fundos possuem liquidez diária (D+0), ideais para reservas de emergência</li>
+            </ul>
+          </div>
+          <div class="edu-modal__section">
+            <div class="edu-modal__section-title edu-modal__section-title--cdb">Por que escolher</div>
+            <ul class="edu-modal__list edu-modal__list--cdb">
+              <li>Comodidade: o gestor cuida da seleção dos melhores títulos para você</li>
+              <li>Diversificação: acesso a títulos que, individualmente, exigiriam aportes altos</li>
+              <li>Baixa volatilidade: ideal para preservar o capital e manter o poder de compra</li>
+              <li>Praticidade no resgate e acompanhamento via App BRB</li>
+            </ul>
+          </div>
+          <div class="edu-modal__attrs-grid">
+            <div class="edu-modal__attr-item">
+              <div class="attr-label">Tributação</div>
+              <div class="attr-value">Regressiva e Come-cotas</div>
+            </div>
+            <div class="edu-modal__attr-item">
+              <div class="attr-label">Garantia</div>
+              <div class="attr-value">Títulos da carteira <small>(Não possui FGC)</small></div>
+            </div>
+            <div class="edu-modal__attr-item">
+              <div class="attr-label">Aplicação mínima</div>
+              <div class="attr-value">A partir de <small>R$ 1,00</small></div>
+            </div>
+            <div class="edu-modal__attr-item">
+              <div class="attr-label">Risco</div>
+              <div class="attr-value">Baixo <small>(Geralmente)</small></div>
+            </div>
+          </div>
+        </div>
+        <div class="edu-modal__footer">
+          <a class="edu-modal__btn edu-modal__btn--cdb" href="taxas.html">
+            Ver Taxas de Juros
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="edu-modal" id="modal-lci" style="display:none">
+        <div class="edu-modal__header">
+          <button class="edu-modal__close" aria-label="Fechar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
           </button>
+          <div class="edu-modal__pill edu-modal__pill--lci">Fundo Multimercado</div>
+          <h2 class="edu-modal__title">O que é um Fundo Multimercado?</h2>
+          <p class="edu-modal__subtitle">Versatilidade para aproveitar as melhores oportunidades em diferentes mercados.</p>
+        </div>
+        <div class="edu-modal__body">
+          <div class="edu-modal__explainer">
+            <div class="edu-modal__explainer-icon edu-modal__explainer-icon--lci">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22V12M12 12C12 12 7 10 4 6c4 0 8 2 8 6zM12 12c0 0 5-2 8-6-4 0-8 2-8 6z" />
+                <path d="M5 20h14" />
+              </svg>
+            </div>
+            <p>Os <strong>Fundos Multimercado</strong> possuem liberdade para investir em diversos ativos (ações, moedas, juros, commodities). O objetivo é buscar rentabilidade superior à renda fixa através de estratégias diversificadas e dinâmicas.</p>
+          </div>
+          <div class="edu-modal__section">
+            <div class="edu-modal__section-title edu-modal__section-title--lci">Como funciona</div>
+            <ul class="edu-modal__list edu-modal__list--lci">
+              <li>O gestor tem flexibilidade para mudar a carteira conforme o cenário econômico</li>
+              <li>Pode operar "comprado" (ganhando na alta) ou "vendido" (ganhando na queda)</li>
+              <li>As estratégias variam: arbitragem, macro, quantitativo, long & short</li>
+              <li>Geralmente possuem prazos de resgate maiores (ex: D+15, D+30)</li>
+            </ul>
+          </div>
+          <div class="edu-modal__section">
+            <div class="edu-modal__section-title edu-modal__section-title--lci">Por que escolher</div>
+            <ul class="edu-modal__list edu-modal__list--lci">
+              <li>Acesso a estratégias sofisticadas que seriam difíceis de executar sozinho</li>
+              <li>Equilíbrio entre risco e retorno através da diversificação automática</li>
+              <li>Potencial de ganho mesmo em cenários de instabilidade no mercado</li>
+              <li>Perfeito para o "coração" da carteira de investidores moderados e arrojados</li>
+            </ul>
+          </div>
+          <div class="edu-modal__attrs-grid">
+            <div class="edu-modal__attr-item">
+              <div class="attr-label">Alvo de Retorno</div>
+              <div class="attr-value">Superar o CDI</div>
+            </div>
+            <div class="edu-modal__attr-item">
+              <div class="attr-label">Risco</div>
+              <div class="attr-value">Moderado a Alto</div>
+            </div>
+            <div class="edu-modal__attr-item">
+              <div class="attr-label">Gestão</div>
+              <div class="attr-value">Ativa <small>foco em performance</small></div>
+            </div>
+            <div class="edu-modal__attr-item">
+              <div class="attr-label">Liquidez</div>
+              <div class="attr-value">Variável <small>conforme o fundo</small></div>
+            </div>
+          </div>
+        </div>
+        <div class="edu-modal__footer">
+          <a class="edu-modal__btn edu-modal__btn--lci" href="taxas.html">
+            Explorar Multimercados
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="edu-modal" id="modal-debenture" style="display:none">
+        <div class="edu-modal__header">
+          <button class="edu-modal__close" aria-label="Fechar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          </button>
+          <div class="edu-modal__pill edu-modal__pill--deb">Fundo de Ações (FIA)</div>
+          <h2 class="edu-modal__title">O que é um Fundo de Ações?</h2>
+          <p class="edu-modal__subtitle">Invista nas melhores empresas da bolsa com a análise técnica do BRB.</p>
+        </div>
+        <div class="edu-modal__body">
+          <div class="edu-modal__explainer">
+            <div class="edu-modal__explainer-icon edu-modal__explainer-icon--deb">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
+                <polyline points="16 7 22 7 22 13" />
+              </svg>
+            </div>
+            <p>Um <strong>FIA</strong> deve investir no mínimo 67% do seu patrimônio em ações listadas na bolsa. É a maneira ideal de se expor ao crescimento do setor produtivo sem precisar escolher cada ação individualmente.</p>
+          </div>
+          <div class="edu-modal__section">
+            <div class="edu-modal__section-title edu-modal__section-title--deb">Como funciona</div>
+            <ul class="edu-modal__list edu-modal__list--deb">
+              <li>O gestor analisa balanços e cenários para decidir quando comprar ou vender</li>
+              <li>A rentabilidade acompanha a performance das empresas na carteira do fundo</li>
+              <li>A alíquota de IR é fixa em 15% sobre o lucro no momento do resgate</li>
+              <li>Não possui o "come-cotas", preservando o investimento por mais tempo</li>
+            </ul>
+          </div>
+          <div class="edu-modal__section">
+            <div class="edu-modal__section-title edu-modal__section-title--deb">Por que escolher</div>
+            <ul class="edu-modal__list edu-modal__list--deb">
+              <li>Expertise: profissionais dedicados a encontrar as melhores teses de investimento</li>
+              <li>Acesso: invista em dezenas de empresas simultaneamente com pouco dinheiro</li>
+              <li>Potencial de Longo Prazo: histórico superior a outros ativos em prazos dilatados</li>
+              <li>Foco em Valorização: ideal para construção de patrimônio futuro</li>
+            </ul>
+          </div>
+          <div class="edu-modal__attrs-grid">
+            <div class="edu-modal__attr-item">
+              <div class="attr-label">Imposto de Renda</div>
+              <div class="attr-value" style="color:#7c3aed">15% fixo <small>no resgate</small></div>
+            </div>
+            <div class="edu-modal__attr-item">
+              <div class="attr-label">Risco</div>
+              <div class="attr-value">Alto <small>(Renda Variável)</small></div>
+            </div>
+            <div class="edu-modal__attr-item">
+              <div class="attr-label">Prazo Típico</div>
+              <div class="attr-value">Acima de 2 anos</div>
+            </div>
+            <div class="edu-modal__attr-item">
+              <div class="attr-label">Come-cotas</div>
+              <div class="attr-value">Não possui</div>
+            </div>
+          </div>
+        </div>
+        <div class="edu-modal__footer">
+          <a class="edu-modal__btn edu-modal__btn--deb" href="taxas.html">
+            Conhecer Fundos de Ações
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </a>
+        </div>
       </div>
     </div>
-  </section>
 
-
-  <!-- VANTAGENS -->
-  <section class="fd-advantages">
-    <div class="section-header reveal">
-      <div class="section-tag">Por que escolher</div>
-      <h2>Vantagens dos Fundos na BRB Investimentos</h2>
-      <p>Acesse estratégias profissionais com um único investimento, economizando tempo e maximizando sua diversificação.</p>
-    </div>
-    <div class="advantages-grid">
-      <div class="adv-card reveal"><div class="adv-icon">👨‍💼</div><h3>Gestão Profissional</h3><p>Equipes especializadas tomam as decisões de investimento por você, com acesso a análises, dados e mercados que o investidor individual raramente alcança.</p></div>
-      <div class="adv-card reveal"><div class="adv-icon">🎯</div><h3>Diversificação Imediata</h3><p>Com um único aporte, você investe em dezenas ou centenas de ativos simultaneamente, reduzindo o risco específico de cada posição.</p></div>
-      <div class="adv-card reveal"><div class="adv-icon">🌎</div><h3>Acesso a Mercados Globais</h3><p>Fundos internacionais permitem exposição a mercados desenvolvidos e emergentes ao redor do mundo, em moedas estrangeiras, sem burocracia.</p></div>
-      <div class="adv-card reveal"><div class="adv-icon">⚖️</div><h3>Regulação e Transparência</h3><p>Todos os fundos são regulados pela CVM e têm obrigação de divulgar regulamento, lâmina e relatórios de gestão periodicamente.</p></div>
-      <div class="adv-card reveal"><div class="adv-icon">🔁</div><h3>Praticidade Operacional</h3><p>Invista, acompanhe e resgate diretamente pela plataforma BRB Investimentos, com visibilidade completa do seu patrimônio em um só lugar.</p></div>
-      <div class="adv-card reveal"><div class="adv-icon">📐</div><h3>Estratégias para Todo Perfil</h3><p>De conservador a arrojado, temos fundos compatíveis com cada objetivo, seja preservar patrimônio, bater o CDI ou buscar alta performance.</p></div>
-    </div>
-  </section>
-
-
-  <!-- CATEGORIAS com filtro interativo -->
-  <section class="fd-products" id="produtos">
-    <div style="max-width: var(--container); margin: 0 auto;">
+    <section class="fd-advantages">
       <div class="section-header reveal">
-        <div class="section-tag">Categorias</div>
-        <h2>Conheça as categorias de fundos disponíveis</h2>
-        <p>Filtre por perfil de risco e clique nos cards para ver mais detalhes. Cada categoria tem características únicas.</p>
+        <div class="section-tag">Por que escolher</div>
+        <h2>Vantagens dos Fundos na BRB Investimentos</h2>
+        <p>Acesse estratégias profissionais com um único investimento, economizando tempo e maximizando sua diversificação.</p>
       </div>
-
-      <div class="fund-filter reveal">
-        <button class="fund-pill active" data-risk="all">Todos</button>
-        <button class="fund-pill" data-risk="baixo">Risco Baixo</button>
-        <button class="fund-pill" data-risk="moderado">Risco Moderado</button>
-        <button class="fund-pill" data-risk="alto">Risco Alto</button>
+      <div class="advantages-grid">
+        <div class="adv-card reveal">
+          <div class="adv-icon">👨‍💼</div>
+          <h3>Gestão Profissional</h3>
+          <p>Equipes especializadas tomam as decisões de investimento por você, com acesso a análises, dados e mercados que o investidor individual raramente alcança.</p>
+        </div>
+        <div class="adv-card reveal">
+          <div class="adv-icon">🎯</div>
+          <h3>Diversificação Imediata</h3>
+          <p>Com um único aporte, você investe em dezenas ou centenas de ativos simultaneamente, reduzindo o risco específico de cada posição.</p>
+        </div>
+        <div class="adv-card reveal">
+          <div class="adv-icon">🌎</div>
+          <h3>Acesso a Mercados Globais</h3>
+          <p>Fundos internacionais permitem exposição a mercados desenvolvidos e emergentes ao redor do mundo, em moedas estrangeiras, sem burocracia.</p>
+        </div>
+        <div class="adv-card reveal">
+          <div class="adv-icon">⚖️</div>
+          <h3>Regulação e Transparência</h3>
+          <p>Todos os fundos são regulados pela CVM e têm obrigação de divulgar regulamento, lâmina e relatórios de gestão periodicamente.</p>
+        </div>
+        <div class="adv-card reveal">
+          <div class="adv-icon">🔁</div>
+          <h3>Praticidade Operacional</h3>
+          <p>Invista, acompanhe e resgate diretamente pela plataforma BRB Investimentos, com visibilidade completa do seu patrimônio em um só lugar.</p>
+        </div>
+        <div class="adv-card reveal">
+          <div class="adv-icon">📐</div>
+          <h3>Estratégias para Todo Perfil</h3>
+          <p>De conservador a arrojado, temos fundos compatíveis com cada objetivo, seja preservar patrimônio, bater o CDI ou buscar alta performance.</p>
+        </div>
       </div>
+    </section>
 
-      <div class="products-grid">
-
-        <div class="product-card featured reveal" data-risk="moderado alto">
-          <div class="product-icon">🌐</div>
-          <div class="product-info">
-            <h3>Fundos Multimercado</h3>
-            <p>Estratégia mais flexível do mercado, podendo investir em renda fixa, câmbio, ações e derivativos simultaneamente. O gestor adapta a carteira às condições de mercado.</p>
-          </div>
-          <div class="product-detail">
-            <ul class="product-detail-list">
-              <li>Sem restrição de alocação por classe de ativo</li>
-              <li>Benchmark: CDI + 2% a 6% ao ano (objetivo típico)</li>
-              <li>Liquidez: D+1 a D+30 dependendo do fundo</li>
-              <li>Come-cotas em maio e novembro (fundos RF e MM)</li>
-            </ul>
-          </div>
-          <div class="risk-meter">
-            <span class="risk-label">Risco</span>
-            <div class="risk-dots">
-              <div class="risk-dot filled-med"></div>
-              <div class="risk-dot filled-med"></div>
-              <div class="risk-dot filled-med"></div>
-              <div class="risk-dot"></div>
-              <div class="risk-dot"></div>
-            </div>
-          </div>
-          <div class="product-tag popular">Mais Versátil</div>
+    <section class="fd-steps">
+      <div class="steps-inner" style="max-width: var(--container); margin: 0 auto;">
+        <div class="section-header">
+          <div class="section-tag">Passo a passo</div>
+          <h2>Como começar a investir em Fundos</h2>
+          <p>Invista com gestão profissional em poucos passos, diretamente pela plataforma BRB.</p>
         </div>
-
-        <div class="product-card reveal" data-risk="baixo">
-          <div class="product-icon">📋</div>
-          <div class="product-info">
-            <h3>Fundos de Renda Fixa</h3>
-            <p>Carteiras compostas predominantemente por títulos de renda fixa: CDBs, Tesouro Direto, LCIs, LCAs e debêntures. Oferecem previsibilidade e baixo risco.</p>
+        <div class="steps-grid">
+          <div class="step-card reveal">
+            <div class="step-number">01</div>
+            <h3>Abra sua conta</h3>
+            <p>Crie sua conta na BRB Investimentos de forma 100% digital. Leva menos de 5 minutos.</p>
           </div>
-          <div class="product-detail">
-            <ul class="product-detail-list">
-              <li>Mínimo 80% do patrimônio em renda fixa</li>
-              <li>Liquidez geralmente diária (D+0 ou D+1)</li>
-              <li>Ideal para reserva de emergência</li>
-              <li>IR pela tabela regressiva (15% a 22,5%)</li>
-            </ul>
+          <div class="step-card reveal">
+            <div class="step-number">02</div>
+            <h3>Descubra seu perfil</h3>
+            <p>Responda ao suitability e receba recomendações de fundos alinhados ao seu perfil e objetivos.</p>
           </div>
-          <div class="risk-meter">
-            <span class="risk-label">Risco</span>
-            <div class="risk-dots">
-              <div class="risk-dot filled-low"></div>
-              <div class="risk-dot"></div>
-              <div class="risk-dot"></div>
-              <div class="risk-dot"></div>
-              <div class="risk-dot"></div>
-            </div>
+          <div class="step-card reveal">
+            <div class="step-number">03</div>
+            <h3>Explore os fundos</h3>
+            <p>Compare taxas, rentabilidades, prazos e estratégias para encontrar o fundo ideal para você.</p>
           </div>
-          <div class="product-tag safe">Baixo Risco</div>
+          <div class="step-card reveal">
+            <div class="step-number">04</div>
+            <h3>Invista e acompanhe</h3>
+            <p>Aplique com segurança e acompanhe a evolução do seu patrimônio em tempo real pela plataforma.</p>
+          </div>
         </div>
-
-        <div class="product-card reveal" data-risk="alto">
-          <div class="product-icon">📈</div>
-          <div class="product-info">
-            <h3>Fundos de Ações</h3>
-            <p>Investem no mínimo 67% do patrimônio em ações na B3. Indicados para investidores com horizonte de longo prazo e tolerância a oscilações, buscando superar o Ibovespa.</p>
-          </div>
-          <div class="product-detail">
-            <ul class="product-detail-list">
-              <li>Mínimo 67% em ações listadas na B3</li>
-              <li>IR fixo de 15% sobre o ganho — sem come-cotas</li>
-              <li>Liquidez: D+1 a D+5</li>
-              <li>Horizonte recomendado: mínimo 5 anos</li>
-            </ul>
-          </div>
-          <div class="risk-meter">
-            <span class="risk-label">Risco</span>
-            <div class="risk-dots">
-              <div class="risk-dot filled-high"></div>
-              <div class="risk-dot filled-high"></div>
-              <div class="risk-dot filled-high"></div>
-              <div class="risk-dot filled-high"></div>
-              <div class="risk-dot"></div>
-            </div>
-          </div>
-          <div class="product-tag moderate">Longo Prazo</div>
-        </div>
-
-        <div class="product-card reveal" data-risk="moderado">
-          <div class="product-icon">💱</div>
-          <div class="product-info">
-            <h3>Fundos Cambiais</h3>
-            <p>Protejam seu patrimônio contra a desvalorização do real investindo em ativos atrelados ao dólar ou outras moedas estrangeiras. Estratégia de proteção cambial.</p>
-          </div>
-          <div class="product-detail">
-            <ul class="product-detail-list">
-              <li>Mínimo 80% em ativos referenciados em moeda estrangeira</li>
-              <li>Ideal para quem tem despesas ou passivos em dólar</li>
-              <li>IR regressivo (tabela padrão de RF)</li>
-              <li>Liquidez: D+1 típico</li>
-            </ul>
-          </div>
-          <div class="risk-meter">
-            <span class="risk-label">Risco</span>
-            <div class="risk-dots">
-              <div class="risk-dot filled-med"></div>
-              <div class="risk-dot filled-med"></div>
-              <div class="risk-dot"></div>
-              <div class="risk-dot"></div>
-              <div class="risk-dot"></div>
-            </div>
-          </div>
-          <div class="product-tag moderate">Proteção Cambial</div>
-        </div>
-
-        <div class="product-card reveal" data-risk="moderado alto">
-          <div class="product-icon">🌍</div>
-          <div class="product-info">
-            <h3>Fundos Internacionais</h3>
-            <p>Acesse mercados desenvolvidos como EUA, Europa e Ásia de forma prática e regulamentada. Exposição a grandes empresas globais em um só investimento.</p>
-          </div>
-          <div class="product-detail">
-            <ul class="product-detail-list">
-              <li>Investe em ativos no exterior via BDRs ou derivativos</li>
-              <li>Exposição à valorização do dólar + performance global</li>
-              <li>Acesso a Apple, Microsoft, Google, Amazon e mais</li>
-              <li>IR regressivo sobre os rendimentos</li>
-            </ul>
-          </div>
-          <div class="risk-meter">
-            <span class="risk-label">Risco</span>
-            <div class="risk-dots">
-              <div class="risk-dot filled-med"></div>
-              <div class="risk-dot filled-med"></div>
-              <div class="risk-dot filled-med"></div>
-              <div class="risk-dot"></div>
-              <div class="risk-dot"></div>
-            </div>
-          </div>
-          <div class="product-tag moderate">Exposição Global</div>
-        </div>
-
       </div>
-    </div>
-  </section>
+    </section>
 
+    <section class="fd-cta-section">
+      <div class="cta-box reveal">
+        <div class="section-tag" style="margin-bottom: 1.2rem;">BRB Investimentos</div>
+        <h2>Deixe os especialistas trabalharem pelo seu patrimônio</h2>
+        <p>Acesse nossa plataforma e encontre o fundo ideal para o seu perfil, com toda a transparência e suporte da BRB Investimentos.</p>
+        <div class="cta-buttons">
+          <button class="btn-cta-primary" onclick="window.open('https://brb.genialinvestimentos.com.br/auth/login','_blank','noopener,noreferrer')">
+            Acessar minha conta
+          </button>
+          <button class="btn-cta-secondary" onclick="window.location.href='https://forms.office.com/r/1EsKit6Ce9'">
+            Falar com um assessor
+          </button>
+        </div>
+      </div>
+    </section>
 
-  <!-- FAQ -->
-  <section class="fd-faq" id="entenda">
-    <div class="faq-layout">
-      <div class="faq-left reveal">
-        <div class="section-tag" style="margin-bottom: 1rem;">Entenda</div>
-        <h2>Tire suas dúvidas sobre Fundos</h2>
-        <p>Tudo o que você precisa saber antes de investir em fundos, explicado de forma clara e objetiva.</p>
-        <button class="btn-rf-primary" onclick="window.open('assessores.html#equipe')">
+    <section class="fd-faq" id="entenda">
+      <div class="faq-layout">
+        <div class="faq-left reveal">
+          <div class="section-tag" style="margin-bottom: 1rem;">Entenda</div>
+          <h2>Tire suas dúvidas sobre Fundos</h2>
+          <p>Tudo o que você precisa saber antes de investir em fundos, explicado de forma clara e objetiva.</p>
+          <button class="btn-rf-primary" onclick="window.open('assessores.html#equipe')">
             Conheça nossa equipe
           </button>
-      </div>
-      <div class="faq-list reveal">
-        <div class="faq-item">
-          <button class="faq-trigger" aria-expanded="false"><span>Como funciona um fundo de investimento?</span><div class="faq-icon" aria-hidden="true">+</div></button>
-          <div class="faq-body"><div class="faq-body-inner">Um fundo de investimento é um condomínio de investidores que reúnem recursos para investir coletivamente em uma carteira diversificada. Cada investidor possui cotas proporcionais ao valor aplicado. Um gestor profissional toma as decisões seguindo a política descrita no regulamento. O patrimônio do fundo é segregado do da gestora, garantindo proteção legal ao investidor.</div></div>
         </div>
-        <div class="faq-item">
-          <button class="faq-trigger" aria-expanded="false"><span>Quais são as taxas cobradas pelos fundos?</span><div class="faq-icon" aria-hidden="true">+</div></button>
-          <div class="faq-body"><div class="faq-body-inner">Os fundos podem cobrar duas taxas principais: <strong>Taxa de Administração</strong> — remuneração anual pela gestão, cobrada sobre o patrimônio total (descontada diariamente do valor da cota). <strong>Taxa de Performance</strong> — cobrada sobre o rendimento que superar um benchmark. Todas as taxas são divulgadas na lâmina e regulamento do fundo.</div></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-trigger" aria-expanded="false"><span>Qual a tributação dos fundos de investimento?</span><div class="faq-icon" aria-hidden="true">+</div></button>
-          <div class="faq-body"><div class="faq-body-inner">Para fundos de renda fixa e multimercado, incide IR pela tabela regressiva (22,5% até 180 dias, chegando a 15% acima de 720 dias). O come-cotas ocorre semestralmente em maio e novembro. Fundos de ações têm IR fixo de 15% sobre o ganho, sem come-cotas. O IR é retido na fonte no resgate.</div></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-trigger" aria-expanded="false"><span>Qual o valor mínimo para investir em fundos?</span><div class="faq-icon" aria-hidden="true">+</div></button>
-          <div class="faq-body"><div class="faq-body-inner">O valor mínimo varia conforme o fundo. Na BRB Investimentos, você encontrará fundos com aplicação mínima acessível, além de fundos exclusivos para investidores qualificados. Nossa equipe indica os melhores fundos de acordo com o seu capital e perfil.</div></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-trigger" aria-expanded="false"><span>Posso resgatar o dinheiro quando quiser?</span><div class="faq-icon" aria-hidden="true">+</div></button>
-          <div class="faq-body"><div class="faq-body-inner">Depende do fundo. A liquidez é definida no regulamento. Alguns oferecem resgate no mesmo dia (D+0), outros em D+1, D+30 ou mais. Fundos de liquidez mais longa geralmente oferecem maior potencial de retorno. Sempre verifique o prazo de cotização e liquidação antes de investir.</div></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-trigger" aria-expanded="false"><span>Como a BRB Investimentos seleciona os fundos da plataforma?</span><div class="faq-icon" aria-hidden="true">+</div></button>
-          <div class="faq-body"><div class="faq-body-inner">Nossa equipe realiza rigoroso processo de due diligence avaliando: histórico de performance ajustado ao risco, qualidade da equipe gestora, consistência da estratégia, estrutura operacional e compliance. Apenas fundos aprovados nesse processo são oferecidos na plataforma.</div></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- PASSO A PASSO -->
-  <section class="fd-steps">
-    <div class="steps-inner" style="max-width: var(--container); margin: 0 auto;">
-      <div class="section-header">
-        <div class="section-tag">Passo a passo</div>
-        <h2>Como começar a investir em Fundos</h2>
-        <p>Invista com gestão profissional em poucos passos, diretamente pela plataforma BRB.</p>
-      </div>
-      <div class="steps-grid">
-        <div class="step-card reveal"><div class="step-number">01</div><h3>Abra sua conta</h3><p>Crie sua conta na BRB Investimentos de forma 100% digital. Leva menos de 5 minutos.</p></div>
-        <div class="step-card reveal"><div class="step-number">02</div><h3>Descubra seu perfil</h3><p>Responda ao suitability e receba recomendações de fundos alinhados ao seu perfil e objetivos.</p></div>
-        <div class="step-card reveal"><div class="step-number">03</div><h3>Explore os fundos</h3><p>Compare taxas, rentabilidades, prazos e estratégias para encontrar o fundo ideal para você.</p></div>
-        <div class="step-card reveal"><div class="step-number">04</div><h3>Invista e acompanhe</h3><p>Aplique com segurança e acompanhe a evolução do seu patrimônio em tempo real pela plataforma.</p></div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- CTA FINAL -->
-  <section class="fd-cta-section">
-    <div class="cta-box reveal">
-      <div class="section-tag" style="margin-bottom: 1.2rem;">BRB Investimentos</div>
-      <h2>Deixe os especialistas trabalharem pelo seu patrimônio</h2>
-      <p>Acesse nossa plataforma e encontre o fundo ideal para o seu perfil, com toda a transparência e suporte da BRB Investimentos.</p>
-      <div class="cta-buttons">
-        <button class="btn-cta-primary" onclick="window.open('https://brb.genialinvestimentos.com.br/auth/login','_blank','noopener,noreferrer')">Acessar minha conta</button>
-        <button class="btn-cta-secondary" onclick="window.location.href='https://forms.office.com/r/1EsKit6Ce9'">Falar com um assessor</button>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-content">
-      <div class="footer-brand">
-        <img src="img/LOGO BRANCA.png" alt="BRB Investimentos" class="footer-logo-img" />
-        <p class="footer-brand-text">Investindo no futuro dos brasileiros com segurança, tecnologia e tradição.</p>
-        <div class="footer-social">
-          <a href="https://www.instagram.com/brbinvestimentos/" class="footer-social-btn" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
-          <a href="https://youtube.com/@brbinvestimentos?si=MmAK0HAz0J-XOkLa" class="footer-social-btn" aria-label="YouTube" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
-          <a href="https://www.facebook.com/share/1CRVbq4UXf/?mibextid=wwXIfr" class="footer-social-btn" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+        <div class="faq-list reveal">
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>Como funciona um fundo de investimento?</span>
+              <div class="faq-icon" aria-hidden="true">+</div>
+            </button>
+            <div class="faq-body">
+              <div class="faq-body-inner">
+                Um fundo de investimento é um condomínio de investidores que reúnem recursos para investir coletivamente em uma carteira diversificada. Cada investidor possui cotas proporcionais ao valor aplicado. Um gestor profissional toma as decisões seguindo a política descrita no regulamento. O patrimônio do fundo é segregado do da gestora, garantindo proteção legal ao investidor.
+              </div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>Quais são as taxas cobradas pelos fundos?</span>
+              <div class="faq-icon" aria-hidden="true">+</div>
+            </button>
+            <div class="faq-body">
+              <div class="faq-body-inner">
+                Os fundos podem cobrar duas taxas principais: <strong>Taxa de Administração</strong> — remuneração anual pela gestão, cobrada sobre o patrimônio total (descontada diariamente do valor da cota). <strong>Taxa de Performance</strong> — cobrada sobre o rendimento que superar um benchmark. Todas as taxas são divulgadas na lâmina e regulamento do fundo.
+              </div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>Qual a tributação dos fundos de investimento?</span>
+              <div class="faq-icon" aria-hidden="true">+</div>
+            </button>
+            <div class="faq-body">
+              <div class="faq-body-inner">
+                Para fundos de renda fixa e multimercado, incide IR pela tabela regressiva (22,5% até 180 dias, chegando a 15% acima de 720 dias). O come-cotas ocorre semestralmente em maio e novembro. Fundos de ações têm IR fixo de 15% sobre o ganho, sem come-cotas. O IR é retido na fonte no resgate.
+              </div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>Qual o valor mínimo para investir em fundos?</span>
+              <div class="faq-icon" aria-hidden="true">+</div>
+            </button>
+            <div class="faq-body">
+              <div class="faq-body-inner">
+                O valor mínimo varia conforme o fundo. Na BRB Investimentos, você encontrará fundos com aplicação mínima acessível, além de fundos exclusivos para investidores qualificados. Nossa equipe indica os melhores fundos de acordo com o seu capital e perfil.
+              </div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>Posso resgatar o dinheiro quando quiser?</span>
+              <div class="faq-icon" aria-hidden="true">+</div>
+            </button>
+            <div class="faq-body">
+              <div class="faq-body-inner">
+                Depende do fundo. A liquidez é definida no regulamento. Alguns oferecem resgate no mesmo dia (D+0), outros em D+1, D+30 ou mais. Fundos de liquidez mais longa geralmente oferecem maior potencial de retorno. Sempre verifique o prazo de cotização e liquidação antes de investir.
+              </div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>Como a BRB Investimentos seleciona os fundos da plataforma?</span>
+              <div class="faq-icon" aria-hidden="true">+</div>
+            </button>
+            <div class="faq-body">
+              <div class="faq-body-inner">
+                Nossa equipe realiza rigoroso processo de due diligence avaliando: histórico de performance ajustado ao risco, qualidade da equipe gestora, consistência da estratégia, estrutura operacional e compliance. Apenas fundos aprovados nesse processo são oferecidos na plataforma.
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="footer-column"><h4>Produtos</h4><ul><li><a href="renda-fixa.html">Renda Fixa</a></li><li><a href="fundos.html">Fundos</a></li><li><a href="previdencia.html">Previdência</a></li><li><a href="renda-variavel.html">Renda Variável</a></li><li><a href="mercado-futuro.html">Mercado Futuro</a></li></ul></div>
-      <div class="footer-column"><h4>Quem Somos</h4><ul><li><a href="sobrenos.html#missao">Nossa Missão</a></li><li><a href="sobrenos.html#historia">Nossa História</a></li></ul></div>
-      <div class="footer-column"><h4>Fale Conosco</h4><ul><li><a href="https://novo.brb.com.br/atendimento/" target="_blank" rel="noopener noreferrer">Central de Atendimento</a></li><li><a href="https://novo.brb.com.br/atendimento/ouvidoria-brb/" target="_blank" rel="noopener noreferrer">Ouvidoria BRB</a></li></ul></div>
-      <div class="footer-column"><h4>Institucional</h4><ul><li><a href="https://www.anbima.com.br/" target="_blank">Anbima</a></li><li><a href="https://www.b3.com.br/" target="_blank">B3</a></li><li><a href="https://www.gov.br/cvm/" target="_blank">CVM</a></li><li><a href="https://www.fgc.org.br/" target="_blank">FGC</a></li><li><a href="https://www.bcb.gov.br/" target="_blank">Bacen</a></li></ul></div>
-      <div class="footer-column regulatorio"><h4>Regulatórios</h4><ul><li><a href="pdfs/Política de Privacidade.pdf" target="_blank">Política de Privacidade</a></li><li><a href="pdfs/4. Termo Abertura Conta Corrente  PF.pdf" target="_blank">Termos de Abertura de Conta</a></li><li><a href="pdfs/RPA_B3_Genial_Janeiro_2026.pdf" target="_blank">Regras e Parâmetros de Atuação</a></li><li><a href="pdfs/CONTRATO DE INTERMEDIAÇÃO.pdf" target="_blank">Contrato de Intermediação</a></li></ul></div>
-    </div>
-    <div class="footer-bottom">
-      <div class="footer-left"><img class="footer-mark" src="https://framerusercontent.com/images/ZRAogsRUCyrDvJX2BCEBRqoGhWY.svg?width=142&height=33" alt="Banco Central" /><img class="footer-mark" src="https://framerusercontent.com/images/mHJ8wt4h7RrXbxoN3I2zNtlIMw.svg?width=90&height=41" alt="B3" /></div>
-      <div class="footer-center"><p class="brbdireitos">© 2026 BRB Investimentos</p><p class="footer-address">BL B — Centro Empresarial CNC — SAUN Quadra 5, Lote C, 2º andar — Brasília/DF</p></div>
-      <div class="footer-right footer-certificados"><img src="img/distribuicao-geral.jpg" alt="Certificado Anbima Distribuição" /><img src="img/art-administracao.jpg" alt="Certificado Anbima Administração" /></div>
-    </div>
-  </footer>
+    </section>
 
-  <button class="floating-cta" id="floatingCta"
-    onclick="window.open('https://brb.genialinvestimentos.com.br/auth/login','_blank','noopener,noreferrer')">
-     Explorar fundos
-  </button>
+    <footer>
+      <div class="footer-content">
+        <div class="footer-brand">
+          <img src="img/LOGO BRANCA.png" alt="BRB Investimentos" class="footer-logo-img" />
+          <p class="footer-brand-text">Investindo no futuro dos brasileiros com segurança, tecnologia e tradição.</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/brbinvestimentos/" class="footer-social-btn" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="https://youtube.com/@brbinvestimentos?si=MmAK0HAz0J-XOkLa" class="footer-social-btn" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+            <a href="https://www.facebook.com/share/1CRVbq4UXf/?mibextid=wwXIfr" class="footer-social-btn" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>Produtos</h4>
+          <ul>
+            <li><a href="renda-fixa.html">Renda Fixa</a></li>
+            <li><a href="fundos.html">Fundos</a></li>
+            <li><a href="previdencia.html">Previdência</a></li>
+            <li><a href="renda-variavel.html">Renda Variável</a></li>
+            <li><a href="mercado-futuro.html">Mercado Futuro</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Quem Somos</h4>
+          <ul>
+            <li><a href="sobrenos.html#missao">Nossa Missão</a></li>
+            <li><a href="sobrenos.html#historia">Nossa História</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Fale Conosco</h4>
+          <ul>
+            <li><a href="https://novo.brb.com.br/atendimento/" target="_blank" rel="noopener noreferrer">Central de Atendimento</a></li>
+            <li><a href="https://novo.brb.com.br/atendimento/ouvidoria-brb/" target="_blank" rel="noopener noreferrer">Ouvidoria BRB</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Institucional</h4>
+          <ul>
+            <li><a href="https://www.anbima.com.br/" target="_blank">Anbima</a></li>
+            <li><a href="https://www.b3.com.br/" target="_blank">B3</a></li>
+            <li><a href="https://www.gov.br/cvm/" target="_blank">CVM</a></li>
+            <li><a href="https://www.fgc.org.br/" target="_blank">FGC</a></li>
+            <li><a href="https://www.bcb.gov.br/" target="_blank">Bacen</a></li>
+          </ul>
+        </div>
+        <div class="footer-column regulatorio">
+          <h4>Regulatórios</h4>
+          <ul>
+            <li><a href="pdfs/Política de Privacidade.pdf" target="_blank">Política de Privacidade</a></li>
+            <li><a href="pdfs/4. Termo Abertura Conta Corrente  PF.pdf" target="_blank">Termos de Abertura de Conta</a></li>
+            <li><a href="pdfs/RPA_B3_Genial_Janeiro_2026.pdf" target="_blank">Regras e Parâmetros de Atuação</a></li>
+            <li><a href="pdfs/CONTRATO DE INTERMEDIAÇÃO.pdf" target="_blank">Contrato de Intermediação</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-left">
+          <img class="footer-mark" src="https://framerusercontent.com/images/ZRAogsRUCyrDvJX2BCEBRqoGhWY.svg?width=142&height=33" alt="Banco Central" />
+          <img class="footer-mark" src="https://framerusercontent.com/images/mHJ8wt4h7RrXbxoN3I2zNtlIMw.svg?width=90&height=41" alt="B3" />
+        </div>
+        <div class="footer-center">
+          <p class="brbdireitos">© 2026 BRB Investimentos</p>
+          <p class="footer-address">BL B — Centro Empresarial CNC — SAUN Quadra 5, Lote C, 2º andar — Brasília/DF</p>
+        </div>
+        <div class="footer-right footer-certificados">
+          <img src="img/distribuicao-geral.jpg" alt="Certificado Anbima Distribuição" />
+          <img src="img/art-administracao.jpg" alt="Certificado Anbima Administração" />
+        </div>
+      </div>
+    </footer>
 
-  <script src="script.js" defer></script>
+    <button class="floating-cta" id="floatingCta" onclick="window.open('https://brb.genialinvestimentos.com.br/auth/login','_blank','noopener,noreferrer')">
+       Explorar fundos
+    </button>
 
-</body>
+    <script src="script.js" defer></script>
+  </body>
 </html>

@@ -1,528 +1,717 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Renda Variável — BRB Investimentos</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/style-enhance.css" />
-  <link rel="stylesheet" href="css/produtos-base.css" />
-  <link rel="stylesheet" href="css/renda-variavel.css" />
-  <link rel="stylesheet" href="css/mobile-nav.css" />
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Renda Variável — BRB Investimentos</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style-enhance.css" />
+    <link rel="stylesheet" href="css/produtos-base.css" />
+    <link rel="stylesheet" href="css/renda-variavel.css" />
+    <link rel="stylesheet" href="css/mobile-nav.css" />
+  </head>
+  <body>
 
-  <!-- Progress bar -->
-  <div class="reading-progress" aria-hidden="true">
-    <div class="reading-progress__bar" id="readingBar"></div>
-  </div>
+    <div class="reading-progress" aria-hidden="true">
+      <div class="reading-progress__bar" id="readingBar"></div>
+    </div>
 
-  <!-- ===================================================
-       HEADER
-  ==================================================== -->
-  <header id="site-header">
-    <nav>
-      <div class="logo">
-        <a href="index.html" aria-label="BRB Investimentos — Início">
-          <img src="img/quartinho(1).png" alt="BRB Investimentos" />
-        </a>
-      </div>
-
-      <ul class="nav-links" id="mobileMenu" role="menubar">
-        <li class="dropdown" role="none">
-          <a href="javascript:void(0)" class="dropdown-toggle active" role="menuitem" aria-haspopup="true" aria-expanded="false">
-            Produtos e Serviços <span class="chevron" aria-hidden="true">▾</span>
+    <header id="site-header">
+      <nav>
+        <div class="logo">
+          <a href="index.html" aria-label="BRB Investimentos — Início">
+            <img src="img/quartinho(1).png" alt="BRB Investimentos" />
           </a>
-          <ul class="dropdown-menu" role="menu">
-            <li role="none" class="has-submenu"><a href="renda-fixa.html" role="menuitem">Renda Fixa <span class="chevron-right"></span></a></li>
-            <li role="none" class="has-submenu"><a href="renda-variavel.html" role="menuitem">Renda Variável <span class="chevron-right"></span></a></li>
-            <li role="none" class="has-submenu"><a href="previdencia.html" role="menuitem">Previdência <span class="chevron-right"></span></a></li>
-            <li role="none" class="has-submenu"><a href="fundos.html" role="menuitem">Fundos <span class="chevron-right"></span></a></li>
-            <li role="none" class="has-submenu"><a href="mercado-futuro.html" role="menuitem">Mercado Futuro <span class="chevron-right"></span></a></li>
-          </ul>
-        </li>
-        <li class="dropdown" role="none">
-          <a href="javascript:void(0)" class="dropdown-toggle" role="menuitem" aria-haspopup="true" aria-expanded="false">
-            Conteúdo <span class="chevron" aria-hidden="true">▾</span>
-          </a>
-          <ul class="dropdown-menu" role="menu">
-            <li role="none"><a href="https://analisa.genialinvestimentos.com.br/" role="menuitem" target="_blank" rel="noopener noreferrer">Genial Analisa</a></li>
-            <li role="none"><a href="newsletter.html" role="menuitem">Newsletter</a></li>
-            <li role="none"><a href="tutoriais.html" role="menuitem">Guias Práticos</a></li>
-            <li role="none"><a href="site em construção.html" role="menuitem">Educação Investidora</a></li>
-          </ul>
-        </li>
-        <li role="none"><a href="sobrenos.html" role="menuitem">Sobre nós</a></li>
-        <li role="none"><a href="contato.html" role="menuitem">Contato</a></li>
-      </ul>
+        </div>
 
-      <div class="nav-buttons">
-        <button class="account-link" type="button"
-          onclick="window.open('https://brb.genialinvestimentos.com.br/auth/login','_blank','noopener,noreferrer')">
-          Acesse seus Investimentos
+        <ul class="nav-links" id="mobileMenu" role="menubar">
+          <li class="dropdown" role="none">
+            <a href="javascript:void(0)" class="dropdown-toggle active" role="menuitem" aria-haspopup="true" aria-expanded="false">
+              Produtos e Serviços 
+              <span class="chevron" aria-hidden="true">▾</span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+              <li role="none" class="has-submenu">
+                <a href="renda-fixa.html" role="menuitem">
+                  Renda Fixa 
+                  <span class="chevron-right"></span>
+                </a>
+              </li>
+              <li role="none" class="has-submenu">
+                <a href="renda-variavel.html" role="menuitem">
+                  Renda Variável 
+                  <span class="chevron-right"></span>
+                </a>
+              </li>
+              <li role="none" class="has-submenu">
+                <a href="previdencia.html" role="menuitem">
+                  Previdência 
+                  <span class="chevron-right"></span>
+                </a>
+              </li>
+              <li role="none" class="has-submenu">
+                <a href="fundos.html" role="menuitem">
+                  Fundos 
+                  <span class="chevron-right"></span>
+                </a>
+              </li>
+              <li role="none" class="has-submenu">
+                <a href="mercado-futuro.html" role="menuitem">
+                  Mercado Futuro 
+                  <span class="chevron-right"></span>
+                </a>
+              </li>
+              <li role="none" class="has-submenu">
+                <a href="tesouro-direto.html" role="menuitem">
+                  Tesouro Direto 
+                  <span class="chevron-right"></span>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="dropdown" role="none">
+            <a href="javascript:void(0)" class="dropdown-toggle" role="menuitem" aria-haspopup="true" aria-expanded="false">
+              Conteúdo 
+              <span class="chevron" aria-hidden="true">▾</span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+              <li role="none">
+                <a href="https://analisa.genialinvestimentos.com.br/" role="menuitem" target="_blank" rel="noopener noreferrer">Genial Analisa</a>
+              </li>
+              <li role="none">
+                <a href="newsletter.html" role="menuitem">Newsletter</a>
+              </li>
+              <li role="none">
+                <a href="tutoriais.html" role="menuitem">Guias Práticos</a>
+              </li>
+              <li role="none">
+                <a href="site em construção.html" role="menuitem">Educação Investidora</a>
+              </li>
+            </ul>
+          </li>
+          <li role="none">
+            <a href="sobrenos.html" role="menuitem">Sobre nós</a>
+          </li>
+          <li role="none">
+            <a href="contato.html" role="menuitem">Contato</a>
+          </li>
+        </ul>
+
+        <div class="nav-buttons">
+          <button class="account-link" type="button" onclick="window.open('https://brb.genialinvestimentos.com.br/auth/login','_blank','noopener,noreferrer')">
+            Acesse seus Investimentos
+          </button>
+        </div>
+
+        <button class="mobile-menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span>
+          <span></span>
+          <span></span>
         </button>
-      </div>
+        
+        <div class="menu-overlay" aria-hidden="true"></div>
+        <button class="mobile-menu-close" type="button" aria-label="Fechar menu">&times;</button>
+      </nav>
+    </header>
 
-      <button class="mobile-menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
-        <span></span><span></span><span></span>
-      </button>
-      <div class="menu-overlay" aria-hidden="true"></div>
-      <button class="mobile-menu-close" type="button" aria-label="Fechar menu">&times;</button>
-    </nav>
-  </header>
-
-
-  <!-- ===================================================
-       HERO
-  ==================================================== -->
-  <section class="rv-hero" id="topo">
-    <div class="diagonal-line" aria-hidden="true"></div>
-    <div class="rv-hero-inner">
-      <div class="rv-hero-badge"> Renda Variável</div>
-      <h1>
-        Invista no <span class="highlight">potencial</span><br>
-        do mercado
-      </h1>
-      <p class="hero-desc">
-        Com a Renda Variável na BRB Investimentos, você acessa ações, ETFs, FIIs e muito mais —
-        com análise especializada, plataforma completa e o suporte de quem entende do mercado.
-      </p>
-      <div class="rv-hero-ctas">
-        <button class="btn-rf-primary" onclick="window.open('https://brb.genialinvestimentos.com.br/auth/login','_blank','noopener,noreferrer')">
+    <section class="rv-hero" id="topo">
+      <div class="diagonal-line" aria-hidden="true"></div>
+      <div class="rv-hero-inner">
+        <div class="rv-hero-badge"> Renda Variável</div>
+        <h1>
+          Invista no <span class="highlight">potencial</span><br>
+          do mercado
+        </h1>
+        <p class="hero-desc">
+          Com a Renda Variável na BRB Investimentos, você acessa ações, ETFs, FIIs e muito mais — com análise especializada, plataforma completa e o suporte de quem entende do mercado.
+        </p>
+        <div class="rv-hero-ctas">
+          <button class="btn-rf-primary" onclick="window.open('https://brb.genialinvestimentos.com.br/auth/login','_blank','noopener,noreferrer')">
             Comece a investir
           </button>
-          <button class="btn-rf-outline" onclick="document.getElementById('produtos').scrollIntoView({behavior:'smooth'})">
+          <button class="btn-rf-outline" onclick="document.getElementById('produtos-educativo').scrollIntoView({behavior:'smooth'})">
             Ver produtos
           </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="edu-section" id="produtos-educativo">
+      <div class="edu-inner">
+        <div class="edu-header">
+          <div class="edu-tag">Conheça os produtos</div>
+          <h2>Invista com <span class="edu-highlight">conhecimento</span></h2>
+          <p>Entenda como funciona cada produto de renda variável disponível na BRB Investimentos e descubra qual combina com o seu perfil. Clique em um card para aprender mais.</p>
+        </div>
+
+        <div class="edu-grid">
+          <div class="edu-card" data-modal="cdb" role="button" tabindex="0" aria-label="Saiba mais sobre Ações">
+            <div class="edu-card__stripe edu-card__stripe--cdb"></div>
+            <div class="edu-card__body">
+              <div class="edu-card__icon edu-card__icon--cdb">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0056A8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="7" width="20" height="14" rx="2" />
+                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                </svg>
+              </div>
+              <div class="edu-card__label">Renda Variável</div>
+              <div class="edu-card__title">Ações</div>
+              <div class="edu-card__desc">Torne-se sócio das maiores empresas do país — lucre com a valorização das cotas e o recebimento de dividendos.</div>
+              <div class="edu-card__attrs">
+                <span class="edu-attr edu-attr--cdb">💰 Dividendos</span>
+                <span class="edu-attr edu-attr--cdb">Alta Liquidez</span>
+                <span class="edu-attr edu-attr--cdb">Sócio de Empresas</span>
+              </div>
+            </div>
+            <div class="edu-card__cta edu-card__cta--cdb">
+              <span>Saiba mais</span>
+              <div class="edu-card__arrow edu-card__arrow--cdb">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="edu-card" data-modal="lci" role="button" tabindex="0" aria-label="Saiba mais sobre FIIs">
+            <div class="edu-card__stripe edu-card__stripe--lci"></div>
+            <div class="edu-card__body">
+              <div class="edu-card__icon edu-card__icon--lci">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22V12M12 12C12 12 7 10 4 6c4 0 8 2 8 6zM12 12c0 0 5-2 8-6-4 0-8 2-8 6z" />
+                  <path d="M5 20h14" />
+                </svg>
+              </div>
+              <div class="edu-card__label">Renda Variável</div>
+              <div class="edu-card__title">FIIs</div>
+              <div class="edu-card__desc">Fundos Imobiliários — receba aluguéis mensais investindo em grandes shoppings, prédios e galpões logísticos.</div>
+              <div class="edu-card__attrs">
+                <span class="edu-attr edu-attr--lci">✓ Isento de IR*</span>
+                <span class="edu-attr edu-attr--lci">🏠 Renda Mensal</span>
+                <span class="edu-attr edu-attr--lci">Setor Imobiliário</span>
+              </div>
+            </div>
+            <div class="edu-card__cta edu-card__cta--lci">
+              <span>Saiba mais</span>
+              <div class="edu-card__arrow edu-card__arrow--lci">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="edu-card" data-modal="debenture" role="button" tabindex="0" aria-label="Saiba mais sobre ETFs">
+            <div class="edu-card__stripe edu-card__stripe--deb"></div>
+            <div class="edu-card__body">
+              <div class="edu-card__icon edu-card__icon--deb">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
+                  <polyline points="16 7 22 7 22 13" />
+                </svg>
+              </div>
+              <div class="edu-card__label">Renda Variável</div>
+              <div class="edu-card__title">ETFs</div>
+              <div class="edu-card__desc">Fundos de Índice — diversifique sua carteira em dezenas de ativos globais ou locais através de uma única cota.</div>
+              <div class="edu-card__attrs">
+                <span class="edu-attr edu-attr--deb">🌐 Diversificação</span>
+                <span class="edu-attr edu-attr--deb">📈 Baixo Custo</span>
+                <span class="edu-attr edu-attr--deb">Gestão Passiva</span>
+              </div>
+            </div>
+            <div class="edu-card__cta edu-card__cta--deb">
+              <span>Saiba mais</span>
+              <div class="edu-card__arrow edu-card__arrow--deb">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="edu-overlay" id="eduOverlay" role="dialog" aria-modal="true" aria-labelledby="eduModalTitle">
+
+      <div class="edu-modal" id="modal-cdb" style="display:none">
+        <div class="edu-modal__header">
+          <button class="edu-modal__close" aria-label="Fechar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          </button>
+          <div class="edu-modal__pill edu-modal__pill--cdb">Mercado de Capitais</div>
+          <h2 class="edu-modal__title" id="eduModalTitle">O que são Ações?</h2>
+          <p class="edu-modal__subtitle">A menor parcela do capital de uma empresa. Ao comprar, você se torna "dono" de uma parte do negócio.</p>
+        </div>
+        <div class="edu-modal__body">
+          <div class="edu-modal__explainer">
+            <div class="edu-modal__explainer-icon edu-modal__explainer-icon--cdb">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#0056A8" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="7" width="20" height="14" rx="2" />
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+              </svg>
+            </div>
+            <p>Ao investir em ações via <strong>BRB Investimentos</strong>, você participa dos resultados de grandes companhias. O lucro vem da valorização das ações na Bolsa ou da distribuição de proventos aos acionistas.</p>
+          </div>
+          <div class="edu-modal__section">
+            <div class="edu-modal__section-title edu-modal__section-title--cdb">Como funciona</div>
+            <ul class="edu-modal__list edu-modal__list--cdb">
+              <li>As negociações ocorrem em tempo real no Home Broker durante o pregão</li>
+              <li>A rentabilidade é variável e depende da oferta, procura e saúde da empresa</li>
+              <li>Você pode receber Dividendos e Juros sobre Capital Próprio (JCP) direto na conta</li>
+              <li>A liquidação financeira ocorre em D+2 (dois dias úteis após a venda)</li>
+            </ul>
+          </div>
+          <div class="edu-modal__section">
+            <div class="edu-modal__section-title edu-modal__section-title--cdb">Por que escolher</div>
+            <ul class="edu-modal__list edu-modal__list--cdb">
+              <li>Maior potencial de retorno no longo prazo comparado à renda fixa tradicional</li>
+              <li>Isenção de IR para vendas de até R$ 20 mil dentro do mesmo mês (para PF)</li>
+              <li>Liberdade para montar sua carteira de acordo com sua estratégia e setor favorito</li>
+              <li>Diversificação do patrimônio em ativos reais da economia brasileira</li>
+            </ul>
+          </div>
+          <div class="edu-modal__attrs-grid">
+            <div class="edu-modal__attr-item">
+              <div class="attr-label">Imposto de Renda</div>
+              <div class="attr-value">15% s/ lucro <small>(Operações comuns)</small></div>
+            </div>
+            <div class="edu-modal__attr-item">
+              <div class="attr-label">Garantia</div>
+              <div class="attr-value">Sem FGC <small>Risco de mercado</small></div>
+            </div>
+            <div class="edu-modal__attr-item">
+              <div class="attr-label">Investimento</div>
+              <div class="attr-value">Lote padrão <small>ou Fracionário</small></div>
+            </div>
+            <div class="edu-modal__attr-item">
+              <div class="attr-label">Liquidez</div>
+              <div class="attr-value">Alta <small>padrão B3 (D+2)</small></div>
+            </div>
+          </div>
+        </div>
+        <div class="edu-modal__footer">
+          <a class="edu-modal__btn edu-modal__btn--cdb" href="taxas.html">
+            Ver principais ações disponiveis na BRB Investimentos
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </a>
+          <p class="edu-modal__disclaimer">* Renda variável envolve riscos. Consulte seu perfil de investidor.</p>
+        </div>
       </div>
 
-      <!-- Live market mini-ticker -->
-      <div class="rv-market-ticker" id="heroTicker">
-        <div class="rv-ticker-item">
-          <span class="rv-ticker-label">Euro</span>
-          <span class="rv-ticker-value" id="tk-eur">—</span>
-          <span class="rv-ticker-change" id="tk-eur-chg">—</span>
+      <div class="edu-modal" id="modal-lci" style="display:none">
+        <div class="edu-modal__header">
+          <button class="edu-modal__close" aria-label="Fechar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          </button>
+          <div class="edu-modal__pill edu-modal__pill--lci">Fundos Imobiliários</div>
+          <h2 class="edu-modal__title">O que são FIIs?</h2>
+          <p class="edu-modal__subtitle">Invista em grandes imóveis sem a burocracia de comprar um bem físico e receba aluguéis mensais.</p>
         </div>
-        <div class="rv-ticker-item">
-          <span class="rv-ticker-label">Ouro</span>
-          <span class="rv-ticker-value" id="tk-xau">—</span>
-          <span class="rv-ticker-change" id="tk-xau-chg">—</span>
+        <div class="edu-modal__body">
+          <div class="edu-modal__explainer">
+            <div class="edu-modal__explainer-icon edu-modal__explainer-icon--lci">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22V12M12 12C12 12 7 10 4 6c4 0 8 2 8 6zM12 12c0 0 5-2 8-6-4 0-8 2-8 6z" />
+                <path d="M5 20h14" />
+              </svg>
+            </div>
+            <p>Os <strong>FIIs</strong> reúnem recursos para investir em ativos do setor imobiliário. Os lucros (aluguéis e vendas) são distribuídos aos cotistas, permitindo que você ganhe com grandes empreendimentos com pouco capital.</p>
+          </div>
+          <div class="edu-modal__section">
+            <div class="edu-modal__section-title edu-modal__section-title--lci">Como funciona</div>
+            <ul class="edu-modal__list edu-modal__list--lci">
+              <li>Você compra cotas do fundo que são negociadas na Bolsa de Valores</li>
+              <li>Pelo menos 95% do lucro líquido deve ser distribuído semestralmente (maioria mensal)</li>
+              <li>Os fundos podem ser de "Tijolo" (imóveis físicos) ou "Papel" (títulos imobiliários)</li>
+              <li>Uma gestão profissional cuida da manutenção, locação e compra dos ativos</li>
+            </ul>
+          </div>
+          <div class="edu-modal__section">
+            <div class="edu-modal__section-title edu-modal__section-title--lci">Por que escolher</div>
+            <ul class="edu-modal__list edu-modal__list--lci">
+              <li>Isenção de IR nos rendimentos mensais para pessoas físicas</li>
+              <li>Geração de renda passiva recorrente (aluguéis pingando na conta todo mês)</li>
+              <li>Acesso a imóveis de alto padrão (shoppings, lajes corporativas) com cotas acessíveis</li>
+              <li>Liquidez muito superior à venda de um imóvel físico tradicional</li>
+            </ul>
+          </div>
+          <div class="edu-modal__attrs-grid">
+            <div class="edu-modal__attr-item">
+              <div class="attr-label">Imposto de Renda</div>
+              <div class="attr-value" style="color:#059669">✓ Isento <small>nos rendimentos (PF)</small></div>
+            </div>
+            <div class="edu-modal__attr-item">
+              <div class="attr-label">Garantia</div>
+              <div class="attr-value">Ativos Reais <small>imóveis e títulos</small></div>
+            </div>
+            <div class="edu-modal__attr-item">
+              <div class="attr-label">Custo inicial</div>
+              <div class="attr-value">Aprox. R$ 100 <small>por cota</small></div>
+            </div>
+            <div class="edu-modal__attr-item">
+              <div class="attr-label">Liquidez</div>
+              <div class="attr-value">D+2 <small>em ambiente de bolsa</small></div>
+            </div>
+          </div>
         </div>
-        <div class="rv-ticker-item">
-          <span class="rv-ticker-label">USD/BRL</span>
-          <span class="rv-ticker-value" id="tk-usd">—</span>
-          <span class="rv-ticker-change" id="tk-usd-chg">—</span>
+        <div class="edu-modal__footer">
+          <a class="edu-modal__btn edu-modal__btn--lci" href="taxas.html">
+            Ver Carteiras Recomendadas FIIs
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </a>
+          <p class="edu-modal__disclaimer">* Isenção de IR válida conforme legislação vigente para investidores pessoa física.</p>
         </div>
-        <div class="rv-ticker-item">
-          <span class="rv-ticker-label">Bitcoin</span>
-          <span class="rv-ticker-value" id="tk-btc">—</span>
-          <span class="rv-ticker-change" id="tk-btc-chg">—</span>
+      </div>
+
+      <div class="edu-modal" id="modal-debenture" style="display:none">
+        <div class="edu-modal__header">
+          <button class="edu-modal__close" aria-label="Fechar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          </button>
+          <div class="edu-modal__pill edu-modal__pill--deb">Fundos de Índice</div>
+          <h2 class="edu-modal__title">O que é um ETF?</h2>
+          <p class="edu-modal__subtitle">A forma mais simples de investir em uma cesta diversificada de ativos nacionais e internacionais.</p>
+        </div>
+        <div class="edu-modal__body">
+          <div class="edu-modal__explainer">
+            <div class="edu-modal__explainer-icon edu-modal__explainer-icon--deb">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
+                <polyline points="16 7 22 7 22 13" />
+              </svg>
+            </div>
+            <p>O <strong>ETF</strong> (Exchange Traded Fund) é um fundo que busca replicar o desempenho de um índice (como o Ibovespa ou o S&P 500). Com apenas uma cota, você investe indiretamente em todas as empresas que compõem esse índice.</p>
+          </div>
+          <div class="edu-modal__section">
+            <div class="edu-modal__section-title edu-modal__section-title--deb">Como funciona</div>
+            <ul class="edu-modal__list edu-modal__list--deb">
+              <li>As cotas são negociadas na Bolsa de Valores como se fossem ações comuns</li>
+              <li>Possuem taxas de administração geralmente muito baixas (gestão passiva)</li>
+              <li>O rendimento do fundo tende a acompanhar fielmente o índice de referência</li>
+              <li>Dividendos recebidos pelas empresas do índice são reinvestidos automaticamente no fundo</li>
+            </ul>
+          </div>
+          <div class="edu-modal__section">
+            <div class="edu-modal__section-title edu-modal__section-title--deb">Por que escolher</div>
+            <ul class="edu-modal__list edu-modal__list--deb">
+              <li>Praticidade: você diversifica sua carteira sem precisar comprar cada ação individualmente</li>
+              <li>Exposição Internacional: invista em índices globais diretamente da sua conta BRB</li>
+              <li>Transparência: você sabe exatamente quais ativos compõem a carteira do índice</li>
+              <li>Ideal para quem busca simplificar a gestão dos investimentos em renda variável</li>
+            </ul>
+          </div>
+          <div class="edu-modal__attrs-grid">
+            <div class="edu-modal__attr-item">
+              <div class="attr-label">Imposto de Renda</div>
+              <div class="attr-value" style="color:#7c3aed">15% s/ lucro <small>(sem isenção de R$ 20k)</small></div>
+            </div>
+            <div class="edu-modal__attr-item">
+              <div class="attr-label">Garantia</div>
+              <div class="attr-value">Índice Ref. <small>ex: Ibovespa, S&P500</small></div>
+            </div>
+            <div class="edu-modal__attr-item">
+              <div class="attr-label">Taxa Adm.</div>
+              <div class="attr-value">Reduzida <small>custo eficiente</small></div>
+            </div>
+            <div class="edu-modal__attr-item">
+              <div class="attr-label">Liquidez</div>
+              <div class="attr-value">D+2 <small>negociação diária</small></div>
+            </div>
+          </div>
+        </div>
+        <div class="edu-modal__footer">
+          <a class="edu-modal__btn edu-modal__btn--deb" href="taxas.html">
+            Conhecer ETFs Disponíveis
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </a>
+          <p class="edu-modal__disclaimer">* Consulte as taxas de corretagem e regulamento de cada fundo.</p>
         </div>
       </div>
     </div>
-  </section>
 
-
-  <!-- ===================================================
-       VANTAGENS
-  ==================================================== -->
-  <section class="rv-advantages">
-    <div class="section-header reveal">
-      <div class="section-tag">Por que escolher</div>
-      <h2>Vantagens da Renda Variável na BRB</h2>
-      <p>Acesse as melhores oportunidades do mercado com suporte especializado e uma plataforma robusta para suas decisões.</p>
-    </div>
-
-    <div class="advantages-grid">
-      <div class="adv-card reveal">
-        <div class="adv-icon">🚀</div>
-        <h3>Potencial de Valorização</h3>
-        <p>A renda variável oferece oportunidades de ganhos superiores à inflação no longo prazo, participando do crescimento das empresas e da economia.</p>
-      </div>
-      <div class="adv-card reveal">
-        <div class="adv-icon">💰</div>
-        <h3>Receba Dividendos</h3>
-        <p>Empresas sólidas distribuem proventos regularmente. Invista em boas pagadoras e construa uma fonte de renda passiva ao longo do tempo.</p>
-      </div>
-      <div class="adv-card reveal">
-        <div class="adv-icon">🌐</div>
-        <h3>Diversificação Real</h3>
-        <p>Acesse setores como tecnologia, energia, agronegócio, finanças e internacional — montando uma carteira verdadeiramente diversificada.</p>
-      </div>
-      <div class="adv-card reveal">
-        <div class="adv-icon">📊</div>
-        <h3>Análise Especializada</h3>
-        <p>Conte com relatórios, recomendações e suporte de analistas para tomar decisões embasadas em dados e no contexto macroeconômico.</p>
-      </div>
-      <div class="adv-card reveal">
-        <div class="adv-icon">🏆</div>
-        <h3>Liquidez Diária</h3>
-        <p>Ações, ETFs e FIIs negociados na B3 oferecem liquidez durante o horário de mercado, garantindo flexibilidade para ajustar sua carteira.</p>
-      </div>
-      <div class="adv-card reveal">
-        <div class="adv-icon">🛡️</div>
-        <h3>Plataforma Completa</h3>
-        <p>Opere com segurança pela plataforma BRB Investimentos, com acesso a cotações em tempo real, gráficos avançados e ferramentas de análise.</p>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ===================================================
-       PRODUTOS — com abas interativas
-  ==================================================== -->
-  <section class="rv-products" id="produtos">
-    <div style="max-width: var(--container); margin: 0 auto;">
+    <section class="rv-advantages">
       <div class="section-header reveal">
-        <div class="section-tag">Nossos Produtos</div>
-        <h2>Escolha o produto certo para o seu perfil</h2>
-        <p>Explore cada instrumento. Clique nos cards para ver mais detalhes.</p>
+        <div class="section-tag">Por que escolher</div>
+        <h2>Vantagens da Renda Variável na BRB Investimentos</h2>
+        <p>Acesse as melhores oportunidades do mercado com suporte especializado e uma plataforma robusta para suas decisões.</p>
       </div>
 
-      <!-- Filtro por perfil -->
-      <div class="products-tabs reveal">
-        <button class="tab-btn active" data-tab="all">Todos os Produtos</button>
-        <button class="tab-btn" data-tab="iniciante">Para Iniciantes</button>
-        <button class="tab-btn" data-tab="moderado">Moderado</button>
-        <button class="tab-btn" data-tab="arrojado">Arrojado</button>
-      </div>
-
-      <div id="tab-all" class="tab-panel active">
-        <div class="products-grid">
-
-          <div class="product-card featured reveal" data-profile="iniciante moderado arrojado">
-            <div class="product-icon">📈</div>
-            <div class="product-info">
-              <h3>Ações — Bolsa de Valores (B3)</h3>
-              <p>Ao comprar ações, você se torna sócio de uma empresa e participa do seu crescimento. Além da valorização das cotas, pode receber dividendos e juros sobre capital próprio.</p>
-            </div>
-            <div class="product-detail">
-              <ul class="product-detail-list">
-                <li>Liquidez diária durante o pregão (10h às 17h)</li>
-                <li>Disponível no mercado fracionário a partir de 1 ação</li>
-                <li>Isenção de IR em vendas até R$ 20.000/mês</li>
-                <li>Dividendos isentos de IR para pessoa física</li>
-              </ul>
-            </div>
-            <div class="product-tag popular">Mais Negociado</div>
-            <p class="product-expand-hint">Clique para ver mais ↓</p>
-          </div>
-
-          <div class="product-card reveal" data-profile="iniciante moderado">
-            <div class="product-icon">🏢</div>
-            <div class="product-info">
-              <h3>FIIs — Fundos de Investimento Imobiliário</h3>
-              <p>Invista no mercado imobiliário sem precisar comprar um imóvel. Os FIIs distribuem rendimentos mensais isentos de IR e são negociados diariamente na B3.</p>
-            </div>
-            <div class="product-detail">
-              <ul class="product-detail-list">
-                <li>Rendimentos mensais isentos de IR para PF</li>
-                <li>Diversificação imobiliária a partir de R$ 10</li>
-                <li>Tipos: Papel, Tijolo, Híbridos e FOFs</li>
-                <li>Gestão profissional inclusa</li>
-              </ul>
-            </div>
-            <div class="product-tag safe">Isento de IR nos Proventos</div>
-            <p class="product-expand-hint">Clique para ver mais ↓</p>
-          </div>
-
-          <div class="product-card reveal" data-profile="iniciante moderado">
-            <div class="product-icon">📦</div>
-            <div class="product-info">
-              <h3>ETFs — Exchange Traded Funds</h3>
-              <p>Fundos negociados em bolsa que replicam índices como o Ibovespa e o S&P 500. Permitem diversificação com baixo custo e simplicidade operacional.</p>
-            </div>
-            <div class="product-detail">
-              <ul class="product-detail-list">
-                <li>Taxa de administração muito baixa (0,1% a 0,5% a.a.)</li>
-                <li>Rebalanceamento automático da carteira</li>
-                <li>Exposição a centenas de ativos em uma compra</li>
-                <li>Indicado para estratégias passivas de longo prazo</li>
-              </ul>
-            </div>
-            <div class="product-tag moderate">Baixo Custo</div>
-            <p class="product-expand-hint">Clique para ver mais ↓</p>
-          </div>
-
-          <div class="product-card reveal" data-profile="moderado arrojado">
-            <div class="product-icon">🌍</div>
-            <div class="product-info">
-              <h3>BDRs — Brazilian Depositary Receipts</h3>
-              <p>Acesse ações de empresas internacionais como Apple, Amazon e Google diretamente pela B3, sem precisar abrir conta no exterior.</p>
-            </div>
-            <div class="product-detail">
-              <ul class="product-detail-list">
-                <li>Acesso a +500 empresas globais pela B3</li>
-                <li>Proteção natural contra desvalorização do real</li>
-                <li>Mesma tributação das ações brasileiras</li>
-                <li>Negociação em reais, sem câmbio</li>
-              </ul>
-            </div>
-            <div class="product-tag moderate">Exposição Internacional</div>
-            <p class="product-expand-hint">Clique para ver mais ↓</p>
-          </div>
-
-          <div class="product-card reveal" data-profile="arrojado">
-            <div class="product-icon">⚙️</div>
-            <div class="product-info">
-              <h3>Opções</h3>
-              <p>Contratos que dão o direito de comprar ou vender um ativo por um preço determinado. Utilizados para proteção de carteira (hedge) ou alavancagem estratégica.</p>
-            </div>
-            <div class="product-detail">
-              <ul class="product-detail-list">
-                <li>Calls: direito de compra no preço de exercício</li>
-                <li>Puts: proteção contra quedas da carteira</li>
-                <li>Vencimento mensal ou trimestral</li>
-                <li>Recomendado para investidores experientes</li>
-              </ul>
-            </div>
-            <div class="product-tag risk">Investidor Qualificado</div>
-            <p class="product-expand-hint">Clique para ver mais ↓</p>
-          </div>
-
+      <div class="advantages-grid">
+        <div class="adv-card reveal">
+          <div class="adv-icon">🚀</div>
+          <h3>Potencial de Valorização</h3>
+          <p>A renda variável oferece oportunidades de ganhos superiores à inflação no longo prazo, participando do crescimento das empresas e da economia.</p>
+        </div>
+        <div class="adv-card reveal">
+          <div class="adv-icon">💰</div>
+          <h3>Receba Dividendos</h3>
+          <p>Empresas sólidas distribuem proventos regularmente. Invista em boas pagadoras e construa uma fonte de renda passiva ao longo do tempo.</p>
+        </div>
+        <div class="adv-card reveal">
+          <div class="adv-icon">🌐</div>
+          <h3>Diversificação Real</h3>
+          <p>Acesse setores como tecnologia, energia, agronegócio, finanças e internacional — montando uma carteira verdadeiramente diversificada.</p>
+        </div>
+        <div class="adv-card reveal">
+          <div class="adv-icon">📊</div>
+          <h3>Análise Especializada</h3>
+          <p>Conte com relatórios, recomendações e suporte de analistas para tomar decisões embasadas em dados e no contexto macroeconômico.</p>
+        </div>
+        <div class="adv-card reveal">
+          <div class="adv-icon">🏆</div>
+          <h3>Liquidez Diária</h3>
+          <p>Ações, ETFs e FIIs negociados na B3 oferecem liquidez durante o horário de mercado, garantindo flexibilidade para ajustar sua carteira.</p>
+        </div>
+        <div class="adv-card reveal">
+          <div class="adv-icon">🛡️</div>
+          <h3>Plataforma Completa</h3>
+          <p>Opere com segurança pela plataforma BRB Investimentos, com acesso a cotações em tempo real, gráficos avançados e ferramentas de análise.</p>
         </div>
       </div>
+    </section>
 
-    </div>
-  </section>
+    <section class="rv-steps">
+      <div class="steps-inner" style="max-width: var(--container); margin: 0 auto;">
+        <div class="section-header">
+          <div class="section-tag">Passo a passo</div>
+          <h2>Como começar a investir em Renda Variável</h2>
+          <p>Em poucos passos, você já pode acessar o mercado de ações e outros ativos de renda variável.</p>
+        </div>
 
+        <div class="steps-grid">
+          <div class="step-card reveal">
+            <div class="step-number">01</div>
+            <h3>Abra sua conta</h3>
+            <p>Crie sua conta na BRB Investimentos de forma 100% digital. Leva menos de 5 minutos.</p>
+          </div>
+          <div class="step-card reveal">
+            <div class="step-number">02</div>
+            <h3>Faça seu perfil</h3>
+            <p>Responda ao suitability para descobrir seu perfil de investidor e confirmar aptidão para renda variável.</p>
+          </div>
+          <div class="step-card reveal">
+            <div class="step-number">03</div>
+            <h3>Transfira recursos</h3>
+            <p>Faça uma transferência para sua conta na BRB Investimentos de qualquer banco, sem complicação.</p>
+          </div>
+          <div class="step-card reveal">
+            <div class="step-number">04</div>
+            <h3>Opere com segurança</h3>
+            <p>Acesse o Home Broker, pesquise os ativos e envie suas ordens diretamente para a B3 com total segurança.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <!-- ===================================================
-       FAQ
-  ==================================================== -->
-  <section class="rv-faq" id="entenda">
-    <div class="faq-layout">
-      <div class="faq-left reveal">
-        <div class="section-tag" style="margin-bottom: 1rem;">Entenda</div>
-        <h2>Tire suas dúvidas sobre Renda Variável</h2>
-        <p>Reunimos as perguntas mais frequentes para ajudar você a investir com mais confiança e clareza.</p>
-       <button class="btn-rf-primary" onclick="window.open('assessores.html#equipe')">
+    <section class="rv-cta-section">
+      <div class="cta-box reveal">
+        <div class="section-tag" style="margin-bottom: 1.2rem;">BRB Investimentos</div>
+        <h2>Pronto para participar do mercado?</h2>
+        <p>Acesse a plataforma e explore ações, FIIs, ETFs e muito mais, com análise especializada e suporte da BRB.</p>
+        <div class="cta-buttons">
+          <button class="btn-cta-primary" onclick="window.open('https://brb.genialinvestimentos.com.br/auth/login','_blank','noopener,noreferrer')">
+            Acessar minha conta
+          </button>
+          <button class="btn-cta-secondary" onclick="window.location.href='https://forms.office.com/r/1EsKit6Ce9'">
+            Falar com um assessor
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="rv-faq" id="entenda">
+      <div class="faq-layout">
+        <div class="faq-left reveal">
+          <div class="section-tag" style="margin-bottom: 1rem;">Entenda</div>
+          <h2>Tire suas dúvidas sobre Renda Variável</h2>
+          <p>Reunimos as perguntas mais frequentes para ajudar você a investir com mais confiança e clareza.</p>
+          <button class="btn-rf-primary" onclick="window.open('assessores.html#equipe')">
             Conheça nossa equipe
           </button>
-      </div>
+        </div>
 
-      <div class="faq-list reveal">
-        <div class="faq-item">
-          <button class="faq-trigger" aria-expanded="false">
-            <span>O que é Renda Variável e como ela funciona?</span>
-            <div class="faq-icon" aria-hidden="true">+</div>
-          </button>
-          <div class="faq-body">
-            <div class="faq-body-inner">
-              Renda variável é uma categoria de investimentos cujo retorno não é definido previamente. Os ganhos (ou perdas) dependem do desempenho do ativo no mercado. Ao comprar uma ação, você passa a ser sócio de uma empresa e seu resultado varia conforme o desempenho desta. Os principais fatores que influenciam os preços são: resultados financeiros, cenário macroeconômico, juros, câmbio e expectativas dos investidores.
+        <div class="faq-list reveal">
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>O que é Renda Variável e como ela funciona?</span>
+              <div class="faq-icon" aria-hidden="true">+</div>
+            </button>
+            <div class="faq-body">
+              <div class="faq-body-inner">
+                Renda variável é uma categoria de investimentos cujo retorno não é definido previamente. Os ganhos (ou perdas) dependem do desempenho do ativo no mercado. Ao comprar uma ação, você passa a ser sócio de uma empresa e seu resultado varia conforme o desempenho desta. Os principais fatores que influenciam os preços são: resultados financeiros, cenário macroeconômico, juros, câmbio e expectativas dos investidores.
+              </div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>Renda Variável é para qualquer perfil de investidor?</span>
+              <div class="faq-icon" aria-hidden="true">+</div>
+            </button>
+            <div class="faq-body">
+              <div class="faq-body-inner">
+                A renda variável é mais adequada para investidores com perfil moderado a arrojado, com horizonte de médio a longo prazo e tolerância a oscilações. No entanto, mesmo investidores conservadores podem ter uma pequena parcela em renda variável para diversificação. O importante é que o investimento esteja alinhado ao seu suitability e objetivos.
+              </div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>Qual o valor mínimo para começar a investir em ações?</span>
+              <div class="faq-icon" aria-hidden="true">+</div>
+            </button>
+            <div class="faq-body">
+              <div class="faq-body-inner">
+                Na BRB Investimentos, você pode começar a investir a partir de valores muito acessíveis. É possível comprar ações no mercado fracionário a partir de 1 unidade, o que significa que algumas ações podem custar apenas alguns reais. O mais importante é começar, mesmo que aos poucos, e aumentar gradualmente a exposição ao longo do tempo.
+              </div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>Como funciona a tributação na Renda Variável?</span>
+              <div class="faq-icon" aria-hidden="true">+</div>
+            </button>
+            <div class="faq-body">
+              <div class="faq-body-inner">
+                Para ações: vendas de até R$ 20.000/mês são isentas de IR. Acima disso, incide 15% sobre o lucro (20% em day trade). Os proventos de FIIs são isentos de IR para pessoa física nas condições previstas em lei. O imposto deve ser recolhido mensalmente via DARF pelo próprio investidor.
+              </div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>O que é o Home Broker e como faço para operar?</span>
+              <div class="faq-icon" aria-hidden="true">+</div>
+            </button>
+            <div class="faq-body">
+              <div class="faq-body-inner">
+                O Home Broker é a plataforma digital que permite ao investidor enviar ordens de compra e venda diretamente para a bolsa. Na BRB Investimentos, você tem acesso a um Home Broker completo disponível via web e aplicativo móvel. Basta ter conta aberta, saldo disponível e inserir sua ordem com o ticker do ativo, quantidade e preço.
+              </div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>Qual a diferença entre mercado fracionário e lote padrão?</span>
+              <div class="faq-icon" aria-hidden="true">+</div>
+            </button>
+            <div class="faq-body">
+              <div class="faq-body-inner">
+                No lote padrão, as ações são negociadas em múltiplos de 100 unidades. No mercado fracionário, é possível comprar de 1 a 99 ações de qualquer empresa (ticker seguido de "F", ex: PETR4F). O fracionário tem menor liquidez, mas é excelente para quem está começando ou deseja ajustar posições com precisão. Ambos os mercados são acessíveis pela plataforma BRB Investimentos.
+              </div>
             </div>
           </div>
         </div>
-        <div class="faq-item">
-          <button class="faq-trigger" aria-expanded="false">
-            <span>Renda Variável é para qualquer perfil de investidor?</span>
-            <div class="faq-icon" aria-hidden="true">+</div>
-          </button>
-          <div class="faq-body">
-            <div class="faq-body-inner">
-              A renda variável é mais adequada para investidores com perfil moderado a arrojado, com horizonte de médio a longo prazo e tolerância a oscilações. No entanto, mesmo investidores conservadores podem ter uma pequena parcela em renda variável para diversificação. O importante é que o investimento esteja alinhado ao seu suitability e objetivos.
-            </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-brand">
+          <img src="img/LOGO BRANCA.png" alt="BRB Investimentos" class="footer-logo-img" />
+          <p class="footer-brand-text">Investindo no futuro dos brasileiros com segurança, tecnologia e tradição.</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/brbinvestimentos/" class="footer-social-btn" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+              </svg>
+            </a>
+            <a href="https://youtube.com/@brbinvestimentos?si=MmAK0HAz0J-XOkLa" class="footer-social-btn" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+              </svg>
+            </a>
+            <a href="https://www.facebook.com/share/1CRVbq4UXf/?mibextid=wwXIfr" class="footer-social-btn" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+              </svg>
+            </a>
           </div>
         </div>
-        <div class="faq-item">
-          <button class="faq-trigger" aria-expanded="false">
-            <span>Qual o valor mínimo para começar a investir em ações?</span>
-            <div class="faq-icon" aria-hidden="true">+</div>
-          </button>
-          <div class="faq-body">
-            <div class="faq-body-inner">
-              Na BRB Investimentos, você pode começar a investir a partir de valores muito acessíveis. É possível comprar ações no mercado fracionário a partir de 1 unidade, o que significa que algumas ações podem custar apenas alguns reais. O mais importante é começar, mesmo que aos poucos, e aumentar gradualmente a exposição ao longo do tempo.
-            </div>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-trigger" aria-expanded="false">
-            <span>Como funciona a tributação na Renda Variável?</span>
-            <div class="faq-icon" aria-hidden="true">+</div>
-          </button>
-          <div class="faq-body">
-            <div class="faq-body-inner">
-              Para ações: vendas de até R$ 20.000/mês são isentas de IR. Acima disso, incide 15% sobre o lucro (20% em day trade). Os proventos de FIIs são isentos de IR para pessoa física nas condições previstas em lei. O imposto deve ser recolhido mensalmente via DARF pelo próprio investidor.
-            </div>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-trigger" aria-expanded="false">
-            <span>O que é o Home Broker e como faço para operar?</span>
-            <div class="faq-icon" aria-hidden="true">+</div>
-          </button>
-          <div class="faq-body">
-            <div class="faq-body-inner">
-              O Home Broker é a plataforma digital que permite ao investidor enviar ordens de compra e venda diretamente para a bolsa. Na BRB Investimentos, você tem acesso a um Home Broker completo disponível via web e aplicativo móvel. Basta ter conta aberta, saldo disponível e inserir sua ordem com o ticker do ativo, quantidade e preço.
-            </div>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-trigger" aria-expanded="false">
-            <span>Qual a diferença entre mercado fracionário e lote padrão?</span>
-            <div class="faq-icon" aria-hidden="true">+</div>
-          </button>
-          <div class="faq-body">
-            <div class="faq-body-inner">
-              No lote padrão, as ações são negociadas em múltiplos de 100 unidades. No mercado fracionário, é possível comprar de 1 a 99 ações de qualquer empresa (ticker seguido de "F", ex: PETR4F). O fracionário tem menor liquidez, mas é excelente para quem está começando ou deseja ajustar posições com precisão. Ambos os mercados são acessíveis pela plataforma BRB Investimentos.
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-
-  <!-- ===================================================
-       PASSO A PASSO
-  ==================================================== -->
-  <section class="rv-steps">
-    <div class="steps-inner" style="max-width: var(--container); margin: 0 auto;">
-      <div class="section-header">
-        <div class="section-tag">Passo a passo</div>
-        <h2>Como começar a investir em Renda Variável</h2>
-        <p>Em poucos passos, você já pode acessar o mercado de ações e outros ativos de renda variável.</p>
-      </div>
-
-      <div class="steps-grid">
-        <div class="step-card reveal">
-          <div class="step-number">01</div>
-          <h3>Abra sua conta</h3>
-          <p>Crie sua conta na BRB Investimentos de forma 100% digital. Leva menos de 5 minutos.</p>
+        <div class="footer-column">
+          <h4>Produtos</h4>
+          <ul>
+            <li><a href="renda-fixa.html">Renda Fixa</a></li>
+            <li><a href="fundos.html">Fundos</a></li>
+            <li><a href="previdencia.html">Previdência</a></li>
+            <li><a href="renda-variavel.html">Renda Variável</a></li>
+            <li><a href="mercado-futuro.html">Mercado Futuro</a></li>
+          </ul>
         </div>
-        <div class="step-card reveal">
-          <div class="step-number">02</div>
-          <h3>Faça seu perfil</h3>
-          <p>Responda ao suitability para descobrir seu perfil de investidor e confirmar aptidão para renda variável.</p>
+        <div class="footer-column">
+          <h4>Quem Somos</h4>
+          <ul>
+            <li><a href="sobrenos.html#missao">Nossa Missão</a></li>
+            <li><a href="sobrenos.html#historia">Nossa História</a></li>
+          </ul>
         </div>
-        <div class="step-card reveal">
-          <div class="step-number">03</div>
-          <h3>Transfira recursos</h3>
-          <p>Faça uma transferência para sua conta na BRB Investimentos de qualquer banco, sem complicação.</p>
+        <div class="footer-column">
+          <h4>Fale Conosco</h4>
+          <ul>
+            <li><a href="https://novo.brb.com.br/atendimento/" target="_blank" rel="noopener noreferrer">Central de Atendimento</a></li>
+            <li><a href="https://novo.brb.com.br/atendimento/ouvidoria-brb/" target="_blank" rel="noopener noreferrer">Ouvidoria BRB</a></li>
+          </ul>
         </div>
-        <div class="step-card reveal">
-          <div class="step-number">04</div>
-          <h3>Opere com segurança</h3>
-          <p>Acesse o Home Broker, pesquise os ativos e envie suas ordens diretamente para a B3 com total segurança.</p>
+        <div class="footer-column">
+          <h4>Institucional</h4>
+          <ul>
+            <li><a href="https://www.anbima.com.br/" target="_blank" rel="noopener noreferrer">Anbima</a></li>
+            <li><a href="https://www.b3.com.br/" target="_blank" rel="noopener noreferrer">B3</a></li>
+            <li><a href="https://www.gov.br/cvm/" target="_blank" rel="noopener noreferrer">CVM</a></li>
+            <li><a href="https://www.fgc.org.br/" target="_blank" rel="noopener noreferrer">FGC</a></li>
+            <li><a href="https://www.bcb.gov.br/" target="_blank" rel="noopener noreferrer">Bacen</a></li>
+          </ul>
         </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ===================================================
-       CTA FINAL
-  ==================================================== -->
-  <section class="rv-cta-section">
-    <div class="cta-box reveal">
-      <div class="section-tag" style="margin-bottom: 1.2rem;">BRB Investimentos</div>
-      <h2>Pronto para participar do mercado?</h2>
-      <p>Acesse a plataforma e explore ações, FIIs, ETFs e muito mais, com análise especializada e suporte da BRB.</p>
-      <div class="cta-buttons">
-        <button class="btn-cta-primary"
-          onclick="window.open('https://brb.genialinvestimentos.com.br/auth/login','_blank','noopener,noreferrer')">
-          Acessar minha conta
-        </button>
-        <button class="btn-cta-secondary"
-          onclick="window.location.href='https://forms.office.com/r/1EsKit6Ce9'">
-          Falar com um assessor
-        </button>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ===================================================
-       FOOTER
-  ==================================================== -->
-  <footer>
-    <div class="footer-content">
-      <div class="footer-brand">
-        <img src="img/LOGO BRANCA.png" alt="BRB Investimentos" class="footer-logo-img" />
-        <p class="footer-brand-text">Investindo no futuro dos brasileiros com segurança, tecnologia e tradição.</p>
-        <div class="footer-social">
-          <a href="https://www.instagram.com/brbinvestimentos/" class="footer-social-btn" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-          </a>
-          <a href="https://youtube.com/@brbinvestimentos?si=MmAK0HAz0J-XOkLa" class="footer-social-btn" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-          </a>
-          <a href="https://www.facebook.com/share/1CRVbq4UXf/?mibextid=wwXIfr" class="footer-social-btn" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-          </a>
+        <div class="footer-column regulatorio">
+          <h4>Regulatórios</h4>
+          <ul>
+            <li><a href="pdfs/Política de Privacidade.pdf" target="_blank" rel="noopener noreferrer">Política de Privacidade</a></li>
+            <li><a href="pdfs/4. Termo Abertura Conta Corrente  PF.pdf" target="_blank" rel="noopener noreferrer">Termos de Abertura de Conta</a></li>
+            <li><a href="pdfs/RPA_B3_Genial_Janeiro_2026.pdf" target="_blank" rel="noopener noreferrer">Regras e Parâmetros de Atuação</a></li>
+            <li><a href="pdfs/CONTRATO DE INTERMEDIAÇÃO.pdf" target="_blank" rel="noopener noreferrer">Contrato de Intermediação</a></li>
+          </ul>
         </div>
       </div>
 
-      <div class="footer-column">
-        <h4>Produtos</h4>
-        <ul>
-          <li><a href="renda-fixa.html">Renda Fixa</a></li>
-          <li><a href="fundos.html">Fundos</a></li>
-          <li><a href="previdencia.html">Previdência</a></li>
-          <li><a href="renda-variavel.html">Renda Variável</a></li>
-          <li><a href="mercado-futuro.html">Mercado Futuro</a></li>
-        </ul>
+      <div class="footer-bottom">
+        <div class="footer-left">
+          <img class="footer-mark" src="https://framerusercontent.com/images/ZRAogsRUCyrDvJX2BCEBRqoGhWY.svg?width=142&height=33" alt="Banco Central" />
+          <img class="footer-mark" src="https://framerusercontent.com/images/mHJ8wt4h7RrXbxoN3I2zNtlIMw.svg?width=90&height=41" alt="B3" />
+        </div>
+        <div class="footer-center">
+          <p class="brbdireitos">© 2026 BRB Investimentos</p>
+          <p class="footer-address">BL B — Centro Empresarial CNC — SAUN Quadra 5, Lote C, 2º andar — Brasília/DF</p>
+        </div>
+        <div class="footer-right footer-certificados">
+          <img src="img/distribuicao-geral.jpg" alt="Certificado Anbima Distribuição" />
+          <img src="img/art-administracao.jpg" alt="Certificado Anbima Administração" />
+        </div>
       </div>
-      <div class="footer-column">
-        <h4>Quem Somos</h4>
-        <ul>
-          <li><a href="sobrenos.html#missao">Nossa Missão</a></li>
-          <li><a href="sobrenos.html#historia">Nossa História</a></li>
-        </ul>
-      </div>
-      <div class="footer-column">
-        <h4>Fale Conosco</h4>
-        <ul>
-          <li><a href="https://novo.brb.com.br/atendimento/" target="_blank" rel="noopener noreferrer">Central de Atendimento</a></li>
-          <li><a href="https://novo.brb.com.br/atendimento/ouvidoria-brb/" target="_blank" rel="noopener noreferrer">Ouvidoria BRB</a></li>
-        </ul>
-      </div>
-      <div class="footer-column">
-        <h4>Institucional</h4>
-        <ul>
-          <li><a href="https://www.anbima.com.br/" target="_blank" rel="noopener noreferrer">Anbima</a></li>
-          <li><a href="https://www.b3.com.br/" target="_blank" rel="noopener noreferrer">B3</a></li>
-          <li><a href="https://www.gov.br/cvm/" target="_blank" rel="noopener noreferrer">CVM</a></li>
-          <li><a href="https://www.fgc.org.br/" target="_blank" rel="noopener noreferrer">FGC</a></li>
-          <li><a href="https://www.bcb.gov.br/" target="_blank" rel="noopener noreferrer">Bacen</a></li>
-        </ul>
-      </div>
-      <div class="footer-column regulatorio">
-        <h4>Regulatórios</h4>
-        <ul>
-          <li><a href="pdfs/Política de Privacidade.pdf" target="_blank" rel="noopener noreferrer">Política de Privacidade</a></li>
-          <li><a href="pdfs/4. Termo Abertura Conta Corrente  PF.pdf" target="_blank" rel="noopener noreferrer">Termos de Abertura de Conta</a></li>
-          <li><a href="pdfs/RPA_B3_Genial_Janeiro_2026.pdf" target="_blank" rel="noopener noreferrer">Regras e Parâmetros de Atuação</a></li>
-          <li><a href="pdfs/CONTRATO DE INTERMEDIAÇÃO.pdf" target="_blank" rel="noopener noreferrer">Contrato de Intermediação</a></li>
-        </ul>
-      </div>
-    </div>
+    </footer>
 
-    <div class="footer-bottom">
-      <div class="footer-left">
-        <img class="footer-mark" src="https://framerusercontent.com/images/ZRAogsRUCyrDvJX2BCEBRqoGhWY.svg?width=142&height=33" alt="Banco Central" />
-        <img class="footer-mark" src="https://framerusercontent.com/images/mHJ8wt4h7RrXbxoN3I2zNtlIMw.svg?width=90&height=41" alt="B3" />
-      </div>
-      <div class="footer-center">
-        <p class="brbdireitos">© 2026 BRB Investimentos</p>
-        <p class="footer-address">BL B — Centro Empresarial CNC — SAUN Quadra 5, Lote C, 2º andar — Brasília/DF</p>
-      </div>
-      <div class="footer-right footer-certificados">
-        <img src="img/distribuicao-geral.jpg" alt="Certificado Anbima Distribuição" />
-        <img src="img/art-administracao.jpg" alt="Certificado Anbima Administração" />
-      </div>
-    </div>
-  </footer>
+    <button class="floating-cta" id="floatingCta" onclick="window.open('https://brb.genialinvestimentos.com.br/auth/login','_blank','noopener,noreferrer')">
+      Começar a investir
+    </button>
 
-  <!-- Floating CTA -->
-  <button class="floating-cta" id="floatingCta"
-    onclick="window.open('https://brb.genialinvestimentos.com.br/auth/login','_blank','noopener,noreferrer')">
-   
-    Começar a investir
-  </button>
+    <script src="script.js"></script>
 
-  <script src="script.js"></script>
-
-</body>
+  </body>
 </html>

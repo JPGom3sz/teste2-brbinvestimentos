@@ -1,505 +1,724 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mercado Futuro — BRB Investimentos</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mercado Futuro — BRB Investimentos</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style-enhance.css" />
-  <link rel="stylesheet" href="css/produtos-base.css" />
-  <link rel="stylesheet" href="css/mercado-futuro.css" />
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/mobile-nav.css" />
-</head>
-<body>
-  <div class="reading-progress"><div class="reading-progress__bar" id="readingBar"></div></div>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style-enhance.css" />
+    <link rel="stylesheet" href="css/produtos-base.css" />
+    <link rel="stylesheet" href="css/mercado-futuro.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/mobile-nav.css" />
+  </head>
+  <body>
 
-  <!-- ===================================================
-       HEADER
-  ==================================================== -->
-  <header id="site-header">
-    <nav>
-      <div class="logo">
-        <a href="index.html" aria-label="BRB Investimentos — Início">
-          <img src="img/quartinho(1).png" alt="BRB Investimentos" />
-        </a>
-      </div>
+    <div class="reading-progress">
+      <div class="reading-progress__bar" id="readingBar"></div>
+    </div>
 
-      <ul class="nav-links" id="mobileMenu" role="menubar">
-
-        <li class="dropdown" role="none">
-          <a href="javascript:void(0)" class="dropdown-toggle active" role="menuitem"
-             aria-haspopup="true" aria-expanded="false">
-            Produtos e Serviços <span class="chevron" aria-hidden="true">▾</span>
+    <header id="site-header">
+      <nav>
+        <div class="logo">
+          <a href="index.html" aria-label="BRB Investimentos — Início">
+            <img src="img/quartinho(1).png" alt="BRB Investimentos" />
           </a>
-          <ul class="dropdown-menu" role="menu">
-            <li role="none" class="has-submenu"><a href="renda-fixa.html" role="menuitem">Renda Fixa <span class="chevron-right"></span></a></li>
-            <li role="none" class="has-submenu"><a href="renda-variavel.html" role="menuitem">Renda Variável <span class="chevron-right"></span></a></li>
-            <li role="none" class="has-submenu"><a href="previdencia.html" role="menuitem">Previdência <span class="chevron-right"></span></a></li>
-            <li role="none" class="has-submenu"><a href="fundos.html" role="menuitem">Fundos <span class="chevron-right"></span></a></li>
-            <li role="none" class="has-submenu"><a href="mercado-futuro.html" role="menuitem">Mercado Futuro <span class="chevron-right"></span></a></li>
-          </ul>
-        </li>
+        </div>
 
-        <li class="dropdown" role="none">
-          <a href="javascript:void(0)" class="dropdown-toggle" role="menuitem"
-             aria-haspopup="true" aria-expanded="false">
-            Conteúdo <span class="chevron" aria-hidden="true">▾</span>
+        <ul class="nav-links" id="mobileMenu" role="menubar">
+          <li class="dropdown" role="none">
+            <a href="javascript:void(0)" class="dropdown-toggle active" role="menuitem" aria-haspopup="true" aria-expanded="false">
+              Produtos e Serviços 
+              <span class="chevron" aria-hidden="true">▾</span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+              <li role="none" class="has-submenu">
+                <a href="renda-fixa.html" role="menuitem">
+                  Renda Fixa <span class="chevron-right"></span>
+                </a>
+              </li>
+              <li role="none" class="has-submenu">
+                <a href="renda-variavel.html" role="menuitem">
+                  Renda Variável <span class="chevron-right"></span>
+                </a>
+              </li>
+              <li role="none" class="has-submenu">
+                <a href="previdencia.html" role="menuitem">
+                  Previdência <span class="chevron-right"></span>
+                </a>
+              </li>
+              <li role="none" class="has-submenu">
+                <a href="fundos.html" role="menuitem">
+                  Fundos <span class="chevron-right"></span>
+                </a>
+              </li>
+              <li role="none" class="has-submenu">
+                <a href="mercado-futuro.html" role="menuitem">
+                  Mercado Futuro <span class="chevron-right"></span>
+                </a>
+              </li>
+              <li role="none" class="has-submenu">
+                <a href="tesouro-direto.html" role="menuitem">
+                  Tesouro Direto <span class="chevron-right"></span>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="dropdown" role="none">
+            <a href="javascript:void(0)" class="dropdown-toggle" role="menuitem" aria-haspopup="true" aria-expanded="false">
+              Conteúdo 
+              <span class="chevron" aria-hidden="true">▾</span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+              <li role="none">
+                <a href="https://analisa.genialinvestimentos.com.br/" role="menuitem" target="_blank" rel="noopener noreferrer">Genial Analisa</a>
+              </li>
+              <li role="none">
+                <a href="newsletter.html" role="menuitem">Newsletter</a>
+              </li>
+              <li role="none">
+                <a href="tutoriais.html" role="menuitem">Guias Práticos</a>
+              </li>
+              <li role="none">
+                <a href="site em construção.html" role="menuitem">Educação Investidora</a>
+              </li>
+            </ul>
+          </li>
+
+          <li role="none"><a href="sobrenos.html" role="menuitem">Sobre nós</a></li>
+          <li role="none"><a href="contato.html" role="menuitem">Contato</a></li>
+        </ul>
+
+        <div class="nav-buttons">
+          <button class="account-link" type="button" onclick="window.open('https://brb.genialinvestimentos.com.br/auth/login','_blank','noopener,noreferrer')">
+            Acesse seus Investimentos
+          </button>
+        </div>
+
+        <button class="mobile-menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <div class="menu-overlay" aria-hidden="true"></div>
+        <button class="mobile-menu-close" type="button" aria-label="Fechar menu">&times;</button>
+      </nav>
+    </header>
+
+    <section class="mf-hero" id="topo">
+      <div class="mf-hero-inner">
+        <div class="mf-hero-badge"> Mercado Futuro</div>
+        <h1>
+          Opere com <span class="highlight">precisão</span><br>
+          no mercado
+        </h1>
+        <p class="hero-desc">
+          O Mercado Futuro da BRB Investimentos oferece acesso a contratos futuros de índices, câmbio, juros e commodities — com plataforma robusta, alavancagem estratégica e suporte especializado para operadores experientes.
+        </p>
+        <div class="mf-hero-ctas">
+         <button class="btn-rf-primary" onclick="window.open('https://brb.genialinvestimentos.com.br/auth/login','_blank','noopener,noreferrer')">
+              Comece a investir
+            </button>
+            <button class="btn-rf-outline" onclick="document.getElementById('produtos-educativo').scrollIntoView({behavior:'smooth'})">
+              Ver produtos
+            </button>
+        </div>
+      </div>
+    </section>
+
+    <div class="risk-banner" role="alert">
+      <div class="risk-banner-inner">
+        <span class="risk-icon" aria-hidden="true">⚠️</span>
+        <p>
+          <strong>Aviso de Risco:</strong> O Mercado Futuro envolve alto grau de risco e é destinado a investidores com perfil arrojado e experiência em derivativos. As perdas podem superar o capital investido. Consulte nossa equipe antes de operar.
+        </p>
+      </div>
+    </div>
+
+    <section class="edu-section" id="produtos-educativo">
+      <div class="edu-inner">
+        <div class="edu-header">
+          <div class="edu-tag">Derivativos</div>
+          <h2>Invista com <span class="edu-highlight">conhecimento</span></h2>
+          <p>Entenda como funciona o Mercado Futuro na BRB Investimentos. Opere contratos de índices, dólar e commodities com alavancagem e agilidade. Clique em um card para aprender mais.</p>
+        </div>
+
+        <div class="edu-grid">
+          <div class="edu-card" data-modal="cdb" role="button" tabindex="0" aria-label="Saiba mais sobre Contratos de Índice">
+            <div class="edu-card__stripe edu-card__stripe--cdb"></div>
+            <div class="edu-card__body">
+              <div class="edu-card__icon edu-card__icon--cdb">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0056A8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="7" width="20" height="14" rx="2" />
+                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                </svg>
+              </div>
+              <div class="edu-card__label">Mercado Futuro</div>
+              <div class="edu-card__title">Índice (WIN/IND)</div>
+              <div class="edu-card__desc">Negocie a expectativa futura do Ibovespa. Ideal para Day Trade ou proteção (hedge) de carteiras de ações.</div>
+              <div class="edu-card__attrs">
+                <span class="edu-attr edu-attr--cdb">⚡ Alavancagem</span>
+                <span class="edu-attr edu-attr--cdb">📉 Hedge</span>
+                <span class="edu-attr edu-attr--cdb">Alta Liquidez</span>
+              </div>
+            </div>
+            <div class="edu-card__cta edu-card__cta--cdb">
+              <span>Saiba mais</span>
+              <div class="edu-card__arrow edu-card__arrow--cdb">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="edu-card" data-modal="lci" role="button" tabindex="0" aria-label="Saiba mais sobre Contratos de Dólar">
+            <div class="edu-card__stripe edu-card__stripe--lci"></div>
+            <div class="edu-card__body">
+              <div class="edu-card__icon edu-card__icon--lci">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22V12M12 12C12 12 7 10 4 6c4 0 8 2 8 6zM12 12c0 0 5-2 8-6-4 0-8 2-8 6z" />
+                  <path d="M5 20h14" />
+                </svg>
+              </div>
+              <div class="edu-card__label">Mercado Futuro</div>
+              <div class="edu-card__title">Dólar (WDO/DOL)</div>
+              <div class="edu-card__desc">Opere a variação da moeda americana. Utilize para especular sobre o câmbio ou proteger compromissos em dólar.</div>
+              <div class="edu-card__attrs">
+                <span class="edu-attr edu-attr--lci">💵 Câmbio</span>
+                <span class="edu-attr edu-attr--lci">💹 Volatilidade</span>
+                <span class="edu-attr edu-attr--lci">Ajustes Diários</span>
+              </div>
+            </div>
+            <div class="edu-card__cta edu-card__cta--lci">
+              <span>Saiba mais</span>
+              <div class="edu-card__arrow edu-card__arrow--lci">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="edu-card" data-modal="debenture" role="button" tabindex="0" aria-label="Saiba mais sobre Commodities">
+            <div class="edu-card__stripe edu-card__stripe--deb"></div>
+            <div class="edu-card__body">
+              <div class="edu-card__icon edu-card__icon--deb">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
+                  <polyline points="16 7 22 7 22 13" />
+                </svg>
+              </div>
+              <div class="edu-card__label">Mercado Futuro</div>
+              <div class="edu-card__title">Commodities</div>
+              <div class="edu-card__desc">Negocie contratos de Boi Gordo, Milho e Café. Conecte sua estratégia ao setor que move a economia do país.</div>
+              <div class="edu-card__attrs">
+                <span class="edu-attr edu-attr--deb">🌾 Agronegócio</span>
+                <span class="edu-attr edu-attr--deb">🐂 Ativos Reais</span>
+                <span class="edu-attr edu-attr--deb">Sazonalidade</span>
+              </div>
+            </div>
+            <div class="edu-card__cta edu-card__cta--deb">
+              <span>Saiba mais</span>
+              <div class="edu-card__arrow edu-card__arrow--deb">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="edu-overlay" id="eduOverlay" role="dialog" aria-modal="true" aria-labelledby="eduModalTitle">
+
+      <div class="edu-modal" id="modal-cdb" style="display:none">
+        <div class="edu-modal__header">
+          <button class="edu-modal__close" aria-label="Fechar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          </button>
+          <div class="edu-modal__pill edu-modal__pill--cdb">Contratos Futuros de Índice</div>
+          <h2 class="edu-modal__title" id="eduModalTitle">O que é o Futuro de Índice?</h2>
+          <p class="edu-modal__subtitle">Negocie a pontuação do Ibovespa para uma data futura com agilidade operacional.</p>
+        </div>
+        <div class="edu-modal__body">
+          <div class="edu-modal__explainer">
+            <div class="edu-modal__explainer-icon edu-modal__explainer-icon--cdb">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#0056A8" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="7" width="20" height="14" rx="2" />
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+              </svg>
+            </div>
+            <p>No <strong>Mercado Futuro</strong> da BRB Investimentos, você opera a expectativa do índice Ibovespa. Ao contrário do mercado à vista, você não compra as ações, mas sim contratos que derivam do valor do índice, permitindo lucrar tanto na alta quanto na queda.</p>
+          </div>
+          <div class="edu-modal__section">
+            <div class="edu-modal__section-title edu-modal__section-title--cdb">Como funciona</div>
+            <ul class="edu-modal__list edu-modal__list--cdb">
+              <li>Operações via código WIN (Mini Índice) ou IND (Índice Cheio)</li>
+              <li>Ajuste Diário: os lucros ou prejuízos são creditados ou debitados diariamente na conta</li>
+              <li>Margem de Garantia: você não precisa do valor total do contrato, apenas uma fração como garantia</li>
+              <li>Vencimento: os contratos possuem datas de validade específicas (meses pares)</li>
+            </ul>
+          </div>
+          <div class="edu-modal__section">
+            <div class="edu-modal__section-title edu-modal__section-title--cdb">Por que escolher</div>
+            <ul class="edu-modal__list edu-modal__list--cdb">
+              <li>Alavancagem: movimente valores maiores do que você tem em conta para maximizar retornos</li>
+              <li>Hedge: proteja sua carteira de ações contra quedas generalizadas do mercado</li>
+              <li>Liquidez Imediata: facilidade para entrar e sair de operações em segundos</li>
+              <li>Ideal para estratégias de curtíssimo prazo (Day Trade)</li>
+            </ul>
+          </div>
+          <div class="edu-modal__attrs-grid">
+            <div class="edu-modal__attr-item">
+              <div class="attr-label">Tributação</div>
+              <div class="attr-value">20% Day Trade / 15% Swing Trade</div>
+            </div>
+            <div class="edu-modal__attr-item">
+              <div class="attr-label">Garantia</div>
+              <div class="attr-value">Margem B3 <small>e corretora</small></div>
+            </div>
+            <div class="edu-modal__attr-item">
+              <div class="attr-label">Ativo-objeto</div>
+              <div class="attr-value">Índice Bovespa</div>
+            </div>
+            <div class="edu-modal__attr-item">
+              <div class="attr-label">Risco</div>
+              <div class="attr-value">Alto <small>(Alavancado)</small></div>
+            </div>
+          </div>
+        </div>
+        <div class="edu-modal__footer">
+          <a class="edu-modal__btn edu-modal__btn--cdb" href="taxas.html">
+            Ver Plataformas de Trading
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
           </a>
-          <ul class="dropdown-menu" role="menu">
-            <li role="none"><a href="https://analisa.genialinvestimentos.com.br/" role="menuitem" target="_blank" rel="noopener noreferrer">Genial Analisa</a></li>
-            <li role="none"><a href="newsletter.html" role="menuitem">Newsletter</a></li>
-            <li role="none"><a href="tutoriais.html" role="menuitem">Guias Práticos</a></li>
-            <li role="none"><a href="site em construção.html" role="menuitem">Educação Investidora</a></li>
-          </ul>
-        </li>
-
-        <li role="none"><a href="sobrenos.html" role="menuitem">Sobre nós</a></li>
-        <li role="none"><a href="contato.html" role="menuitem">Contato</a></li>
-
-      </ul>
-
-      <div class="nav-buttons">
-        <button class="account-link" type="button">Acesse seus Investimentos</button>
+        </div>
       </div>
 
-      <button class="mobile-menu-toggle" type="button"
-              aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
-        <span></span><span></span><span></span>
-      </button>
-
-      <div class="menu-overlay" aria-hidden="true"></div>
-      <button class="mobile-menu-close" type="button" aria-label="Fechar menu">&times;</button>
-    </nav>
-  </header>
-
-
-  <!-- ===================================================
-       HERO
-  ==================================================== -->
-  <section class="mf-hero" id="topo">
-    <div class="mf-hero-inner">
-      <div class="mf-hero-badge"> Mercado Futuro</div>
-      <h1>
-        Opere com <span class="highlight">precisão</span><br>
-        no mercado
-      </h1>
-      <p class="hero-desc">
-        O Mercado Futuro da BRB Investimentos oferece acesso a contratos futuros de índices, câmbio,
-        juros e commodities — com plataforma robusta, alavancagem estratégica e suporte especializado
-        para operadores experientes.
-      </p>
-      <div class="mf-hero-ctas">
-       <button class="btn-rf-primary" onclick="window.open('https://brb.genialinvestimentos.com.br/auth/login','_blank','noopener,noreferrer')">
-            Comece a investir
+      <div class="edu-modal" id="modal-lci" style="display:none">
+        <div class="edu-modal__header">
+          <button class="edu-modal__close" aria-label="Fechar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
           </button>
-          <button class="btn-rf-outline" onclick="document.getElementById('produtos').scrollIntoView({behavior:'smooth'})">
-            Ver produtos
+          <div class="edu-modal__pill edu-modal__pill--lci">Contratos Futuros de Dólar</div>
+          <h2 class="edu-modal__title">O que é o Futuro de Dólar?</h2>
+          <p class="edu-modal__subtitle">Opere a variação da moeda mais importante do mundo diretamente na B3.</p>
+        </div>
+        <div class="edu-modal__body">
+          <div class="edu-modal__explainer">
+            <div class="edu-modal__explainer-icon edu-modal__explainer-icon--lci">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22V12M12 12C12 12 7 10 4 6c4 0 8 2 8 6zM12 12c0 0 5-2 8-6-4 0-8 2-8 6z" />
+                <path d="M5 20h14" />
+              </svg>
+            </div>
+            <p>Os contratos de <strong>Dólar Futuro</strong> permitem negociar a cotação da moeda americana para uma data futura. É um dos ativos mais líquidos do mercado brasileiro, utilizado tanto por investidores individuais quanto por grandes empresas.</p>
+          </div>
+          <div class="edu-modal__section">
+            <div class="edu-modal__section-title edu-modal__section-title--lci">Como funciona</div>
+            <ul class="edu-modal__list edu-modal__list--lci">
+              <li>Operações via código WDO (Mini Dólar) ou DOL (Dólar Cheio)</li>
+              <li>Cada ponto de variação no Mini Dólar equivale a R$ 10,00 por contrato</li>
+              <li>Liquidado apenas financeiramente (você não recebe a moeda física)</li>
+              <li>Vencimento mensal (primeiro dia útil de cada mês)</li>
+            </ul>
+          </div>
+          <div class="edu-modal__section">
+            <div class="edu-modal__section-title edu-modal__section-title--lci">Por que escolher</div>
+            <ul class="edu-modal__list edu-modal__list--lci">
+              <li>Proteção Cambial: ideal para quem possui despesas ou viagens em dólar</li>
+              <li>Alta Volatilidade: oportunidades frequentes de lucro com as oscilações diárias</li>
+              <li>Diversificação: exposição a um ativo descorrelacionado da bolsa brasileira</li>
+              <li>Acessibilidade: com margens reduzidas, é possível operar contratos de alto valor</li>
+            </ul>
+          </div>
+          <div class="edu-modal__attrs-grid">
+            <div class="edu-modal__attr-item">
+              <div class="attr-label">Liquidação</div>
+              <div class="attr-value">Financeira <small>(Ajuste Diário)</small></div>
+            </div>
+            <div class="edu-modal__attr-item">
+              <div class="attr-label">Risco</div>
+              <div class="attr-value">Crítico <small>(Alta Volatilidade)</small></div>
+            </div>
+            <div class="edu-modal__attr-item">
+              <div class="attr-label">Vencimento</div>
+              <div class="attr-value">Mensal</div>
+            </div>
+            <div class="edu-modal__attr-item">
+              <div class="attr-label">Ativo-objeto</div>
+              <div class="attr-value">Dólar Comercial</div>
+            </div>
+          </div>
+        </div>
+        <div class="edu-modal__footer">
+          <a class="edu-modal__btn edu-modal__btn--lci" href="taxas.html">
+            Consultar Margens de Garantia
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="edu-modal" id="modal-debenture" style="display:none">
+        <div class="edu-modal__header">
+          <button class="edu-modal__close" aria-label="Fechar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
           </button>
+          <div class="edu-modal__pill edu-modal__pill--deb">Commodities Agrícolas</div>
+          <h2 class="edu-modal__title">O que são Commodities Futuras?</h2>
+          <p class="edu-modal__subtitle">Negocie o futuro do agronegócio: Boi Gordo, Milho, Café e Soja.</p>
+        </div>
+        <div class="edu-modal__body">
+          <div class="edu-modal__explainer">
+            <div class="edu-modal__explainer-icon edu-modal__explainer-icon--deb">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
+                <polyline points="16 7 22 7 22 13" />
+              </svg>
+            </div>
+            <p>Investir em <strong>Commodities</strong> na BRB Investimentos permite que você lucre com a variação de preços de produtos essenciais. É a ponte entre o mercado financeiro e a economia real do campo.</p>
+          </div>
+          <div class="edu-modal__section">
+            <div class="edu-modal__section-title edu-modal__section-title--deb">Como funciona</div>
+            <ul class="edu-modal__list edu-modal__list--deb">
+              <li>Contratos padronizados: cada ativo tem seu tamanho de lote (ex: 450 sacas de milho)</li>
+              <li>Os preços são influenciados por fatores climáticos, safras e demanda global</li>
+              <li>Utilizado por produtores para garantir o preço de venda da colheita futura</li>
+              <li>Especulação: busque lucros com a tendência de preços desses insumos</li>
+            </ul>
+          </div>
+          <div class="edu-modal__section">
+            <div class="edu-modal__section-title edu-modal__section-title--deb">Por que escolher</div>
+            <ul class="edu-modal__list edu-modal__list--deb">
+              <li>Ativos Reais: proteção contra a inflação e crises financeiras sistêmicas</li>
+              <li>Diversificação: ativos que não dependem diretamente do desempenho de empresas</li>
+              <li>Alavancagem: controle grandes volumes de mercadoria com baixa margem</li>
+              <li>Sazonalidade: aproveite ciclos históricos de preços de cada cultura</li>
+            </ul>
+          </div>
+          <div class="edu-modal__attrs-grid">
+            <div class="edu-modal__attr-item">
+              <div class="attr-label">Principais Ativos</div>
+              <div class="attr-value">BGI (Boi), CCM (Milho), KFE (Café)</div>
+            </div>
+            <div class="edu-modal__attr-item">
+              <div class="attr-label">Fator de Risco</div>
+              <div class="attr-value">Oferta/Demanda Global</div>
+            </div>
+            <div class="edu-modal__attr-item">
+              <div class="attr-label">Perfil</div>
+              <div class="attr-value">Arrojado</div>
+            </div>
+            <div class="edu-modal__attr-item">
+              <div class="attr-label">Liquidação</div>
+              <div class="attr-value">Financeira <small>(B3)</small></div>
+            </div>
+          </div>
+        </div>
+        <div class="edu-modal__footer">
+          <a class="edu-modal__btn edu-modal__btn--deb" href="taxas.html">
+            Ver Cotações de Commodities
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </a>
+        </div>
       </div>
     </div>
-  </section>
 
-
-  <!-- ===================================================
-       AVISO DE RISCO
-  ==================================================== -->
-  <div class="risk-banner" role="alert">
-    <div class="risk-banner-inner">
-      <span class="risk-icon" aria-hidden="true">⚠️</span>
-      <p>
-        <strong>Aviso de Risco:</strong> O Mercado Futuro envolve alto grau de risco e é destinado a
-        investidores com perfil arrojado e experiência em derivativos. As perdas podem superar o capital
-        investido. Consulte nossa equipe antes de operar.
-      </p>
-    </div>
-  </div>
-
-
-  <!-- ===================================================
-       VANTAGENS
-  ==================================================== -->
-  <section class="mf-advantages">
-    <div class="section-header reveal">
-      <div class="section-tag">Por que escolher</div>
-      <h2>Vantagens do Mercado Futuro na BRB</h2>
-      <p>Acesse um dos mercados mais líquidos e sofisticados do mundo com a estrutura e o suporte da BRB Investimentos.</p>
-    </div>
-
-    <div class="advantages-grid">
-      <div class="adv-card reveal">
-        <div class="adv-icon">⚡</div>
-        <h3>Alta Liquidez</h3>
-        <p>Contratos futuros de índice (WIN/WDO) e câmbio possuem enorme volume negociado diariamente na B3, garantindo facilidade de entrada e saída nas posições a qualquer momento do pregão.</p>
-      </div>
-      <div class="adv-card reveal">
-        <div class="adv-icon">🔧</div>
-        <h3>Alavancagem Estratégica</h3>
-        <p>Opere posições maiores com margem reduzida. A alavancagem amplifica tanto os ganhos quanto as perdas, sendo uma ferramenta poderosa quando usada com disciplina e gestão de risco rigorosa.</p>
-      </div>
-      <div class="adv-card reveal">
-        <div class="adv-icon">🛡️</div>
-        <h3>Proteção de Carteira (Hedge)</h3>
-        <p>Proteja sua carteira de ações contra quedas do Ibovespa vendendo contratos futuros de índice. Uma estratégia usada por gestores profissionais para reduzir o risco em cenários adversos.</p>
-      </div>
-      <div class="adv-card reveal">
-        <div class="adv-icon">🌙</div>
-        <h3>Day Trade e Swing Trade</h3>
-        <p>Opere durante o pregão regular ou no after market. Contratos mini permitem estratégias com menor exigência de margem, ideais para quem busca resultados no curto prazo.</p>
-      </div>
-      <div class="adv-card reveal">
-        <div class="adv-icon">📉</div>
-        <h3>Ganhos na Queda</h3>
-        <p>Diferente das ações tradicionais, no mercado futuro você pode montar posições vendidas — lucrando quando o mercado cai. Isso cria oportunidades em qualquer direção do mercado.</p>
-      </div>
-      <div class="adv-card reveal">
-        <div class="adv-icon">🖥️</div>
-        <h3>Plataforma Profissional</h3>
-        <p>Opere via plataforma completa com gráficos em tempo real, book de ofertas, análise técnica avançada e execução de ordens rápida — tudo que o trader profissional precisa.</p>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ===================================================
-       CONTRATOS DISPONÍVEIS
-  ==================================================== -->
-  <section class="mf-products" id="produtos">
-    <div style="max-width: var(--container); margin: 0 auto;">
+    <section class="mf-advantages">
       <div class="section-header reveal">
-        <div class="section-tag">Contratos Disponíveis</div>
-        <h2>Os principais contratos do Mercado Futuro</h2>
-        <p>Escolha o contrato mais alinhado à sua estratégia e perfil de operação.</p>
+        <div class="section-tag">Por que escolher</div>
+        <h2>Vantagens do Mercado Futuro na BRB Investimentos</h2>
+        <p>Acesse um dos mercados mais líquidos e sofisticados do mundo com a estrutura e o suporte da BRB Investimentos.</p>
       </div>
 
-      <div class="products-grid">
-
-        <div class="product-card featured reveal">
-          <div class="product-icon">📊</div>
-          <div class="product-info">
-            <h3>Mini Índice (WIN) — Ibovespa Futuro</h3>
-            <p>O contrato mais negociado do mercado futuro brasileiro. Permite especular ou fazer hedge sobre o desempenho do Ibovespa com margem reduzida. Cada ponto do WIN equivale a R$0,20, com liquidação financeira na data de vencimento. Ideal para day traders e investidores que buscam exposição ao mercado de ações com alta liquidez.</p>
-          </div>
-          <div class="product-tag popular">Mais Negociado</div>
+      <div class="advantages-grid">
+        <div class="adv-card reveal">
+          <div class="adv-icon">⚡</div>
+          <h3>Alta Liquidez</h3>
+          <p>Contratos futuros de índice (WIN/WDO) e câmbio possuem enorme volume negociado diariamente na B3, garantindo facilidade de entrada e saída nas posições a qualquer momento do pregão.</p>
         </div>
-
-        <div class="product-card reveal">
-          <div class="product-icon">💵</div>
-          <div class="product-info">
-            <h3>Mini Dólar (WDO) — Câmbio Futuro</h3>
-            <p>Contrato referenciado na taxa de câmbio BRL/USD. Utilizado para especulação ou proteção cambial, com altíssima liquidez. Cada contrato representa USD 10.000 com liquidação financeira em reais.</p>
-          </div>
-          <div class="product-tag moderate">Proteção Cambial</div>
+        <div class="adv-card reveal">
+          <div class="adv-icon">🔧</div>
+          <h3>Alavancagem Estratégica</h3>
+          <p>Opere posições maiores com margem reduzida. A alavancagem amplifica tanto os ganhos quanto as perdas, sendo uma ferramenta poderosa quando usada com disciplina e gestão de risco rigorosa.</p>
         </div>
-
-        <div class="product-card reveal">
-          <div class="product-icon">📈</div>
-          <div class="product-info">
-            <h3>DI Futuro — Juros</h3>
-            <p>Contratos baseados na taxa DI. Amplamente usados por instituições financeiras para hedge de taxas de juros e por especuladores que apostam na trajetória da Selic e na curva de juros da economia brasileira.</p>
-          </div>
-          <div class="product-tag moderate">Juros / Selic</div>
+        <div class="adv-card reveal">
+          <div class="adv-icon">🛡️</div>
+          <h3>Proteção de Carteira (Hedge)</h3>
+          <p>Proteja sua carteira de ações contra quedas do Ibovespa vendendo contratos futuros de índice. Uma estratégia usada por gestores profissionais para reduzir o risco em cenários adversos.</p>
         </div>
-
-        <div class="product-card reveal">
-          <div class="product-icon">🌾</div>
-          <div class="product-info">
-            <h3>Commodities Agropecuárias</h3>
-            <p>Contratos futuros de boi gordo, milho, soja, café e açúcar. Permitem ao produtor rural travar preços de venda e ao especulador aproveitar oscilações nos mercados agrícolas.</p>
-          </div>
-          <div class="product-tag safe">Agronegócio</div>
+        <div class="adv-card reveal">
+          <div class="adv-icon">🌙</div>
+          <h3>Day Trade e Swing Trade</h3>
+          <p>Opere durante o pregão regular ou no after market. Contratos mini permitem estratégias com menor exigência de margem, ideais para quem busca resultados no curto prazo.</p>
         </div>
-
-        <div class="product-card reveal">
-          <div class="product-icon">🌍</div>
-          <div class="product-info">
-            <h3>Contratos Internacionais</h3>
-            <p>Através da nossa plataforma, acesse contratos referenciados em mercados internacionais como S&P 500, petróleo, ouro e outros ativos globais. Diversifique suas estratégias além do mercado doméstico.</p>
-          </div>
-          <div class="product-tag moderate">Mercados Globais</div>
+        <div class="adv-card reveal">
+          <div class="adv-icon">📉</div>
+          <h3>Ganhos na Queda</h3>
+          <p>Diferente das ações tradicionais, no mercado futuro você pode montar posições vendidas — lucrando quando o mercado cai. Isso cria oportunidades em qualquer direção do mercado.</p>
         </div>
-
+        <div class="adv-card reveal">
+          <div class="adv-icon">🖥️</div>
+          <h3>Plataforma Profissional</h3>
+          <p>Opere via plataforma completa com gráficos em tempo real, book de ofertas, análise técnica avançada e execução de ordens rápida — tudo que o trader profissional precisa.</p>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
+    <section class="mf-steps">
+      <div class="steps-inner" style="max-width: var(--container); margin: 0 auto;">
+        <div class="section-header">
+          <div class="section-tag">Passo a passo</div>
+          <h2>Como começar a operar no Mercado Futuro</h2>
+          <p>Habilite-se para operar contratos futuros de forma segura e estruturada com o suporte da BRB Investimentos.</p>
+        </div>
 
-  
-  <!-- TABELA DE CONTRATOS -->
-  <section class="mf-contracts-table">
-    <div class="mf-contracts-table__inner">
-      <div class="section-tag" style="margin-bottom:.8rem;">Visão Geral</div>
-      <h2 style="font-size:clamp(1.8rem,3.5vw,2.5rem);font-weight:900;color:var(--deep-navy);margin-bottom:.5rem;">Principais contratos do Mercado Futuro</h2>
-      <p style="color:#666;margin-bottom:2rem;">Referências de mercado. Consulte sua plataforma para cotações em tempo real.</p>
-      <table class="contracts-tbl">
-        <thead><tr><th>Contrato</th><th>Código</th><th>Variação Aprox.</th><th>Risco</th><th>Margem típica</th></tr></thead>
-        <tbody>
-          <tr><td><strong>Mini Índice Ibovespa</strong></td><td>WIN</td><td class="val-up">+0,84%</td><td><span class="badge badge-high">Alto</span></td><td>~R$ 1.200</td></tr>
-          <tr><td><strong>Mini Dólar</strong></td><td>WDO</td><td class="val-dn">-0,18%</td><td><span class="badge badge-high">Alto</span></td><td>~R$ 800</td></tr>
-          <tr><td><strong>DI Futuro</strong></td><td>DI1</td><td class="val-up">+0,02%</td><td><span class="badge badge-med">Médio</span></td><td>~R$ 2.000</td></tr>
-          <tr><td><strong>Boi Gordo</strong></td><td>BGI</td><td class="val-up">+1,20%</td><td><span class="badge badge-med">Médio</span></td><td>~R$ 3.500</td></tr>
-          <tr><td><strong>Café Arábica</strong></td><td>ICF</td><td class="val-dn">-0,65%</td><td><span class="badge badge-high">Alto</span></td><td>~R$ 1.800</td></tr>
-        </tbody>
-      </table>
-      <div class="texto informativo">
-     <p class="text-info"> * Valores de referência sujeitos a alterações. Consulte a plataforma para visualizar as variações e margens de garantia em tempo real.</p>
-    </div>
-    </div>
-    
-  </section>
+        <div class="steps-grid">
+          <div class="step-card reveal">
+            <div class="step-number">01</div>
+            <h3>Abra sua conta</h3>
+            <p>Crie sua conta na BRB Investimentos de forma 100% digital. Leva menos de 5 minutos.</p>
+          </div>
+          <div class="step-card reveal">
+            <div class="step-number">02</div>
+            <h3>Perfil arrojado</h3>
+            <p>Complete o suitability com perfil arrojado e assine o termo de ciência de risco para derivativos.</p>
+          </div>
+          <div class="step-card reveal">
+            <div class="step-number">03</div>
+            <h3>Deposite margem</h3>
+            <p>Transfira o valor de margem necessário para garantir suas posições junto à câmara de compensação da B3.</p>
+          </div>
+          <div class="step-card reveal">
+            <div class="step-number">04</div>
+            <h3>Opere com disciplina</h3>
+            <p>Acesse a plataforma, defina seu plano com stop loss e take profit, e opere com responsabilidade.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <section class="mf-cta-section">
+      <div class="cta-box reveal">
+        <div class="section-tag" style="margin-bottom: 1.2rem;">BRB Investimentos</div>
+        <h2>Pronto para operar no mercado mais dinâmico?</h2>
+        <p>Acesse a plataforma BRB Investimentos, habilite-se para o mercado futuro e comece a operar com toda a estrutura e suporte que você precisa.</p>
+        <div class="cta-buttons">
+          <button class="btn-cta-primary" onclick="window.open('https://brb.genialinvestimentos.com.br/auth/login','_blank','noopener,noreferrer')">
+            Acessar minha conta
+          </button>
+          <button class="btn-cta-secondary" onclick="window.location.href='https://forms.office.com/r/1EsKit6Ce9'">
+            Falar com um assessor
+          </button>
+        </div>
+      </div>
+    </section>
 
-  <!-- ===================================================
-       FAQ
-  ==================================================== -->
-  <section class="mf-faq" id="entenda">
-    <div class="faq-layout">
-
-      <div class="faq-left reveal">
-        <div class="section-tag" style="margin-bottom: 1rem;">Entenda</div>
-        <h2>Tire suas dúvidas sobre Mercado Futuro</h2>
-        <p>Antes de operar contratos futuros, entenda os conceitos fundamentais e os riscos envolvidos.</p>
-        <button class="btn-rf-primary" onclick="window.open('assessores.html#equipe')">
+    <section class="mf-faq" id="entenda">
+      <div class="faq-layout">
+        <div class="faq-left reveal">
+          <div class="section-tag" style="margin-bottom: 1rem;">Entenda</div>
+          <h2>Tire suas dúvidas sobre Mercado Futuro</h2>
+          <p>Antes de operar contratos futuros, entenda os conceitos fundamentais e os riscos envolvidos.</p>
+          <button class="btn-rf-primary" onclick="window.open('assessores.html#equipe')">
             Conheça nossa equipe
           </button>
-      </div>
+        </div>
 
-      <div class="faq-list reveal">
+        <div class="faq-list reveal">
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>O que são contratos futuros e como funcionam?</span>
+              <div class="faq-icon" aria-hidden="true">+</div>
+            </button>
+            <div class="faq-body">
+              <div class="faq-body-inner">
+                Contratos futuros são acordos padronizados negociados em bolsa que estabelecem a compra ou venda de um ativo em uma data futura por um preço acordado hoje. Na B3, os mais populares são o Mini Índice (WIN) e o Mini Dólar (WDO). As posições são ajustadas diariamente pelo mecanismo de ajuste diário — as diferenças de preço são creditadas ou debitadas na conta do investidor ao final de cada pregão.
+              </div>
+            </div>
+          </div>
 
-        <div class="faq-item">
-          <button class="faq-trigger" aria-expanded="false">
-            <span>O que são contratos futuros e como funcionam?</span>
-            <div class="faq-icon" aria-hidden="true">+</div>
-          </button>
-          <div class="faq-body">
-            <div class="faq-body-inner">
-              Contratos futuros são acordos padronizados negociados em bolsa que estabelecem a compra ou venda de um ativo em uma data futura por um preço acordado hoje. Na B3, os mais populares são o Mini Índice (WIN) e o Mini Dólar (WDO). As posições são ajustadas diariamente pelo mecanismo de ajuste diário — as diferenças de preço são creditadas ou debitadas na conta do investidor ao final de cada pregão.
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>O que é margem de garantia no mercado futuro?</span>
+              <div class="faq-icon" aria-hidden="true">+</div>
+            </button>
+            <div class="faq-body">
+              <div class="faq-body-inner">
+                A margem de garantia é o valor depositado junto à câmara de compensação (B3) como garantia de que o investidor honrará seus compromissos. Diferente de uma compra de ação, no mercado futuro você não paga o valor total do contrato, apenas uma fração como margem. Se o saldo cair abaixo do nível mínimo exigido, haverá uma chamada de margem (margin call).
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>Como funciona o ajuste diário?</span>
+              <div class="faq-icon" aria-hidden="true">+</div>
+            </button>
+            <div class="faq-body">
+              <div class="faq-body-inner">
+                O ajuste diário é o mecanismo pelo qual os lucros e prejuízos são liquidados financeiramente ao final de cada pregão. Se o contrato se valorizou em relação ao preço de referência do dia anterior, o valor é creditado na sua conta — se desvalorizou, é debitado. Esse mecanismo garante a integridade do mercado e elimina o risco de inadimplência acumulada.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>Qual a tributação no Mercado Futuro?</span>
+              <div class="faq-icon" aria-hidden="true">+</div>
+            </button>
+            <div class="faq-body">
+              <div class="faq-body-inner">
+                No mercado futuro, incide IR de 20% sobre os ganhos líquidos em operações de day trade. Para operações normais (swing trade), a alíquota é de 15%. O recolhimento é mensal via DARF, com vencimento no último dia útil do mês seguinte. Prejuízos podem ser compensados com lucros em meses subsequentes.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>Quais são os principais riscos do Mercado Futuro?</span>
+              <div class="faq-icon" aria-hidden="true">+</div>
+            </button>
+            <div class="faq-body">
+              <div class="faq-body-inner">
+                Os principais riscos incluem: <strong>Risco de mercado</strong> — volatilidade dos preços pode gerar perdas expressivas rapidamente. <strong>Risco de alavancagem</strong> — as perdas podem superar o capital investido. <strong>Risco de liquidez</strong> — em contratos menos líquidos, pode ser difícil encerrar posições. <strong>Risco de margem</strong> — chamadas de margem em momentos de alta volatilidade. É essencial ter gestão de risco rigorosa antes de operar.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>Preciso de habilitação especial para operar futuros?</span>
+              <div class="faq-icon" aria-hidden="true">+</div>
+            </button>
+            <div class="faq-body">
+              <div class="faq-body-inner">
+                Para operar no mercado futuro, você precisa ter perfil de investidor arrojado no suitability e assinar um termo de ciência de risco para derivativos. Não é exigida habilitação profissional para pessoas físicas, mas é altamente recomendável ter experiência prévia com renda variável. Nossa equipe pode auxiliar na habilitação e em treinamentos.
+              </div>
             </div>
           </div>
         </div>
+      </div>
+    </section>
 
-        <div class="faq-item">
-          <button class="faq-trigger" aria-expanded="false">
-            <span>O que é margem de garantia no mercado futuro?</span>
-            <div class="faq-icon" aria-hidden="true">+</div>
-          </button>
-          <div class="faq-body">
-            <div class="faq-body-inner">
-              A margem de garantia é o valor depositado junto à câmara de compensação (B3) como garantia de que o investidor honrará seus compromissos. Diferente de uma compra de ação, no mercado futuro você não paga o valor total do contrato, apenas uma fração como margem. Se o saldo cair abaixo do nível mínimo exigido, haverá uma chamada de margem (margin call).
-            </div>
+    <footer>
+      <div class="footer-content">
+        <div class="footer-brand">
+          <img src="img/LOGO BRANCA.png" alt="BRB Investimentos" class="footer-logo-img" />
+          <p class="footer-brand-text">Investindo no futuro dos brasileiros com segurança, tecnologia e tradição.</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/brbinvestimentos/" class="footer-social-btn" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+              </svg>
+            </a>
+            <a href="https://youtube.com/@brbinvestimentos?si=MmAK0HAz0J-XOkLa" class="footer-social-btn" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+              </svg>
+            </a>
+            <a href="https://www.facebook.com/share/1CRVbq4UXf/?mibextid=wwXIfr" class="footer-social-btn" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+              </svg>
+            </a>
           </div>
         </div>
 
-        <div class="faq-item">
-          <button class="faq-trigger" aria-expanded="false">
-            <span>Como funciona o ajuste diário?</span>
-            <div class="faq-icon" aria-hidden="true">+</div>
-          </button>
-          <div class="faq-body">
-            <div class="faq-body-inner">
-              O ajuste diário é o mecanismo pelo qual os lucros e prejuízos são liquidados financeiramente ao final de cada pregão. Se o contrato se valorizou em relação ao preço de referência do dia anterior, o valor é creditado na sua conta — se desvalorizou, é debitado. Esse mecanismo garante a integridade do mercado e elimina o risco de inadimplência acumulada.
-            </div>
-          </div>
+        <div class="footer-column">
+          <h4>Produtos</h4>
+          <ul>
+            <li><a href="renda-fixa.html">Renda Fixa</a></li>
+            <li><a href="fundos.html">Fundos</a></li>
+            <li><a href="previdencia.html">Previdência</a></li>
+            <li><a href="renda-variavel.html">Renda Variável</a></li>
+            <li><a href="mercado-futuro.html">Mercado Futuro</a></li>
+            <li><a href="javascript:void(0)">Criptoativos</a></li>
+          </ul>
         </div>
 
-        <div class="faq-item">
-          <button class="faq-trigger" aria-expanded="false">
-            <span>Qual a tributação no Mercado Futuro?</span>
-            <div class="faq-icon" aria-hidden="true">+</div>
-          </button>
-          <div class="faq-body">
-            <div class="faq-body-inner">
-              No mercado futuro, incide IR de 20% sobre os ganhos líquidos em operações de day trade. Para operações normais (swing trade), a alíquota é de 15%. O recolhimento é mensal via DARF, com vencimento no último dia útil do mês seguinte. Prejuízos podem ser compensados com lucros em meses subsequentes.
-            </div>
-          </div>
+        <div class="footer-column">
+          <h4>Quem Somos</h4>
+          <ul>
+            <li><a href="sobrenos.html#missao">Nossa Missão</a></li>
+            <li><a href="sobrenos.html#historia">Nossa História</a></li>
+          </ul>
         </div>
 
-        <div class="faq-item">
-          <button class="faq-trigger" aria-expanded="false">
-            <span>Quais são os principais riscos do Mercado Futuro?</span>
-            <div class="faq-icon" aria-hidden="true">+</div>
-          </button>
-          <div class="faq-body">
-            <div class="faq-body-inner">
-              Os principais riscos incluem: <strong>Risco de mercado</strong> — volatilidade dos preços pode gerar perdas expressivas rapidamente. <strong>Risco de alavancagem</strong> — as perdas podem superar o capital investido. <strong>Risco de liquidez</strong> — em contratos menos líquidos, pode ser difícil encerrar posições. <strong>Risco de margem</strong> — chamadas de margem em momentos de alta volatilidade. É essencial ter gestão de risco rigorosa antes de operar.
-            </div>
-          </div>
+        <div class="footer-column">
+          <h4>Fale Conosco</h4>
+          <ul>
+            <li><a href="https://novo.brb.com.br/atendimento/" target="_blank" rel="noopener noreferrer">Central de Atendimento</a></li>
+            <li><a href="https://novo.brb.com.br/atendimento/ouvidoria-brb/" target="_blank" rel="noopener noreferrer">Ouvidoria BRB</a></li>
+          </ul>
         </div>
 
-        <div class="faq-item">
-          <button class="faq-trigger" aria-expanded="false">
-            <span>Preciso de habilitação especial para operar futuros?</span>
-            <div class="faq-icon" aria-hidden="true">+</div>
-          </button>
-          <div class="faq-body">
-            <div class="faq-body-inner">
-              Para operar no mercado futuro, você precisa ter perfil de investidor arrojado no suitability e assinar um termo de ciência de risco para derivativos. Não é exigida habilitação profissional para pessoas físicas, mas é altamente recomendável ter experiência prévia com renda variável. Nossa equipe pode auxiliar na habilitação e em treinamentos.
-            </div>
-          </div>
+        <div class="footer-column">
+          <h4>Institucional</h4>
+          <ul>
+            <li><a href="https://www.anbima.com.br/" target="_blank" rel="noopener noreferrer">Anbima</a></li>
+            <li><a href="https://www.b3.com.br/" target="_blank" rel="noopener noreferrer">B3</a></li>
+            <li><a href="https://www.gov.br/cvm/" target="_blank" rel="noopener noreferrer">CVM</a></li>
+            <li><a href="https://www.fgc.org.br/" target="_blank" rel="noopener noreferrer">FGC</a></li>
+            <li><a href="https://www.bcb.gov.br/" target="_blank" rel="noopener noreferrer">Bacen</a></li>
+          </ul>
         </div>
 
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ===================================================
-       PASSO A PASSO
-  ==================================================== -->
-  <section class="mf-steps">
-    <div class="steps-inner" style="max-width: var(--container); margin: 0 auto;">
-      <div class="section-header">
-        <div class="section-tag">Passo a passo</div>
-        <h2>Como começar a operar no Mercado Futuro</h2>
-        <p>Habilite-se para operar contratos futuros de forma segura e estruturada com o suporte da BRB.</p>
-      </div>
-
-      <div class="steps-grid">
-        <div class="step-card reveal">
-          <div class="step-number">01</div>
-          <h3>Abra sua conta</h3>
-          <p>Crie sua conta na BRB Investimentos de forma 100% digital. Leva menos de 5 minutos.</p>
-        </div>
-        <div class="step-card reveal">
-          <div class="step-number">02</div>
-          <h3>Perfil arrojado</h3>
-          <p>Complete o suitability com perfil arrojado e assine o termo de ciência de risco para derivativos.</p>
-        </div>
-        <div class="step-card reveal">
-          <div class="step-number">03</div>
-          <h3>Deposite margem</h3>
-          <p>Transfira o valor de margem necessário para garantir suas posições junto à câmara de compensação da B3.</p>
-        </div>
-        <div class="step-card reveal">
-          <div class="step-number">04</div>
-          <h3>Opere com disciplina</h3>
-          <p>Acesse a plataforma, defina seu plano com stop loss e take profit, e opere com responsabilidade.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ===================================================
-       CTA FINAL
-  ==================================================== -->
-  <section class="mf-cta-section">
-    <div class="cta-box reveal">
-      <div class="section-tag" style="margin-bottom: 1.2rem;">BRB Investimentos</div>
-      <h2>Pronto para operar no mercado mais dinâmico?</h2>
-      <p>Acesse a plataforma BRB Investimentos, habilite-se para o mercado futuro e comece a operar com toda a estrutura e suporte que você precisa.</p>
-      <div class="cta-buttons">
-        <button class="btn-cta-primary"
-          onclick="window.open('https://brb.genialinvestimentos.com.br/auth/login','_blank','noopener,noreferrer')">
-          Acessar minha conta
-        </button>
-        <button class="btn-cta-secondary"
-          onclick="window.location.href='https://forms.office.com/r/1EsKit6Ce9'"">
-          Falar com um assessor
-        </button>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ===================================================
-       FOOTER
-  ==================================================== -->
-  <footer>
-    <div class="footer-content">
-
-      <div class="footer-brand">
-        <img src="img/LOGO BRANCA.png" alt="BRB Investimentos" class="footer-logo-img" />
-        <p class="footer-brand-text">Investindo no futuro dos brasileiros com segurança, tecnologia e tradição.</p>
-        <div class="footer-social">
-          <a href="https://www.instagram.com/brbinvestimentos/" class="footer-social-btn" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-          </a>
-          <a href="https://youtube.com/@brbinvestimentos?si=MmAK0HAz0J-XOkLa" class="footer-social-btn" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-          </a>
-          <a href="https://www.facebook.com/share/1CRVbq4UXf/?mibextid=wwXIfr" class="footer-social-btn" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-          </a>
+        <div class="footer-column regulatorio">
+          <h4>Regulatórios</h4>
+          <ul>
+            <li><a href="pdfs/Política de Privacidade.pdf" target="_blank" rel="noopener noreferrer">Política de Privacidade</a></li>
+            <li><a href="pdfs/4. Termo Abertura Conta Corrente  PF.pdf" target="_blank" rel="noopener noreferrer">Termos de Abertura de Conta Genial</a></li>
+            <li><a href="pdfs/RPA_B3_Genial_Janeiro_2026.pdf" target="_blank" rel="noopener noreferrer">Regras e Parâmetros de Atuação</a></li>
+            <li><a href="pdfs/CONTRATO DE INTERMEDIAÇÃO.pdf" target="_blank" rel="noopener noreferrer">Contrato de Intermediação</a></li>
+          </ul>
         </div>
       </div>
 
-      <div class="footer-column">
-        <h4>Produtos</h4>
-        <ul>
-          <li><a href="renda-fixa.html">Renda Fixa</a></li>
-          <li><a href="fundos.html">Fundos</a></li>
-          <li><a href="previdencia.html">Previdência</a></li>
-          <li><a href="renda-variavel.html">Renda Variável</a></li>
-          <li><a href="mercado-futuro.html">Mercado Futuro</a></li>
-          <li><a href="javascript:void(0)">Criptoativos</a></li>
-        </ul>
+      <div class="footer-bottom">
+        <div class="footer-left">
+          <img class="footer-mark" src="https://framerusercontent.com/images/ZRAogsRUCyrDvJX2BCEBRqoGhWY.svg?width=142&height=33" alt="Banco Central" />
+          <img class="footer-mark" src="https://framerusercontent.com/images/mHJ8wt4h7RrXbxoN3I2zNtlIMw.svg?width=90&height=41" alt="B3" />
+        </div>
+        <div class="footer-center">
+          <p class="brbdireitos">© 2026 BRB Investimentos</p>
+          <p class="footer-address">BL B — Centro Empresarial CNC — SAUN Quadra 5, Lote C, 2º andar — Brasília/DF</p>
+        </div>
+        <div class="footer-right footer-certificados">
+          <img src="img/distribuicao-geral.jpg" alt="Certificado Anbima Distribuição" />
+          <img src="img/art-administracao.jpg" alt="Certificado Anbima Administração" />
+        </div>
       </div>
+    </footer>
 
-      <div class="footer-column">
-        <h4>Quem Somos</h4>
-        <ul>
-          <li><a href="sobrenos.html#missao">Nossa Missão</a></li>
-          <li><a href="sobrenos.html#historia">Nossa História</a></li>
-        </ul>
-      </div>
+    <script src="script.js"></script>
 
-      <div class="footer-column">
-        <h4>Fale Conosco</h4>
-        <ul>
-          <li><a href="https://novo.brb.com.br/atendimento/" target="_blank" rel="noopener noreferrer">Central de Atendimento</a></li>
-          <li><a href="https://novo.brb.com.br/atendimento/ouvidoria-brb/" target="_blank" rel="noopener noreferrer">Ouvidoria BRB</a></li>
-        </ul>
-      </div>
+    <button class="floating-cta" id="floatingCta" onclick="window.open('https://brb.genialinvestimentos.com.br/auth/login','_blank','noopener,noreferrer')">
+       Começar a operar
+    </button>
 
-      <div class="footer-column">
-        <h4>Institucional</h4>
-        <ul>
-          <li><a href="https://www.anbima.com.br/" target="_blank" rel="noopener noreferrer">Anbima</a></li>
-          <li><a href="https://www.b3.com.br/" target="_blank" rel="noopener noreferrer">B3</a></li>
-          <li><a href="https://www.gov.br/cvm/" target="_blank" rel="noopener noreferrer">CVM</a></li>
-          <li><a href="https://www.fgc.org.br/" target="_blank" rel="noopener noreferrer">FGC</a></li>
-          <li><a href="https://www.bcb.gov.br/" target="_blank" rel="noopener noreferrer">Bacen</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-column regulatorio">
-        <h4>Regulatórios</h4>
-        <ul>
-          <li><a href="pdfs/Política de Privacidade.pdf" target="_blank" rel="noopener noreferrer">Política de Privacidade</a></li>
-          <li><a href="pdfs/4. Termo Abertura Conta Corrente  PF.pdf" target="_blank" rel="noopener noreferrer">Termos de Abertura de Conta Genial</a></li>
-          <li><a href="pdfs/RPA_B3_Genial_Janeiro_2026.pdf" target="_blank" rel="noopener noreferrer">Regras e Parâmetros de Atuação</a></li>
-          <li><a href="pdfs/CONTRATO DE INTERMEDIAÇÃO.pdf" target="_blank" rel="noopener noreferrer">Contrato de Intermediação</a></li>
-        </ul>
-      </div>
-
-    </div>
-
-    <div class="footer-bottom">
-      <div class="footer-left">
-        <img class="footer-mark" src="https://framerusercontent.com/images/ZRAogsRUCyrDvJX2BCEBRqoGhWY.svg?width=142&height=33" alt="Banco Central" />
-        <img class="footer-mark" src="https://framerusercontent.com/images/mHJ8wt4h7RrXbxoN3I2zNtlIMw.svg?width=90&height=41" alt="B3" />
-      </div>
-      <div class="footer-center">
-        <p class="brbdireitos">© 2026 BRB Investimentos</p>
-        <p class="footer-address">BL B — Centro Empresarial CNC — SAUN Quadra 5, Lote C, 2º andar — Brasília/DF</p>
-      </div>
-      <div class="footer-right footer-certificados">
-        <img src="img/distribuicao-geral.jpg" alt="Certificado Anbima Distribuição" />
-        <img src="img/art-administracao.jpg" alt="Certificado Anbima Administração" />
-      </div>
-    </div>
-  </footer>
-
-
-  <script src="script.js"></script>
-
-
-  <button class="floating-cta" id="floatingCta"
-    onclick="window.open('https://brb.genialinvestimentos.com.br/auth/login','_blank','noopener,noreferrer')">
-     Começar a operar
-  </button>
-
-</body>
+  </body>
 </html>

@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tesouro Direto — BRB Investimentos</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style-enhance.css" />
+    <link rel="stylesheet" href="css/tesouro-direto.css" />
+     <link rel="stylesheet" href="css/mobile-nav.css" />
+  </head>
+  <body>
+
+    <!-- Barra de progresso de leitura -->
+    <div class="reading-progress" aria-hidden="true">
+      <div class="reading-progress__bar" id="readingBar"></div>
+    </div>
+
+    <!-- ═══════════ HEADER (idêntico ao renda-fixa) ═══════════ -->
+    <header id="site-header">
+      <nav>
+        <div class="logo">
+          <a href="index.html" aria-label="BRB Investimentos - Início">
+            <img src="img/quartinho(1).png" alt="BRB Investimentos" />
+          </a>
+        </div>
+        
+        <ul class="nav-links" id="mobileMenu" role="menubar">
+          <li class="dropdown">
+            <a href="javascript:void(0)" class="dropdown-toggle active">
+              Produtos e Serviços 
+              <span class="chevron" aria-hidden="true">▾</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="has-submenu">
+                <a href="renda-fixa.html">Renda Fixa <span class="chevron-right"></span></a>
+              </li>
+              <li class="has-submenu">
+                <a href="renda-variavel.html">Renda Variável <span class="chevron-right"></span></a>
+              </li>
+              <li class="has-submenu">
+                <a href="previdencia.html">Previdência <span class="chevron-right"></span></a>
+              </li>
+              <li class="has-submenu">
+                <a href="fundos.html">Fundos <span class="chevron-right"></span></a>
+              </li>
+              <li class="has-submenu">
+                <a href="mercado-futuro.html">Mercado Futuro <span class="chevron-right"></span></a>
+              </li>
+              <li class="has-submenu">
+                <a href="tesouro-direto.html">Tesouro Direto <span class="chevron-right"></span></a>
+              </li>
+            </ul>
+          </li>
+          <li class="dropdown" role="none">
+            <a href="javascript:void(0)" class="dropdown-toggle" role="menuitem" aria-haspopup="true" aria-expanded="false">
+              Conteúdo 
+              <span class="chevron" aria-hidden="true">▾</span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+              <li role="none">
+                <a href="https://analisa.genialinvestimentos.com.br/" role="menuitem" target="_blank" rel="noopener noreferrer">Genial analisa</a>
+              </li>
+              <li role="none"><a href="newsletter.html" role="menuitem">Newsletter</a></li>
+              <li role="none"><a href="tutoriais.html" role="menuitem">Guias Práticos</a></li>
+              <li role="none"><a href="site em construção.html" role="menuitem">Educação Investidora</a></li>
+            </ul>
+          </li>
+          <li role="none"><a href="sobrenos.html" role="menuitem">Sobre nós</a></li>
+          <li role="none"><a href="contato.html" role="menuitem">Contato</a></li>
+        </ul>
+        
+        <div class="nav-buttons">
+          <button class="account-link" type="button" onclick="window.open('https://brb.genialinvestimentos.com.br/auth/login','_blank','noopener,noreferrer')">
+            Acesse seus Investimentos
+          </button>
+        </div>
+        
+        <button class="mobile-menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        
+        <div class="menu-overlay" aria-hidden="true"></div>
+      </nav>
+    </header>
+
+    <!-- ═══════════ HERO ═══════════ -->
+    <section class="td-hero" id="topo">
+      <div class="td-hero-inner">
+
+        <div class="td-hero-text">
+          <div class="td-hero-badge">Tesouro Direto</div>
+          <h1>
+            Invista com a <span class="highlight">segurança</span><br>
+            do governo federal
+          </h1>
+          <p class="hero-desc">
+            O Tesouro Direto é o investimento mais seguro do Brasil. Títulos públicos federais com liquidez diária, acessíveis a partir de R$ 30 e disponíveis para todo tipo de investidor.
+          </p>
+          <div class="td-hero-ctas">
+            <button class="btn-td-primary" onclick="window.open('https://brb.genialinvestimentos.com.br/auth/login','_blank','noopener,noreferrer')">
+              Comece a investir
+            </button>
+            <button class="btn-td-outline" onclick="document.getElementById('titulos').scrollIntoView({behavior:'smooth'})">
+              Conhecer os títulos
+            </button>
+          </div>
+        </div>
+
+        <!-- Cards de destaque -->
+        <div class="td-hero-stats">
+          <div class="td-stat-card">
+            <div class="td-stat-card__label">Garantia</div>
+            <div class="td-stat-card__value">100%<span>Tesouro Nacional</span></div>
+            <div class="td-stat-card__sub">Título soberano — risco mais baixo do país</div>
+          </div>
+          <div class="td-stat-card">
+            <div class="td-stat-card__label">Aplicação mínima</div>
+            <div class="td-stat-card__value">R$ 30<span>para começar</span></div>
+            <div class="td-stat-card__sub">Acessível para qualquer perfil de investidor</div>
+          </div>
+          <div class="td-stat-card">
+            <div class="td-stat-card__label">Liquidez</div>
+            <div class="td-stat-card__value">Diária<span>D+1</span></div>
+            <div class="td-stat-card__sub">Resgate disponível todos os dias úteis</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════ TIPOS DE TÍTULOS ═══════════ -->
+    <section class="td-titulos" id="titulos">
+      <div class="td-titulos-inner">
+        <div class="td-section-header">
+          <div class="td-section-tag">Conheça os títulos</div>
+          <h2>Invista com <span class="edu-highlight">conhecimento</span></h2>
+          <p>Entenda como funciona cada título do Tesouro Direto e descubra qual combina com o seu perfil e seus objetivos. Clique em um card para aprender mais.</p>
+        </div>
+
+        <div class="td-titulos-grid">
+
+          <!-- Tesouro Selic -->
+          <div class="td-card td-card--selic" data-td-modal="selic" role="button" tabindex="0" aria-label="Saiba mais sobre Tesouro Selic">
+            <div class="td-card__stripe td-card__stripe--selic"></div>
+            <div class="td-card__body">
+              <div class="td-card__icon td-card__icon--selic">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1a7a3c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                </svg>
+              </div>
+              <div class="td-card__tag">Tesouro Direto</div>
+              <div class="td-card__title">Tesouro Selic</div>
+              <div class="td-card__desc">Acompanha a taxa Selic — ideal para reserva de emergência e curto prazo, com liquidez diária e baixíssima volatilidade.</div>
+              <div class="td-card__attrs">
+                <span class="td-attr td-attr--selic">💧 Liquidez diária</span>
+                <span class="td-attr td-attr--selic">Pós-fixado</span>
+                <span class="td-attr td-attr--selic">Baixo risco</span>
+              </div>
+            </div>
+            <div class="td-card__cta td-card__cta--selic">
+              <span>Saiba mais</span>
+              <div class="td-card__arrow td-card__arrow--selic">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tesouro IPCA+ -->
+          <div class="td-card td-card--ipca" data-td-modal="ipca" role="button" tabindex="0" aria-label="Saiba mais sobre Tesouro IPCA+">
+            <div class="td-card__stripe td-card__stripe--ipca"></div>
+            <div class="td-card__body">
+              <div class="td-card__icon td-card__icon--ipca">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0056A8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10" />
+                  <polyline points="12 6 12 12 16 14" />
+                </svg>
+              </div>
+              <div class="td-card__tag">Tesouro Direto</div>
+              <div class="td-card__title">Tesouro IPCA+</div>
+              <div class="td-card__desc">Protege seu patrimônio da inflação e ainda garante um ganho real acima do IPCA. Ideal para objetivos de longo prazo.</div>
+              <div class="td-card__attrs">
+                <span class="td-attr td-attr--ipca">📈 Proteção inflação</span>
+                <span class="td-attr td-attr--ipca">Híbrido</span>
+                <span class="td-attr td-attr--ipca">Longo prazo</span>
+              </div>
+            </div>
+            <div class="td-card__cta td-card__cta--ipca">
+              <span>Saiba mais</span>
+              <div class="td-card__arrow td-card__arrow--ipca">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tesouro Prefixado -->
+          <div class="td-card td-card--pre" data-td-modal="pre" role="button" tabindex="0" aria-label="Saiba mais sobre Tesouro Prefixado">
+            <div class="td-card__stripe td-card__stripe--pre"></div>
+            <div class="td-card__body">
+              <div class="td-card__icon td-card__icon--pre">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#8a6800" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" y1="1" x2="12" y2="23" />
+                  <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                </svg>
+              </div>
+              <div class="td-card__tag">Tesouro Direto</div>
+              <div class="td-card__title">Tesouro Prefixado</div>
+              <div class="td-card__desc">Taxa de rentabilidade definida no momento da compra. Você sabe exatamente quanto vai receber no vencimento.</div>
+              <div class="td-card__attrs">
+                <span class="td-attr td-attr--pre">🎯 Rentabilidade certa</span>
+                <span class="td-attr td-attr--pre">Pré-fixado</span>
+                <span class="td-attr td-attr--pre">Médio prazo</span>
+              </div>
+            </div>
+            <div class="td-card__cta td-card__cta--pre">
+              <span>Saiba mais</span>
+              <div class="td-card__arrow td-card__arrow--pre">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ MODAIS ═══════════ -->
+    <div class="td-overlay" id="tdOverlay" role="dialog" aria-modal="true" aria-labelledby="tdModalTitle">
+
+      <!-- Modal Tesouro Selic -->
+      <div class="td-modal" id="td-modal-selic" style="display:none">
+        <div class="td-modal__header">
+          <button class="td-modal__close" aria-label="Fechar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+              <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          </button>
+          <div class="td-modal__pill td-modal__pill--selic">Pós-fixado · Taxa Selic</div>
+          <h2 class="td-modal__title" id="tdModalTitle">O que é o Tesouro Selic?</h2>
+          <p class="td-modal__subtitle">O título mais conservador e líquido do Tesouro Direto. Ideal para quem prioriza segurança e disponibilidade do dinheiro.</p>
+        </div>
+        <div class="td-modal__body">
+          <div class="td-modal__explainer">
+            <div class="td-modal__explainer-icon td-modal__explainer-icon--selic">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#1a7a3c" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+              </svg>
+            </div>
+            <p>O Tesouro Selic rende conforme a <strong>taxa básica de juros da economia</strong> (Selic), definida pelo Banco Central. Isso significa que seu rendimento acompanha as oscilações da política monetária, sem risco de perda em caso de resgate antecipado.</p>
+          </div>
+          <div class="td-modal__section">
+            <div class="td-modal__section-title td-modal__section-title--selic">Como funciona</div>
+            <ul class="td-modal__list td-modal__list--selic">
+              <li>Seu dinheiro rende diariamente conforme a variação da taxa Selic</li>
+              <li>Liquidez diária: você pode resgatar qualquer dia útil com o valor disponível em D+1</li>
+              <li>Não sofre marcação a mercado relevante — ideal para quem pode precisar do dinheiro antes do vencimento</li>
+              <li>IR com tabela regressiva, descontado automaticamente no resgate</li>
+            </ul>
+          </div>
+          <div class="td-modal__section">
+            <div class="td-modal__section-title td-modal__section-title--selic">Por que escolher</div>
+            <ul class="td-modal__list td-modal__list--selic">
+              <li>Risco praticamente nulo — título garantido pelo Tesouro Nacional</li>
+              <li>Substitui a poupança com rentabilidade superior</li>
+              <li>Perfeito para reserva de emergência ou recursos de curto prazo</li>
+              <li>Disponível a partir de R$ 30 — sem burocracia</li>
+            </ul>
+          </div>
+          <div class="td-modal__attrs-grid">
+            <div class="td-modal__attr-item">
+              <div class="attr-label">Indexador</div>
+              <div class="attr-value">100% da Selic</div>
+            </div>
+            <div class="td-modal__attr-item">
+              <div class="attr-label">Imposto de Renda</div>
+              <div class="attr-value">Tabela regressiva <small>(22,5% → 15%)</small></div>
+            </div>
+            <div class="td-modal__attr-item">
+              <div class="attr-label">Aplicação mínima</div>
+              <div class="attr-value">A partir de <small>R$ 30</small></div>
+            </div>
+            <div class="td-modal__attr-item">
+              <div class="attr-label">Liquidez</div>
+              <div class="attr-value">Diária <small>(D+1 dias úteis)</small></div>
+            </div>
+          </div>
+        </div>
+        <div class="td-modal__footer">
+          <button class="td-modal__btn td-modal__btn--selic" onclick="window.open('taxas.html')">
+            Ver taxas do Tesouro Selic
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+              <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
+            </svg>
+          </button>
+          <p class="td-modal__disclaimer">* Rentabilidade passada não garante rentabilidade futura. Verifique as condições vigentes na plataforma.</p>
+        </div>
+      </div>
+
+      <!-- Modal Tesouro IPCA+ -->
+      <div class="td-modal" id="td-modal-ipca" style="display:none">
+        <div class="td-modal__header">
+          <button class="td-modal__close" aria-label="Fechar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+              <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          </button>
+          <div class="td-modal__pill td-modal__pill--ipca">Híbrido · IPCA + Taxa Fixa</div>
+          <h2 class="td-modal__title">O que é o Tesouro IPCA+?</h2>
+          <p class="td-modal__subtitle">Proteção real contra a inflação com ganho garantido acima do IPCA. O favorito para objetivos de longo prazo.</p>
+        </div>
+        <div class="td-modal__body">
+          <div class="td-modal__explainer">
+            <div class="td-modal__explainer-icon td-modal__explainer-icon--ipca">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#0056A8" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" />
+              </svg>
+            </div>
+            <p>O Tesouro IPCA+ combina <strong>inflação (IPCA) + taxa prefixada</strong>, garantindo que seu poder de compra seja preservado e que você ainda tenha um ganho real sobre a inflação, independentemente de quanto ela varie.</p>
+          </div>
+          <div class="td-modal__section">
+            <div class="td-modal__section-title td-modal__section-title--ipca">Como funciona</div>
+            <ul class="td-modal__list td-modal__list--ipca">
+              <li>Rentabilidade = IPCA acumulado no período + taxa prefixada contratada (ex.: IPCA + 6% a.a.)</li>
+              <li>Disponível com ou sem cupons semestrais de juros (Tesouro IPCA+ com Juros Semestrais)</li>
+              <li>Pode sofrer marcação a mercado em resgates antecipados — indicado para quem carrega até o vencimento</li>
+              <li>IR com tabela regressiva no resgate</li>
+            </ul>
+          </div>
+          <div class="td-modal__section">
+            <div class="td-modal__section-title td-modal__section-title--ipca">Por que escolher</div>
+            <ul class="td-modal__list td-modal__list--ipca">
+              <li>Protege o patrimônio em cenários de inflação alta</li>
+              <li>Garante ganho real (acima da inflação) já na contratação</li>
+              <li>Ideal para aposentadoria, educação dos filhos e objetivos de longo prazo</li>
+              <li>Título soberano — garantia do Tesouro Nacional</li>
+            </ul>
+          </div>
+          <div class="td-modal__attrs-grid">
+            <div class="td-modal__attr-item">
+              <div class="attr-label">Indexador</div>
+              <div class="attr-value">IPCA + <small>taxa prefixada</small></div>
+            </div>
+            <div class="td-modal__attr-item">
+              <div class="attr-label">Imposto de Renda</div>
+              <div class="attr-value">Tabela regressiva <small>(22,5% → 15%)</small></div>
+            </div>
+            <div class="td-modal__attr-item">
+              <div class="attr-label">Prazo típico</div>
+              <div class="attr-value">5 a 35 anos <small>longo prazo</small></div>
+            </div>
+            <div class="td-modal__attr-item">
+              <div class="attr-label">Liquidez</div>
+              <div class="attr-value">Diária <small>(sujeito a marcação)</small></div>
+            </div>
+          </div>
+        </div>
+        <div class="td-modal__footer">
+          <button class="td-modal__btn td-modal__btn--ipca" onclick="window.open('taxas.html')">
+            Ver taxas do Tesouro IPCA+
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+              <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
+            </svg>
+          </button>
+          <p class="td-modal__disclaimer">* Rentabilidade passada não garante rentabilidade futura. Verifique as condições vigentes na plataforma.</p>
+        </div>
+      </div>
+
+      <!-- Modal Tesouro Prefixado -->
+      <div class="td-modal" id="td-modal-pre" style="display:none">
+        <div class="td-modal__header">
+          <button class="td-modal__close" aria-label="Fechar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+              <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          </button>
+          <div class="td-modal__pill td-modal__pill--pre">Pré-fixado · Taxa definida na compra</div>
+          <h2 class="td-modal__title">O que é o Tesouro Prefixado?</h2>
+          <p class="td-modal__subtitle">Saiba exatamente quanto vai receber. Taxa de rentabilidade travada no momento da aplicação.</p>
+        </div>
+        <div class="td-modal__body">
+          <div class="td-modal__explainer">
+            <div class="td-modal__explainer-icon td-modal__explainer-icon--pre">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#8a6800" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="1" x2="12" y2="23" /><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+              </svg>
+            </div>
+            <p>No Tesouro Prefixado, a <strong>taxa de rentabilidade é definida no momento da compra</strong> e não muda até o vencimento. Independentemente do que aconteça com a Selic ou a inflação, você receberá exatamente a taxa que contratou.</p>
+          </div>
+          <div class="td-modal__section">
+            <div class="td-modal__section-title td-modal__section-title--pre">Como funciona</div>
+            <ul class="td-modal__list td-modal__list--pre">
+              <li>Taxa anual definida no momento da compra (ex.: 13,5% a.a.)</li>
+              <li>Ao vencimento, recebe R$ 1.000 por unidade do título — previsibilidade total</li>
+              <li>Também disponível com cupons semestrais (Tesouro Prefixado com Juros Semestrais)</li>
+              <li>Resgate antecipado sujeito à marcação a mercado — preço oscila conforme cenário de juros</li>
+            </ul>
+          </div>
+          <div class="td-modal__section">
+            <div class="td-modal__section-title td-modal__section-title--pre">Por que escolher</div>
+            <ul class="td-modal__list td-modal__list--pre">
+              <li>Ideal quando a Selic está em patamares altos e você quer travar a taxa</li>
+              <li>Previsibilidade total: você sabe exatamente quanto terá no vencimento</li>
+              <li>Bom para objetivos de médio prazo com data definida</li>
+              <li>Pode valorizar se os juros futuros caírem (ganho de capital)</li>
+            </ul>
+          </div>
+          <div class="td-modal__attrs-grid">
+            <div class="td-modal__attr-item">
+              <div class="attr-label">Indexador</div>
+              <div class="attr-value">Taxa fixa <small>definida na compra</small></div>
+            </div>
+            <div class="td-modal__attr-item">
+              <div class="attr-label">Imposto de Renda</div>
+              <div class="attr-value">Tabela regressiva <small>(22,5% → 15%)</small></div>
+            </div>
+            <div class="td-modal__attr-item">
+              <div class="attr-label">Prazo típico</div>
+              <div class="attr-value">1 a 5 anos <small>médio prazo</small></div>
+            </div>
+            <div class="td-modal__attr-item">
+              <div class="attr-label">Liquidez</div>
+              <div class="attr-value">Diária <small>(sujeito a marcação)</small></div>
+            </div>
+          </div>
+        </div>
+        <div class="td-modal__footer">
+          <button class="td-modal__btn td-modal__btn--pre" onclick="window.open('taxas.html')">
+            Ver taxas do Tesouro Prefixado
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+              <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
+            </svg>
+          </button>
+          <p class="td-modal__disclaimer">* Rentabilidade passada não garante rentabilidade futura. Verifique as condições vigentes na plataforma.</p>
+        </div>
+      </div>
+
+    </div><!-- /td-overlay -->
+
+    <!-- ═══════════ VANTAGENS ═══════════ -->
+    <section class="td-advantages">
+      <div class="td-advantages-inner">
+        <div class="td-section-header">
+          <div class="td-section-tag">Por que escolher</div>
+          <h2>Vantagens do Tesouro Direto na BRB Investimentos</h2>
+          <p>Com suporte especializado e plataforma completa, você investe nos títulos públicos com a comodidade que merece.</p>
+        </div>
+
+        <div class="td-advantages-grid">
+          <div class="td-adv-card reveal">
+            <span class="td-adv-icon">🏛️</span>
+            <h3>Garantia do Governo Federal</h3>
+            <p>Os títulos do Tesouro Direto são garantidos pelo Tesouro Nacional, tornando-os o investimento de menor risco do país — acima até do FGC.</p>
+          </div>
+          <div class="td-adv-card reveal">
+            <span class="td-adv-icon">💧</span>
+            <h3>Liquidez Diária</h3>
+            <p>O governo garante a recompra dos títulos todos os dias úteis. Você pode resgatar quando quiser, com o valor disponível em D+1.</p>
+          </div>
+          <div class="td-adv-card reveal">
+            <span class="td-adv-icon">🎯</span>
+            <h3>Acessível a Partir de R$ 30</h3>
+            <p>Você pode começar a investir com valores muito pequenos, democratizando o acesso aos melhores investimentos em renda fixa do Brasil.</p>
+          </div>
+          <div class="td-adv-card reveal">
+            <span class="td-adv-icon">📊</span>
+            <h3>Diversificação de Indexadores</h3>
+            <p>Escolha entre Selic (liquidez), IPCA+ (proteção inflação) e Prefixado (previsibilidade). Monte uma carteira equilibrada conforme seus objetivos.</p>
+          </div>
+          <div class="td-adv-card reveal">
+            <span class="td-adv-icon">🛡️</span>
+            <h3>Transparência Total</h3>
+            <p>As taxas, condições e rentabilidade esperada são informadas antes da aplicação. Sem letras miúdas: você sabe exatamente o que está comprando.</p>
+          </div>
+          <div class="td-adv-card reveal">
+            <span class="td-adv-icon">📱</span>
+            <h3>Gestão Simples e Digital</h3>
+            <p>Compre, acompanhe e resgate seus títulos diretamente pela plataforma BRB Investimentos — 100% digital, sem papelada.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ COMO INVESTIR ═══════════ -->
+    <section class="td-steps">
+      <div class="td-steps-inner">
+        <div class="td-section-header">
+          <div class="td-section-tag">Passo a passo</div>
+          <h2>Como começar a investir no Tesouro Direto</h2>
+          <p>Em poucos passos, seus recursos já estão rendendo com a segurança do governo federal.</p>
+        </div>
+
+        <div class="td-steps-grid">
+          <div class="td-step-card reveal">
+            <div class="td-step-number">01</div>
+            <h3>Abra sua conta</h3>
+            <p>Crie sua conta na BRB Investimentos de forma 100% digital. Leva menos de 5 minutos.</p>
+          </div>
+          <div class="td-step-card reveal">
+            <div class="td-step-number">02</div>
+            <h3>Faça seu perfil</h3>
+            <p>Responda ao suitability para descobrir seu perfil de investidor e receber recomendações personalizadas.</p>
+          </div>
+          <div class="td-step-card reveal">
+            <div class="td-step-number">03</div>
+            <h3>Transfira recursos</h3>
+            <p>Transfira da sua conta corrente BRB direto para a conta de investimentos na plataforma de forma simples e rápida.</p>
+          </div>
+          <div class="td-step-card reveal">
+            <div class="td-step-number">04</div>
+            <h3>Escolha o título</h3>
+            <p>Compare Selic, IPCA+ e Prefixado, escolha o que combina com seu objetivo e aplique com segurança.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ CTA CENTRAL ═══════════ -->
+    <section class="td-cta-section">
+      <div class="td-cta-box reveal">
+        <div class="td-section-tag" style="margin-bottom: 1.2rem;">BRB Investimentos</div>
+        <h2>Invista com a segurança do Tesouro Nacional</h2>
+        <p>Acesse a plataforma e comece a investir nos melhores títulos públicos do Brasil com o suporte de especialistas da BRB Investimentos.</p>
+        <div class="td-cta-buttons">
+          <button class="btn-cta-primary-td" onclick="window.open('https://brb.genialinvestimentos.com.br/auth/login','_blank','noopener,noreferrer')">
+            Acessar minha conta
+          </button>
+          <button class="btn-cta-secondary-td" onclick="window.location.href='https://forms.office.com/r/1EsKit6Ce9'">
+            Falar com um assessor
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ FAQ ═══════════ -->
+    <section class="td-faq" id="entenda">
+      <div class="td-faq-layout">
+        <div class="td-faq-left reveal">
+          <div class="td-section-tag" style="margin-bottom: 1rem;">Entenda</div>
+          <h2>Tire suas dúvidas sobre o Tesouro Direto</h2>
+          <p>Reunimos as perguntas mais frequentes para ajudar você a investir com mais confiança e clareza.</p>
+          <button class="btn-td-primary" style="margin-top:1rem" onclick="window.open('assessores.html#equipe')">
+            Conheça nossa equipe
+          </button>
+        </div>
+
+        <div class="faq-list reveal">
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>O que é o Tesouro Direto?</span>
+              <div class="faq-icon">+</div>
+            </button>
+            <div class="faq-body">
+              <div class="faq-body-inner">
+                O Tesouro Direto é um programa do governo federal criado em 2002 para permitir que pessoas físicas comprem títulos públicos diretamente pelo site do Tesouro Nacional ou por corretoras habilitadas, como a BRB Investimentos. É a forma mais segura de investir no Brasil, pois o risco é do próprio governo federal.
+              </div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>Qual título do Tesouro Direto é mais indicado para reserva de emergência?</span>
+              <div class="faq-icon">+</div>
+            </button>
+            <div class="faq-body">
+              <div class="faq-body-inner">
+                O Tesouro Selic é o mais indicado para reserva de emergência. Ele tem liquidez diária, não sofre volatilidade relevante em resgates antecipados e acompanha a taxa básica de juros. Você pode resgatar qualquer dia útil com o dinheiro disponível em D+1.
+              </div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>O Tesouro Direto tem proteção do FGC?</span>
+              <div class="faq-icon">+</div>
+            </button>
+            <div class="faq-body">
+              <div class="faq-body-inner">
+                Não, os títulos do Tesouro Direto não têm cobertura do FGC — mas também não precisam. Eles são garantidos diretamente pelo Tesouro Nacional (o governo federal), que é considerado o emissor de menor risco do país. Na prática, o Tesouro Direto é ainda mais seguro do que produtos com FGC.
+              </div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>Posso perder dinheiro no Tesouro Direto?</span>
+              <div class="faq-icon">+</div>
+            </button>
+            <div class="faq-body">
+              <div class="faq-body-inner">
+                Se você carregar o título até o vencimento, receberá exatamente a rentabilidade contratada. Porém, se resgatar antes do prazo, o preço de venda depende da marcação a mercado — ou seja, pode variar conforme as condições de juros do momento. O Tesouro Selic praticamente não sofre esse efeito. Já o IPCA+ e o Prefixado podem apresentar volatilidade em resgates antecipados.
+              </div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>Qual a diferença entre Tesouro IPCA+ e Tesouro Prefixado?</span>
+              <div class="faq-icon">+</div>
+            </button>
+            <div class="faq-body">
+              <div class="faq-body-inner">
+                <strong>Tesouro IPCA+:</strong> rentabilidade híbrida — IPCA (inflação) + uma taxa fixa. Garante ganho real mesmo em cenários de inflação alta. Ideal para proteger o poder de compra no longo prazo.<br><br>
+                <strong>Tesouro Prefixado:</strong> taxa 100% definida na contratação. Você sabe exatamente quanto vai receber, independentemente da inflação ou dos juros. Melhor quando os juros estão altos e você quer travá-los.
+              </div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>O Tesouro Direto paga Imposto de Renda?</span>
+              <div class="faq-icon">+</div>
+            </button>
+            <div class="faq-body">
+              <div class="faq-body-inner">
+                Sim. Sobre os rendimentos incide a tabela regressiva do IR: 22,5% para aplicações de até 180 dias, reduzindo gradualmente até 15% para aplicações acima de 720 dias. O imposto é descontado automaticamente na fonte no momento do resgate ou vencimento. Também há incidência de IOF nos primeiros 30 dias.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ FOOTER (idêntico ao renda-fixa) ═══════════ -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-brand">
+          <img src="img/LOGO BRANCA.png" alt="BRB Investimentos" class="footer-logo-img" />
+          <p class="footer-brand-text">Investindo no futuro dos brasileiros com segurança, tecnologia e tradição.</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/brbinvestimentos/" class="footer-social-btn" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+              </svg>
+            </a>
+            <a href="https://youtube.com/@brbinvestimentos?si=MmAK0HAz0J-XOkLa" class="footer-social-btn" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+              </svg>
+            </a>
+            <a href="https://www.facebook.com/share/1CRVbq4UXf/?mibextid=wwXIfr" class="footer-social-btn" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>Produtos</h4>
+          <ul>
+            <li><a href="renda-fixa.html">Renda Fixa</a></li>
+            <li><a href="fundos.html">Fundos</a></li>
+            <li><a href="previdencia.html">Previdência</a></li>
+            <li><a href="renda-variavel.html">Renda Variável</a></li>
+            <li><a href="mercado-futuro.html">Mercado Futuro</a></li>
+            <li><a href="tesouro-direto.html">Tesouro Direto</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Quem Somos</h4>
+          <ul>
+            <li><a href="sobrenos.html#missao">Nossa Missão</a></li>
+            <li><a href="sobrenos.html#historia">Nossa História</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Fale Conosco</h4>
+          <ul>
+            <li><a href="https://novo.brb.com.br/atendimento/" target="_blank" rel="noopener noreferrer">Central de Atendimento</a></li>
+            <li><a href="https://novo.brb.com.br/atendimento/ouvidoria-brb/" target="_blank" rel="noopener noreferrer">Ouvidoria BRB</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Institucional</h4>
+          <ul>
+            <li><a href="https://www.anbima.com.br/" target="_blank">Anbima</a></li>
+            <li><a href="https://www.b3.com.br/" target="_blank">B3</a></li>
+            <li><a href="https://www.gov.br/cvm/" target="_blank">CVM</a></li>
+            <li><a href="https://www.fgc.org.br/" target="_blank">FGC</a></li>
+            <li><a href="https://www.bcb.gov.br/" target="_blank">Bacen</a></li>
+          </ul>
+        </div>
+        <div class="footer-column regulatorio">
+          <h4>Regulatórios</h4>
+          <ul>
+            <li><a href="pdfs/Política de Privacidade.pdf" target="_blank">Política de Privacidade</a></li>
+            <li><a href="pdfs/4. Termo Abertura Conta Corrente  PF.pdf" target="_blank">Termos de Abertura de conta</a></li>
+            <li><a href="pdfs/RPA_B3_Genial_Janeiro_2026.pdf" target="_blank">Regras e Parâmetros de Atuação</a></li>
+            <li><a href="pdfs/Termo de Renda Fixa.pdf" target="_blank">Termo de Renda Fixa</a></li>
+            <li><a href="pdfs/CONTRATO DE INTERMEDIAÇÃO.pdf" target="_blank">Contrato de Intermediação</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-left">
+          <img class="footer-mark" src="https://framerusercontent.com/images/ZRAogsRUCyrDvJX2BCEBRqoGhWY.svg?width=142&height=33" alt="Banco Central" />
+          <img class="footer-mark" src="https://framerusercontent.com/images/mHJ8wt4h7RrXbxoN3I2zNtlIMw.svg?width=90&height=41" alt="B3" />
+        </div>
+        <div class="footer-center">
+          <p class="brbdireitos">© 2026 BRB Investimentos</p>
+          <p class="footer-address">BL B - Centro Empresarial CNC - SAUN Quadra 5, Lote C, 2º andar - Brasília/DF</p>
+        </div>
+        <div class="footer-right footer-certificados">
+          <img src="img/distribuicao-geral.jpg" alt="Certificado Anbima" />
+          <img src="img/art-administracao.jpg" alt="Certificado Administração" />
+        </div>
+      </div>
+    </footer>
+
+    <!-- Floating CTA -->
+    <button class="floating-cta" id="floatingCta" onclick="window.open('https://brb.genialinvestimentos.com.br/auth/login','_blank','noopener,noreferrer')">
+      Investir agora
+    </button>
+
+    <!-- JS global (reutilizado do script.js existente) -->
+    <script src="script.js"></script>
+
+    <!-- JS específico da página Tesouro Direto -->
+    <script>
+      // ── Modais dos títulos ──────────────────────────────────────
+      const tdOverlay = document.getElementById('tdOverlay');
+      const tdCards   = document.querySelectorAll('[data-td-modal]');
+      const tdModals  = document.querySelectorAll('.td-modal');
+      const tdCloses  = document.querySelectorAll('.td-modal__close');
+
+      function openTdModal(key) {
+        tdModals.forEach(m => m.style.display = 'none');
+        const target = document.getElementById('td-modal-' + key);
+        if (!target) return;
+        target.style.display = 'block';
+        tdOverlay.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+        tdOverlay.focus();
+      }
+
+      function closeTdModal() {
+        tdOverlay.classList.remove('is-open');
+        document.body.style.overflow = '';
+      }
+
+      tdCards.forEach(card => {
+        card.addEventListener('click', () => openTdModal(card.dataset.tdModal));
+        card.addEventListener('keydown', e => {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openTdModal(card.dataset.tdModal); }
+        });
+      });
+
+      tdCloses.forEach(btn => btn.addEventListener('click', closeTdModal));
+
+      tdOverlay.addEventListener('click', e => {
+        if (e.target === tdOverlay) closeTdModal();
+      });
+
+      document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') closeTdModal();
+      });
+
+      // ── FAQ ────────────────────────────────────────────────────
+      document.querySelectorAll('.faq-trigger').forEach(trigger => {
+        trigger.addEventListener('click', () => {
+          const expanded = trigger.getAttribute('aria-expanded') === 'true';
+          // Fecha todos
+          document.querySelectorAll('.faq-trigger').forEach(t => {
+            t.setAttribute('aria-expanded', 'false');
+            t.nextElementSibling.classList.remove('is-open');
+          });
+          // Abre o clicado (se estava fechado)
+          if (!expanded) {
+            trigger.setAttribute('aria-expanded', 'true');
+            trigger.nextElementSibling.classList.add('is-open');
+          }
+        });
+      });
+
+      // ── Reveal on scroll ───────────────────────────────────────
+      const revealEls = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window) {
+        const revealObs = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('revealed');
+              revealObs.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12 });
+        revealEls.forEach(el => revealObs.observe(el));
+      } else {
+        revealEls.forEach(el => el.classList.add('revealed'));
+      }
+    </script>
+  </body>
+</html>
