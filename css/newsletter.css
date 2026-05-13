@@ -279,7 +279,7 @@ nav {
 .nav-links .dropdown-menu a {
   display: block;
   padding: 11px 20px;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 14px;
   color: rgba(0, 0, 0, 0.7);
   transition: background var(--ease), color var(--ease);
@@ -829,7 +829,7 @@ footer {
   max-width: var(--container);
   margin: 0 auto 3rem;
   display: grid;
-  grid-template-columns: 1.2fr 1fr 1fr 1.2fr 1fr 2fr;
+  grid-template-columns: 1.2fr 1fr 1fr 1.2fr 1fr 1fr;
   gap: 3rem;
 }
 
@@ -837,14 +837,6 @@ footer {
   width: 180px;
   margin-bottom: 1.2rem;
   filter: brightness(0) invert(1);
-}
-
-.footer-brand-text {
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.6);
-  line-height: 1.7;
-  max-width: 260px;
-  font-weight: 400;
 }
 
 .footer-social {
@@ -857,14 +849,14 @@ footer {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.14);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: rgba(255, 255, 255, 0.65);
-  text-decoration: none;
+  color: rgba(255,255,255,0.65);
   transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+  text-decoration: none;
 }
 
 .footer-social-btn:hover {
@@ -878,6 +870,14 @@ footer {
   width: 17px;
   height: 17px;
   fill: currentColor;
+}
+
+.footer-brand-text {
+  font-size: 0.90rem;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.7;
+  max-width: 260px;
+  font-weight: 400;
 }
 
 .footer-column h4 {
@@ -900,9 +900,9 @@ footer {
 .footer-column a {
   color: rgba(255, 255, 255, 0.65);
   font-size: 0.92rem;
-  font-weight: 400;
-  display: inline-block;
   transition: color var(--ease), padding-left var(--ease);
+  display: inline-block;
+  font-weight: 400;
 }
 
 .footer-column a:hover {
@@ -942,14 +942,14 @@ footer {
 }
 
 .brbdireitos {
-  font-size: 0.9rem;
+  font-size: 0.90rem;
   opacity: 0.85;
   font-weight: 700;
   margin-bottom: 0.4rem;
 }
 
 .footer-address {
-  font-size: 0.8rem;
+  font-size: 0.80rem;
   opacity: 0.55;
   font-weight: 400;
 }
@@ -966,7 +966,7 @@ footer {
   width: auto;
   object-fit: contain;
   border-radius: 6px;
-  opacity: 0.9;
+  opacity: 0.90;
   transition: transform var(--ease), opacity var(--ease);
 }
 
