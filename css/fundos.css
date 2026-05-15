@@ -1171,11 +1171,11 @@ footer {
    RESPONSIVO / MOBILE
    ============================================================ */
 @media (max-width: 968px) {
-  .rf-hero-inner { grid-template-columns: 1fr; text-align: center; }
-  .rf-hero-visual { display: none; }
-  .rf-hero p.hero-desc { margin: 0 auto 2.5rem; }
-  .rf-hero .rf-hero-badge { margin: 0 auto 1.5rem; }
-  .rf-hero-ctas { justify-content: center; }
+  .fd-hero-inner { text-align: center; }
+  .fd-hero-visual { display: none; }
+  .fd-hero p.hero-desc { margin: 0 auto 2.5rem; }
+  .fd-hero-badge { margin: 0 auto 1.5rem; }
+  .fd-hero-ctas { justify-content: center; }
 
   .advantages-grid { grid-template-columns: 1fr; }
   .products-grid { grid-template-columns: 1fr; }

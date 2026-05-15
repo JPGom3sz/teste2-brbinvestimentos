@@ -452,19 +452,50 @@ nav {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  background: var(--gradient-blue);
+  justify-content: flex-start;
   overflow: hidden;
   padding-top: var(--header-h);
+}
+
+/* Foto de fundo ocupa todo o hero */
+.sn-hero__image-wrapper {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 0 !important;
+  display: block !important;
+  flex: none !important;
+}
+
+.sn-hero__image {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  filter: brightness(0.75) !important;
+  mask-image: none !important;
+  -webkit-mask-image: none !important;
+}
+
+/* Overlay azul moderado (não exagerado) sobre a foto */
+.sn-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 20, 50, 0.32);
+  z-index: 1;
+  pointer-events: none;
 }
 
 .sn-hero__content {
   position: relative;
   z-index: 2;
-  flex: 1;
-  max-width: 860px;
+  flex: none;
+  max-width: 680px;
   padding-left: clamp(2rem, 8vw, 8rem);
   padding-right: 2rem;
+  padding-bottom: 4rem;
 }
 
 .sn-hero__tag {
@@ -530,24 +561,7 @@ nav {
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
 }
 
-.sn-hero__image-wrapper {
-  flex: 1;
-  position: relative;
-  height: 100vh;
-  display: flex;
-  justify-content: flex-end;
-  z-index: 1;
-}
-
-.sn-hero__image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center right;
-  filter: contrast(1.1) brightness(1.1);
-  mask-image: linear-gradient(to right, transparent 0%, rgb(0, 0, 0) 25%);
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgb(0, 0, 0) 25%);
-}
+/* Badge posicionado sobre o hero */
 
 /* ── Hero orbs flutuantes ── */
 .sn-hero__orbs {
@@ -555,7 +569,7 @@ nav {
   inset: 0;
   pointer-events: none;
   overflow: hidden;
-  z-index: 1;
+  z-index: 2;
 }
 
 .sn-hero__orb {
@@ -597,18 +611,7 @@ nav {
   66%      { transform: translate(-14px, 18px) scale(0.96); }
 }
 
-/* ── Hero grid sutil (sobrepõe gradient) ── */
-.sn-hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
-  background-size: 48px 48px;
-  pointer-events: none;
-}
+/* ── Hero grid sutil — removido pois hero agora usa foto de fundo ── */
 
 /* ── Badge flutuante no hero ── */
 .sn-hero__badge {
@@ -1515,9 +1518,7 @@ footer {
 
   /* Hero: evita imagem cortada em notebooks */
   .sn-hero {
-    flex-direction: column;
-    justify-content: center;
-    min-height: auto;
+    min-height: 100vh;
   }
 
   .sn-hero__content {
@@ -1527,25 +1528,22 @@ footer {
   }
 
   .sn-hero__image-wrapper {
-    width: 100%;
-    height: 50vh;
-    min-height: 320px;
-    flex: none;
-    justify-content: center;
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
   }
 
   .sn-hero__image {
-    object-position: center top;
-    mask-image: linear-gradient(to bottom, transparent 0%, black 20%);
-    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 20%);
+    object-position: center center;
+    mask-image: none !important;
+    -webkit-mask-image: none !important;
   }
 }
 
 @media (max-width: 992px) {
   .sn-hero {
-    flex-direction: column;
-    justify-content: center;
-    min-height: auto;
+    min-height: 100vh;
   }
 
   .sn-hero__content {
@@ -1563,15 +1561,15 @@ footer {
   }
 
   .sn-hero__image-wrapper {
-    height: 50vh;
-    min-height: 280px;
-    width: 100%;
-    flex: none;
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
   }
 
   .sn-hero__image {
-    mask-image: linear-gradient(to bottom, transparent 0%, black 25%);
-    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 25%);
+    mask-image: none !important;
+    -webkit-mask-image: none !important;
   }
 }
 

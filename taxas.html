@@ -284,7 +284,7 @@
       }
 
       /* ══════════════════════════════════════
-         FILTROS / ABAS (Ajustado para scroll mobile)
+         FILTROS / ABAS
       ══════════════════════════════════════ */
       .tx-filters {
         background: #fff;
@@ -311,9 +311,32 @@
       .tx-filters-inner::-webkit-scrollbar { 
         display: none; 
       }
-      /* Centraliza as abas apenas em telas grandes onde não precisa de scroll */
+
+      /* Oculto por padrão no computador */
+      .tx-filters-hint {
+        display: none;
+        text-align: center;
+        font-size: 0.78rem;
+        font-weight: 700;
+        color: #0056A8;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        padding-top: 1.2rem;
+        padding-bottom: 0.2rem;
+        background: #fff;
+        animation: pulseHint 2s infinite ease-in-out;
+      }
+
+      @keyframes pulseHint {
+        0%, 100% { opacity: 0.6; transform: scale(1); }
+        50% { opacity: 1; transform: scale(1.02); }
+      }
+
      /* MOBILE: Scroll horizontal sem quebrar linha */
       @media (max-width: 968px) {
+        .tx-filters-hint {
+          display: block; /* Ativa o texto de dica apenas no mobile */
+        }
         .tx-filters-inner {
           justify-content: flex-start;
           flex-wrap: nowrap;
@@ -424,13 +447,12 @@
         background: #fff; 
         border-radius: 16px; 
         border: 1px solid rgba(0,86,168,0.08); 
-        overflow-x: auto; /* Adicionado para responsividade */
+        overflow-x: auto; 
         -webkit-overflow-scrolling: touch;
         box-shadow: 0 4px 20px rgba(0,31,63,0.05); 
         margin-bottom: 1.5rem; 
       }
 
-      /* Força as linhas da tabela a terem uma largura mínima, ativando o scroll no celular em vez de amassar os dados */
       .tx-table-head, .tx-table-row {
         min-width: 750px; 
       }
@@ -447,18 +469,16 @@
         color: #9ca3af; 
       }
 
-      /* Grids Específicos das Tabelas */
       .tx-table-head--cdb, .tx-table-row--cdb  { grid-template-columns: 2fr 1.2fr 1fr 1.2fr 1fr; }
       .tx-table-head--lci, .tx-table-row--lci  { grid-template-columns: 2fr 1.2fr 1fr 1.2fr 1fr; }
       .tx-table-head--deb, .tx-table-row--deb  { grid-template-columns: 2fr 1fr 1fr 1.2fr 1fr; }
       .tx-table-head--rv,  .tx-table-row--rv   { grid-template-columns: 2fr 1.2fr 1fr 1.2fr 1fr; }
-      .tx-table-head--fii, .tx-table-row--fii  { grid-template-columns: 2fr 1.2fr 1.2fr 1fr 1fr; }
+      .tx-table-head--fii, .tx-table-row--fii  { grid-template-columns: 2fr 1.2fr 1.22fr 1fr 1fr; }
       .tx-table-head--fund,.tx-table-row--fund { grid-template-columns: 2fr 1.2fr 1fr 1fr 1fr; }
       .tx-table-head--prev,.tx-table-row--prev { grid-template-columns: 2fr 1.2fr 1fr 1fr 1fr; }
       .tx-table-head--fut, .tx-table-row--fut  { grid-template-columns: 2fr 1.2fr 1fr 1fr 1fr; }
       .tx-table-head--td,  .tx-table-row--td   { grid-template-columns: 2fr 1.2fr 1fr 1.2fr 1fr; }
 
-      /* Linhas e Hover */
       .tx-table-row { 
         display: grid; 
         padding: 1.1rem 1.6rem; 
@@ -495,7 +515,6 @@
       .col-rate--fut  { color: var(--fut); }
       .col-rate--td   { color: var(--td); }
 
-      /* Badges */
       .tx-badge { display: inline-block; font-size: 0.68rem; font-weight: 700; padding: 0.22rem 0.6rem; border-radius: 50px; }
       .tx-badge--fgc  { background: rgba(0,86,168,0.08); color: #0056A8; }
       .tx-badge--ir   { background: rgba(5,150,105,0.1); color: #059669; }
@@ -503,7 +522,6 @@
 
       .tx-table-note { font-size: 0.78rem; color: #9ca3af; line-height: 1.6; margin-bottom: 2.5rem; }
 
-      /* ── Seção de contexto (CDI, IPCA) ── */
       .tx-context { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 3rem; }
       .tx-context-card { background: #fff; border: 1px solid rgba(0,86,168,0.08); border-radius: 14px; padding: 1.3rem 1.5rem; display: flex; flex-direction: column; gap: 0.3rem; transition: transform 0.3s ease, box-shadow 0.3s ease; }
       .tx-context-card:hover { transform: translateY(-6px); box-shadow: 0 12px 24px rgba(0,86,168,0.12); }
@@ -511,7 +529,6 @@
       .tx-context-card .ctx-value { font-size: 1.7rem; font-weight: 900; color: #001F3F; line-height: 1; }
       .tx-context-card .ctx-desc { font-size: 0.78rem; color: #6b7280; }
 
-      /* ── CTA de conversão ── */
       .tx-cta-block { background: linear-gradient(135deg, #001e3c 0%, #003d75 100%); border-radius: 20px; padding: 2.5rem 2.5rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; position: relative; overflow: hidden; margin-top: 1rem; }
       .tx-cta-block::before { content: ''; position: absolute; width: 400px; height: 400px; background: radial-gradient(ellipse, rgba(0,128,216,0.2) 0%, transparent 70%); right: -100px; top: -100px; pointer-events: none; }
       .tx-cta-block h3 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 900; color: #fff; margin-bottom: 0.5rem; }
@@ -525,37 +542,176 @@
       /* ============================================================
          FOOTER UNIFICADO
       ============================================================ */
-      footer { background: var(--gradient-blue); color: #fff; padding: 4rem var(--px) 1.5rem; }
-      .footer-content { max-width: var(--container); margin: 0 auto 3rem; display: grid; grid-template-columns: 1.8fr 1fr 1fr 1fr 1fr; gap: 2rem; }
-      .footer-logo-img { width: 180px; margin-bottom: 1.2rem; filter: brightness(0) invert(1); }
-      .footer-brand-text { font-size: 0.90rem; color: rgba(255,255,255,0.6); line-height: 1.7; max-width: 260px; }
-      .footer-social { display: flex; gap: 0.65rem; margin-top: 1.4rem; }
-      .footer-social-btn { width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.14); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.65); transition: all 0.25s; text-decoration: none; }
-      .footer-social-btn:hover { background: var(--primary-blue); border-color: var(--primary-blue); color: #fff; transform: translateY(-3px); }
-      .footer-social-btn svg { width: 17px; height: 17px; fill: currentColor; }
-      .footer-column h4 { margin-bottom: 1.4rem; font-weight: 700; font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-gold); }
-      .footer-column ul { list-style: none; padding: 0; margin: 0; }
-      .footer-column ul li { margin-bottom: 0.75rem; }
-      .footer-column a { color: rgba(255,255,255,0.65); font-size: 0.88rem; transition: color 0.25s, padding-left 0.25s; display: inline-block; text-decoration: none; }
-      .footer-column a:hover { color: #fff; padding-left: 5px; }
+     footer {
+  background: linear-gradient(135deg, #001e3c 0%, #003d75 100%) !important;
+  color: #fff !important;
+  padding: 4rem var(--px) 2.5rem !important;
+}
 
-      .footer-bottom { max-width: var(--container); margin: 0 auto; padding: 2.5rem 0 0; border-top: 1px solid rgba(255,255,255,0.15); display: grid; grid-template-columns: 1fr auto 1fr; align-items: end; gap: 2rem; }
-      .footer-left { display: flex; align-items: center; gap: 16px; justify-content: flex-start; }
-      .footer-mark { height: 28px; width: auto; object-fit: contain; filter: brightness(0) invert(1); opacity: 0.85; }
-      .footer-center { text-align: center; padding-bottom: 0.2rem; }
-      .brbdireitos { font-size: 0.85rem; opacity: 0.85; font-weight: 700; margin-bottom: 0.4rem; }
-      .footer-address { font-size: 0.75rem; opacity: 0.55; font-weight: 400; }
-      
-      .footer-right { display: flex; align-items: center; justify-content: flex-end; gap: 1.5rem; }
-      .footer-column.regulatorio { margin: 0; text-align: left; }
-      .footer-column.regulatorio h4 { margin-bottom: 1.2rem; }
-      .footer-column.regulatorio ul li { margin-bottom: 0.6rem; }
-      .footer-column.regulatorio a { font-size: 0.78rem; }
-      
-      .footer-certificados { display: flex; gap: 10px; }
-      .footer-certificados img { height: 38px; width: auto; object-fit: contain; border-radius: 4px; opacity: 0.90; transition: transform 0.25s; }
-      .footer-certificados img:hover { transform: scale(1.08); opacity: 1; }
+/* Força o grid a ter 6 colunas exatas no computador */
+.footer-content {
+  max-width: var(--container) !important;
+  margin: 0 auto 3rem !important;
+  display: grid !important;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr 1fr 1fr !important; 
+  gap: 2rem !important;
+}
 
+.footer-logo-img {
+  width: 180px !important;
+  margin-bottom: 1.2rem !important;
+  filter: brightness(0) invert(1) !important;
+}
+
+.footer-brand-text {
+  font-size: 0.90rem !important;
+  color: rgba(255,255,255,0.6) !important;
+  line-height: 1.7 !important;
+  max-width: 260px !important;
+}
+
+.footer-social {
+  display: flex !important;
+  gap: 0.65rem !important;
+  margin-top: 1.4rem !important;
+}
+
+.footer-social-btn {
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 50% !important;
+  background: rgba(255,255,255,0.08) !important;
+  border: 1px solid rgba(255,255,255,0.14) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: rgba(255,255,255,0.65) !important;
+  transition: all 0.25s !important;
+  text-decoration: none !important;
+}
+
+.footer-social-btn:hover {
+  background: #0056A8 !important;
+  border-color: #0056A8 !important;
+  color: #fff !important;
+  transform: translateY(-3px) !important;
+}
+
+.footer-column h4 {
+  margin-bottom: 1.4rem !important;
+  font-weight: 700 !important;
+  font-size: 0.85rem !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  color: #91d4fa !important;
+}
+
+.footer-column ul {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.footer-column ul li {
+  margin-bottom: 0.75rem !important;
+}
+
+.footer-column a {
+  color: rgba(255,255,255,0.65) !important;
+  font-size: 0.88rem !important;
+  transition: color 0.25s, padding-left 0.25s !important;
+  display: inline-block !important;
+  text-decoration: none !important;
+}
+
+.footer-column a:hover {
+  color: #fff !important;
+  padding-left: 5px !important;
+}
+
+/* Alinhamento da barra inferior do rodapé */
+.footer-bottom {
+  max-width: var(--container) !important;
+  margin: 0 auto !important;
+  padding: 2.5rem 0 0 !important;
+  border-top: 1px solid rgba(255,255,255,0.15) !important;
+  display: grid !important;
+  grid-template-columns: 1fr auto 1fr !important;
+  align-items: center !important;
+  gap: 2rem !important;
+}
+
+.footer-left {
+  display: flex !important;
+  align-items: center !important;
+  gap: 16px !important;
+  justify-content: flex-start !important;
+}
+
+.footer-mark {
+  height: 28px !important;
+  width: auto !important;
+  object-fit: contain !important;
+  filter: brightness(0) invert(1) !important;
+  opacity: 0.85 !important;
+}
+
+.footer-center { text-align: center !important; }
+.brbdireitos { font-size: 0.85rem !important; font-weight: 700 !important; margin-bottom: 0.4rem !important; }
+.footer-address { font-size: 0.75rem !important; opacity: 0.55 !important; }
+
+.footer-right {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 1.5rem !important;
+}
+
+.footer-certificados { display: flex !important; gap: 10px !important; }
+.footer-certificados img { height: 38px !important; width: auto !important; border-radius: 4px !important; opacity: 0.90 !important; }
+
+/* ── RESPONSIVIDADE DO RODAPÉ (Notebooks compactos e tablets) ── */
+@media (max-width: 1240px) {
+  .footer-content {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 2.5rem !important;
+  }
+  .footer-brand {
+    grid-column: span 3 !important;
+    text-align: center !important;
+  }
+  .footer-brand-text { margin: 0 auto !important; }
+  .footer-social { justify-content: center !important; }
+  
+  .footer-bottom {
+    grid-template-columns: 1fr !important;
+    text-align: center !important;
+    gap: 1.5rem !important;
+  }
+  .footer-left, .footer-right { justify-content: center !important; }
+  .footer-right { flex-direction: column !important; align-items: center !important; }
+}
+
+/* ── RESPONSIVIDADE DO RODAPÉ (Telemóveis) ── */
+@media (max-width: 680px) {
+  .footer-content {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  .footer-brand {
+    grid-column: span 2 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-content {
+    grid-template-columns: 1fr !important;
+    text-align: center !important;
+  }
+  .footer-brand {
+    grid-column: span 1 !important;
+  }
+  .footer-column a:hover { padding-left: 0 !important; }
+}
       /* ══════════════════════════════════════
          MEDIA QUERIES GERAIS (Celular e Notebook)
       ══════════════════════════════════════ */
@@ -746,6 +902,8 @@
         </div>
       </div>
     </div>
+
+    <div class="tx-filters-hint">Arraste para o lado →</div>
 
     <div class="tx-filters" role="tablist" aria-label="Filtrar por produto">
       <div class="tx-filters-inner">
@@ -1653,7 +1811,7 @@
           </a>
         </div>
       </div><div class="tx-legal">
-        <p><strong>Aviso legal:</strong> As informações apresentadas nesta página têm caráter exclusivamente informativo e educacional, não constituindo oferta, solicitação, recomendação ou aconselhamento de investimento. Taxas indicativas sujeitas a alteração sem aviso prévio conforme condições de mercado. Rentabilidade passada não garante rentabilidade futura. Antes de investir, leia o prospecto, o regulamento e a lâmina do produto. BRB Investimentos — CNPJ: Genial Investimentos Corretora de Valores Mobiliários S.A. Autorizada pela CVM e membro da B3.</p>
+        <p><strong>Aviso legal:</strong> As informações apresentadas nesta página têm caráter exclusivamente informativo e educacional, não constituindo oferta, solicitação, recomendação ou aconselhamento de investment. Taxas indicativas sujeitas a alteração sem aviso prévio conforme condições de mercado. Rentabilidade passada não garante rentabilidade futura. Antes de investir, leia o prospecto, o regulamento e a lâmina do produto. BRB Investimentos — CNPJ: Genial Investimentos Corretora de Valores Mobiliários S.A. Autorizada pela CVM e membro da B3.</p>
       </div>
     </main>
 
@@ -1671,7 +1829,7 @@
             </a>
             <a href="https://youtube.com/@brbinvestimentos?si=MmAK0HAz0J-XOkLa" class="footer-social-btn" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93 Bam .502-5.814a3.016 3.016 0 0 0 2.122-2.136c1.871-.505 9.376-.505 9.376-.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z" />
               </svg>
             </a>
             <a href="https://www.facebook.com/share/1CRVbq4UXf/?mibextid=wwXIfr" class="footer-social-btn" aria-label="Facebook" target="_blank" rel="noopener noreferrer">

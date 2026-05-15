@@ -1185,22 +1185,11 @@ footer {
 
 /* ── MOBILE ── */
 @media (max-width: 968px) {
-  .rf-hero-inner {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-  .rf-hero-visual {
-    display: none;
-  }
-  .rf-hero p.hero-desc {
-    margin: 0 auto 2.5rem;
-  }
-  .rf-hero .rf-hero-badge {
-    margin: 0 auto 1.5rem;
-  }
-  .rf-hero-ctas {
-    justify-content: center;
-  }
+  .mf-hero-inner { text-align: center; }
+  .mf-hero-visual { display: none; }
+  .mf-hero p.hero-desc { margin: 0 auto 2.5rem; }
+  .mf-hero-badge { margin: 0 auto 1.5rem; }
+  .mf-hero-ctas { justify-content: center; }
   .advantages-grid {
     grid-template-columns: 1fr;
   }

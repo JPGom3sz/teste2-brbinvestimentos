@@ -1081,7 +1081,10 @@
 }
 
 @media (max-width: 900px) {
-  .td-hero-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .td-hero-inner { grid-template-columns: 1fr; gap: 3rem; text-align: center; }
+  .td-hero-text .hero-desc { margin: 0 auto 2.4rem; }
+  .td-hero-badge { margin: 0 auto 1.6rem; }
+  .td-hero-ctas { justify-content: center; }
   .td-hero-stats { flex-direction: row; flex-wrap: wrap; }
   .td-stat-card { flex: 1; min-width: 200px; }
 }

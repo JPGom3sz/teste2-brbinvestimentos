@@ -1850,6 +1850,12 @@ footer {
    RESPONSIVO — tablet
    ============================================================ */
 @media (max-width: 968px) {
+  /* Hero centralizado no mobile */
+  .pv-hero-inner      { text-align: center; }
+  .pv-hero p.hero-desc { margin: 0 auto 2.5rem; }
+  .pv-hero-badge      { margin: 0 auto 1.5rem; }
+  .pv-hero-ctas       { justify-content: center; }
+
   .advantages-grid    { grid-template-columns: 1fr; }
   .products-grid      { grid-template-columns: 1fr; }
   .faq-layout         { grid-template-columns: 1fr; gap: 2.5rem; }
