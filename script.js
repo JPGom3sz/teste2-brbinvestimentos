@@ -195,18 +195,18 @@ function initGlobalLinks() {
  * Gere o conteúdo dinâmico da secção de Portefólio (Home)
  */
 function initPortfolio() {
-  const contentBox = document.getElementById('content-portifolio');
+  // 1. Capturando os elementos exatamente como estão no seu HTML
+  const contentBox = document.querySelector('#content-portifolio');
   const portfolioLis = document.querySelectorAll('.portfolio-list li');
-  
-  if (!contentBox || portfolioLis.length === 0) {
-    return;
-  }
+
+  // Verifica se os elementos existem para evitar erros na página
+  if (!contentBox || portfolioLis.length === 0) return;
 
   const portfolioData = {
     default: {
       titulo: 'Conheça nossos principais produtos',
       descricao: 'O portfólio da BRB Investimentos é estruturado para atender diferentes perfis e objetivos financeiros, combinando segurança, diversificação e potencial de crescimento. A estratégia busca equilíbrio entre ativos de renda fixa e renda variável, permitindo ao investidor acessar oportunidades em diferentes mercados, sempre com gestão responsável e alinhada às melhores práticas do mercado financeiro.',
-      link: null,
+      link: 'https://lp.brbinvestimentos.com.br/perfis-brb-brb01-a/?gcode=GI-CRM-WEB-BRB01-X-CLIENTE-X-X-PON-X-HOTLIST-X&e=null&n=null&t=null&vlp=brb01-lpa'
     },
     1: { 
       titulo: 'Renda Fixa', 
@@ -249,9 +249,14 @@ function initPortfolio() {
     const data = portfolioData[id];
     if (!data) return;
 
-    // 1. Botão original "Saiba mais"
+    // Define o texto do botão principal com base na aba ativa
+    const textoBotaoPrincipal = (id === 'default') 
+      ? 'Faça uma simulação agora' 
+      : `Saiba mais sobre ${data.titulo}`;
+
+    // 1. Botão original / simulação
     const btnSaibaMais = data.link
-      ? `<a href="${data.link}" class="portfolio-cta-btn">Saiba mais sobre ${data.titulo} <span aria-hidden="true">→</span></a>`
+      ? `<a href="${data.link}" class="portfolio-cta-btn">${textoBotaoPrincipal} <span aria-hidden="true">→</span></a>`
       : '';
 
     // 2. Novo Botão de Taxas (Oculto apenas no "default" e no "Criptoativos")
@@ -302,6 +307,7 @@ function initPortfolio() {
     });
   });
 }
+
 
 /**
  * Animação de entrada (fade-in) para os cartões de estatísticas

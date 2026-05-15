@@ -16,35 +16,30 @@
   font-weight: 400;
   font-style: normal;
 }
-
 @font-face {
   font-family: 'Cera Pro';
   src: url('../fonts/Cera Pro Thin.otf') format('opentype');
   font-weight: 100;
   font-style: normal;
 }
-
 @font-face {
   font-family: 'Cera Pro';
   src: url('../fonts/Cera Pro Light.otf') format('opentype');
   font-weight: 300;
   font-style: normal;
 }
-
 @font-face {
   font-family: 'Cera Pro';
   src: url('../fonts/Cera Pro Medium.otf') format('opentype');
   font-weight: 500;
   font-style: normal;
 }
-
 @font-face {
   font-family: 'Cera Pro';
   src: url('../fonts/Cera Pro Bold.otf') format('opentype');
   font-weight: 700;
   font-style: normal;
 }
-
 @font-face {
   font-family: 'Cera Pro';
   src: url('../fonts/Cera Pro Black.otf') format('opentype');
@@ -53,7 +48,7 @@
 }
 
 /* ============================================================
-   3. VARIÁVEIS GLOBAIS
+   3. VARIÁVEIS
    ============================================================ */
 :root {
   --primary-blue:  #0056A8;
@@ -74,7 +69,7 @@
 }
 
 /* ============================================================
-   4. BASE E TIPOGRAFIA
+   4. BASE
    ============================================================ */
 html {
   scroll-behavior: smooth;
@@ -105,7 +100,7 @@ a {
 }
 
 /* ============================================================
-   5. HEADER / NAV PRINCIPAL
+   5. HEADER / NAV
    ============================================================ */
 header {
   position: fixed;
@@ -162,20 +157,22 @@ nav {
   font-weight: 520;
   font-size: 16px;
   letter-spacing: 0.02em;
-  padding: 0.5rem 0.9rem;
+  padding:  0.5rem 0.9rem;
   border-radius: 6px;
+  transition: color var(--ease), background var(--ease);
   display: flex;
   align-items: center;
   gap: 0.3rem;
   white-space: nowrap;
-  transition: color var(--ease), background var(--ease);
+  transition: background 0.2s, color 0.2s;
+}
+/* Efeito de fundo para a página atual */
+.nav-links > li > a.active {
+  background: rgba(58, 127, 212, 0.15); /* Fundo sutil azul (pode trocar pela sua variável se preferir) */
+  color: #ffffff; /* Garante que o texto fique legível */
+  border-radius: 8px; /* Mantém o arredondamento do seu layout */
 }
 
-.nav-links > li > a.active {
-  background: rgba(58, 127, 212, 0.15); 
-  color: #ffffff; 
-  border-radius: 8px; 
-}
 
 .nav-links > li > a:hover,
 .nav-links > li > a.active {
@@ -183,7 +180,7 @@ nav {
   background: var(--light-blue);
 }
 
-/* ── Dropdowns ── */
+/* Dropdown */
 .nav-links .dropdown {
   position: relative;
 }
@@ -281,33 +278,32 @@ nav {
   color: var(--primary-blue);
 }
 
-/* ── Botões de Ação do Header ── */
+
 .nav-buttons {
   display: flex;
   margin-left: auto;
   z-index: 2;
 }
 
-.account-link {
-  background: var(--primary-blue);
-  color: #fff;
-  border: none;
-  padding: 0.55rem 1.2rem;
-  border-radius: 7px;
-  font-size: 0.83rem;
-  font-weight: 600;
-  font-family: inherit;
-  cursor: pointer;
-  white-space: nowrap;
-  transition: background 0.2s, transform 0.15s;
-}
-
-.account-link:hover {
-  background: var(--bright-blue);
-  transform: translateY(-1px);
-}
+ .account-link {
+      background: var(--primary-blue);
+      color: #fff;
+      border: none;
+      padding: 0.55rem 1.2rem;
+      border-radius: 7px;
+      font-size: 0.83rem;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      white-space: nowrap;
+    }
+    .account-link:hover {
+      background: var(--bright-blue);
+      transform: translateY(-1px);
+    }
     
-/* ── Hamburger / Menu Mobile ── */
+/* Hamburger */
 .mobile-menu-toggle {
   display: none;
   flex-direction: column;
@@ -332,11 +328,12 @@ nav {
 .mobile-menu-toggle.active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
 .mobile-menu-toggle.active span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
 
+/* Botão fechar menu mobile — oculto por padrão em todas as telas */
 .mobile-menu-close {
   display: none;
 }
 
-/* Overlay do menu mobile */
+/* Overlay mobile */
 .menu-overlay {
   display: none;
   position: fixed;
@@ -349,7 +346,6 @@ nav {
   display: block;
 }
 
-/* ── Submenus ── */
 .has-submenu {
   position: relative;
 }
@@ -398,11 +394,20 @@ nav {
 }
 
 /* ============================================================
-   6. HERO SECTION PRINCIPAL
+   6. HERO SECTION
    ============================================================ */
 .main-hero-wrapper {
   position: relative;
-  margin-bottom: 80px;
+  margin-bottom: 80px; /* ISSO GARANTE O ESPAÇO DO CARD NO PC */
+}
+  .hero-floating-section {
+  display: block; /* GARANTE QUE O CARD APARECE NO PC */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  transform: translateY(82%); 
+  z-index: 100;
 }
 
 #home {
@@ -424,8 +429,7 @@ nav {
   overflow: hidden;
 }
 
-.hero-bg-glow::before, 
-.hero-bg-glow::after {
+.hero-bg-glow::before, .hero-bg-glow::after {
   content: '';
   position: absolute;
   border-radius: 50%;
@@ -462,19 +466,6 @@ nav {
   z-index: 0;
 }
 
-.home-content {
-  max-width: 1850px; 
-  width: 100%;
-  margin: 0 auto;
-  padding: 5rem 2rem 4rem 1rem; 
-  display: grid;
-  grid-template-columns: 1fr minmax(300px, 850px);
-  align-items: center;
-  position: relative;
-  z-index: 1;
-  flex: 1;
-}
-
 .home-eyebrow {
   font-size: 1.5rem;
   font-weight: 900;
@@ -509,6 +500,14 @@ nav {
   white-space: nowrap;
 }
 
+/* Previne overflow em telas menores que 1600px */
+@media (max-width: 1600px) {
+  .home-text h1 {
+    white-space: normal;
+    text-wrap: wrap;
+  }
+}
+
 .home-text h1 span.highlight {
   margin-top: 5px;
 }
@@ -533,7 +532,6 @@ nav {
   font-weight: 600;
 }
 
-/* ── Botões Hero ── */
 .hero-ctas {
   display: flex;
   align-items: center;
@@ -604,6 +602,19 @@ nav {
 /* ============================================================
    7. HERO CAROUSEL
    ============================================================ */
+.home-content {
+  max-width: 1850px; /*distancia do texto*/
+  width: 100%;
+  margin: 0 auto;
+  padding: 5rem 2rem 4rem 1rem; 
+  display: grid;
+  grid-template-columns: 1fr minmax(300px, 850px);
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  flex: 1;
+}
+
 .hero-carousel {
   width: 100%; 
   max-width: none;
@@ -613,12 +624,8 @@ nav {
   flex-direction: column;
   gap: 1rem;
   align-self: center;
-  justify-self: end; 
-}
 
-@keyframes fadeInRight {
-  from { opacity: 0; transform: translateX(40px); }
-  to   { opacity: 1; transform: translateX(0); }
+  justify-self: end; 
 }
 
 .carousel-track-wrapper {
@@ -627,8 +634,9 @@ nav {
   overflow: hidden;
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.08);
   position: relative;
-  height: auto;
+  height: 420px;
   aspect-ratio: 16 / 9; 
+  height: auto;
 }
 
 .carousel-track {
@@ -655,7 +663,7 @@ nav {
   display: block;
 }
 
-/* Controles do Carrossel */
+/* Controls */
 .carousel-controls {
   display: flex;
   align-items: center;
@@ -710,7 +718,7 @@ nav {
 }
 
 /* ============================================================
-   8. TICKER COTAÇÃO DO DÓLAR
+   TICKER COTAÇÃO DO DÓLAR
    ============================================================ */
 .cotacao-ticker-bar {
   width: 100%;
@@ -729,6 +737,7 @@ nav {
   transition: transform var(--ease);
 }
 
+/* Sobe junto com a header ao rolar */
 header.header-hidden ~ .cotacao-ticker-bar,
 .cotacao-ticker-bar.ticker-hidden {
   transform: translateY(calc(-1 * (var(--header-h) + var(--ticker-h))));
@@ -781,6 +790,8 @@ header.header-hidden ~ .cotacao-ticker-bar,
   will-change: transform;
 }
 
+
+
 @keyframes ticker-scroll {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
@@ -801,15 +812,37 @@ header.header-hidden ~ .cotacao-ticker-bar,
   border-right: none;
 }
 
-.cotacao-item-flag { font-size: 1rem; }
-.cotacao-item-name { font-weight: 700; color: #fff; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.03em; }
-.cotacao-item-buy { color: rgba(255,255,255,0.75); font-size: 0.75rem; }
-.cotacao-item-buy span { color: #7ed8a4; font-weight: 700; }
-.cotacao-item-sell { color: rgba(255,255,255,0.75); font-size: 0.75rem; }
-.cotacao-item-sell span { color: #f4a261; font-weight: 700; }
-.cotacao-item-time { font-size: 0.7rem; color: rgba(255,255,255,0.4); font-style: italic; }
-.cotacao-loading { font-size: 0.78rem; color: rgba(255,255,255,0.4); font-style: italic; padding: 0 1rem; }
-.cotacao-erro { font-size: 0.78rem; color: rgba(255,100,100,0.7); padding: 0 1rem; }
+.cotacao-item-flag {
+  font-size: 1rem;
+}
+
+.cotacao-item-name {
+  font-weight: 700;
+  color: #fff;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.cotacao-item-buy {
+  color: rgba(255,255,255,0.75);
+  font-size: 0.75rem;
+}
+
+.cotacao-item-buy span {
+  color: #7ed8a4;
+  font-weight: 700;
+}
+
+.cotacao-item-sell {
+  color: rgba(255,255,255,0.75);
+  font-size: 0.75rem;
+}
+
+.cotacao-item-sell span {
+  color: #f4a261;
+  font-weight: 700;
+}
 
 .cotacao-separator {
   display: inline-block;
@@ -821,8 +854,27 @@ header.header-hidden ~ .cotacao-ticker-bar,
   vertical-align: middle;
 }
 
+.cotacao-item-time {
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.4);
+  font-style: italic;
+}
+
+.cotacao-loading {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.4);
+  font-style: italic;
+  padding: 0 1rem;
+}
+
+.cotacao-erro {
+  font-size: 0.78rem;
+  color: rgba(255,100,100,0.7);
+  padding: 0 1rem;
+}
+
 /* ============================================================
-   9. BLOCO FLUTUANTE (Vantagens)
+   8. BLOCO FLUTUANTE (QUEBRA DE SEÇÃO)
    ============================================================ */
 .hero-floating-section {
   position: absolute;
@@ -851,12 +903,6 @@ header.header-hidden ~ .cotacao-ticker-bar,
   border-radius: 12px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
   border: 1px solid rgba(255, 255, 255, 0.15);
-  transition: all 0.5s ease;
-}
-
-.benefit-card:hover {
-  border-color: rgba(49, 130, 206, 0.4); 
-  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5);
 }
 
 .benefit-item {
@@ -865,29 +911,10 @@ header.header-hidden ~ .cotacao-ticker-bar,
   gap: 15px;
   flex: 1;
   padding: 0 15px;
-  border-radius: 8px; 
-  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); 
-  cursor: pointer;
 }
 
 .benefit-item:not(:last-child) {
   border-right: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.benefit-item:hover {
-  background: rgba(255, 255, 255, 0.05); 
-  transform: translateY(-8px); 
-}
-
-.benefit-item i {
-  color: #3182ce;
-  font-size: 20px;
-  transition: all 0.3s ease;
-}
-
-.benefit-item:hover i {
-  color: #63b3ed; 
-  transform: scale(1.1); 
 }
 
 .benefit-text strong {
@@ -896,11 +923,6 @@ header.header-hidden ~ .cotacao-ticker-bar,
   font-size: 18px;
   margin-bottom: 3px;
   font-family: 'Cera Pro', 'Montserrat', sans-serif;
-  transition: color 0.3s ease;
-}
-
-.benefit-item:hover .benefit-text strong {
-  color: #afd6fc; 
 }
 
 .benefit-text p {
@@ -910,8 +932,49 @@ header.header-hidden ~ .cotacao-ticker-bar,
   margin: 0;
 }
 
+.benefit-item i {
+  color: #3182ce;
+  font-size: 20px;
+}
+.benefit-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  flex: 1;
+  border-radius: 8px; 
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); 
+  cursor: pointer;
+}
+
+/* 2. O Hover propriamente dito */
+.benefit-item:hover {
+  background: rgba(255, 255, 255, 0.05); 
+  transform: translateY(-8px); 
+}
+
+
+.benefit-item:hover i {
+  color: #63b3ed; 
+  transform: scale(1.1); 
+  transition: all 0.3s ease;
+}
+
+.benefit-item:hover .benefit-text strong {
+  color: #afd6fc; 
+  transition: color 0.3s ease;
+}
+
+
+.benefit-card:hover {
+  border-color: rgba(49, 130, 206, 0.4); 
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5);
+  transition: all 0.5s ease;
+}
+
+
+
 /* ============================================================
-   10. SEÇÃO STATS
+   9. STATS E PORTFÓLIO
    ============================================================ */
 #additional {
   padding: 6rem var(--px);
@@ -1027,9 +1090,6 @@ header.header-hidden ~ .cotacao-ticker-bar,
   box-shadow: 0 10px 30px rgba(0, 86, 168, 0.4);
 }
 
-/* ============================================================
-   11. SEÇÃO PORTFÓLIO
-   ============================================================ */
 #portfolio {
   padding: 10rem var(--px) 7rem;
   background: linear-gradient(135deg, #f8fbff 0%, #ffffff 100%);
@@ -1132,6 +1192,7 @@ header.header-hidden ~ .cotacao-ticker-bar,
   font-weight: 400;
 }
 
+
 .portfolio-cta-btn {
   display: inline-flex;
   align-items: center;
@@ -1162,7 +1223,7 @@ header.header-hidden ~ .cotacao-ticker-bar,
 }
 
 /* ============================================================
-   12. SEÇÃO ASSESSORES
+   10. ASSESSORES
    ============================================================ */
 #assessores {
   position: relative;
@@ -1234,8 +1295,12 @@ header.header-hidden ~ .cotacao-ticker-bar,
   font-weight: 400;
 }
 
+
 /* ============================================================
-   13. APP DOWNLOAD
+   11. APP DOWNLOAD
+   ============================================================ */
+/* ============================================================
+   SEÇÃO APP DOWNLOAD (BASE / PC)
    ============================================================ */
 #app-download {
   padding: 6rem var(--px);
@@ -1246,32 +1311,34 @@ header.header-hidden ~ .cotacao-ticker-bar,
   max-width: var(--container);
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 5rem;
+  grid-template-columns: 1fr 1fr; /* 2 Colunas no PC */
   align-items: center;
+  gap: 4rem;
+  text-align: left; /* Texto alinhado à esquerda no PC */
+}
+
+.app-text {
+  order: 1; /* Texto na esquerda no PC */
 }
 
 .app-mockup {
   position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end; /* Imagem alinhada à direita no PC */
   align-items: center;
+  order: 2; /* Imagem na direita no PC */
 }
 
 .app-mockup__img {
   width: 100%;
   max-width: 420px;
-  margin-right: 55px;
+  margin-right: 55px; /* A margem original do PC */
   height: auto;
   filter: drop-shadow(0 20px 60px rgba(29, 118, 207, 0.2));
 }
 
-.app-text {
-  max-width: 700px;
-}
-
 .app-eyebrow {
-  font-size: 0.82rem;
+  font-size: 0.85rem;
   font-weight: 700;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -1281,9 +1348,9 @@ header.header-hidden ~ .cotacao-ticker-bar,
 }
 
 .app-title {
-  font-size: 1.9rem;
+  font-size: clamp(2rem, 4vw, 2.8rem);
   font-weight: 900;
-  line-height: 1.3;
+  line-height: 1.2;
   color: var(--deep-navy);
   margin-bottom: 2rem;
   letter-spacing: -0.01em;
@@ -1291,7 +1358,9 @@ header.header-hidden ~ .cotacao-ticker-bar,
 
 .app-qr-row {
   display: flex;
+  flex-direction: row; /* Elementos lado a lado no PC */
   align-items: center;
+  text-align: left;
   gap: 2rem;
   margin-bottom: 2.5rem;
   padding: 2rem;
@@ -1313,6 +1382,7 @@ header.header-hidden ~ .cotacao-ticker-bar,
 
 .app-store-btns {
   display: flex;
+  justify-content: flex-start; /* Botões na esquerda no PC */
   gap: 1rem;
   flex-wrap: wrap;
 }
@@ -1327,6 +1397,51 @@ header.header-hidden ~ .cotacao-ticker-bar,
   border-radius: 10px;
   transition: all var(--ease);
   box-shadow: 0 4px 16px rgba(0, 31, 63, 0.15);
+  text-decoration: none;
+}
+
+.app-store-btn:hover {
+  background: var(--primary-blue);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 86, 168, 0.3);
+}
+
+
+/* ============================================================
+   RESPONSIVO / MOBILE (Celulares e Tablets menores)
+   ============================================================ */
+@media (max-width: 968px) {
+  #app-download {
+    padding: 4rem 1.5rem;
+  }
+  .app-content {
+    grid-template-columns: 1fr; 
+    gap: 2.5rem;
+    text-align: center;
+  }
+  .app-mockup {
+    order: 1; 
+    justify-content: center;
+    margin: 0 auto;
+  }
+  .app-mockup__img {
+    max-width: 260px; 
+    margin-right: 0; 
+  }
+  .app-text {
+    order: 2; 
+  }
+  .app-eyebrow {
+    font-size: clamp(1.3rem, 5vw, 1.7rem);
+  }
+  .app-qr-row {
+    flex-direction: column; 
+    align-items: center;
+    text-align: center;
+  }
+  .app-store-btns {
+    justify-content: center; 
+  }
 }
 
 .app-store-btn:hover {
@@ -1361,8 +1476,9 @@ header.header-hidden ~ .cotacao-ticker-bar,
   letter-spacing: 0.02em;
 }
 
+
 /* ============================================================
-   14. FOOTER
+   12. FOOTER
    ============================================================ */
 footer {
   background: var(--gradient-blue);
@@ -1520,11 +1636,12 @@ footer {
   opacity: 1;
 }
 
-/* ============================================================
-   15. MEDIA QUERIES (Responsividade)
-   ============================================================ */
 
-/* ── 1500px: Notebooks Grandes ── */
+
+
+/* ============================================================
+   13a-extra. NOTEBOOKS INTERMEDIÁRIOS — 1500px
+   ============================================================ */
 @media (max-width: 1500px) {
   .home-text h1 {
     font-size: 3.6rem;
@@ -1538,7 +1655,9 @@ footer {
   }
 }
 
-/* ── 1280px: Notebooks Compactos ── */
+/* ============================================================
+   13a. NOTEBOOKS COMPACTOS — 1280px
+   ============================================================ */
 @media (max-width: 1280px) {
   :root { --px: 2rem; }
 
@@ -1562,7 +1681,9 @@ footer {
   }
 }
 
-/* ── 1150px: Notebooks Menores ── */
+/* ============================================================
+   13a-b. NOTEBOOKS MENORES — 1150px
+   ============================================================ */
 @media (max-width: 1150px) {
   .home-text h1 {
     font-size: 2.9rem;
@@ -1582,7 +1703,9 @@ footer {
   }
 }
 
-/* ── 1024px: Tablets em Paisagem ── */
+/* ============================================================
+   13b. TABLETS EM PAISAGEM — 1024px
+   ============================================================ */
 @media (max-width: 1024px) {
   :root { --px: 1.75rem; }
 
@@ -1595,18 +1718,23 @@ footer {
   }
 
   .stats-grid { grid-template-columns: repeat(3, 1fr); }
+
   .portfolio-content { gap: 3rem; }
   .portfolio-text h2 { font-size: 2.4rem; }
+
   .app-content { gap: 3rem; }
 }
 
-/* ── 968px: Mobile e Tablets em Retrato ── */
+/* ============================================================
+   13c. MOBILE — 968px
+   ============================================================ */
 @media (max-width: 968px) {
-  /* Header */
+
+  /* ── Header ── */
   nav { padding: 0 1.5rem; }
   .logo img { height: 50px; }
 
-  /* Menu desliza da direita */
+  /* Menu desliza da direita (padrão unificado) */
   .nav-links {
     position: fixed;
     top: var(--header-h);
@@ -1623,7 +1751,7 @@ footer {
     z-index: 1001;
     gap: 0;
     transform: none;
-    display: flex;
+    display: flex; /* sempre flex — visibilidade controlada pelo right */
   }
 
   .nav-links.active { right: 0; }
@@ -1664,17 +1792,25 @@ footer {
   .nav-buttons { display: none; }
   .mobile-menu-toggle { display: flex; flex-direction: column; justify-content: center; }
 
-  /* Overlay */
+  /* Overlay — só bloqueia quando active */
   .menu-overlay { display: block; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
   .menu-overlay.active { opacity: 1; pointer-events: auto; }
 
-  /* Ticker */
+  /* ── Ticker ── */
   .cotacao-ticker-bar { display: none; }
 
-  /* Hero */
-  .main-hero-wrapper { margin-bottom: 260px; }
-  #home { padding-bottom: 140px; padding-top: calc(var(--header-h)); }
-  .hero-floating-section { display: none; }
+  /* ── Hero ── */
+  .main-hero-wrapper { 
+    margin-bottom: 0; /* ZERA O BURACO BRANCO GIGANTE NO CELULAR */
+  }
+#home { 
+    padding-bottom: 60px; 
+    padding-top: calc(var(--header-h)); 
+  }
+
+  .hero-floating-section { 
+    display: none; /* ESCONDE O CARD APENAS NO CELULAR */
+  }
 
   .benefit-card {
     flex-direction: column;
@@ -1703,7 +1839,7 @@ footer {
   .hero-carousel { width: 100%; margin-right: 0; }
   .carousel-track-wrapper { height: auto; aspect-ratio: 16 / 10; }
 
-  /* Stats */
+  /* ── Stats ── */
   #additional { padding: 4rem 1.5rem; }
   .stats-grid {
     grid-template-columns: 1fr;
@@ -1713,13 +1849,13 @@ footer {
   }
   .additional-content h2 { font-size: 2rem; }
 
-  /* Portfólio */
+  /* ── Portfólio ── */
   #portfolio { padding: 2.5rem 1.5rem 4rem; }
   .portfolio-content { grid-template-columns: 1fr; gap: 2.5rem; }
   .large-number { font-size: 7rem; top: -25px; left: -10px; }
   .portfolio-text h2 { font-size: 2rem; }
 
-  /* App */
+  /* ── App ── */
   #app-download { padding: 4rem 1.5rem; }
   .app-content {
     grid-template-columns: 1fr;
@@ -1732,14 +1868,14 @@ footer {
   .app-qr-row { flex-direction: column; align-items: center; text-align: center; }
   .app-store-btns { justify-content: center; }
 
-  /* Assessores */
+  /* ── Assessores ── */
   #assessores { min-height: 480px; }
   .assessores-content { padding: 4rem 1.5rem; }
   .assessores-inner { text-align: center; max-width: 100%; }
   .assessores-inner h2 { font-size: clamp(2rem, 6vw, 2.8rem); }
   .assessores-subtitle { font-size: 1rem; }
 
-  /* Footer */
+  /* ── Footer ── */
   .footer-content { grid-template-columns: 1fr 1fr; gap: 2rem; }
   .footer-brand { grid-column: 1 / -1; }
   .footer-bottom {
@@ -1752,13 +1888,18 @@ footer {
   .footer-right.footer-certificados { justify-content: center; flex-wrap: wrap; }
 }
 
-/* ── 480px: Mobile Pequeno ── */
+
+/* ============================================================
+   13d. MOBILE PEQUENO — 480px
+   ============================================================ */
 @media (max-width: 480px) {
   :root { --px: 1.2rem; }
 
   .logo img { height: 50px; }
   .home-text h1 { font-size: 2rem; }
-  .main-hero-wrapper { margin-bottom: 320px; }
+  
+  .main-hero-wrapper { margin-bottom: 0; } /* ZERA O BURACO NO CELULAR PEQUENO */
+  
   .footer-content { grid-template-columns: 1fr; }
   .footer-certificados img { height: 36px; }
   .app-store-btns { flex-direction: column; align-items: center; }
@@ -1769,7 +1910,7 @@ footer {
 }
 
 /* ============================================================
-   16. ACESSIBILIDADE
+   14. ACESSIBILIDADE
    ============================================================ */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
