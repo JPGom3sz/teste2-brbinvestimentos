@@ -1116,7 +1116,9 @@ footer {
 
   .footer-left { justify-content: center; }
   .footer-right.footer-certificados { justify-content: center; flex-wrap: wrap; }
-  .footer-social { justify-content: flex-start; }
+  .footer-social { justify-content: center; }
+  .footer-logo-img { margin: 0 auto 1rem; display: block; }
+  .footer-brand-text { text-align: center; max-width: 100%; }
 }
 
 @media (max-width: 480px) {

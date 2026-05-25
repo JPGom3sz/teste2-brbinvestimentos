@@ -1367,7 +1367,7 @@ footer {
 .reading-progress__bar {
   height: 100%;
   width: 0%;
-  background: linear-gradient(90deg, #f87171, var(--accent-gold));
+  background: linear-gradient(90deg, #4a47ff, var(--accent-gold));
   transition: width .1s linear;
 }
 

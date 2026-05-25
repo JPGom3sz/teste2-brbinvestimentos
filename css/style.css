@@ -1878,6 +1878,9 @@ footer {
   /* ── Footer ── */
   .footer-content { grid-template-columns: 1fr 1fr; gap: 2rem; }
   .footer-brand { grid-column: 1 / -1; }
+  .footer-social { justify-content: center; }
+  .footer-logo-img { margin: 0 auto 1rem; display: block; }
+  .footer-brand-text { text-align: center; max-width: 100%; }
   .footer-bottom {
     flex-direction: column;
     text-align: center;

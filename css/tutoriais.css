@@ -455,6 +455,22 @@ footer {
   .btn-cta {
     width: 100%;
   }
+  .footer-content { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .footer-brand { grid-column: 1 / -1; text-align: center; }
+  .footer-bottom { flex-direction: column; text-align: center; gap: 1.5rem; padding: 1.8rem 0 2rem; }
+  .footer-left { justify-content: center; }
+  .footer-right.footer-certificados { justify-content: center; flex-wrap: wrap; }
+  .footer-social { justify-content: center; }
+  .footer-logo-img { margin: 0 auto 1rem; display: block; }
+  .footer-brand-text { text-align: center; max-width: 100%; }
+}
+
+@media (max-width: 480px) {
+  .footer-content { grid-template-columns: 1fr; gap: 1.5rem; }
+  .footer-certificados img { height: 36px; }
+  .footer-social { justify-content: center; }
+  .footer-logo-img { margin: 0 auto 1rem; }
+  .footer-brand-text { text-align: center; max-width: 100%; }
 }
 
 @media (max-width: 600px) {

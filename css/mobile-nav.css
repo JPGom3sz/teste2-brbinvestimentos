@@ -10,7 +10,7 @@
   .nav-buttons { display: none !important; }
 
   /* Logo */
-  .logo img { height: 50px !important; width: auto !important; }
+  .logo img { height: 50px !important; width: auto !important; left: 100px !important; }
 
   /* Mostra o hambúrguer */
   .mobile-menu-toggle {
