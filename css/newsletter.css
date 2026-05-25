@@ -390,10 +390,10 @@ nav {
   padding: calc(var(--header-h) + 40px) var(--px) 60px;
   background-color: var(--deep-navy); /* Cor de fallback */
   
-  /* Imagem de fundo com overlay em gradiente para garantir a leitura do texto */
+  /* Imagem de fundo com overlay em gradiente  */
   background-image: 
-    linear-gradient(to right, rgba(0, 31, 63, 0.92) 0%, rgba(0, 31, 63, 0.4) 100%), 
-    url('../img/MÃO\ mexendo\ no\ CLLR.jpeg');
+    linear-gradient(to right, rgba(42, 66, 90, 0.92) 0%, rgba(33, 62, 90, 0.4) 100%), 
+    url('../img/img-newsletter.jpeg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

@@ -259,11 +259,22 @@ function initPortfolio() {
       ? `<a href="${data.link}" class="portfolio-cta-btn">${textoBotaoPrincipal} <span aria-hidden="true">→</span></a>`
       : '';
 
-    // 2. Novo Botão de Taxas (Oculto apenas no "default" e no "Criptoativos")
-    const btnTaxas = (id !== 'default' && id !== '7') 
-      ? `<a href="taxas.html" class="portfolio-cta-outline">Conheça nossas taxas</a>`
-      : '';
+    // 2. Novo Botão de Taxas (Oculto apenas no "default" e no "7")
+const titulosBotaoSecundario = {
+  '1': 'Custos Renda Fixa',         // Renda Fixa
+  '2': 'Custos Operacionais',       // Renda Variável
+  '3': 'Taxas de Administração',    // Fundos
+  '4': 'Custos e Previdência',      // Previdência
+  '5': 'Condições Comerciais',      // Mercado Futuro
+  '6': 'Taxas do Tesouro Direto'    // Tesouro Direto
+};
 
+// Pega o texto baseado no ID. Se por acaso não achar, usa um texto padrão.
+const textoBotaoSecundario = titulosBotaoSecundario[id] || 'Condições Comerciais';
+
+const btnTaxas = (id !== 'default' && id !== '7') 
+  ? `<a href="taxas.html" class="portfolio-cta-outline">${textoBotaoSecundario}</a>`
+  : '';
     // 3. Wrapper para alinhar lado a lado
     const btnHTML = (btnSaibaMais || btnTaxas)
       ? `<div class="portfolio-btns">\n  ${btnSaibaMais}\n  ${btnTaxas}\n</div>`
