@@ -139,24 +139,7 @@
 
 /* Estilo do botão padronizado com .btn-outline da home */
 .contato-hero__cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 2rem;
-  padding: 0.85rem 1.8rem;
-  background: transparent;
-  border: 2px solid rgba(255, 255, 255, 0.55);
-  border-radius: 12px;
-  color: #fff;
-  font-family: var(--main-font);
-  font-size: 0.95rem;
-  font-weight: 700;
-  text-decoration: none;
-  cursor: pointer;
-  backdrop-filter: blur(4px);
-  transition: all 0.25s ease;
-  opacity: 0;
-  animation: fadeUp 0.8s ease-out 0.5s forwards;
+  display: none;
 }
 
 .contato-hero__cta:hover {
@@ -739,6 +722,25 @@
 }
 
 @media (max-width: 968px) {
+  .contato-hero__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 2rem;
+    padding: 0.85rem 1.8rem;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.55);
+    border-radius: 12px;
+    color: #fff;
+    font-family: var(--main-font);
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    backdrop-filter: blur(4px);
+    transition: all 0.25s ease;
+    opacity: 1;
+  }
   .contato-hero {
     grid-template-columns: 1fr;
     min-height: auto;
