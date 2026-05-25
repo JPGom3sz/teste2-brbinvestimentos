@@ -195,130 +195,276 @@ function initGlobalLinks() {
  * Gere o conteúdo dinâmico da secção de Portefólio (Home)
  */
 function initPortfolio() {
-  // 1. Capturando os elementos exatamente como estão no seu HTML
-  const contentBox = document.querySelector('#content-portifolio');
-  const portfolioLis = document.querySelectorAll('.portfolio-list li');
-
-  // Verifica se os elementos existem para evitar erros na página
+  const contentBox     = document.querySelector('#content-portifolio');
+  // MODIFICAÇÃO: Alterado de const para let para permitir a atualização da lista
+  let portfolioLis   = document.querySelectorAll('.portfolio-list li');
+ 
   if (!contentBox || portfolioLis.length === 0) return;
-
+ 
+  // ──────────────────────────────────────────────
+  // DADOS DOS PRODUTOS (idêntico ao original)
+  // ──────────────────────────────────────────────
   const portfolioData = {
     default: {
-      titulo: 'Conheça nossos principais produtos',
+      titulo   : 'Conheça nossos principais produtos',
       descricao: 'O portfólio da BRB Investimentos é estruturado para atender diferentes perfis e objetivos financeiros, combinando segurança, diversificação e potencial de crescimento. A estratégia busca equilíbrio entre ativos de renda fixa e renda variável, permitindo ao investidor acessar oportunidades em diferentes mercados, sempre com gestão responsável e alinhada às melhores práticas do mercado financeiro.',
-      link: 'https://lp.brbinvestimentos.com.br/perfis-brb-brb01-a/?gcode=GI-CRM-WEB-BRB01-X-CLIENTE-X-X-PON-X-HOTLIST-X&e=null&n=null&t=null&vlp=brb01-lpa'
+      link     : 'https://lp.brbinvestimentos.com.br/perfis-brb-brb01-a/?gcode=GI-CRM-WEB-BRB01-X-CLIENTE-X-X-PON-X-HOTLIST-X&e=null&n=null&t=null&vlp=brb01-lpa'
     },
-    1: { 
-      titulo: 'Renda Fixa', 
-      descricao: 'Os produtos de renda fixa da BRB Investimentos oferecem segurança e previsibilidade de retorno, ideais para investidores que buscam preservação de capital e rendimento consistente. Inclui CDBs, LCIs, LCAs, Tesouro Direto e debêntures, com diferentes prazos e rentabilidades para atender ao seu perfil.', 
-      link: 'renda-fixa.html' 
-    },
-    2: { 
-      titulo: 'Renda Variável', 
-      descricao: 'Os produtos de renda variável da BRB Investimentos incluem ações de empresas listadas, fundos de investimento em ações (FIAs), fundos multimercado e ETFs. Esses instrumentos permitem ao investidor participar do desempenho de diferentes setores da economia, com potencial de valorização no longo prazo e recebimento de proventos, como dividendos.', 
-      link: 'renda-variavel.html' 
-    },
-    3: { 
-      titulo: 'Fundos', 
-      descricao: 'Os fundos de investimento oferecem diversificação imediata com gestão profissional, permitindo ao investidor acessar uma variedade de estratégias de forma prática. A BRB Investimentos disponibiliza uma ampla gama de fundos, incluindo multimercados, renda fixa, ações e internacionais, atendendo a diferentes perfis de risco e objetivos de retorno.', 
-      link: 'fundos.html' 
-    },
-    4: { 
-      titulo: 'Previdência', 
-      descricao: 'Os planos de previdência da BRB Investimentos são voltados para o planejamento financeiro de longo prazo, auxiliando na construção de uma aposentadoria mais segura. Com opções como PGBL e VGBL, esses produtos oferecem benefícios fiscais e flexibilidade de contribuições, adaptando-se a diferentes perfis de investidores.', 
-      link: 'previdencia.html' 
-    },
-    5: { 
-      titulo: 'Mercado Futuro', 
-      descricao: 'O mercado de futuros permite aos investidores negociar contratos para a compra ou venda de ativos em uma data futura, com o objetivo de especular sobre as variações de preços ou hedging de riscos. A BRB Investimentos oferece acesso a esse mercado com ferramentas e suporte especializado.', 
-      link: 'mercado-futuro.html' 
-    },
-    6: { 
-      titulo: 'Tesouro Direto', 
-      descricao: 'O Tesouro Direto é um programa do Tesouro Nacional que permite a compra e venda de títulos públicos diretamente pelo investidor, com rentabilidade vinculada à inflação e prazos variáveis. A BRB Investimentos oferece acesso a esse mercado com suporte especializado.', 
-      link: 'tesouro-direto.html' 
-    },
-    7: { 
-      titulo: 'Criptoativos', 
-      descricao: 'A BRB Investimentos está sempre evoluindo para oferecer o que há de mais moderno no mercado financeiro. Em breve, você terá acesso a uma nova classe de ativos diretamente na nossa plataforma: os Criptoativos.', 
-      link: 'site em construção.html' 
-    },
+    1: { titulo: 'Renda Fixa',      descricao: 'Os produtos de renda fixa da BRB Investimentos oferecem segurança e previsibilidade de retorno, ideais para investidores que buscam preservação de capital e rendimento consistente. Inclui CDBs, LCIs, LCAs, Tesouro Direto e debêntures, com diferentes prazos e rentabilidades para atender ao seu perfil.',                                                                                                                                                                               link: 'renda-fixa.html'       },
+    2: { titulo: 'Renda Variável',  descricao: 'Os produtos de renda variável da BRB Investimentos incluem ações de empresas listadas, fundos de investimento em ações (FIAs), fundos multimercado e ETFs. Esses instrumentos permitem ao investidor participar do desempenho de diferentes setores da economia, com potencial de valorização no longo prazo e recebimento de proventos, como dividendos.',                                                                                                                                   link: 'renda-variavel.html'   },
+    3: { titulo: 'Fundos',          descricao: 'Os fundos de investimento oferecem diversificação imediata com gestão profissional, permitindo ao investidor acessar uma variedade de estratégias de forma prática. A BRB Investimentos disponibiliza uma ampla gama de fundos, incluindo multimercados, renda fixa, ações e internacionais, atendendo a diferentes perfis de risco e objetivos de retorno.',                                                                                                                                   link: 'fundos.html'           },
+    4: { titulo: 'Previdência',     descricao: 'Os planos de previdência da BRB Investimentos são voltados para o planejamento financeiro de longo prazo, auxiliando na construção de uma aposentadoria mais segura. Com opções como PGBL e VGBL, esses produtos oferecem benefícios fiscais e flexibilidade de contribuições, adaptando-se a diferentes perfis de investidores.',                                                                                                                                                              link: 'previdencia.html'      },
+    5: { titulo: 'Mercado Futuro',  descricao: 'O mercado de futuros permite aos investidores negociar contratos para a compra ou venda de ativos em uma data futura, com o objetivo de especular sobre as variações de preços ou hedging de riscos. A BRB Investimentos oferece acesso a esse mercado com ferramentas e suporte especializado.',                                                                                                                                                                                               link: 'mercado-futuro.html'   },
+    6: { titulo: 'Tesouro Direto',  descricao: 'O Tesouro Direto é um programa do Tesouro Nacional que permite a compra e venda de títulos públicos diretamente pelo investidor, com rentabilidade vinculada à inflação e prazos variáveis. A BRB Investimentos oferece acesso a esse mercado com suporte especializado.',                                                                                                                                                                                                                      link: 'tesouro-direto.html'   },
+    7: { titulo: 'O que vem por aí', descricao: 'A BRB Investimentos está sempre evoluindo para oferecer o que há de mais moderno no mercado financeiro. Em breve, você terá acesso a uma nova classe de ativos diretamente na nossa plataforma: os Criptoativos.',                                                                                                                                                                                                                                                                            link: null                    },
   };
-
+ 
+  // Ícones SVG por produto (usados apenas no mobile)
+  const portfolioIcons = {
+    1: `<svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,            // Renda Fixa — escudo
+    2: `<svg viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>`, // Renda Variável — trending up
+    3: `<svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>`, // Fundos — pasta
+    4: `<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`,// Previdência — relógio
+    5: `<svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>`, // Mercado Futuro — barras
+    6: `<svg viewBox="0 0 24 24"><line x1="3" y1="22" x2="21" y2="22"/><rect x="6" y="2" width="12" height="20" rx="1"/><line x1="10" y1="6" x2="10" y2="6"/><line x1="14" y1="6" x2="14" y2="6"/><line x1="10" y1="10" x2="10" y2="10"/><line x1="14" y1="10" x2="14" y2="10"/><line x1="10" y1="14" x2="10" y2="14"/><line x1="14" y1="14" x2="14" y2="14"/></svg>`, // Tesouro — banco
+    7: `<svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`, // Em breve — estrela
+  };
+ 
+  // Textos dos botões secundários (taxa / condições)
+  const titulosBotaoSecundario = {
+    '1': 'Custos Renda Fixa',
+    '2': 'Custos Operacionais',
+    '3': 'Taxas de Administração',
+    '4': 'Custos e Previdência',
+    '5': 'Condições Comerciais',
+    '6': 'Taxas do Tesouro Direto'
+  };
+ 
+  // ──────────────────────────────────────────────
+  // UTILITÁRIO: detecta mobile
+  // ──────────────────────────────────────────────
+  const isMobile = () => window.innerWidth <= 968;
+ 
+  // ──────────────────────────────────────────────
+  // MODO DESKTOP — comportamento original
+  // ──────────────────────────────────────────────
   const renderPortfolio = (id = 'default') => {
     const data = portfolioData[id];
     if (!data) return;
-
-    // Define o texto do botão principal com base na aba ativa
-    const textoBotaoPrincipal = (id === 'default') 
-      ? 'Faça uma simulação agora' 
+ 
+    const textoBotaoPrincipal = (id === 'default')
+      ? 'Faça uma simulação agora'
       : `Saiba mais sobre ${data.titulo}`;
-
-    // 1. Botão original / simulação
+ 
     const btnSaibaMais = data.link
       ? `<a href="${data.link}" class="portfolio-cta-btn">${textoBotaoPrincipal} <span aria-hidden="true">→</span></a>`
       : '';
-
-    // 2. Novo Botão de Taxas (Oculto apenas no "default" e no "7")
-const titulosBotaoSecundario = {
-  '1': 'Custos Renda Fixa',         // Renda Fixa
-  '2': 'Custos Operacionais',       // Renda Variável
-  '3': 'Taxas de Administração',    // Fundos
-  '4': 'Custos e Previdência',      // Previdência
-  '5': 'Condições Comerciais',      // Mercado Futuro
-  '6': 'Taxas do Tesouro Direto'    // Tesouro Direto
-};
-
-// Pega o texto baseado no ID. Se por acaso não achar, usa um texto padrão.
-const textoBotaoSecundario = titulosBotaoSecundario[id] || 'Condições Comerciais';
-
-const btnTaxas = (id !== 'default' && id !== '7') 
-  ? `<a href="taxas.html" class="portfolio-cta-outline">${textoBotaoSecundario}</a>`
-  : '';
-    // 3. Wrapper para alinhar lado a lado
+ 
+    const textoBotaoSecundario = titulosBotaoSecundario[id] || 'Condições Comerciais';
+    const btnTaxas = (id !== 'default' && id !== '7')
+      ? `<a href="taxas.html" class="portfolio-cta-outline">${textoBotaoSecundario}</a>`
+      : '';
+ 
     const btnHTML = (btnSaibaMais || btnTaxas)
       ? `<div class="portfolio-btns">\n  ${btnSaibaMais}\n  ${btnTaxas}\n</div>`
       : '';
-
+ 
     contentBox.classList.add('is-fading');
-    
     setTimeout(() => {
-      contentBox.innerHTML = `
-        <h2>${data.titulo}</h2>
-        <p>${data.descricao}</p>
-        ${btnHTML}
-      `;
+      contentBox.innerHTML = `<h2>${data.titulo}</h2><p>${data.descricao}</p>${btnHTML}`;
       contentBox.classList.remove('is-fading');
     }, 280);
-
+ 
     portfolioLis.forEach(li => li.classList.remove('is-active'));
-    
     if (id !== 'default') {
       const activeLi = document.querySelector(`.portfolio-list li[data-id="${id}"]`);
-      if (activeLi) {
-        activeLi.classList.add('is-active');
-      }
+      if (activeLi) activeLi.classList.add('is-active');
     }
   };
-
-  // Render inicial
-  renderPortfolio();
-
-  // Eventos de clique e teclado
-  portfolioLis.forEach(li => {
-    li.addEventListener('click', () => {
-      renderPortfolio(li.dataset.id);
+ 
+  // ──────────────────────────────────────────────
+  // MODO MOBILE — accordion animado
+  // ──────────────────────────────────────────────
+ 
+  /**
+   * Injeta a estrutura de accordion dentro de cada <li>.
+   * Só é chamado uma vez; a classe .pf-accordion-ready marca o li como pronto.
+   */
+  const buildAccordion = () => {
+    portfolioLis.forEach(li => {
+      if (li.classList.contains('pf-accordion-ready')) return;
+ 
+      const id      = li.dataset.id;
+      const data    = portfolioData[id];
+      const label   = li.textContent.trim();
+      const icon    = portfolioIcons[id] || portfolioIcons[1];
+      if (!data) return;
+ 
+      // Botões do body
+      const btnSaibaMais = data.link
+        ? `<a href="${data.link}" class="pf-accordion-cta">Saiba mais <span aria-hidden="true">→</span></a>`
+        : `<span class="pf-accordion-cta" style="opacity:.5;cursor:default">Em breve</span>`;
+ 
+      const textoBotaoSecundario = titulosBotaoSecundario[id] || '';
+      const btnTaxas = (id !== '7' && textoBotaoSecundario)
+        ? `<a href="taxas.html" class="pf-accordion-cta" style="background:transparent;color:var(--primary-blue);border:1.5px solid var(--primary-blue);box-shadow:none;">${textoBotaoSecundario}</a>`
+        : '';
+ 
+      // Constrói o HTML interno
+      li.innerHTML = `
+        <div class="pf-accordion-header" role="button" aria-expanded="false" tabindex="0">
+          <span class="pf-accordion-label">
+            <span class="pf-accordion-icon">${icon}</span>
+            ${label}
+          </span>
+          <span class="pf-chevron" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </span>
+        </div>
+        <div class="pf-accordion-body" role="region">
+          <div class="pf-accordion-body-inner">
+            <h3>${data.titulo}</h3>
+            <p>${data.descricao}</p>
+            <div style="display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.25rem;">
+              ${btnSaibaMais}
+              ${btnTaxas}
+            </div>
+          </div>
+        </div>
+      `;
+ 
+      li.classList.add('pf-accordion-ready');
+ 
+      // Evento de clique no cabeçalho
+      const header = li.querySelector('.pf-accordion-header');
+      const body   = li.querySelector('.pf-accordion-body');
+ 
+      const openItem = () => {
+        li.classList.add('pf-open');
+        header.setAttribute('aria-expanded', 'true');
+        // Anima via max-height
+        body.style.maxHeight = body.scrollHeight + 'px';
+      };
+ 
+      const closeItem = () => {
+        li.classList.remove('pf-open');
+        header.setAttribute('aria-expanded', 'false');
+        body.style.maxHeight = '0';
+      };
+ 
+      header.addEventListener('click', () => {
+        const isOpen = li.classList.contains('pf-open');
+ 
+        // Fecha todos os outros itens
+        portfolioLis.forEach(otherLi => {
+          if (otherLi !== li && otherLi.classList.contains('pf-open')) {
+            otherLi.classList.remove('pf-open');
+            const otherHeader = otherLi.querySelector('.pf-accordion-header');
+            const otherBody   = otherLi.querySelector('.pf-accordion-body');
+            if (otherHeader) otherHeader.setAttribute('aria-expanded', 'false');
+            if (otherBody)   otherBody.style.maxHeight = '0';
+          }
+        });
+ 
+        isOpen ? closeItem() : openItem();
+      });
+ 
+      // Suporte a teclado
+      header.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          header.click();
+        }
+      });
     });
-
-    li.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        renderPortfolio(li.dataset.id);
+  };
+ 
+  /**
+   * Remove a estrutura de accordion dos <li> e restaura ao estado original.
+   * Chamado quando a janela é redimensionada de mobile para desktop.
+   */
+  const destroyAccordion = () => {
+    portfolioLis.forEach((li, idx) => {
+      if (!li.classList.contains('pf-accordion-ready')) return;
+      const id    = li.dataset.id;
+      const data  = portfolioData[id];
+      const label = data ? data.titulo : `Item ${idx + 1}`;
+ 
+      li.innerHTML = label;
+      li.classList.remove('pf-accordion-ready', 'pf-open');
+      li.style.maxHeight = '';
+    });
+  };
+ 
+  // ──────────────────────────────────────────────
+  // INICIALIZAÇÃO E RESIZE
+  // ──────────────────────────────────────────────
+ 
+  let currentlyMobile = isMobile();
+ 
+  const setup = () => {
+    if (isMobile()) {
+      // Garante que o painel de desktop não mostre lixo no mobile
+      contentBox.style.display = 'none';
+      buildAccordion();
+    } else {
+      contentBox.style.display = '';
+      // Se voltou do mobile, destrói e reconfigura para desktop
+      if (currentlyMobile) {
+        destroyAccordion();
+        renderPortfolio();
+        bindDesktopClicks();
       }
+    }
+    currentlyMobile = isMobile();
+  };
+ 
+  // Eventos de clique para desktop
+  const bindDesktopClicks = () => {
+    // MODIFICAÇÃO: Removemos listeners antigos clonando o elemento via query direta,
+    // sem usar a variável portfolioLis que pode estar desatualizada.
+    document.querySelectorAll('.portfolio-list li').forEach(li => {
+      const clone = li.cloneNode(true);
+      li.parentNode.replaceChild(clone, li);
     });
+
+    // MODIFICAÇÃO IMPORTANTE: Re-seleciona os novos itens do DOM e ATUALIZA a variável
+    // portfolioLis, garantindo que o restante do script (como o renderPortfolio)
+    // trabalhe com os elementos "vivos" no HTML.
+    portfolioLis = document.querySelectorAll('.portfolio-list li'); 
+ 
+    portfolioLis.forEach(li => {
+      li.addEventListener('click', () => renderPortfolio(li.dataset.id));
+      li.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          renderPortfolio(li.dataset.id);
+        }
+      });
+    });
+  };
+ 
+  // Inicializa corretamente conforme o viewport atual
+  if (isMobile()) {
+    contentBox.style.display = 'none';
+    buildAccordion();
+  } else {
+    renderPortfolio();
+    bindDesktopClicks();
+  }
+ 
+  // Adapta se o utilizador redimensionar a janela (ex: rotação de tablet)
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      const nowMobile = isMobile();
+      if (nowMobile !== currentlyMobile) {
+        setup();
+      }
+    }, 200);
   });
 }
-
 
 /**
  * Animação de entrada (fade-in) para os cartões de estatísticas
@@ -838,8 +984,12 @@ async function iniciarCotacaoTicker() {
       <span class="cotacao-separator" aria-hidden="true"></span>
     `).join('');
 
-    // Duplica o conteúdo para criar um efeito de marquee contínuo
-    contentEl.innerHTML = itemsHTML + itemsHTML + itemsHTML;
+    // Repete os itens várias vezes para garantir que preencham até monitores ultrawide
+    const bloco = itemsHTML.repeat(8); 
+
+    // Junta dois blocos gigantes idênticos. 
+    // Assim, ao mover -50% (metade do total) no CSS, o loop de reinício fica invisível!
+    contentEl.innerHTML = bloco + bloco;
   };
 
   const atualizarTudo = async () => {
