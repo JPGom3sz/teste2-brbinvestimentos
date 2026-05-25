@@ -1002,7 +1002,7 @@ footer {
 
 @media (max-width: 968px) {
   nav { padding: 0 1.5rem; }
-  .logo img { height: 42px; }
+  .logo img { height: 50px; }
 
   .nav-links {
     position: fixed;
@@ -1122,7 +1122,7 @@ footer {
 @media (max-width: 480px) {
   :root { --px: 1.25rem; }
 
-  .logo img { height: 38px; }
+  .logo img { height: 50px; }
 
   .hero-newsletter {
     padding: calc(var(--header-h) + 30px) 1.25rem 30px;

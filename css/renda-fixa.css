@@ -1680,15 +1680,13 @@ footer {
   box-shadow: 0 8px 28px rgba(37, 211, 102, 0.6);
 }
 
-/* ============================================================
-   13. MEDIA QUERIES (Mobile e Ajustes)
-   ============================================================ */
+
 /* ============================================================
    13. MEDIA QUERIES (Mobile e Ajustes)
    ============================================================ */
 @media (max-width: 968px) {
   nav { padding: 0 1.5rem; }
-  .logo img { height: 45px !important; width: auto !important; }
+  .logo img { height: 50px !important; width: auto !important; }
 
   /* Transforma em 1 coluna e centraliza o texto */
   .rf-hero-inner { 

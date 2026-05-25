@@ -9,6 +9,9 @@
   /* Esconde o botão "Acesse seus Investimentos" no mobile */
   .nav-buttons { display: none !important; }
 
+  /* Logo */
+  .logo img { height: 50px !important; width: auto !important; }
+
   /* Mostra o hambúrguer */
   .mobile-menu-toggle {
     display: flex !important;

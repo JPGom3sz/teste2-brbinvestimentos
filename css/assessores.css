@@ -1438,7 +1438,7 @@ footer {
   /* ── Header mobile (padrão unificado) ── */
   header { height: var(--header-h); }
   nav { padding: 0 1.5rem; }
-  .logo img { height: 60px; }
+  .logo img { height: 50px; }
   .logo { margin-top: 0; }
 
   .nav-links {
@@ -1702,12 +1702,12 @@ header.header-hidden ~ .cotacao-ticker-bar,
 
 /* LOGO MOBILE */
 @media (max-width: 968px) {
-  .logo img { height: 90px !important; width: auto; }
+  .logo img { height: 50px !important; width: auto; }
   .logo     { margin-top: -4px !important; }
 }
 
 @media (max-width: 480px) {
-  .logo img { height: 80px !important; }
+  .logo img { height: 50px !important; }
 }
 
 /* HERO ANIMAÇÕES */
