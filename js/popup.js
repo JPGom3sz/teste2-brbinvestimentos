@@ -5,10 +5,10 @@
 
   // ── CONFIGURAÇÕES ──────────────────────────────────────────
   const CONFIG = {
-    delay:          1000,              // ms após carregamento para abrir (5s)
+    delay:          10000,              // ms após carregamento para abrir (5s)
     storageKey:     'brb_popup_shown', // chave para quem só fechou (7 dias)
     registeredKey:  'brb_popup_done',  // chave para quem enviou (permanente)
-    cooldownDays:   0,                 // dias de espera para quem fechou sem enviar
+    cooldownDays:   7,                 // dias de espera para quem fechou sem enviar
     exitIntent:     true,              // ativar exit-intent no desktop
   };
 
