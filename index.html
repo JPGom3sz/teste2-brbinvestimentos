@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BRB Investimentos - Plataforma Completa - Testes</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style-enhance.css" />
+  <link rel="stylesheet" href="css/mobile-nav.css" />
+</head>
+
+<body>
+
+  <header id="site-header">
+    <nav>
+      <div class="logo">
+        <a href="index.html" aria-label="BRB Investimentos - Início">
+          <img src="img/quartinho(1).png" alt="BRB Investimentos" />
+        </a>
+      </div>
+  
+      <ul class="nav-links" id="mobileMenu" role="menubar">
+        
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropdown-toggle">
+            Produtos e Serviços <span class="chevron" aria-hidden="true">▾</span>
+          </a>
+          <ul class="dropdown-menu">
+            <li class="has-submenu">
+              <a href="Produtos\renda-fixa.html">Renda Fixa <span class="chevron-right"></span></a>
+            </li>
+            <li class="has-submenu">
+              <a href="Produtos\renda-variavel.html">Renda Variável <span class="chevron-right"></span></a>             
+            </li>  
+            <li class="has-submenu">
+              <a href="Produtos\previdencia.html">Previdência <span class="chevron-right"></span></a>             
+            </li> 
+            <li class="has-submenu">
+              <a href="Produtos\fundos.html">Fundos <span class="chevron-right"></span></a>
+            </li>
+            <li class="has-submenu">
+              <a href="Produtos\mercado-futuro.html">Mercado Futuro <span class="chevron-right"></span></a>
+            </li>
+            <li class="has-submenu">
+              <a href="Produtos\tesouro-direto.html">Tesouro Direto <span class="chevron-right"></span></a>
+            </li>
+          </ul>
+        </li>
+  
+        <li class="dropdown" role="none">
+          <a href="javascript:void(0)" class="dropdown-toggle" role="menuitem" aria-haspopup="true" aria-expanded="false">
+            Conteúdo <span class="chevron" aria-hidden="true">▾</span>
+          </a>
+          <ul class="dropdown-menu" role="menu">
+            <li role="none">
+              <a href="https://analisa.genialinvestimentos.com.br/" role="menuitem" target="_blank" rel="noopener noreferrer">Genial analisa</a>
+            </li>
+            <li role="none">
+              <a href="institucional\newsletter.html" role="menuitem" rel="noopener noreferrer">Newsletter</a>
+            </li>
+            <li role="none">
+              <a href="institucional\guias-praticos.html" role="menuitem">Guias Práticos</a>
+            </li>
+          </ul>
+        </li>
+  
+        <li role="none">
+          <a href="institucional\sobrenos.html" role="menuitem">Sobre nós</a>
+        </li>
+        <li role="none">
+          <a href="institucional\contato.html" role="menuitem">Contato</a>
+        </li>
+      </ul>
+  
+      <div class="nav-buttons">
+        <button 
+          class="account-link" 
+          type="button"
+          data-desktop-href="INSIRA_O_LINK_DO_PORTAL_AQUI"
+          data-mobile-href="INSIRA_O_LINK_DO_APP_AQUI"
+        >Acesse seus Investimentos</button>
+      </div>
+  
+      <button class="mobile-menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+  
+      <div class="menu-overlay" aria-hidden="true"></div>
+      <button class="mobile-menu-close" type="button" aria-label="Fechar menu">&times;</button>
+    </nav>
+  </header>
+
+  <div class="cotacao-ticker-bar" id="cotacaoBar" aria-label="Cotação do Dólar em tempo real">
+    <div class="cotacao-ticker-inner">
+      <span class="cotacao-label">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M12 6v6l4 2"/>
+        </svg>
+        Cotação ao vivo
+      </span>
+      <div class="cotacao-ticker-track">
+        <div class="cotacao-ticker-content" id="cotacaoContent">
+          <span class="cotacao-loading">Carregando cotação…</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main class="main-hero-wrapper">
+    <section id="home">
+      <div class="hero-bg-glow"></div>
+      <div class="hero-bg-grid"></div>
+
+      <div class="home-content">
+        <div class="home-text">
+          <h1>
+            Evolua o seu patrimônio <br class="desktop-only"> 
+            na melhor <span class="highlight">PLATAFORMA</span>
+          </h1>
+
+          <p class="subtitle">
+            Para quem quer ir além, todos os dias.<br>
+            Conheça a Plataforma <span class="emphasis">BRB Investimentos.</span> <br>
+          </p>
+
+          <div class="hero-ctas">
+            <button
+              class="btn-primary"
+              id="botao-conta"
+              type="button"
+              data-desktop-href="#mockup-link" 
+              data-mobile-href="https://onelink.to/sfb3cy"
+            >Abra sua conta</button>
+            <a href="assessores.html" class="btn-outline" rel="noopener noreferrer">Seja Assessorado</a>
+          </div>
+        </div>
+        
+        <div class="hero-carousel" aria-label="BRB Investimentos — Brasília">
+          <div class="carousel-track-wrapper">
+            <div class="carousel-track" id="carouselTrack">
+              
+              <div class="carousel-slide" role="group" aria-label="Slide 1 de 6">
+                <img src="img/Cripto na BRB Investimentos.png" alt="Sede BRB" class="carousel-img" />
+              </div>
+
+              <div class="carousel-slide" role="group" aria-label="Slide 2 de 6">
+                <a href="newsletter.html" class="carousel-link">
+                  <img src="img/Farol BRB.png" alt="Torre BRB" class="carousel-img" />
+                </a>
+              </div>
+
+              <div class="carousel-slide" role="group" aria-label="Slide 3 de 6">
+                <img src="img/Dia das Mães.png" alt="Dia das Mães" class="carousel-img" />
+              </div>
+
+              <div class="carousel-slide" role="group" aria-label="Slide 5 de 6">
+                <img src="img/Dados e Perfil Investidor.png" alt="Brasília" class="carousel-img" />
+              </div>
+
+            </div>
+          </div>
+
+          <div class="carousel-controls">
+            <button class="carousel-btn" aria-label="Slide anterior" id="carouselPrev">‹</button>
+            <div class="carousel-dots" id="carouselDots" role="tablist">
+              <button class="cdot active" aria-label="Slide 1" aria-selected="true" data-index="0"></button>
+              <button class="cdot" aria-label="Slide 3" aria-selected="false" data-index="2"></button>
+              <button class="cdot" aria-label="Slide 4" aria-selected="false" data-index="3"></button>
+              <button class="cdot" aria-label="Slide 5" aria-selected="false" data-index="4"></button>
+            </div>
+            <button class="carousel-btn" aria-label="Próximo slide" id="carouselNext">›</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hero-floating-section">
+      <div class="floating-card-container">
+        
+        <div class="benefit-card">
+          <div class="benefit-item" data-animate>
+            <i class="icon-seguranca"></i>
+            <div class="benefit-text">
+              <strong>Segurança de verdade</strong>
+              <p>Sua proteção é nossa prioridade em todas as etapas.</p>
+            </div>
+          </div>
+
+          <div class="benefit-item" data-animate>
+            <i class="icon-performance"></i>
+            <div class="benefit-text">
+              <strong>Performance que inspira</strong>
+              <p>Estratégias e oportunidades para quem busca ir além.</p>
+            </div>
+          </div>
+
+          <div class="benefit-item" data-animate>
+            <i class="icon-atendimento"></i>
+            <div class="benefit-text">
+              <strong>Atendimento que faz a diferença</strong>
+              <p>Especialistas dedicados para apoiar suas decisões.</p>
+            </div>
+          </div>
+
+          <div class="benefit-item" data-animate>
+            <i class="icon-liberdade"></i>
+            <div class="benefit-text">
+              <strong>Liberdade para escolher e investir</strong>
+              <p>Milhares de produtos para montar sua estratégia ideal.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <section class="next-section"></section>
+
+  <section id="portfolio" data-animate>
+    <div class="portfolio-content">
+      
+      <div class="portfolio-visual">
+        <div class="large-number" aria-hidden="true">+600 Produtos</div>
+        <div class="portfolio-text">
+          <h2><span class="accent-line">Portfólio</span><br />diversificado</h2>
+          <ul class="portfolio-list" role="list">
+            <li data-id="1" tabindex="0">Renda Fixa</li>
+            <li data-id="2" tabindex="0">Renda Variável</li>
+            <li data-id="3" tabindex="0">Fundos</li>
+            <li data-id="4" tabindex="0">Previdência</li>
+            <li data-id="5" tabindex="0">Mercado Futuro</li>
+            <li data-id="6" tabindex="0">Tesouro Direto</li>
+            <li data-id="7" tabindex="0">O que vem por aí</li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="content-portifolio" aria-live="polite">
+        <h2>Nosso Portfólio Diversificado</h2>
+        <p>O portfólio da BRB Investimentos é estruturado para atender diferentes perfis e objetivos financeiros, combinando segurança, diversificação e potencial de crescimento. A estratégia busca equilíbrio entre ativos de renda fixa e renda variável, permitindo ao investidor acessar oportunidades em diferentes mercados, sempre com gestão responsável e alinhada às melhores práticas do mercado financeiro.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="additional" data-animate>
+    <div class="additional-content">
+      <p class="stats-eyebrow">RESULTADOS QUE FALAM POR SI</p>
+      <h2>Números que trazem <span class="stats-highlight">solidez e confiança</span> para nossos investidores <br /></h2>
+      
+      <div class="stats-grid">
+        <div class="stat-card" data-animate>
+          <div class="stat-number" data-target="645" data-prefix="+" data-suffix=".000">+645k</div>
+          <div class="stat-label">Clientes</div>
+        </div>
+        <div class="stat-card" data-animate>
+          <div class="stat-number" data-target="3" data-prefix="R$ " data-suffix=".8bi">R$ 3.8bi</div>
+          <div class="stat-label">Ativos sob gestão</div>
+        </div>
+        <div class="stat-card" data-animate>
+          <div class="stat-number" data-target="600" data-prefix="+" data-suffix="">+600</div>
+          <div class="stat-label">Produtos Disponíveis</div>
+        </div>
+      </div>
+    </div>
+
+    
+    </div>
+  </section>
+
+  <section id="assessores">
+    <div class="assessores-bg" style="background-image: url('img/Equipe.png');"></div>
+    <div class="assessores-overlay"></div>
+    <div class="assessores-content">
+      <div class="assessores-inner">
+        <p class="assessores-eyebrow">EQUIPE ESPECIALIZADA</p>
+        <h2>Nossos <span class="assessores-highlight">Assessores</span></h2>
+        <p class="assessores-subtitle">Profissionais dedicados a orientar cada passo da sua jornada de investimentos com expertise, ética e resultados comprovados.</p>
+        <div class="assessores-cta-wrapper">
+          <a href="assessores.html" class="assessores-cta-btn">Conheça toda nossa equipe</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="app-download" data-animate>
+    <div class="app-content" id="qr_code_links">
+      
+      <div class="app-mockup" id="mockup-link">
+        <img src="img\celular2.png" alt="App BRB Investimentos" class="app-mockup__img" />
+      </div>
+
+      <div class="app-text">
+        <p class="app-eyebrow">DÊ O PRIMEIRO PASSO</p>
+        <h2 class="app-title">ACESSE O MELHOR DO MERCADO<br />FINANCEIRO COM A SOLIDEZ,<br />O PLANEJAMENTO E A<br />ASSESSORIA QUE VOCÊ MERECE.</h2>
+
+        <div class="app-qr-row"> 
+          <img src="img/qrcode download app.png" alt="QR Code para baixar o app" class="app-qr-img" />
+          <p class="app-qr-text">
+            Descubra a Plataforma BRB Investimentos. Conta dedicada, acesso a produtos de alta performance, assessoria especializada e ferramentas de análise avançadas. Baixe o app e comece a investir hoje.
+          </p>
+        </div>
+
+        <div class="app-store-btns">
+          <a href="https://play.google.com/store/apps/details?id=la.foton.brb.myphone" class="app-store-btn" aria-label="Disponível no Google Play">
+            <svg class="app-store-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M3.18 23.76c.32.18.68.24 1.06.14l12.02-6.94-2.73-2.73-10.35 9.53zm-1.68-1.42V1.66C1.5.92 1.92.36 2.56.14L14.58 12 2.56 23.86c-.64-.22-1.06-.78-1.06-1.52zM21.4 10.62l-2.6-1.5-3.08 3.08 3.08 3.08 2.62-1.52c.74-.44.74-1.7-.02-2.14zM4.24.1c.38-.1.74-.04 1.06.14L17.32 7.2l-2.73 2.73L4.24.1z"/>
+            </svg>
+            <div>
+              <span class="app-store-label">DISPONÍVEL NO</span>
+              <span class="app-store-name">Google Play</span>
+            </div>
+          </a>
+          
+          <a href="https://apps.apple.com/br/app/banco-brb-ainda-mais-seu/id1005747186?l=en-GB" class="app-store-btn" aria-label="Baixar na App Store">
+            <svg class="app-store-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+            </svg>
+            <div>
+              <span class="app-store-label">BAIXAR NA</span>
+              <span class="app-store-name">App Store</span>
+            </div>
+          </a>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      
+      <div class="footer-brand">
+        <img src="img/LOGO BRANCA (1).png" alt="BRB Investimentos" class="footer-logo-img" />
+        <p class="footer-brand-text">Investindo no futuro dos brasileiros com segurança, tecnologia e tradição.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/brbinvestimentos/" class="footer-social-btn" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="https://www.youtube.com/@BRBInvestimentos" class="footer-social-btn" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/share/1CRVbq4UXf/?mibextid=wwXIfr" class="footer-social-btn" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-column">
+        <h4>Produtos</h4>
+        <ul>
+          <li><a href="renda-fixa.html">Renda Fixa</a></li>
+          <li><a href="fundos.html">Fundos</a></li>
+          <li><a href="previdencia.html">Previdência</a></li>
+          <li><a href="renda-variavel.html">Renda Variável</a></li>
+          <li><a href="mercado-futuro.html">Mercado Futuro</a></li>
+          <li><a href="tesouro-direto.html">Tesouro Direto</a></li>
+          <li><a href="javascript: void(0)">Criptoativos</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>Quem Somos</h4>
+        <ul>
+          <li><a href="sobrenos.html#missao">Nossa Missão</a></li>
+          <li><a href="sobrenos.html#historia">Nossa História</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>Fale Conosco</h4>
+        <ul>
+          <li><a href="https://novo.brb.com.br/atendimento/" target="_blank" rel="noopener noreferrer">Central de Atendimento</a></li>
+          <li><a href="https://novo.brb.com.br/atendimento/ouvidoria-brb/" target="_blank" rel="noopener noreferrer">Ouvidoria BRB</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>Institucional</h4>
+        <ul>
+          <li><a href="https://www.anbima.com.br/" target="_blank">Anbima</a></li>
+          <li><a href="https://www.b3.com.br/" target="_blank">B3</a></li>
+          <li><a href="https://www.gov.br/cvm/" target="_blank">CVM</a></li>
+          <li><a href="https://www.fgc.org.br/" target="_blank">FGC</a></li>
+          <li><a href="https://www.bcb.gov.br/" target="_blank">Bacen</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column regulatorio">
+        <h4>Regulatórios</h4>
+        <ul>
+          <li><a href="pdfs/Política de Privacidade.pdf" target="_blank">Política de Privacidade</a></li>
+          <li><a href="pdfs/4. Termo Abertura Conta Corrente  PF.pdf" target="_blank">Termos de Abertura de conta Genial</a></li>
+          <li><a href="pdfs/RPA_B3_Genial_Janeiro_2026.pdf" target="_blank">Regras e parametros de atuaçao </a></li>
+          <li><a href="pdfs/Termo de Renda Fixa.pdf" target="_blank">Termo de Renda Fixa</a></li>
+          <li><a href="pdfs/CONTRATO DE INTERMEDIAÇÃO.pdf" target="_blank">Contrato de intermediaçao</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-left">
+        <img class="footer-mark" src="https://framerusercontent.com/images/ZRAogsRUCyrDvJX2BCEBRqoGhWY.svg?width=142&height=33" alt="Banco Central" />
+        <img class="footer-mark" src="https://framerusercontent.com/images/mHJ8wt4h7RrXbxoN3I2zNtlIMw.svg?width=90&height=41" alt="B3" />
+      </div>
+      <div class="footer-center">
+        <p class="brbdireitos">© 2026 BRB Investimentos</p>
+        <p class="footer-address">BL B - Centro Empresarial CNC - SAUN Quadra 5, Lote C, 2º andar - Brasília/DF</p>
+      </div>
+      <div class="footer-right footer-certificados">
+        <img src="img/distribuicao-geral.jpg" alt="Certificado Anbima" />
+        <img src="img/art-administracao.jpg" alt="Certificado Administração" />
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Botão "Acessar Conta" (Desktop vs Mobile)
+    document.querySelectorAll('.btn-primary').forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        var isMobile = window.innerWidth <= 768;
+        
+        if (isMobile) {
+          var mobileHref = link.getAttribute('data-mobile-href');
+          if (mobileHref) window.open(mobileHref, '_blank', 'noopener,noreferrer'); 
+        } else {
+          var desktopHref = link.getAttribute('data-desktop-href');
+          if (desktopHref) window.location.href = desktopHref;
+        }
+      });
+    });
+
+    // Observer de Animação (Scroll)
+    const animEls = document.querySelectorAll('[data-animate]');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('is-visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    animEls.forEach(el => observer.observe(el));
+
+    // Sistema de Abas (Tabs)
+    const tabs     = document.querySelectorAll('.sn-about__tab');
+    const contents = document.querySelectorAll('.sn-about__content');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const targetTab = tab.dataset.tab;
+
+        tabs.forEach(t => t.classList.remove('sn-about__tab--active'));
+        contents.forEach(c => c.classList.remove('sn-about__content--active'));
+
+        tab.classList.add('sn-about__tab--active');
+
+        const targetContent = document.getElementById(`tab-${targetTab}`);
+        if (targetContent) {
+          targetContent.classList.add('sn-about__content--active');
+        }
+      });
+    });
+  </script>
+
+  <!-- ============================================================
+     POPUP DE CAPTAÇÃO DE LEADS — BRB INVESTIMENTOS
+     Cole este bloco ANTES de </body> no index.html
+     ============================================================ -->
+
+<div id="brb-popup-overlay" role="dialog" aria-modal="true" aria-label="Conheça a BRB Investimentos">
+
+  <div id="brb-popup">
+
+    <button id="brb-popup-close" aria-label="Fechar">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1 1L13 13M13 1L1 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+
+    <!-- Cabeçalho -->
+    <div class="popup-badge">
+      <div class="popup-badge-dot"></div>
+      <span>BRB Investimentos</span>
+    </div>
+
+    <h2 class="popup-title">
+      Invista com quem<br>
+      conhece <span class="popup-highlight">Brasília</span>
+    </h2>
+    <p class="popup-subtitle">
+      Receba conteúdos exclusivos e acompanhe as melhores oportunidades do mercado direto no seu e-mail.
+    </p>
+
+    <!-- Corpo do formulário (escondido no sucesso) -->
+    <div id="popup-form-body">
+      <form id="brb-popup-form" class="popup-form" novalidate>
+
+        <!-- Nome -->
+        <div class="popup-field">
+          <label for="popup-name">Nome completo</label>
+          <input
+            type="text"
+            id="popup-name"
+            name="nome"
+            placeholder="Seu nome"
+            autocomplete="name"
+            required
+          />
+          <span class="popup-error-msg" id="popup-name-error"></span>
+        </div>
+
+        <!-- E-mail -->
+        <div class="popup-field">
+          <label for="popup-email">E-mail</label>
+          <input
+            type="email"
+            id="popup-email"
+            name="email"
+            placeholder="seu@email.com"
+            autocomplete="email"
+            required
+          />
+          <span class="popup-error-msg" id="popup-email-error"></span>
+        </div>
+
+        <!-- Telefone -->
+        <div class="popup-field">
+          <label for="popup-phone">Telefone com DDD</label>
+          <input
+            type="tel"
+            id="popup-phone"
+            name="telefone"
+            placeholder="(61) 99999-9999"
+            autocomplete="tel"
+            required
+          />
+          <span class="popup-error-msg" id="popup-phone-error"></span>
+        </div>
+
+        <!-- LGPD — NÃO PRÉ-MARCADO (obrigatório por lei) -->
+        <label class="popup-lgpd">
+          <input
+            type="checkbox"
+            id="popup-lgpd"
+            name="lgpd"
+            required
+          />
+          <span class="popup-lgpd-text">
+            Li e aceito a
+            <a href="pdfs/Política de Privacidade.pdf" target="_blank" rel="noopener noreferrer">
+              Política de Privacidade
+            </a>
+            da BRB Investimentos e concordo com o uso dos meus dados para fins de comunicação e envio de conteúdo financeiro. Posso cancelar a qualquer momento.
+          </span>
+        </label>
+        <span class="popup-error-msg" id="popup-lgpd-error"></span>
+
+        <!-- Submit -->
+        <button type="submit" class="popup-btn-submit">
+          <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+          </svg>
+          Quero receber conteúdos
+        </button>
+
+      </form>
+    </div>
+    <!-- /popup-form-body -->
+
+    <!-- Estado de sucesso -->
+    <div class="popup-success" id="popup-success">
+      <div class="popup-success-icon">
+        <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+        </svg>
+      </div>
+      <h3>Cadastro realizado!</h3>
+      <p>Em breve você receberá os melhores conteúdos de investimento direto no seu e-mail.</p>
+    </div>
+
+  </div>
+</div>
+
+<!-- Scripts do popup -->
+
+<link rel="stylesheet" href="css/popup.css" />
+<script src="js/popup.js"></script>
+
+
+  <script src="js\script.js"></script>
+</body>
+</html>

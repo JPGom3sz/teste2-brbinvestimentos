@@ -1,0 +1,544 @@
+/* ================================================================
+   BRB INVESTIMENTOS — style-enhance.css
+   Adicione APÓS o style.css original:
+   <link rel="stylesheet" href="css/style-enhance.css" />
+   ================================================================ */
+
+/* ── Seleção de texto com cor da marca ── */
+::selection {
+  background: rgba(0, 86, 168, 0.18);
+  color: var(--deep-navy);
+}
+
+/* ── Scrollbar refinada ── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f0f5fb;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #a0c4e8;
+  border-radius: 99px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-blue);
+}
+
+/* ================================================================
+   NAV — underline indicator, mais editorial
+   ================================================================ */
+.nav-links > li > a {
+  position: relative;
+  background: transparent !important;
+  color: rgba(255, 255, 255, 0.78) !important;
+  padding: 0.5rem 0.7rem;
+  font-weight: 550;
+  letter-spacing: 0.01em;
+}
+
+.nav-links > li > a::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 0.7rem;
+  right: 0.7rem;
+  height: 2px;
+  background: var(--primary-blue);
+  border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-links > li > a:hover,
+.nav-links > li > a.active {
+  color: var(--primary-blue) !important;
+}
+
+.nav-links > li > a:hover::after,
+.nav-links > li > a.active::after {
+  transform: scaleX(1);
+}
+
+/* ── Botão nav CTA ── */
+.account-link {
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.02em;
+}
+
+.account-link::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, transparent 30%, rgba(255, 255, 255, 0.28) 50%, transparent 70%);
+  transform: translateX(-100%);
+  transition: transform 0.55s ease;
+}
+
+.account-link:hover::before {
+  transform: translateX(100%);
+}
+
+/* ================================================================
+   HERO — glow mais suave + animação entrada
+   ================================================================ */
+#home {
+  background: linear-gradient(145deg, #001832 0%, #002d5c 55%, #004080 100%);
+}
+
+.hero-bg-glow::before {
+  background: rgba(100, 185, 255, 0.09);
+  animation: glowPulse 8s ease-in-out infinite alternate;
+}
+
+.hero-bg-glow::after {
+  background: rgba(0, 100, 200, 0.14);
+  animation: glowPulse 10s ease-in-out 2s infinite alternate-reverse;
+}
+
+@keyframes glowPulse {
+  from {
+    transform: scale(1) translate(0, 0);
+    opacity: 0.7;
+  }
+  to {
+    transform: scale(1.12) translate(2%, -3%);
+    opacity: 1;
+  }
+}
+
+/* Grid hero com linhas mais sutis */
+.hero-bg-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+}
+
+/* Texto hero com animação escalonada */
+.home-text h1 {
+  animation: slideUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
+}
+
+.home-text .subtitle {
+  animation: slideUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.25s both;
+}
+
+.hero-ctas {
+  animation: slideUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.38s both;
+}
+
+.hero-carousel {
+  animation: slideUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Botão primário: shimmer ── */
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.btn-primary::after {
+  content: '↓';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, transparent 35%, rgba(255, 255, 255, 0.35) 50%, transparent 65%);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+}
+
+.btn-primary:hover::after {
+  transform: translateX(100%);
+}
+
+/* ── Botão outline: arrow slide ── */
+.btn-outline {
+  gap: 0;
+  overflow: hidden;
+}
+
+.btn-outline::after {
+  content: '↓';
+  display: inline-block;
+  transform: translateX(-4px);
+  opacity: 0;
+  transition: transform 0.22s ease, opacity 0.22s ease;
+  margin-left: 0;
+  white-space: pre;
+}
+
+.btn-outline:hover::after {
+  transform: translateX(4px);
+  opacity: 1;
+}
+
+/* ================================================================
+   BENEFIT CARDS — glass com borda azul no hover
+   ================================================================ */
+.benefit-card {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 86, 168, 0.10);
+  box-shadow: 0 4px 28px rgba(0, 31, 63, 0.08);
+  border-radius: 18px;
+  transition: box-shadow 0.28s ease, border-color 0.28s ease, transform 0.28s ease;
+}
+
+.benefit-card:hover {
+  box-shadow: 0 12px 40px rgba(0, 86, 168, 0.14);
+  border-color: rgba(0, 86, 168, 0.22);
+  transform: translateY(-4px);
+}
+
+.benefit-item {
+  transition: transform 0.2s ease;
+}
+
+.benefit-item:hover {
+  transform: translateX(4px);
+}
+
+.benefit-item strong {
+  color: var(--deep-navy);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.2rem;
+  transition: color 1s;
+}
+
+.benefit-item:hover strong {
+  color: var(--primary-blue);
+}
+
+/* ================================================================
+   PORTFOLIO — lista com acento deslizante
+   ================================================================ */
+.portfolio-list li {
+  position: relative;
+  border-left: 3px solid rgba(0, 86, 168, 0.12);
+  padding-left: 1rem;
+  transition: border-color 0.22s ease, color 0.22s ease, padding-left 0.22s ease;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.portfolio-list li:hover,
+.portfolio-list li.is-active {
+  border-left-color: var(--primary-blue);
+  color: var(--primary-blue);
+  padding-left: 1.4rem;
+}
+
+.accent-line {
+  position: relative;
+  display: inline-block;
+}
+
+.accent-line::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 60%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-blue), var(--accent-gold));
+  border-radius: 2px;
+}
+
+/* ================================================================
+   STATS — números grandes com linha de acento
+   ================================================================ */
+.stat-card {
+  position: relative;
+  border-radius: 16px;
+  background: #fff;
+  border: 1px solid rgba(0, 86, 168, 0.08);
+  box-shadow: 0 2px 16px rgba(0, 31, 63, 0.06);
+  transition: transform 0.26s ease, box-shadow 0.26s ease;
+  overflow: hidden;
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-blue), var(--accent-gold));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.stat-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0, 86, 168, 0.13);
+}
+
+.stat-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* Contador animado — fade-in mais suave */
+.stat-card.is-visible .stat-number {
+  animation: numberReveal 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes numberReveal {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stats-highlight {
+  background: linear-gradient(120deg, var(--primary-blue) 0%, #42a5f5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* CTA simulação */
+.assessores-cta-btn {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, letter-spacing 0.22s ease;
+}
+
+.assessores-cta-btn:hover {
+  letter-spacing: 0.02em;
+}
+
+/* ================================================================
+   APP SECTION — fundo com padrão sutil
+   ================================================================ */
+#app-download {
+  position: relative;
+}
+
+#app-download::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(0, 86, 168, 0.04) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+}
+
+.app-store-btn {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.app-store-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 31, 63, 0.14);
+}
+
+/* ================================================================
+   FOOTER — headings com acento
+   ================================================================ */
+.footer-column h4 {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.footer-column h4::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 24px;
+  height: 2px;
+  background: var(--accent-gold);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.footer-column:hover h4::after {
+  width: 100%;
+}
+
+.footer-column a {
+  transition: color 0.18s ease, padding-left 0.18s ease;
+  display: inline-block;
+}
+
+.footer-column a:hover {
+  color: var(--accent-gold);
+  padding-left: 4px;
+}
+
+/* ================================================================
+   SCROLL REVEAL — refinado
+   ================================================================ */
+[data-animate] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1), transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+[data-animate].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ================================================================
+   TICKER — cor de alta/baixa
+   ================================================================ */
+.cotacao-ticker-bar {
+  background: linear-gradient(90deg, #001832 0%, #003060 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* ================================================================
+   DROPDOWN — sombra mais refinada
+   ================================================================ */
+.dropdown-menu {
+  border-radius: 12px !important;
+  border: 1px solid rgba(0, 86, 168, 0.10) !important;
+  box-shadow: 0 16px 48px rgba(0, 31, 63, 0.14) !important;
+  padding: 0.5rem !important;
+}
+
+.dropdown-menu a {
+  border-radius: 8px;
+  transition: background 0.18s ease, color 0.18s ease, padding-left 0.18s ease !important;
+}
+
+.dropdown-menu a:hover {
+  background: var(--light-blue) !important;
+  color: var(--primary-blue) !important;
+  padding-left: 1.2rem !important;
+}
+
+/* ================================================================
+   READING PROGRESS BAR — global
+   ================================================================ */
+.reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  z-index: 2000;
+}
+
+.reading-progress__bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--primary-blue), var(--accent-gold));
+  transition: width 0.1s linear;
+}
+
+/* ================================================================
+   HOVER-ARROW BUTTONS — applies to all outline/ghost CTAs
+   Remove fixed arrow, show on hover
+   ================================================================ */
+.btn-rf-outline,
+.btn-cta--outline,
+.as-btn--ghost,
+.sn-cta__btn--outline,
+.btn-cta-secondary {
+  gap: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Strip any hardcoded arrow text via CSS — arrows added via ::after */
+.btn-rf-outline::after,
+.btn-cta--outline::after,
+.as-btn--ghost::after,
+.sn-cta__btn--outline::after,
+.btn-cta-secondary::after {
+  content: ' →';
+  display: inline-block;
+  transform: translateX(-6px);
+  opacity: 0;
+  transition: transform 0.22s ease, opacity 0.22s ease;
+  white-space: pre;
+}
+
+.btn-rf-outline:hover::after,
+.btn-cta--outline:hover::after,
+.as-btn--ghost:hover::after,
+.sn-cta__btn--outline:hover::after,
+.btn-cta-secondary:hover::after {
+  transform: translateX(4px);
+  opacity: 1;
+}
+
+/* Primary buttons shimmer on hover (reusable across pages) */
+.as-btn--primary,
+.btn-cta--primary,
+.sn-cta__btn--primary,
+.btn-cta-primary {
+  position: relative;
+  overflow: hidden;
+}
+
+.as-btn--primary::after,
+.btn-cta--primary::after,
+.sn-cta__btn--primary::after,
+.btn-cta-primary::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, transparent 35%, rgba(255, 255, 255, 0.3) 50%, transparent 65%);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+}
+
+.as-btn--primary:hover::after,
+.btn-cta--primary:hover::after,
+.sn-cta__btn--primary:hover::after,
+.btn-cta-primary:hover::after {
+  transform: translateX(100%);
+}
+
+/* ================================================================
+   BTN-RF buttons — remove static arrow, add hover arrow
+   ================================================================ */
+.btn-rf-primary,
+.btn-rf-outline {
+  overflow: hidden;
+  position: relative;
+  gap: 0;
+}
+
+.btn-rf-primary::after {
+  content: ' →';
+  display: inline-block;
+  transform: translateX(-6px);
+  opacity: 0;
+  transition: transform 0.22s ease, opacity 0.22s ease;
+  white-space: pre;
+}
+
+.btn-rf-primary:hover::after {
+  transform: translateX(4px);
+  opacity: 1;
+}

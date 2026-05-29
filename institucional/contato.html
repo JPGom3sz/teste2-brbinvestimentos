@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contato — BRB Investimentos</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style-enhance.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/contato.css" />
+  <link rel="stylesheet" href="css/mobile-nav.css" />
+</head>
+
+<body class="contato-page">
+
+  <div class="reading-progress" aria-hidden="true">
+    <div class="reading-progress__bar" id="readingBar"></div>
+  </div>
+
+  <header id="site-header">
+    <nav>
+      <div class="logo">
+        <a href="index.html" aria-label="BRB Investimentos — Início">
+          <img src="img/quartinho(1).png" alt="BRB Investimentos" />
+        </a>
+      </div>
+
+      <ul class="nav-links" id="mobileMenu" role="menubar">
+        
+        <li class="dropdown" role="none">
+          <a href="javascript:void(0)" class="dropdown-toggle" role="menuitem" aria-haspopup="true" aria-expanded="false">
+            Produtos e Serviços 
+            <span class="chevron" aria-hidden="true">▾</span>
+          </a>
+          <ul class="dropdown-menu" role="menu">
+            <li role="none" class="has-submenu">
+              <a href="renda-fixa.html" role="menuitem">Renda Fixa <span class="chevron-right"></span></a>
+            </li>
+            <li role="none" class="has-submenu">
+              <a href="renda-variavel.html" role="menuitem">Renda Variável <span class="chevron-right"></span></a>
+            </li>
+            <li role="none" class="has-submenu">
+              <a href="previdencia.html" role="menuitem">Previdência <span class="chevron-right"></span></a>
+            </li>
+            <li role="none" class="has-submenu">
+              <a href="fundos.html" role="menuitem">Fundos <span class="chevron-right"></span></a>
+            </li>
+            <li role="none" class="has-submenu">
+              <a href="mercado-futuro.html" role="menuitem">Mercado Futuro <span class="chevron-right"></span></a>
+            </li>
+            <li role="none" class="has-submenu">
+              <a href="tesouro-direto.html" role="menuitem">Tesouro Direto <span class="chevron-right"></span></a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="dropdown" role="none">
+          <a href="javascript:void(0)" class="dropdown-toggle" role="menuitem" aria-haspopup="true" aria-expanded="false">
+            Conteúdo 
+            <span class="chevron" aria-hidden="true">▾</span>
+          </a>
+          <ul class="dropdown-menu" role="menu">
+            <li role="none">
+              <a href="https://analisa.genialinvestimentos.com.br/" role="menuitem" target="_blank" rel="noopener noreferrer">Genial Analisa</a>
+            </li>
+            <li role="none">
+              <a href="newsletter.html" role="menuitem">Newsletter</a>
+            </li>
+            <li role="none">
+              <a href="tutoriais.html" role="menuitem">Guias Práticos</a>
+            </li>
+          </ul>
+        </li>
+
+        <li role="none">
+          <a href="sobrenos.html" role="menuitem">Sobre nós</a>
+        </li>
+        <li role="none">
+          <a href="contato.html" role="menuitem" class="active">Contato</a>
+        </li>
+      </ul>
+
+      <div class="nav-buttons">
+        <button class="account-link" type="button">Acesse seus Investimentos</button>
+      </div>
+
+      <button class="mobile-menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="menu-overlay" aria-hidden="true"></div>
+      <button class="mobile-menu-close" type="button" aria-label="Fechar menu">×</button>
+    </nav>
+  </header>
+
+  <section class="contato-hero">
+
+    <div class="contato-hero__left">
+      <span class="contato-hero__eyebrow">Central de Investimentos</span>
+      <h1 class="contato-hero__title">
+        Fale<br>
+        <em>Conosco</em>
+      </h1>
+      <p class="contato-hero__subtitle">
+        Nossa equipe está pronta para tirar suas dúvidas, ajudar na abertura de conta e oferecer o melhor atendimento em investimentos.
+      </p>
+      <a href="tel:6133221515" class="contato-hero__cta">
+        Ligar agora
+        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 10h10M10 5l5 5-5 5"/>
+        </svg>
+      </a>
+    </div>
+
+    <div class="contato-hero__right">
+      
+      <div class="hero-status-card">
+        <div class="hero-status-card__label">Status atual</div>
+        <div id="statusPill" class="status-pill">
+          <span class="status-pill__dot"></span>
+          <span id="statusText">Verificando…</span>
+        </div>
+      </div>
+
+      <div class="hero-status-card">
+        <div class="hero-status-card__label">Horário de atendimento</div>
+        <div class="hero-status-card__value">9h às 18h</div>
+        <div class="hero-status-card__sub">Segunda a Sexta-feira</div>
+      </div>
+
+      <div class="hero-status-card">
+        <div class="hero-status-card__label">Tempo médio de resposta</div>
+        <div class="hero-status-card__value">Até 24h úteis</div>
+        <div class="hero-status-card__sub">para e-mail e formulário</div>
+      </div>
+
+    </div>
+
+    <div class="hero-deco-num" aria-hidden="true">BRB</div>
+  </section>
+
+  <section class="contato-methods">
+    <div class="contato-methods__header reveal">
+      <h2 class="contato-methods__title">Como prefere<br>nos contatar?</h2>
+      <p class="contato-methods__note">Escolha o canal que melhor se adapta ao seu momento. Todos os números são gratuitos.</p>
+    </div>
+
+    <div class="contact-row" data-animate>
+      <div class="contact-row__meta">
+        <div class="contact-row__icon contact-row__icon--clock">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+            <circle cx="12" cy="12" r="9"/>
+            <path d="M12 7v5l3.5 3.5"/>
+          </svg>
+        </div>
+        <div>
+          <div class="contact-row__label">Disponibilidade</div>
+          <div class="contact-row__name">Horário</div>
+        </div>
+      </div>
+
+      <div class="contact-row__content">
+        <div class="hours-display">
+          <div class="hours-block">
+            <div class="hours-block__days">Seg — Sex</div>
+            <div class="hours-block__time">9:00 – 18:00</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="sideStatus" class="status-pill" style="align-self:center;"></div>
+    </div>
+
+    <div class="contact-row" data-animate>
+      <div class="contact-row__meta">
+        <div class="contact-row__icon contact-row__icon--phone">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 11.63 19a19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.5 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+        </div>
+        <div>
+          <div class="contact-row__label">Telefone</div>
+          <div class="contact-row__name">Central</div>
+        </div>
+      </div>
+
+      <div class="contact-row__content">
+        <div class="phone-list">
+          <div class="phone-item">
+            <span class="phone-item__region">Distrito Federal</span>
+            <a href="tel:6133221515" class="phone-item__number">61 3322-1515</a>
+          </div>
+          <div class="phone-item">
+            <span class="phone-item__region">RJ e Goiânia</span>
+            <a href="tel:40026161" class="phone-item__number">4002-6161</a>
+          </div>
+          <div class="phone-item">
+            <span class="phone-item__region">Demais cidades</span>
+            <a href="tel:08000613030" class="phone-item__number">0800 061 3030</a>
+          </div>
+          <p class="phone-note">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" width="13" height="13">
+              <circle cx="8" cy="8" r="6"/>
+              <path d="M8 7.5v3M8 5.5h.01"/>
+            </svg>
+            Digite: Opção 9 → 1 → 6 em todos os canais
+          </p>
+        </div>
+      </div>
+
+      <button class="btn-copy" onclick="copyText('61 3322-1515', this)" aria-label="Copiar telefone DF">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+          <rect x="5" y="5" width="9" height="9" rx="1.5"/>
+          <path d="M3 11V3a1 1 0 0 1 1-1h8"/>
+        </svg>
+        Numero do Distrito Federal
+      </button>
+    </div>
+
+    <div class="contact-row" data-animate>
+      <div class="contact-row__meta">
+        <div class="contact-row__icon contact-row__icon--email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+          </svg>
+        </div>
+        <div>
+          <div class="contact-row__label">E-mail</div>
+          <div class="contact-row__name">Atendimento</div>
+        </div>
+      </div>
+
+      <div class="contact-row__content">
+        <a href="mailto:atendimento@brbinvestimentos.com.br" class="email-link">
+          atendimento@brbinvestimentos.com.br
+        </a>
+        <p class="phone-note" style="margin-top:.6rem">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" width="13" height="13">
+            <circle cx="8" cy="8" r="6"/>
+            <path d="M8 7.5v3M8 5.5h.01"/>
+          </svg>
+          Resposta em até 24 horas úteis
+        </p>
+      </div>
+
+      <button class="btn-copy" onclick="copyText('atendimento@brbinvestimentos.com.br', this)" aria-label="Copiar e-mail">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+          <rect x="5" y="5" width="9" height="9" rx="1.5"/>
+          <path d="M3 11V3a1 1 0 0 1 1-1h8"/>
+        </svg>
+        Copiar e-mail
+      </button>
+    </div>
+
+  </section>
+
+  <section class="contato-social">
+
+    <div class="social-marquee-wrap" aria-hidden="true">
+      <div class="social-marquee">
+        
+        <a href="https://www.instagram.com/brbinvestimentos/" class="social-marquee__item" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          Instagram
+        </a>
+        <a href="https://www.facebook.com/share/1CRVbq4UXf/?mibextid=wwXIfr" class="social-marquee__item" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          Facebook
+        </a>
+        <a href="https://www.youtube.com/@BRBInvestimentos" class="social-marquee__item" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          YouTube
+        </a>
+        <a href="https://www.instagram.com/brbinvestimentos/" class="social-marquee__item" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          Instagram
+        </a>
+        <a href="https://www.facebook.com/share/1CRVbq4UXf/?mibextid=wwXIfr" class="social-marquee__item" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          Facebook
+        </a>
+        <a href="https://www.youtube.com/@BRBInvestimentos" class="social-marquee__item" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          YouTube
+        </a>
+        <a href="https://www.instagram.com/brbinvestimentos/" class="social-marquee__item" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          Instagram
+        </a>
+        <a href="https://www.facebook.com/share/1CRVbq4UXf/?mibextid=wwXIfr" class="social-marquee__item" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          Facebook
+        </a>
+        <a href="https://www.youtube.com/@BRBInvestimentos" class="social-marquee__item" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          YouTube
+        </a>
+        <a href="https://www.instagram.com/brbinvestimentos/" class="social-marquee__item" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          Instagram
+        </a>
+        <a href="https://www.facebook.com/share/1CRVbq4UXf/?mibextid=wwXIfr" class="social-marquee__item" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          Facebook
+        </a>
+        <a href="https://www.youtube.com/@BRBInvestimentos" class="social-marquee__item" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          YouTube
+        </a>
+      </div>
+    </div>
+
+    <div class="social-main">
+      <div class="social-main__left reveal">
+        <div class="social-main__eyebrow">Siga a BRB</div>
+        <h2 class="social-main__title">Conteúdo que<br>move o mercado</h2>
+        <p class="social-main__body">
+          Dicas diárias, análises de mercado e conteúdo educacional para você investir com mais inteligência.
+        </p>
+      </div>
+
+      <div class="social-main__right reveal">
+        
+        <a href="https://www.instagram.com/brbinvestimentos/" class="social-card" target="_blank" rel="noopener noreferrer" aria-label="Instagram BRB Investimentos">
+          <div class="social-card__icon social-card__icon--ig">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </div>
+          <div>
+            <div class="social-card__platform">Instagram</div>
+            <div class="social-card__handle">@brbinvestimentos</div>
+          </div>
+          <div class="social-card__arrow">↗</div>
+        </a>
+
+        <a href="https://www.facebook.com/share/1CRVbq4UXf/?mibextid=wwXIfr" class="social-card" target="_blank" rel="noopener noreferrer" aria-label="Facebook BRB Investimentos">
+          <div class="social-card__icon social-card__icon--fb">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </div>
+          <div>
+            <div class="social-card__platform">Facebook</div>
+            <div class="social-card__handle">BRB Investimentos</div>
+          </div>
+          <div class="social-card__arrow">↗</div>
+        </a>
+
+        <a href="https://www.youtube.com/@BRBInvestimentos" class="social-card" target="_blank" rel="noopener noreferrer" aria-label="YouTube BRB Investimentos">
+          <div class="social-card__icon social-card__icon--yt">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </div>
+          <div>
+            <div class="social-card__platform">YouTube</div>
+            <div class="social-card__handle">BRB Investimentos</div>
+          </div>
+          <div class="social-card__arrow">↗</div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="contato-address reveal">
+    <div class="address-inner">
+
+      <div class="address-text">
+        <div class="address-text__eyebrow">Onde estamos</div>
+        <h2 class="address-text__title">Nosso<br>Escritório</h2>
+        <p class="address-text__name">BRB Investimentos</p>
+        <p class="address-text__lines">
+          Centro Empresarial CNC<br>
+          SAUN Quadra 5, Lote C — 2º andar<br>
+          Brasília, DF
+        </p>
+        <a href="https://maps.google.com/?q=SAUN+Quadra+5+Lote+C+Brasilia+DF" target="_blank" rel="noopener noreferrer" class="btn-map">
+          Ver no mapa
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 10h10M10 5l5 5-5 5"/>
+          </svg>
+        </a>
+      </div>
+
+      <div class="address-map-visual">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3839.3!2d-47.8943!3d-15.7801!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a3a7a2f5b1e47%3A0x0!2sSAUN+Quadra+5%2C+Lot+C%2C+Bras%C3%ADlia+-+DF!5e0!3m2!1spt!2sbr!4v1609459200000!5m2!1spt!2sbr"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Localização BRB Investimentos">
+        </iframe>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      
+      <div class="footer-brand">
+        <img src="img/LOGO BRANCA (1).png" alt="BRB Investimentos" class="footer-logo-img" />
+        <p class="footer-brand-text">Investindo no futuro dos brasileiros com segurança, tecnologia e tradição.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/brbinvestimentos/" class="footer-social-btn" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="https://www.youtube.com/@BRBInvestimentos" class="footer-social-btn" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/share/1CRVbq4UXf/?mibextid=wwXIfr" class="footer-social-btn" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-column">
+        <h4>Produtos</h4>
+        <ul>
+          <li><a href="renda-fixa.html">Renda Fixa</a></li>
+          <li><a href="fundos.html">Fundos</a></li>
+          <li><a href="previdencia.html">Previdência</a></li>
+          <li><a href="renda-variavel.html">Renda Variável</a></li>
+          <li><a href="mercado-futuro.html">Mercado Futuro</a></li>
+          <li><a href="tesouro-direto.html">Tesouro Direto</a></li>
+          <li><a href="javascript: void(0)">Criptoativos</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>Quem Somos</h4>
+        <ul>
+          <li><a href="sobrenos.html#missao">Nossa Missão</a></li>
+          <li><a href="sobrenos.html#historia">Nossa História</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>Fale Conosco</h4>
+        <ul>
+          <li><a href="https://novo.brb.com.br/atendimento/" target="_blank" rel="noopener noreferrer">Central de Atendimento</a></li>
+          <li><a href="https://novo.brb.com.br/atendimento/ouvidoria-brb/" target="_blank" rel="noopener noreferrer">Ouvidoria BRB</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>Institucional</h4>
+        <ul>
+          <li><a href="https://www.anbima.com.br/" target="_blank">Anbima</a></li>
+          <li><a href="https://www.b3.com.br/" target="_blank">B3</a></li>
+          <li><a href="https://www.gov.br/cvm/" target="_blank">CVM</a></li>
+          <li><a href="https://www.fgc.org.br/" target="_blank">FGC</a></li>
+          <li><a href="https://www.bcb.gov.br/" target="_blank">Bacen</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column regulatorio">
+        <h4>Regulatórios</h4>
+        <ul>
+          <li><a href="pdfs/Política de Privacidade.pdf" target="_blank">Política de Privacidade</a></li>
+          <li><a href="pdfs/4. Termo Abertura Conta Corrente  PF.pdf" target="_blank">Termos de Abertura de conta Genial</a></li>
+          <li><a href="pdfs/RPA_B3_Genial_Janeiro_2026.pdf" target="_blank">Regras e parâmetros de atuação</a></li>
+          <li><a href="pdfs/Termo de Renda Fixa.pdf" target="_blank">Termo de Renda Fixa</a></li>
+          <li><a href="pdfs/CONTRATO DE INTERMEDIAÇÃO.pdf" target="_blank">Contrato de intermediação</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-left">
+        <img class="footer-mark" src="https://framerusercontent.com/images/ZRAogsRUCyrDvJX2BCEBRqoGhWY.svg?width=142&height=33" alt="Banco Central" />
+        <img class="footer-mark" src="https://framerusercontent.com/images/mHJ8wt4h7RrXbxoN3I2zNtlIMw.svg?width=90&height=41" alt="B3" />
+      </div>
+      <div class="footer-center">
+        <p class="brbdireitos">© 2026 BRB Investimentos</p>
+        <p class="footer-address">BL B - Centro Empresarial CNC - SAUN Quadra 5, Lote C, 2º andar - Brasília/DF</p>
+      </div>
+      <div class="footer-right footer-certificados">
+        <img src="img/distribuicao-geral.jpg" alt="Certificado Anbima" />
+        <img src="img/art-administracao.jpg" alt="Certificado Administração" />
+      </div>
+    </div>
+  </footer>
+
+  <script src="js\script.js"></script>
+
+  <script>
+    // Indicador de status de atendimento em tempo real
+    function updateStatus() {
+      const now = new Date();
+      const dayOfWeek = now.getDay(); // 0=Dom, 6=Sab
+      const hour = now.getHours();
+      const isWeekday = dayOfWeek >= 1 && dayOfWeek <= 5;
+      const isBusinessHour = hour >= 9 && hour < 18;
+      const isOpen = isWeekday && isBusinessHour;
+
+      const pillClass = isOpen ? 'status-pill--open' : 'status-pill--closed';
+      const pillText  = isOpen ? 'Aberto agora' : 'Fora do horário';
+
+      document.querySelectorAll('#statusPill, #sideStatus').forEach(el => {
+        el.className = 'status-pill ' + pillClass;
+        el.innerHTML = `<span class="status-pill__dot"></span><span>${pillText}</span>`;
+      });
+    }
+
+    updateStatus();
+    setInterval(updateStatus, 60000);
+
+    // Copiar para área de transferência
+    function copyText(text, btn) {
+      navigator.clipboard.writeText(text).then(() => {
+        const original = btn.innerHTML;
+        btn.classList.add('copied');
+        btn.innerHTML = `<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><path d="M3 8l4 4 6-7"/></svg> Copiado!`;
+        
+        setTimeout(() => {
+          btn.classList.remove('copied');
+          btn.innerHTML = original;
+        }, 2200);
+      });
+    }
+
+    // Intersection Observer: Scroll reveal das linhas de contato
+    const animEls = document.querySelectorAll('[data-animate]');
+    const rowObserver = new IntersectionObserver((entries) => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          setTimeout(() => e.target.classList.add('is-visible'), i * 140);
+          rowObserver.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    
+    animEls.forEach(el => rowObserver.observe(el));
+
+    // Intersection Observer: Reveal genérico de elementos
+    const revealObs = new IntersectionObserver((entries) => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          setTimeout(() => e.target.classList.add('is-visible'), i * 100);
+          revealObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    
+    document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+    // Barra de progresso de leitura
+    (function() {
+      const bar = document.getElementById('readingBar');
+      if (bar) {
+        window.addEventListener('scroll', function() {
+          bar.style.width = (window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100) + '%';
+        });
+      }
+    })();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!-- ============================================================
+     POPUP DE CAPTAÇÃO DE LEADS — BRB INVESTIMENTOS
+     Cole este bloco ANTES de </body> no index.html
+     ============================================================ -->
+
+<div id="brb-popup-overlay" role="dialog" aria-modal="true" aria-label="Conheça a BRB Investimentos">
+
+  <div id="brb-popup">
+
+    <button id="brb-popup-close" aria-label="Fechar">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1 1L13 13M13 1L1 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+
+    <!-- Cabeçalho -->
+    <div class="popup-badge">
+      <div class="popup-badge-dot"></div>
+      <span>BRB Investimentos</span>
+    </div>
+
+    <h2 class="popup-title">
+      Invista com quem<br>
+      conhece <span class="popup-highlight">Brasília</span>
+    </h2>
+    <p class="popup-subtitle">
+      Receba conteúdos exclusivos e acompanhe as melhores oportunidades do mercado direto no seu e-mail.
+    </p>
+
+    <!-- Corpo do formulário (escondido no sucesso) -->
+    <div id="popup-form-body">
+      <form id="brb-popup-form" class="popup-form" novalidate>
+
+        <!-- Nome -->
+        <div class="popup-field">
+          <label for="popup-name">Nome completo</label>
+          <input
+            type="text"
+            id="popup-name"
+            name="nome"
+            placeholder="Seu nome"
+            autocomplete="name"
+            required
+          />
+          <span class="popup-error-msg" id="popup-name-error"></span>
+        </div>
+
+        <!-- E-mail -->
+        <div class="popup-field">
+          <label for="popup-email">E-mail</label>
+          <input
+            type="email"
+            id="popup-email"
+            name="email"
+            placeholder="seu@email.com"
+            autocomplete="email"
+            required
+          />
+          <span class="popup-error-msg" id="popup-email-error"></span>
+        </div>
+
+        <!-- Telefone -->
+        <div class="popup-field">
+          <label for="popup-phone">Telefone com DDD</label>
+          <input
+            type="tel"
+            id="popup-phone"
+            name="telefone"
+            placeholder="(61) 99999-9999"
+            autocomplete="tel"
+            required
+          />
+          <span class="popup-error-msg" id="popup-phone-error"></span>
+        </div>
+
+        <!-- LGPD — NÃO PRÉ-MARCADO (obrigatório por lei) -->
+        <label class="popup-lgpd">
+          <input
+            type="checkbox"
+            id="popup-lgpd"
+            name="lgpd"
+            required
+          />
+          <span class="popup-lgpd-text">
+            Li e aceito a
+            <a href="pdfs/Política de Privacidade.pdf" target="_blank" rel="noopener noreferrer">
+              Política de Privacidade
+            </a>
+            da BRB Investimentos e concordo com o uso dos meus dados para fins de comunicação e envio de conteúdo financeiro. Posso cancelar a qualquer momento.
+          </span>
+        </label>
+        <span class="popup-error-msg" id="popup-lgpd-error"></span>
+
+        <!-- Submit -->
+        <button type="submit" class="popup-btn-submit">
+          <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+          </svg>
+          Quero receber conteúdos
+        </button>
+
+      </form>
+    </div>
+    <!-- /popup-form-body -->
+
+    <!-- Estado de sucesso -->
+    <div class="popup-success" id="popup-success">
+      <div class="popup-success-icon">
+        <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+        </svg>
+      </div>
+      <h3>Cadastro realizado!</h3>
+      <p>Em breve você receberá os melhores conteúdos de investimento direto no seu e-mail.</p>
+    </div>
+
+  </div>
+</div>
+
+<!-- Scripts do popup -->
+<link rel="stylesheet" href="css/popup.css" />
+<script src="js/popup.js"></script>

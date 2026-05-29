@@ -1,0 +1,371 @@
+/* ============================================================
+   BRB INVESTIMENTOS — POPUP DE CAPTAÇÃO DE LEADS
+   Arquivo: popup.css
+   Adicione no <head> após style.css:
+   <link rel="stylesheet" href="css/popup.css" />
+   ============================================================ */
+
+/* ── OVERLAY ── */
+#brb-popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 10, 25, 0.78);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 9998;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+
+#brb-popup-overlay.is-open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* ── MODAL ── */
+#brb-popup {
+  position: relative;
+  background: linear-gradient(145deg, #001e3c 0%, #002f60 60%, #003d75 100%);
+  border: 1px solid rgba(145, 212, 250, 0.18);
+  border-radius: 20px;
+  width: 100%;
+  max-width: 520px;
+  padding: 2.8rem 2.6rem 2.4rem;
+  box-shadow:
+    0 0 0 1px rgba(0, 128, 216, 0.12),
+    0 30px 80px rgba(0, 0, 0, 0.55),
+    0 0 60px rgba(0, 86, 168, 0.15) inset;
+  transform: translateY(28px) scale(0.97);
+  transition: transform 0.38s cubic-bezier(0.22, 1, 0.36, 1);
+  overflow: hidden;
+}
+
+#brb-popup-overlay.is-open #brb-popup {
+  transform: translateY(0) scale(1);
+}
+
+/* Glow decorativo */
+#brb-popup::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(0, 128, 216, 0.22) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* ── BADGE TOP ── */
+.popup-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(145, 212, 250, 0.12);
+  border: 1px solid rgba(145, 212, 250, 0.28);
+  border-radius: 100px;
+  padding: 4px 14px 4px 10px;
+  margin-bottom: 1.1rem;
+}
+
+.popup-badge span {
+  font-family: 'Cera Pro', 'Montserrat', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #91d4fa;
+}
+
+.popup-badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #91d4fa;
+  box-shadow: 0 0 8px #91d4fa;
+  animation: brbPulse 2s ease-in-out infinite;
+}
+
+@keyframes brbPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(0.8); }
+}
+
+/* ── HEADING ── */
+.popup-title {
+  font-family: 'Cera Pro', 'Montserrat', sans-serif;
+  font-size: clamp(1.35rem, 3vw, 1.7rem);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.2;
+  margin-bottom: 0.55rem;
+  letter-spacing: -0.02em;
+}
+
+.popup-title .popup-highlight {
+  color: #91d4fa;
+  position: relative;
+}
+
+.popup-subtitle {
+  font-family: 'Cera Pro', 'Montserrat', sans-serif;
+  font-size: 0.93rem;
+  color: rgba(255, 255, 255, 0.62);
+  line-height: 1.55;
+  margin-bottom: 1.8rem;
+}
+
+/* ── FORM ── */
+.popup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.popup-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.popup-field label {
+  font-family: 'Cera Pro', 'Montserrat', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.popup-field input {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 10px;
+  padding: 0.78rem 1rem;
+  font-family: 'Cera Pro', 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  color: #ffffff;
+  outline: none;
+  transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.popup-field input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.popup-field input:focus {
+  border-color: rgba(145, 212, 250, 0.55);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 0 3px rgba(145, 212, 250, 0.1);
+}
+
+.popup-field input.input-error {
+  border-color: rgba(255, 90, 90, 0.7);
+  box-shadow: 0 0 0 3px rgba(255, 90, 90, 0.1);
+}
+
+/* ── LGPD CHECKBOX ── */
+.popup-lgpd {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+  margin-top: 0.3rem;
+}
+
+.popup-lgpd input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  border: 1.5px solid rgba(145, 212, 250, 0.4);
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.06);
+  cursor: pointer;
+  position: relative;
+  margin-top: 2px;
+  transition: border-color 0.2s, background 0.2s;
+  flex-shrink: 0;
+}
+
+.popup-lgpd input[type="checkbox"]:checked {
+  background: #0080D8;
+  border-color: #0080D8;
+}
+
+.popup-lgpd input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 5px;
+  width: 5px;
+  height: 9px;
+  border: 2px solid #fff;
+  border-top: none;
+  border-left: none;
+  transform: rotate(45deg);
+}
+
+.popup-lgpd input[type="checkbox"].input-error {
+  border-color: rgba(255, 90, 90, 0.7);
+}
+
+.popup-lgpd-text {
+  font-family: 'Cera Pro', 'Montserrat', sans-serif;
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.52);
+  line-height: 1.55;
+}
+
+.popup-lgpd-text a {
+  color: #91d4fa;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.popup-lgpd-text a:hover {
+  color: #ffffff;
+}
+
+/* ── ERRO ── */
+.popup-error-msg {
+  display: none;
+  font-family: 'Cera Pro', 'Montserrat', sans-serif;
+  font-size: 0.75rem;
+  color: rgba(255, 120, 120, 0.9);
+  margin-top: -4px;
+}
+
+.popup-error-msg.show {
+  display: block;
+}
+
+/* ── BOTÃO SUBMIT ── */
+.popup-btn-submit {
+  margin-top: 0.4rem;
+  width: 100%;
+  padding: 0.88rem 1.5rem;
+  background: linear-gradient(135deg, #0080D8 0%, #0056A8 100%);
+  border: none;
+  border-radius: 12px;
+  font-family: 'Cera Pro', 'Montserrat', sans-serif;
+  font-size: 0.97rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s;
+  box-shadow: 0 4px 18px rgba(0, 86, 168, 0.45);
+}
+
+.popup-btn-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(0, 86, 168, 0.6);
+}
+
+.popup-btn-submit:active {
+  transform: translateY(0);
+}
+
+.popup-btn-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ── BOTÃO FECHAR ── */
+#brb-popup-close {
+  position: absolute;
+  top: 1.1rem;
+  right: 1.1rem;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, color 0.2s;
+}
+
+#brb-popup-close:hover {
+  background: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+}
+
+/* ── ESTADO DE SUCESSO ── */
+.popup-success {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1rem;
+  padding: 1rem 0 0.5rem;
+}
+
+.popup-success.show {
+  display: flex;
+}
+
+.popup-success-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0080D8, #0056A8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 30px rgba(0, 128, 216, 0.4);
+  animation: successPop 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes successPop {
+  from { transform: scale(0); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+.popup-success-icon svg {
+  color: #fff;
+}
+
+.popup-success h3 {
+  font-family: 'Cera Pro', 'Montserrat', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.popup-success p {
+  font-family: 'Cera Pro', 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.6;
+}
+
+/* ── MOBILE ── */
+@media (max-width: 540px) {
+  #brb-popup {
+    padding: 2.2rem 1.6rem 2rem;
+    border-radius: 16px;
+  }
+
+  .popup-title {
+    font-size: 1.35rem;
+  }
+}

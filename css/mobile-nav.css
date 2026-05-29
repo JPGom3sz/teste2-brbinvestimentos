@@ -1,0 +1,260 @@
+/* =============================================================
+   mobile-nav.css — Drawer lateral direito (compartilhado)
+   Inclua este arquivo em todas as páginas do site.
+   ============================================================= */
+
+/* ── Só ativa em mobile ── */
+@media (max-width: 968px) {
+
+  /* Esconde o botão "Acesse seus Investimentos" no mobile */
+  .nav-buttons { display: none !important; }
+
+  /* Logo */
+  .logo img { height: 50px !important; width: auto !important; left: 100px !important; }
+
+  /* Mostra o hambúrguer */
+  .mobile-menu-toggle {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    margin-left: auto;
+    z-index: 1002;
+    position: relative;
+  }
+
+  /* ── DRAWER: posicionamento e animação ── */
+  .nav-links {
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    left: auto !important;
+    bottom: 0 !important;
+    width: min(300px, 85vw) !important;
+
+    /* Slide a partir da direita */
+    transform: translateX(110%) !important;
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1) !important;
+
+    /* Layout vertical */
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0 !important;
+
+    background: var(--deep-navy, #001F3F) !important;
+    padding: calc(var(--header-h, 75px) + 0.75rem) 0 3rem !important;
+    z-index: 1000 !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+
+    box-shadow: -8px 0 40px rgba(0, 10, 30, 0.5) !important;
+    border-left: 1px solid rgba(255, 255, 255, 0.08) !important;
+    pointer-events: none !important;
+    list-style: none !important;
+  }
+
+  /* Estado aberto */
+  .nav-links.active {
+    transform: translateX(0) !important;
+    pointer-events: auto !important;
+  }
+
+  /* ── Itens de nível 1 ── */
+  .nav-links > li {
+    width: 100% !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07) !important;
+    position: static !important;
+  }
+
+  .nav-links > li > a,
+  .nav-links > li > a.active {
+    color: rgba(255, 255, 255, 0.88) !important;
+    background: transparent !important;
+    padding: 1rem 1.5rem !important;
+    font-size: 0.95rem !important;
+    font-weight: 600 !important;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    border-radius: 0 !important;
+  }
+
+  .nav-links > li > a:hover {
+    background: rgba(255, 255, 255, 0.07) !important;
+    color: #fff !important;
+  }
+
+  /* ── Dropdown mobile: abre/fecha com max-height ── */
+  .nav-links .dropdown-menu {
+    position: static !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    transform: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    min-width: 0 !important;
+    background: rgba(0, 0, 0, 0.22) !important;
+    max-height: 0 !important;
+    overflow: hidden !important;
+    transition: max-height 0.35s ease !important;
+  }
+
+  /* Remove as setinhas decorativas */
+  .nav-links .dropdown-menu::after,
+  .nav-links .dropdown-menu::before {
+    display: none !important;
+  }
+
+  /* Dropdown aberto */
+  .nav-links .dropdown.is-open .dropdown-menu {
+    max-height: 600px !important;
+  }
+
+  .nav-links .dropdown-menu a {
+    color: rgba(255, 255, 255, 0.65) !important;
+    padding: 0.85rem 1.5rem 0.85rem 2.2rem !important;
+    font-size: 0.875rem !important;
+    background: transparent !important;
+    display: block !important;
+  }
+
+  .nav-links .dropdown-menu a:hover {
+    background: rgba(255, 255, 255, 0.07) !important;
+    color: #fff !important;
+  }
+
+  .nav-links .dropdown-menu li + li {
+    border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
+  }
+
+  /* Seta do dropdown */
+  .nav-links .chevron {
+    opacity: 0.7;
+    font-size: 0.75rem;
+    transition: transform 0.25s ease;
+  }
+
+  .nav-links .dropdown.is-open .chevron {
+    transform: rotate(180deg) !important;
+    opacity: 1;
+    color: var(--accent-gold, #91d4fa);
+  }
+
+  /* ── Overlay escurecido ── */
+  .menu-overlay {
+    display: none;
+    position: fixed !important;
+    inset: 0 !important;
+    background: rgba(0, 10, 25, 0.55) !important;
+    z-index: 998 !important;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+  }
+
+  .menu-overlay.active {
+    display: block !important;
+  }
+
+  /* ── Botão fechar (✕) dentro do drawer ── */
+
+.mobile-menu-close {
+    display: flex;
+    position: fixed;
+    top: 1.1rem;
+    right: 1rem;
+    z-index: 1003;
+    background: rgba(255, 255, 255, 0.25); /* Fundo da bolinha mais forte */
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Borda mais visível */
+    color: #ffffff; /* Branco puro e absoluto para o X */
+    width: 44px; /* Aumentamos o tamanho da bolinha (antes era 34) */
+    height: 44px;
+    border-radius: 50%;
+    font-size: 2.2rem; /* Deixa o "X" gigante e muito mais legível */
+    font-weight: 300; 
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    line-height: 0; /* Ajuda a centralizar perfeitamente o caractere */
+    padding-bottom: 4px; /* Ajuste fino para o X ficar no centro exato da bolinha */
+    
+    /* Escondido por padrão */
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+  }
+
+  .mobile-menu-close.visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .mobile-menu-close:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(1.1); /* Dá um efeitinho de crescer ao tocar/passar o rato */
+  }
+.mobile-menu-close .close-line {
+  display: block;
+  width: 32px; /* Linhas maiores */
+  height: 3px; /* Linhas mais grossas para destaque */
+  background: #ffffff; /* Branco puro para contraste total */
+  border-radius: 2px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: center;
+  transition: transform 0.2s ease;
+}
+
+.mobile-menu-close .close-line:nth-child(1) {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.mobile-menu-close .close-line:nth-child(2) {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.mobile-menu-close:hover .close-line:nth-child(1) {
+  transform: translate(-50%, -50%) rotate(45deg) scale(1.1);
+}
+
+.mobile-menu-close:hover .close-line:nth-child(2) {
+  transform: translate(-50%, -50%) rotate(-45deg) scale(1.1);
+}
+}
+
+
+
+/* ============================================================
+   FORÇAR O HAMBÚRGUER A VIRAR UM X GIGANTE E BRANCO
+   ============================================================ */
+.mobile-menu-toggle {
+  z-index: 9999 !important; 
+}
+
+.mobile-menu-toggle.active span {
+  background: #ffffff !important; 
+  height: 3px !important; 
+}
+
+.mobile-menu-toggle.active span:nth-child(1) { 
+  transform: translateY(7.5px) rotate(45deg) scale(1.2) !important; 
+}
+
+.mobile-menu-toggle.active span:nth-child(2) { 
+  opacity: 0 !important; 
+  transform: scaleX(0) !important; 
+}
+
+.mobile-menu-toggle.active span:nth-child(3) { 
+  transform: translateY(-7.5px) rotate(-45deg) scale(1.2) !important; 
+}
+
+
