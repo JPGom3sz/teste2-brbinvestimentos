@@ -1,14 +1,12 @@
-
-
 (function () {
   'use strict';
 
   // ── CONFIGURAÇÕES ──────────────────────────────────────────
   const CONFIG = {
-    delay:          10000,              // ms após carregamento para abrir (5s)
-    storageKey:     'brb_popup_shown', // chave para quem só fechou (7 dias)
+    delay:          5000,              // ms após carregamento para abrir (5s)
+    storageKey:     'brb_popup_shown', // chave para quem só fechou
     registeredKey:  'brb_popup_done',  // chave para quem enviou (permanente)
-    cooldownDays:   7,                 // dias de espera para quem fechou sem enviar
+    cooldownDays:   5,                 // dias de espera para quem fechou sem enviar (5 dias)
     exitIntent:     true,              // ativar exit-intent no desktop
   };
 
@@ -24,14 +22,16 @@
   // ── CONTROLE DE EXIBIÇÃO ──────────────────────────────────
 
   function shouldShow() {
-    // Já registrou — nunca mais mostra
+    // 1. Já registrou — nunca mais mostra
     if (localStorage.getItem(CONFIG.registeredKey)) return false;
 
-    // Só fechou — espera 7 dias
+    // 2. Só fechou — verifica se já passaram os 5 dias
     const last = localStorage.getItem(CONFIG.storageKey);
-    if (!last) return true;
+    if (!last) return true; // Se nunca viu/fechou, mostra.
+    
     const diffMs   = Date.now() - parseInt(last, 10);
     const diffDays = diffMs / (1000 * 60 * 60 * 24);
+    
     return diffDays >= CONFIG.cooldownDays;
   }
 
@@ -44,11 +44,17 @@
   function closePopup() {
     overlay.classList.remove('is-open');
     document.body.style.overflow = '';
+    
+    // CORREÇÃO AQUI: Salva no navegador o momento exato em que a pessoa fechou o popup
+    // (mas só salva isso se a pessoa ainda não tiver feito o cadastro definitivo)
+    if (!localStorage.getItem(CONFIG.registeredKey)) {
+      localStorage.setItem(CONFIG.storageKey, Date.now().toString());
+    }
   }
 
   // ── GATILHOS ──────────────────────────────────────────────
 
-  // 1. Timer
+  // 1. Timer (Abre após 5 segundos)
   setTimeout(openPopup, CONFIG.delay);
 
   // 2. Exit-intent (mouse deixa a janela pelo topo — desktop)
@@ -157,7 +163,6 @@
     if (!valid) return;
 
     // ── ENVIO (HTML puro: apenas salva localmente) ──────────
-    // No WordPress, substitua este bloco pelo submit via WPForms/REST API
 
     const lead = {
       nome:       nameEl.value.trim(),
@@ -168,11 +173,8 @@
     };
 
     console.log('[BRB Popup] Lead capturado:', lead);
-    // Exemplo futuro WordPress:
-    // fetch('/wp-json/wpforms/v1/form/ID', { method: 'POST', body: ... })
 
-    // Marca como registrado — permanente, nunca mais abre
-   
+    // MARCAÇÃO PERMANENTE: Salva que o usuário já se cadastrou (nunca mais vai abrir)
     localStorage.setItem(CONFIG.registeredKey, '1');
 
     // Mostra sucesso

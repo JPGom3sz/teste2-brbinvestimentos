@@ -615,6 +615,26 @@ function initEducationalModals() {
   const cards = document.querySelectorAll('.edu-card');
   const closebtns = document.querySelectorAll('.edu-modal__close');
   let activeModal = null;
+  let scrollY = 0; // Variável para guardar a posição do scroll
+
+  // Função robusta para travar o scroll fixando o body
+  const lockScroll = () => {
+    scrollY = window.scrollY; // Salva a posição atual
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.width = '100%';
+    // Adiciona classe de fallback do CSS só por segurança
+    document.body.classList.add('travar-rolagem');
+  };
+
+  // Função para destravar e devolver a tela pro lugar certo
+  const unlockScroll = () => {
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.width = '';
+    document.body.classList.remove('travar-rolagem');
+    window.scrollTo(0, scrollY); // Volta exatamente pra onde estava
+  };
 
   function openModal(productKey) {
     document.querySelectorAll('.edu-modal').forEach(m => {
@@ -629,7 +649,9 @@ function initEducationalModals() {
     activeModal = modal;
 
     overlay.classList.add('is-open');
-    document.body.style.overflow = 'hidden';
+    
+    // ATENÇÃO AQUI: Chama a função que trava o scroll de verdade
+    lockScroll();
 
     const title = modal.querySelector('.edu-modal__title');
     if (title) {
@@ -640,7 +662,9 @@ function initEducationalModals() {
 
   function closeModal() {
     overlay.classList.remove('is-open');
-    document.body.style.overflow = '';
+    
+    // ATENÇÃO AQUI: Chama a função que destrava
+    unlockScroll();
     
     setTimeout(() => {
       if (activeModal) {
@@ -652,8 +676,13 @@ function initEducationalModals() {
 
   cards.forEach(card => {
     const key = card.dataset.modal;
-    card.addEventListener('click', () => openModal(key));
     
+    // Prevenindo o default do click para não subir pro topo
+    card.addEventListener('click', (e) => {
+      e.preventDefault(); 
+      openModal(key);
+    });
+
     card.addEventListener('keydown', e => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
