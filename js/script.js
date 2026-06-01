@@ -196,13 +196,12 @@ function initGlobalLinks() {
  */
 function initPortfolio() {
   const contentBox     = document.querySelector('#content-portifolio');
-  // MODIFICAÇÃO: Alterado de const para let para permitir a atualização da lista
   let portfolioLis   = document.querySelectorAll('.portfolio-list li');
  
   if (!contentBox || portfolioLis.length === 0) return;
  
   // ──────────────────────────────────────────────
-  // DADOS DOS PRODUTOS (idêntico ao original)
+  // DADOS DOS PRODUTOS
   // ──────────────────────────────────────────────
   const portfolioData = {
     default: {
@@ -210,27 +209,27 @@ function initPortfolio() {
       descricao: 'O portfólio da BRB Investimentos é estruturado para atender diferentes perfis e objetivos financeiros, combinando segurança, diversificação e potencial de crescimento. A estratégia busca equilíbrio entre ativos de renda fixa e renda variável, permitindo ao investidor acessar oportunidades em diferentes mercados, sempre com gestão responsável e alinhada às melhores práticas do mercado financeiro.',
       link     : 'https://lp.brbinvestimentos.com.br/perfis-brb-brb01-a/?gcode=GI-CRM-WEB-BRB01-X-CLIENTE-X-X-PON-X-HOTLIST-X&e=null&n=null&t=null&vlp=brb01-lpa'
     },
-    1: { titulo: 'Renda Fixa',      descricao: 'Os produtos de renda fixa da BRB Investimentos oferecem segurança e previsibilidade de retorno, ideais para investidores que buscam preservação de capital e rendimento consistente. Inclui CDBs, LCIs, LCAs, Tesouro Direto e debêntures, com diferentes prazos e rentabilidades para atender ao seu perfil.',                                                                                                                                                                               link: 'renda-fixa.html'       },
-    2: { titulo: 'Renda Variável',  descricao: 'Os produtos de renda variável da BRB Investimentos incluem ações de empresas listadas, fundos de investimento em ações (FIAs), fundos multimercado e ETFs. Esses instrumentos permitem ao investidor participar do desempenho de diferentes setores da economia, com potencial de valorização no longo prazo e recebimento de proventos, como dividendos.',                                                                                                                                   link: 'renda-variavel.html'   },
-    3: { titulo: 'Fundos',          descricao: 'Os fundos de investimento oferecem diversificação imediata com gestão profissional, permitindo ao investidor acessar uma variedade de estratégias de forma prática. A BRB Investimentos disponibiliza uma ampla gama de fundos, incluindo multimercados, renda fixa, ações e internacionais, atendendo a diferentes perfis de risco e objetivos de retorno.',                                                                                                                                   link: 'fundos.html'           },
-    4: { titulo: 'Previdência',     descricao: 'Os planos de previdência da BRB Investimentos são voltados para o planejamento financeiro de longo prazo, auxiliando na construção de uma aposentadoria mais segura. Com opções como PGBL e VGBL, esses produtos oferecem benefícios fiscais e flexibilidade de contribuições, adaptando-se a diferentes perfis de investidores.',                                                                                                                                                              link: 'previdencia.html'      },
-    5: { titulo: 'Mercado Futuro',  descricao: 'O mercado de futuros permite aos investidores negociar contratos para a compra ou venda de ativos em uma data futura, com o objetivo de especular sobre as variações de preços ou hedging de riscos. A BRB Investimentos oferece acesso a esse mercado com ferramentas e suporte especializado.',                                                                                                                                                                                               link: 'mercado-futuro.html'   },
-    6: { titulo: 'Tesouro Direto',  descricao: 'O Tesouro Direto é um programa do Tesouro Nacional que permite a compra e venda de títulos públicos diretamente pelo investidor, com rentabilidade vinculada à inflação e prazos variáveis. A BRB Investimentos oferece acesso a esse mercado com suporte especializado.',                                                                                                                                                                                                                      link: 'tesouro-direto.html'   },
+    1: { titulo: 'Renda Fixa',      descricao: 'Os produtos de renda fixa da BRB Investimentos oferecem segurança e previsibilidade de retorno, ideais para investidores que buscam preservação de capital e rendimento consistente. Inclui CDBs, LCIs, LCAs, Tesouro Direto e debêntures, com diferentes prazos e rentabilidades para atender ao seu perfil.',                                                                                                                                                                               link: 'produtos/renda-fixa.html'       },
+    2: { titulo: 'Renda Variável',  descricao: 'Os produtos de renda variável da BRB Investimentos incluem ações de empresas listadas, fundos de investimento em ações (FIAs), fundos multimercado e ETFs. Esses instrumentos permitem ao investidor participar do desempenho de diferentes setores da economia, com potencial de valorização no longo prazo e recebimento de proventos, como dividendos.',                                                                                                                                   link: 'produtos/renda-variavel.html'   },
+    3: { titulo: 'Fundos',          descricao: 'Os fundos de investimento oferecem diversificação imediata com gestão profissional, permitindo ao investidor acessar uma variedade de estratégias de forma prática. A BRB Investimentos disponibiliza uma ampla gama de fundos, incluindo multimercados, renda fixa, ações e internacionais, atendendo a diferentes perfis de risco e objetivos de retorno.',                                                                                                                                   link: 'produtos/fundos.html'           },
+    4: { titulo: 'Previdência',     descricao: 'Os planos de previdência da BRB Investimentos são voltados para o planejamento financeiro de longo prazo, auxiliando na construção de uma aposentadoria mais segura. Com opções como PGBL e VGBL, esses produtos oferecem benefícios fiscais e flexibilidade de contribuições, adaptando-se a diferentes perfis de investidores.',                                                                                                                                                              link: 'produtos/previdencia.html'      },
+    5: { titulo: 'Mercado Futuro',  descricao: 'O mercado de futuros permite aos investidores negociar contratos para a compra ou venda de ativos em uma data futura, com o objetivo de especular sobre as variações de preços ou hedging de riscos. A BRB Investimentos oferece acesso a esse mercado com ferramentas e suporte especializado.',                                                                                                                                                                                               link: 'produtos/mercado-futuro.html'   },
+    6: { titulo: 'Tesouro Direto',  descricao: 'O Tesouro Direto é um programa do Tesouro Nacional que permite a compra e venda de títulos públicos diretamente pelo investidor, com rentabilidade vinculada à inflação e prazos variáveis. A BRB Investimentos oferece acesso a esse mercado com suporte especializado.',                                                                                                                                                                                                                      link: 'produtos/tesouro-direto.html'   },
     7: { titulo: 'O que vem por aí', descricao: 'A BRB Investimentos está sempre evoluindo para oferecer o que há de mais moderno no mercado financeiro. Em breve, você terá acesso a uma nova classe de ativos diretamente na nossa plataforma: os Criptoativos.',                                                                                                                                                                                                                                                                            link: null                    },
   };
  
   // Ícones SVG por produto (usados apenas no mobile)
   const portfolioIcons = {
-    1: `<svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,            // Renda Fixa — escudo
-    2: `<svg viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>`, // Renda Variável — trending up
-    3: `<svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>`, // Fundos — pasta
-    4: `<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`,// Previdência — relógio
-    5: `<svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>`, // Mercado Futuro — barras
-    6: `<svg viewBox="0 0 24 24"><line x1="3" y1="22" x2="21" y2="22"/><rect x="6" y="2" width="12" height="20" rx="1"/><line x1="10" y1="6" x2="10" y2="6"/><line x1="14" y1="6" x2="14" y2="6"/><line x1="10" y1="10" x2="10" y2="10"/><line x1="14" y1="10" x2="14" y2="10"/><line x1="10" y1="14" x2="10" y2="14"/><line x1="14" y1="14" x2="14" y2="14"/></svg>`, // Tesouro — banco
-    7: `<svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`, // Em breve — estrela
+    1: `<svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,            
+    2: `<svg viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>`, 
+    3: `<svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>`, 
+    4: `<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`,
+    5: `<svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>`, 
+    6: `<svg viewBox="0 0 24 24"><line x1="3" y1="22" x2="21" y2="22"/><rect x="6" y="2" width="12" height="20" rx="1"/><line x1="10" y1="6" x2="10" y2="6"/><line x1="14" y1="6" x2="14" y2="6"/><line x1="10" y1="10" x2="10" y2="10"/><line x1="14" y1="10" x2="14" y2="10"/><line x1="10" y1="14" x2="10" y2="14"/><line x1="14" y1="14" x2="14" y2="14"/></svg>`, 
+    7: `<svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`, 
   };
  
-  // Textos dos botões secundários (taxa / condições)
+  // Textos dos botões secundários
   const titulosBotaoSecundario = {
     '1': 'Custos Renda Fixa',
     '2': 'Custos Operacionais',
@@ -240,14 +239,8 @@ function initPortfolio() {
     '6': 'Taxas do Tesouro Direto'
   };
  
-  // ──────────────────────────────────────────────
-  // UTILITÁRIO: detecta mobile
-  // ──────────────────────────────────────────────
   const isMobile = () => window.innerWidth <= 968;
  
-  // ──────────────────────────────────────────────
-  // MODO DESKTOP — comportamento original
-  // ──────────────────────────────────────────────
   const renderPortfolio = (id = 'default') => {
     const data = portfolioData[id];
     if (!data) return;
@@ -261,8 +254,10 @@ function initPortfolio() {
       : '';
  
     const textoBotaoSecundario = titulosBotaoSecundario[id] || 'Condições Comerciais';
+    
+    // CORRIGIDO: Link da página taxas atualizado para a pasta de produtos
     const btnTaxas = (id !== 'default' && id !== '7')
-      ? `<a href="taxas.html" class="portfolio-cta-outline">${textoBotaoSecundario}</a>`
+      ? `<a href="produtos/taxas.html" class="portfolio-cta-outline">${textoBotaoSecundario}</a>`
       : '';
  
     const btnHTML = (btnSaibaMais || btnTaxas)
@@ -282,14 +277,6 @@ function initPortfolio() {
     }
   };
  
-  // ──────────────────────────────────────────────
-  // MODO MOBILE — accordion animado
-  // ──────────────────────────────────────────────
- 
-  /**
-   * Injeta a estrutura de accordion dentro de cada <li>.
-   * Só é chamado uma vez; a classe .pf-accordion-ready marca o li como pronto.
-   */
   const buildAccordion = () => {
     portfolioLis.forEach(li => {
       if (li.classList.contains('pf-accordion-ready')) return;
@@ -300,17 +287,17 @@ function initPortfolio() {
       const icon    = portfolioIcons[id] || portfolioIcons[1];
       if (!data) return;
  
-      // Botões do body
       const btnSaibaMais = data.link
         ? `<a href="${data.link}" class="pf-accordion-cta">Saiba mais <span aria-hidden="true">→</span></a>`
         : `<span class="pf-accordion-cta" style="opacity:.5;cursor:default">Em breve</span>`;
  
       const textoBotaoSecundario = titulosBotaoSecundario[id] || '';
+      
+      // CORRIGIDO: Link da página taxas atualizado para a pasta de produtos no modo mobile
       const btnTaxas = (id !== '7' && textoBotaoSecundario)
-        ? `<a href="taxas.html" class="pf-accordion-cta" style="background:transparent;color:var(--primary-blue);border:1.5px solid var(--primary-blue);box-shadow:none;">${textoBotaoSecundario}</a>`
+        ? `<a href="produtos/taxas.html" class="pf-accordion-cta" style="background:transparent;color:var(--primary-blue);border:1.5px solid var(--primary-blue);box-shadow:none;">${textoBotaoSecundario}</a>`
         : '';
  
-      // Constrói o HTML interno
       li.innerHTML = `
         <div class="pf-accordion-header" role="button" aria-expanded="false" tabindex="0">
           <span class="pf-accordion-label">
@@ -335,14 +322,12 @@ function initPortfolio() {
  
       li.classList.add('pf-accordion-ready');
  
-      // Evento de clique no cabeçalho
       const header = li.querySelector('.pf-accordion-header');
       const body   = li.querySelector('.pf-accordion-body');
  
       const openItem = () => {
         li.classList.add('pf-open');
         header.setAttribute('aria-expanded', 'true');
-        // Anima via max-height
         body.style.maxHeight = body.scrollHeight + 'px';
       };
  
@@ -355,7 +340,6 @@ function initPortfolio() {
       header.addEventListener('click', () => {
         const isOpen = li.classList.contains('pf-open');
  
-        // Fecha todos os outros itens
         portfolioLis.forEach(otherLi => {
           if (otherLi !== li && otherLi.classList.contains('pf-open')) {
             otherLi.classList.remove('pf-open');
@@ -369,7 +353,6 @@ function initPortfolio() {
         isOpen ? closeItem() : openItem();
       });
  
-      // Suporte a teclado
       header.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
@@ -379,10 +362,6 @@ function initPortfolio() {
     });
   };
  
-  /**
-   * Remove a estrutura de accordion dos <li> e restaura ao estado original.
-   * Chamado quando a janela é redimensionada de mobile para desktop.
-   */
   const destroyAccordion = () => {
     portfolioLis.forEach((li, idx) => {
       if (!li.classList.contains('pf-accordion-ready')) return;
@@ -396,20 +375,14 @@ function initPortfolio() {
     });
   };
  
-  // ──────────────────────────────────────────────
-  // INICIALIZAÇÃO E RESIZE
-  // ──────────────────────────────────────────────
- 
   let currentlyMobile = isMobile();
  
   const setup = () => {
     if (isMobile()) {
-      // Garante que o painel de desktop não mostre lixo no mobile
       contentBox.style.display = 'none';
       buildAccordion();
     } else {
       contentBox.style.display = '';
-      // Se voltou do mobile, destrói e reconfigura para desktop
       if (currentlyMobile) {
         destroyAccordion();
         renderPortfolio();
@@ -419,18 +392,12 @@ function initPortfolio() {
     currentlyMobile = isMobile();
   };
  
-  // Eventos de clique para desktop
   const bindDesktopClicks = () => {
-    // MODIFICAÇÃO: Removemos listeners antigos clonando o elemento via query direta,
-    // sem usar a variável portfolioLis que pode estar desatualizada.
     document.querySelectorAll('.portfolio-list li').forEach(li => {
       const clone = li.cloneNode(true);
       li.parentNode.replaceChild(clone, li);
     });
 
-    // MODIFICAÇÃO IMPORTANTE: Re-seleciona os novos itens do DOM e ATUALIZA a variável
-    // portfolioLis, garantindo que o restante do script (como o renderPortfolio)
-    // trabalhe com os elementos "vivos" no HTML.
     portfolioLis = document.querySelectorAll('.portfolio-list li'); 
  
     portfolioLis.forEach(li => {
@@ -444,7 +411,6 @@ function initPortfolio() {
     });
   };
  
-  // Inicializa corretamente conforme o viewport atual
   if (isMobile()) {
     contentBox.style.display = 'none';
     buildAccordion();
@@ -453,7 +419,6 @@ function initPortfolio() {
     bindDesktopClicks();
   }
  
-  // Adapta se o utilizador redimensionar a janela (ex: rotação de tablet)
   let resizeTimer;
   window.addEventListener('resize', () => {
     clearTimeout(resizeTimer);
@@ -584,7 +549,6 @@ function initHeroCarousel() {
     });
   });
 
-  // Suporte a gestos touch para mobile
   const wrapper = document.querySelector('.carousel-track-wrapper');
   if (wrapper) {
     let startX = 0;
@@ -615,25 +579,22 @@ function initEducationalModals() {
   const cards = document.querySelectorAll('.edu-card');
   const closebtns = document.querySelectorAll('.edu-modal__close');
   let activeModal = null;
-  let scrollY = 0; // Variável para guardar a posição do scroll
+  let scrollY = 0; 
 
-  // Função robusta para travar o scroll fixando o body
   const lockScroll = () => {
-    scrollY = window.scrollY; // Salva a posição atual
+    scrollY = window.scrollY; 
     document.body.style.position = 'fixed';
     document.body.style.top = `-${scrollY}px`;
     document.body.style.width = '100%';
-    // Adiciona classe de fallback do CSS só por segurança
     document.body.classList.add('travar-rolagem');
   };
 
-  // Função para destravar e devolver a tela pro lugar certo
   const unlockScroll = () => {
     document.body.style.position = '';
     document.body.style.top = '';
     document.body.style.width = '';
     document.body.classList.remove('travar-rolagem');
-    window.scrollTo(0, scrollY); // Volta exatamente pra onde estava
+    window.scrollTo(0, scrollY); 
   };
 
   function openModal(productKey) {
@@ -650,7 +611,6 @@ function initEducationalModals() {
 
     overlay.classList.add('is-open');
     
-    // ATENÇÃO AQUI: Chama a função que trava o scroll de verdade
     lockScroll();
 
     const title = modal.querySelector('.edu-modal__title');
@@ -663,7 +623,6 @@ function initEducationalModals() {
   function closeModal() {
     overlay.classList.remove('is-open');
     
-    // ATENÇÃO AQUI: Chama a função que destrava
     unlockScroll();
     
     setTimeout(() => {
@@ -677,7 +636,6 @@ function initEducationalModals() {
   cards.forEach(card => {
     const key = card.dataset.modal;
     
-    // Prevenindo o default do click para não subir pro topo
     card.addEventListener('click', (e) => {
       e.preventDefault(); 
       openModal(key);
@@ -799,7 +757,6 @@ function initPageSpecificLogic() {
   // ── RENDA VARIÁVEL ──
   if (document.querySelector('.rv-hero')) {
     
-    // Filtro de abas
     document.querySelectorAll('.tab-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
@@ -817,7 +774,6 @@ function initPageSpecificLogic() {
       });
     });
 
-    // Ticker Mercado Ao Vivo (AwesomeAPI)
     const setTicker = (id, chgId, value, change) => {
       const el = document.getElementById(id);
       const chgEl = document.getElementById(chgId);
@@ -825,7 +781,7 @@ function initPageSpecificLogic() {
       if (el) { 
         el.textContent = value; 
         el.style.animation = 'none'; 
-        el.offsetHeight; // Reflow
+        el.offsetHeight; 
         el.style.animation = 'numberReveal .4s ease'; 
       }
       
@@ -963,7 +919,6 @@ async function iniciarCotacaoTicker() {
   };
 
   const buscarCotacao = async (moeda, nome) => {
-    // Tenta procurar a cotação nos últimos 7 dias
     for (let diasAtras = 0; diasAtras <= 7; diasAtras++) {
       const data = new Date();
       data.setDate(data.getDate() - diasAtras);
@@ -990,7 +945,6 @@ async function iniciarCotacaoTicker() {
           };
         }
       } catch (_) {
-        // Ignora erros e tenta a data do dia anterior
       }
     }
     return null;
@@ -1013,11 +967,8 @@ async function iniciarCotacaoTicker() {
       <span class="cotacao-separator" aria-hidden="true"></span>
     `).join('');
 
-    // Repete os itens várias vezes para garantir que preencham até monitores ultrawide
     const bloco = itemsHTML.repeat(8); 
 
-    // Junta dois blocos gigantes idênticos. 
-    // Assim, ao mover -50% (metade do total) no CSS, o loop de reinício fica invisível!
     contentEl.innerHTML = bloco + bloco;
   };
 
@@ -1037,7 +988,6 @@ async function iniciarCotacaoTicker() {
 
   await atualizarTudo();
   
-  // Atualiza as cotações a cada 5 minutos
   setInterval(atualizarTudo, 5 * 60 * 1000);
 }
 
@@ -1045,9 +995,6 @@ async function iniciarCotacaoTicker() {
 // 5. UTILITÁRIOS
 // ============================================================
 
-/** * Função Throttle: garante no máximo 1 chamada à função a cada `limit` milissegundos.
- * Usado para otimizar eventos como scroll.
- */
 function throttle(fn, limit = 100) {
   let inThrottle = false;
   return function (...args) {
@@ -1061,10 +1008,6 @@ function throttle(fn, limit = 100) {
   };
 }
 
-
-/**
- * Inicializa a lógica de Accordion nos Cards Inteiros de Fundos
- */
 function initFundCardsAccordion() {
   const toggleButtons = document.querySelectorAll('.fund-toggle-btn');
   
@@ -1072,13 +1015,11 @@ function initFundCardsAccordion() {
 
   toggleButtons.forEach(btn => {
     btn.addEventListener('click', () => {
-      // Pega a DIV colapsável logo em seguida do botão do cabeçalho
       const panel = btn.nextElementSibling;
       if (!panel) return;
 
       const isOpen = btn.classList.contains('is-active');
 
-      // (Opcional) Fecha todos os outros cards abertos
       document.querySelectorAll('.fund-toggle-btn').forEach(otherBtn => {
         if (otherBtn !== btn) {
           otherBtn.classList.remove('is-active');
@@ -1090,7 +1031,6 @@ function initFundCardsAccordion() {
         }
       });
 
-      // Se já estava aberto, fecha. Se não, abre definindo o MaxHeight
       if (isOpen) {
         btn.classList.remove('is-active');
         btn.setAttribute('aria-expanded', 'false');
@@ -1100,7 +1040,6 @@ function initFundCardsAccordion() {
         btn.classList.add('is-active');
         btn.setAttribute('aria-expanded', 'true');
         panel.classList.add('is-open');
-        // Usando a altura real do conteúdo para a animação funcionar sem engasgo
         panel.style.maxHeight = panel.scrollHeight + "px";
       }
     });

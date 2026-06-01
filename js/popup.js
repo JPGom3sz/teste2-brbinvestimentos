@@ -37,9 +37,6 @@
 
   function openPopup() {
     if (!shouldShow()) return;
-    overlay.style.display = ''; // remove o display:none inline
-    // força reflow para a transição de opacidade funcionar
-    overlay.getBoundingClientRect();
     overlay.classList.add('is-open');
     document.body.style.overflow = 'hidden';
   }
@@ -48,14 +45,8 @@
     overlay.classList.remove('is-open');
     document.body.style.overflow = '';
     
-    // Aguarda a transição terminar antes de esconder de vez
-    overlay.addEventListener('transitionend', function hide() {
-      if (!overlay.classList.contains('is-open')) {
-        overlay.style.display = 'none';
-      }
-      overlay.removeEventListener('transitionend', hide);
-    });
-
+    // CORREÇÃO AQUI: Salva no navegador o momento exato em que a pessoa fechou o popup
+    // (mas só salva isso se a pessoa ainda não tiver feito o cadastro definitivo)
     if (!localStorage.getItem(CONFIG.registeredKey)) {
       localStorage.setItem(CONFIG.storageKey, Date.now().toString());
     }
