@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fundos Renda Fixa Simples — BRB Investimentos</title>
+  <title>Fundos Estruturados — BRB Investimentos</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="stylesheet" href="../css/style-enhance.css" />
@@ -25,12 +25,12 @@
             Produtos e Serviços <span class="chevron" aria-hidden="true">▾</span>
           </a>
           <ul class="dropdown-menu" role="menu">
-            <li role="none"><a href="../produtos/renda-fixa.html" role="menuitem">Renda Fixa</a></li>
-            <li role="none"><a href="../produtos/renda-variavel.html" role="menuitem">Renda Variável</a></li>
-            <li role="none"><a href="../produtos/previdencia.html" role="menuitem">Previdência</a></li>
-            <li role="none"><a href="../produtos/fundos.html" role="menuitem">Fundos</a></li>
-            <li role="none"><a href="../produtos/mercado-futuro.html" role="menuitem">Mercado Futuro</a></li>
-            <li role="none"><a href="../produtos/tesouro-direto.html" role="menuitem">Tesouro Direto</a></li>
+            <li role="none" class="has-submenu"><a href="../produtos/renda-fixa.html" role="menuitem">Renda Fixa</a></li>
+            <li role="none" class="has-submenu"><a href="../produtos/renda-variavel.html" role="menuitem">Renda Variável</a></li>
+            <li role="none" class="has-submenu"><a href="../produtos/previdencia.html" role="menuitem">Previdência</a></li>
+            <li role="none" class="has-submenu"><a href="../produtos/fundos.html" role="menuitem">Fundos</a></li>
+            <li role="none" class="has-submenu"><a href="../produtos/mercado-futuro.html" role="menuitem">Mercado Futuro</a></li>
+            <li role="none" class="has-submenu"><a href="../produtos/tesouro-direto.html" role="menuitem">Tesouro Direto</a></li>
           </ul>
         </li>
         <li class="dropdown" role="none">
@@ -43,8 +43,8 @@
             <li role="none"><a href="../institucional/guias-praticos.html" role="menuitem">Guias Práticos</a></li>
           </ul>
         </li>
-        <li role="none"><a href="../institucional/sobrenos.html" role="menuitem">Sobre nós</a></li>
-        <li role="none"><a href="../institucional/contato.html" role="menuitem">Contato</a></li>
+        <li role="none"><a href="../institucional/sobrenos.html" role="menuitem">Sobre Nós</a></li>
+        <li role="none"><a href="https://forms.office.com/r/1EsKit6Ce9" target="_blank" rel="noopener noreferrer" class="nav-cta" role="menuitem">Abrir Conta</a></li>
       </ul>
       <div class="nav-buttons">
         <button class="account-link" type="button" onclick="window.open('https://brb.genialinvestimentos.com.br/auth/login','_blank','noopener,noreferrer')">
@@ -69,34 +69,39 @@
 
     <!-- Cabeçalho da seção -->
     <div class="fd-section-header">
-      <span class="fd-section-pill">Classificação ANBIMA</span>
-      <h1 class="fd-section-title">Fundos de Renda Fixa Simples</h1>
-      <p class="fd-section-desc">Foco em títulos públicos do Tesouro Nacional com baixo risco, liquidez diária e acesso a partir de R$ 1,00. Ideal para conservadores e reserva de emergência.</p>
+      <span class="fd-section-pill">Fundos Imobiliários</span>
+      <h1 class="fd-section-title">Fundos Estruturados BRB</h1>
+      <p class="fd-section-desc">FIIs com estratégias sofisticadas voltados para investidores qualificados, com foco em ativos reais de alto valor — lajes corporativas e desenvolvimento urbano.</p>
       <div class="fd-section-stats">
-        <div class="fd-stat"><span class="fd-stat__value">R$ 1,00</span><span class="fd-stat__label">Aplic. mínima</span></div>
-        <div class="fd-stat"><span class="fd-stat__value">D+0</span><span class="fd-stat__label">Liquidez</span></div>
         <div class="fd-stat"><span class="fd-stat__value">2 fundos</span><span class="fd-stat__label">Disponíveis</span></div>
-        <div class="fd-stat"><span class="fd-stat__value">Sem carência</span><span class="fd-stat__label">Resgate livre</span></div>
+        <div class="fd-stat"><span class="fd-stat__value">Qualificado</span><span class="fd-stat__label">Perfil exigido</span></div>
+        <div class="fd-stat"><span class="fd-stat__value">FII</span><span class="fd-stat__label">Classe do ativo</span></div>
+        <div class="fd-stat"><span class="fd-stat__value">Isento IR*</span><span class="fd-stat__label">Rendimentos PF</span></div>
       </div>
+    </div>
+
+    <!-- Alerta investidor qualificado -->
+    <div class="fd-alert-qualified">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.2" style="flex-shrink:0;margin-top:1px"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      <p><strong>Acesso restrito a investidores qualificados.</strong> Os fundos desta categoria são destinados exclusivamente a investidores qualificados nos termos da regulamentação da CVM. Certifique-se de que seu perfil atende aos requisitos antes de investir.</p>
     </div>
 
     <div class="fd-funds-grid">
 
       <!-- ═══════════════════════════════════
-           FUNDO 1 · BRB SIMPLES TESOURO · Cód 33
+           FUNDO 1 · FII SIA CORPORATE RL · SAIC11B
       ═══════════════════════════════════ -->
-      <article class="fund-card" id="fundo-33">
+      <article class="fund-card" id="fundo-sia-corporate">
 
-        <!-- HEADER = BOTÃO DE ACCORDION -->
-        <button class="fund-card__header fund-toggle-btn" aria-expanded="false" aria-controls="collapse-33">
+        <button class="fund-card__header fund-toggle-btn" aria-expanded="false" aria-controls="collapse-sia-corporate">
           <div class="fund-card__title-group">
-            <div class="fund-card__name">BRB SIMPLES TESOURO FIC FIRF LP RL · Cód. 33</div>
-            <div class="fund-card__full-name">BRB Simples Tesouro — Fundo de Investimento em Cotas de Fundos de Investimento em Renda Fixa Longo Prazo</div>
+            <div class="fund-card__name">FII SIA CORPORATE RL · SAIC11B</div>
+            <div class="fund-card__full-name">Fundo de Investimento Imobiliário SIA Corporate — Lajes Corporativas</div>
           </div>
           <div class="fund-card__header-right">
-            <span class="fund-card__badge badge--very-low">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-              Risco muito baixo
+            <span class="fund-card__badge" style="background:#fee2e2;color:#991b1b;">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 9v4m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg>
+              Risco alto
             </span>
             <span class="fund-chevron" aria-hidden="true">
               <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
@@ -104,44 +109,39 @@
           </div>
         </button>
 
-        <!-- CONTEÚDO COLAPSÁVEL -->
-        <div class="fund-card__collapse" id="collapse-33" role="region" aria-labelledby="fundo-33">
+        <div class="fund-card__collapse" id="collapse-sia-corporate" role="region">
           <div class="fund-card__body">
             <p class="fund-card__desc">
-              Fundo constituído sob forma de condomínio aberto, com objetivo de propiciar rentabilidade mediante aplicação em cotas de fundos de renda fixa pós ou prefixados, com foco em títulos públicos do Tesouro Nacional. Classificação ANBIMA: <strong>Renda Fixa Simples</strong>. Público-alvo: pessoas físicas e jurídicas em geral.
+              FII do tipo <strong>tijolo</strong> com foco em lajes corporativas no SIA (Setor de Indústrias e Abastecimento), Brasília-DF. O fundo adquire e explora imóveis comerciais mediante arrendamento, buscando geração de renda por aluguel e valorização patrimonial. Classificação ANBIMA: <strong>FII Desenvolvimento para Renda — Gestão Passiva</strong>. Destinado exclusivamente a <strong>investidores qualificados</strong>.
             </p>
             <div class="fund-card__chars">
-              <div class="char-item"><div class="char-item__label">Aplic. inicial</div><div class="char-item__value highlight">R$ 1,00</div></div>
-              <div class="char-item"><div class="char-item__label">Aplic. subseq.</div><div class="char-item__value">R$ 1,00</div></div>
-              <div class="char-item"><div class="char-item__label">Resgate mínimo</div><div class="char-item__value">R$ 1,00</div></div>
-              <div class="char-item"><div class="char-item__label">Saldo mínimo</div><div class="char-item__value">R$ 1,00</div></div>
-              <div class="char-item"><div class="char-item__label">Cota aplicação</div><div class="char-item__value">D+0 <small>fechamento</small></div></div>
-              <div class="char-item"><div class="char-item__label">Cota resgate</div><div class="char-item__value">D+0 <small>fechamento</small></div></div>
-              <div class="char-item"><div class="char-item__label">Crédito em conta</div><div class="char-item__value">D+0</div></div>
-              <div class="char-item"><div class="char-item__label">Carência</div><div class="char-item__value">Não possui</div></div>
-              <div class="char-item"><div class="char-item__label">Taxa de adm.</div><div class="char-item__value highlight">1,00% a.a.</div></div>
-              <div class="char-item"><div class="char-item__label">Tax. performance</div><div class="char-item__value">Não cobra</div></div>
-              <div class="char-item"><div class="char-item__label">Resgate automático</div><div class="char-item__value">Não</div></div>
-              <div class="char-item"><div class="char-item__label">Horário limite</div><div class="char-item__value">16h00 (BSB)</div></div>
-              <div class="char-item"><div class="char-item__label">Perfil</div><div class="char-item__value">Conservador</div></div>
-              <div class="char-item"><div class="char-item__label">Início funcionamento</div><div class="char-item__value">05/05/2005</div></div>
+              <div class="char-item"><div class="char-item__label">Aplic. inicial</div><div class="char-item__value highlight">R$ 1.000.000,00</div></div>
+              <div class="char-item"><div class="char-item__label">Forma de condomínio</div><div class="char-item__value">Fechado</div></div>
+              <div class="char-item"><div class="char-item__label">Prazo de duração</div><div class="char-item__value">Indeterminado</div></div>
+              <div class="char-item"><div class="char-item__label">Tipo de ativo</div><div class="char-item__value">Tijolo <small>imóvel físico</small></div></div>
+              <div class="char-item"><div class="char-item__label">Segmento</div><div class="char-item__value">Lajes Corporativas</div></div>
+              <div class="char-item"><div class="char-item__label">Patrimônio líquido</div><div class="char-item__value">R$ 56,82 mi</div></div>
+              <div class="char-item"><div class="char-item__label">Cotistas</div><div class="char-item__value">45</div></div>
+              <div class="char-item"><div class="char-item__label">Início funcionamento</div><div class="char-item__value">19/03/2014</div></div>
+              <div class="char-item"><div class="char-item__label">Perfil</div><div class="char-item__value">Qualificado / Arrojado</div></div>
+              <div class="char-item"><div class="char-item__label">Administrador</div><div class="char-item__value">BRB DTVM <small>33.850.686/0001-69</small></div></div>
             </div>
-            <div class="fund-tax-notice">
-              <strong>Tributação:</strong> IR pela tabela regressiva de longo prazo, com come-cotas semestral (maio e novembro). IOF regressivo para resgates antes de 30 dias.
+            <div class="fund-tax-notice" style="background:#fff7ed;border-color:#fed7aa;color:#92400e;">
+              <strong>Tributação:</strong> FIIs são isentos de IR sobre rendimentos distribuídos a pessoa física (cotista com menos de 10% das cotas e fundo com mais de 50 cotistas). Ganho de capital na venda das cotas sujeito a IR de 20%. Come-cotas não aplicável.
             </div>
           </div>
 
           <div class="fund-card__docs">
             <span class="fund-card__docs-label">📄 Documentos</span>
-            <a href="../pdfs/fundos/F33_regulamento.pdf" target="_blank" class="doc-link">
+            <a href="../pdfs/fundos/FII_SIA_regulamento.pdf" target="_blank" class="doc-link">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
               Regulamento
             </a>
-            <a href="../pdfs/fundos/F33_informativo_mensal.pdf" target="_blank" class="doc-link">
+            <a href="../pdfs/fundos/FII_SIA_informativo.pdf" target="_blank" class="doc-link">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
               Informativo Mensal
             </a>
-            <a href="../pdfs/fundos/F33_demonstracoes.pdf" target="_blank" class="doc-link">
+            <a href="../pdfs/fundos/FII_SIA_demonstracoes.pdf" target="_blank" class="doc-link">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
               Demonstrações Financeiras
             </a>
@@ -152,28 +152,28 @@
           </div>
 
           <div class="fund-card__meta">
-            <span>CNPJ: <strong>07.351.138/0001-84</strong></span>
-            <span>Código FFA: <strong>33</strong></span>
-            <span>ANBIMA: <strong>Renda Fixa Simples</strong></span>
+            <span>CNPJ: <strong>17.311.079/0001-74</strong></span>
+            <span>Ticker: <strong>SAIC11B</strong></span>
+            <span>ANBIMA: <strong>FII Desenvolvimento para Renda — Gestão Passiva</strong></span>
           </div>
         </div>
 
       </article>
 
       <!-- ═══════════════════════════════════
-           FUNDO 2 · BRB RENDE MAIS · Cód 31
+           FUNDO 2 · FII BIOTIC RL
       ═══════════════════════════════════ -->
-      <article class="fund-card" id="fundo-31">
+      <article class="fund-card" id="fundo-biotic">
 
-        <button class="fund-card__header fund-toggle-btn" aria-expanded="false" aria-controls="collapse-31">
+        <button class="fund-card__header fund-toggle-btn" aria-expanded="false" aria-controls="collapse-biotic">
           <div class="fund-card__title-group">
-            <div class="fund-card__name">BRB RENDE MAIS FIRF SIMPLES RL · Cód. 31</div>
-            <div class="fund-card__full-name">BRB Rende Mais — Fundo de Investimento em Renda Fixa Simples</div>
+            <div class="fund-card__name">FII BIOTIC RL</div>
+            <div class="fund-card__full-name">Biotic — Fundo de Investimento Imobiliário de Responsabilidade Limitada</div>
           </div>
           <div class="fund-card__header-right">
-            <span class="fund-card__badge badge--low">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-              Baixo a médio risco
+            <span class="fund-card__badge" style="background:#fef2f2;color:#7f1d1d;">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 9v4m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg>
+              Risco muito alto
             </span>
             <span class="fund-chevron" aria-hidden="true">
               <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
@@ -181,43 +181,49 @@
           </div>
         </button>
 
-        <div class="fund-card__collapse" id="collapse-31" role="region">
+        <div class="fund-card__collapse" id="collapse-biotic" role="region">
           <div class="fund-card__body">
             <p class="fund-card__desc">
-              Fundo de investimento em renda fixa simples que busca rentabilidade por meio de aplicações em ativos de renda fixa de qualidade, com gestão focada em agregar valor acima das taxas básicas. Classificação ANBIMA: <strong>Renda Fixa Simples</strong>. Perfil: Conservador.
+              FII voltado ao <strong>desenvolvimento urbano e imobiliário do projeto Biotic</strong>, um empreendimento de grande escala com foco em sustentabilidade e inovação no DF. O fundo pode investir em imóveis, cotas de outros FIIs e FIPs, viabilizando o desenvolvimento do complexo Biotic. Gerido por gestora signatária dos princípios PRI, Pacto Global da ONU e CDP. Classificação: <strong>FII de Desenvolvimento</strong>. Destinado a <strong>investidores qualificados</strong>.
             </p>
             <div class="fund-card__chars">
               <div class="char-item"><div class="char-item__label">Aplic. inicial</div><div class="char-item__value highlight">N/A</div></div>
-              <div class="char-item"><div class="char-item__label">Cota aplicação</div><div class="char-item__value">D+0</div></div>
-              <div class="char-item"><div class="char-item__label">Cota resgate</div><div class="char-item__value">D+0</div></div>
-              <div class="char-item"><div class="char-item__label">Carência</div><div class="char-item__value">Não possui</div></div>
-              <div class="char-item"><div class="char-item__label">Perfil</div><div class="char-item__value">Conservador</div></div>
-              <div class="char-item"><div class="char-item__label">Horário limite</div><div class="char-item__value">16h00 (BSB)</div></div>
+              <div class="char-item"><div class="char-item__label">Forma de condomínio</div><div class="char-item__value">Fechado</div></div>
+              <div class="char-item"><div class="char-item__label">Prazo de duração</div><div class="char-item__value">Indeterminado</div></div>
+              <div class="char-item"><div class="char-item__label">Tipo de ativo</div><div class="char-item__value">Desenvolvimento <small>urbano/imobiliário</small></div></div>
+              <div class="char-item"><div class="char-item__label">Segmento</div><div class="char-item__value">Desenvolvimento Urbano</div></div>
+              <div class="char-item"><div class="char-item__label">Foco ESG</div><div class="char-item__value">Sim <small>PRI · ONU · CDP</small></div></div>
+              <div class="char-item"><div class="char-item__label">Perfil</div><div class="char-item__value">Qualificado / Arrojado</div></div>
+              <div class="char-item"><div class="char-item__label">Administrador</div><div class="char-item__value">BRB DTVM <small>33.850.686/0001-69</small></div></div>
             </div>
-            <div class="fund-tax-notice">
-              <strong>Tributação:</strong> IR pela tabela regressiva com come-cotas semestral em maio e novembro. IOF regressivo para resgates antes de 30 dias.
+            <div class="fund-tax-notice" style="background:#fff7ed;border-color:#fed7aa;color:#92400e;">
+              <strong>Tributação:</strong> FIIs são isentos de IR sobre rendimentos distribuídos a pessoa física (nas condições previstas em lei). Ganho de capital na venda das cotas sujeito a IR de 20%. Come-cotas não aplicável.
             </div>
           </div>
 
           <div class="fund-card__docs">
             <span class="fund-card__docs-label">📄 Documentos</span>
-            <a href="../pdfs/fundos/F31_regulamento.pdf" target="_blank" class="doc-link">
+            <a href="../pdfs/fundos/FII_BIOTIC_regulamento.pdf" target="_blank" class="doc-link">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
               Regulamento
             </a>
-            <a href="../pdfs/fundos/F31_informativo_mensal.pdf" target="_blank" class="doc-link">
+            <a href="../pdfs/fundos/FII_BIOTIC_informativo.pdf" target="_blank" class="doc-link">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
               Informativo Mensal
             </a>
-            <a href="../pdfs/fundos/F31_demonstracoes.pdf" target="_blank" class="doc-link">
+            <a href="../pdfs/fundos/FII_BIOTIC_demonstracoes.pdf" target="_blank" class="doc-link">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
               Demonstrações Financeiras
+            </a>
+            <a href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Política de Remuneração
             </a>
           </div>
 
           <div class="fund-card__meta">
-            <span>Código FFA: <strong>31</strong></span>
-            <span>ANBIMA: <strong>Renda Fixa Simples</strong></span>
+            <span>CNPJ: <strong>43.617.647/0001-70</strong></span>
+            <span>Classificação: <strong>FII de Desenvolvimento Urbano</strong></span>
           </div>
         </div>
 
@@ -230,9 +236,9 @@
       <ol>
         <li>Fundos de investimento não contam com garantia do administrador, do gestor, de qualquer mecanismo de seguro ou Fundo Garantidor de Crédito – FGC.</li>
         <li>Rentabilidade passada não representa garantia de rentabilidade futura.</li>
-        <li>Leia a lâmina de informações essenciais, se houver, e o regulamento antes de investir.</li>
-        <li>O distribuidor receberá remuneração de distribuição dos administradores e/ou dos fundos em que seus clientes aplicarem recursos.</li>
-        <li>Portal de educação financeira da ANBIMA: <a href="http://www.comoinvestir.com.br" target="_blank" rel="noopener">www.comoinvestir.com.br</a></li>
+        <li>Estes fundos são destinados exclusivamente a investidores qualificados conforme regulamentação CVM. A aplicação em fundos estruturados pode envolver riscos elevados, incluindo risco de liquidez e de concentração em ativos imobiliários.</li>
+        <li>Fundos imobiliários fechados não permitem resgate antecipado de cotas; a saída ocorre por venda no mercado secundário ou ao final do prazo previsto.</li>
+        <li>Leia o regulamento antes de investir. Portal de educação financeira da ANBIMA: <a href="http://www.comoinvestir.com.br" target="_blank" rel="noopener">www.comoinvestir.com.br</a></li>
       </ol>
     </div>
 
@@ -243,6 +249,7 @@
       </div>
       <a href="https://forms.office.com/r/1EsKit6Ce9" target="_blank" rel="noopener" class="fd-help__btn">Falar com um assessor</a>
     </div>
+
   </main>
 
   <footer>
@@ -254,7 +261,7 @@
           <a href="https://www.instagram.com/brbinvestimentos/" class="footer-social-btn" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
             <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
           </a>
-          <a href="https://www.youtube.com/@BRBInvestimentos" class="footer-social-btn" aria-label="Youtube" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.youtube.com/@BRBInvestimentos" class="footer-social-btn" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
             <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
           </a>
           <a href="https://www.facebook.com/share/1CRVbq4UXf/?mibextid=wwXIfr" class="footer-social-btn" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
@@ -271,7 +278,6 @@
           <li><a href="../produtos/renda-variavel.html">Renda Variável</a></li>
           <li><a href="../produtos/mercado-futuro.html">Mercado Futuro</a></li>
           <li><a href="../produtos/tesouro-direto.html">Tesouro Direto</a></li>
-          <li><a href="javascript: void(0)">Criptoativos</a></li>
         </ul>
       </div>
       <div class="footer-column">
@@ -330,46 +336,32 @@
   <script>
     /* ── Accordion dos fundos ── */
     (function () {
-      const ANIM_DURATION = 420; // ms — igual ao CSS
-
+      var ANIM_DURATION = 420;
       document.querySelectorAll('.fund-toggle-btn').forEach(function (btn) {
-        const collapseId = btn.getAttribute('aria-controls');
-        const collapse   = document.getElementById(collapseId);
+        var collapseId = btn.getAttribute('aria-controls');
+        var collapse   = document.getElementById(collapseId);
         if (!collapse) return;
-
         btn.addEventListener('click', function () {
-          const isOpen = btn.classList.contains('is-active');
-
+          var isOpen = btn.classList.contains('is-active');
           if (isOpen) {
-            // ── FECHAR ──
-            // Fixar altura atual para poder animar para 0
             collapse.style.maxHeight = collapse.scrollHeight + 'px';
-            // Forçar reflow
             collapse.getBoundingClientRect();
             collapse.style.maxHeight = '0px';
             collapse.classList.remove('is-open');
             btn.classList.remove('is-active');
             btn.setAttribute('aria-expanded', 'false');
-
           } else {
-            // ── ABRIR ──
             collapse.classList.add('is-open');
             collapse.style.maxHeight = collapse.scrollHeight + 'px';
             btn.classList.add('is-active');
             btn.setAttribute('aria-expanded', 'true');
-
-            // Após animação, liberar max-height para conteúdo dinâmico
             setTimeout(function () {
-              if (collapse.classList.contains('is-open')) {
-                collapse.style.maxHeight = 'none';
-              }
+              if (collapse.classList.contains('is-open')) collapse.style.maxHeight = 'none';
             }, ANIM_DURATION);
-
-            // Scroll suave para o card
             setTimeout(function () {
-              const card = btn.closest('.fund-card');
+              var card = btn.closest('.fund-card');
               if (card) {
-                const top = card.getBoundingClientRect().top + window.scrollY - 100;
+                var top = card.getBoundingClientRect().top + window.scrollY - 100;
                 window.scrollTo({ top: top, behavior: 'smooth' });
               }
             }, 80);

@@ -1,327 +1,453 @@
-/* ── Página de detalhes do fundo ── */
+/* ═══════════════════════════════════════════════════════════
+   fundos-informativos.css
+   Páginas de detalhe de fundos — accordion interativo
+   ═══════════════════════════════════════════════════════════ */
+:root {
+  --color-primary: #0056A8;
+  --color-accent: #00AEEF;
+  --color-dark: #001F3F;
+  --color-text: #1a2940;
+  --color-muted: #64748b;
+  --color-border: #e2e8f0;
+  --color-bg: #f8fafc;
+  --color-white: #ffffff;
+  --radius: 14px;
+  --radius-sm: 8px;
+  --shadow: 0 2px 16px rgba(0,31,63,0.07);
+  --shadow-md: 0 8px 40px rgba(0,31,63,0.12);
+}
 
-    :root {
-      --color-primary: #0056A8;
-      --color-accent: #00AEEF;
-      --color-dark: #001F3F;
-      --color-text: #1a2940;
-      --color-muted: #64748b;
-      --color-border: #e2e8f0;
-      --color-bg: #f8fafc;
-      --color-white: #ffffff;
-      --radius: 14px;
-      --radius-sm: 8px;
-      --shadow: 0 4px 24px rgba(0,31,63,0.08);
-      --shadow-md: 0 8px 40px rgba(0,31,63,0.12);
-    }
+/* ── Layout ── */
+.fd-main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: calc(var(--header-h, 75px) + 2.5rem) 1.5rem 4rem;
+}
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Montserrat', sans-serif; background: var(--color-bg); color: var(--color-text); }
+.fd-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  text-decoration: none;
+  margin-bottom: 1.8rem;
+}
+.fd-back:hover { text-decoration: underline; }
 
-    /* ── Breadcrumb / Hero ── */
-    .fd-hero {
-      background: linear-gradient(135deg, var(--color-dark) 0%, #003d7a 60%, #0056A8 100%);
-      padding: 7rem 1.5rem 3rem;
-      position: relative;
-      overflow: hidden;
-    }
-    .fd-hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at 80% 50%, rgba(0,174,239,0.15) 0%, transparent 60%);
-    }
-    .fd-hero-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      position: relative;
-    }
-    .fd-breadcrumb {
-      display: flex;
-      gap: 0.5rem;
-      align-items: center;
-      font-size: 0.78rem;
-      color: rgba(255,255,255,0.55);
-      margin-bottom: 1.5rem;
-    }
-    .fd-breadcrumb a { color: rgba(255,255,255,0.55); text-decoration: none; }
-    .fd-breadcrumb a:hover { color: #fff; }
-    .fd-breadcrumb span { color: rgba(255,255,255,0.35); }
-    .fd-hero__pill {
-      display: inline-block;
-      background: rgba(0,174,239,0.2);
-      border: 1px solid rgba(0,174,239,0.4);
-      color: #7dd3fc;
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 0.3rem 0.9rem;
-      border-radius: 99px;
-      margin-bottom: 1rem;
-    }
-    .fd-hero h1 {
-      color: #fff;
-      font-size: clamp(1.6rem, 4vw, 2.4rem);
-      font-weight: 800;
-      line-height: 1.25;
-      max-width: 650px;
-      margin-bottom: 0.9rem;
-    }
-    .fd-hero p {
-      color: rgba(255,255,255,0.7);
-      font-size: 0.95rem;
-      max-width: 560px;
-      line-height: 1.6;
-      margin-bottom: 1.8rem;
-    }
-    .fd-hero__stats {
-      display: flex;
-      gap: 2rem;
-      flex-wrap: wrap;
-    }
-    .fd-hero__stat { text-align: left; }
-    .fd-hero__stat-value {
-      color: #fff;
-      font-size: 1.4rem;
-      font-weight: 800;
-      line-height: 1;
-    }
-    .fd-hero__stat-label {
-      color: rgba(255,255,255,0.5);
-      font-size: 0.72rem;
-      margin-top: 0.25rem;
-      letter-spacing: 0.04em;
-    }
+/* ── Cabeçalho da seção ── */
+.fd-section-header {
+  background: linear-gradient(135deg, var(--color-dark) 0%, #003d7a 60%, var(--color-primary) 100%);
+  border-radius: var(--radius);
+  padding: 2.5rem 2rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+.fd-section-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 80% 50%, rgba(0,174,239,0.15) 0%, transparent 60%);
+  pointer-events: none;
+}
+.fd-section-pill {
+  display: inline-block;
+  background: rgba(0,174,239,0.2);
+  border: 1px solid rgba(0,174,239,0.4);
+  color: #7dd3fc;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.85rem;
+  border-radius: 99px;
+  margin-bottom: 0.85rem;
+}
+.fd-section-title {
+  color: #fff;
+  font-size: clamp(1.4rem, 3.5vw, 2rem);
+  font-weight: 800;
+  line-height: 1.25;
+  margin-bottom: 0.65rem;
+}
+.fd-section-desc {
+  color: rgba(255,255,255,0.7);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  max-width: 580px;
+  margin-bottom: 1.5rem;
+}
+.fd-section-stats {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.fd-stat__value {
+  display: block;
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 800;
+  line-height: 1;
+}
+.fd-stat__label {
+  display: block;
+  color: rgba(255,255,255,0.5);
+  font-size: 0.68rem;
+  margin-top: 0.2rem;
+  letter-spacing: 0.04em;
+}
 
-    /* ── Layout principal ── */
-    .fd-main {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 2.5rem 1.5rem 4rem;
-    }
+/* ── Grid de cards ── */
+.fd-funds-grid { display: grid; gap: 0.75rem; }
 
-    /* ── Cards dos fundos ── */
-    .fd-funds-grid {
-      display: grid;
-      gap: 1.5rem;
-    }
-    .fund-card {
-      background: var(--color-white);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      border: 1px solid var(--color-border);
-      overflow: hidden;
-      transition: box-shadow 0.2s, transform 0.2s;
-    }
-    .fund-card:hover {
-      box-shadow: var(--shadow-md);
-      transform: translateY(-2px);
-    }
-    .fund-card__header {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 1rem;
-      padding: 1.5rem 1.5rem 1.2rem;
-      border-bottom: 1px solid var(--color-border);
-    }
-    .fund-card__title-group { flex: 1; min-width: 0; }
-    .fund-card__name {
-      font-size: 0.82rem;
-      font-weight: 700;
-      color: var(--color-muted);
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      margin-bottom: 0.3rem;
-    }
-    .fund-card__full-name {
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--color-text);
-      line-height: 1.35;
-    }
-    .fund-card__badge {
-      flex-shrink: 0;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3rem;
-      font-size: 0.7rem;
-      font-weight: 700;
-      padding: 0.3rem 0.75rem;
-      border-radius: 99px;
-      white-space: nowrap;
-    }
-    .badge--very-low { background: #dcfce7; color: #166534; }
-    .badge--low { background: #dbeafe; color: #1e40af; }
-    .badge--low-mid { background: #fef9c3; color: #854d0e; }
+/* ── Card base ── */
+.fund-card {
+  background: var(--color-white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+  transition: box-shadow 0.25s, border-color 0.25s;
+}
 
-    .fund-card__body {
-      padding: 1.2rem 1.5rem;
-    }
-    .fund-card__desc {
-      font-size: 0.875rem;
-      color: var(--color-muted);
-      line-height: 1.6;
-      margin-bottom: 1.2rem;
-    }
+.fund-card:has(.fund-toggle-btn.is-active) {
+  border-color: rgba(0, 86, 168, 0.3);
+  box-shadow: var(--shadow-md);
+}
 
-    /* ── Grid de características ── */
-    .fund-card__chars {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-      gap: 0.75rem;
-      margin-bottom: 1.2rem;
-    }
-    .char-item {
-      background: var(--color-bg);
-      border-radius: var(--radius-sm);
-      padding: 0.65rem 0.85rem;
-      border: 1px solid var(--color-border);
-    }
-    .char-item__label {
-      font-size: 0.67rem;
-      font-weight: 700;
-      color: var(--color-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      margin-bottom: 0.2rem;
-    }
-    .char-item__value {
-      font-size: 0.9rem;
-      font-weight: 700;
-      color: var(--color-text);
-    }
-    .char-item__value small {
-      font-size: 0.72rem;
-      font-weight: 400;
-      color: var(--color-muted);
-      display: block;
-    }
-    .char-item__value.highlight { color: var(--color-primary); }
+/* ── Header = Botão de accordion ── */
+.fund-card__header.fund-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+  padding: 1.25rem 1.5rem;
+  background: transparent;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background-color 0.2s ease;
+  outline: none;
+  /* Remove o border-bottom — agora é controlado pelo collapse */
+}
 
-    /* ── Documentos ── */
-    .fund-card__docs {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      padding: 1rem 1.5rem 1.4rem;
-      border-top: 1px solid var(--color-border);
-      align-items: center;
-    }
-    .fund-card__docs-label {
-      font-size: 0.72rem;
-      font-weight: 700;
-      color: var(--color-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      margin-right: 0.25rem;
-    }
-    .doc-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3rem;
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: var(--color-primary);
-      background: #eff6ff;
-      border: 1px solid #bfdbfe;
-      border-radius: var(--radius-sm);
-      padding: 0.3rem 0.65rem;
-      text-decoration: none;
-      transition: background 0.15s, color 0.15s;
-    }
-    .doc-link:hover {
-      background: var(--color-primary);
-      color: #fff;
-      border-color: var(--color-primary);
-    }
-    .doc-link svg { flex-shrink: 0; }
+.fund-card__header.fund-toggle-btn:hover {
+  background-color: #f0f6ff;
+}
 
-    /* ── CNPJ e info técnica ── */
-    .fund-card__meta {
-      display: flex;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-      padding: 0.75rem 1.5rem;
-      background: var(--color-bg);
-      border-top: 1px solid var(--color-border);
-      font-size: 0.72rem;
-      color: var(--color-muted);
-    }
-    .fund-card__meta strong { color: var(--color-text); }
+.fund-card__header.fund-toggle-btn:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: -2px;
+  border-radius: var(--radius);
+}
 
-    /* ── Aviso legal ── */
-    .legal-box {
-      background: #fff7ed;
-      border: 1px solid #fed7aa;
-      border-radius: var(--radius-sm);
-      padding: 1.2rem 1.5rem;
-      margin-top: 2rem;
-    }
-    .legal-box__title {
-      font-size: 0.72rem;
-      font-weight: 700;
-      color: #92400e;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      margin-bottom: 0.6rem;
-    }
-    .legal-box ol {
-      padding-left: 1.1rem;
-    }
-    .legal-box li {
-      font-size: 0.72rem;
-      color: #78350f;
-      line-height: 1.7;
-    }
-    .legal-box a { color: #b45309; }
+/* Título do fundo */
+.fund-card__title-group { flex: 1; min-width: 0; }
 
-    /* ── Seção "Precisa de ajuda?" ── */
-    .fd-help {
-      margin-top: 2.5rem;
-      background: linear-gradient(135deg, var(--color-primary), #003d7a);
-      border-radius: var(--radius);
-      padding: 2rem;
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-    }
-    .fd-help__text { flex: 1; min-width: 220px; }
-    .fd-help__text h3 { color: #fff; font-size: 1.1rem; font-weight: 700; margin-bottom: 0.4rem; }
-    .fd-help__text p { color: rgba(255,255,255,0.7); font-size: 0.85rem; line-height: 1.5; }
-    .fd-help__btn {
-      background: #fff;
-      color: var(--color-primary);
-      font-size: 0.85rem;
-      font-weight: 700;
-      padding: 0.75rem 1.5rem;
-      border-radius: var(--radius-sm);
-      text-decoration: none;
-      white-space: nowrap;
-      transition: opacity 0.15s;
-    }
-    .fd-help__btn:hover { opacity: 0.9; }
+.fund-card__name {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--color-muted);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+}
 
-    /* ── Back link ── */
-    .fd-back {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: var(--color-primary);
-      text-decoration: none;
-      margin-bottom: 1.5rem;
-    }
-    .fd-back:hover { text-decoration: underline; }
+.fund-card__full-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.35;
+}
 
-    /* ── Responsivo ── */
-    @media (max-width: 600px) {
-      .fd-hero { padding: 6rem 1rem 2.5rem; }
-      .fd-hero__stats { gap: 1.2rem; }
-      .fund-card__chars { grid-template-columns: 1fr 1fr; }
-      .fd-help { flex-direction: column; }
-      .fund-card__header { flex-direction: column; gap: 0.75rem; }
-    }
+/* Grupo direito: badge + seta */
+.fund-card__header-right {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex-shrink: 0;
+}
+
+/* Badge de risco */
+.fund-card__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.28rem 0.7rem;
+  border-radius: 99px;
+  white-space: nowrap;
+}
+.badge--very-low { background: #dcfce7; color: #166534; }
+.badge--low      { background: #dbeafe; color: #1e40af; }
+.badge--low-med  { background: #fef9c3; color: #854d0e; }
+.badge--medium   { background: #ffedd5; color: #9a3412; }
+
+/* Ícone seta */
+.fund-chevron {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(0, 86, 168, 0.06);
+  color: var(--color-primary);
+  transition: transform 0.35s cubic-bezier(0.4,0,0.2,1),
+              background 0.25s ease,
+              color 0.25s ease;
+  flex-shrink: 0;
+}
+
+.fund-chevron svg {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Estado aberto */
+.fund-toggle-btn.is-active .fund-chevron {
+  background: var(--color-primary);
+  color: #fff;
+  transform: rotate(180deg);
+}
+
+/* ── Collapse ── */
+.fund-card__collapse {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  border-top: 1px solid transparent;
+  transition:
+    max-height 0.42s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.3s ease,
+    border-color 0.2s ease;
+}
+
+.fund-card__collapse.is-open {
+  opacity: 1;
+  border-top-color: var(--color-border);
+  /* max-height é definido via JS */
+}
+
+/* ── Corpo do card ── */
+.fund-card__body {
+  padding: 1.4rem 1.5rem 0.5rem;
+}
+
+.fund-card__desc {
+  font-size: 0.875rem;
+  color: var(--color-muted);
+  line-height: 1.65;
+  margin-bottom: 1.25rem;
+}
+
+/* ── Grid de características ── */
+.fund-card__chars {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(148px, 1fr));
+  gap: 0.65rem;
+  margin-bottom: 1.2rem;
+}
+
+.char-item {
+  background: var(--color-bg);
+  border-radius: var(--radius-sm);
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--color-border);
+}
+
+.char-item__label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--color-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.2rem;
+}
+
+.char-item__value {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.char-item__value small {
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: var(--color-muted);
+  display: block;
+}
+
+.char-item__value.highlight { color: var(--color-primary); }
+
+/* ── Box tributação ── */
+.fund-tax-notice {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: var(--radius-sm);
+  padding: 0.9rem 1.1rem;
+  font-size: 0.82rem;
+  color: #1e40af;
+  line-height: 1.6;
+  margin-bottom: 1.4rem;
+}
+
+/* ── Documentos ── */
+.fund-card__docs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.9rem 1.5rem;
+  border-top: 1px solid var(--color-border);
+  align-items: center;
+}
+
+.fund-card__docs-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--color-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-right: 0.25rem;
+}
+
+.doc-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.73rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: var(--radius-sm);
+  padding: 0.28rem 0.6rem;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.doc-link:hover {
+  background: var(--color-primary);
+  color: #fff;
+  border-color: var(--color-primary);
+}
+
+/* ── Meta (CNPJ / FFA) ── */
+.fund-card__meta {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  padding: 0.65rem 1.5rem;
+  background: var(--color-bg);
+  border-top: 1px solid var(--color-border);
+  font-size: 0.7rem;
+  color: var(--color-muted);
+}
+
+.fund-card__meta strong { color: var(--color-text); }
+
+/* ── Aviso legal ── */
+.legal-box {
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  border-radius: var(--radius-sm);
+  padding: 1.2rem 1.5rem;
+  margin-top: 2rem;
+}
+
+.legal-box__title {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #92400e;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+}
+
+.legal-box ol { padding-left: 1.1rem; }
+
+.legal-box li {
+  font-size: 0.72rem;
+  color: #78350f;
+  line-height: 1.7;
+}
+
+.legal-box a { color: #b45309; }
+
+/* ── CTA Assessor ── */
+.fd-help {
+  margin-top: 2rem;
+  background: linear-gradient(135deg, var(--color-primary), #003d7a);
+  border-radius: var(--radius);
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.fd-help__text { flex: 1; min-width: 220px; }
+.fd-help__text h3 { color: #fff; font-size: 1.05rem; font-weight: 700; margin-bottom: 0.35rem; }
+.fd-help__text p  { color: rgba(255,255,255,0.7); font-size: 0.85rem; line-height: 1.5; }
+
+.fd-help__btn {
+  background: #fff;
+  color: var(--color-primary);
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: opacity 0.15s, transform 0.15s;
+}
+.fd-help__btn:hover { opacity: 0.92; transform: translateY(-1px); }
+
+/* ── Responsivo ── */
+@media (max-width: 640px) {
+  .fd-section-header { padding: 2rem 1.25rem; }
+  .fd-section-stats  { gap: 1.2rem; }
+
+  .fund-card__header.fund-toggle-btn {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.85rem;
+  }
+
+  .fund-card__header-right {
+    width: 100%;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+  }
+
+  .fund-card__chars { grid-template-columns: 1fr 1fr; }
+  .fd-help { flex-direction: column; }
+}
+
+/* ── Animação de entrada dos cards ── */
+@keyframes cardFadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.fd-funds-grid .fund-card {
+  animation: cardFadeIn 0.4s ease both;
+}
+
+.fd-funds-grid .fund-card:nth-child(1) { animation-delay: 0.05s; }
+.fd-funds-grid .fund-card:nth-child(2) { animation-delay: 0.10s; }
+.fd-funds-grid .fund-card:nth-child(3) { animation-delay: 0.15s; }
+.fd-funds-grid .fund-card:nth-child(4) { animation-delay: 0.20s; }
+.fd-funds-grid .fund-card:nth-child(5) { animation-delay: 0.25s; }
+.fd-funds-grid .fund-card:nth-child(6) { animation-delay: 0.30s; }
+.fd-funds-grid .fund-card:nth-child(n+7) { animation-delay: 0.35s; }

@@ -179,7 +179,7 @@ function initGlobalLinks() {
   if (logoLink) {
     logoLink.addEventListener('click', (e) => {
       e.preventDefault();
-      window.location.href = 'index.html';
+      window.location.href = logoLink.getAttribute('href');
     });
   }
 
@@ -1059,4 +1059,50 @@ function throttle(fn, limit = 100) {
       }, limit);
     }
   };
+}
+
+
+/**
+ * Inicializa a lógica de Accordion nos Cards Inteiros de Fundos
+ */
+function initFundCardsAccordion() {
+  const toggleButtons = document.querySelectorAll('.fund-toggle-btn');
+  
+  if (toggleButtons.length === 0) return;
+
+  toggleButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Pega a DIV colapsável logo em seguida do botão do cabeçalho
+      const panel = btn.nextElementSibling;
+      if (!panel) return;
+
+      const isOpen = btn.classList.contains('is-active');
+
+      // (Opcional) Fecha todos os outros cards abertos
+      document.querySelectorAll('.fund-toggle-btn').forEach(otherBtn => {
+        if (otherBtn !== btn) {
+          otherBtn.classList.remove('is-active');
+          otherBtn.setAttribute('aria-expanded', 'false');
+          if (otherBtn.nextElementSibling) {
+            otherBtn.nextElementSibling.classList.remove('is-open');
+            otherBtn.nextElementSibling.style.maxHeight = null;
+          }
+        }
+      });
+
+      // Se já estava aberto, fecha. Se não, abre definindo o MaxHeight
+      if (isOpen) {
+        btn.classList.remove('is-active');
+        btn.setAttribute('aria-expanded', 'false');
+        panel.classList.remove('is-open');
+        panel.style.maxHeight = null;
+      } else {
+        btn.classList.add('is-active');
+        btn.setAttribute('aria-expanded', 'true');
+        panel.classList.add('is-open');
+        // Usando a altura real do conteúdo para a animação funcionar sem engasgo
+        panel.style.maxHeight = panel.scrollHeight + "px";
+      }
+    });
+  });
 }
