@@ -117,7 +117,7 @@ header {
   z-index: 1000;
   border-bottom: 1px solid rgba(0, 86, 168, 0.10);
   box-shadow: 0 2px 20px rgba(0, 31, 63, 0.08);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: transform var(--ease), box-shadow var(--ease);
 }
 
 header.header-hidden {
@@ -160,13 +160,21 @@ nav {
   font-weight: 520;
   font-size: 16px;
   letter-spacing: 0.02em;
-  padding: 0.5rem 0.9rem;
+  padding:  0.5rem 0.9rem;
   border-radius: 6px;
+  transition: color var(--ease), background var(--ease);
   display: flex;
   align-items: center;
   gap: 0.3rem;
   white-space: nowrap;
   transition: background 0.2s, color 0.2s;
+}
+
+/* Efeito de fundo para a página atual */
+.nav-links > li > a.active {
+  background: rgba(58, 127, 212, 0.15);
+  color: #ffffff;
+  border-radius: 8px;
 }
 
 .nav-links > li > a:hover,
@@ -263,7 +271,7 @@ nav {
   display: block;
   padding: 11px 20px;
   font-weight: 550;
-  font-size: 14px;
+  font-size: 13px;
   color: rgba(0, 0, 0, 0.7);
   transition: background var(--ease), color var(--ease);
 }
@@ -273,7 +281,6 @@ nav {
   color: var(--primary-blue);
 }
 
-/* Nav Buttons e Links */
 .nav-buttons {
   display: flex;
   margin-left: auto;
@@ -297,6 +304,49 @@ nav {
 .account-link:hover {
   background: var(--bright-blue);
   transform: translateY(-1px);
+}
+    
+/* Hamburger */
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  margin-left: auto;
+}
+
+.mobile-menu-toggle span {
+  display: block;
+  width: 26px;
+  height: 2.5px;
+  background: var(--text-dark);
+  border-radius: 2px;
+  transition: var(--ease);
+}
+
+.mobile-menu-toggle.active span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+.mobile-menu-toggle.active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.mobile-menu-toggle.active span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
+/* Botão fechar menu mobile — oculto por padrão em todas as telas */
+.mobile-menu-close {
+  display: none;
+}
+
+/* Overlay mobile */
+.menu-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 10, 25, 0.5);
+  z-index: 998;
+}
+
+.menu-overlay.active {
+  display: block;
 }
 
 .has-submenu {

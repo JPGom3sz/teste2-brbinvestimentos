@@ -264,6 +264,11 @@
   border-radius: var(--radius-sm);
   padding: 0.6rem 0.8rem;
   border: 1px solid var(--color-border);
+  /* Alterações para alinhamento uniforme dos valores */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .char-item__label {
@@ -279,6 +284,8 @@
   font-size: 0.88rem;
   font-weight: 700;
   color: var(--color-text);
+  /* Garante que pequenos detalhes no valor não quebrem o espaçamento */
+  margin-top: auto; 
 }
 
 .char-item__value small {

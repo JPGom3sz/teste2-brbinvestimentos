@@ -382,30 +382,23 @@ nav {
   overflow: hidden;
 }
 
+/* Camada escura por cima da imagem de fundo para dar contraste no texto */
 .fd-hero::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse 55% 55% at 85% 45%, rgba(0,128,216,0.18) 0%, transparent 70%),
-              radial-gradient(ellipse 40% 50% at 5% 85%, rgba(0,86,168,0.22) 0%, transparent 60%);
+  z-index: 1; /* Fica acima da imagem de fundo, mas abaixo do texto */
 }
 
-.fd-hero::after {
-  content: '';
+/* Nova classe da imagem cobrindo todo o fundo */
+.hero-bg-cover {
   position: absolute;
-  width: 450px; 
-  height: 450px;
-  border: 1px solid rgba(145, 212, 250, 0.1);
-  border-radius: 50%;
-  right: -80px; 
-  top: 50%;
-  transform: translateY(-50%);
-  animation: floatRing 9s ease-in-out infinite;
-}
-
-@keyframes floatRing { 
-  0%, 100% { transform: translateY(-50%) scale(1); } 
-  50% { transform: translateY(-52%) scale(1.03); } 
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Faz a imagem cobrir tudo sem distorcer */
+  object-position: center;
+  z-index: 0; /* Fica por baixo de tudo */
 }
 
 .fd-hero-inner { 
@@ -413,15 +406,15 @@ nav {
   margin: 0 auto; 
   width: 100%; 
   position: relative; 
-  z-index: 1; 
+  z-index: 2; /* Texto fica acima da camada escura */
 }
 
 .fd-hero-badge {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(145, 212, 250, 0.15);
-  border: 1px solid rgba(145, 212, 250, 0.3);
+  background: rgba(145, 212, 250, 0.2);
+  border: 1px solid rgba(145, 212, 250, 0.4);
   color: var(--accent-gold);
   padding: 0.4rem 1rem;
   border-radius: 50px;
@@ -438,6 +431,7 @@ nav {
   color: #fff; 
   line-height: 1.15; 
   margin-bottom: 1.5rem; 
+  text-shadow: 0 2px 10px rgba(0,0,0,0.3); /* Melhora a leitura */
 }
 
 .fd-hero h1 .highlight { 
@@ -446,10 +440,11 @@ nav {
 
 .fd-hero p.hero-desc { 
   font-size: 1.05rem; 
-  color: rgba(255, 255, 255, 0.75); 
-  max-width: 520px; 
+  color: rgba(255, 255, 255, 0.85); /* Tom levemente mais claro para contraste */
+  max-width: 650px; 
   margin-bottom: 2.5rem; 
   line-height: 1.75; 
+  text-shadow: 0 1px 5px rgba(0,0,0,0.3);
 }
 
 .fd-hero-ctas { 
@@ -481,9 +476,9 @@ nav {
 }
 
 .btn-rf-outline {
-  background: transparent;
+  background: rgba(255, 255, 255, 0.1);
   color: #fff;
-  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  border: 1.5px solid rgba(255, 255, 255, 0.6);
   padding: 0.9rem 1.8rem;
   border-radius: 8px;
   font-size: 0.95rem;
@@ -491,11 +486,13 @@ nav {
   font-family: inherit;
   cursor: pointer;
   transition: all 0.2s;
+  backdrop-filter: blur(4px);
 }
 
 .btn-rf-outline:hover {
   border-color: var(--accent-gold);
   color: var(--accent-gold);
+  background: rgba(145, 212, 250, 0.1);
 }
 
 /* ============================================================
@@ -1172,7 +1169,6 @@ footer {
    ============================================================ */
 @media (max-width: 968px) {
   .fd-hero-inner { text-align: center; }
-  .fd-hero-visual { display: none; }
   .fd-hero p.hero-desc { margin: 0 auto 2.5rem; }
   .fd-hero-badge { margin: 0 auto 1.5rem; }
   .fd-hero-ctas { justify-content: center; }
@@ -1938,7 +1934,6 @@ html.travar-rolagem {
     flex: 1 1 100%;
     max-width: 100%;
   }
-
 
   .edu-grid .edu-card {
     flex: 1 1 100%;

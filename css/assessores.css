@@ -381,7 +381,7 @@ nav {
   left: 100%;
   top: -8px;
   min-width: 180px;
-  background: #fff;
+  background: var(--brb-navy-4);
   border-radius: 10px;
   border: 1px solid rgba(0, 86, 168, 0.12);
   box-shadow: 0 12px 36px rgba(0, 31, 63, 0.13);

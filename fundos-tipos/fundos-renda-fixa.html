@@ -28,7 +28,18 @@
             <li role="none" class="has-submenu"><a href="../produtos/renda-fixa.html" role="menuitem">Renda Fixa</a></li>
             <li role="none" class="has-submenu"><a href="../produtos/renda-variavel.html" role="menuitem">Renda Variável</a></li>
             <li role="none" class="has-submenu"><a href="../produtos/previdencia.html" role="menuitem">Previdência</a></li>
-            <li role="none" class="has-submenu"><a href="../produtos/fundos.html" role="menuitem">Fundos</a></li>
+
+
+             <li class="has-submenu">
+              <a href="../produtos/fundos.html">Fundos <span class="chevron-right">▶</span></a>
+              <ul class="submenu">
+                <li class="mobile-only-item"><a href="../produtos/fundos.html">Visão Geral de Fundos</a></li>
+                <li><a href="../fundos-tipos/fundos-plataforma.html">Fundos em Plataforma</a></li>
+                <li><a href="../fundos-tipos/fundos-balcao.html">Fundos em Balcão</a></li>
+              </ul>
+            </li>
+
+
             <li role="none" class="has-submenu"><a href="../produtos/mercado-futuro.html" role="menuitem">Mercado Futuro</a></li>
             <li role="none" class="has-submenu"><a href="../produtos/tesouro-direto.html" role="menuitem">Tesouro Direto</a></li>
           </ul>
@@ -70,7 +81,7 @@
     <!-- Cabeçalho da seção -->
     <div class="fd-section-header">
       <span class="fd-section-pill">Classificação ANBIMA</span>
-      <h1 class="fd-section-title">Fundos de Renda Fixa</h1>
+      <h1 class="fd-section-title">Fundos de Renda Fixa BRB</h1>
       <p class="fd-section-desc">Linha completa: da liquidez diária (zeragem/caixa) até proteção inflacionária via IMA-B. Taxas de administração a partir de 0,20% a.a. e aplicações a partir de R$ 1,00.</p>
       <div class="fd-section-stats">
         <div class="fd-stat"><span class="fd-stat__value">16</span><span class="fd-stat__label">Fundos disponíveis</span></div>
@@ -91,7 +102,10 @@
             <div class="fund-card__full-name">BRB Fundo de Investimento em Renda Fixa Zeragem Responsabilidade Limitada</div>
           </div>
           <div class="fund-card__header-right">
-            <span class="fund-card__badge bvl">✓ Risco Muito Baixo</span>
+            <span class="fund-card__badge badge--very-low">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              Risco muito baixo
+            </span>
             <span class="fund-chevron" aria-hidden="true">
               <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
             </span>
@@ -101,32 +115,50 @@
         <div class="fund-card__collapse" id="collapse-brb-firf-zeragem-rl-cod-17" role="region">
           <div class="fund-card__body">
         <p class="fund-card__desc">Gestão passiva, busca acompanhar o CDI aplicando em ativos pós ou pré-fixados. Voltado a fundos administrados pela BRB-DTVM e pessoas jurídicas do Programa de Descentralização do GDF (Lei nº 6.023/2017). Possui resgate automático. ANBIMA: RF Duração Baixa Soberano.</p>
-        <div class="fund-card__chars">
-          <div class="char-item"><div class="char-item__label">Aplic. inicial</div><div class="char-item__value highlight">R$ 1,00</div></div>
-          <div class="char-item"><div class="char-item__label">Aplic. subseq.</div><div class="char-item__value">R$ 1,00</div></div>
-          <div class="char-item"><div class="char-item__label">Resgate mínimo</div><div class="char-item__value">R$ 1,00</div></div>
-          <div class="char-item"><div class="char-item__label">Saldo mínimo</div><div class="char-item__value">R$ 1,00</div></div>
-          <div class="char-item"><div class="char-item__label">Cota aplicação</div><div class="char-item__value">D+0 <small>Abertura</small></div></div>
-          <div class="char-item"><div class="char-item__label">Cota resgate</div><div class="char-item__value">D+0 <small>Abertura</small></div></div>
-          <div class="char-item"><div class="char-item__label">Crédito conta</div><div class="char-item__value">D+0</div></div>
-          <div class="char-item"><div class="char-item__label">Taxa adm.</div><div class="char-item__value highlight">0,20% a.a.</div></div>
-          <div class="char-item"><div class="char-item__label">Tax. performance</div><div class="char-item__value">Não cobra</div></div>
-          <div class="char-item"><div class="char-item__label">Resgate automático</div><div class="char-item__value">Sim</div></div>
-          <div class="char-item"><div class="char-item__label">Carência</div><div class="char-item__value">Não tem</div></div>
-          <div class="char-item"><div class="char-item__label">Horário limite</div><div class="char-item__value">16h (Brasília)</div></div>
-          <div class="char-item"><div class="char-item__label">Perfil</div><div class="char-item__value">Conservador</div></div>
-          <div class="char-item"><div class="char-item__label">Início</div><div class="char-item__value">21/01/2017</div></div>
-        </div>
+            <div class="fund-card__chars">
+              <div class="char-item"><div class="char-item__label">Aplicação inicial</div><div class="char-item__value highlight">R$ 1,00</div></div>
+              <div class="char-item"><div class="char-item__label">Aplicações subsequentes</div><div class="char-item__value">R$ 1,00</div></div>
+              <div class="char-item"><div class="char-item__label">Resgate mínimo</div><div class="char-item__value">R$ 1,00</div></div>
+              <div class="char-item"><div class="char-item__label">Saldo mínimo remanescente</div><div class="char-item__value">R$ 1,00</div></div>
+              <div class="char-item"><div class="char-item__label">Cotização de aplicação</div><div class="char-item__value">D+0 — Abertura</div></div>
+              <div class="char-item"><div class="char-item__label">Carência</div><div class="char-item__value">Não possui</div></div>
+              <div class="char-item"><div class="char-item__label">Cotização de resgate</div><div class="char-item__value">D+0 — Abertura</div></div>
+              <div class="char-item"><div class="char-item__label">Crédito em conta corrente BRB</div><div class="char-item__value">D+0</div></div>
+              <div class="char-item"><div class="char-item__label">Resgate automático</div><div class="char-item__value">Sim</div></div>
+              <div class="char-item"><div class="char-item__label">Taxa de administração</div><div class="char-item__value highlight">0,20% a.a.</div></div>
+              <div class="char-item"><div class="char-item__label">Taxa de performance</div><div class="char-item__value">Não cobra</div></div>
+              <div class="char-item"><div class="char-item__label">Regime de cotização</div><div class="char-item__value">Abertura de mercado</div></div>
+              <div class="char-item"><div class="char-item__label">Horário limite aplicação/resgate</div><div class="char-item__value">16h00 (horário de Brasília)</div></div>
+              <div class="char-item"><div class="char-item__label">Perfil investidor</div><div class="char-item__value">Conservador</div></div>
+              <div class="char-item"><div class="char-item__label">Termo de investimento</div><div class="char-item__value">—</div></div>
+              <div class="char-item"><div class="char-item__label">Funcionamento desde:</div><div class="char-item__value">21/01/2017</div></div>
+            </div>
+          
         <div class="fund-tax-notice"><strong>IR:</strong> Come-cotas semestral (maio/nov) à 20%. Resgate complementar: 22,5% (até 180 dias) ou 20% (acima de 180 dias). IOF regressivo em resgates antes de 30 dias.</div>
       </div>
 
           <div class="fund-card__docs">
         <span class="fund-card__docs-label">📄 Documentos</span>
-        <a href="../pdfs/fundos/F17_regulamento.pdf" target="_blank" class="doc-link">Regulamento</a>
-        <a href="../pdfs/fundos/F17_informativo_mensal.pdf" target="_blank" class="doc-link">Informativo Mensal</a>
-        <a href="../pdfs/fundos/F17_demonstracoes.pdf" target="_blank" class="doc-link">Demonstrações Financeiras</a>
-        <a href="../pdfs/fundos/F17_comunicado.pdf" target="_blank" class="doc-link">Comunicado aos Cotistas</a>
-        <a href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank" class="doc-link">Política de Remuneração</a>
+        <a href="../pdfs/fundos/F17_regulamento.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Regulamento
+            </a>
+        <a href="../pdfs/fundos/F17_informativo_mensal.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Informativo Mensal
+            </a>
+        <a href="../pdfs/fundos/F17_demonstracoes.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Demonstrações Financeiras
+            </a>
+        <a href="../pdfs/fundos/F17_comunicado.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Comunicado aos Cotistas
+            </a>
+        <a href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Política de Remuneração
+            </a>
       </div>
 
           <div class="fund-card__meta">
@@ -145,7 +177,10 @@
             <div class="fund-card__full-name">Fundo de Investimento em Renda Fixa BRB Liquidez Responsabilidade Limitada</div>
           </div>
           <div class="fund-card__header-right">
-            <span class="fund-card__badge bl">Risco Baixo</span>
+            <span class="fund-card__badge badge--low">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              Risco baixo
+            </span>
             <span class="fund-chevron" aria-hidden="true">
               <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
             </span>
@@ -155,32 +190,50 @@
         <div class="fund-card__collapse" id="collapse-firf-brb-liquidez-rl-cod-18" role="region">
           <div class="fund-card__body">
         <p class="fund-card__desc">Busca acompanhar o CDI em ativos pós ou pré-fixados ou índice de preços. Destinado a pessoas físicas e jurídicas clientes BRB. Possui resgate automático para cobertura de saldo devedor em conta corrente (mediante autorização via formulário). ANBIMA: RF Duração Baixa Grau de Investimento.</p>
-        <div class="fund-card__chars">
-          <div class="char-item"><div class="char-item__label">Aplic. inicial</div><div class="char-item__value highlight">R$ 50,00</div></div>
-          <div class="char-item"><div class="char-item__label">Aplic. subseq.</div><div class="char-item__value">R$ 50,00</div></div>
-          <div class="char-item"><div class="char-item__label">Resgate mínimo</div><div class="char-item__value">R$ 50,00</div></div>
-          <div class="char-item"><div class="char-item__label">Saldo mínimo</div><div class="char-item__value">R$ 40,00</div></div>
-          <div class="char-item"><div class="char-item__label">Cota aplicação</div><div class="char-item__value">D+0 <small>Fechamento</small></div></div>
-          <div class="char-item"><div class="char-item__label">Cota resgate</div><div class="char-item__value">D+0 <small>Fechamento</small></div></div>
-          <div class="char-item"><div class="char-item__label">Crédito conta</div><div class="char-item__value">D+0</div></div>
-          <div class="char-item"><div class="char-item__label">Taxa adm.</div><div class="char-item__value highlight">1,60% a.a.</div></div>
-          <div class="char-item"><div class="char-item__label">Tax. performance</div><div class="char-item__value">Não cobra</div></div>
-          <div class="char-item"><div class="char-item__label">Resgate automático</div><div class="char-item__value">Sim <small>cobre saldo devedor</small></div></div>
-          <div class="char-item"><div class="char-item__label">Carência</div><div class="char-item__value">Não possui</div></div>
-          <div class="char-item"><div class="char-item__label">Horário limite</div><div class="char-item__value">16h (Brasília)</div></div>
-          <div class="char-item"><div class="char-item__label">Perfil</div><div class="char-item__value">Conservador</div></div>
-          <div class="char-item"><div class="char-item__label">Início</div><div class="char-item__value">02/10/1995</div></div>
-        </div>
+            <div class="fund-card__chars">
+              <div class="char-item"><div class="char-item__label">Aplicação inicial</div><div class="char-item__value highlight">R$ 50,00</div></div>
+              <div class="char-item"><div class="char-item__label">Aplicações subsequentes</div><div class="char-item__value">R$ 50,00</div></div>
+              <div class="char-item"><div class="char-item__label">Resgate mínimo</div><div class="char-item__value">R$ 50,00</div></div>
+              <div class="char-item"><div class="char-item__label">Saldo mínimo remanescente</div><div class="char-item__value">R$ 40,00</div></div>
+              <div class="char-item"><div class="char-item__label">Cotização de aplicação</div><div class="char-item__value">D+0 — Fechamento</div></div>
+              <div class="char-item"><div class="char-item__label">Carência</div><div class="char-item__value">Não possui</div></div>
+              <div class="char-item"><div class="char-item__label">Cotização de resgate</div><div class="char-item__value">D+0 — Fechamento</div></div>
+              <div class="char-item"><div class="char-item__label">Crédito em conta corrente BRB</div><div class="char-item__value">D+0</div></div>
+              <div class="char-item"><div class="char-item__label">Resgate automático</div><div class="char-item__value">Sim — cobre saldo devedor</div></div>
+              <div class="char-item"><div class="char-item__label">Taxa de administração</div><div class="char-item__value highlight">1,60% a.a.</div></div>
+              <div class="char-item"><div class="char-item__label">Taxa de performance</div><div class="char-item__value">Não cobra</div></div>
+              <div class="char-item"><div class="char-item__label">Regime de cotização</div><div class="char-item__value">Fechamento de mercado</div></div>
+              <div class="char-item"><div class="char-item__label">Horário limite aplicação/resgate</div><div class="char-item__value">16h00 (horário de Brasília)</div></div>
+              <div class="char-item"><div class="char-item__label">Perfil investidor</div><div class="char-item__value">Conservador</div></div>
+              <div class="char-item"><div class="char-item__label">Termo de investimento</div><div class="char-item__value">—</div></div>
+              <div class="char-item"><div class="char-item__label">Funcionamento desde:</div><div class="char-item__value">02/10/1995</div></div>
+            </div>
+         
         <div class="fund-tax-notice"><strong>IR:</strong> Come-cotas semestral à 20%. Resgate: tabela regressiva de curto prazo. IOF regressivo antes de 30 dias.</div>
       </div>
 
           <div class="fund-card__docs">
         <span class="fund-card__docs-label">📄 Documentos</span>
-        <a href="../pdfs/fundos/F18_regulamento.pdf" target="_blank" class="doc-link">Regulamento</a>
-        <a href="../pdfs/fundos/F18_informativo_mensal.pdf" target="_blank" class="doc-link">Informativo Mensal</a>
-        <a href="../pdfs/fundos/F18_demonstracoes.pdf" target="_blank" class="doc-link">Demonstrações Financeiras</a>
-        <a href="../pdfs/fundos/F18_form_autorizacao.pdf" target="_blank" class="doc-link">Form. Autorização Resgate Auto.</a>
-        <a href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank" class="doc-link">Política de Remuneração</a>
+        <a href="../pdfs/fundos/F18_regulamento.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Regulamento
+            </a>
+        <a href="../pdfs/fundos/F18_informativo_mensal.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Informativo Mensal
+            </a>
+        <a href="../pdfs/fundos/F18_demonstracoes.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Demonstrações Financeiras
+            </a>
+        <a href="../pdfs/fundos/F18_form_autorizacao.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Form. Autorização Resgate Auto.
+            </a>
+        <a href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Política de Remuneração
+            </a>
       </div>
 
           <div class="fund-card__meta">
@@ -199,7 +252,10 @@
             <div class="fund-card__full-name">BRB Fundo de Investimento em Renda Fixa Governo Longo Prazo Responsabilidade Limitada</div>
           </div>
           <div class="fund-card__header-right">
-            <span class="fund-card__badge bvl">✓ Risco Muito Baixo</span>
+            <span class="fund-card__badge badge--very-low">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              Risco muito baixo
+            </span>
             <span class="fund-chevron" aria-hidden="true">
               <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
             </span>
@@ -209,30 +265,46 @@
         <div class="fund-card__collapse" id="collapse-brb-renda-fixa-governo-lp-rl-cod-27" role="region">
           <div class="fund-card__body">
         <p class="fund-card__desc">Busca liquidez diária investindo em cotas de fundos pré ou pós-fixados. Público-alvo exclusivo: <strong>Governo do Distrito Federal e suas empresas</strong>, clientes BRB. Fundo com foco em títulos públicos. ANBIMA: RF Duração Baixa Soberano.</p>
-        <div class="fund-card__chars">
-          <div class="char-item"><div class="char-item__label">Aplic. inicial</div><div class="char-item__value highlight">R$ 100,00</div></div>
-          <div class="char-item"><div class="char-item__label">Aplic. subseq.</div><div class="char-item__value">R$ 100,00</div></div>
-          <div class="char-item"><div class="char-item__label">Resgate mínimo</div><div class="char-item__value">R$ 100,00</div></div>
-          <div class="char-item"><div class="char-item__label">Saldo mínimo</div><div class="char-item__value">R$ 100,00</div></div>
-          <div class="char-item"><div class="char-item__label">Cota aplicação</div><div class="char-item__value">D+0 <small>Fechamento</small></div></div>
-          <div class="char-item"><div class="char-item__label">Cota resgate</div><div class="char-item__value">D+0 <small>Fechamento</small></div></div>
-          <div class="char-item"><div class="char-item__label">Crédito conta</div><div class="char-item__value">D+0</div></div>
-          <div class="char-item"><div class="char-item__label">Taxa adm.</div><div class="char-item__value highlight">0,50% a.a.</div></div>
-          <div class="char-item"><div class="char-item__label">Tax. performance</div><div class="char-item__value">Não cobra</div></div>
-          <div class="char-item"><div class="char-item__label">Carência</div><div class="char-item__value">Não possui</div></div>
-          <div class="char-item"><div class="char-item__label">Horário limite</div><div class="char-item__value">16h (Brasília)</div></div>
-          <div class="char-item"><div class="char-item__label">Perfil</div><div class="char-item__value">Conservador</div></div>
-          <div class="char-item"><div class="char-item__label">Início</div><div class="char-item__value">26/06/2001</div></div>
-        </div>
+            <div class="fund-card__chars">
+              <div class="char-item"><div class="char-item__label">Aplicação inicial</div><div class="char-item__value highlight">R$ 100,00</div></div>
+              <div class="char-item"><div class="char-item__label">Aplicações subsequentes</div><div class="char-item__value">R$ 100,00</div></div>
+              <div class="char-item"><div class="char-item__label">Resgate mínimo</div><div class="char-item__value">R$ 100,00</div></div>
+              <div class="char-item"><div class="char-item__label">Saldo mínimo remanescente</div><div class="char-item__value">R$ 100,00</div></div>
+              <div class="char-item"><div class="char-item__label">Cotização de aplicação</div><div class="char-item__value">D+0 — Fechamento</div></div>
+              <div class="char-item"><div class="char-item__label">Carência</div><div class="char-item__value">Não possui</div></div>
+              <div class="char-item"><div class="char-item__label">Cotização de resgate</div><div class="char-item__value">D+0 — Fechamento</div></div>
+              <div class="char-item"><div class="char-item__label">Crédito em conta corrente BRB</div><div class="char-item__value">D+0</div></div>
+              <div class="char-item"><div class="char-item__label">Resgate automático</div><div class="char-item__value">Não possui</div></div>
+              <div class="char-item"><div class="char-item__label">Taxa de administração</div><div class="char-item__value highlight">0,50% a.a.</div></div>
+              <div class="char-item"><div class="char-item__label">Taxa de performance</div><div class="char-item__value">Não cobra</div></div>
+              <div class="char-item"><div class="char-item__label">Regime de cotização</div><div class="char-item__value">Fechamento de mercado</div></div>
+              <div class="char-item"><div class="char-item__label">Horário limite aplicação/resgate</div><div class="char-item__value">16h00 (horário de Brasília)</div></div>
+              <div class="char-item"><div class="char-item__label">Perfil investidor</div><div class="char-item__value">Conservador</div></div>
+              <div class="char-item"><div class="char-item__label">Termo de investimento</div><div class="char-item__value">—</div></div>
+              <div class="char-item"><div class="char-item__label">Funcionamento desde:</div><div class="char-item__value">26/06/2001</div></div>
+            </div>
+         
         <div class="fund-tax-notice"><strong>IR:</strong> Come-cotas semestral à 20%. Resgate: tabela regressiva de curto prazo. IOF regressivo antes de 30 dias (exceto PJ com imunidade).</div>
       </div>
 
           <div class="fund-card__docs">
         <span class="fund-card__docs-label">📄 Documentos</span>
-        <a href="../pdfs/fundos/F27_regulamento.pdf" target="_blank" class="doc-link">Regulamento</a>
-        <a href="../pdfs/fundos/F27_informativo_mensal.pdf" target="_blank" class="doc-link">Informativo Mensal</a>
-        <a href="../pdfs/fundos/F27_demonstracoes.pdf" target="_blank" class="doc-link">Demonstrações Financeiras</a>
-        <a href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank" class="doc-link">Política de Remuneração</a>
+        <a href="../pdfs/fundos/F27_regulamento.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Regulamento
+            </a>
+        <a href="../pdfs/fundos/F27_informativo_mensal.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Informativo Mensal
+            </a>
+        <a href="../pdfs/fundos/F27_demonstracoes.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Demonstrações Financeiras
+            </a>
+        <a href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Política de Remuneração
+            </a>
       </div>
 
           <div class="fund-card__meta">
@@ -251,7 +323,10 @@
             <div class="fund-card__full-name">BRB FIC de Fundos de Investimento em Renda Fixa DI Longo Prazo Super Crédito Privado Responsabilidade Limitada</div>
           </div>
           <div class="fund-card__header-right">
-            <span class="fund-card__badge bl">Risco Baixo</span>
+            <span class="fund-card__badge badge--low">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              Risco baixo
+            </span>
             <span class="fund-chevron" aria-hidden="true">
               <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
             </span>
@@ -261,30 +336,46 @@
         <div class="fund-card__collapse" id="collapse-brb-fic-firf-di-lp-super-rl-cod-28" role="region">
           <div class="fund-card__body">
         <p class="fund-card__desc">FIC de RF que busca rentabilidade próxima ao CDI. Aplica em ativos pré ou pós-fixados. Destinado a PF e PJ que buscam retorno via CDI. Não admite alavancagem. ANBIMA: FIC de Renda Fixa. Crédito em conta D+1.</p>
-        <div class="fund-card__chars">
-          <div class="char-item"><div class="char-item__label">Aplic. inicial</div><div class="char-item__value highlight">R$ 500,00</div></div>
-          <div class="char-item"><div class="char-item__label">Aplic. subseq.</div><div class="char-item__value">R$ 200,00</div></div>
-          <div class="char-item"><div class="char-item__label">Resgate mínimo</div><div class="char-item__value">R$ 200,00</div></div>
-          <div class="char-item"><div class="char-item__label">Saldo mínimo</div><div class="char-item__value">R$ 200,00</div></div>
-          <div class="char-item"><div class="char-item__label">Cota aplicação</div><div class="char-item__value">D+0 <small>Fechamento</small></div></div>
-          <div class="char-item"><div class="char-item__label">Cota resgate</div><div class="char-item__value">D+0 <small>Fechamento</small></div></div>
-          <div class="char-item"><div class="char-item__label">Crédito conta</div><div class="char-item__value">D+1</div></div>
-          <div class="char-item"><div class="char-item__label">Taxa adm.</div><div class="char-item__value highlight">1,50% a.a.</div></div>
-          <div class="char-item"><div class="char-item__label">Tax. performance</div><div class="char-item__value">Não cobra</div></div>
-          <div class="char-item"><div class="char-item__label">Carência</div><div class="char-item__value">Não tem</div></div>
-          <div class="char-item"><div class="char-item__label">Horário limite</div><div class="char-item__value">16h (Brasília)</div></div>
-          <div class="char-item"><div class="char-item__label">Perfil</div><div class="char-item__value">Conservador</div></div>
-          <div class="char-item"><div class="char-item__label">Início</div><div class="char-item__value">19/06/2002</div></div>
-        </div>
+            <div class="fund-card__chars">
+              <div class="char-item"><div class="char-item__label">Aplicação inicial</div><div class="char-item__value highlight">R$ 500,00</div></div>
+              <div class="char-item"><div class="char-item__label">Aplicações subsequentes</div><div class="char-item__value">R$ 200,00</div></div>
+              <div class="char-item"><div class="char-item__label">Resgate mínimo</div><div class="char-item__value">R$ 200,00</div></div>
+              <div class="char-item"><div class="char-item__label">Saldo mínimo remanescente</div><div class="char-item__value">R$ 200,00</div></div>
+              <div class="char-item"><div class="char-item__label">Cotização de aplicação</div><div class="char-item__value">D+0 — Fechamento</div></div>
+              <div class="char-item"><div class="char-item__label">Carência</div><div class="char-item__value">Não possui</div></div>
+              <div class="char-item"><div class="char-item__label">Cotização de resgate</div><div class="char-item__value">D+0 — Fechamento</div></div>
+              <div class="char-item"><div class="char-item__label">Crédito em conta corrente BRB</div><div class="char-item__value">D+1</div></div>
+              <div class="char-item"><div class="char-item__label">Resgate automático</div><div class="char-item__value">Não possui</div></div>
+              <div class="char-item"><div class="char-item__label">Taxa de administração</div><div class="char-item__value highlight">1,50% a.a.</div></div>
+              <div class="char-item"><div class="char-item__label">Taxa de performance</div><div class="char-item__value">Não cobra</div></div>
+              <div class="char-item"><div class="char-item__label">Regime de cotização</div><div class="char-item__value">Fechamento de mercado</div></div>
+              <div class="char-item"><div class="char-item__label">Horário limite aplicação/resgate</div><div class="char-item__value">16h00 (horário de Brasília)</div></div>
+              <div class="char-item"><div class="char-item__label">Perfil investidor</div><div class="char-item__value">Conservador</div></div>
+              <div class="char-item"><div class="char-item__label">Termo de investimento</div><div class="char-item__value">—</div></div>
+              <div class="char-item"><div class="char-item__label">Funcionamento desde:</div><div class="char-item__value">19/06/2002</div></div>
+            </div>
+         
         <div class="fund-tax-notice"><strong>IR:</strong> Come-cotas semestral à 15%. Resgate: tabela regressiva de longo prazo. IOF regressivo antes de 30 dias.</div>
       </div>
 
           <div class="fund-card__docs">
         <span class="fund-card__docs-label">📄 Documentos</span>
-        <a href="../pdfs/fundos/F28_regulamento.pdf" target="_blank" class="doc-link">Regulamento</a>
-        <a href="../pdfs/fundos/F28_informativo_mensal.pdf" target="_blank" class="doc-link">Informativo Mensal</a>
-        <a href="../pdfs/fundos/F28_demonstracoes.pdf" target="_blank" class="doc-link">Demonstrações Financeiras</a>
-        <a href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank" class="doc-link">Política de Remuneração</a>
+        <a href="../pdfs/fundos/F28_regulamento.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Regulamento
+            </a>
+        <a href="../pdfs/fundos/F28_informativo_mensal.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Informativo Mensal
+            </a>
+        <a href="../pdfs/fundos/F28_demonstracoes.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Demonstrações Financeiras
+            </a>
+        <a href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Política de Remuneração
+            </a>
       </div>
 
           <div class="fund-card__meta">
@@ -303,7 +394,10 @@
             <div class="fund-card__full-name">Fundo de Investimento em Renda Fixa BRB Mais Responsabilidade Limitada</div>
           </div>
           <div class="fund-card__header-right">
-            <span class="fund-card__badge bl">Risco Baixo</span>
+            <span class="fund-card__badge badge--low">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              Risco baixo
+            </span>
             <span class="fund-chevron" aria-hidden="true">
               <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
             </span>
@@ -313,32 +407,50 @@
         <div class="fund-card__collapse" id="collapse-firf-brb-mais-rl-cod-31" role="region">
           <div class="fund-card__body">
         <p class="fund-card__desc">Busca acompanhar o CDI via títulos públicos e privados pré e pós-fixados. Público geral (PF e PJ). Possui resgate automático para cobertura de saldo devedor em conta corrente mediante autorização. Horário diferenciado: até 17h. ANBIMA: RF Duração Baixa Invest Grade.</p>
-        <div class="fund-card__chars">
-          <div class="char-item"><div class="char-item__label">Aplic. inicial</div><div class="char-item__value highlight">R$ 500,00</div></div>
-          <div class="char-item"><div class="char-item__label">Aplic. subseq.</div><div class="char-item__value">R$ 100,00</div></div>
-          <div class="char-item"><div class="char-item__label">Resgate mínimo</div><div class="char-item__value">R$ 30,00</div></div>
-          <div class="char-item"><div class="char-item__label">Saldo mínimo</div><div class="char-item__value">R$ 50,00</div></div>
-          <div class="char-item"><div class="char-item__label">Cota aplicação</div><div class="char-item__value">D+0 <small>Fechamento</small></div></div>
-          <div class="char-item"><div class="char-item__label">Cota resgate</div><div class="char-item__value">D+0 <small>Fechamento</small></div></div>
-          <div class="char-item"><div class="char-item__label">Crédito conta</div><div class="char-item__value">D+0</div></div>
-          <div class="char-item"><div class="char-item__label">Taxa adm.</div><div class="char-item__value highlight">1,60% a.a.</div></div>
-          <div class="char-item"><div class="char-item__label">Tax. performance</div><div class="char-item__value">Não cobra</div></div>
-          <div class="char-item"><div class="char-item__label">Resgate automático</div><div class="char-item__value">Sim <small>saldo devedor cc</small></div></div>
-          <div class="char-item"><div class="char-item__label">Carência</div><div class="char-item__value">Não possui</div></div>
-          <div class="char-item"><div class="char-item__label">Horário limite</div><div class="char-item__value">17h (Brasília)</div></div>
-          <div class="char-item"><div class="char-item__label">Perfil</div><div class="char-item__value">Conservador</div></div>
-          <div class="char-item"><div class="char-item__label">Início</div><div class="char-item__value">01/04/2003</div></div>
-        </div>
+            <div class="fund-card__chars">
+              <div class="char-item"><div class="char-item__label">Aplicação inicial</div><div class="char-item__value highlight">R$ 500,00</div></div>
+              <div class="char-item"><div class="char-item__label">Aplicações subsequentes</div><div class="char-item__value">R$ 100,00</div></div>
+              <div class="char-item"><div class="char-item__label">Resgate mínimo</div><div class="char-item__value">R$ 30,00</div></div>
+              <div class="char-item"><div class="char-item__label">Saldo mínimo remanescente</div><div class="char-item__value">R$ 50,00</div></div>
+              <div class="char-item"><div class="char-item__label">Cotização de aplicação</div><div class="char-item__value">D+0 — Fechamento</div></div>
+              <div class="char-item"><div class="char-item__label">Carência</div><div class="char-item__value">Não possui</div></div>
+              <div class="char-item"><div class="char-item__label">Cotização de resgate</div><div class="char-item__value">D+0 — Fechamento</div></div>
+              <div class="char-item"><div class="char-item__label">Crédito em conta corrente BRB</div><div class="char-item__value">D+0</div></div>
+              <div class="char-item"><div class="char-item__label">Resgate automático</div><div class="char-item__value">Sim — cobre saldo devedor</div></div>
+              <div class="char-item"><div class="char-item__label">Taxa de administração</div><div class="char-item__value highlight">1,60% a.a.</div></div>
+              <div class="char-item"><div class="char-item__label">Taxa de performance</div><div class="char-item__value">Não cobra</div></div>
+              <div class="char-item"><div class="char-item__label">Regime de cotização</div><div class="char-item__value">Fechamento de mercado</div></div>
+              <div class="char-item"><div class="char-item__label">Horário limite aplicação/resgate</div><div class="char-item__value">17h00 (horário de Brasília)</div></div>
+              <div class="char-item"><div class="char-item__label">Perfil investidor</div><div class="char-item__value">Conservador</div></div>
+              <div class="char-item"><div class="char-item__label">Termo de investimento</div><div class="char-item__value">—</div></div>
+              <div class="char-item"><div class="char-item__label">Funcionamento desde:</div><div class="char-item__value">01/04/2003</div></div>
+            </div>
+         
         <div class="fund-tax-notice"><strong>IR:</strong> Come-cotas semestral à alíquota vigente longo prazo. Resgate: tabela regressiva de curto prazo. IOF regressivo antes de 30 dias.</div>
       </div>
 
           <div class="fund-card__docs">
         <span class="fund-card__docs-label">📄 Documentos</span>
-        <a href="../pdfs/fundos/F31b_regulamento.pdf" target="_blank" class="doc-link">Regulamento</a>
-        <a href="../pdfs/fundos/F31b_informativo_mensal.pdf" target="_blank" class="doc-link">Informativo Mensal</a>
-        <a href="../pdfs/fundos/F31b_demonstracoes.pdf" target="_blank" class="doc-link">Demonstrações Financeiras</a>
-        <a href="../pdfs/fundos/F31b_form_autorizacao.pdf" target="_blank" class="doc-link">Form. Autorização Resgate Auto.</a>
-        <a href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank" class="doc-link">Política de Remuneração</a>
+        <a href="../pdfs/fundos/F31b_regulamento.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Regulamento
+            </a>
+        <a href="../pdfs/fundos/F31b_informativo_mensal.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Informativo Mensal
+            </a>
+        <a href="../pdfs/fundos/F31b_demonstracoes.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Demonstrações Financeiras
+            </a>
+        <a href="../pdfs/fundos/F31b_form_autorizacao.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Form. Autorização Resgate Auto.
+            </a>
+        <a href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Política de Remuneração
+            </a>
       </div>
 
           <div class="fund-card__meta">
@@ -357,7 +469,10 @@
             <div class="fund-card__full-name">BRB FIC de Fundos de Investimento em Renda Fixa DI Crédito Privado Longo Prazo Hiper Responsabilidade Limitada</div>
           </div>
           <div class="fund-card__header-right">
-            <span class="fund-card__badge bl">Risco Baixo</span>
+            <span class="fund-card__badge badge--low">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              Risco baixo
+            </span>
             <span class="fund-chevron" aria-hidden="true">
               <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
             </span>
@@ -367,30 +482,46 @@
         <div class="fund-card__collapse" id="collapse-brb-fic-firf-di-lp-hiper-rl-cod-13" role="region">
           <div class="fund-card__body">
         <p class="fund-card__desc">FIC de RF para investidores com aplicação inicial de R$ 25 mil. Busca retorno próximo ao CDI via cotas de fundos em ativos financeiros disponíveis no mercado. PF e PJ clientes BRB. Não admite alavancagem. ANBIMA: RF Duração Baixa Invest Grade.</p>
-        <div class="fund-card__chars">
-          <div class="char-item"><div class="char-item__label">Aplic. inicial</div><div class="char-item__value highlight">R$ 25.000,00</div></div>
-          <div class="char-item"><div class="char-item__label">Aplic. subseq.</div><div class="char-item__value">R$ 300,00</div></div>
-          <div class="char-item"><div class="char-item__label">Resgate mínimo</div><div class="char-item__value">R$ 300,00</div></div>
-          <div class="char-item"><div class="char-item__label">Saldo mínimo</div><div class="char-item__value">R$ 300,00</div></div>
-          <div class="char-item"><div class="char-item__label">Cota aplicação</div><div class="char-item__value">D+0 <small>Fechamento</small></div></div>
-          <div class="char-item"><div class="char-item__label">Cota resgate</div><div class="char-item__value">D+0 <small>Fechamento</small></div></div>
-          <div class="char-item"><div class="char-item__label">Crédito conta</div><div class="char-item__value">D+1</div></div>
-          <div class="char-item"><div class="char-item__label">Taxa adm.</div><div class="char-item__value highlight">1,00% a.a.</div></div>
-          <div class="char-item"><div class="char-item__label">Tax. performance</div><div class="char-item__value">Não cobra</div></div>
-          <div class="char-item"><div class="char-item__label">Carência</div><div class="char-item__value">Não possui</div></div>
-          <div class="char-item"><div class="char-item__label">Horário limite</div><div class="char-item__value">16h (Brasília)</div></div>
-          <div class="char-item"><div class="char-item__label">Perfil</div><div class="char-item__value">Conservador</div></div>
-          <div class="char-item"><div class="char-item__label">Início</div><div class="char-item__value">02/10/1995</div></div>
-        </div>
+            <div class="fund-card__chars">
+              <div class="char-item"><div class="char-item__label">Aplicação inicial</div><div class="char-item__value highlight">R$ 25.000,00</div></div>
+              <div class="char-item"><div class="char-item__label">Aplicações subsequentes</div><div class="char-item__value">R$ 300,00</div></div>
+              <div class="char-item"><div class="char-item__label">Resgate mínimo</div><div class="char-item__value">R$ 300,00</div></div>
+              <div class="char-item"><div class="char-item__label">Saldo mínimo remanescente</div><div class="char-item__value">R$ 300,00</div></div>
+              <div class="char-item"><div class="char-item__label">Cotização de aplicação</div><div class="char-item__value">D+0 — Fechamento</div></div>
+              <div class="char-item"><div class="char-item__label">Carência</div><div class="char-item__value">Não possui</div></div>
+              <div class="char-item"><div class="char-item__label">Cotização de resgate</div><div class="char-item__value">D+0 — Fechamento</div></div>
+              <div class="char-item"><div class="char-item__label">Crédito em conta corrente BRB</div><div class="char-item__value">D+1</div></div>
+              <div class="char-item"><div class="char-item__label">Resgate automático</div><div class="char-item__value">Não possui</div></div>
+              <div class="char-item"><div class="char-item__label">Taxa de administração</div><div class="char-item__value highlight">1,00% a.a.</div></div>
+              <div class="char-item"><div class="char-item__label">Taxa de performance</div><div class="char-item__value">Não cobra</div></div>
+              <div class="char-item"><div class="char-item__label">Regime de cotização</div><div class="char-item__value">Fechamento de mercado</div></div>
+              <div class="char-item"><div class="char-item__label">Horário limite aplicação/resgate</div><div class="char-item__value">16h00 (horário de Brasília)</div></div>
+              <div class="char-item"><div class="char-item__label">Perfil investidor</div><div class="char-item__value">Conservador</div></div>
+              <div class="char-item"><div class="char-item__label">Termo de investimento</div><div class="char-item__value">—</div></div>
+              <div class="char-item"><div class="char-item__label">Funcionamento desde:</div><div class="char-item__value">02/10/1995</div></div>
+            </div>
+         
         <div class="fund-tax-notice"><strong>IR:</strong> Come-cotas semestral à 15%. Resgate: tabela regressiva de longo prazo. IOF regressivo antes de 30 dias.</div>
       </div>
 
           <div class="fund-card__docs">
         <span class="fund-card__docs-label">📄 Documentos</span>
-        <a href="../pdfs/fundos/F13_regulamento.pdf" target="_blank" class="doc-link">Regulamento</a>
-        <a href="../pdfs/fundos/F13_informativo_mensal.pdf" target="_blank" class="doc-link">Informativo Mensal</a>
-        <a href="../pdfs/fundos/F13_demonstracoes.pdf" target="_blank" class="doc-link">Demonstrações Financeiras</a>
-        <a href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank" class="doc-link">Política de Remuneração</a>
+        <a href="../pdfs/fundos/F13_regulamento.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Regulamento
+            </a>
+        <a href="../pdfs/fundos/F13_informativo_mensal.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Informativo Mensal
+            </a>
+        <a href="../pdfs/fundos/F13_demonstracoes.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Demonstrações Financeiras
+            </a>
+        <a href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Política de Remuneração
+            </a>
       </div>
 
           <div class="fund-card__meta">
@@ -409,7 +540,10 @@
             <div class="fund-card__full-name">BRB FIC de Fundos de Investimento em Renda Fixa Longo Prazo IMA-B Responsabilidade Limitada</div>
           </div>
           <div class="fund-card__header-right">
-            <span class="fund-card__badge bm">Risco Médio</span>
+            <span class="fund-card__badge badge--medium">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 9v4m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg>
+              Risco médio
+            </span>
             <span class="fund-chevron" aria-hidden="true">
               <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
             </span>
@@ -419,30 +553,46 @@
         <div class="fund-card__collapse" id="collapse-brb-fic-firf-lp-ima-b-rl-cod-44" role="region">
           <div class="fund-card__body">
         <p class="fund-card__desc">Acompanha o <strong>IMA-B</strong> (IPCA + juros reais). Investimento exclusivo em Títulos Públicos Federais com prazo médio acima de 365 dias. Ideal para proteção inflacionária. Voltado a grandes investidores clientes BRB. ANBIMA: RF Indexados.</p>
-        <div class="fund-card__chars">
-          <div class="char-item"><div class="char-item__label">Aplic. inicial</div><div class="char-item__value highlight">R$ 50.000,00</div></div>
-          <div class="char-item"><div class="char-item__label">Aplic. subseq.</div><div class="char-item__value">R$ 5.000,00</div></div>
-          <div class="char-item"><div class="char-item__label">Resgate mínimo</div><div class="char-item__value">R$ 5.000,00</div></div>
-          <div class="char-item"><div class="char-item__label">Saldo mínimo</div><div class="char-item__value">R$ 5.000,00</div></div>
-          <div class="char-item"><div class="char-item__label">Cota aplicação</div><div class="char-item__value">D+0 <small>Fechamento</small></div></div>
-          <div class="char-item"><div class="char-item__label">Cota resgate</div><div class="char-item__value">D+0 <small>Fechamento</small></div></div>
-          <div class="char-item"><div class="char-item__label">Crédito conta</div><div class="char-item__value">D+1</div></div>
-          <div class="char-item"><div class="char-item__label">Taxa adm.</div><div class="char-item__value highlight">0,25% a.a.</div></div>
-          <div class="char-item"><div class="char-item__label">Tax. performance</div><div class="char-item__value">Não cobra</div></div>
-          <div class="char-item"><div class="char-item__label">Índice referência</div><div class="char-item__value">IMA-B</div></div>
-          <div class="char-item"><div class="char-item__label">Horário limite</div><div class="char-item__value">16h (Brasília)</div></div>
-          <div class="char-item"><div class="char-item__label">Perfil</div><div class="char-item__value">Moderado</div></div>
-          <div class="char-item"><div class="char-item__label">Início</div><div class="char-item__value">01/04/2010</div></div>
-        </div>
+            <div class="fund-card__chars">
+              <div class="char-item"><div class="char-item__label">Aplicação inicial</div><div class="char-item__value highlight">R$ 50.000,00</div></div>
+              <div class="char-item"><div class="char-item__label">Aplicações subsequentes</div><div class="char-item__value">R$ 5.000,00</div></div>
+              <div class="char-item"><div class="char-item__label">Resgate mínimo</div><div class="char-item__value">R$ 5.000,00</div></div>
+              <div class="char-item"><div class="char-item__label">Saldo mínimo remanescente</div><div class="char-item__value">R$ 5.000,00</div></div>
+              <div class="char-item"><div class="char-item__label">Cotização de aplicação</div><div class="char-item__value">D+0 — Fechamento</div></div>
+              <div class="char-item"><div class="char-item__label">Carência</div><div class="char-item__value">Não possui</div></div>
+              <div class="char-item"><div class="char-item__label">Cotização de resgate</div><div class="char-item__value">D+0 — Fechamento</div></div>
+              <div class="char-item"><div class="char-item__label">Crédito em conta corrente BRB</div><div class="char-item__value">D+1</div></div>
+              <div class="char-item"><div class="char-item__label">Resgate automático</div><div class="char-item__value">Não possui</div></div>
+              <div class="char-item"><div class="char-item__label">Taxa de administração</div><div class="char-item__value highlight">0,25% a.a.</div></div>
+              <div class="char-item"><div class="char-item__label">Taxa de performance</div><div class="char-item__value">Não cobra</div></div>
+              <div class="char-item"><div class="char-item__label">Regime de cotização</div><div class="char-item__value">Fechamento de mercado</div></div>
+              <div class="char-item"><div class="char-item__label">Horário limite aplicação/resgate</div><div class="char-item__value">16h00 (horário de Brasília)</div></div>
+              <div class="char-item"><div class="char-item__label">Perfil investidor</div><div class="char-item__value">Moderado</div></div>
+              <div class="char-item"><div class="char-item__label">Termo de investimento</div><div class="char-item__value">—</div></div>
+              <div class="char-item"><div class="char-item__label">Funcionamento desde:</div><div class="char-item__value">01/04/2010</div></div>
+            </div>
+         
         <div class="fund-tax-notice"><strong>IR:</strong> Come-cotas semestral à 15%. Resgate: tabela regressiva de longo prazo. IOF regressivo antes de 30 dias.</div>
       </div>
 
           <div class="fund-card__docs">
         <span class="fund-card__docs-label">📄 Documentos</span>
-        <a href="../pdfs/fundos/F44_regulamento.pdf" target="_blank" class="doc-link">Regulamento</a>
-        <a href="../pdfs/fundos/F44_informativo_mensal.pdf" target="_blank" class="doc-link">Informativo Mensal</a>
-        <a href="../pdfs/fundos/F44_demonstracoes.pdf" target="_blank" class="doc-link">Demonstrações Financeiras</a>
-        <a href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank" class="doc-link">Política de Remuneração</a>
+        <a href="../pdfs/fundos/F44_regulamento.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Regulamento
+            </a>
+        <a href="../pdfs/fundos/F44_informativo_mensal.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Informativo Mensal
+            </a>
+        <a href="../pdfs/fundos/F44_demonstracoes.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Demonstrações Financeiras
+            </a>
+        <a href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Política de Remuneração
+            </a>
       </div>
 
           <div class="fund-card__meta">
@@ -461,7 +611,10 @@
             <div class="fund-card__full-name">BRB Millenium FIC de Fundos de Investimento em Renda Fixa Longo Prazo Responsabilidade Limitada</div>
           </div>
           <div class="fund-card__header-right">
-            <span class="fund-card__badge bvl">✓ Risco Muito Baixo</span>
+            <span class="fund-card__badge badge--very-low">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              Risco muito baixo
+            </span>
             <span class="fund-chevron" aria-hidden="true">
               <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
             </span>
@@ -471,30 +624,46 @@
         <div class="fund-card__collapse" id="collapse-brb-millenium-fic-firf-lp-rl-cod-35" role="region">
           <div class="fund-card__body">
         <p class="fund-card__desc">FIC voltado a PF e PJ clientes BRB. Aplica em cotas de fundos pós ou pré-fixados (aceitos títulos sintetizados via derivativos). Alta aplicação inicial com taxa de administração reduzida. ANBIMA: RF Duração Baixa Soberano.</p>
-        <div class="fund-card__chars">
-          <div class="char-item"><div class="char-item__label">Aplic. inicial</div><div class="char-item__value highlight">R$ 50.000,00</div></div>
-          <div class="char-item"><div class="char-item__label">Aplic. subseq.</div><div class="char-item__value">R$ 1.000,00</div></div>
-          <div class="char-item"><div class="char-item__label">Resgate mínimo</div><div class="char-item__value">R$ 1.000,00</div></div>
-          <div class="char-item"><div class="char-item__label">Saldo mínimo</div><div class="char-item__value">R$ 2.000,00</div></div>
-          <div class="char-item"><div class="char-item__label">Cota aplicação</div><div class="char-item__value">D+0 <small>Fechamento</small></div></div>
-          <div class="char-item"><div class="char-item__label">Cota resgate</div><div class="char-item__value">D+0 <small>Fechamento</small></div></div>
-          <div class="char-item"><div class="char-item__label">Crédito conta</div><div class="char-item__value">D+0</div></div>
-          <div class="char-item"><div class="char-item__label">Taxa adm.</div><div class="char-item__value highlight">0,40% a.a.</div></div>
-          <div class="char-item"><div class="char-item__label">Tax. performance</div><div class="char-item__value">Não cobra</div></div>
-          <div class="char-item"><div class="char-item__label">Carência</div><div class="char-item__value">Não possui</div></div>
-          <div class="char-item"><div class="char-item__label">Horário limite</div><div class="char-item__value">16h (Brasília)</div></div>
-          <div class="char-item"><div class="char-item__label">Perfil</div><div class="char-item__value">Conservador</div></div>
-          <div class="char-item"><div class="char-item__label">Início</div><div class="char-item__value">18/09/2007</div></div>
-        </div>
+            <div class="fund-card__chars">
+              <div class="char-item"><div class="char-item__label">Aplicação inicial</div><div class="char-item__value highlight">R$ 50.000,00</div></div>
+              <div class="char-item"><div class="char-item__label">Aplicações subsequentes</div><div class="char-item__value">R$ 1.000,00</div></div>
+              <div class="char-item"><div class="char-item__label">Resgate mínimo</div><div class="char-item__value">R$ 1.000,00</div></div>
+              <div class="char-item"><div class="char-item__label">Saldo mínimo remanescente</div><div class="char-item__value">R$ 2.000,00</div></div>
+              <div class="char-item"><div class="char-item__label">Cotização de aplicação</div><div class="char-item__value">D+0 — Fechamento</div></div>
+              <div class="char-item"><div class="char-item__label">Carência</div><div class="char-item__value">Não possui</div></div>
+              <div class="char-item"><div class="char-item__label">Cotização de resgate</div><div class="char-item__value">D+0 — Fechamento</div></div>
+              <div class="char-item"><div class="char-item__label">Crédito em conta corrente BRB</div><div class="char-item__value">D+0</div></div>
+              <div class="char-item"><div class="char-item__label">Resgate automático</div><div class="char-item__value">Não possui</div></div>
+              <div class="char-item"><div class="char-item__label">Taxa de administração</div><div class="char-item__value highlight">0,40% a.a.</div></div>
+              <div class="char-item"><div class="char-item__label">Taxa de performance</div><div class="char-item__value">Não cobra</div></div>
+              <div class="char-item"><div class="char-item__label">Regime de cotização</div><div class="char-item__value">Fechamento de mercado</div></div>
+              <div class="char-item"><div class="char-item__label">Horário limite aplicação/resgate</div><div class="char-item__value">16h00 (horário de Brasília)</div></div>
+              <div class="char-item"><div class="char-item__label">Perfil investidor</div><div class="char-item__value">Conservador</div></div>
+              <div class="char-item"><div class="char-item__label">Termo de investimento</div><div class="char-item__value">—</div></div>
+              <div class="char-item"><div class="char-item__label">Funcionamento desde:</div><div class="char-item__value">18/09/2007</div></div>
+            </div>
+        
         <div class="fund-tax-notice"><strong>IR:</strong> Come-cotas semestral à 15%. Resgate: tabela regressiva de longo prazo. IOF regressivo antes de 30 dias.</div>
       </div>
 
           <div class="fund-card__docs">
         <span class="fund-card__docs-label">📄 Documentos</span>
-        <a href="../pdfs/fundos/F35_regulamento.pdf" target="_blank" class="doc-link">Regulamento</a>
-        <a href="../pdfs/fundos/F35_informativo_mensal.pdf" target="_blank" class="doc-link">Informativo Mensal</a>
-        <a href="../pdfs/fundos/F35_demonstracoes.pdf" target="_blank" class="doc-link">Demonstrações Financeiras</a>
-        <a href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank" class="doc-link">Política de Remuneração</a>
+        <a href="../pdfs/fundos/F35_regulamento.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Regulamento
+            </a>
+        <a href="../pdfs/fundos/F35_informativo_mensal.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Informativo Mensal
+            </a>
+        <a href="../pdfs/fundos/F35_demonstracoes.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Demonstrações Financeiras
+            </a>
+        <a href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Política de Remuneração
+            </a>
       </div>
 
           <div class="fund-card__meta">
@@ -513,7 +682,10 @@
             <div class="fund-card__full-name">BRB FIC de Fundos de Investimento em Renda Fixa DI Mega Longo Prazo Responsabilidade Limitada</div>
           </div>
           <div class="fund-card__header-right">
-            <span class="fund-card__badge bl">Risco Baixo</span>
+            <span class="fund-card__badge badge--low">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              Risco baixo
+            </span>
             <span class="fund-chevron" aria-hidden="true">
               <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
             </span>
@@ -523,30 +695,46 @@
         <div class="fund-card__collapse" id="collapse-brb-fic-firf-di-mega-lp-rl-cod-65" role="region">
           <div class="fund-card__body">
         <p class="fund-card__desc">FIC de RF para investidores de grande porte. Busca retorno próximo ao CDI via cotas de fundos em ativos financeiros. Não admite alavancagem. PF e PJ clientes BRB. Saldo mínimo de R$ 50 mil após aplicação inicial de R$ 100 mil. ANBIMA: RF Duração Baixa Invest Grade.</p>
-        <div class="fund-card__chars">
-          <div class="char-item"><div class="char-item__label">Aplic. inicial</div><div class="char-item__value highlight">R$ 100.000,00</div></div>
-          <div class="char-item"><div class="char-item__label">Aplic. subseq.</div><div class="char-item__value">R$ 300,00</div></div>
-          <div class="char-item"><div class="char-item__label">Resgate mínimo</div><div class="char-item__value">R$ 300,00</div></div>
-          <div class="char-item"><div class="char-item__label">Saldo mínimo</div><div class="char-item__value">R$ 50.000,00</div></div>
-          <div class="char-item"><div class="char-item__label">Cota aplicação</div><div class="char-item__value">D+0 <small>Fechamento</small></div></div>
-          <div class="char-item"><div class="char-item__label">Cota resgate</div><div class="char-item__value">D+0 <small>Fechamento</small></div></div>
-          <div class="char-item"><div class="char-item__label">Crédito conta</div><div class="char-item__value">D+1</div></div>
-          <div class="char-item"><div class="char-item__label">Taxa adm.</div><div class="char-item__value highlight">0,60% a.a.</div></div>
-          <div class="char-item"><div class="char-item__label">Tax. performance</div><div class="char-item__value">Não cobra</div></div>
-          <div class="char-item"><div class="char-item__label">Carência</div><div class="char-item__value">Não possui</div></div>
-          <div class="char-item"><div class="char-item__label">Horário limite</div><div class="char-item__value">16h (Brasília)</div></div>
-          <div class="char-item"><div class="char-item__label">Perfil</div><div class="char-item__value">Conservador</div></div>
-          <div class="char-item"><div class="char-item__label">Início</div><div class="char-item__value">16/01/2014</div></div>
-        </div>
+            <div class="fund-card__chars">
+              <div class="char-item"><div class="char-item__label">Aplicação inicial</div><div class="char-item__value highlight">R$ 100.000,00</div></div>
+              <div class="char-item"><div class="char-item__label">Aplicações subsequentes</div><div class="char-item__value">R$ 300,00</div></div>
+              <div class="char-item"><div class="char-item__label">Resgate mínimo</div><div class="char-item__value">R$ 300,00</div></div>
+              <div class="char-item"><div class="char-item__label">Saldo mínimo remanescente</div><div class="char-item__value">R$ 50.000,00</div></div>
+              <div class="char-item"><div class="char-item__label">Cotização de aplicação</div><div class="char-item__value">D+0 — Fechamento</div></div>
+              <div class="char-item"><div class="char-item__label">Carência</div><div class="char-item__value">Não possui</div></div>
+              <div class="char-item"><div class="char-item__label">Cotização de resgate</div><div class="char-item__value">D+0 — Fechamento</div></div>
+              <div class="char-item"><div class="char-item__label">Crédito em conta corrente BRB</div><div class="char-item__value">D+1</div></div>
+              <div class="char-item"><div class="char-item__label">Resgate automático</div><div class="char-item__value">Não possui</div></div>
+              <div class="char-item"><div class="char-item__label">Taxa de administração</div><div class="char-item__value highlight">0,60% a.a.</div></div>
+              <div class="char-item"><div class="char-item__label">Taxa de performance</div><div class="char-item__value">Não cobra</div></div>
+              <div class="char-item"><div class="char-item__label">Regime de cotização</div><div class="char-item__value">Fechamento de mercado</div></div>
+              <div class="char-item"><div class="char-item__label">Horário limite aplicação/resgate</div><div class="char-item__value">16h00 (horário de Brasília)</div></div>
+              <div class="char-item"><div class="char-item__label">Perfil investidor</div><div class="char-item__value">Conservador</div></div>
+              <div class="char-item"><div class="char-item__label">Termo de investimento</div><div class="char-item__value">—</div></div>
+              <div class="char-item"><div class="char-item__label">Funcionamento desde:</div><div class="char-item__value">16/01/2014</div></div>
+            </div>
+         
         <div class="fund-tax-notice"><strong>IR:</strong> Come-cotas semestral à 15%. Resgate: tabela regressiva de longo prazo. IOF regressivo antes de 30 dias.</div>
       </div>
 
           <div class="fund-card__docs">
         <span class="fund-card__docs-label">📄 Documentos</span>
-        <a href="../pdfs/fundos/F65_regulamento.pdf" target="_blank" class="doc-link">Regulamento</a>
-        <a href="../pdfs/fundos/F65_informativo_mensal.pdf" target="_blank" class="doc-link">Informativo Mensal</a>
-        <a href="../pdfs/fundos/F65_demonstracoes.pdf" target="_blank" class="doc-link">Demonstrações Financeiras</a>
-        <a href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank" class="doc-link">Política de Remuneração</a>
+        <a href="../pdfs/fundos/F65_regulamento.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Regulamento
+            </a>
+        <a href="../pdfs/fundos/F65_informativo_mensal.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Informativo Mensal
+            </a>
+        <a href="../pdfs/fundos/F65_demonstracoes.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Demonstrações Financeiras
+            </a>
+        <a href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Política de Remuneração
+            </a>
       </div>
 
           <div class="fund-card__meta">
@@ -565,7 +753,10 @@
             <div class="fund-card__full-name">BRB Capital FIC de Fundos de Investimento em Renda Fixa Longo Prazo Responsabilidade Limitada</div>
           </div>
           <div class="fund-card__header-right">
-            <span class="fund-card__badge bvl">✓ Risco Muito Baixo</span>
+            <span class="fund-card__badge badge--very-low">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              Risco muito baixo
+            </span>
             <span class="fund-chevron" aria-hidden="true">
               <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
             </span>
@@ -575,30 +766,46 @@
         <div class="fund-card__collapse" id="collapse-brb-capital-fic-firf-lp-rl-cod-40" role="region">
           <div class="fund-card__body">
         <p class="fund-card__desc">Gestão ativa no mercado de juros pós ou pré-fixados e/ou índice de preços. Aplica exclusivamente em Títulos Públicos Federais, prazo médio superior a 365 dias. PF e PJ em geral. Saldo mínimo de apenas R$ 1,00. ANBIMA: RF Duração Baixa Soberano.</p>
-        <div class="fund-card__chars">
-          <div class="char-item"><div class="char-item__label">Aplic. inicial</div><div class="char-item__value highlight">R$ 100,00</div></div>
-          <div class="char-item"><div class="char-item__label">Aplic. subseq.</div><div class="char-item__value">R$ 100,00</div></div>
-          <div class="char-item"><div class="char-item__label">Resgate mínimo</div><div class="char-item__value">R$ 100,00</div></div>
-          <div class="char-item"><div class="char-item__label">Saldo mínimo</div><div class="char-item__value">R$ 1,00</div></div>
-          <div class="char-item"><div class="char-item__label">Cota aplicação</div><div class="char-item__value">D+0 <small>Fechamento</small></div></div>
-          <div class="char-item"><div class="char-item__label">Cota resgate</div><div class="char-item__value">D+0 <small>Fechamento</small></div></div>
-          <div class="char-item"><div class="char-item__label">Crédito conta</div><div class="char-item__value">D+0</div></div>
-          <div class="char-item"><div class="char-item__label">Taxa adm.</div><div class="char-item__value highlight">0,20% a.a.</div></div>
-          <div class="char-item"><div class="char-item__label">Tax. performance</div><div class="char-item__value">Não cobra</div></div>
-          <div class="char-item"><div class="char-item__label">Carência</div><div class="char-item__value">Não possui</div></div>
-          <div class="char-item"><div class="char-item__label">Horário limite</div><div class="char-item__value">16h (Brasília)</div></div>
-          <div class="char-item"><div class="char-item__label">Perfil</div><div class="char-item__value">Conservador</div></div>
-          <div class="char-item"><div class="char-item__label">Início</div><div class="char-item__value">16/06/2009</div></div>
-        </div>
+            <div class="fund-card__chars">
+              <div class="char-item"><div class="char-item__label">Aplicação inicial</div><div class="char-item__value highlight">R$ 100,00</div></div>
+              <div class="char-item"><div class="char-item__label">Aplicações subsequentes</div><div class="char-item__value">R$ 100,00</div></div>
+              <div class="char-item"><div class="char-item__label">Resgate mínimo</div><div class="char-item__value">R$ 100,00</div></div>
+              <div class="char-item"><div class="char-item__label">Saldo mínimo remanescente</div><div class="char-item__value">R$ 1,00</div></div>
+              <div class="char-item"><div class="char-item__label">Cotização de aplicação</div><div class="char-item__value">D+0 — Fechamento</div></div>
+              <div class="char-item"><div class="char-item__label">Carência</div><div class="char-item__value">Não possui</div></div>
+              <div class="char-item"><div class="char-item__label">Cotização de resgate</div><div class="char-item__value">D+0 — Fechamento</div></div>
+              <div class="char-item"><div class="char-item__label">Crédito em conta corrente BRB</div><div class="char-item__value">D+0</div></div>
+              <div class="char-item"><div class="char-item__label">Resgate automático</div><div class="char-item__value">Não possui</div></div>
+              <div class="char-item"><div class="char-item__label">Taxa de administração</div><div class="char-item__value highlight">0,20% a.a.</div></div>
+              <div class="char-item"><div class="char-item__label">Taxa de performance</div><div class="char-item__value">Não cobra</div></div>
+              <div class="char-item"><div class="char-item__label">Regime de cotização</div><div class="char-item__value">Fechamento de mercado</div></div>
+              <div class="char-item"><div class="char-item__label">Horário limite aplicação/resgate</div><div class="char-item__value">16h00 (horário de Brasília)</div></div>
+              <div class="char-item"><div class="char-item__label">Perfil investidor</div><div class="char-item__value">Conservador</div></div>
+              <div class="char-item"><div class="char-item__label">Termo de investimento</div><div class="char-item__value">—</div></div>
+              <div class="char-item"><div class="char-item__label">Funcionamento desde:</div><div class="char-item__value">16/06/2009</div></div>
+            </div>
+        
         <div class="fund-tax-notice"><strong>IR:</strong> Come-cotas semestral à 15%. Resgate: tabela regressiva de longo prazo. IOF regressivo antes de 30 dias.</div>
       </div>
 
           <div class="fund-card__docs">
         <span class="fund-card__docs-label">📄 Documentos</span>
-        <a href="../pdfs/fundos/F40_regulamento.pdf" target="_blank" class="doc-link">Regulamento</a>
-        <a href="../pdfs/fundos/F40_informativo_mensal.pdf" target="_blank" class="doc-link">Informativo Mensal</a>
-        <a href="../pdfs/fundos/F40_demonstracoes.pdf" target="_blank" class="doc-link">Demonstrações Financeiras</a>
-        <a href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank" class="doc-link">Política de Remuneração</a>
+        <a href="../pdfs/fundos/F40_regulamento.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Regulamento
+            </a>
+        <a href="../pdfs/fundos/F40_informativo_mensal.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Informativo Mensal
+            </a>
+        <a href="../pdfs/fundos/F40_demonstracoes.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Demonstrações Financeiras
+            </a>
+        <a href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Política de Remuneração
+            </a>
       </div>
 
           <div class="fund-card__meta">
@@ -617,7 +824,10 @@
             <div class="fund-card__full-name">BRB Rende Fácil Fundo de Investimento em Renda Fixa Curto Prazo Automático Responsabilidade Limitada</div>
           </div>
           <div class="fund-card__header-right">
-            <span class="fund-card__badge bvl">✓ Risco Muito Baixo</span>
+            <span class="fund-card__badge badge--very-low">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              Risco muito baixo
+            </span>
             <span class="fund-chevron" aria-hidden="true">
               <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
             </span>
@@ -627,29 +837,46 @@
         <div class="fund-card__collapse" id="collapse-brb-rende-facil-firf-cp-automatico-rl-f1" role="region">
           <div class="fund-card__body">
         <p class="fund-card__desc">Gestão passiva acompanhando SELIC/CDI via títulos públicos. Destinado exclusivamente a <strong>pessoas jurídicas</strong> clientes BRB. Curto prazo com liquidez D+0. Aplicação mínima de R$ 1,00 com acesso simplificado via Term de Adesão. ANBIMA: RF Duração Baixa Soberano.</p>
-        <div class="fund-card__chars">
-          <div class="char-item"><div class="char-item__label">Aplic. inicial</div><div class="char-item__value highlight">R$ 1,00</div></div>
-          <div class="char-item"><div class="char-item__label">Aplic. subseq.</div><div class="char-item__value">R$ 1,00</div></div>
-          <div class="char-item"><div class="char-item__label">Resgate mínimo</div><div class="char-item__value">R$ 1,00</div></div>
-          <div class="char-item"><div class="char-item__label">Saldo mínimo</div><div class="char-item__value">R$ 1,00</div></div>
-          <div class="char-item"><div class="char-item__label">Cota aplicação</div><div class="char-item__value">D+0 <small>Fechamento</small></div></div>
-          <div class="char-item"><div class="char-item__label">Cota resgate</div><div class="char-item__value">D+0 <small>Fechamento</small></div></div>
-          <div class="char-item"><div class="char-item__label">Crédito conta</div><div class="char-item__value">D+0</div></div>
-          <div class="char-item"><div class="char-item__label">Tax. performance</div><div class="char-item__value">Não cobra</div></div>
-          <div class="char-item"><div class="char-item__label">Carência</div><div class="char-item__value">Não possui</div></div>
-          <div class="char-item"><div class="char-item__label">Público-alvo</div><div class="char-item__value">Pessoas Jurídicas</div></div>
-          <div class="char-item"><div class="char-item__label">Horário limite</div><div class="char-item__value">16h (Brasília)</div></div>
-          <div class="char-item"><div class="char-item__label">Início</div><div class="char-item__value">30/04/2012</div></div>
-        </div>
+            <div class="fund-card__chars">
+              <div class="char-item"><div class="char-item__label">Aplicação inicial</div><div class="char-item__value highlight">R$ 1,00</div></div>
+              <div class="char-item"><div class="char-item__label">Aplicações subsequentes</div><div class="char-item__value">R$ 1,00</div></div>
+              <div class="char-item"><div class="char-item__label">Resgate mínimo</div><div class="char-item__value">R$ 1,00</div></div>
+              <div class="char-item"><div class="char-item__label">Saldo mínimo remanescente</div><div class="char-item__value">R$ 1,00</div></div>
+              <div class="char-item"><div class="char-item__label">Cotização de aplicação</div><div class="char-item__value">D+0 — Fechamento</div></div>
+              <div class="char-item"><div class="char-item__label">Carência</div><div class="char-item__value">Não possui</div></div>
+              <div class="char-item"><div class="char-item__label">Cotização de resgate</div><div class="char-item__value">D+0 — Fechamento</div></div>
+              <div class="char-item"><div class="char-item__label">Crédito em conta corrente BRB</div><div class="char-item__value">D+0</div></div>
+              <div class="char-item"><div class="char-item__label">Resgate automático</div><div class="char-item__value">—</div></div>
+              <div class="char-item"><div class="char-item__label">Taxa de administração</div><div class="char-item__value">—</div></div>
+              <div class="char-item"><div class="char-item__label">Taxa de performance</div><div class="char-item__value">Não cobra</div></div>
+              <div class="char-item"><div class="char-item__label">Regime de cotização</div><div class="char-item__value">Fechamento de mercado</div></div>
+              <div class="char-item"><div class="char-item__label">Horário limite aplicação/resgate</div><div class="char-item__value">16h00 (horário de Brasília)</div></div>
+              <div class="char-item"><div class="char-item__label">Perfil investidor</div><div class="char-item__value">Pessoas Jurídicas</div></div>
+              <div class="char-item"><div class="char-item__label">Termo de investimento</div><div class="char-item__value">Termo de Adesão</div></div>
+              <div class="char-item"><div class="char-item__label">Funcionamento desde:</div><div class="char-item__value">30/04/2012</div></div>
+            </div>
+         
         <div class="fund-tax-notice"><strong>IR:</strong> Come-cotas semestral à 20% (curto prazo). Resgate: tabela regressiva de curto prazo. IOF regressivo antes de 30 dias.</div>
       </div>
 
           <div class="fund-card__docs">
         <span class="fund-card__docs-label">📄 Documentos</span>
-        <a href="../pdfs/fundos/F14_regulamento.pdf" target="_blank" class="doc-link">Regulamento</a>
-        <a href="../pdfs/fundos/F14_informativo_mensal.pdf" target="_blank" class="doc-link">Informativo Mensal</a>
-        <a href="../pdfs/fundos/F14_demonstracoes.pdf" target="_blank" class="doc-link">Demonstrações Financeiras</a>
-        <a href="../pdfs/fundos/F14_termo_adesao.pdf" target="_blank" class="doc-link">Termo de Adesão</a>
+        <a href="../pdfs/fundos/F14_regulamento.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Regulamento
+            </a>
+        <a href="../pdfs/fundos/F14_informativo_mensal.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Informativo Mensal
+            </a>
+        <a href="../pdfs/fundos/F14_demonstracoes.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Demonstrações Financeiras
+            </a>
+        <a href="../pdfs/fundos/F14_termo_adesao.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Termo de Adesão
+            </a>
       </div>
 
           <div class="fund-card__meta">
@@ -668,7 +895,10 @@
             <div class="fund-card__full-name">BRB Crédito Corporativo Fundo de Investimento em Renda Fixa Crédito Privado Longo Prazo Responsabilidade Limitada</div>
           </div>
           <div class="fund-card__header-right">
-            <span class="fund-card__badge bl">Risco Baixo</span>
+            <span class="fund-card__badge badge--low">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              Risco baixo
+            </span>
             <span class="fund-chevron" aria-hidden="true">
               <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
             </span>
@@ -678,24 +908,42 @@
         <div class="fund-card__collapse" id="collapse-brb-credito-corporativo-firf-cred-privad" role="region">
           <div class="fund-card__body">
         <p class="fund-card__desc">Busca <strong>superar o CDI</strong> via ativos pré, pós-fixados ou índice de preços. Público-alvo exclusivo: <strong>fundos de investimento administrados/geridos pela BRB DTVM</strong>. Estratégia de crédito privado. ANBIMA: RF Duração Baixa Invest Grade.</p>
-        <div class="fund-card__chars">
-          <div class="char-item"><div class="char-item__label">Aplic. inicial</div><div class="char-item__value highlight">R$ 100,00</div></div>
-          <div class="char-item"><div class="char-item__label">Cota aplicação</div><div class="char-item__value">D+0 <small>Fechamento</small></div></div>
-          <div class="char-item"><div class="char-item__label">Cota resgate</div><div class="char-item__value">D+0 <small>Fechamento</small></div></div>
-          <div class="char-item"><div class="char-item__label">Crédito conta</div><div class="char-item__value">D+0</div></div>
-          <div class="char-item"><div class="char-item__label">Tax. performance</div><div class="char-item__value">Não cobra</div></div>
-          <div class="char-item"><div class="char-item__label">Carência</div><div class="char-item__value">Não possui</div></div>
-          <div class="char-item"><div class="char-item__label">Horário limite</div><div class="char-item__value">16h (Brasília)</div></div>
-          <div class="char-item"><div class="char-item__label">Público-alvo</div><div class="char-item__value">Fundos BRB DTVM</div></div>
-        </div>
+            <div class="fund-card__chars">
+              <div class="char-item"><div class="char-item__label">Aplicação inicial</div><div class="char-item__value highlight">R$ 100,00</div></div>
+              <div class="char-item"><div class="char-item__label">Aplicações subsequentes</div><div class="char-item__value">—</div></div>
+              <div class="char-item"><div class="char-item__label">Resgate mínimo</div><div class="char-item__value">—</div></div>
+              <div class="char-item"><div class="char-item__label">Saldo mínimo remanescente</div><div class="char-item__value">—</div></div>
+              <div class="char-item"><div class="char-item__label">Cotização de aplicação</div><div class="char-item__value">D+0 — Fechamento</div></div>
+              <div class="char-item"><div class="char-item__label">Carência</div><div class="char-item__value">Não possui</div></div>
+              <div class="char-item"><div class="char-item__label">Cotização de resgate</div><div class="char-item__value">D+0 — Fechamento</div></div>
+              <div class="char-item"><div class="char-item__label">Crédito em conta corrente BRB</div><div class="char-item__value">D+0</div></div>
+              <div class="char-item"><div class="char-item__label">Resgate automático</div><div class="char-item__value">—</div></div>
+              <div class="char-item"><div class="char-item__label">Taxa de administração</div><div class="char-item__value">—</div></div>
+              <div class="char-item"><div class="char-item__label">Taxa de performance</div><div class="char-item__value">Não cobra</div></div>
+              <div class="char-item"><div class="char-item__label">Regime de cotização</div><div class="char-item__value">Fechamento de mercado</div></div>
+              <div class="char-item"><div class="char-item__label">Horário limite aplicação/resgate</div><div class="char-item__value">16h00 (horário de Brasília)</div></div>
+              <div class="char-item"><div class="char-item__label">Perfil investidor</div><div class="char-item__value">Fundos BRB DTVM</div></div>
+              <div class="char-item"><div class="char-item__label">Termo de investimento</div><div class="char-item__value">—</div></div>
+              <div class="char-item"><div class="char-item__label">Funcionamento desde:</div><div class="char-item__value">—</div></div>
+            </div>
+         
         <div class="fund-tax-notice"><strong>IR:</strong> Come-cotas semestral. Resgate: tabela regressiva. IOF regressivo antes de 30 dias.</div>
       </div>
 
           <div class="fund-card__docs">
         <span class="fund-card__docs-label">📄 Documentos</span>
-        <a href="../pdfs/fundos/F57_regulamento.pdf" target="_blank" class="doc-link">Regulamento</a>
-        <a href="../pdfs/fundos/F57_informativo_mensal.pdf" target="_blank" class="doc-link">Informativo Mensal</a>
-        <a href="../pdfs/fundos/F57_demonstracoes.pdf" target="_blank" class="doc-link">Demonstrações Financeiras</a>
+        <a href="../pdfs/fundos/F57_regulamento.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Regulamento
+            </a>
+        <a href="../pdfs/fundos/F57_informativo_mensal.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Informativo Mensal
+            </a>
+        <a href="../pdfs/fundos/F57_demonstracoes.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Demonstrações Financeiras
+            </a>
       </div>
 
           <div class="fund-card__meta">
@@ -714,7 +962,10 @@
             <div class="fund-card__full-name">BRB Fundo de Investimento em Renda Fixa IMA-B Longo Prazo Responsabilidade Limitada</div>
           </div>
           <div class="fund-card__header-right">
-            <span class="fund-card__badge bm">Risco Médio</span>
+            <span class="fund-card__badge badge--medium">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 9v4m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg>
+              Risco médio
+            </span>
             <span class="fund-chevron" aria-hidden="true">
               <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
             </span>
@@ -724,29 +975,42 @@
         <div class="fund-card__collapse" id="collapse-brb-firf-ima-b-master-lp-rl-cod-100" role="region">
           <div class="fund-card__body">
         <p class="fund-card__desc">Gestão passiva que acompanha o <strong>IMA-B</strong>. Aplica diretamente em NTN-Bs (Tesouro IPCA+). Fundo master — voltado a outros fundos da BRB DTVM e investidores em geral. <strong>Não há IOF.</strong> Aplicação mínima de R$ 1,00. ANBIMA: RF Indexados.</p>
-        <div class="fund-card__chars">
-          <div class="char-item"><div class="char-item__label">Aplic. inicial</div><div class="char-item__value highlight">R$ 1,00</div></div>
-          <div class="char-item"><div class="char-item__label">Aplic. subseq.</div><div class="char-item__value">R$ 1,00</div></div>
-          <div class="char-item"><div class="char-item__label">Resgate mínimo</div><div class="char-item__value">R$ 1,00</div></div>
-          <div class="char-item"><div class="char-item__label">Saldo mínimo</div><div class="char-item__value">R$ 1,00</div></div>
-          <div class="char-item"><div class="char-item__label">Cota aplicação</div><div class="char-item__value">D+0 <small>Fechamento</small></div></div>
-          <div class="char-item"><div class="char-item__label">Cota resgate</div><div class="char-item__value">D+0 <small>Fechamento</small></div></div>
-          <div class="char-item"><div class="char-item__label">Crédito conta</div><div class="char-item__value">D+0</div></div>
-          <div class="char-item"><div class="char-item__label">Taxa adm.</div><div class="char-item__value highlight">0,25% a.a.</div></div>
-          <div class="char-item"><div class="char-item__label">Tax. performance</div><div class="char-item__value">Não cobra</div></div>
-          <div class="char-item"><div class="char-item__label">IOF</div><div class="char-item__value" style="color:#059669">Não incide</div></div>
-          <div class="char-item"><div class="char-item__label">Horário limite</div><div class="char-item__value">16h (Brasília)</div></div>
-          <div class="char-item"><div class="char-item__label">Perfil</div><div class="char-item__value">Moderado</div></div>
-          <div class="char-item"><div class="char-item__label">Início</div><div class="char-item__value">12/07/2017</div></div>
-        </div>
+            <div class="fund-card__chars">
+              <div class="char-item"><div class="char-item__label">Aplicação inicial</div><div class="char-item__value highlight">R$ 1,00</div></div>
+              <div class="char-item"><div class="char-item__label">Aplicações subsequentes</div><div class="char-item__value">R$ 1,00</div></div>
+              <div class="char-item"><div class="char-item__label">Resgate mínimo</div><div class="char-item__value">R$ 1,00</div></div>
+              <div class="char-item"><div class="char-item__label">Saldo mínimo remanescente</div><div class="char-item__value">R$ 1,00</div></div>
+              <div class="char-item"><div class="char-item__label">Cotização de aplicação</div><div class="char-item__value">D+0 — Fechamento</div></div>
+              <div class="char-item"><div class="char-item__label">Carência</div><div class="char-item__value">Não possui</div></div>
+              <div class="char-item"><div class="char-item__label">Cotização de resgate</div><div class="char-item__value">D+0 — Fechamento</div></div>
+              <div class="char-item"><div class="char-item__label">Crédito em conta corrente BRB</div><div class="char-item__value">D+0</div></div>
+              <div class="char-item"><div class="char-item__label">Resgate automático</div><div class="char-item__value">Não possui</div></div>
+              <div class="char-item"><div class="char-item__label">Taxa de administração</div><div class="char-item__value highlight">0,25% a.a.</div></div>
+              <div class="char-item"><div class="char-item__label">Taxa de performance</div><div class="char-item__value">Não cobra</div></div>
+              <div class="char-item"><div class="char-item__label">Regime de cotização</div><div class="char-item__value">Fechamento de mercado</div></div>
+              <div class="char-item"><div class="char-item__label">Horário limite aplicação/resgate</div><div class="char-item__value">16h00 (horário de Brasília)</div></div>
+              <div class="char-item"><div class="char-item__label">Perfil investidor</div><div class="char-item__value">Moderado</div></div>
+              <div class="char-item"><div class="char-item__label">Termo de investimento</div><div class="char-item__value">—</div></div>
+              <div class="char-item"><div class="char-item__label">Funcionamento desde:</div><div class="char-item__value">12/07/2017</div></div>
+            </div>
+        
         <div class="fund-tax-notice"><strong>IR:</strong> Come-cotas semestral à 15%. Resgate: tabela regressiva de longo prazo. <strong>Não há IOF.</strong></div>
       </div>
 
           <div class="fund-card__docs">
         <span class="fund-card__docs-label">📄 Documentos</span>
-        <a href="../pdfs/fundos/F100_regulamento.pdf" target="_blank" class="doc-link">Regulamento</a>
-        <a href="../pdfs/fundos/F100_informativo_mensal.pdf" target="_blank" class="doc-link">Informativo Mensal</a>
-        <a href="../pdfs/fundos/F100_demonstracoes.pdf" target="_blank" class="doc-link">Demonstrações Financeiras</a>
+        <a href="../pdfs/fundos/F100_regulamento.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Regulamento
+            </a>
+        <a href="../pdfs/fundos/F100_informativo_mensal.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Informativo Mensal
+            </a>
+        <a href="../pdfs/fundos/F100_demonstracoes.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Demonstrações Financeiras
+            </a>
       </div>
 
           <div class="fund-card__meta">
@@ -765,7 +1029,10 @@
             <div class="fund-card__full-name">BRB Fundo de Investimento em Renda Fixa IMA-S Longo Prazo Responsabilidade Limitada</div>
           </div>
           <div class="fund-card__header-right">
-            <span class="fund-card__badge bvl">✓ Risco Muito Baixo</span>
+            <span class="fund-card__badge badge--very-low">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              Risco muito baixo
+            </span>
             <span class="fund-chevron" aria-hidden="true">
               <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
             </span>
@@ -775,30 +1042,42 @@
         <div class="fund-card__collapse" id="collapse-brb-firf-ima-s-lp-rl-cod-102" role="region">
           <div class="fund-card__body">
         <p class="fund-card__desc">Gestão passiva que acompanha o <strong>IMA-S</strong> (LFTs — Tesouro Selic). Aplica diretamente em Títulos Públicos Federais. Voltado a investidores em geral e fundos de investimento. Possui resgate automático. <strong>Não há IOF.</strong> ANBIMA: RF Indexados.</p>
-        <div class="fund-card__chars">
-          <div class="char-item"><div class="char-item__label">Aplic. inicial</div><div class="char-item__value highlight">R$ 100,00</div></div>
-          <div class="char-item"><div class="char-item__label">Aplic. subseq.</div><div class="char-item__value">R$ 100,00</div></div>
-          <div class="char-item"><div class="char-item__label">Resgate mínimo</div><div class="char-item__value">R$ 100,00</div></div>
-          <div class="char-item"><div class="char-item__label">Saldo mínimo</div><div class="char-item__value">R$ 100,00</div></div>
-          <div class="char-item"><div class="char-item__label">Cota aplicação</div><div class="char-item__value">D+0 <small>Abertura</small></div></div>
-          <div class="char-item"><div class="char-item__label">Cota resgate</div><div class="char-item__value">D+0 <small>Abertura</small></div></div>
-          <div class="char-item"><div class="char-item__label">Crédito conta</div><div class="char-item__value">D+0</div></div>
-          <div class="char-item"><div class="char-item__label">Taxa adm.</div><div class="char-item__value highlight">0,20% a.a.</div></div>
-          <div class="char-item"><div class="char-item__label">Tax. performance</div><div class="char-item__value">Não cobra</div></div>
-          <div class="char-item"><div class="char-item__label">Resgate automático</div><div class="char-item__value">Sim</div></div>
-          <div class="char-item"><div class="char-item__label">IOF</div><div class="char-item__value" style="color:#059669">Não incide</div></div>
-          <div class="char-item"><div class="char-item__label">Horário limite</div><div class="char-item__value">16h (Brasília)</div></div>
-          <div class="char-item"><div class="char-item__label">Perfil</div><div class="char-item__value">Conservador</div></div>
-          <div class="char-item"><div class="char-item__label">Início</div><div class="char-item__value">12/07/2017</div></div>
-        </div>
+            <div class="fund-card__chars">
+              <div class="char-item"><div class="char-item__label">Aplicação inicial</div><div class="char-item__value highlight">R$ 100,00</div></div>
+              <div class="char-item"><div class="char-item__label">Aplicações subsequentes</div><div class="char-item__value">R$ 100,00</div></div>
+              <div class="char-item"><div class="char-item__label">Resgate mínimo</div><div class="char-item__value">R$ 100,00</div></div>
+              <div class="char-item"><div class="char-item__label">Saldo mínimo remanescente</div><div class="char-item__value">R$ 100,00</div></div>
+              <div class="char-item"><div class="char-item__label">Cotização de aplicação</div><div class="char-item__value">D+0 — Abertura</div></div>
+              <div class="char-item"><div class="char-item__label">Carência</div><div class="char-item__value">Não possui</div></div>
+              <div class="char-item"><div class="char-item__label">Cotização de resgate</div><div class="char-item__value">D+0 — Abertura</div></div>
+              <div class="char-item"><div class="char-item__label">Crédito em conta corrente BRB</div><div class="char-item__value">D+0</div></div>
+              <div class="char-item"><div class="char-item__label">Resgate automático</div><div class="char-item__value">Sim</div></div>
+              <div class="char-item"><div class="char-item__label">Taxa de administração</div><div class="char-item__value highlight">0,20% a.a.</div></div>
+              <div class="char-item"><div class="char-item__label">Taxa de performance</div><div class="char-item__value">Não cobra</div></div>
+              <div class="char-item"><div class="char-item__label">Regime de cotização</div><div class="char-item__value">Abertura de mercado</div></div>
+              <div class="char-item"><div class="char-item__label">Horário limite aplicação/resgate</div><div class="char-item__value">16h00 (horário de Brasília)</div></div>
+              <div class="char-item"><div class="char-item__label">Perfil investidor</div><div class="char-item__value">Conservador</div></div>
+              <div class="char-item"><div class="char-item__label">Termo de investimento</div><div class="char-item__value">—</div></div>
+              <div class="char-item"><div class="char-item__label">Funcionamento desde:</div><div class="char-item__value">12/07/2017</div></div>
+            </div>
+        
         <div class="fund-tax-notice"><strong>IR:</strong> Come-cotas semestral à 15%. Resgate: tabela regressiva de longo prazo. <strong>Não há IOF.</strong></div>
       </div>
 
           <div class="fund-card__docs">
         <span class="fund-card__docs-label">📄 Documentos</span>
-        <a href="../pdfs/fundos/F102_regulamento.pdf" target="_blank" class="doc-link">Regulamento</a>
-        <a href="../pdfs/fundos/F102_informativo_mensal.pdf" target="_blank" class="doc-link">Informativo Mensal</a>
-        <a href="../pdfs/fundos/F102_demonstracoes.pdf" target="_blank" class="doc-link">Demonstrações Financeiras</a>
+        <a href="../pdfs/fundos/F102_regulamento.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Regulamento
+            </a>
+        <a href="../pdfs/fundos/F102_informativo_mensal.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Informativo Mensal
+            </a>
+        <a href="../pdfs/fundos/F102_demonstracoes.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Demonstrações Financeiras
+            </a>
       </div>
 
           <div class="fund-card__meta">
@@ -817,7 +1096,10 @@
             <div class="fund-card__full-name">Eng Capital Fundo de Investimento em Fundos de Renda Fixa</div>
           </div>
           <div class="fund-card__header-right">
-            <span class="fund-card__badge bm">Risco Médio</span>
+            <span class="fund-card__badge badge--medium">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 9v4m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg>
+              Risco médio
+            </span>
             <span class="fund-chevron" aria-hidden="true">
               <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
             </span>
@@ -827,18 +1109,37 @@
         <div class="fund-card__collapse" id="collapse-eng-capital-fif-rf" role="region">
           <div class="fund-card__body">
         <p class="fund-card__desc">Fundo de terceiros distribuído pelo BRB Investimentos, com estratégia de renda fixa de médio risco. Aplicação inicial sob consulta ao assessor (N/A no site BRB). Para detalhes completos sobre estratégia, taxas e documentos, consulte o regulamento ou um assessor.</p>
-        <div class="fund-card__chars">
-          <div class="char-item"><div class="char-item__label">Aplic. inicial</div><div class="char-item__value">Consultar</div></div>
-          <div class="char-item"><div class="char-item__label">Risco</div><div class="char-item__value">Médio</div></div>
-          <div class="char-item"><div class="char-item__label">Perfil</div><div class="char-item__value">Moderado</div></div>
-          <div class="char-item"><div class="char-item__label">Categoria</div><div class="char-item__value">Renda Fixa</div></div>
-        </div>
+            <div class="fund-card__chars">
+              <div class="char-item"><div class="char-item__label">Aplicação inicial</div><div class="char-item__value">Consultar assessor</div></div>
+              <div class="char-item"><div class="char-item__label">Aplicações subsequentes</div><div class="char-item__value">—</div></div>
+              <div class="char-item"><div class="char-item__label">Resgate mínimo</div><div class="char-item__value">—</div></div>
+              <div class="char-item"><div class="char-item__label">Saldo mínimo remanescente</div><div class="char-item__value">—</div></div>
+              <div class="char-item"><div class="char-item__label">Cotização de aplicação</div><div class="char-item__value">—</div></div>
+              <div class="char-item"><div class="char-item__label">Carência</div><div class="char-item__value">—</div></div>
+              <div class="char-item"><div class="char-item__label">Cotização de resgate</div><div class="char-item__value">—</div></div>
+              <div class="char-item"><div class="char-item__label">Crédito em conta corrente BRB</div><div class="char-item__value">—</div></div>
+              <div class="char-item"><div class="char-item__label">Resgate automático</div><div class="char-item__value">—</div></div>
+              <div class="char-item"><div class="char-item__label">Taxa de administração</div><div class="char-item__value">—</div></div>
+              <div class="char-item"><div class="char-item__label">Taxa de performance</div><div class="char-item__value">—</div></div>
+              <div class="char-item"><div class="char-item__label">Regime de cotização</div><div class="char-item__value">—</div></div>
+              <div class="char-item"><div class="char-item__label">Horário limite aplicação/resgate</div><div class="char-item__value">—</div></div>
+              <div class="char-item"><div class="char-item__label">Perfil investidor</div><div class="char-item__value">Moderado</div></div>
+              <div class="char-item"><div class="char-item__label">Termo de investimento</div><div class="char-item__value">—</div></div>
+              <div class="char-item"><div class="char-item__label">Funcionamento desde:</div><div class="char-item__value">—</div></div>
+            </div>
+         
       </div>
 
           <div class="fund-card__docs">
         <span class="fund-card__docs-label">📄 Documentos</span>
-        <a href="../pdfs/fundos/eng_capital_regulamento.pdf" target="_blank" class="doc-link">Regulamento</a>
-        <a href="../pdfs/fundos/eng_capital_informativo.pdf" target="_blank" class="doc-link">Informativo Mensal</a>
+        <a href="../pdfs/fundos/eng_capital_regulamento.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Regulamento
+            </a>
+        <a href="../pdfs/fundos/eng_capital_informativo.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Informativo Mensal
+            </a>
       </div>
 
           <div class="fund-card__meta">
@@ -857,7 +1158,10 @@
             <div class="fund-card__full-name">Regius Fundo de Investimento em Renda Fixa Longo Prazo Responsabilidade Limitada</div>
           </div>
           <div class="fund-card__header-right">
-            <span class="fund-card__badge blm">Risco Baixo a Médio</span>
+            <span class="fund-card__badge badge--low-mid">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 9v4m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg>
+              Risco baixo a médio
+            </span>
             <span class="fund-chevron" aria-hidden="true">
               <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
             </span>
@@ -867,24 +1171,45 @@
         <div class="fund-card__collapse" id="collapse-regius-rf-lp" role="region">
           <div class="fund-card__body">
         <p class="fund-card__desc">Fundo de renda fixa de longo prazo distribuído pelo BRB. Perfil Moderado, risco baixo a médio. Aplicação inicial sob consulta ao assessor (N/A no site BRB). Para detalhes sobre estratégia e requisitos de acesso, consulte o regulamento ou um assessor de investimentos.</p>
-        <div class="fund-card__chars">
-          <div class="char-item"><div class="char-item__label">Aplic. inicial</div><div class="char-item__value">Consultar</div></div>
-          <div class="char-item"><div class="char-item__label">Risco</div><div class="char-item__value">Baixo a Médio</div></div>
-          <div class="char-item"><div class="char-item__label">Perfil</div><div class="char-item__value">Moderado</div></div>
-          <div class="char-item"><div class="char-item__label">Prazo</div><div class="char-item__value">Longo Prazo</div></div>
-        </div>
-      </div>
+            <div class="fund-card__chars">
+              <div class="char-item"><div class="char-item__label">Aplicação inicial</div><div class="char-item__value">Consultar assessor</div></div>
+              <div class="char-item"><div class="char-item__label">Aplicações subsequentes</div><div class="char-item__value">—</div></div>
+              <div class="char-item"><div class="char-item__label">Resgate mínimo</div><div class="char-item__value">—</div></div>
+              <div class="char-item"><div class="char-item__label">Saldo mínimo remanescente</div><div class="char-item__value">—</div></div>
+              <div class="char-item"><div class="char-item__label">Cotização de aplicação</div><div class="char-item__value">—</div></div>
+              <div class="char-item"><div class="char-item__label">Carência</div><div class="char-item__value">—</div></div>
+              <div class="char-item"><div class="char-item__label">Cotização de resgate</div><div class="char-item__value">—</div></div>
+              <div class="char-item"><div class="char-item__label">Crédito em conta corrente BRB</div><div class="char-item__value">—</div></div>
+              <div class="char-item"><div class="char-item__label">Resgate automático</div><div class="char-item__value">—</div></div>
+              <div class="char-item"><div class="char-item__label">Taxa de administração</div><div class="char-item__value">—</div></div>
+              <div class="char-item"><div class="char-item__label">Taxa de performance</div><div class="char-item__value">—</div></div>
+              <div class="char-item"><div class="char-item__label">Regime de cotização</div><div class="char-item__value">—</div></div>
+              <div class="char-item"><div class="char-item__label">Horário limite aplicação/resgate</div><div class="char-item__value">—</div></div>
+              <div class="char-item"><div class="char-item__label">Perfil investidor</div><div class="char-item__value">Moderado</div></div>
+              <div class="char-item"><div class="char-item__label">Termo de investimento</div><div class="char-item__value">—</div></div>
+              <div class="char-item"><div class="char-item__label">Funcionamento desde:</div><div class="char-item__value">—</div></div>
+            </div>
 
-          <div class="fund-card__docs">
+            <div class="fund-card__docs">
         <span class="fund-card__docs-label">📄 Documentos</span>
-        <a href="../pdfs/fundos/regius_regulamento.pdf" target="_blank" class="doc-link">Regulamento</a>
-        <a href="../pdfs/fundos/regius_informativo.pdf" target="_blank" class="doc-link">Informativo Mensal</a>
+        <a href="../pdfs/fundos/regius_regulamento.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Regulamento
+            </a>
+        <a href="../pdfs/fundos/regius_informativo.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Informativo Mensal
+            </a>
       </div>
 
           <div class="fund-card__meta">
         <span>Categoria: <strong>Renda Fixa LP</strong></span><span>Distribuidor: <strong>BRB Investimentos</strong></span>
       </div>
         </div>
+        </div>
+      </div>
+
+          
 
       </article>
 

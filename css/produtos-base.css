@@ -909,3 +909,73 @@ nav {
   transition: width 0.1s ease;
   border-radius: 0 2px 2px 0;
 }
+
+
+/* ==========================================
+   Submenu (Fundos) - Ajustes Responsivos
+   ========================================== */
+
+/* Esconde o item "Visão Geral" no Desktop */
+.mobile-only-item {
+  display: none !important;
+}
+
+/* Ajusta a setinha para o Desktop */
+.has-submenu .chevron-right {
+  display: inline-block;
+  font-size: 0.65rem;
+  margin-left: 3px;
+  opacity: 0.6;
+  transition: transform 0.2s ease;
+}
+
+/* Regras apenas para dispositivos móveis */
+@media (max-width: 968px) {
+  
+  /* Faz o item "Visão Geral" aparecer no celular */
+  .mobile-only-item {
+    display: block !important;
+  }
+
+  /* Formata o submenu para o mobile (tira a flutuação) */
+  .submenu {
+    position: static;
+    transform: none !important;
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    min-width: auto;
+    padding: 0;
+    margin-top: 0;
+    display: none !important; 
+    background: transparent !important; 
+  }
+
+  /* Formatação dos links internos para o fundo escuro */
+  .submenu a {
+    padding-left: 35px !important; 
+    font-size: 14px;
+    background: transparent !important;
+    color: #ffffff !important; 
+    display: block;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  /* Linha divisória suave */
+  .submenu li {
+    border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
+  }
+
+  /* Exibe o submenu quando a classe .is-open for adicionada pelo JS no clique */
+  .has-submenu.is-open .submenu {
+    display: block !important;
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  /* Gira a setinha para baixo indicando que abriu */
+  .has-submenu.is-open .chevron-right {
+    transform: rotate(90deg);
+  }
+}

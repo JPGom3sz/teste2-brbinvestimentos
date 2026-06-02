@@ -138,7 +138,7 @@ header {
   z-index: 1000;
   border-bottom: 1px solid rgba(0, 86, 168, 0.10);
   box-shadow: 0 2px 20px rgba(0, 31, 63, 0.08);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: transform var(--ease), box-shadow var(--ease);
 }
 
 header.header-hidden {
@@ -147,10 +147,10 @@ header.header-hidden {
 
 nav {
   position: relative;
-  max-width: 1850px;
+  max-width: 1850px; 
   height: 100%;
   margin: 0 auto;
-  padding: 0 2rem 0 1rem;
+  padding: 0 2rem 0 1rem; 
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -181,13 +181,21 @@ nav {
   font-weight: 520;
   font-size: 16px;
   letter-spacing: 0.02em;
-  padding: 0.5rem 0.9rem;
+  padding:  0.5rem 0.9rem;
   border-radius: 6px;
+  transition: color var(--ease), background var(--ease);
   display: flex;
   align-items: center;
   gap: 0.3rem;
   white-space: nowrap;
   transition: background 0.2s, color 0.2s;
+}
+
+/* Efeito de fundo para a página atual */
+.nav-links > li > a.active {
+  background: rgba(58, 127, 212, 0.15);
+  color: #ffffff;
+  border-radius: 8px;
 }
 
 .nav-links > li > a:hover,
@@ -196,6 +204,7 @@ nav {
   background: var(--light-blue);
 }
 
+/* Dropdown */
 .nav-links .dropdown {
   position: relative;
 }
@@ -233,6 +242,30 @@ nav {
   transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
 }
 
+.nav-links .dropdown-menu::before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  height: 20px;
+  background: transparent;
+}
+
+.nav-links .dropdown-menu::after {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(50%) rotate(45deg);
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  border-top: 1px solid rgba(0, 86, 168, 0.12);
+  border-left: 1px solid rgba(0, 86, 168, 0.12);
+  z-index: 1;
+}
+
 .nav-links .dropdown:hover .dropdown-menu,
 .nav-links .dropdown.is-open .dropdown-menu {
   visibility: visible;
@@ -249,6 +282,9 @@ nav {
 .nav-links .dropdown-menu li {
   position: relative;
   z-index: 2;
+}
+
+.nav-links .dropdown-menu li + li {
   border-top: 1px solid rgba(0, 86, 168, 0.07);
 }
 
@@ -256,7 +292,7 @@ nav {
   display: block;
   padding: 11px 20px;
   font-weight: 550;
-  font-size: 14px;
+  font-size: 13px;
   color: rgba(0, 0, 0, 0.7);
   transition: background var(--ease), color var(--ease);
 }
@@ -289,6 +325,96 @@ nav {
 .account-link:hover {
   background: var(--bright-blue);
   transform: translateY(-1px);
+}
+    
+/* Hamburger */
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  margin-left: auto;
+}
+
+.mobile-menu-toggle span {
+  display: block;
+  width: 26px;
+  height: 2.5px;
+  background: var(--text-dark);
+  border-radius: 2px;
+  transition: var(--ease);
+}
+
+.mobile-menu-toggle.active span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+.mobile-menu-toggle.active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.mobile-menu-toggle.active span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
+/* Botão fechar menu mobile — oculto por padrão em todas as telas */
+.mobile-menu-close {
+  display: none;
+}
+
+/* Overlay mobile */
+.menu-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 10, 25, 0.5);
+  z-index: 998;
+}
+
+.menu-overlay.active {
+  display: block;
+}
+
+.has-submenu {
+  position: relative;
+}
+
+.has-submenu a {
+  display: flex !important;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chevron-right {
+  font-size: 0.7rem;
+  opacity: 0.5;
+}
+
+.submenu {
+  position: absolute;
+  left: 100%;
+  top: -8px;
+  min-width: 180px;
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 86, 168, 0.12);
+  box-shadow: 0 12px 36px rgba(0, 31, 63, 0.13);
+  padding: 0.5rem 0;
+  list-style: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-10px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+}
+
+.has-submenu:hover .submenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+.submenu li + li {
+  border-top: 1px solid rgba(0, 86, 168, 0.07);
+}
+
+.submenu a {
+  padding: 10px 16px;
+  font-size: 0.802rem;
 }
 
 /* ============================================================

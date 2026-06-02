@@ -104,20 +104,19 @@ header {
   z-index: 1000;
   border-bottom: 1px solid rgba(0, 86, 168, 0.10);
   box-shadow: 0 2px 20px rgba(0, 31, 63, 0.08);
-  transition: transform 0.25s ease;
+  transition: transform var(--ease), box-shadow var(--ease);
 }
 
-/* Oculta o header ao rolar para baixo (controlado via JS) */
 header.header-hidden {
   transform: translateY(-100%);
 }
 
 nav {
   position: relative;
-  max-width: 1850px;
+  max-width: 1850px; 
   height: 100%;
   margin: 0 auto;
-  padding: 0 2rem 0 1rem;
+  padding: 0 2rem 0 1rem; 
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -132,7 +131,6 @@ nav {
   height: 60px;
 }
 
-/* ── Nav links ── */
 .nav-links {
   display: flex;
   gap: 0.4rem;
@@ -149,13 +147,21 @@ nav {
   font-weight: 520;
   font-size: 16px;
   letter-spacing: 0.02em;
-  padding: 0.5rem 0.9rem;
+  padding:  0.5rem 0.9rem;
   border-radius: 6px;
+  transition: color var(--ease), background var(--ease);
   display: flex;
   align-items: center;
   gap: 0.3rem;
   white-space: nowrap;
   transition: background 0.2s, color 0.2s;
+}
+
+/* Efeito de fundo para a página atual */
+.nav-links > li > a.active {
+  background: rgba(58, 127, 212, 0.15);
+  color: #ffffff;
+  border-radius: 8px;
 }
 
 .nav-links > li > a:hover,
@@ -164,7 +170,7 @@ nav {
   background: var(--light-blue);
 }
 
-/* ── Dropdown ── */
+/* Dropdown */
 .nav-links .dropdown {
   position: relative;
 }
@@ -179,7 +185,7 @@ nav {
 .nav-links .chevron {
   font-size: 0.65rem;
   opacity: 0.6;
-  transition: transform 0.25s ease;
+  transition: transform var(--ease);
   display: inline-block;
 }
 
@@ -202,7 +208,6 @@ nav {
   transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
 }
 
-/* Área invisível para evitar que o dropdown feche ao mover o mouse */
 .nav-links .dropdown-menu::before {
   content: '';
   position: absolute;
@@ -213,7 +218,6 @@ nav {
   background: transparent;
 }
 
-/* Seta decorativa do dropdown */
 .nav-links .dropdown-menu::after {
   content: '';
   position: absolute;
@@ -254,9 +258,9 @@ nav {
   display: block;
   padding: 11px 20px;
   font-weight: 550;
-  font-size: 14px;
+  font-size: 13px;
   color: rgba(0, 0, 0, 0.7);
-  transition: background 0.25s ease, color 0.25s ease;
+  transition: background var(--ease), color var(--ease);
 }
 
 .nav-links .dropdown-menu a:hover {
@@ -264,7 +268,6 @@ nav {
   color: var(--primary-blue);
 }
 
-/* ── Botão de acesso ── */
 .nav-buttons {
   display: flex;
   margin-left: auto;
@@ -289,8 +292,8 @@ nav {
   background: var(--bright-blue);
   transform: translateY(-1px);
 }
-
-/* ── Hamburger mobile ── */
+    
+/* Hamburger */
 .mobile-menu-toggle {
   display: none;
   flex-direction: column;
@@ -308,21 +311,19 @@ nav {
   height: 2.5px;
   background: var(--text-dark);
   border-radius: 2px;
-  transition: 0.25s ease;
+  transition: var(--ease);
 }
 
-.mobile-menu-toggle.active span:nth-child(1) {
-  transform: translateY(7.5px) rotate(45deg);
-}
-.mobile-menu-toggle.active span:nth-child(2) {
-  opacity: 0;
-  transform: scaleX(0);
-}
-.mobile-menu-toggle.active span:nth-child(3) {
-  transform: translateY(-7.5px) rotate(-45deg);
+.mobile-menu-toggle.active span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+.mobile-menu-toggle.active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.mobile-menu-toggle.active span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
+/* Botão fechar menu mobile — oculto por padrão em todas as telas */
+.mobile-menu-close {
+  display: none;
 }
 
-/* ── Overlay mobile ── */
+/* Overlay mobile */
 .menu-overlay {
   display: none;
   position: fixed;
@@ -335,7 +336,6 @@ nav {
   display: block;
 }
 
-/* ── Submenu (nível 2) ── */
 .has-submenu {
   position: relative;
 }
@@ -1961,4 +1961,74 @@ footer {
   .edu-modal__footer        { padding: 1.2rem 1.4rem; }
   .edu-modal__attrs-grid    { grid-template-columns: 1fr; }
   .edu-modal__explainer     { flex-direction: column; gap: 0.8rem; }
+}
+
+
+/* ==========================================
+   Submenu (Fundos) - Ajustes Responsivos
+   ========================================== */
+
+/* Esconde o item "Visão Geral" no Desktop */
+.mobile-only-item {
+  display: none !important;
+}
+
+/* Ajusta a setinha para o Desktop */
+.has-submenu .chevron-right {
+  display: inline-block;
+  font-size: 0.65rem;
+  margin-left: 3px;
+  opacity: 0.6;
+  transition: transform 0.2s ease;
+}
+
+/* Regras apenas para dispositivos móveis */
+@media (max-width: 968px) {
+  
+  /* Faz o item "Visão Geral" aparecer no celular */
+  .mobile-only-item {
+    display: block !important;
+  }
+
+  /* Formata o submenu para o mobile (tira a flutuação) */
+  .submenu {
+    position: static;
+    transform: none !important;
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    min-width: auto;
+    padding: 0;
+    margin-top: 0;
+    display: none !important; 
+    background: transparent !important; 
+  }
+
+  /* Formatação dos links internos para o fundo escuro */
+  .submenu a {
+    padding-left: 35px !important; 
+    font-size: 14px;
+    background: transparent !important;
+    color: #ffffff !important; 
+    display: block;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  /* Linha divisória suave */
+  .submenu li {
+    border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
+  }
+
+  /* Exibe o submenu quando a classe .is-open for adicionada pelo JS no clique */
+  .has-submenu.is-open .submenu {
+    display: block !important;
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  /* Gira a setinha para baixo indicando que abriu */
+  .has-submenu.is-open .chevron-right {
+    transform: rotate(90deg);
+  }
 }

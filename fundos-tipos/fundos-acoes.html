@@ -28,7 +28,18 @@
             <li role="none" class="has-submenu"><a href="../produtos/renda-fixa.html" role="menuitem">Renda Fixa</a></li>
             <li role="none" class="has-submenu"><a href="../produtos/renda-variavel.html" role="menuitem">Renda Variável</a></li>
             <li role="none" class="has-submenu"><a href="../produtos/previdencia.html" role="menuitem">Previdência</a></li>
-            <li role="none" class="has-submenu"><a href="../produtos/fundos.html" role="menuitem">Fundos</a></li>
+
+
+             <li class="has-submenu">
+              <a href="../produtos/fundos.html">Fundos <span class="chevron-right">▶</span></a>
+              <ul class="submenu">
+                <li class="mobile-only-item"><a href="../produtos/fundos.html">Visão Geral de Fundos</a></li>
+                <li><a href="../fundos-tipos/fundos-plataforma.html">Fundos em Plataforma</a></li>
+                <li><a href="../fundos-tipos/fundos-balcao.html">Fundos em Balcão</a></li>
+              </ul>
+            </li>
+
+
             <li role="none" class="has-submenu"><a href="../produtos/mercado-futuro.html" role="menuitem">Mercado Futuro</a></li>
             <li role="none" class="has-submenu"><a href="../produtos/tesouro-direto.html" role="menuitem">Tesouro Direto</a></li>
           </ul>
@@ -103,25 +114,30 @@
           </div>
         </button>
 
-        <div class="fund-card__collapse" id="collapse-indice-ativo" role="region">
+        <div class="fund-card__collapse" id="collapse-indice-ativo" role="region" aria-labelledby="fundo-indice-ativo">
           <div class="fund-card__body">
             <p class="fund-card__desc">
               Fundo de ações com estratégia de índice ativo, buscando superar o desempenho do Ibovespa por meio de seleção criteriosa de ativos com base em análise quantitativa e qualitativa. Classificação ANBIMA: <strong>Ações — Ativos Índice Ativo</strong>. Público-alvo: investidores com perfil arrojado.
             </p>
             <div class="fund-card__chars">
-              <div class="char-item"><div class="char-item__label">Aplic. inicial</div><div class="char-item__value highlight">R$ 500,00</div></div>
-              <div class="char-item"><div class="char-item__label">Aplic. subseq.</div><div class="char-item__value">R$ 100,00</div></div>
-              <div class="char-item"><div class="char-item__label">Cota aplicação</div><div class="char-item__value">D+1</div></div>
-              <div class="char-item"><div class="char-item__label">Cota resgate</div><div class="char-item__value">D+3</div></div>
-              <div class="char-item"><div class="char-item__label">Crédito em conta</div><div class="char-item__value">D+3</div></div>
+              <div class="char-item"><div class="char-item__label">Aplicação inicial</div><div class="char-item__value highlight">R$ 500,00</div></div>
+              <div class="char-item"><div class="char-item__label">Aplicações subsequentes</div><div class="char-item__value">R$ 100,00</div></div>
+              <div class="char-item"><div class="char-item__label">Resgate mínimo</div><div class="char-item__value">—</div></div>
+              <div class="char-item"><div class="char-item__label">Saldo mínimo remanescente</div><div class="char-item__value">—</div></div>
+              <div class="char-item"><div class="char-item__label">Cotização de aplicação</div><div class="char-item__value">D+1</div></div>
               <div class="char-item"><div class="char-item__label">Carência</div><div class="char-item__value">Não possui</div></div>
-              <div class="char-item"><div class="char-item__label">Taxa de adm.</div><div class="char-item__value highlight">1,50% a.a.</div></div>
-              <div class="char-item"><div class="char-item__label">Tax. performance</div><div class="char-item__value">20% s/ Ibovespa</div></div>
-              <div class="char-item"><div class="char-item__label">Horário limite</div><div class="char-item__value">16h00 (BSB)</div></div>
-              <div class="char-item"><div class="char-item__label">Perfil</div><div class="char-item__value">Arrojado</div></div>
+              <div class="char-item"><div class="char-item__label">Cotização de resgate</div><div class="char-item__value">D+3</div></div>
+              <div class="char-item"><div class="char-item__label">Crédito em conta corrente BRB</div><div class="char-item__value">D+3</div></div>
+              <div class="char-item"><div class="char-item__label">Resgate automático</div><div class="char-item__value">—</div></div>
+              <div class="char-item"><div class="char-item__label">Taxa de administração</div><div class="char-item__value highlight">1,50% a.a.</div></div>
+              <div class="char-item"><div class="char-item__label">Taxa de performance</div><div class="char-item__value">20% s/ Ibovespa</div></div>
+              <div class="char-item"><div class="char-item__label">Regime de cotização</div><div class="char-item__value">—</div></div>
+              <div class="char-item"><div class="char-item__label">Horário limite aplicação/resgate</div><div class="char-item__value">16h00 (BSB)</div></div>
+              <div class="char-item"><div class="char-item__label">Perfil investidor</div><div class="char-item__value">Arrojado</div></div>
+              <div class="char-item"><div class="char-item__label">Termo de investimento</div><div class="char-item__value">—</div></div>
               <div class="char-item"><div class="char-item__label">Patrimônio líquido</div><div class="char-item__value">R$ 892,81 mil</div></div>
             </div>
-            <div class="fund-tax-notice" style="background:#fff7ed;border-color:#fed7aa;color:#92400e;">
+            <div class="fund-tax-notice">
               <strong>Tributação:</strong> IR de 15% sobre o ganho de capital no resgate. Fundos de ações não possuem come-cotas. IOF não incide após 30 dias.
             </div>
           </div>
@@ -148,7 +164,7 @@
 
           <div class="fund-card__meta">
             <span>CNPJ: <strong>31.937.303/0001-69</strong></span>
-            <span>ANBIMA: <strong>Ações — Ativos Índice Ativo</strong></span>
+            <span>Classificação ANBIMA: <strong>Ações — Ativos Índice Ativo</strong></span>
           </div>
         </div>
 
@@ -175,25 +191,30 @@
           </div>
         </button>
 
-        <div class="fund-card__collapse" id="collapse-fic-fia" role="region">
+        <div class="fund-card__collapse" id="collapse-fic-fia" role="region" aria-labelledby="fundo-fic-fia">
           <div class="fund-card__body">
             <p class="fund-card__desc">
               Fundo focado em empresas com histórico consistente de distribuição de dividendos e bom retorno ao acionista. Investe em cotas de fundos de ações selecionando companhias com sólida geração de caixa e política de proventos. Classificação ANBIMA: <strong>Ações — Ativos Dividendos</strong>. Público-alvo: investidores com perfil arrojado.
             </p>
             <div class="fund-card__chars">
-              <div class="char-item"><div class="char-item__label">Aplic. inicial</div><div class="char-item__value highlight">R$ 500,00</div></div>
-              <div class="char-item"><div class="char-item__label">Aplic. subseq.</div><div class="char-item__value">R$ 100,00</div></div>
-              <div class="char-item"><div class="char-item__label">Cota aplicação</div><div class="char-item__value">D+1</div></div>
-              <div class="char-item"><div class="char-item__label">Cota resgate</div><div class="char-item__value">D+3</div></div>
-              <div class="char-item"><div class="char-item__label">Crédito em conta</div><div class="char-item__value">D+3</div></div>
+              <div class="char-item"><div class="char-item__label">Aplicação inicial</div><div class="char-item__value highlight">R$ 500,00</div></div>
+              <div class="char-item"><div class="char-item__label">Aplicações subsequentes</div><div class="char-item__value">R$ 100,00</div></div>
+              <div class="char-item"><div class="char-item__label">Resgate mínimo</div><div class="char-item__value">—</div></div>
+              <div class="char-item"><div class="char-item__label">Saldo mínimo remanescente</div><div class="char-item__value">—</div></div>
+              <div class="char-item"><div class="char-item__label">Cotização de aplicação</div><div class="char-item__value">D+1</div></div>
               <div class="char-item"><div class="char-item__label">Carência</div><div class="char-item__value">Não possui</div></div>
-              <div class="char-item"><div class="char-item__label">Taxa de adm.</div><div class="char-item__value highlight">1,50% a.a.</div></div>
-              <div class="char-item"><div class="char-item__label">Tax. performance</div><div class="char-item__value">20% s/ Ibovespa</div></div>
-              <div class="char-item"><div class="char-item__label">Horário limite</div><div class="char-item__value">16h00 (BSB)</div></div>
-              <div class="char-item"><div class="char-item__label">Perfil</div><div class="char-item__value">Arrojado</div></div>
+              <div class="char-item"><div class="char-item__label">Cotização de resgate</div><div class="char-item__value">D+3</div></div>
+              <div class="char-item"><div class="char-item__label">Crédito em conta corrente BRB</div><div class="char-item__value">D+3</div></div>
+              <div class="char-item"><div class="char-item__label">Resgate automático</div><div class="char-item__value">—</div></div>
+              <div class="char-item"><div class="char-item__label">Taxa de administração</div><div class="char-item__value highlight">1,50% a.a.</div></div>
+              <div class="char-item"><div class="char-item__label">Taxa de performance</div><div class="char-item__value">20% s/ Ibovespa</div></div>
+              <div class="char-item"><div class="char-item__label">Regime de cotização</div><div class="char-item__value">—</div></div>
+              <div class="char-item"><div class="char-item__label">Horário limite aplicação/resgate</div><div class="char-item__value">16h00 (BSB)</div></div>
+              <div class="char-item"><div class="char-item__label">Perfil investidor</div><div class="char-item__value">Arrojado</div></div>
+              <div class="char-item"><div class="char-item__label">Termo de investimento</div><div class="char-item__value">—</div></div>
               <div class="char-item"><div class="char-item__label">Patrimônio líquido</div><div class="char-item__value">R$ 7,32 mi</div></div>
             </div>
-            <div class="fund-tax-notice" style="background:#fff7ed;border-color:#fed7aa;color:#92400e;">
+            <div class="fund-tax-notice">
               <strong>Tributação:</strong> IR de 15% sobre o ganho de capital no resgate. Fundos de ações não possuem come-cotas. IOF não incide após 30 dias.
             </div>
           </div>
@@ -220,7 +241,7 @@
 
           <div class="fund-card__meta">
             <span>CNPJ: <strong>07.841.371/0001-45</strong></span>
-            <span>ANBIMA: <strong>Ações — Ativos Dividendos</strong></span>
+            <span>Classificação ANBIMA: <strong>Ações — Ativos Dividendos</strong></span>
           </div>
         </div>
 
@@ -247,24 +268,29 @@
           </div>
         </button>
 
-        <div class="fund-card__collapse" id="collapse-fia" role="region">
+        <div class="fund-card__collapse" id="collapse-fia" role="region" aria-labelledby="fundo-fia">
           <div class="fund-card__body">
             <p class="fund-card__desc">
               Fundo de ações com investimento direto em empresas pagadoras de dividendos, buscando construir uma carteira de alta geração de renda passiva e valorização de longo prazo. Diferente do FIC FIA, este fundo investe diretamente nas ações, sem intermediação de outros fundos. Classificação ANBIMA: <strong>Ações — Ativos Dividendos</strong>. Público-alvo: investidores com perfil arrojado.
             </p>
             <div class="fund-card__chars">
-              <div class="char-item"><div class="char-item__label">Aplic. inicial</div><div class="char-item__value highlight">R$ 100,00</div></div>
-              <div class="char-item"><div class="char-item__label">Aplic. subseq.</div><div class="char-item__value">R$ 100,00</div></div>
-              <div class="char-item"><div class="char-item__label">Cota aplicação</div><div class="char-item__value">D+1</div></div>
-              <div class="char-item"><div class="char-item__label">Cota resgate</div><div class="char-item__value">D+3</div></div>
-              <div class="char-item"><div class="char-item__label">Crédito em conta</div><div class="char-item__value">D+3</div></div>
+              <div class="char-item"><div class="char-item__label">Aplicação inicial</div><div class="char-item__value highlight">R$ 100,00</div></div>
+              <div class="char-item"><div class="char-item__label">Aplicações subsequentes</div><div class="char-item__value">R$ 100,00</div></div>
+              <div class="char-item"><div class="char-item__label">Resgate mínimo</div><div class="char-item__value">—</div></div>
+              <div class="char-item"><div class="char-item__label">Saldo mínimo remanescente</div><div class="char-item__value">—</div></div>
+              <div class="char-item"><div class="char-item__label">Cotização de aplicação</div><div class="char-item__value">D+1</div></div>
               <div class="char-item"><div class="char-item__label">Carência</div><div class="char-item__value">Não possui</div></div>
-              <div class="char-item"><div class="char-item__label">Taxa de adm.</div><div class="char-item__value highlight">1,50% a.a.</div></div>
-              <div class="char-item"><div class="char-item__label">Tax. performance</div><div class="char-item__value">20% s/ Ibovespa</div></div>
-              <div class="char-item"><div class="char-item__label">Horário limite</div><div class="char-item__value">16h00 (BSB)</div></div>
-              <div class="char-item"><div class="char-item__label">Perfil</div><div class="char-item__value">Arrojado</div></div>
+              <div class="char-item"><div class="char-item__label">Cotização de resgate</div><div class="char-item__value">D+3</div></div>
+              <div class="char-item"><div class="char-item__label">Crédito em conta corrente BRB</div><div class="char-item__value">D+3</div></div>
+              <div class="char-item"><div class="char-item__label">Resgate automático</div><div class="char-item__value">—</div></div>
+              <div class="char-item"><div class="char-item__label">Taxa de administração</div><div class="char-item__value highlight">1,50% a.a.</div></div>
+              <div class="char-item"><div class="char-item__label">Taxa de performance</div><div class="char-item__value">20% s/ Ibovespa</div></div>
+              <div class="char-item"><div class="char-item__label">Regime de cotização</div><div class="char-item__value">—</div></div>
+              <div class="char-item"><div class="char-item__label">Horário limite aplicação/resgate</div><div class="char-item__value">16h00 (BSB)</div></div>
+              <div class="char-item"><div class="char-item__label">Perfil investidor</div><div class="char-item__value">Arrojado</div></div>
+              <div class="char-item"><div class="char-item__label">Termo de investimento</div><div class="char-item__value">—</div></div>
             </div>
-            <div class="fund-tax-notice" style="background:#fff7ed;border-color:#fed7aa;color:#92400e;">
+            <div class="fund-tax-notice">
               <strong>Tributação:</strong> IR de 15% sobre o ganho de capital no resgate. Fundos de ações não possuem come-cotas. IOF não incide após 30 dias.
             </div>
           </div>
@@ -290,7 +316,7 @@
           </div>
 
           <div class="fund-card__meta">
-            <span>ANBIMA: <strong>Ações — Ativos Dividendos</strong></span>
+            <span>Classificação ANBIMA: <strong>Ações — Ativos Dividendos</strong></span>
           </div>
         </div>
 

@@ -1786,3 +1786,45 @@ footer {
   transition: width 0.1s ease;
   border-radius: 0 2px 2px 0;
 }
+
+/* ============================================================
+   16. PARTNERSHIP LOGOS (TIMELINE)
+   ============================================================ */
+.partnership-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 1.5rem;
+  background: #ffffff;
+  padding: 16px 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  flex-wrap: wrap;
+}
+
+.partner-logo {
+  width: auto;
+  object-fit: contain;
+}
+
+/* Ajustes Ópticos Individuais */
+.logo-dtvm {
+  height: 52px; /* DTVM precisa ser um pouco mais alta para compensar o formato quadrado */
+}
+
+.logo-genial {
+  height: 30px; /* Genial é muito "densa", reduzindo a altura ela se equilibra */
+}
+
+.logo-brb-inv {
+  height: 42px; /* Tamanho intermediário para a marca final */
+}
+
+.math-sign {
+  font-family: 'Cera Pro', 'Montserrat', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: var(--primary-blue);
+  margin: 0 8px; /* Dá um respiro melhor em volta dos sinais de + e = */
+}
