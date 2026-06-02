@@ -14,85 +14,91 @@
 <body>
 
   <header id="site-header">
-    <nav>
-      <div class="logo">
-        <a href="index.html" aria-label="BRB Investimentos - Início">
-          <img src="img/quartinho(1).png" alt="BRB Investimentos" />
+  <nav>
+    <div class="logo">
+      <a href="index.html" aria-label="BRB Investimentos - Início">
+        <img src="img/quartinho(1).png" alt="BRB Investimentos" />
+      </a>
+    </div>
+
+    <ul class="nav-links" id="mobileMenu" role="menubar">
+      
+      <li class="dropdown">
+        <a href="javascript:void(0)" class="dropdown-toggle">
+          Produtos e Serviços <span class="chevron" aria-hidden="true">▾</span>
         </a>
-      </div>
-  
-      <ul class="nav-links" id="mobileMenu" role="menubar">
-        
-        <li class="dropdown">
-          <a href="javascript:void(0)" class="dropdown-toggle">
-            Produtos e Serviços <span class="chevron" aria-hidden="true">▾</span>
-          </a>
-          <ul class="dropdown-menu">
-            <li class="has-submenu">
-              <a href="produtos/renda-fixa.html">Renda Fixa <span class="chevron-right"></span></a>
+        <ul class="dropdown-menu">
+          <li class="has-submenu">
+            <a href="produtos/renda-fixa.html">Renda Fixa <span class="chevron-right"></span></a>
+          </li>
+          <li class="has-submenu">
+            <a href="produtos/renda-variavel.html">Renda Variável <span class="chevron-right"></span></a>            
+          </li>  
+          <li class="has-submenu">
+            <a href="produtos/previdencia.html">Previdência <span class="chevron-right"></span></a>            
+          </li> 
+          
+                    <li class="has-submenu">
+              <a href="produtos/fundos.html">Fundos <span class="chevron-right">▶</span></a>
+              <ul class="submenu"> 
+                <li><a href="produtos/fundos-plataforma.html">Fundos em Plataforma</a></li>
+                <li><a href="produtos/fundos-balcao.html">Fundos em Balcão</a></li>
+              </ul>
             </li>
-            <li class="has-submenu">
-              <a href="produtos/renda-variavel.html">Renda Variável <span class="chevron-right"></span></a>             
-            </li>  
-            <li class="has-submenu">
-              <a href="produtos/previdencia.html">Previdência <span class="chevron-right"></span></a>             
-            </li> 
-            <li class="has-submenu">
-              <a href="produtos/fundos.html">Fundos <span class="chevron-right"></span></a>
-            </li>
-            <li class="has-submenu">
-              <a href="produtos/mercado-futuro.html">Mercado Futuro <span class="chevron-right"></span></a>
-            </li>
-            <li class="has-submenu">
-              <a href="produtos/tesouro-direto.html">Tesouro Direto <span class="chevron-right"></span></a>
-            </li>
-          </ul>
-        </li>
-  
-        <li class="dropdown" role="none">
-          <a href="javascript:void(0)" class="dropdown-toggle" role="menuitem" aria-haspopup="true" aria-expanded="false">
-            Conteúdo <span class="chevron" aria-hidden="true">▾</span>
-          </a>
-          <ul class="dropdown-menu" role="menu">
-            <li role="none">
-              <a href="https://analisa.genialinvestimentos.com.br/" role="menuitem" target="_blank" rel="noopener noreferrer">Genial analisa</a>
-            </li>
-            <li role="none">
-              <a href="institucional/newsletter.html" role="menuitem" rel="noopener noreferrer">Newsletter</a>
-            </li>
-            <li role="none">
-              <a href="institucional/guias-praticos.html" role="menuitem">Guias Práticos</a>
-            </li>
-          </ul>
-        </li>
-  
-        <li role="none">
-          <a href="institucional/sobrenos.html" role="menuitem">Sobre nós</a>
-        </li>
-        <li role="none">
-          <a href="institucional/contato.html" role="menuitem">Contato</a>
-        </li>
-      </ul>
-  
-      <div class="nav-buttons">
-        <button 
-          class="account-link" 
-          type="button"
-          data-desktop-href="INSIRA_O_LINK_DO_PORTAL_AQUI"
-          data-mobile-href="INSIRA_O_LINK_DO_APP_AQUI"
-        >Acesse seus Investimentos</button>
-      </div>
-  
-      <button class="mobile-menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-  
-      <div class="menu-overlay" aria-hidden="true"></div>
-      <button class="mobile-menu-close" type="button" aria-label="Fechar menu">&times;</button>
-    </nav>
-  </header>
+          
+          <li class="has-submenu">
+            <a href="produtos/mercado-futuro.html">Mercado Futuro <span class="chevron-right"></span></a>
+          </li>
+          <li class="has-submenu">
+            <a href="produtos/tesouro-direto.html">Tesouro Direto <span class="chevron-right"></span></a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="dropdown" role="none">
+        <a href="javascript:void(0)" class="dropdown-toggle" role="menuitem" aria-haspopup="true" aria-expanded="false">
+          Conteúdo <span class="chevron" aria-hidden="true">▾</span>
+        </a>
+        <ul class="dropdown-menu" role="menu">
+          <li role="none">
+            <a href="https://analisa.genialinvestimentos.com.br/" role="menuitem" target="_blank" rel="noopener noreferrer">Genial analisa</a>
+          </li>
+          <li role="none">
+            <a href="institucional/newsletter.html" role="menuitem" rel="noopener noreferrer">Newsletter</a>
+          </li>
+          <li role="none">
+            <a href="institucional/guias-praticos.html" role="menuitem">Guias Práticos</a>
+          </li>
+        </ul>
+      </li>
+
+      <li role="none">
+        <a href="institucional/sobrenos.html" role="menuitem">Sobre nós</a>
+      </li>
+      <li role="none">
+        <a href="institucional/contato.html" role="menuitem">Contato</a>
+      </li>
+    </ul>
+
+    <div class="nav-buttons">
+      <button 
+        class="account-link" 
+        type="button"
+        data-desktop-href="INSIRA_O_LINK_DO_PORTAL_AQUI"
+        data-mobile-href="INSIRA_O_LINK_DO_APP_AQUI"
+      >Acesse seus Investimentos</button>
+    </div>
+
+    <button class="mobile-menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="menu-overlay" aria-hidden="true"></div>
+    <button class="mobile-menu-close" type="button" aria-label="Fechar menu">&times;</button>
+  </nav>
+</header>
 
   <div class="cotacao-ticker-bar" id="cotacaoBar" aria-label="Cotação do Dólar em tempo real">
     <div class="cotacao-ticker-inner">
