@@ -1809,16 +1809,20 @@ footer {
 }
 
 /* Ajustes Ópticos Individuais */
+.logo-banco-brb {
+  height: 37px; /* Altura ideal para compensar a palavra "banco" no topo */
+}
+
 .logo-dtvm {
-  height: 52px; /* DTVM precisa ser um pouco mais alta para compensar o formato quadrado */
+  height: 52px; 
 }
 
 .logo-genial {
-  height: 30px; /* Genial é muito "densa", reduzindo a altura ela se equilibra */
+  height: 30px; 
 }
 
 .logo-brb-inv {
-  height: 42px; /* Tamanho intermediário para a marca final */
+  height: 42px; 
 }
 
 .math-sign {
