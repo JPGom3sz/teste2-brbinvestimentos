@@ -2103,32 +2103,10 @@ footer {
 
 
 /* ==========================================
-   Submenu (Fundos) - Ajustes Responsivos
+   Ajuste Responsivo para o Submenu (Nível 3)
    ========================================== */
-
-/* Esconde o item "Visão Geral" no Desktop */
-.mobile-only-item {
-  display: none !important;
-}
-
-/* Ajusta a setinha para o Desktop */
-.has-submenu .chevron-right {
-  display: inline-block;
-  font-size: 0.65rem;
-  margin-left: 3px;
-  opacity: 0.6;
-  transition: transform 0.2s ease;
-}
-
-/* Regras apenas para dispositivos móveis */
 @media (max-width: 968px) {
-  
-  /* Faz o item "Visão Geral" aparecer no celular */
-  .mobile-only-item {
-    display: block !important;
-  }
-
-  /* Formata o submenu para o mobile (tira a flutuação) */
+  /* Reseta o posicionamento absoluto e remove o fundo branco */
   .submenu {
     position: static;
     transform: none !important;
@@ -2138,35 +2116,32 @@ footer {
     min-width: auto;
     padding: 0;
     margin-top: 0;
-    display: none !important; 
-    background: transparent !important; 
+    display: none; 
+    background: transparent !important; /* Remove o blocão branco */
   }
 
-  /* Formatação dos links internos para o fundo escuro */
+  /* Ajusta os links para combinarem com o menu escuro */
   .submenu a {
     padding-left: 35px !important; 
     font-size: 14px;
     background: transparent !important;
-    color: #ffffff !important; 
+    color: #ffffff !important; /* Garante que o texto fique branco */
     display: block;
     padding-top: 12px;
     padding-bottom: 12px;
   }
 
-  /* Linha divisória suave */
+  /* Adiciona uma linha sutil para separar os itens */
   .submenu li {
     border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
   }
 
-  /* Exibe o submenu quando a classe .is-open for adicionada pelo JS no clique */
-  .has-submenu.is-open .submenu {
-    display: block !important;
+  /* Exibe o submenu no mobile quando tocado */
+  .has-submenu:hover .submenu,
+  .has-submenu:active .submenu,
+  .has-submenu:focus-within .submenu {
+    display: block;
     opacity: 1;
     visibility: visible;
-  }
-  
-  /* Gira a setinha para baixo indicando que abriu */
-  .has-submenu.is-open .chevron-right {
-    transform: rotate(90deg);
   }
 }
