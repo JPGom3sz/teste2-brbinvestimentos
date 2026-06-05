@@ -41,16 +41,13 @@
               <a href="../produtos/previdencia.html" role="menuitem">Previdência <span class="chevron-right"></span></a>
             </li>
 
-            
              <li class="has-submenu">
               <a href="../produtos/fundos.html">Fundos <span class="chevron-right">▶</span></a>
               <ul class="submenu">
                 <li class="mobile-only-item"><a href="../produtos/fundos.html">Visão Geral de Fundos</a></li>
                 <li><a href="../fundos-tipos/fundos-todos.html">Fundos BRB </a></li>
-                
               </ul>
             </li>
-
 
             <li role="none" class="has-submenu">
               <a href="../produtos/mercado-futuro.html" role="menuitem">Mercado Futuro <span class="chevron-right"></span></a>
@@ -143,7 +140,7 @@
         </div>
       </div>
 
-      <div class="newsletter-form-wrap">
+     <div class="newsletter-form-wrap">
         <form class="newsletter-form" novalidate id="newsletterForm">
           <h3>Assine gratuitamente</h3>
           <p class="form-sub">Leva menos de 1 minuto. Sem spam, prometemos.</p>
@@ -283,7 +280,6 @@
   </footer>
 
   <script src="../js/script.js"></script>
-  <script src="../js\newsletter.js"></script>
 
   <script>
     /* Máscara de telefone */
@@ -315,43 +311,8 @@
         });
       }, { threshold: 0.12 }).observe(el);
     });
-
-    /* Form submit com loading + success */
-    const form      = document.getElementById('newsletterForm');
-    const submitBtn = document.getElementById('submitBtn');
-    const success   = document.getElementById('formSuccess');
-
-    if (form) {
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        const email       = form.querySelector('input[name="email"]');
-        const privacidade = form.querySelector('input[name="privacidade"]');
-
-        if (!email.value || !email.checkValidity()) {
-          email.focus();
-          email.style.borderColor = '#ef4444';
-          setTimeout(() => email.style.borderColor = '', 2000);
-          return;
-        }
-        if (!privacidade.checked) {
-          privacidade.closest('label').style.color = '#ef4444';
-          setTimeout(() => privacidade.closest('label').style.color = '', 2000);
-          return;
-        }
-
-        submitBtn.classList.add('loading');
-        submitBtn.textContent = 'Enviando...';
-
-        setTimeout(() => {
-          form.style.display = 'none';
-          success.classList.add('show');
-        }, 1800);
-      });
-
-      form.querySelectorAll('input').forEach(inp => {
-        inp.addEventListener('input', () => { inp.style.borderColor = ''; });
-      });
-    }
+    
   </script>
+  <script src="../js/newsletter.js?v=2"></script>
 </body>
 </html>
