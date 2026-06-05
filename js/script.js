@@ -1127,3 +1127,152 @@ function initFundCardsAccordion() {
     });
   });
 }
+
+(function () {
+    /* ── Accordion ── */
+    const ANIM = 420;
+    document.querySelectorAll('.fund-toggle-btn').forEach(btn => {
+      const col = document.getElementById(btn.getAttribute('aria-controls'));
+      if (!col) return;
+      btn.addEventListener('click', () => {
+        const open = btn.classList.contains('is-active');
+        if (open) {
+          col.style.maxHeight = col.scrollHeight + 'px';
+          col.getBoundingClientRect();
+          col.style.maxHeight = '0px';
+          col.classList.remove('is-open');
+          btn.classList.remove('is-active');
+          btn.setAttribute('aria-expanded', 'false');
+        } else {
+          col.classList.add('is-open');
+          col.style.maxHeight = col.scrollHeight + 'px';
+          btn.classList.add('is-active');
+          btn.setAttribute('aria-expanded', 'true');
+          setTimeout(() => { if (col.classList.contains('is-open')) col.style.maxHeight = 'none'; }, ANIM);
+          setTimeout(() => {
+            const card = btn.closest('.fund-card');
+            if (card) window.scrollTo({ top: card.getBoundingClientRect().top + scrollY - 100, behavior: 'smooth' });
+          }, 80);
+        }
+      });
+    });
+
+    /* ── Filtros ── */
+    const allCards   = Array.from(document.querySelectorAll('.fund-card[data-cat]'));
+    const allSects   = Array.from(document.querySelectorAll('.fd-category-section'));
+    const searchInput = document.getElementById('searchInput');
+    const countEl    = document.getElementById('countVisible');
+    const emptyEl    = document.getElementById('emptyState');
+    const clearBtn   = document.getElementById('clearFilters');
+
+    let activeCat   = 'todos';
+    let activeRisco = 'todos';
+    let activeDist  = 'todos';
+    let searchVal   = '';
+
+    function applyFilters() {
+      let visible = 0;
+
+      allCards.forEach(card => {
+        const cat   = card.dataset.cat;
+        const dist  = card.dataset.dist;
+        const risco = card.dataset.risco;
+        const name  = (card.dataset.name || '').toLowerCase();
+
+        const matchCat   = activeCat   === 'todos' || cat === activeCat;
+        const matchDist  = activeDist  === 'todos' || dist === activeDist;
+        const matchRisco = activeRisco === 'todos' || risco === activeRisco;
+        const matchSearch = !searchVal || name.includes(searchVal);
+
+        const show = matchCat && matchDist && matchRisco && matchSearch;
+        card.style.display = show ? '' : 'none';
+        if (show) visible++;
+      });
+
+      // Esconder seções sem cards visíveis
+      allSects.forEach(sect => {
+        const hasSect = activeCat === 'todos' || sect.dataset.section === activeCat;
+        const visibleCards = Array.from(sect.querySelectorAll('.fund-card[data-cat]'))
+          .filter(c => c.style.display !== 'none');
+        const hasVisible = visibleCards.length > 0;
+        sect.style.display = (hasSect && hasVisible) ? '' : 'none';
+
+        // Atualizar contagens por categoria
+        const secName = sect.dataset.section;
+        const countId = {
+          'renda-fixa-simples': 'count-rfs',
+          'renda-fixa': 'count-rf',
+          'acoes': 'count-ac',
+          'multimercado': 'count-mm',
+          'estruturados': 'count-fii'
+        }[secName];
+        if (countId) {
+          const el = document.getElementById(countId);
+          if (el) el.textContent = visibleCards.length;
+        }
+      });
+
+      countEl.textContent = visible;
+      emptyEl.classList.toggle('visible', visible === 0);
+
+      // Mostrar botão limpar se algum filtro ativo
+      const dirty = activeCat !== 'todos' || activeRisco !== 'todos' || activeDist !== 'todos' || searchVal;
+      clearBtn.classList.toggle('visible', !!dirty);
+    }
+
+    // Chips categoria
+    document.querySelectorAll('[data-cat]').forEach(chip => {
+      if (!chip.classList.contains('fund-card')) {
+        chip.addEventListener('click', () => {
+          document.querySelectorAll('[data-cat]:not(.fund-card)').forEach(c => c.classList.remove('active'));
+          chip.classList.add('active');
+          activeCat = chip.dataset.cat;
+          applyFilters();
+        });
+      }
+    });
+
+    // Chips risco
+    document.querySelectorAll('[data-risco]:not(.fund-card)').forEach(chip => {
+      chip.addEventListener('click', () => {
+        document.querySelectorAll('[data-risco]:not(.fund-card)').forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+        activeRisco = chip.dataset.risco;
+        applyFilters();
+      });
+    });
+
+    // Toggle distribuição
+    document.querySelectorAll('[data-dist]').forEach(btn => {
+      if (!btn.classList.contains('fund-card')) {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('[data-dist]:not(.fund-card)').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          activeDist = btn.dataset.dist;
+          applyFilters();
+        });
+      }
+    });
+
+    // Busca
+    searchInput.addEventListener('input', () => {
+      searchVal = searchInput.value.trim().toLowerCase();
+      applyFilters();
+    });
+
+    // Limpar tudo
+    clearBtn.addEventListener('click', () => {
+      activeCat = 'todos';
+      activeRisco = 'todos';
+      activeDist = 'todos';
+      searchVal = '';
+      searchInput.value = '';
+      document.querySelectorAll('[data-cat]:not(.fund-card)').forEach(c => c.classList.toggle('active', c.dataset.cat === 'todos'));
+      document.querySelectorAll('[data-risco]').forEach(c => c.classList.remove('active'));
+      document.querySelectorAll('[data-dist]:not(.fund-card)').forEach(b => b.classList.toggle('active', b.dataset.dist === 'todos'));
+      applyFilters();
+    });
+
+    // Init
+    applyFilters();
+  })();

@@ -78,6 +78,8 @@
       Voltar para Fundos
     </a>
 
+    
+
     <!-- Cabeçalho da seção -->
     <div class="fd-section-header">
       <span class="fd-section-pill">Classificação ANBIMA</span>
@@ -90,7 +92,63 @@
         <div class="fd-stat"><span class="fd-stat__value">CDI +</span><span class="fd-stat__label">Índice de referência</span></div>
       </div>
     </div>
-
+<!-- ══ BARRA DE FILTROS ══ -->
+<div class="fd-filters-bar">
+<div class="fd-filters-top">
+<!-- Busca -->
+<div class="fd-search">
+<svg class="fd-search__icon" fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-width="2.2" viewbox="0 0 24 24" width="16"><circle cx="11" cy="11" r="8"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line></svg>
+<input autocomplete="off" id="searchInput" placeholder="Buscar pelo nome do fundo..." type="text"/>
+</div>
+<!-- Toggle distribuição -->
+<div aria-label="Filtrar por distribuição" class="fd-toggle-group" role="group">
+<button class="fd-toggle-btn active" data-dist="todos">Todos</button>
+<button class="fd-toggle-btn" data-dist="balcao">Balcão</button>
+<button class="fd-toggle-btn" data-dist="plataforma">Plataforma</button>
+</div>
+<!-- Contador -->
+<div class="fd-results-count"><strong id="countVisible">25</strong> fundo(s)</div>
+</div>
+<div class="fd-filters-divider"></div>
+<div class="fd-filters-groups">
+<!-- Categoria -->
+<div class="fd-filter-group">
+<div class="fd-filter-group__label">Categoria</div>
+<div class="fd-filter-chips">
+<button class="fd-chip active" data-cat="todos">Todos</button>
+<button class="fd-chip" data-cat="renda-fixa-simples">RF Simples</button>
+<button class="fd-chip" data-cat="renda-fixa">Renda Fixa</button>
+<button class="fd-chip" data-cat="acoes">Ações</button>
+<button class="fd-chip" data-cat="multimercado">Multimercado</button>
+<button class="fd-chip" data-cat="estruturados">Estruturados</button>
+</div>
+</div>
+<!-- Perfil de risco -->
+<div class="fd-filter-group">
+<div class="fd-filter-group__label">Perfil de risco</div>
+<div class="fd-filter-chips">
+<button class="fd-chip" data-risco="todos">Todos</button>
+<button class="fd-chip" data-risco="conservador"><span class="dot dot-cons"></span>Conservador</button>
+<button class="fd-chip" data-risco="moderado"><span class="dot dot-mod"></span>Moderado</button>
+<button class="fd-chip" data-risco="arrojado"><span class="dot dot-arr"></span>Arrojado</button>
+<button class="fd-chip" data-risco="qualificado"><span class="dot dot-agr"></span>Qualificado</button>
+</div>
+</div>
+<!-- Limpar -->
+<div class="fd-filter-group" style="flex:0;min-width:auto;display:flex;align-items:flex-end;padding-bottom:0.1rem;">
+<button class="fd-clear-btn" id="clearFilters">
+<svg fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="12"><line x1="18" x2="6" y1="6" y2="18"></line><line x1="6" x2="18" y1="6" y2="18"></line></svg>
+            Limpar filtros
+          </button>
+</div>
+</div>
+</div>
+<!-- ══ ESTADO VAZIO ══ -->
+<div class="fd-empty-state" id="emptyState">
+<svg fill="none" height="48" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" width="48"><circle cx="11" cy="11" r="8"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line></svg>
+<h3>Nenhum fundo encontrado</h3>
+<p>Tente ajustar os filtros ou buscar por outro nome.</p>
+</div>
     <div class="fd-funds-grid">
 
       <!-- ═══════════════════════════════════
