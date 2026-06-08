@@ -816,6 +816,7 @@ function initPageSpecificLogic() {
   initScrollReveal();
   initExpandableProductCards();
   initReadingProgressAndCTA();
+  initFundCardsAccordion();
 
   // ── RENDA VARIÁVEL ──
   if (document.querySelector('.rv-hero')) {
@@ -1088,41 +1089,44 @@ function throttle(fn, limit = 100) {
  */
 function initFundCardsAccordion() {
   const toggleButtons = document.querySelectorAll('.fund-toggle-btn');
-  
+
   if (toggleButtons.length === 0) return;
+
+  // Usa aria-controls para achar o painel (mais robusto que nextElementSibling)
+  const getPanel = (btn) => {
+    const id = btn.getAttribute('aria-controls');
+    return id ? document.getElementById(id) : btn.nextElementSibling;
+  };
+
+  const closeBtn = (btn) => {
+    const panel = getPanel(btn);
+    btn.classList.remove('is-active');
+    btn.setAttribute('aria-expanded', 'false');
+    if (panel) {
+      panel.classList.remove('is-open');
+      panel.style.maxHeight = null;
+    }
+  };
 
   toggleButtons.forEach(btn => {
     btn.addEventListener('click', () => {
-      // Pega a DIV colapsável logo em seguida do botão do cabeçalho
-      const panel = btn.nextElementSibling;
+      const panel = getPanel(btn);
       if (!panel) return;
 
       const isOpen = btn.classList.contains('is-active');
 
-      // (Opcional) Fecha todos os outros cards abertos
+      // Fecha todos os outros cards abertos
       document.querySelectorAll('.fund-toggle-btn').forEach(otherBtn => {
-        if (otherBtn !== btn) {
-          otherBtn.classList.remove('is-active');
-          otherBtn.setAttribute('aria-expanded', 'false');
-          if (otherBtn.nextElementSibling) {
-            otherBtn.nextElementSibling.classList.remove('is-open');
-            otherBtn.nextElementSibling.style.maxHeight = null;
-          }
-        }
+        if (otherBtn !== btn) closeBtn(otherBtn);
       });
 
-      // Se já estava aberto, fecha. Se não, abre definindo o MaxHeight
       if (isOpen) {
-        btn.classList.remove('is-active');
-        btn.setAttribute('aria-expanded', 'false');
-        panel.classList.remove('is-open');
-        panel.style.maxHeight = null;
+        closeBtn(btn);
       } else {
         btn.classList.add('is-active');
         btn.setAttribute('aria-expanded', 'true');
         panel.classList.add('is-open');
-        // Usando a altura real do conteúdo para a animação funcionar sem engasgo
-        panel.style.maxHeight = panel.scrollHeight + "px";
+        panel.style.maxHeight = panel.scrollHeight + 'px';
       }
     });
   });
@@ -1130,6 +1134,9 @@ function initFundCardsAccordion() {
 
 (function () {
     /* ── Filtros ── */
+    // Só executa em páginas que têm a barra de filtros de fundos
+    if (!document.getElementById('searchInput')) return;
+
     const allCards   = Array.from(document.querySelectorAll('.fund-card[data-cat]'));
     const allSects   = Array.from(document.querySelectorAll('.fd-category-section'));
     const searchInput = document.getElementById('searchInput');
@@ -1244,6 +1251,29 @@ function initFundCardsAccordion() {
       document.querySelectorAll('[data-dist]:not(.fund-card)').forEach(b => b.classList.toggle('active', b.dataset.dist === 'todos'));
       applyFilters();
     });
+
+    // ── Filtros coerentes com a página ──
+    // Se a barra de filtros tiver data-page-cat, esconde chips irrelevantes
+    // e pré-seleciona a categoria da página automaticamente.
+    const filtersBar = document.querySelector('.fd-filters-bar[data-page-cat]');
+    if (filtersBar) {
+      const pageCat = filtersBar.dataset.pageCat;
+
+      // Esconde todos os chips de categoria que não sejam "todos" nem a da página
+      document.querySelectorAll('[data-cat]:not(.fund-card)').forEach(chip => {
+        if (chip.dataset.cat !== 'todos' && chip.dataset.cat !== pageCat) {
+          chip.style.display = 'none';
+        }
+      });
+
+      // Pré-seleciona a categoria da página
+      if (pageCat && pageCat !== 'todos') {
+        document.querySelectorAll('[data-cat]:not(.fund-card)').forEach(c => c.classList.remove('active'));
+        const activeChip = document.querySelector(`[data-cat="${pageCat}"]:not(.fund-card)`);
+        if (activeChip) activeChip.classList.add('active');
+        activeCat = pageCat;
+      }
+    }
 
     // Init
     applyFilters();

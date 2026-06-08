@@ -9,7 +9,7 @@
     cooldownDays:   5,
     exitIntent:     true,
 
-    // 👇 Cole aqui a URL gerada no Apps Script após implantar
+    
     SCRIPT_URL: 'https://script.google.com/macros/s/AKfycbyO4MrqX8ubabCDvEmixU5HE-fb5zC1WBTb6lt9bfJUQh4WZQoM25MNH07haJF-fFy_/exec',
   };
 

@@ -374,7 +374,7 @@ nav {
    ============================================================ */
 .fd-hero {
   min-height: 100vh;
-  background: var(--gradient-fd);
+  background: #001528; /* fallback simples, sem gradiente — a imagem cobre tudo */
   display: flex;
   align-items: center;
   padding: calc(var(--header-h) + 4rem) var(--px) 5rem;
@@ -382,23 +382,24 @@ nav {
   overflow: hidden;
 }
 
-/* Camada escura por cima da imagem de fundo para dar contraste no texto */
+/* Overlay escuro sobre a imagem para garantir contraste no texto */
 .fd-hero::before {
   content: '';
   position: absolute;
   inset: 0;
-  z-index: 1; /* Fica acima da imagem de fundo, mas abaixo do texto */
+  background: linear-gradient(135deg, rgba(0, 21, 40, 0.75) 0%, rgba(0, 45, 87, 0.55) 100%);
+  z-index: 1;
 }
 
-/* Nova classe da imagem cobrindo todo o fundo */
+/* Imagem de fundo cobrindo toda a hero */
 .hero-bg-cover {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Faz a imagem cobrir tudo sem distorcer */
-  object-position: center;
-  z-index: 0; /* Fica por baixo de tudo */
+  object-fit: cover;
+  object-position: 75% center; /* mantém o homem visível no lado direito */
+  z-index: 0;
 }
 
 .fd-hero-inner { 

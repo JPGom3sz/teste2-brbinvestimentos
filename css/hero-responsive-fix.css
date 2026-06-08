@@ -1,0 +1,334 @@
+/* =============================================================
+   hero-responsive-fix.css
+   Corrige a responsividade das imagens de fundo (hero-bg-cover)
+   e o layout das hero sections em todas as páginas de produto.
+
+   COMO USAR: inclua este arquivo em TODAS as páginas,
+   DEPOIS dos outros CSS específicos de página.
+   Ex.: <link rel="stylesheet" href="../css/hero-responsive-fix.css">
+   ============================================================= */
+
+
+/* ============================================================
+   1. BASE — garante que a seção hero seja o contexto de
+      posicionamento da imagem de fundo em qualquer tela
+   ============================================================ */
+.fd-hero,
+.mf-hero,
+.pv-hero,
+.rv-hero,
+.td-hero,
+.rf-hero {
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* ============================================================
+   2. IMAGEM DE FUNDO (hero-bg-cover)
+      Corrige o posicionamento padrão para cobrir bem em
+      qualquer resolução sem distorcer
+   ============================================================ */
+.hero-bg-cover {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top; /* Prioriza a parte superior, onde geralmente fica o foco da foto */
+  z-index: 0;
+  pointer-events: none;
+}
+
+
+/* ============================================================
+   3. NOTEBOOK (1024px – 1280px)
+      Evita que o grid de 2 colunas fique espremido
+      e reduz o padding excessivo
+   ============================================================ */
+@media (max-width: 1280px) and (min-width: 969px) {
+
+  /* Reduz o gap e o padding lateral */
+  .fd-hero-inner,
+  .mf-hero-inner,
+  .pv-hero-inner,
+  .rv-hero-inner,
+  .td-hero-inner,
+  .rf-hero-inner {
+    gap: 2.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  /* Diminui fonte do h1 para caber melhor */
+  .fd-hero h1,
+  .mf-hero h1,
+  .pv-hero h1,
+  .rv-hero h1,
+  .td-hero h1,
+  .rf-hero h1 {
+    font-size: clamp(1.9rem, 3.2vw, 2.8rem);
+  }
+
+  /* Imagem hero do renda-fixa (coluna visual) */
+  .rf-hero-image img {
+    max-width: 420px;
+  }
+
+  /* Stats do tesouro-direto não saem da tela */
+  .td-hero-stats {
+    gap: 0.8rem;
+  }
+}
+
+
+/* ============================================================
+   4. TABLET (600px – 968px)
+      Layout de 1 coluna centralizado, imagem de fundo
+      reposicionada para mostrar o foco correto
+   ============================================================ */
+@media (max-width: 968px) {
+
+  /* --- Altura mínima mais humana em tablet --- */
+  .fd-hero,
+  .mf-hero,
+  .pv-hero,
+  .rv-hero,
+  .td-hero,
+  .rf-hero {
+    min-height: 90svh;          /* usa svh para ignorar barra do browser */
+    min-height: 90vh;           /* fallback */
+    padding-top: calc(var(--header-h) + 3rem);
+    padding-bottom: 4rem;
+    align-items: center;
+  }
+
+  /* --- Imagem centraliza no topo (foco em rostos / skyline) --- */
+  .hero-bg-cover {
+    object-position: center 20%;
+  }
+
+  /* --- Layout: 1 coluna, texto centralizado --- */
+  .fd-hero-inner,
+  .mf-hero-inner,
+  .pv-hero-inner,
+  .rv-hero-inner,
+  .td-hero-inner,
+  .rf-hero-inner {
+    grid-template-columns: 1fr !important;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  /* --- Oculta elementos visuais secundários que ficam feios em 1 col --- */
+  .rf-hero-visual,
+  .mf-hero-visual,
+  .rv-hero-visual {
+    display: none !important;
+  }
+
+  /* --- Centraliza badge, título e descrição --- */
+  .fd-hero-badge,
+  .mf-hero-badge,
+  .pv-hero-badge,
+  .rv-hero-badge,
+  .td-hero-badge,
+  .rf-hero-badge {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .fd-hero h1,
+  .mf-hero h1,
+  .pv-hero h1,
+  .rv-hero h1,
+  .td-hero h1,
+  .rf-hero h1 {
+    font-size: clamp(1.8rem, 5.5vw, 2.8rem);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .fd-hero p.hero-desc,
+  .mf-hero p.hero-desc,
+  .pv-hero p.hero-desc,
+  .rv-hero p.hero-desc,
+  .td-hero .hero-desc,
+  .rf-hero p.hero-desc {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    max-width: 520px;
+  }
+
+  /* --- CTAs lado a lado em tablet (>480px) --- */
+  .fd-hero-ctas,
+  .mf-hero-ctas,
+  .pv-hero-ctas,
+  .rv-hero-ctas,
+  .td-hero-ctas,
+  .rf-hero-ctas {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+  }
+
+  /* --- Stats do tesouro-direto: 2 colunas em tablet --- */
+  .td-hero-stats {
+    grid-template-columns: repeat(2, 1fr) !important;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+}
+
+
+/* ============================================================
+   5. MOBILE (≤ 480px)
+      Ajustes finos para telas pequenas
+   ============================================================ */
+@media (max-width: 480px) {
+
+  .fd-hero,
+  .mf-hero,
+  .pv-hero,
+  .rv-hero,
+  .td-hero,
+  .rf-hero {
+    min-height: 100svh;
+    min-height: 100vh;
+    padding-top: calc(var(--header-h) + 2rem);
+    padding-bottom: 3rem;
+  }
+
+  /* Foco um pouco mais alto para mostrar o "céu" ou topo da cena */
+  .hero-bg-cover {
+    object-position: center 15%;
+  }
+
+  /* Títulos menores */
+  .fd-hero h1,
+  .mf-hero h1,
+  .pv-hero h1,
+  .rv-hero h1,
+  .td-hero h1,
+  .rf-hero h1 {
+    font-size: clamp(1.65rem, 7vw, 2.2rem);
+  }
+
+  /* Descrição com tamanho legível */
+  .fd-hero p.hero-desc,
+  .mf-hero p.hero-desc,
+  .pv-hero p.hero-desc,
+  .rv-hero p.hero-desc,
+  .td-hero .hero-desc,
+  .rf-hero p.hero-desc {
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+
+  /* Botões empilhados e largura cheia */
+  .fd-hero-ctas,
+  .mf-hero-ctas,
+  .pv-hero-ctas,
+  .rv-hero-ctas,
+  .td-hero-ctas,
+  .rf-hero-ctas {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Botões largura total (classes específicas por página) */
+  .btn-fd-primary, .btn-fd-outline,
+  .btn-mf-primary, .btn-mf-outline,
+  .btn-pv-primary, .btn-pv-outline,
+  .btn-rv-primary, .btn-rv-outline,
+  .btn-td-primary, .btn-td-outline,
+  .btn-rf-primary, .btn-rf-outline {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* Stats do tesouro-direto: 1 coluna em mobile */
+  .td-hero-stats {
+    grid-template-columns: 1fr 1fr !important;
+    max-width: 280px;
+  }
+
+  /* Imagem do renda-fixa (coluna direita) — esconde em mobile */
+  .rf-hero-image {
+    display: none;
+  }
+
+  /* Anel animado da previdência — oculta em mobile (pesado e sem propósito) */
+  .pv-hero::after {
+    display: none !important;
+  }
+}
+
+
+/* ============================================================
+   6. MOBILE PEQUENO (≤ 360px)
+      Dispositivos muito compactos
+   ============================================================ */
+@media (max-width: 360px) {
+  .fd-hero,
+  .mf-hero,
+  .pv-hero,
+  .rv-hero,
+  .td-hero,
+  .rf-hero {
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+  }
+
+  .fd-hero h1,
+  .mf-hero h1,
+  .pv-hero h1,
+  .rv-hero h1,
+  .td-hero h1,
+  .rf-hero h1 {
+    font-size: 1.55rem;
+  }
+}
+
+
+/* ============================================================
+   7. OBJECT-POSITION ESPECÍFICO POR PÁGINA
+      Sobrescreve os valores genéricos para manter o foco
+      correto de cada foto em qualquer tamanho de tela
+   ============================================================ */
+
+/* Fundos — homem está no lado direito da foto */
+.fd-hero .hero-bg-cover {
+  object-position: 75% center;
+}
+
+@media (max-width: 968px) {
+  .fd-hero .hero-bg-cover {
+    object-position: 70% center;
+  }
+}
+
+@media (max-width: 480px) {
+  .fd-hero .hero-bg-cover {
+    object-position: 65% center;
+  }
+}
+
+/* Renda Variável — mulher está no centro-direito */
+.rv-hero .hero-bg-cover {
+  object-position: 65% center;
+}
+
+@media (max-width: 968px) {
+  .rv-hero .hero-bg-cover {
+    object-position: 62% center;
+  }
+}
+
+@media (max-width: 480px) {
+  .rv-hero .hero-bg-cover {
+    object-position: 60% center;
+  }
+}

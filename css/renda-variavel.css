@@ -440,16 +440,19 @@ nav {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: var(--accent-gold);
+  background: rgba(0, 20, 50, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #ffffff;
   padding: 0.4rem 1rem;
   border-radius: 50px;
   font-size: 0.78rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   margin-bottom: 1.5rem;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 }
 
 .rv-hero h1 {
