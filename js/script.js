@@ -1129,34 +1129,6 @@ function initFundCardsAccordion() {
 }
 
 (function () {
-    /* ── Accordion ── */
-    const ANIM = 420;
-    document.querySelectorAll('.fund-toggle-btn').forEach(btn => {
-      const col = document.getElementById(btn.getAttribute('aria-controls'));
-      if (!col) return;
-      btn.addEventListener('click', () => {
-        const open = btn.classList.contains('is-active');
-        if (open) {
-          col.style.maxHeight = col.scrollHeight + 'px';
-          col.getBoundingClientRect();
-          col.style.maxHeight = '0px';
-          col.classList.remove('is-open');
-          btn.classList.remove('is-active');
-          btn.setAttribute('aria-expanded', 'false');
-        } else {
-          col.classList.add('is-open');
-          col.style.maxHeight = col.scrollHeight + 'px';
-          btn.classList.add('is-active');
-          btn.setAttribute('aria-expanded', 'true');
-          setTimeout(() => { if (col.classList.contains('is-open')) col.style.maxHeight = 'none'; }, ANIM);
-          setTimeout(() => {
-            const card = btn.closest('.fund-card');
-            if (card) window.scrollTo({ top: card.getBoundingClientRect().top + scrollY - 100, behavior: 'smooth' });
-          }, 80);
-        }
-      });
-    });
-
     /* ── Filtros ── */
     const allCards   = Array.from(document.querySelectorAll('.fund-card[data-cat]'));
     const allSects   = Array.from(document.querySelectorAll('.fd-category-section'));

@@ -55,7 +55,7 @@
           </ul>
         </li>
         <li role="none"><a href="../institucional/sobrenos.html" role="menuitem">Sobre Nós</a></li>
-        <li role="none"><a href="https://forms.office.com/r/1EsKit6Ce9" target="_blank" rel="noopener noreferrer" class="nav-cta" role="menuitem">Abrir Conta</a></li>
+        <li role="none"><a href="../institucional/contato.html" class="nav-cta" role="menuitem">Contato</a></li>
       </ul>
       <div class="nav-buttons">
         <button class="account-link" type="button" onclick="window.open('https://brb.genialinvestimentos.com.br/auth/login','_blank','noopener,noreferrer')">
@@ -160,7 +160,7 @@
       <!-- ═══════════════════════════════════
            FUNDO 1 · BRB ÍNDICE ATIVO FIA RL
       ═══════════════════════════════════ -->
-      <article class="fund-card" id="fundo-indice-ativo">
+      <article class="fund-card" id="fundo-indice-ativo" data-cat="acoes" data-dist="balcao" data-risco="arrojado" data-name="BRB FIC FIA Índice Ativo Ações">
 
         <button class="fund-card__header fund-toggle-btn" aria-expanded="false" aria-controls="collapse-indice-ativo">
           <div class="fund-card__title-group">
@@ -237,7 +237,7 @@
       <!-- ═══════════════════════════════════
            FUNDO 2 · BRB DIVIDENDOS FIC FIA RL
       ═══════════════════════════════════ -->
-      <article class="fund-card" id="fundo-fic-fia">
+      <article class="fund-card" id="fundo-fic-fia" data-cat="acoes" data-dist="balcao" data-risco="arrojado" data-name="BRB FIC FIA Ações">
 
         <button class="fund-card__header fund-toggle-btn" aria-expanded="false" aria-controls="collapse-fic-fia">
           <div class="fund-card__title-group">
@@ -314,7 +314,7 @@
       <!-- ═══════════════════════════════════
            FUNDO 3 · BRB DIVIDENDOS FIA RL
       ═══════════════════════════════════ -->
-      <article class="fund-card" id="fundo-fia">
+      <article class="fund-card" id="fundo-fia" data-cat="acoes" data-dist="balcao" data-risco="arrojado" data-name="BRB FIA Dividendos Ações">
 
         <button class="fund-card__header fund-toggle-btn" aria-expanded="false" aria-controls="collapse-fia">
           <div class="fund-card__title-group">
@@ -489,54 +489,5 @@
   </footer>
 
   <script src="../js/script.js" defer></script>
-
-  <script>
-    /* ── Accordion dos fundos ── */
-    (function () {
-      var ANIM_DURATION = 420;
-
-      document.querySelectorAll('.fund-toggle-btn').forEach(function (btn) {
-        var collapseId = btn.getAttribute('aria-controls');
-        var collapse   = document.getElementById(collapseId);
-        if (!collapse) return;
-
-        btn.addEventListener('click', function () {
-          var isOpen = btn.classList.contains('is-active');
-
-          if (isOpen) {
-            collapse.style.maxHeight = collapse.scrollHeight + 'px';
-            collapse.getBoundingClientRect();
-            collapse.style.maxHeight = '0px';
-            collapse.classList.remove('is-open');
-            btn.classList.remove('is-active');
-            btn.setAttribute('aria-expanded', 'false');
-          } else {
-            collapse.classList.add('is-open');
-            collapse.style.maxHeight = collapse.scrollHeight + 'px';
-            btn.classList.add('is-active');
-            btn.setAttribute('aria-expanded', 'true');
-
-            setTimeout(function () {
-              if (collapse.classList.contains('is-open')) {
-                collapse.style.maxHeight = 'none';
-              }
-            }, ANIM_DURATION);
-
-            setTimeout(function () {
-              var card = btn.closest('.fund-card');
-              if (card) {
-                var top = card.getBoundingClientRect().top + window.scrollY - 100;
-                window.scrollTo({ top: top, behavior: 'smooth' });
-              }
-            }, 80);
-          }
-        });
-      });
-    })();
-
-
-
-    
-  </script>
 </body>
 </html>

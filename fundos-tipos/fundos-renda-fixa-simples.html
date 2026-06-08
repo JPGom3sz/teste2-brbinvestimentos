@@ -156,7 +156,7 @@
       <!-- ═══════════════════════════════════
            FUNDO 1 · BRB SIMPLES TESOURO · Cód 33
       ═══════════════════════════════════ -->
-      <article class="fund-card" id="fundo-33">
+      <article class="fund-card" id="fundo-33" data-cat="renda-fixa-simples" data-dist="balcao" data-risco="conservador" data-name="BRB Simples Tesouro FIC FIRF LP RL Código 33 Renda Fixa Simples">
 
         <button class="fund-card__header fund-toggle-btn" aria-expanded="false" aria-controls="collapse-33">
           <div class="fund-card__title-group">
@@ -239,7 +239,7 @@
       <!-- ═══════════════════════════════════
            FUNDO 2 · BRB RENDE MAIS · Cód 31
       ═══════════════════════════════════ -->
-      <article class="fund-card" id="fundo-31">
+      <article class="fund-card" id="fundo-31" data-cat="renda-fixa-simples" data-dist="plataforma" data-risco="conservador" data-name="BRB Rende Mais FIRF Simples RL Renda Fixa Simples">
 
         <button class="fund-card__header fund-toggle-btn" aria-expanded="false" aria-controls="collapse-31">
           <div class="fund-card__title-group">
@@ -413,57 +413,5 @@
   </footer>
 
   <script src="../js/script.js" defer></script>
-
-  <script>
-    /* ── Accordion dos fundos ── */
-    (function () {
-      const ANIM_DURATION = 420; // ms — igual ao CSS
-
-      document.querySelectorAll('.fund-toggle-btn').forEach(function (btn) {
-        const collapseId = btn.getAttribute('aria-controls');
-        const collapse   = document.getElementById(collapseId);
-        if (!collapse) return;
-
-        btn.addEventListener('click', function () {
-          const isOpen = btn.classList.contains('is-active');
-
-          if (isOpen) {
-            // ── FECHAR ──
-            // Fixar altura atual para poder animar para 0
-            collapse.style.maxHeight = collapse.scrollHeight + 'px';
-            // Forçar reflow
-            collapse.getBoundingClientRect();
-            collapse.style.maxHeight = '0px';
-            collapse.classList.remove('is-open');
-            btn.classList.remove('is-active');
-            btn.setAttribute('aria-expanded', 'false');
-
-          } else {
-            // ── ABRIR ──
-            collapse.classList.add('is-open');
-            collapse.style.maxHeight = collapse.scrollHeight + 'px';
-            btn.classList.add('is-active');
-            btn.setAttribute('aria-expanded', 'true');
-
-            // Após animação, liberar max-height para conteúdo dinâmico
-            setTimeout(function () {
-              if (collapse.classList.contains('is-open')) {
-                collapse.style.maxHeight = 'none';
-              }
-            }, ANIM_DURATION);
-
-            // Scroll suave para o card
-            setTimeout(function () {
-              const card = btn.closest('.fund-card');
-              if (card) {
-                const top = card.getBoundingClientRect().top + window.scrollY - 100;
-                window.scrollTo({ top: top, behavior: 'smooth' });
-              }
-            }, 80);
-          }
-        });
-      });
-    })();
-  </script>
 </body>
 </html>
