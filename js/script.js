@@ -223,42 +223,69 @@ function initPortfolio() {
   if (!contentBox || portfolioLis.length === 0) return;
  
   // ──────────────────────────────────────────────
-  // DADOS DOS PRODUTOS (idêntico ao original)
+  // PAINEL DE CONTROLE DE LINKS E BOTÕES
+  // Aqui você define os textos e os links exatos de cada botão para cada aba.
   // ──────────────────────────────────────────────
   const portfolioData = {
     default: {
       titulo   : 'Conheça nossos principais produtos',
       descricao: 'O portfólio da BRB Investimentos é estruturado para atender diferentes perfis e objetivos financeiros, combinando segurança, diversificação e potencial de crescimento. A estratégia busca equilíbrio entre ativos de renda fixa e renda variável, permitindo ao investidor acessar oportunidades em diferentes mercados, sempre com gestão responsável e alinhada às melhores práticas do mercado financeiro.',
-      link     : 'https://lp.brbinvestimentos.com.br/perfis-brb-brb01-a/?gcode=GI-CRM-WEB-BRB01-X-CLIENTE-X-X-PON-X-HOTLIST-X&e=null&n=null&t=null&vlp=brb01-lpa'
+      botao1   : { texto: 'Faça uma simulação agora', link: 'https://lp.brbinvestimentos.com.br/perfis-brb-brb01-a/?gcode=GI-CRM-WEB-BRB01-X-CLIENTE-X-X-PON-X-HOTLIST-X&e=null&n=null&t=null&vlp=brb01-lpa' },
+      botao2   : null 
     },
-    1: { titulo: 'Renda Fixa',      descricao: 'Os produtos de renda fixa da BRB Investimentos oferecem segurança e previsibilidade de retorno, ideais para investidores que buscam preservação de capital e rendimento consistente. Inclui CDBs, LCIs, LCAs, Tesouro Direto e debêntures, com diferentes prazos e rentabilidades para atender ao seu perfil.',                                                                                                                                                                               link: 'produtos/renda-fixa.html'       },
-    2: { titulo: 'Renda Variável',  descricao: 'Os produtos de renda variável da BRB Investimentos incluem ações de empresas listadas, fundos de investimento em ações (FIAs), fundos multimercado e ETFs. Esses instrumentos permitem ao investidor participar do desempenho de diferentes setores da economia, com potencial de valorização no longo prazo e recebimento de proventos, como dividendos.',                                                                                                                                   link: 'produtos/renda-variavel.html'   },
-    3: { titulo: 'fundos',          descricao: 'Os fundos de investimento oferecem diversificação imediata com gestão profissional, permitindo ao investidor acessar uma variedade de estratégias de forma prática. A BRB Investimentos disponibiliza uma ampla gama de fundos, incluindo multimercados, renda fixa, ações e internacionais, atendendo a diferentes perfis de risco e objetivos de retorno.',                                                                                                                                 link: 'produtos/fundos.html'},    
-    4: { titulo: 'Previdência',     descricao: 'Os planos de previdência da BRB Investimentos são voltados para o planejamento financeiro de longo prazo, auxiliando na construção de uma aposentadoria mais segura. Com opções como PGBL e VGBL, esses produtos oferecem benefícios fiscais e flexibilidade de contribuições, adaptando-se a diferentes perfis de investidores.',                                                                                                                                                              link: 'produtos/previdencia.html'      },
-    5: { titulo: 'Mercado Futuro',  descricao: 'O mercado de futuros permite aos investidores negociar contratos para a compra ou venda de ativos em uma data futura, com o objetivo de especular sobre as variações de preços ou hedging de riscos. A BRB Investimentos oferece acesso a esse mercado com ferramentas e suporte especializado.',                                                                                                                                                                                               link: 'produtos/mercado-futuro.html'   },
-    6: { titulo: 'Tesouro Direto',  descricao: 'O Tesouro Direto é um programa do Tesouro Nacional que permite a compra e venda de títulos públicos diretamente pelo investidor, com rentabilidade vinculada à inflação e prazos variáveis. A BRB Investimentos oferece acesso a esse mercado com suporte especializado.',                                                                                                                                                                                                                      link: 'produtos/tesouro-direto.html'   },
-    7: { titulo: 'O que vem por aí', descricao: 'A BRB Investimentos está sempre evoluindo para oferecer o que há de mais moderno no mercado financeiro. Em breve, você terá acesso a uma nova classe de ativos diretamente na nossa plataforma: os Criptoativos.',                                                                                                                                                                                                                                                                            link: null                    },
+    1: { 
+      titulo: 'Renda Fixa',      
+      descricao: 'Os produtos de renda fixa da BRB Investimentos oferecem segurança e previsibilidade de retorno, ideais para investidores que buscam preservação de capital e rendimento consistente. Inclui CDBs, LCIs, LCAs, Tesouro Direto e debêntures, com diferentes prazos e rentabilidades para atender ao seu perfil.',                                                                                                                                                                               
+      botao1: { texto: 'Saiba mais sobre Renda Fixa', link: 'produtos/renda-fixa.html' },
+      botao2: { texto: 'Custos Renda Fixa',           link: 'taxas.html' } // <-- Altere o link secundário aqui
+    },
+    2: { 
+      titulo: 'Renda Variável',  
+      descricao: 'Os produtos de renda variável da BRB Investimentos incluem ações de empresas listadas, fundos de investimento em ações (FIAs), fundos multimercado e ETFs. Esses instrumentos permitem ao investidor participar do desempenho de diferentes setores da economia, com potencial de valorização no longo prazo e recebimento de proventos, como dividendos.',                                                                                                                                   
+      botao1: { texto: 'Saiba mais sobre Renda Variável', link: 'produtos/renda-variavel.html' },
+      botao2: { texto: 'Custos Operacionais',             link: 'taxas.html' } // <-- Altere o link secundário aqui
+    },
+    3: { 
+      titulo: 'Fundos',          
+      descricao: 'Os fundos de investimento oferecem diversificação imediata com gestão profissional, permitindo ao investidor acessar uma variedade de estratégias de forma prática. A BRB Investimentos disponibiliza uma ampla gama de fundos, incluindo multimercados, renda fixa, ações e internacionais, atendendo a diferentes perfis de risco e objetivos de retorno.',                                                                                                                                 
+      botao1: { texto: 'Saiba mais sobre Fundos', link: 'produtos/fundos.html' },
+      botao2: { texto: 'Conheça os fundos do BRB', link: 'fundos-tipos/fundos-todos.html' } // <-- Altere o link secundário aqui
+    },    
+    4: { 
+      titulo: 'Previdência',     
+      descricao: 'Os planos de previdência da BRB Investimentos são voltados para o planejamento financeiro de longo prazo, auxiliando na construção de uma aposentadoria mais segura. Com opções como PGBL e VGBL, esses produtos oferecem benefícios fiscais e flexibilidade de contribuições, adaptando-se a diferentes perfis de investidores.',                                                                                                                                                              
+      botao1: { texto: 'Saiba mais sobre Previdência', link: 'produtos/previdencia.html' },
+      botao2: { texto: 'Custos e Previdência',         link: null } // <-- Altere o link secundário aqui
+    },
+    5: { 
+      titulo: 'Mercado Futuro',  
+      descricao: 'O mercado de futuros permite aos investidores negociar contratos para a compra ou venda de ativos em uma data futura, com o objetivo de especular sobre as variações de preços ou hedging de riscos. A BRB Investimentos oferece acesso a esse mercado com ferramentas e suporte especializado.',                                                                                                                                                                                               
+      botao1: { texto: 'Saiba mais sobre Mercado Futuro', link: 'produtos/mercado-futuro.html' },
+      botao2: { texto: 'Condições Comerciais',            link: 'taxas.html' } // <-- Altere o link secundário aqui
+    },
+    6: { 
+      titulo: 'Tesouro Direto',  
+      descricao: 'O Tesouro Direto é um programa do Tesouro Nacional que permite a compra e venda de títulos públicos diretamente pelo investidor, com rentabilidade vinculada à inflação e prazos variáveis. A BRB Investimentos oferece acesso a esse mercado com suporte especializado.',                                                                                                                                                                                                                      
+      botao1: { texto: 'Saiba mais sobre Tesouro Direto', link: 'produtos/tesouro-direto.html' },
+      botao2: { texto: 'Taxas do Tesouro Direto',         link: 'taxas.html' } // <-- Altere o link secundário aqui
+    },
+    7: { 
+      titulo: 'O que vem por aí', 
+      descricao: 'A BRB Investimentos está sempre evoluindo para oferecer o que há de mais moderno no mercado financeiro. Em breve, você terá acesso a uma nova classe de ativos diretamente na nossa plataforma: os Criptoativos.',                                                                                                                                                                                                                                                                            
+      botao1: null, // O código entenderá que é "Em Breve" se não houver botões
+      botao2: null
+    },
   };
  
   // Ícones SVG por produto (usados apenas no mobile)
   const portfolioIcons = {
-    1: `<svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,            // Renda Fixa — escudo
-    2: `<svg viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>`, // Renda Variável — trending up
-    3: `<svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>`, // Fundos — pasta
-    4: `<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`,// Previdência — relógio
-    5: `<svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>`, // Mercado Futuro — barras
-    6: `<svg viewBox="0 0 24 24"><line x1="3" y1="22" x2="21" y2="22"/><rect x="6" y="2" width="12" height="20" rx="1"/><line x1="10" y1="6" x2="10" y2="6"/><line x1="14" y1="6" x2="14" y2="6"/><line x1="10" y1="10" x2="10" y2="10"/><line x1="14" y1="10" x2="14" y2="10"/><line x1="10" y1="14" x2="10" y2="14"/><line x1="14" y1="14" x2="14" y2="14"/></svg>`, // Tesouro — banco
-    7: `<svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`, // Em breve — estrela
-  };
- 
-  // Textos dos botões secundários (taxa / condições)
-  const titulosBotaoSecundario = {
-    '1': 'Custos Renda Fixa',
-    '2': 'Custos Operacionais',
-    '3': 'Conheça os fundos do BRB ',
-    '4': 'Custos e Previdência',
-    '5': 'Condições Comerciais',
-    '6': 'Taxas do Tesouro Direto'
+    1: `<svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,            // Renda Fixa
+    2: `<svg viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>`, // Renda Variável
+    3: `<svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>`, // Fundos
+    4: `<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`,// Previdência
+    5: `<svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>`, // Mercado Futuro
+    6: `<svg viewBox="0 0 24 24"><line x1="3" y1="22" x2="21" y2="22"/><rect x="6" y="2" width="12" height="20" rx="1"/><line x1="10" y1="6" x2="10" y2="6"/><line x1="14" y1="6" x2="14" y2="6"/><line x1="10" y1="10" x2="10" y2="10"/><line x1="14" y1="10" x2="14" y2="10"/><line x1="10" y1="14" x2="10" y2="14"/><line x1="14" y1="14" x2="14" y2="14"/></svg>`, // Tesouro
+    7: `<svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`, // Em breve
   };
  
   // ──────────────────────────────────────────────
@@ -267,25 +294,28 @@ function initPortfolio() {
   const isMobile = () => window.innerWidth <= 968;
  
   // ──────────────────────────────────────────────
-  // MODO DESKTOP — comportamento original
+  // MODO DESKTOP — comportamento baseado nos novos botões
   // ──────────────────────────────────────────────
   const renderPortfolio = (id = 'default') => {
     const data = portfolioData[id];
     if (!data) return;
  
-    const textoBotaoPrincipal = (id === 'default')
-      ? 'Faça uma simulação agora'
-      : `Saiba mais sobre ${data.titulo}`;
+    // Constroi o Botão Principal (se existir)
+    let btnSaibaMais = '';
+    if (data.botao1) {
+      btnSaibaMais = `<a href="${data.botao1.link}" class="portfolio-cta-btn">${data.botao1.texto} <span aria-hidden="true">→</span></a>`;
+    } else if (id === '7') {
+      // Regra de exceção visual para a aba "Em Breve"
+      btnSaibaMais = `<span class="portfolio-cta-btn" style="opacity:.5;cursor:default">Em breve</span>`;
+    }
  
-    const btnSaibaMais = data.link
-      ? `<a href="${data.link}" class="portfolio-cta-btn">${textoBotaoPrincipal} <span aria-hidden="true">→</span></a>`
-      : '';
+    // Constroi o Botão Secundário (se existir)
+    let btnTaxas = '';
+    if (data.botao2) {
+      btnTaxas = `<a href="${data.botao2.link}" class="portfolio-cta-outline">${data.botao2.texto}</a>`;
+    }
  
-    const textoBotaoSecundario = titulosBotaoSecundario[id] || 'Condições Comerciais';
-    const btnTaxas = (id !== 'default' && id !== '7')
-      ? `<a href="taxas.html" class="portfolio-cta-outline">${textoBotaoSecundario}</a>`
-      : '';
- 
+    // Junta os botões
     const btnHTML = (btnSaibaMais || btnTaxas)
       ? `<div class="portfolio-btns">\n  ${btnSaibaMais}\n  ${btnTaxas}\n</div>`
       : '';
@@ -307,10 +337,6 @@ function initPortfolio() {
   // MODO MOBILE — accordion animado
   // ──────────────────────────────────────────────
  
-  /**
-   * Injeta a estrutura de accordion dentro de cada <li>.
-   * Só é chamado uma vez; a classe .pf-accordion-ready marca o li como pronto.
-   */
   const buildAccordion = () => {
     portfolioLis.forEach(li => {
       if (li.classList.contains('pf-accordion-ready')) return;
@@ -321,15 +347,19 @@ function initPortfolio() {
       const icon    = portfolioIcons[id] || portfolioIcons[1];
       if (!data) return;
  
-      // Botões do body
-      const btnSaibaMais = data.link
-        ? `<a href="${data.link}" class="pf-accordion-cta">Saiba mais <span aria-hidden="true">→</span></a>`
-        : `<span class="pf-accordion-cta" style="opacity:.5;cursor:default">Em breve</span>`;
+      // Constroi o Botão Principal Mobile (se existir)
+      let btnSaibaMais = '';
+      if (data.botao1) {
+        btnSaibaMais = `<a href="${data.botao1.link}" class="pf-accordion-cta">${data.botao1.texto} <span aria-hidden="true">→</span></a>`;
+      } else if (id === '7') {
+        btnSaibaMais = `<span class="pf-accordion-cta" style="opacity:.5;cursor:default">Em breve</span>`;
+      }
  
-      const textoBotaoSecundario = titulosBotaoSecundario[id] || '';
-      const btnTaxas = (id !== '7' && textoBotaoSecundario)
-        ? `<a href="taxas.html" class="pf-accordion-cta" style="background:transparent;color:var(--primary-blue);border:1.5px solid var(--primary-blue);box-shadow:none;">${textoBotaoSecundario}</a>`
-        : '';
+      // Constroi o Botão Secundário Mobile (se existir)
+      let btnTaxas = '';
+      if (data.botao2) {
+        btnTaxas = `<a href="${data.botao2.link}" class="pf-accordion-cta" style="background:transparent;color:var(--primary-blue);border:1.5px solid var(--primary-blue);box-shadow:none;">${data.botao2.texto}</a>`;
+      }
  
       // Constrói o HTML interno
       li.innerHTML = `
@@ -356,14 +386,12 @@ function initPortfolio() {
  
       li.classList.add('pf-accordion-ready');
  
-      // Evento de clique no cabeçalho
       const header = li.querySelector('.pf-accordion-header');
       const body   = li.querySelector('.pf-accordion-body');
  
       const openItem = () => {
         li.classList.add('pf-open');
         header.setAttribute('aria-expanded', 'true');
-        // Anima via max-height
         body.style.maxHeight = body.scrollHeight + 'px';
       };
  
@@ -376,7 +404,6 @@ function initPortfolio() {
       header.addEventListener('click', () => {
         const isOpen = li.classList.contains('pf-open');
  
-        // Fecha todos os outros itens
         portfolioLis.forEach(otherLi => {
           if (otherLi !== li && otherLi.classList.contains('pf-open')) {
             otherLi.classList.remove('pf-open');
@@ -390,7 +417,6 @@ function initPortfolio() {
         isOpen ? closeItem() : openItem();
       });
  
-      // Suporte a teclado
       header.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
@@ -400,10 +426,6 @@ function initPortfolio() {
     });
   };
  
-  /**
-   * Remove a estrutura de accordion dos <li> e restaura ao estado original.
-   * Chamado quando a janela é redimensionada de mobile para desktop.
-   */
   const destroyAccordion = () => {
     portfolioLis.forEach((li, idx) => {
       if (!li.classList.contains('pf-accordion-ready')) return;
@@ -425,12 +447,10 @@ function initPortfolio() {
  
   const setup = () => {
     if (isMobile()) {
-      // Garante que o painel de desktop não mostre lixo no mobile
       contentBox.style.display = 'none';
       buildAccordion();
     } else {
       contentBox.style.display = '';
-      // Se voltou do mobile, destrói e reconfigura para desktop
       if (currentlyMobile) {
         destroyAccordion();
         renderPortfolio();
@@ -440,18 +460,12 @@ function initPortfolio() {
     currentlyMobile = isMobile();
   };
  
-  // Eventos de clique para desktop
   const bindDesktopClicks = () => {
-    // MODIFICAÇÃO: Removemos listeners antigos clonando o elemento via query direta,
-    // sem usar a variável portfolioLis que pode estar desatualizada.
     document.querySelectorAll('.portfolio-list li').forEach(li => {
       const clone = li.cloneNode(true);
       li.parentNode.replaceChild(clone, li);
     });
 
-    // MODIFICAÇÃO IMPORTANTE: Re-seleciona os novos itens do DOM e ATUALIZA a variável
-    // portfolioLis, garantindo que o restante do script (como o renderPortfolio)
-    // trabalhe com os elementos "vivos" no HTML.
     portfolioLis = document.querySelectorAll('.portfolio-list li'); 
  
     portfolioLis.forEach(li => {
@@ -465,7 +479,6 @@ function initPortfolio() {
     });
   };
  
-  // Inicializa corretamente conforme o viewport atual
   if (isMobile()) {
     contentBox.style.display = 'none';
     buildAccordion();
@@ -474,7 +487,6 @@ function initPortfolio() {
     bindDesktopClicks();
   }
  
-  // Adapta se o utilizador redimensionar a janela (ex: rotação de tablet)
   let resizeTimer;
   window.addEventListener('resize', () => {
     clearTimeout(resizeTimer);
@@ -1277,4 +1289,4 @@ function initFundCardsAccordion() {
 
     // Init
     applyFilters();
-  })();
+})();
