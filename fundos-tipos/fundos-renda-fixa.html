@@ -9,7 +9,80 @@
   <link rel="stylesheet" href="../css/style-enhance.css" />
   <link rel="stylesheet" href="../css/mobile-nav.css" />
   <link rel="stylesheet" href="../css/fundos-informativos.css" />
+<style>
+  .fund-card__internal-title {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: #1a2940;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.65rem;
+    border-bottom: 1px solid #f1f5f9;
+    line-height: 1.4;
+  }
+</style>
 </head>
+
+
+
+<div id="brb-cookie-banner" role="dialog" aria-modal="false" aria-label="Preferências de cookies">
+
+  <div class="cookie-inner">
+
+    <!-- Ícone -->
+    <div class="cookie-icon" aria-hidden="true">
+      <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 0a6 6 0 0 1 6 6m-6 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-4 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm5 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+      </svg>
+    </div>
+
+    <!-- Texto + Categorias -->
+    <div class="cookie-text">
+      <strong>Utilizamos cookies</strong>
+      <p>
+        Para melhorar sua experiência e personalizar conteúdos. Veja nossa
+        <a href="pdfs/Política de Privacidade.pdf" target="_blank" rel="noopener noreferrer">Política de Privacidade</a>.
+      </p>
+
+      <!-- Categorias -->
+      <div class="cookie-categories">
+
+        <label class="cookie-cat">
+          <input type="checkbox" value="necessários" checked disabled />
+          <span class="cookie-cat-label">Necessários <em>(obrigatório)</em></span>
+        </label>
+
+        <label class="cookie-cat">
+          <input type="checkbox" value="analíticos" checked />
+          <span class="cookie-cat-label">Analíticos</span>
+        </label>
+
+        <label class="cookie-cat">
+          <input type="checkbox" value="marketing" checked />
+          <span class="cookie-cat-label">Marketing</span>
+        </label>
+
+      </div>
+    </div>
+
+    <!-- Botões -->
+    <div class="cookie-actions">
+      <button id="brb-cookie-accept" class="cookie-btn-accept">
+        Aceitar cookies
+      </button>
+      <button id="brb-cookie-reject" class="cookie-btn-reject">
+        Só necessários
+      </button>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- Estilos e script do banner de cookies -->
+<link rel="stylesheet" href="../css/cookies.css" />
+<script src="../js/cookies.js"></script>
+
 <body>
 
 <header id="site-header">
@@ -157,7 +230,6 @@
 <button aria-controls="collapse-brb-firf-ima-s-lp-rl-cod-102" aria-expanded="false" class="fund-card__header fund-toggle-btn">
 <div class="fund-card__title-group">
 <div class="fund-card__name">BRB FIRF IMA-S LP RL · Cód. 102</div>
-<div class="fund-card__full-name">BRB Fundo de Investimento em Renda Fixa IMA-S Longo Prazo Responsabilidade Limitada</div>
 </div>
 <div class="fund-card__header-right">
 <span class="fund-card__badge badge--very-low">
@@ -171,6 +243,7 @@
 </button>
 <div class="fund-card__collapse" id="collapse-brb-firf-ima-s-lp-rl-cod-102" role="region">
 <div class="fund-card__body">
+            <div class="fund-card__internal-title">BRB Fundo de Investimento em Renda Fixa IMA-S Longo Prazo Responsabilidade Limitada</div>
 <p class="fund-card__desc">Gestão passiva que acompanha o <strong>IMA-S</strong> (LFTs — Tesouro Selic). Aplica diretamente em Títulos Públicos Federais. Voltado a investidores em geral e fundos de investimento. Possui resgate automático. <strong>Não há IOF.</strong> ANBIMA: RF Indexados.</p>
 <div class="fund-card__chars">
 <div class="char-item"><div class="char-item__label">Aplicação inicial</div><div class="char-item__value highlight">R$ 100,00</div></div>
@@ -194,17 +267,13 @@
 </div>
 <div class="fund-card__docs">
 <span class="fund-card__docs-label">📄 Documentos</span>
-<a class="doc-link" href="../pdfs/fundos/F102_regulamento.pdf" target="_blank">
-<svg fill="none" height="12" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24" width="12"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              Regulamento
-            </a>
-<a class="doc-link" href="../pdfs/fundos/F102_informativo_mensal.pdf" target="_blank">
-<svg fill="none" height="12" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24" width="12"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              Informativo Mensal
-            </a>
-<a class="doc-link" href="../pdfs/fundos/F102_demonstracoes.pdf" target="_blank">
-<svg fill="none" height="12" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24" width="12"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              Demonstrações Financeiras
+<a class="doc-link" href="../pdfs-regulamento-fundos\102_Regulamento_CVM 175_02.09.2024_v3.pdf" target="_blank">Regulamento</a>
+<a class="doc-link" href="../pdfs-informes-mensais\F102_05_2026.pdf" target="_blank">Informativo Mensal</a>
+<a class="doc-link" href="../pdfs-demonstrações-finan-fundos\F102 - 263GR-077-PB BRB IMA-S FIRF (EF).pdf" target="_blank">Demonstrações Financeiras</a>
+<a class="doc-link" href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank">Política de Remuneração</a>
+<a href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Assembleia
             </a>
 </div>
 <div class="fund-card__meta">
@@ -215,7 +284,6 @@
 <button aria-controls="collapse-brb-capital-fic-firf-lp-rl-cod-40" aria-expanded="false" class="fund-card__header fund-toggle-btn">
 <div class="fund-card__title-group">
 <div class="fund-card__name">BRB CAPITAL FIC FIRF LP RL · Cód. 40</div>
-<div class="fund-card__full-name">BRB Capital FIC de Fundos de Investimento em Renda Fixa Longo Prazo Responsabilidade Limitada</div>
 </div>
 <div class="fund-card__header-right">
 <span class="fund-card__badge badge--very-low">
@@ -229,6 +297,7 @@
 </button>
 <div class="fund-card__collapse" id="collapse-brb-capital-fic-firf-lp-rl-cod-40" role="region">
 <div class="fund-card__body">
+            <div class="fund-card__internal-title">BRB Capital FIC de Fundos de Investimento em Renda Fixa Longo Prazo Responsabilidade Limitada</div>
 <p class="fund-card__desc">Gestão ativa no mercado de juros pós ou pré-fixados e/ou índice de preços. Aplica exclusivamente em Títulos Públicos Federais, prazo médio superior a 365 dias. PF e PJ em geral. Saldo mínimo de apenas R$ 1,00. ANBIMA: RF Duração Baixa Soberano.</p>
 <div class="fund-card__chars">
 <div class="char-item"><div class="char-item__label">Aplicação inicial</div><div class="char-item__value highlight">R$ 100,00</div></div>
@@ -252,21 +321,13 @@
 </div>
 <div class="fund-card__docs">
 <span class="fund-card__docs-label">📄 Documentos</span>
-<a class="doc-link" href="../pdfs/fundos/F40_regulamento.pdf" target="_blank">
-<svg fill="none" height="12" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24" width="12"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              Regulamento
-            </a>
-<a class="doc-link" href="../pdfs/fundos/F40_informativo_mensal.pdf" target="_blank">
-<svg fill="none" height="12" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24" width="12"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              Informativo Mensal
-            </a>
-<a class="doc-link" href="../pdfs/fundos/F40_demonstracoes.pdf" target="_blank">
-<svg fill="none" height="12" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24" width="12"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              Demonstrações Financeiras
-            </a>
-<a class="doc-link" href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank">
-<svg fill="none" height="12" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24" width="12"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              Política de Remuneração
+<a class="doc-link" href="../pdfs-regulamento-fundos\F40_CVM 175_02.06.2025.pdf" target="_blank">Regulamento</a>
+<a class="doc-link" href="../pdfs-informes-mensais\F40_05_2026.pdf" target="_blank">Informativo Mensal</a>
+<a class="doc-link" href="../pdfs-demonstrações-finan-fundos\40 - 263AL-002-PB BRB Capital (EF).pdf" target="_blank">Demonstrações Financeiras</a>
+<a class="doc-link" href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank">Política de Remuneração</a>
+<a href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Assembleia
             </a>
 </div>
 <div class="fund-card__meta">
@@ -277,7 +338,6 @@
 <button aria-controls="collapse-brb-credito-corporativo-firf-cred-privad" aria-expanded="false" class="fund-card__header fund-toggle-btn">
 <div class="fund-card__title-group">
 <div class="fund-card__name">BRB CRÉDITO CORPORATIVO FIRF CRÉD. PRIVADO RL · F57</div>
-<div class="fund-card__full-name">BRB Crédito Corporativo Fundo de Investimento em Renda Fixa Crédito Privado Longo Prazo Responsabilidade Limitada</div>
 </div>
 <div class="fund-card__header-right">
 <span class="fund-card__badge badge--low">
@@ -291,6 +351,7 @@
 </button>
 <div class="fund-card__collapse" id="collapse-brb-credito-corporativo-firf-cred-privad" role="region">
 <div class="fund-card__body">
+            <div class="fund-card__internal-title">BRB Crédito Corporativo Fundo de Investimento em Renda Fixa Crédito Privado Longo Prazo Responsabilidade Limitada</div>
 <p class="fund-card__desc">Busca <strong>superar o CDI</strong> via ativos pré, pós-fixados ou índice de preços. Público-alvo exclusivo: <strong>fundos de investimento administrados/geridos pela BRB DTVM</strong>. Estratégia de crédito privado. ANBIMA: RF Duração Baixa Invest Grade.</p>
 <div class="fund-card__chars">
 <div class="char-item"><div class="char-item__label">Aplicação inicial</div><div class="char-item__value highlight">R$ 1,00</div></div>
@@ -314,17 +375,13 @@
 </div>
 <div class="fund-card__docs">
 <span class="fund-card__docs-label">📄 Documentos</span>
-<a class="doc-link" href="../pdfs/fundos/F57_regulamento.pdf" target="_blank">
-<svg fill="none" height="12" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24" width="12"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              Regulamento
-            </a>
-<a class="doc-link" href="../pdfs/fundos/F57_informativo_mensal.pdf" target="_blank">
-<svg fill="none" height="12" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24" width="12"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              Informativo Mensal
-            </a>
-<a class="doc-link" href="../pdfs/fundos/F57_demonstracoes.pdf" target="_blank">
-<svg fill="none" height="12" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24" width="12"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              Demonstrações Financeiras
+<a class="doc-link" href="../pdfs-regulamento-fundos\F57_CVM175_Regulamento_02.09.2024.pdf" target="_blank">Regulamento</a>
+<a class="doc-link" href="../pdfs-informes-mensais\F57_05_2026.pdf" target="_blank">Informativo Mensal</a>
+<a class="doc-link" href="../pdfs-demonstrações-finan-fundos\F57_- 263GA-069-PB BRB Crédito Coroporativo (EF).pdf" target="_blank">Demonstrações Financeiras</a>
+<a class="doc-link" href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank">Política de Remuneração</a>
+<a href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Assembleia
             </a>
 </div>
 <div class="fund-card__meta">
@@ -335,7 +392,6 @@
 <button aria-controls="collapse-brb-fic-firf-di-mega-lp-rl-cod-65" aria-expanded="false" class="fund-card__header fund-toggle-btn">
 <div class="fund-card__title-group">
 <div class="fund-card__name">BRB FIC FIRF DI MEGA LP RL · Cód. 65</div>
-<div class="fund-card__full-name">BRB FIC de Fundos de Investimento em Renda Fixa DI Mega Longo Prazo Responsabilidade Limitada</div>
 </div>
 <div class="fund-card__header-right">
 <span class="fund-card__badge badge--low">
@@ -349,6 +405,7 @@
 </button>
 <div class="fund-card__collapse" id="collapse-brb-fic-firf-di-mega-lp-rl-cod-65" role="region">
 <div class="fund-card__body">
+            <div class="fund-card__internal-title">BRB FIC de Fundos de Investimento em Renda Fixa DI Mega Longo Prazo Responsabilidade Limitada</div>
 <p class="fund-card__desc">FIC de RF para investidores de grande porte. Busca retorno próximo ao CDI via cotas de fundos em ativos financeiros. Não admite alavancagem. PF e PJ clientes BRB. Saldo mínimo de R$ 50 mil após aplicação inicial de R$ 100 mil. ANBIMA: RF Duração Baixa Invest Grade.</p>
 <div class="fund-card__chars">
 <div class="char-item"><div class="char-item__label">Aplicação inicial</div><div class="char-item__value highlight">R$ 100.000,00</div></div>
@@ -372,21 +429,13 @@
 </div>
 <div class="fund-card__docs">
 <span class="fund-card__docs-label">📄 Documentos</span>
-<a class="doc-link" href="../pdfs/fundos/F65_regulamento.pdf" target="_blank">
-<svg fill="none" height="12" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24" width="12"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              Regulamento
-            </a>
-<a class="doc-link" href="../pdfs/fundos/F65_informativo_mensal.pdf" target="_blank">
-<svg fill="none" height="12" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24" width="12"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              Informativo Mensal
-            </a>
-<a class="doc-link" href="../pdfs/fundos/F65_demonstracoes.pdf" target="_blank">
-<svg fill="none" height="12" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24" width="12"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              Demonstrações Financeiras
-            </a>
-<a class="doc-link" href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank">
-<svg fill="none" height="12" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24" width="12"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              Política de Remuneração
+<a class="doc-link" href="../pdfs-regulamento-fundos\F65_Regulamento_CVM175_02.06.2025.pdf" target="_blank">Regulamento</a>
+<a class="doc-link" href="../pdfs-informes-mensais\F65_05_2026.pdf" target="_blank">Informativo Mensal</a>
+<a class="doc-link" href="../pdfs/fundos/F33_demonstracoes.pdf" target="_blank">Demonstrações Financeiras</a>
+<a class="doc-link" href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank">Política de Remuneração</a>
+<a href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Assembleia
             </a>
 </div>
 <div class="fund-card__meta">
@@ -397,7 +446,6 @@
 <button aria-controls="collapse-brb-rende-facil-firf-cp-automatico-rl-f1" aria-expanded="false" class="fund-card__header fund-toggle-btn">
 <div class="fund-card__title-group">
 <div class="fund-card__name">BRB RENDE FÁCIL FIRF CP AUTOMÁTICO RL · F14</div>
-<div class="fund-card__full-name">BRB Rende Fácil Fundo de Investimento em Renda Fixa Curto Prazo Automático Responsabilidade Limitada</div>
 </div>
 <div class="fund-card__header-right">
 <span class="fund-card__badge badge--very-low">
@@ -411,6 +459,7 @@
 </button>
 <div class="fund-card__collapse" id="collapse-brb-rende-facil-firf-cp-automatico-rl-f1" role="region">
 <div class="fund-card__body">
+            <div class="fund-card__internal-title">BRB Rende Fácil Fundo de Investimento em Renda Fixa Curto Prazo Automático Responsabilidade Limitada</div>
 <p class="fund-card__desc">Gestão passiva acompanhando SELIC/CDI via títulos públicos. Destinado exclusivamente a <strong>pessoas jurídicas</strong> clientes BRB. Curto prazo com liquidez D+0. Aplicação mínima de R$ 1,00 com acesso simplificado via Term de Adesão. ANBIMA: RF Duração Baixa Soberano.</p>
 <div class="fund-card__chars">
 <div class="char-item"><div class="char-item__label">Aplicação inicial</div><div class="char-item__value highlight">R$ 1,00</div></div>
@@ -434,21 +483,13 @@
 </div>
 <div class="fund-card__docs">
 <span class="fund-card__docs-label">📄 Documentos</span>
-<a class="doc-link" href="../pdfs/fundos/F14_regulamento.pdf" target="_blank">
-<svg fill="none" height="12" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24" width="12"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              Regulamento
-            </a>
-<a class="doc-link" href="../pdfs/fundos/F14_informativo_mensal.pdf" target="_blank">
-<svg fill="none" height="12" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24" width="12"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              Informativo Mensal
-            </a>
-<a class="doc-link" href="../pdfs/fundos/F14_demonstracoes.pdf" target="_blank">
-<svg fill="none" height="12" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24" width="12"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              Demonstrações Financeiras
-            </a>
-<a class="doc-link" href="../pdfs/fundos/F14_termo_adesao.pdf" target="_blank">
-<svg fill="none" height="12" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24" width="12"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              Termo de Adesão
+<a class="doc-link" href="../pdfs-regulamento-fundos\F14_Regulamento_CVM 175_alteração TX Custódia_FINAL.pdf" target="_blank">Regulamento</a>
+<a class="doc-link" href="../pdfs-informes-mensais\F14_05_2026.pdf" target="_blank">Informativo Mensal</a>
+<a class="doc-link" href="../pdfs-demonstrações-finan-fundos\14 - 263A7-016-PB BRB Rende Facil (EF).pdf" target="_blank">Demonstrações Financeiras</a>
+<a class="doc-link" href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank">Política de Remuneração</a>
+<a href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Assembleia
             </a>
 </div>
 <div class="fund-card__meta">
@@ -459,7 +500,6 @@
 <button aria-controls="collapse-brb-firf-ima-b-master-lp-rl-cod-100" aria-expanded="false" class="fund-card__header fund-toggle-btn">
 <div class="fund-card__title-group">
 <div class="fund-card__name">BRB FIRF IMA-B MASTER LP RL · Cód. 100</div>
-<div class="fund-card__full-name">BRB Fundo de Investimento em Renda Fixa IMA-B Longo Prazo Responsabilidade Limitada</div>
 </div>
 <div class="fund-card__header-right">
 <span class="fund-card__badge badge--medium">
@@ -473,6 +513,7 @@
 </button>
 <div class="fund-card__collapse" id="collapse-brb-firf-ima-b-master-lp-rl-cod-100" role="region">
 <div class="fund-card__body">
+            <div class="fund-card__internal-title">BRB Fundo de Investimento em Renda Fixa IMA-B Longo Prazo Responsabilidade Limitada</div>
 <p class="fund-card__desc">Gestão passiva que acompanha o <strong>IMA-B</strong>. Aplica diretamente em NTN-Bs (Tesouro IPCA+). Fundo master — voltado a outros fundos da BRB DTVM e investidores em geral. <strong>Não há IOF.</strong> Aplicação mínima de R$ 1,00. ANBIMA: RF Indexados.</p>
 <div class="fund-card__chars">
 <div class="char-item"><div class="char-item__label">Aplicação inicial</div><div class="char-item__value highlight">R$ 1,00</div></div>
@@ -496,17 +537,13 @@
 </div>
 <div class="fund-card__docs">
 <span class="fund-card__docs-label">📄 Documentos</span>
-<a class="doc-link" href="../pdfs/fundos/F100_regulamento.pdf" target="_blank">
-<svg fill="none" height="12" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24" width="12"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              Regulamento
-            </a>
-<a class="doc-link" href="../pdfs/fundos/F100_informativo_mensal.pdf" target="_blank">
-<svg fill="none" height="12" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24" width="12"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              Informativo Mensal
-            </a>
-<a class="doc-link" href="../pdfs/fundos/F100_demonstracoes.pdf" target="_blank">
-<svg fill="none" height="12" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24" width="12"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              Demonstrações Financeiras
+<a class="doc-link" href="../pdfs-regulamento-fundos\F100_Regulamento_CVM175_FINAL v.2.pdf" target="_blank">Regulamento</a>
+<a class="doc-link" href="../pdfs-informes-mensais\F100_05_2026.pdf" target="_blank">Informativo Mensal</a>
+<a class="doc-link" href="../pdfs-demonstrações-finan-fundos\F100 - 263GR-074-PB BRB IMA-B Master (EF).pdf" target="_blank">Demonstrações Financeiras</a>
+<a class="doc-link" href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank">Política de Remuneração</a>
+<a href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Assembleia
             </a>
 </div>
 <div class="fund-card__meta">
@@ -517,7 +554,6 @@
 <button aria-controls="collapse-brb-fic-firf-lp-ima-b-rl-cod-44" aria-expanded="false" class="fund-card__header fund-toggle-btn">
 <div class="fund-card__title-group">
 <div class="fund-card__name">BRB FIC FIRF LP IMA-B RL · Cód. 44</div>
-<div class="fund-card__full-name">BRB FIC de Fundos de Investimento em Renda Fixa Longo Prazo IMA-B Responsabilidade Limitada</div>
 </div>
 <div class="fund-card__header-right">
 <span class="fund-card__badge badge--medium">
@@ -531,6 +567,7 @@
 </button>
 <div class="fund-card__collapse" id="collapse-brb-fic-firf-lp-ima-b-rl-cod-44" role="region">
 <div class="fund-card__body">
+            <div class="fund-card__internal-title">BRB FIC de Fundos de Investimento em Renda Fixa Longo Prazo IMA-B Responsabilidade Limitada</div>
 <p class="fund-card__desc">Acompanha o <strong>IMA-B</strong> (IPCA + juros reais). Investimento exclusivo em Títulos Públicos Federais com prazo médio acima de 365 dias. Ideal para proteção inflacionária. Voltado a grandes investidores clientes BRB. ANBIMA: RF Indexados.</p>
 <div class="fund-card__chars">
 <div class="char-item"><div class="char-item__label">Aplicação inicial</div><div class="char-item__value highlight">R$ 50.000,00</div></div>
@@ -554,21 +591,13 @@
 </div>
 <div class="fund-card__docs">
 <span class="fund-card__docs-label">📄 Documentos</span>
-<a class="doc-link" href="../pdfs/fundos/F44_regulamento.pdf" target="_blank">
-<svg fill="none" height="12" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24" width="12"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              Regulamento
-            </a>
-<a class="doc-link" href="../pdfs/fundos/F44_informativo_mensal.pdf" target="_blank">
-<svg fill="none" height="12" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24" width="12"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              Informativo Mensal
-            </a>
-<a class="doc-link" href="../pdfs/fundos/F44_demonstracoes.pdf" target="_blank">
-<svg fill="none" height="12" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24" width="12"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              Demonstrações Financeiras
-            </a>
-<a class="doc-link" href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank">
-<svg fill="none" height="12" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24" width="12"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              Política de Remuneração
+<a class="doc-link" href="../pdfs-regulamento-fundos\F44_CVM 175_02.06.2025.pdf" target="_blank">Regulamento</a>
+<a class="doc-link" href="../pdfs-informes-mensais\F44_05_2026.pdf" target="_blank">Informativo Mensal</a>
+<a class="doc-link" href="../pdfs-demonstrações-finan-fundos\44 - 263A2-007-PB BRB Imab Resp. (EF).pdf" target="_blank">Demonstrações Financeiras</a>
+<a class="doc-link" href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank">Política de Remuneração</a>
+<a href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Assembleia
             </a>
 </div>
 <div class="fund-card__meta">
@@ -579,7 +608,6 @@
 <button aria-controls="collapse-brb-fic-firf-di-lp-hiper-rl-cod-13" aria-expanded="false" class="fund-card__header fund-toggle-btn">
 <div class="fund-card__title-group">
 <div class="fund-card__name">BRB FIC FIRF DI LP HIPER RL · Cód. 13</div>
-<div class="fund-card__full-name">BRB FIC de Fundos de Investimento em Renda Fixa DI Crédito Privado Longo Prazo Hiper Responsabilidade Limitada</div>
 </div>
 <div class="fund-card__header-right">
 <span class="fund-card__badge badge--low">
@@ -593,6 +621,7 @@
 </button>
 <div class="fund-card__collapse" id="collapse-brb-fic-firf-di-lp-hiper-rl-cod-13" role="region">
 <div class="fund-card__body">
+            <div class="fund-card__internal-title">BRB FIC de Fundos de Investimento em Renda Fixa DI Crédito Privado Longo Prazo Hiper Responsabilidade Limitada</div>
 <p class="fund-card__desc">FIC de RF para investidores com aplicação inicial de R$ 25 mil. Busca retorno próximo ao CDI via cotas de fundos em ativos financeiros disponíveis no mercado. PF e PJ clientes BRB. Não admite alavancagem. ANBIMA: RF Duração Baixa Invest Grade.</p>
 <div class="fund-card__chars">
 <div class="char-item"><div class="char-item__label">Aplicação inicial</div><div class="char-item__value highlight">R$ 25.000,00</div></div>
@@ -616,21 +645,13 @@
 </div>
 <div class="fund-card__docs">
 <span class="fund-card__docs-label">📄 Documentos</span>
-<a class="doc-link" href="../pdfs/fundos/F13_regulamento.pdf" target="_blank">
-<svg fill="none" height="12" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24" width="12"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              Regulamento
-            </a>
-<a class="doc-link" href="../pdfs/fundos/F13_informativo_mensal.pdf" target="_blank">
-<svg fill="none" height="12" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24" width="12"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              Informativo Mensal
-            </a>
-<a class="doc-link" href="../pdfs/fundos/F13_demonstracoes.pdf" target="_blank">
-<svg fill="none" height="12" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24" width="12"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              Demonstrações Financeiras
-            </a>
-<a class="doc-link" href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank">
-<svg fill="none" height="12" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24" width="12"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              Política de Remuneração
+<a class="doc-link" href="../pdfs-regulamento-fundos\F13_R_CVM 175_30.05.2025.pdf" target="_blank">Regulamento</a>
+<a class="doc-link" href="../pdfs-informes-mensais\F13_05_2026.pdf" target="_blank">Informativo Mensal</a>
+<a class="doc-link" href="../pdfs/fundos/F33_demonstracoes.pdf" target="_blank">Demonstrações Financeiras</a>
+<a class="doc-link" href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank">Política de Remuneração</a>
+<a href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Assembleia
             </a>
 </div>
 <div class="fund-card__meta">
@@ -641,7 +662,6 @@
 <button aria-controls="collapse-brb-firf-zeragem-rl-cod-17" aria-expanded="false" class="fund-card__header fund-toggle-btn">
 <div class="fund-card__title-group">
 <div class="fund-card__name">BRB FIRF ZERAGEM RL · Cód. 17</div>
-<div class="fund-card__full-name">BRB Fundo de Investimento em Renda Fixa Zeragem Responsabilidade Limitada</div>
 </div>
 <div class="fund-card__header-right">
 <span class="fund-card__badge badge--very-low">
@@ -655,6 +675,7 @@
 </button>
 <div class="fund-card__collapse" id="collapse-brb-firf-zeragem-rl-cod-17" role="region">
 <div class="fund-card__body">
+            <div class="fund-card__internal-title">BRB Fundo de Investimento em Renda Fixa Zeragem Responsabilidade Limitada</div>
 <p class="fund-card__desc">Gestão passiva, busca acompanhar o CDI aplicando em ativos pós ou pré-fixados. Voltado a fundos administrados pela BRB-DTVM e pessoas jurídicas do Programa de Descentralização do GDF (Lei nº 6.023/2017). Possui resgate automático. ANBIMA: RF Duração Baixa Soberano.</p>
 <div class="fund-card__chars">
 <div class="char-item"><div class="char-item__label">Aplicação inicial</div><div class="char-item__value highlight">R$ 1,00</div></div>
@@ -678,25 +699,13 @@
 </div>
 <div class="fund-card__docs">
 <span class="fund-card__docs-label">📄 Documentos</span>
-<a class="doc-link" href="../pdfs/fundos/F17_regulamento.pdf" target="_blank">
-<svg fill="none" height="12" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24" width="12"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              Regulamento
-            </a>
-<a class="doc-link" href="../pdfs/fundos/F17_informativo_mensal.pdf" target="_blank">
-<svg fill="none" height="12" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24" width="12"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              Informativo Mensal
-            </a>
-<a class="doc-link" href="../pdfs/fundos/F17_demonstracoes.pdf" target="_blank">
-<svg fill="none" height="12" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24" width="12"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              Demonstrações Financeiras
-            </a>
-<a class="doc-link" href="../pdfs/fundos/F17_comunicado.pdf" target="_blank">
-<svg fill="none" height="12" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24" width="12"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              Comunicado aos Cotistas
-            </a>
-<a class="doc-link" href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank">
-<svg fill="none" height="12" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24" width="12"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              Política de Remuneração
+<a class="doc-link" href="../pdfs-regulamento-fundos\F17_Regulamento_CVM 175_02.06.2025_Final.pdf" target="_blank">Regulamento</a>
+<a class="doc-link" href="../pdfs-informes-mensais\F17_05_2026.pdf" target="_blank">Informativo Mensal</a>
+<a class="doc-link" href="../pdfs-demonstrações-finan-fundos\17 - 263AE-012-PB BRB Zeragem Resp. Limitada (EF).pdf" target="_blank">Demonstrações Financeiras</a>
+<a class="doc-link" href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank">Política de Remuneração</a>
+<a href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Assembleia
             </a>
 </div>
 <div class="fund-card__meta">
@@ -707,7 +716,6 @@
 <button aria-controls="collapse-firf-brb-liquidez-rl-cod-18" aria-expanded="false" class="fund-card__header fund-toggle-btn">
 <div class="fund-card__title-group">
 <div class="fund-card__name">FIRF BRB LIQUIDEZ RL · Cód. 18</div>
-<div class="fund-card__full-name">Fundo de Investimento em Renda Fixa BRB Liquidez Responsabilidade Limitada</div>
 </div>
 <div class="fund-card__header-right">
 <span class="fund-card__badge badge--low">
@@ -721,6 +729,7 @@
 </button>
 <div class="fund-card__collapse" id="collapse-firf-brb-liquidez-rl-cod-18" role="region">
 <div class="fund-card__body">
+            <div class="fund-card__internal-title">Fundo de Investimento em Renda Fixa BRB Liquidez Responsabilidade Limitada</div>
 <p class="fund-card__desc">Busca acompanhar o CDI em ativos pós ou pré-fixados ou índice de preços. Destinado a pessoas físicas e jurídicas clientes BRB. Possui resgate automático para cobertura de saldo devedor em conta corrente (mediante autorização via formulário). ANBIMA: RF Duração Baixa Grau de Investimento.</p>
 <div class="fund-card__chars">
 <div class="char-item"><div class="char-item__label">Aplicação inicial</div><div class="char-item__value highlight">R$ 50,00</div></div>
@@ -744,25 +753,13 @@
 </div>
 <div class="fund-card__docs">
 <span class="fund-card__docs-label">📄 Documentos</span>
-<a class="doc-link" href="../pdfs/fundos/F18_regulamento.pdf" target="_blank">
-<svg fill="none" height="12" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24" width="12"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              Regulamento
-            </a>
-<a class="doc-link" href="../pdfs/fundos/F18_informativo_mensal.pdf" target="_blank">
-<svg fill="none" height="12" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24" width="12"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              Informativo Mensal
-            </a>
-<a class="doc-link" href="../pdfs/fundos/F18_demonstracoes.pdf" target="_blank">
-<svg fill="none" height="12" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24" width="12"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              Demonstrações Financeiras
-            </a>
-<a class="doc-link" href="../pdfs/fundos/F18_form_autorizacao.pdf" target="_blank">
-<svg fill="none" height="12" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24" width="12"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              Form. Autorização Resgate Auto.
-            </a>
-<a class="doc-link" href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank">
-<svg fill="none" height="12" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24" width="12"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              Política de Remuneração
+<a class="doc-link" href="../pdfs-regulamento-fundos\F18_CVM 175_02.06.20255_Final.pdf" target="_blank">Regulamento</a>
+<a class="doc-link" href="../pdfs-informes-mensais\F18_05_2026.pdf" target="_blank">Informativo Mensal</a>
+<a class="doc-link" href="../pdfs-demonstrações-finan-fundos\18 - 263A3-017-PB BRB Liquidez Resp (EF).pdf " target="_blank">Demonstrações Financeiras</a>
+<a class="doc-link" href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank">Política de Remuneração</a>
+<a href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Assembleia
             </a>
 </div>
 <div class="fund-card__meta">
@@ -773,7 +770,6 @@
 <button aria-controls="collapse-brb-renda-fixa-governo-lp-rl-cod-27" aria-expanded="false" class="fund-card__header fund-toggle-btn">
 <div class="fund-card__title-group">
 <div class="fund-card__name">BRB RENDA FIXA GOVERNO LP RL · Cód. 27</div>
-<div class="fund-card__full-name">BRB Fundo de Investimento em Renda Fixa Governo Longo Prazo Responsabilidade Limitada</div>
 </div>
 <div class="fund-card__header-right">
 <span class="fund-card__badge badge--very-low">
@@ -787,6 +783,7 @@
 </button>
 <div class="fund-card__collapse" id="collapse-brb-renda-fixa-governo-lp-rl-cod-27" role="region">
 <div class="fund-card__body">
+            <div class="fund-card__internal-title">BRB Fundo de Investimento em Renda Fixa Governo Longo Prazo Responsabilidade Limitada</div>
 <p class="fund-card__desc">Busca liquidez diária investindo em cotas de fundos pré ou pós-fixados. Público-alvo exclusivo: <strong>Governo do Distrito Federal e suas empresas</strong>, clientes BRB. Fundo com foco em títulos públicos. ANBIMA: RF Duração Baixa Soberano.</p>
 <div class="fund-card__chars">
 <div class="char-item"><div class="char-item__label">Aplicação inicial</div><div class="char-item__value highlight">R$ 100,00</div></div>
@@ -810,21 +807,13 @@
 </div>
 <div class="fund-card__docs">
 <span class="fund-card__docs-label">📄 Documentos</span>
-<a class="doc-link" href="../pdfs/fundos/F27_regulamento.pdf" target="_blank">
-<svg fill="none" height="12" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24" width="12"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              Regulamento
-            </a>
-<a class="doc-link" href="../pdfs/fundos/F27_informativo_mensal.pdf" target="_blank">
-<svg fill="none" height="12" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24" width="12"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              Informativo Mensal
-            </a>
-<a class="doc-link" href="../pdfs/fundos/F27_demonstracoes.pdf" target="_blank">
-<svg fill="none" height="12" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24" width="12"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              Demonstrações Financeiras
-            </a>
-<a class="doc-link" href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank">
-<svg fill="none" height="12" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24" width="12"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              Política de Remuneração
+<a class="doc-link" href="../pdfs-regulamento-fundos\F27_Regulamento_CVM 175_02.06.2025.pdf" target="_blank">Regulamento</a>
+<a class="doc-link" href="../pdfs-informes-mensais\F27_05_2026.pdf" target="_blank">Informativo Mensal</a>
+<a class="doc-link" href="../pdfs-demonstrações-finan-fundos\27 - R-005-PB BRB Governo Lp Resp (EF).pdf" target="_blank">Demonstrações Financeiras</a>
+<a class="doc-link" href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank">Política de Remuneração</a>
+<a href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Assembleia
             </a>
 </div>
 <div class="fund-card__meta">
@@ -835,7 +824,6 @@
 <button aria-controls="collapse-brb-fic-firf-di-lp-super-rl-cod-28" aria-expanded="false" class="fund-card__header fund-toggle-btn">
 <div class="fund-card__title-group">
 <div class="fund-card__name">BRB FIC FIRF DI LP SUPER RL · Cód. 28</div>
-<div class="fund-card__full-name">BRB FIC de Fundos de Investimento em Renda Fixa DI Longo Prazo Super Crédito Privado Responsabilidade Limitada</div>
 </div>
 <div class="fund-card__header-right">
 <span class="fund-card__badge badge--low">
@@ -849,6 +837,7 @@
 </button>
 <div class="fund-card__collapse" id="collapse-brb-fic-firf-di-lp-super-rl-cod-28" role="region">
 <div class="fund-card__body">
+            <div class="fund-card__internal-title">BRB FIC de Fundos de Investimento em Renda Fixa DI Longo Prazo Super Crédito Privado Responsabilidade Limitada</div>
 <p class="fund-card__desc">FIC de RF que busca rentabilidade próxima ao CDI. Aplica em ativos pré ou pós-fixados. Destinado a PF e PJ que buscam retorno via CDI. Não admite alavancagem. ANBIMA: FIC de Renda Fixa. Crédito em conta D+1.</p>
 <div class="fund-card__chars">
 <div class="char-item"><div class="char-item__label">Aplicação inicial</div><div class="char-item__value highlight">R$ 500,00</div></div>
@@ -872,21 +861,13 @@
 </div>
 <div class="fund-card__docs">
 <span class="fund-card__docs-label">📄 Documentos</span>
-<a class="doc-link" href="../pdfs/fundos/F28_regulamento.pdf" target="_blank">
-<svg fill="none" height="12" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24" width="12"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              Regulamento
-            </a>
-<a class="doc-link" href="../pdfs/fundos/F28_informativo_mensal.pdf" target="_blank">
-<svg fill="none" height="12" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24" width="12"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              Informativo Mensal
-            </a>
-<a class="doc-link" href="../pdfs/fundos/F28_demonstracoes.pdf" target="_blank">
-<svg fill="none" height="12" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24" width="12"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              Demonstrações Financeiras
-            </a>
-<a class="doc-link" href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank">
-<svg fill="none" height="12" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24" width="12"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              Política de Remuneração
+<a class="doc-link" href="../pdfs-regulamento-fundos\F28_CVM 175_02.06.2025.pdf" target="_blank">Regulamento</a>
+<a class="doc-link" href="../pdfs-informes-mensais\F28_05_2026.pdf" target="_blank">Informativo Mensal</a>
+<a class="doc-link" href="../pdfs-demonstrações-finan-fundos\28 - 263A1-011-PB BRB Br Super Crédito Privado (EF).pdf" target="_blank">Demonstrações Financeiras</a>
+<a class="doc-link" href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank">Política de Remuneração</a>
+<a href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Assembleia
             </a>
 </div>
 <div class="fund-card__meta">
@@ -897,7 +878,6 @@
 <button aria-controls="collapse-firf-brb-mais-rl-cod-31" aria-expanded="false" class="fund-card__header fund-toggle-btn">
 <div class="fund-card__title-group">
 <div class="fund-card__name">FIRF BRB MAIS RL · Cód. 31</div>
-<div class="fund-card__full-name">Fundo de Investimento em Renda Fixa BRB Mais Responsabilidade Limitada</div>
 </div>
 <div class="fund-card__header-right">
 <span class="fund-card__badge badge--low">
@@ -911,6 +891,7 @@
 </button>
 <div class="fund-card__collapse" id="collapse-firf-brb-mais-rl-cod-31" role="region">
 <div class="fund-card__body">
+            <div class="fund-card__internal-title">Fundo de Investimento em Renda Fixa BRB Mais Responsabilidade Limitada</div>
 <p class="fund-card__desc">Busca acompanhar o CDI via títulos públicos e privados pré e pós-fixados. Público geral (PF e PJ). Possui resgate automático para cobertura de saldo devedor em conta corrente mediante autorização. Horário diferenciado: até 17h. ANBIMA: RF Duração Baixa Invest Grade.</p>
 <div class="fund-card__chars">
 <div class="char-item"><div class="char-item__label">Aplicação inicial</div><div class="char-item__value highlight">R$ 500,00</div></div>
@@ -934,25 +915,13 @@
 </div>
 <div class="fund-card__docs">
 <span class="fund-card__docs-label">📄 Documentos</span>
-<a class="doc-link" href="../pdfs/fundos/F31b_regulamento.pdf" target="_blank">
-<svg fill="none" height="12" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24" width="12"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              Regulamento
-            </a>
-<a class="doc-link" href="../pdfs/fundos/F31b_informativo_mensal.pdf" target="_blank">
-<svg fill="none" height="12" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24" width="12"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              Informativo Mensal
-            </a>
-<a class="doc-link" href="../pdfs/fundos/F31b_demonstracoes.pdf" target="_blank">
-<svg fill="none" height="12" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24" width="12"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              Demonstrações Financeiras
-            </a>
-<a class="doc-link" href="../pdfs/fundos/F31b_form_autorizacao.pdf" target="_blank">
-<svg fill="none" height="12" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24" width="12"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              Form. Autorização Resgate Auto.
-            </a>
-<a class="doc-link" href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank">
-<svg fill="none" height="12" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24" width="12"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              Política de Remuneração
+<a class="doc-link" href="../pdfs-regulamento-fundos\F31_CVM 175_02.06.2025.pdf" target="_blank">Regulamento</a>
+<a class="doc-link" href="../pdfs-informes-mensais\F31_05_2026.pdf" target="_blank">Informativo Mensal</a>
+<a class="doc-link" href="../pdfs-demonstrações-finan-fundos\31 - 263A6-020-PB FIRB BRB MAIS (EF) 1 1.pdf" target="_blank">Demonstrações Financeiras</a>
+<a class="doc-link" href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank">Política de Remuneração</a>
+<a href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Assembleia
             </a>
 </div>
 <div class="fund-card__meta">
@@ -963,7 +932,6 @@
 <button aria-controls="collapse-brb-millenium-fic-firf-lp-rl-cod-35" aria-expanded="false" class="fund-card__header fund-toggle-btn">
 <div class="fund-card__title-group">
 <div class="fund-card__name">BRB MILLENIUM FIC FIRF LP RL · Cód. 35</div>
-<div class="fund-card__full-name">BRB Millenium FIC de Fundos de Investimento em Renda Fixa Longo Prazo Responsabilidade Limitada</div>
 </div>
 <div class="fund-card__header-right">
 <span class="fund-card__badge badge--very-low">
@@ -977,6 +945,7 @@
 </button>
 <div class="fund-card__collapse" id="collapse-brb-millenium-fic-firf-lp-rl-cod-35" role="region">
 <div class="fund-card__body">
+            <div class="fund-card__internal-title">BRB Millenium FIC de Fundos de Investimento em Renda Fixa Longo Prazo Responsabilidade Limitada</div>
 <p class="fund-card__desc">FIC voltado a PF e PJ clientes BRB. Aplica em cotas de fundos pós ou pré-fixados (aceitos títulos sintetizados via derivativos). Alta aplicação inicial com taxa de administração reduzida. ANBIMA: RF Duração Baixa Soberano.</p>
 <div class="fund-card__chars">
 <div class="char-item"><div class="char-item__label">Aplicação inicial</div><div class="char-item__value highlight">R$ 50.000,00</div></div>
@@ -1000,21 +969,13 @@
 </div>
 <div class="fund-card__docs">
 <span class="fund-card__docs-label">📄 Documentos</span>
-<a class="doc-link" href="../pdfs/fundos/F35_regulamento.pdf" target="_blank">
-<svg fill="none" height="12" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24" width="12"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              Regulamento
-            </a>
-<a class="doc-link" href="../pdfs/fundos/F35_informativo_mensal.pdf" target="_blank">
-<svg fill="none" height="12" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24" width="12"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              Informativo Mensal
-            </a>
-<a class="doc-link" href="../pdfs/fundos/F35_demonstracoes.pdf" target="_blank">
-<svg fill="none" height="12" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24" width="12"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              Demonstrações Financeiras
-            </a>
-<a class="doc-link" href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank">
-<svg fill="none" height="12" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24" width="12"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              Política de Remuneração
+<a class="doc-link" href="../pdfs-regulamento-fundos\F35_CVM 175_02.06.2025.pdf" target="_blank">Regulamento</a>
+<a class="doc-link" href="../pdfs-informes-mensais\F35_05_2026.pdf" target="_blank">Informativo Mensal</a>
+<a class="doc-link" href="../pdfs-demonstrações-finan-fundos\35 - 263AU-013-PB BRB Millenium (EF).pdf" target="_blank">Demonstrações Financeiras</a>
+<a class="doc-link" href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank">Política de Remuneração</a>
+<a href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Assembleia
             </a>
 </div>
 <div class="fund-card__meta">
@@ -1025,7 +986,6 @@
 <button aria-controls="collapse-eng-capital-fif-rf" aria-expanded="false" class="fund-card__header fund-toggle-btn">
 <div class="fund-card__title-group">
 <div class="fund-card__name">ENG CAPITAL FIF RF · Cód. 68</div>
-<div class="fund-card__full-name">Eng Capital Fundo de Investimento em Fundos de Renda Fixa</div>
 </div>
 <div class="fund-card__header-right">
 <span class="fund-card__badge badge--medium">
@@ -1039,6 +999,7 @@
 </button>
 <div class="fund-card__collapse" id="collapse-eng-capital-fif-rf" role="region">
 <div class="fund-card__body">
+            <div class="fund-card__internal-title">Eng Capital Fundo de Investimento em Fundos de Renda Fixa</div>
 <p class="fund-card__desc">Fundo de terceiros distribuído pelo BRB Investimentos, com estratégia de renda fixa de médio risco. Aplicação inicial sob consulta ao assessor (N/A no site BRB). Para detalhes completos sobre estratégia, taxas e documentos, consulte o regulamento ou um assessor.</p>
 <div class="fund-card__chars">
 <div class="char-item"><div class="char-item__label">Aplicação inicial</div><div class="char-item__value">Fundo Exclusivo</div></div>
@@ -1061,13 +1022,13 @@
 </div>
 <div class="fund-card__docs">
 <span class="fund-card__docs-label">📄 Documentos</span>
-<a class="doc-link" href="../pdfs/fundos/eng_capital_regulamento.pdf" target="_blank">
-<svg fill="none" height="12" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24" width="12"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              Regulamento
-            </a>
-<a class="doc-link" href="../pdfs/fundos/eng_capital_informativo.pdf" target="_blank">
-<svg fill="none" height="12" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24" width="12"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              Informativo Mensal
+<a class="doc-link" href="../pdfs-regulamento-fundos\F68_Regulamento 08.04.2025_Consolidado.pdf" target="_blank">Regulamento</a>
+<a class="doc-link" href="../pdfs-informes-mensais\F68_05_2026.pdf" target="_blank">Informativo Mensal</a>
+<a class="doc-link" href="../pdfs-demonstrações-finan-fundos\68 - 263AI-019-PB BRB Eng Capital  (EF).pdf" target="_blank">Demonstrações Financeiras</a>
+<a class="doc-link" href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank">Política de Remuneração</a>
+<a href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Assembleia
             </a>
 </div>
 <div class="fund-card__meta">
@@ -1078,7 +1039,6 @@
 <button aria-controls="collapse-regius-rf-lp" aria-expanded="false" class="fund-card__header fund-toggle-btn">
 <div class="fund-card__title-group">
 <div class="fund-card__name">REGIUS RF LP</div>
-<div class="fund-card__full-name">Regius Fundo de Investimento em Renda Fixa Longo Prazo Responsabilidade Limitada</div>
 </div>
 <div class="fund-card__header-right">
 <span class="fund-card__badge badge--low-mid">
@@ -1092,6 +1052,7 @@
 </button>
 <div class="fund-card__collapse" id="collapse-regius-rf-lp" role="region">
 <div class="fund-card__body">
+            <div class="fund-card__internal-title">Regius Fundo de Investimento em Renda Fixa Longo Prazo Responsabilidade Limitada</div>
 <p class="fund-card__desc">Fundo de renda fixa de longo prazo distribuído pelo BRB. Perfil Moderado, risco baixo a médio. Aplicação inicial sob consulta ao assessor (N/A no site BRB). Para detalhes sobre estratégia e requisitos de acesso, consulte o regulamento ou um assessor de investimentos.</p>
 <div class="fund-card__chars">
 <div class="char-item"><div class="char-item__label">Aplicação inicial</div><div class="char-item__value">	Fundo Exclusivo</div></div>
@@ -1113,13 +1074,13 @@
 </div>
 <div class="fund-card__docs">
 <span class="fund-card__docs-label">📄 Documentos</span>
-<a class="doc-link" href="../pdfs/fundos/regius_regulamento.pdf" target="_blank">
-<svg fill="none" height="12" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24" width="12"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              Regulamento
-            </a>
-<a class="doc-link" href="../pdfs/fundos/regius_informativo.pdf" target="_blank">
-<svg fill="none" height="12" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24" width="12"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              Informativo Mensal
+<a class="doc-link" href="../pdfs-regulamento-fundos\F.Prev_Regulamento_07.01.2025.pdf" target="_blank">Regulamento</a>
+<a class="doc-link" href="../pdfs-informes-mensais\F.REGIUS_05_2026.pdf" target="_blank">Informativo Mensal</a>
+<a class="doc-link" href="../pdfs-demonstrações-finan-fundos\F.Regius_263G4-075-PB Regius BRB FIRF (EF).pdf" target="_blank">Demonstrações Financeiras</a>
+<a class="doc-link" href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank">Política de Remuneração</a>
+<a href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Assembleia
             </a>
 </div>
 <div class="fund-card__meta">

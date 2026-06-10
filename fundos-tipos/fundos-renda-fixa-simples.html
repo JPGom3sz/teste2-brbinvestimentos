@@ -9,7 +9,80 @@
   <link rel="stylesheet" href="../css/style-enhance.css" />
   <link rel="stylesheet" href="../css/mobile-nav.css" />
   <link rel="stylesheet" href="../css/fundos-informativos.css" />
+<style>
+  .fund-card__internal-title {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: #1a2940;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.65rem;
+    border-bottom: 1px solid #f1f5f9;
+    line-height: 1.4;
+  }
+</style>
 </head>
+
+
+
+<div id="brb-cookie-banner" role="dialog" aria-modal="false" aria-label="Preferências de cookies">
+
+  <div class="cookie-inner">
+
+    <!-- Ícone -->
+    <div class="cookie-icon" aria-hidden="true">
+      <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 0a6 6 0 0 1 6 6m-6 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-4 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm5 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+      </svg>
+    </div>
+
+    <!-- Texto + Categorias -->
+    <div class="cookie-text">
+      <strong>Utilizamos cookies</strong>
+      <p>
+        Para melhorar sua experiência e personalizar conteúdos. Veja nossa
+        <a href="pdfs/Política de Privacidade.pdf" target="_blank" rel="noopener noreferrer">Política de Privacidade</a>.
+      </p>
+
+      <!-- Categorias -->
+      <div class="cookie-categories">
+
+        <label class="cookie-cat">
+          <input type="checkbox" value="necessários" checked disabled />
+          <span class="cookie-cat-label">Necessários <em>(obrigatório)</em></span>
+        </label>
+
+        <label class="cookie-cat">
+          <input type="checkbox" value="analíticos" checked />
+          <span class="cookie-cat-label">Analíticos</span>
+        </label>
+
+        <label class="cookie-cat">
+          <input type="checkbox" value="marketing" checked />
+          <span class="cookie-cat-label">Marketing</span>
+        </label>
+
+      </div>
+    </div>
+
+    <!-- Botões -->
+    <div class="cookie-actions">
+      <button id="brb-cookie-accept" class="cookie-btn-accept">
+        Aceitar cookies
+      </button>
+      <button id="brb-cookie-reject" class="cookie-btn-reject">
+        Só necessários
+      </button>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- Estilos e script do banner de cookies -->
+<link rel="stylesheet" href="../css/cookies.css" />
+<script src="../js/cookies.js"></script>
+
 <body>
 
   <header id="site-header">
@@ -161,7 +234,6 @@
         <button class="fund-card__header fund-toggle-btn" aria-expanded="false" aria-controls="collapse-33">
           <div class="fund-card__title-group">
             <div class="fund-card__name">BRB SIMPLES TESOURO FIC FIRF LP RL · Cód. 33</div>
-            <div class="fund-card__full-name">BRB Simples Tesouro — Fundo de Investimento em Cotas de Fundos de Investimento em Renda Fixa Longo Prazo</div>
           </div>
           <div class="fund-card__header-right">
             <span class="fund-card__badge badge--very-low">
@@ -176,6 +248,7 @@
 
         <div class="fund-card__collapse" id="collapse-33" role="region" aria-labelledby="fundo-33">
           <div class="fund-card__body">
+            <div class="fund-card__internal-title">BRB Simples Tesouro — Fundo de Investimento em Cotas de Fundos de Investimento em Renda Fixa Longo Prazo</div>
             <p class="fund-card__desc">
               Fundo constituído sob forma de condomínio aberto, com objetivo de propiciar rentabilidade mediante aplicação em cotas de fundos de renda fixa pós ou prefixados, com foco em títulos públicos do Tesouro Nacional. Classificação ANBIMA: <strong>Renda Fixa Simples</strong>. Público-alvo: pessoas físicas e jurídicas em geral.
             </p>
@@ -204,24 +277,12 @@
           </div>
 
           <div class="fund-card__docs">
-            <span class="fund-card__docs-label">📄 Documentos</span>
-            <a href="../pdfs/fundos/F33_regulamento.pdf" target="_blank" class="doc-link">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-              Regulamento
-            </a>
-            <a href="../pdfs/fundos/F33_informativo_mensal.pdf" target="_blank" class="doc-link">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-              Informativo Mensal
-            </a>
-            <a href="../pdfs/fundos/F33_demonstracoes.pdf" target="_blank" class="doc-link">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-              Demonstrações Financeiras
-            </a>
-            <a href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank" class="doc-link">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-              Política de Remuneração
-            </a>
-            <a href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank" class="doc-link">
+           <span class="fund-card__docs-label">📄 Documentos</span>
+<a class="doc-link" href="../pdfs-regulamento-fundos\F33_Conversão CVM_175_02.06.2025.pdf" target="_blank">Regulamento</a>
+<a class="doc-link" href="../pdfs-informes-mensais\F33_05_2026.pdf" target="_blank">Informativo Mensal</a>
+<a class="doc-link" href="../pdfs-demonstrações-finan-fundos\33 - 263AE-018-PB BRB Simples Tesouro (EF).pdf" target="_blank">Demonstrações Financeiras</a>
+<a class="doc-link" href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank">Política de Remuneração</a>
+<a href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank" class="doc-link">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
               Assembleia
             </a>
@@ -244,7 +305,6 @@
         <button class="fund-card__header fund-toggle-btn" aria-expanded="false" aria-controls="collapse-31">
           <div class="fund-card__title-group">
             <div class="fund-card__name">BRB RENDE MAIS FIRF SIMPLES RL · Cód. 31</div>
-            <div class="fund-card__full-name">BRB Rende Mais — Fundo de Investimento em Renda Fixa Simples</div>
           </div>
           <div class="fund-card__header-right">
             <span class="fund-card__badge badge--low">
@@ -259,6 +319,7 @@
 
         <div class="fund-card__collapse" id="collapse-31" role="region" aria-labelledby="fundo-31">
           <div class="fund-card__body">
+            <div class="fund-card__internal-title">BRB Rende Mais — Fundo de Investimento em Renda Fixa Simples</div>
             <p class="fund-card__desc">
               Fundo de investimento em renda fixa simples que busca rentabilidade por meio de aplicações em ativos de renda fixa de qualidade, com gestão focada em agregar valor acima das taxas básicas. Classificação ANBIMA: <strong>Renda Fixa Simples</strong>. Perfil: Conservador.
             </p>
@@ -288,18 +349,14 @@
           </div>
 
           <div class="fund-card__docs">
-            <span class="fund-card__docs-label">📄 Documentos</span>
-            <a href="../pdfs/fundos/F31_regulamento.pdf" target="_blank" class="doc-link">
+           <span class="fund-card__docs-label">📄 Documentos</span>
+<a class="doc-link" href="../pdfs-regulamento-fundos\F.RDM_Regulamento_21.10.2024_Ajuste Distribuidor 1.pdf" target="_blank">Regulamento</a>
+<a class="doc-link" href="../pdfs-informes-mensais\F.RDM_05_2026.pdf" target="_blank">Informativo Mensal</a>
+<a class="doc-link" href="../pdfs-demonstrações-finan-fundos\F.RDM_263GN-071-PB BRB Rende Mais FIC FIRF (EF).pdf" target="_blank">Demonstrações Financeiras</a>
+<a class="doc-link" href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank">Política de Remuneração</a>
+<a href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank" class="doc-link">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-              Regulamento
-            </a>
-            <a href="../pdfs/fundos/F31_informativo_mensal.pdf" target="_blank" class="doc-link">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-              Informativo Mensal
-            </a>
-            <a href="../pdfs/fundos/F31_demonstracoes.pdf" target="_blank" class="doc-link">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-              Demonstrações Financeiras
+              Assembleia
             </a>
           </div>
 

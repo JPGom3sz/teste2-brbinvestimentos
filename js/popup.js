@@ -10,7 +10,7 @@
     exitIntent:     true,
 
     
-    SCRIPT_URL: 'https://script.google.com/macros/s/AKfycbyO4MrqX8ubabCDvEmixU5HE-fb5zC1WBTb6lt9bfJUQh4WZQoM25MNH07haJF-fFy_/exec',
+    SCRIPT_URL: 'https://script.google.com/macros/s/AKfycbyhamccNtTehcppCBej2bJHyBRBUaMnDC0PWgjkxQmoqxQTw_PpVyNrn6zVtwfaLycc/exec',
   };
 
   // ── ELEMENTOS ─────────────────────────────────────────────

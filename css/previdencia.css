@@ -1666,12 +1666,6 @@ footer {
   align-items: start;
 }
 
-@media (max-width: 900px) {
-  .sim-layout {
-    grid-template-columns: 1fr;
-  }
-}
-
 /* ── Painel de inputs ── */
 .sim-inputs-panel {
   background: #fff;
@@ -1933,12 +1927,6 @@ footer {
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
   margin-bottom: 1.2rem;
-}
-
-@media (max-width: 520px) {
-  .sim-regimes-grid {
-    grid-template-columns: 1fr;
-  }
 }
 
 .sim-regime-card {
@@ -2279,6 +2267,7 @@ footer {
   align-items: start;
 }
 
+/* ── Responsividade do teaser + painel expansível ── */
 @media (max-width: 820px) {
   .ir-panel__layout {
     grid-template-columns: 1fr;
@@ -2286,9 +2275,93 @@ footer {
   .ir-teaser__desc {
     white-space: normal;
   }
+  .ir-panel--open {
+    max-height: 2400px; /* mais espaço ao empilhar os painéis */
+  }
+}
+
+@media (max-width: 600px) {
+  .ir-panel__inner {
+    padding: 1.4rem 1rem;
+  }
+  .ir-panel__header {
+    margin-bottom: 1.2rem;
+  }
 }
 
 @media (max-width: 480px) {
+  .ir-teaser {
+    padding: 0.85rem 1rem;
+    gap: 0.6rem;
+  }
   .ir-teaser__cta { display: none; }
   .ir-teaser__desc { font-size: 0.78rem; }
+  .ir-teaser__icon {
+    width: 36px;
+    height: 36px;
+  }
+  .ir-panel__inner {
+    padding: 1.2rem 0.9rem;
+  }
+}
+
+/* ── Responsividade do simulador de IR (seção standalone) ── */
+@media (max-width: 900px) {
+  .sim-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .sim-section {
+    padding: 2.5rem var(--px);
+  }
+  .sim-inputs-panel,
+  .sim-results-panel {
+    padding: 1.4rem 1.2rem;
+  }
+  .sim-toggle-group {
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .sim-toggle {
+    width: 100%;
+    text-align: center;
+  }
+  .sim-regimes-grid {
+    grid-template-columns: 1fr;
+  }
+  .sim-result-hero {
+    padding: 1.1rem 1.2rem;
+  }
+  .sim-pgbl-bonus {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .sim-btn-calcular {
+    font-size: 0.9rem;
+    padding: 0.8rem 1.2rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .sim-inputs-panel,
+  .sim-results-panel {
+    padding: 1.1rem 0.9rem;
+    border-radius: 12px;
+  }
+  .sim-label {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+  }
+  .sim-range-labels {
+    font-size: 0.65rem;
+  }
+  .sim-result-hero__value {
+    font-size: 1.5rem;
+  }
+  .sim-regime-card__aliq {
+    font-size: 1.4rem;
+  }
 }

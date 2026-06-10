@@ -14,6 +14,67 @@
     <link rel="stylesheet" href="../css/hero-responsive-fix.css" />
     <link rel="stylesheet" href="../css/simulador-ir-previdencia.css" />
   </head>
+  
+
+<div id="brb-cookie-banner" role="dialog" aria-modal="false" aria-label="Preferências de cookies">
+
+  <div class="cookie-inner">
+
+    <!-- Ícone -->
+    <div class="cookie-icon" aria-hidden="true">
+      <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 0a6 6 0 0 1 6 6m-6 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-4 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm5 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+      </svg>
+    </div>
+
+    <!-- Texto + Categorias -->
+    <div class="cookie-text">
+      <strong>Utilizamos cookies</strong>
+      <p>
+        Para melhorar sua experiência e personalizar conteúdos. Veja nossa
+        <a href="pdfs/Política de Privacidade.pdf" target="_blank" rel="noopener noreferrer">Política de Privacidade</a>.
+      </p>
+
+      <!-- Categorias -->
+      <div class="cookie-categories">
+
+        <label class="cookie-cat">
+          <input type="checkbox" value="necessários" checked disabled />
+          <span class="cookie-cat-label">Necessários <em>(obrigatório)</em></span>
+        </label>
+
+        <label class="cookie-cat">
+          <input type="checkbox" value="analíticos" checked />
+          <span class="cookie-cat-label">Analíticos</span>
+        </label>
+
+        <label class="cookie-cat">
+          <input type="checkbox" value="marketing" checked />
+          <span class="cookie-cat-label">Marketing</span>
+        </label>
+
+      </div>
+    </div>
+
+    <!-- Botões -->
+    <div class="cookie-actions">
+      <button id="brb-cookie-accept" class="cookie-btn-accept">
+        Aceitar cookies
+      </button>
+      <button id="brb-cookie-reject" class="cookie-btn-reject">
+        Só necessários
+      </button>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- Estilos e script do banner de cookies -->
+<link rel="stylesheet" href="../css/cookies.css" />
+<script src="../js/cookies.js"></script>
+
   <body>
 
     <div class="reading-progress" aria-hidden="true">
@@ -938,172 +999,215 @@
       });
     })();
 
-    /* ── Simulador de IR ── */
-    (function () {
-      'use strict';
+    /* ── Simulador de IR (Versão Corrigida - PEPS e Taxa Equivalente) ── */
+(function () {
+  'use strict';
 
-      const TABELA_PROGRESSIVA = [
-        { limite: 24511.92,  aliq: 0,     deducao: 0 },
-        { limite: 33919.80,  aliq: 0.075, deducao: 1838.39 },
-        { limite: 45012.60,  aliq: 0.15,  deducao: 4382.38 },
-        { limite: 55976.16,  aliq: 0.225, deducao: 7758.84 },
-        { limite: Infinity,  aliq: 0.275, deducao: 10557.13 },
-      ];
-      const TABELA_REGRESSIVA = [
-        { anos: 2,        aliq: 0.35 },
-        { anos: 4,        aliq: 0.30 },
-        { anos: 6,        aliq: 0.25 },
-        { anos: 8,        aliq: 0.20 },
-        { anos: 10,       aliq: 0.15 },
-        { anos: Infinity, aliq: 0.10 },
-      ];
+  // Tabela Progressiva Anual Atualizada (Ano-Calendário 2024)
+  const TABELA_PROGRESSIVA_ANUAL = [
+    { limite: 27110.40, aliq: 0,     deducao: 0 },
+    { limite: 33919.80, aliq: 0.075, deducao: 2033.28 },
+    { limite: 45012.60, aliq: 0.15,  deducao: 4577.28 },
+    { limite: 55976.16, aliq: 0.225, deducao: 7953.24 },
+    { limite: Infinity, aliq: 0.275, deducao: 10752.00 },
+  ];
 
-      function fmtBRL(v) { return v.toLocaleString('pt-BR', { style:'currency', currency:'BRL', minimumFractionDigits:2 }); }
-      function fmtPct(v) { return (v*100).toFixed(1).replace('.',',')+'\%'; }
-      function parseNum(s) { return parseFloat(s.replace(/\./g,'').replace(',','.')) || 0; }
+  // Funções Utilitárias
+  function fmtBRL(v) { return v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', minimumFractionDigits: 2 }); }
+  function fmtPct(v) { return (v * 100).toFixed(2).replace('.', ',') + '%'; }
+  function parseNum(s) { return parseFloat(s.replace(/\./g, '').replace(',', '.')) || 0; }
 
-      function calcPatrimonio(aporte, rentAnual, anos) {
-        const r = rentAnual / 12, n = anos * 12;
-        if (r === 0) return aporte * n;
-        return aporte * ((Math.pow(1+r, n) - 1) / r) * (1+r);
+  // Função para Cálculo do IR Progressivo Anual
+  function calcIrProgressivoAnual(base) {
+    for (const f of TABELA_PROGRESSIVA_ANUAL) {
+      if (base <= f.limite) return (base * f.aliq) - f.deducao;
+    }
+    return 0;
+  }
+
+  // Novo Motor de Simulação com método PEPS (Primeiro a Entrar, Primeiro a Sair)
+  function calcularSimulacao(aporteMensal, rentAnual, anos, plano) {
+    // Conversão de taxa anual para taxa mensal equivalente
+    const rMensal = Math.pow(1 + rentAnual, 1 / 12) - 1;
+    const mesesTotais = anos * 12;
+
+    let totalInvestido = 0;
+    let patrimonioTotal = 0;
+    let impostoRegressivoTotal = 0;
+
+    // Loop calculando o rendimento e o tempo de vida de cada aporte individualmente
+    for (let i = 1; i <= mesesTotais; i++) {
+      const mesesRendendo = mesesTotais - i + 1;
+      const anosRendendo = mesesRendendo / 12;
+
+      // Juros compostos para este aporte específico
+      const montante = aporteMensal * Math.pow(1 + rMensal, mesesRendendo);
+      const lucro = montante - aporteMensal;
+
+      totalInvestido += aporteMensal;
+      patrimonioTotal += montante;
+
+      // Descobre a alíquota regressiva apenas deste lote
+      let aliquotaReg = 0.10;
+      if (anosRendendo <= 2) aliquotaReg = 0.35;
+      else if (anosRendendo <= 4) aliquotaReg = 0.30;
+      else if (anosRendendo <= 6) aliquotaReg = 0.25;
+      else if (anosRendendo <= 8) aliquotaReg = 0.20;
+      else if (anosRendendo <= 10) aliquotaReg = 0.15;
+
+      const baseCalculo = (plano === 'vgbl') ? lucro : montante;
+      impostoRegressivoTotal += (baseCalculo * aliquotaReg);
+    }
+
+    const rendimentoTotal = patrimonioTotal - totalInvestido;
+    const baseTotalProg = (plano === 'vgbl') ? rendimentoTotal : patrimonioTotal;
+
+    return {
+      totalInvestido: totalInvestido,
+      patrimonioTotal: patrimonioTotal,
+      rendimentoTotal: rendimentoTotal,
+      baseTotalProg: baseTotalProg,
+      impostoRegressivoTotal: impostoRegressivoTotal
+    };
+  }
+
+  let planoAtivo = 'pgbl';
+
+  /* Toggles PGBL/VGBL */
+  document.querySelectorAll('.sim-toggle[data-group="plano"]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('.sim-toggle[data-group="plano"]').forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      planoAtivo = btn.dataset.val;
+      const fieldRenda = document.getElementById('field-renda');
+      const hint = document.getElementById('plano-hint');
+      
+      if (planoAtivo === 'pgbl') {
+        fieldRenda.style.display = '';
+        hint.textContent = 'Ideal para quem usa Declaração Completa · Deduz até 12% da renda bruta';
+      } else {
+        fieldRenda.style.display = 'none';
+        hint.textContent = 'Ideal para Declaração Simplificada ou quem já atingiu o teto PGBL · IR apenas sobre rendimentos';
       }
-      function irProgressivo(base) {
-        for (const f of TABELA_PROGRESSIVA) {
-          if (base <= f.limite) return base * f.aliq - f.deducao;
-        }
-        return 0;
-      }
-      function aliqEfetiva(base) {
-        if (base <= 0) return 0;
-        return Math.max(0, irProgressivo(base)) / base;
-      }
-      function aliqRegressiva(anos) {
-        for (const f of TABELA_REGRESSIVA) {
-          if (anos <= f.anos) return f.aliq;
-        }
-        return 0.10;
-      }
+    });
+  });
 
-      let planoAtivo = 'pgbl';
+  /* Sliders */
+  var prazoRange = document.getElementById('input-prazo');
+  var rentRange = document.getElementById('input-rentabilidade');
 
-      /* toggles PGBL/VGBL */
-      document.querySelectorAll('.sim-toggle[data-group="plano"]').forEach(function(btn) {
-        btn.addEventListener('click', function() {
-          document.querySelectorAll('.sim-toggle[data-group="plano"]').forEach(function(b){ b.classList.remove('active'); });
-          btn.classList.add('active');
-          planoAtivo = btn.dataset.val;
-          const fieldRenda = document.getElementById('field-renda');
-          const hint = document.getElementById('plano-hint');
-          if (planoAtivo === 'pgbl') {
-            fieldRenda.style.display = '';
-            hint.textContent = 'Ideal para quem usa Declaração Completa · Deduz até 12% da renda bruta';
-          } else {
-            fieldRenda.style.display = 'none';
-            hint.textContent = 'Ideal para Declaração Simplificada ou quem já atingiu o teto PGBL · IR apenas sobre rendimentos';
-          }
-        });
-      });
+  function updateSliderBg(el, min, max) {
+    var pct = ((el.value - min) / (max - min)) * 100;
+    el.style.background = 'linear-gradient(to right, #0056A8 0%, #0056A8 ' + pct + '%, #d0dcea ' + pct + '%, #d0dcea 100%)';
+  }
 
-      /* sliders */
-      var prazoRange = document.getElementById('input-prazo');
-      var rentRange  = document.getElementById('input-rentabilidade');
+  prazoRange.addEventListener('input', function () {
+    document.getElementById('prazo-display').textContent = prazoRange.value + ' anos';
+    updateSliderBg(prazoRange, 2, 40);
+  });
+  
+  rentRange.addEventListener('input', function () {
+    document.getElementById('rent-display').textContent = rentRange.value.replace('.', ',') + '% a.a.';
+    updateSliderBg(rentRange, 4, 20);
+  });
 
-      function updateSliderBg(el, min, max) {
-        var pct = ((el.value - min) / (max - min)) * 100;
-        el.style.background = 'linear-gradient(to right, #0056A8 0%, #0056A8 '+pct+'%, #d0dcea '+pct+'%, #d0dcea 100%)';
-      }
+  /* Máscaras de Input */
+  ['input-renda', 'input-aporte'].forEach(function (id) {
+    var el = document.getElementById(id);
+    if (!el) return;
+    el.addEventListener('input', function () {
+      var raw = el.value.replace(/\D/g, '');
+      el.value = raw ? parseInt(raw, 10).toLocaleString('pt-BR') : '';
+    });
+  });
 
-      prazoRange.addEventListener('input', function() {
-        document.getElementById('prazo-display').textContent = prazoRange.value + ' anos';
-        updateSliderBg(prazoRange, 2, 40);
-      });
-      rentRange.addEventListener('input', function() {
-        document.getElementById('rent-display').textContent = rentRange.value.replace('.',',') + '% a.a.';
-        updateSliderBg(rentRange, 4, 20);
-      });
+  /* Ação Principal: Calcular */
+  document.getElementById('btn-calcular').addEventListener('click', function () {
+    var aporteMensal = parseNum(document.getElementById('input-aporte').value);
+    var prazoAnos = parseInt(prazoRange.value, 10);
+    var rentAnual = parseFloat(rentRange.value) / 100;
+    var rendaBruta = parseNum(document.getElementById('input-renda').value);
 
-      /* máscaras */
-      ['input-renda','input-aporte'].forEach(function(id) {
-        var el = document.getElementById(id);
-        if (!el) return;
-        el.addEventListener('input', function() {
-          var raw = el.value.replace(/\D/g,'');
-          el.value = raw ? parseInt(raw,10).toLocaleString('pt-BR') : '';
-        });
-      });
+    // Validação básica
+    if (aporteMensal <= 0) {
+      var el = document.getElementById('input-aporte');
+      el.focus(); 
+      el.style.borderColor = '#e53e3e';
+      setTimeout(function () { el.style.borderColor = ''; }, 2000);
+      return;
+    }
 
-      /* calcular */
-      document.getElementById('btn-calcular').addEventListener('click', function() {
-        var aporteMensal = parseNum(document.getElementById('input-aporte').value);
-        var prazoAnos    = parseInt(prazoRange.value, 10);
-        var rentAnual    = parseFloat(rentRange.value) / 100;
-        var rendaBruta   = parseNum(document.getElementById('input-renda').value);
+    // Processa os cálculos com o novo motor
+    var sim = calcularSimulacao(aporteMensal, rentAnual, prazoAnos, planoAtivo);
+    
+    // Calcula Imposto Progressivo (Aviso: Assumindo Resgate Total)
+    var irProg = Math.max(0, calcIrProgressivoAnual(sim.baseTotalProg));
+    var liqProg = sim.patrimonioTotal - irProg;
+    var aliqProgEfetiva = sim.baseTotalProg > 0 ? (irProg / sim.baseTotalProg) : 0;
 
-        if (aporteMensal <= 0) {
-          var el = document.getElementById('input-aporte');
-          el.focus(); el.style.borderColor = '#e53e3e';
-          setTimeout(function(){ el.style.borderColor = ''; }, 2000);
-          return;
-        }
+    // Imposto Regressivo (Já calculado no loop PEPS)
+    var irReg = sim.impostoRegressivoTotal;
+    var liqReg = sim.patrimonioTotal - irReg;
+    var aliqRegEfetiva = sim.baseTotalProg > 0 ? (irReg / sim.baseTotalProg) : 0;
 
-        var patrimonio    = calcPatrimonio(aporteMensal, rentAnual, prazoAnos);
-        var totalInvest   = aporteMensal * prazoAnos * 12;
-        var rendimento    = patrimonio - totalInvest;
-        var base          = planoAtivo === 'pgbl' ? patrimonio : rendimento;
+    // Benefício Fiscal PGBL
+    var economiaPGBL = 0;
+    if (planoAtivo === 'pgbl' && rendaBruta > 0) {
+      var aporteAnual = aporteMensal * 12;
+      var deducaoReal = Math.min(aporteAnual, rendaBruta * 0.12); // Limite de 12%
+      economiaPGBL = Math.max(0, calcIrProgressivoAnual(rendaBruta)) - Math.max(0, calcIrProgressivoAnual(rendaBruta - deducaoReal));
+    }
 
-        var aliqProg = aliqEfetiva(base);
-        var irProg   = Math.max(0, irProgressivo(base));
-        var liqProg  = patrimonio - irProg;
+    // Define qual modelo foi o vencedor
+    var melhor = irReg < irProg ? 'regressivo' : 'progressivo';
 
-        var aliqReg  = aliqRegressiva(prazoAnos);
-        var irReg    = base * aliqReg;
-        var liqReg   = patrimonio - irReg;
+    // Atualização da Interface (DOM)
+    document.getElementById('res-patrimonio').textContent = fmtBRL(sim.patrimonioTotal);
+    document.getElementById('res-total-investido').textContent = 'Total investido: ' + fmtBRL(sim.totalInvestido) + ' · Rendimento: ' + fmtBRL(sim.rendimentoTotal);
+    
+    document.getElementById('res-aliq-prog').textContent = fmtPct(aliqProgEfetiva);
+    document.getElementById('res-ir-prog').textContent = fmtBRL(irProg);
+    document.getElementById('res-liq-prog').textContent = fmtBRL(liqProg);
+    
+    document.getElementById('res-aliq-reg').textContent = fmtPct(aliqRegEfetiva);
+    document.getElementById('res-ir-reg').textContent = fmtBRL(irReg);
+    document.getElementById('res-liq-reg').textContent = fmtBRL(liqReg);
 
-        var economiaPGBL = 0;
-        if (planoAtivo === 'pgbl' && rendaBruta > 0) {
-          var aporteAnual  = aporteMensal * 12;
-          var deducaoReal  = Math.min(aporteAnual, rendaBruta * 0.12);
-          economiaPGBL = Math.max(0, irProgressivo(rendaBruta)) - Math.max(0, irProgressivo(rendaBruta - deducaoReal));
-        }
+    // Destaque visual no vencedor
+    var tProg = document.getElementById('tag-prog');
+    var tReg = document.getElementById('tag-reg');
+    
+    tProg.textContent = melhor === 'progressivo' ? '✓ Melhor opção' : '';
+    tProg.className = 'sim-regime-tag' + (melhor === 'progressivo' ? ' sim-regime-tag--winner' : '');
+    
+    tReg.textContent = melhor === 'regressivo' ? '✓ Melhor opção' : '';
+    tReg.className = 'sim-regime-tag' + (melhor === 'regressivo' ? ' sim-regime-tag--winner' : '');
+    
+    document.querySelector('.sim-regime-card--prog').classList.toggle('sim-regime-card--winner', melhor === 'progressivo');
+    document.querySelector('.sim-regime-card--reg').classList.toggle('sim-regime-card--winner', melhor === 'regressivo');
 
-        var melhor = irReg < irProg ? 'regressivo' : 'progressivo';
+    // Bônus PGBL
+    var bonusEl = document.getElementById('sim-pgbl-bonus');
+    if (planoAtivo === 'pgbl' && rendaBruta > 0) {
+      document.getElementById('res-economia-pgbl').textContent = fmtBRL(economiaPGBL);
+      bonusEl.style.display = '';
+    } else {
+      bonusEl.style.display = 'none';
+    }
 
-        document.getElementById('res-patrimonio').textContent     = fmtBRL(patrimonio);
-        document.getElementById('res-total-investido').textContent = 'Total investido: '+fmtBRL(totalInvest)+' · Rendimento: '+fmtBRL(rendimento);
-        document.getElementById('res-aliq-prog').textContent = fmtPct(aliqProg);
-        document.getElementById('res-ir-prog').textContent   = fmtBRL(irProg);
-        document.getElementById('res-liq-prog').textContent  = fmtBRL(liqProg);
-        document.getElementById('res-aliq-reg').textContent  = fmtPct(aliqReg);
-        document.getElementById('res-ir-reg').textContent    = fmtBRL(irReg);
-        document.getElementById('res-liq-reg').textContent   = fmtBRL(liqReg);
+    // Recomendação final dinâmica
+    var rec = melhor === 'regressivo'
+      ? 'Para um prazo de <strong>' + prazoAnos + ' anos</strong>, o Regime <strong>Regressivo</strong> tende a ser mais vantajoso — a alíquota efetiva média fica em ' + fmtPct(aliqRegEfetiva) + ' e você economiza <strong>' + fmtBRL(Math.abs(irReg - irProg)) + '</strong> em comparação ao resgate único no Progressivo.'
+      : 'Com prazo de <strong>' + prazoAnos + ' anos</strong>, o Regime <strong>Progressivo</strong> simulou melhor. Mas atenção: o regime progressivo costuma ser vantajoso apenas se transformado em <strong>retiradas mensais baixas</strong> no futuro. Converse com seu assessor.';
+    
+    document.getElementById('res-recomendacao').innerHTML = rec;
 
-        var tProg = document.getElementById('tag-prog');
-        var tReg  = document.getElementById('tag-reg');
-        tProg.textContent = melhor === 'progressivo' ? '✓ Melhor opção' : '';
-        tProg.className   = 'sim-regime-tag' + (melhor === 'progressivo' ? ' sim-regime-tag--winner' : '');
-        tReg.textContent  = melhor === 'regressivo'  ? '✓ Melhor opção' : '';
-        tReg.className    = 'sim-regime-tag' + (melhor === 'regressivo'  ? ' sim-regime-tag--winner' : '');
-        document.querySelector('.sim-regime-card--prog').classList.toggle('sim-regime-card--winner', melhor === 'progressivo');
-        document.querySelector('.sim-regime-card--reg').classList.toggle('sim-regime-card--winner',  melhor === 'regressivo');
+    // Transição de tela
+    document.getElementById('sim-placeholder').style.display = 'none';
+    document.getElementById('sim-content').style.display = '';
+  });
 
-        var bonusEl = document.getElementById('sim-pgbl-bonus');
-        if (planoAtivo === 'pgbl' && rendaBruta > 0) {
-          document.getElementById('res-economia-pgbl').textContent = fmtBRL(economiaPGBL);
-          bonusEl.style.display = '';
-        } else {
-          bonusEl.style.display = 'none';
-        }
-
-        var rec = prazoAnos >= 10
-          ? 'Para um prazo de <strong>'+prazoAnos+' anos</strong>, o Regime <strong>Regressivo</strong> tende a ser mais vantajoso — a alíquota cai para '+fmtPct(aliqReg)+' e você economiza <strong>'+fmtBRL(Math.abs(irReg-irProg))+'</strong> em comparação ao Progressivo.'
-          : 'Com prazo de <strong>'+prazoAnos+' anos</strong>, o Regime <strong>Progressivo</strong> pode ser interessante caso sua renda na aposentadoria seja baixa. Converse com seu assessor para avaliar seu cenário.';
-        document.getElementById('res-recomendacao').innerHTML = rec;
-
-        document.getElementById('sim-placeholder').style.display = 'none';
-        document.getElementById('sim-content').style.display     = '';
-      });
-
-    })();
+})();
     </script>
 
     <script src="../js/script.js"></script>

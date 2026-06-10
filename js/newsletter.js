@@ -7,7 +7,7 @@ const form      = document.getElementById('newsletterForm');
 const submitBtn = document.getElementById('submitBtn');
 const success   = document.getElementById('formSuccess');
 
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyO4MrqX8ubabCDvEmixU5HE-fb5zC1WBTb6lt9bfJUQh4WZQoM25MNH07haJF-fFy_/exec';
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyhamccNtTehcppCBej2bJHyBRBUaMnDC0PWgjkxQmoqxQTw_PpVyNrn6zVtwfaLycc/exec';
 
 /* ---------- helpers de erro inline ---------- */
 function showError(el, msg) {
@@ -51,6 +51,9 @@ if (form) {
     if (!email.value || !email.checkValidity()) {
       showError(email, 'Informe um e-mail válido.');
       valid = false;
+    } else if (!nome.value|| !nome.checkValidity()){
+        showError(nome, 'Informe seu nome.');
+        valid = false
     }
 
     /* --- regra dos checkboxes ---
