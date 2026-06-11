@@ -1,0 +1,290 @@
+/* ============================================================
+   notebook-fix.css
+   Corrige o layout para notebooks (1024px – 1380px).
+   
+   COMO USAR: adicionar em TODAS as páginas, DEPOIS de todos
+   os outros CSS e DEPOIS do hero-responsive-fix.css.
+   
+   Páginas em /produtos/ e /fundos-tipos/:
+     <link rel="stylesheet" href="../css/notebook-fix.css">
+   
+   Páginas em /institucional/:
+     <link rel="stylesheet" href="../css/notebook-fix.css">
+   
+   index.html (raiz):
+     <link rel="stylesheet" href="css/notebook-fix.css">
+   ============================================================ */
+
+
+/* ============================================================
+   1. CONTAINERS E PADDING LATERAL
+   Reduz o padding --px e o max-width do container em notebooks
+   para evitar conteúdo "colado" nas bordas
+   ============================================================ */
+@media (max-width: 1380px) and (min-width: 969px) {
+
+  :root {
+    --px: clamp(1.5rem, 3vw, 2.5rem);
+    --container: 1180px;
+  }
+
+  /* ── HOME: hero ── */
+  .home-content {
+    grid-template-columns: 1fr minmax(280px, 680px);
+    gap: 2rem;
+    padding: 4rem 2rem 3rem;
+  }
+
+  .home-text h1 {
+    font-size: clamp(2.4rem, 3.5vw, 3.2rem);
+    white-space: normal;
+    text-wrap: wrap;
+  }
+
+  /* ── HOME: portfólio ── */
+  .portfolio-content {
+    gap: 3rem;
+  }
+
+  .portfolio-text h2 {
+    font-size: 2.4rem;
+  }
+
+  #content-portifolio h2 {
+    font-size: 1.7rem;
+  }
+
+  #content-portifolio p {
+    font-size: 1rem;
+  }
+
+  .large-number {
+    font-size: 9rem;
+  }
+
+  /* ── HOME: assessores ── */
+  .assessores-inner h2 {
+    font-size: clamp(2.8rem, 5vw, 4.5rem);
+  }
+
+  /* ── HOME: app download ── */
+  .app-content {
+    gap: 3rem;
+  }
+
+  .app-mockup__img {
+    max-width: 320px;
+    margin-right: 0;
+  }
+
+  /* ── FOOTER ── */
+  .footer-content {
+    grid-template-columns: 1.2fr 1fr 1fr 1fr 1fr;
+    gap: 2rem;
+  }
+}
+
+
+/* ============================================================
+   2. PÁGINAS DE PRODUTO — seções internas
+   advantages-grid, faq-layout, steps-grid, edu-grid
+   ============================================================ */
+@media (max-width: 1280px) and (min-width: 969px) {
+
+  /* ── Vantagens: 3 colunas → 2 colunas em notebooks menores ── */
+  .advantages-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+  }
+
+  /* ── FAQ: gap menor ── */
+  .faq-layout {
+    gap: 3rem;
+  }
+
+  /* ── Steps: 4 colunas → 2 colunas ── */
+  .steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+    margin-top: 2.5rem;
+  }
+
+  /* ── edu-grid: cards de produtos nas páginas de produto ── */
+  .edu-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1rem;
+  }
+
+  /* ── products-grid (base) ── */
+  .products-grid {
+    grid-template-columns: 1fr;
+    max-width: 700px;
+  }
+
+  /* ── Seções: padding vertical menor ── */
+  .rf-advantages,
+  .rf-detail,
+  .rf-faq,
+  .rf-steps,
+  .rf-cta,
+  .rv-advantages,
+  .rv-detail,
+  .rv-faq,
+  .rv-steps,
+  .rv-cta,
+  .fd-advantages,
+  .fd-detail,
+  .fd-faq,
+  .fd-steps,
+  .fd-cta,
+  .mf-advantages,
+  .mf-detail,
+  .mf-faq,
+  .mf-steps,
+  .mf-cta,
+  .pv-advantages,
+  .pv-detail,
+  .pv-faq,
+  .pv-steps,
+  .pv-cta,
+  .td-advantages,
+  .td-detail,
+  .td-faq,
+  .td-steps,
+  .td-cta {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  /* ── Detail grid (seção de detalhe de produto): 2 col → 1 col ── */
+  .detail-grid,
+  .rf-detail-grid,
+  .rv-detail-grid,
+  .fd-detail-grid,
+  .mf-detail-grid,
+  .pv-detail-grid,
+  .td-detail-grid {
+    grid-template-columns: 1fr;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+}
+
+
+/* ============================================================
+   3. TAXAS — tabelas e grid de tabs
+   ============================================================ */
+@media (max-width: 1280px) and (min-width: 969px) {
+
+  .rates-tabs {
+    gap: 0.4rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .rate-tab {
+    font-size: 0.78rem;
+    padding: 0.5rem 0.9rem;
+  }
+
+  .rates-table th,
+  .rates-table td {
+    padding: 0.75rem 0.9rem;
+    font-size: 0.85rem;
+  }
+}
+
+
+/* ============================================================
+   4. FUNDOS — cards e filtros
+   ============================================================ */
+@media (max-width: 1280px) and (min-width: 969px) {
+
+  .fund-card {
+    padding: 1.5rem;
+  }
+
+  .fund-filters {
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .filter-btn {
+    font-size: 0.78rem;
+    padding: 0.4rem 0.85rem;
+  }
+
+  /* Detalhes do fundo em accordion — grid de attrs */
+  .fund-attrs-grid,
+  .edu-modal__attrs-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.75rem;
+  }
+}
+
+
+/* ============================================================
+   5. SOBRE NÓS — timeline e diferenciais
+   ============================================================ */
+@media (max-width: 1280px) and (min-width: 969px) {
+
+  .timeline-item {
+    gap: 2rem;
+  }
+
+  .about-diferenciais-grid,
+  .diferenciais-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.2rem;
+  }
+}
+
+
+/* ============================================================
+   6. ASSESSORES — cards de equipe e depoimentos
+   ============================================================ */
+@media (max-width: 1280px) and (min-width: 969px) {
+
+  .team-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 1.2rem;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .modalities-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.5rem;
+  }
+}
+
+
+/* ============================================================
+   7. CONTATO — layout de canais
+   ============================================================ */
+@media (max-width: 1280px) and (min-width: 969px) {
+
+  .contact-channels {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.2rem;
+  }
+}
+
+
+/* ============================================================
+   8. FOOTER — notebook menor comprime para 4 colunas
+   ============================================================ */
+@media (max-width: 1100px) and (min-width: 969px) {
+
+  .footer-content {
+    grid-template-columns: 1.2fr 1fr 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  /* Esconde uma das colunas menos críticas se necessário */
+  .footer-column:nth-child(6) {
+    display: none;
+  }
+}
