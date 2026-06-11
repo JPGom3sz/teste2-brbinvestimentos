@@ -1297,8 +1297,25 @@ footer {
 
 .edu-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 1.4rem;
+}
+
+.advantages-grid {
+  max-width: var(--container);
+  margin: 0 auto;
+  display: grid;
+  /* Substitua o repeat(3, 1fr) por: */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.steps-grid {
+  display: grid;
+  /* Substitua o repeat(4, 1fr) por: */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3.5rem;
 }
 
 .edu-card {

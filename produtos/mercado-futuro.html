@@ -12,69 +12,82 @@
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/mobile-nav.css" />
     <link rel="stylesheet" href="../css/hero-responsive-fix.css" />
+
+    <style>
+      .edu-attr {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+      }
+      .edu-attr svg {
+        flex-shrink: 0;
+      }
+      
+      /* Trava o grid de vantagens em exatamente 3 colunas no desktop */
+      .advantages-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr) !important;
+      }
+
+      /* Responsividade para telas médias (tablets) */
+      @media (max-width: 992px) {
+        .advantages-grid {
+          grid-template-columns: repeat(2, 1fr) !important;
+        }
+      }
+
+      /* Responsividade para telas pequenas (celulares) */
+      @media (max-width: 768px) {
+        .advantages-grid {
+          grid-template-columns: 1fr !important;
+        }
+      }
+    </style>
   </head>
-  
 
-<div id="brb-cookie-banner" role="dialog" aria-modal="false" aria-label="Preferências de cookies">
+  <body>
+    <div id="brb-cookie-banner" role="dialog" aria-modal="false" aria-label="Preferências de cookies">
+      <div class="cookie-inner">
+        <div class="cookie-icon" aria-hidden="true">
+          <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 0a6 6 0 0 1 6 6m-6 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-4 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm5 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+          </svg>
+        </div>
 
-  <div class="cookie-inner">
+        <div class="cookie-text">
+          <strong>Utilizamos cookies</strong>
+          <p>
+            Para melhorar sua experiência e personalizar conteúdos. Veja nossa
+            <a href="pdfs/Política de Privacidade.pdf" target="_blank" rel="noopener noreferrer">Política de Privacidade</a>.
+          </p>
 
-    <!-- Ícone -->
-    <div class="cookie-icon" aria-hidden="true">
-      <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-        <path stroke-linecap="round" stroke-linejoin="round"
-          d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 0a6 6 0 0 1 6 6m-6 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-4 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm5 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
-      </svg>
-    </div>
+          <div class="cookie-categories">
+            <label class="cookie-cat">
+              <input type="checkbox" value="necessários" checked disabled />
+              <span class="cookie-cat-label">Necessários <em>(obrigatório)</em></span>
+            </label>
 
-    <!-- Texto + Categorias -->
-    <div class="cookie-text">
-      <strong>Utilizamos cookies</strong>
-      <p>
-        Para melhorar sua experiência e personalizar conteúdos. Veja nossa
-        <a href="pdfs/Política de Privacidade.pdf" target="_blank" rel="noopener noreferrer">Política de Privacidade</a>.
-      </p>
+            <label class="cookie-cat">
+              <input type="checkbox" value="analíticos" checked />
+              <span class="cookie-cat-label">Analíticos</span>
+            </label>
 
-      <!-- Categorias -->
-      <div class="cookie-categories">
+            <label class="cookie-cat">
+              <input type="checkbox" value="marketing" checked />
+              <span class="cookie-cat-label">Marketing</span>
+            </label>
+          </div>
+        </div>
 
-        <label class="cookie-cat">
-          <input type="checkbox" value="necessários" checked disabled />
-          <span class="cookie-cat-label">Necessários <em>(obrigatório)</em></span>
-        </label>
-
-        <label class="cookie-cat">
-          <input type="checkbox" value="analíticos" checked />
-          <span class="cookie-cat-label">Analíticos</span>
-        </label>
-
-        <label class="cookie-cat">
-          <input type="checkbox" value="marketing" checked />
-          <span class="cookie-cat-label">Marketing</span>
-        </label>
-
+        <div class="cookie-actions">
+          <button id="brb-cookie-accept" class="cookie-btn-accept">Aceitar cookies</button>
+          <button id="brb-cookie-reject" class="cookie-btn-reject">Só necessários</button>
+        </div>
       </div>
     </div>
 
-    <!-- Botões -->
-    <div class="cookie-actions">
-      <button id="brb-cookie-accept" class="cookie-btn-accept">
-        Aceitar cookies
-      </button>
-      <button id="brb-cookie-reject" class="cookie-btn-reject">
-        Só necessários
-      </button>
-    </div>
-
-  </div>
-
-</div>
-
-<!-- Estilos e script do banner de cookies -->
-<link rel="stylesheet" href="../css/cookies.css" />
-<script src="../js/cookies.js"></script>
-
-  <body>
+    <link rel="stylesheet" href="../css/cookies.css" />
+    <script src="../js/cookies.js"></script>
 
     <div class="reading-progress">
       <div class="reading-progress__bar" id="readingBar"></div>
@@ -96,36 +109,26 @@
             </a>
             <ul class="dropdown-menu" role="menu">
               <li role="none" class="has-submenu">
-                <a href="renda-fixa.html" role="menuitem">
-                  Renda Fixa <span class="chevron-right"></span>
-                </a>
+                <a href="renda-fixa.html" role="menuitem">Renda Fixa <span class="chevron-right"></span></a>
               </li>
               <li role="none" class="has-submenu">
-                <a href="renda-variavel.html" role="menuitem">
-                  Renda Variável <span class="chevron-right"></span>
-                </a>
+                <a href="renda-variavel.html" role="menuitem">Renda Variável <span class="chevron-right"></span></a>
               </li>
               <li role="none" class="has-submenu">
-                <a href="previdencia.html" role="menuitem">
-                  Previdência <span class="chevron-right"></span>
-                </a>
+                <a href="previdencia.html" role="menuitem">Previdência <span class="chevron-right"></span></a>
               </li>
               <li class="has-submenu">
-              <a href="../produtos/fundos.html">Fundos <span class="chevron-right">▶</span></a>
-              <ul class="submenu">
-                <li class="mobile-only-item"><a href="../produtos/fundos.html">Visão Geral de Fundos</a></li>
-                <li><a href="../fundos-tipos/fundos-todos.html">Fundos BRB </a></li>
-              </ul>
-            </li>
-              <li role="none" class="has-submenu">
-                <a href="mercado-futuro.html" role="menuitem">
-                  Mercado Futuro <span class="chevron-right"></span>
-                </a>
+                <a href="../produtos/fundos.html">Fundos <span class="chevron-right">▶</span></a>
+                <ul class="submenu">
+                  <li class="mobile-only-item"><a href="../produtos/fundos.html">Visão Geral de Fundos</a></li>
+                  <li><a href="../fundos-tipos/fundos-todos.html">Fundos BRB </a></li>
+                </ul>
               </li>
               <li role="none" class="has-submenu">
-                <a href="tesouro-direto.html" role="menuitem">
-                  Tesouro Direto <span class="chevron-right"></span>
-                </a>
+                <a href="mercado-futuro.html" role="menuitem">Mercado Futuro <span class="chevron-right"></span></a>
+              </li>
+              <li role="none" class="has-submenu">
+                <a href="tesouro-direto.html" role="menuitem">Tesouro Direto <span class="chevron-right"></span></a>
               </li>
             </ul>
           </li>
@@ -182,19 +185,25 @@
           O Mercado Futuro da BRB Investimentos oferece acesso a contratos futuros de índices, câmbio, juros e commodities — com plataforma robusta, alavancagem estratégica e suporte especializado para operadores experientes.
         </p>
         <div class="mf-hero-ctas">
-         <button class="btn-rf-primary" onclick="window.open('https://brb.genialinvestimentos.com.br/auth/login','_blank','noopener,noreferrer')">
-              Comece a investir
-            </button>
-            <button class="btn-rf-outline" onclick="document.getElementById('produtos-educativo').scrollIntoView({behavior:'smooth'})">
-              Ver produtos
-            </button>
+          <button class="btn-rf-primary" onclick="window.open('https://brb.genialinvestimentos.com.br/auth/login','_blank','noopener,noreferrer')">
+            Comece a investir
+          </button>
+          <button class="btn-rf-outline" onclick="document.getElementById('produtos-educativo').scrollIntoView({behavior:'smooth'})">
+            Ver produtos
+          </button>
         </div>
       </div>
     </section>
 
     <div class="risk-banner" role="alert">
       <div class="risk-banner-inner">
-        <span class="risk-icon" aria-hidden="true">⚠️</span>
+        <span class="risk-icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/>
+            <path d="M12 9v4"/>
+            <path d="M12 17h.01"/>
+          </svg>
+        </span>
         <p>
           <strong>Aviso de Risco:</strong> O Mercado Futuro envolve alto grau de risco e é destinado a investidores com perfil arrojado e experiência em derivativos. As perdas podem superar o capital investido. Consulte nossa equipe antes de operar.
         </p>
@@ -223,9 +232,15 @@
               <div class="edu-card__title">Índice (WIN/IND)</div>
               <div class="edu-card__desc">Negocie a expectativa futura do Ibovespa. Ideal para Day Trade ou proteção (hedge) de carteiras de ações.</div>
               <div class="edu-card__attrs">
-                <span class="edu-attr edu-attr--cdb">⚡ Alavancagem</span>
-                <span class="edu-attr edu-attr--cdb">📉 Hedge</span>
-                <span class="edu-attr edu-attr--cdb">Alta Liquidez</span>
+                <span class="edu-attr edu-attr--cdb">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> Alavancagem
+                </span>
+                <span class="edu-attr edu-attr--cdb">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 17 13.5 8.5 8.5 13.5 2 7"/><polyline points="16 17 22 17 22 11"/></svg> Hedge
+                </span>
+                <span class="edu-attr edu-attr--cdb">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg> Alta Liquidez
+                </span>
               </div>
             </div>
             <div class="edu-card__cta edu-card__cta--cdb">
@@ -251,9 +266,15 @@
               <div class="edu-card__title">Dólar (WDO/DOL)</div>
               <div class="edu-card__desc">Opere a variação da moeda americana. Utilize para especular sobre o câmbio ou proteger compromissos em dólar.</div>
               <div class="edu-card__attrs">
-                <span class="edu-attr edu-attr--lci">💵 Câmbio</span>
-                <span class="edu-attr edu-attr--lci">💹 Volatilidade</span>
-                <span class="edu-attr edu-attr--lci">Ajustes Diários</span>
+                <span class="edu-attr edu-attr--lci">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></svg> Câmbio
+                </span>
+                <span class="edu-attr edu-attr--lci">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg> Volatilidade
+                </span>
+                <span class="edu-attr edu-attr--lci">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Ajustes Diários
+                </span>
               </div>
             </div>
             <div class="edu-card__cta edu-card__cta--lci">
@@ -279,9 +300,15 @@
               <div class="edu-card__title">Commodities</div>
               <div class="edu-card__desc">Negocie contratos de Boi Gordo, Milho e Café. Conecte sua estratégia ao setor que move a economia do país.</div>
               <div class="edu-card__attrs">
-                <span class="edu-attr edu-attr--deb">🌾 Agronegócio</span>
-                <span class="edu-attr edu-attr--deb">🐂 Ativos Reais</span>
-                <span class="edu-attr edu-attr--deb">Sazonalidade</span>
+                <span class="edu-attr edu-attr--deb">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M8 6c0 3.3-2.7 6-6 6M8 18c0-3.3-2.7-6-6-6M16 10c0-3.3 2.7-6 6-6M16 22c0-3.3 2.7-6 6-6"/></svg> Agronegócio
+                </span>
+                <span class="edu-attr edu-attr--deb">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/></svg> Ativos Reais
+                </span>
+                <span class="edu-attr edu-attr--deb">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.3"/></svg> Sazonalidade
+                </span>
               </div>
             </div>
             <div class="edu-card__cta edu-card__cta--deb">
@@ -298,7 +325,6 @@
     </section>
 
     <div class="edu-overlay" id="eduOverlay" role="dialog" aria-modal="true" aria-labelledby="eduModalTitle">
-
       <div class="edu-modal" id="modal-cdb" style="display:none">
         <div class="edu-modal__header">
           <button class="edu-modal__close" aria-label="Fechar">
@@ -519,32 +545,59 @@
 
       <div class="advantages-grid">
         <div class="adv-card reveal">
-          <div class="adv-icon">⚡</div>
+          <div class="adv-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0056A8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+            </svg>
+          </div>
           <h3>Alta Liquidez</h3>
           <p>Contratos futuros de índice (WIN/WDO) e câmbio possuem enorme volume negociado diariamente na B3, garantindo facilidade de entrada e saída nas posições a qualquer momento do pregão.</p>
         </div>
         <div class="adv-card reveal">
-          <div class="adv-icon">🔧</div>
+          <div class="adv-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0056A8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+            </svg>
+          </div>
           <h3>Alavancagem Estratégica</h3>
           <p>Opere posições maiores com margem reduzida. A alavancagem amplifica tanto os ganhos quanto as perdas, sendo uma ferramenta poderosa quando usada com disciplina e gestão de risco rigorosa.</p>
         </div>
         <div class="adv-card reveal">
-          <div class="adv-icon">🛡️</div>
+          <div class="adv-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0056A8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
           <h3>Proteção de Carteira (Hedge)</h3>
           <p>Proteja sua carteira de ações contra quedas do Ibovespa vendendo contratos futuros de índice. Uma estratégia usada por gestores profissionais para reduzir o risco em cenários adversos.</p>
         </div>
         <div class="adv-card reveal">
-          <div class="adv-icon">🌙</div>
+          <div class="adv-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0056A8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+          </div>
           <h3>Day Trade e Swing Trade</h3>
           <p>Opere durante o pregão regular ou no after market. Contratos mini permitem estratégias com menor exigência de margem, ideais para quem busca resultados no curto prazo.</p>
         </div>
         <div class="adv-card reveal">
-          <div class="adv-icon">📉</div>
+          <div class="adv-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0056A8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="22 17 13.5 8.5 8.5 13.5 2 7"/>
+              <polyline points="16 17 22 17 22 11"/>
+            </svg>
+          </div>
           <h3>Ganhos na Queda</h3>
           <p>Diferente das ações tradicionais, no mercado futuro você pode montar posições vendidas — lucrando quando o mercado cai. Isso cria oportunidades em qualquer direção do mercado.</p>
         </div>
         <div class="adv-card reveal">
-          <div class="adv-icon">🖥️</div>
+          <div class="adv-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0056A8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+              <line x1="8" y1="21" x2="16" y2="21"/>
+              <line x1="12" y1="17" x2="12" y2="21"/>
+            </svg>
+          </div>
           <h3>Plataforma Profissional</h3>
           <p>Opere via plataforma completa com gráficos em tempo real, book de ofertas, análise técnica avançada e execução de ordens rápida — tudo que o trader profissional precisa.</p>
         </div>
@@ -702,13 +755,13 @@
         <div class="footer-column">
           <h4>Produtos</h4>
           <ul>
-           <li><a href="renda-fixa.html">Renda Fixa</a></li>
-          <li><a href="fundos.html">Fundos</a></li>
-          <li><a href="previdencia.html">Previdência</a></li>
-          <li><a href="renda-variavel.html">Renda Variável</a></li>
-          <li><a href="mercado-futuro.html">Mercado Futuro</a></li>
-          <li><a href="tesouro-direto.html">Tesouro Direto</a></li>
-          <li><a href="javascript: void(0)">Criptoativos</a></li>
+            <li><a href="renda-fixa.html">Renda Fixa</a></li>
+            <li><a href="fundos.html">Fundos</a></li>
+            <li><a href="previdencia.html">Previdência</a></li>
+            <li><a href="renda-variavel.html">Renda Variável</a></li>
+            <li><a href="mercado-futuro.html">Mercado Futuro</a></li>
+            <li><a href="tesouro-direto.html">Tesouro Direto</a></li>
+            <li><a href="javascript: void(0)">Criptoativos</a></li>
           </ul>
         </div>
         <div class="footer-column">

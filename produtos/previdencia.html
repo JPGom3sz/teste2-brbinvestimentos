@@ -13,69 +13,80 @@
     <link rel="stylesheet" href="../css/mobile-nav.css" />
     <link rel="stylesheet" href="../css/hero-responsive-fix.css" />
     <link rel="stylesheet" href="../css/simulador-ir-previdencia.css" />
+
+    <style>
+      .edu-attr {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+      }
+      .edu-attr svg {
+        flex-shrink: 0;
+      }
+      
+      /* Trava o grid de vantagens em exatamente 3 colunas no desktop */
+      .advantages-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr) !important;
+      }
+
+      /* Responsividade para telas médias (tablets) */
+      @media (max-width: 992px) {
+        .advantages-grid {
+          grid-template-columns: repeat(2, 1fr) !important;
+        }
+      }
+
+      /* Responsividade para telas pequenas (celulares) */
+      @media (max-width: 768px) {
+        .advantages-grid {
+          grid-template-columns: 1fr !important;
+        }
+      }
+    </style>
   </head>
-  
 
-<div id="brb-cookie-banner" role="dialog" aria-modal="false" aria-label="Preferências de cookies">
+  <body>
+    <div id="brb-cookie-banner" role="dialog" aria-modal="false" aria-label="Preferências de cookies">
+      <div class="cookie-inner">
+        <div class="cookie-icon" aria-hidden="true">
+          <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 0a6 6 0 0 1 6 6m-6 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-4 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm5 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+          </svg>
+        </div>
 
-  <div class="cookie-inner">
+        <div class="cookie-text">
+          <strong>Utilizamos cookies</strong>
+          <p>
+            Para melhorar sua experiência e personalizar conteúdos. Veja nossa
+            <a href="pdfs/Política de Privacidade.pdf" target="_blank" rel="noopener noreferrer">Política de Privacidade</a>.
+          </p>
 
-    <!-- Ícone -->
-    <div class="cookie-icon" aria-hidden="true">
-      <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-        <path stroke-linecap="round" stroke-linejoin="round"
-          d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 0a6 6 0 0 1 6 6m-6 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-4 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm5 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
-      </svg>
-    </div>
+          <div class="cookie-categories">
+            <label class="cookie-cat">
+              <input type="checkbox" value="necessários" checked disabled />
+              <span class="cookie-cat-label">Necessários <em>(obrigatório)</em></span>
+            </label>
+            <label class="cookie-cat">
+              <input type="checkbox" value="analíticos" checked />
+              <span class="cookie-cat-label">Analíticos</span>
+            </label>
+            <label class="cookie-cat">
+              <input type="checkbox" value="marketing" checked />
+              <span class="cookie-cat-label">Marketing</span>
+            </label>
+          </div>
+        </div>
 
-    <!-- Texto + Categorias -->
-    <div class="cookie-text">
-      <strong>Utilizamos cookies</strong>
-      <p>
-        Para melhorar sua experiência e personalizar conteúdos. Veja nossa
-        <a href="pdfs/Política de Privacidade.pdf" target="_blank" rel="noopener noreferrer">Política de Privacidade</a>.
-      </p>
-
-      <!-- Categorias -->
-      <div class="cookie-categories">
-
-        <label class="cookie-cat">
-          <input type="checkbox" value="necessários" checked disabled />
-          <span class="cookie-cat-label">Necessários <em>(obrigatório)</em></span>
-        </label>
-
-        <label class="cookie-cat">
-          <input type="checkbox" value="analíticos" checked />
-          <span class="cookie-cat-label">Analíticos</span>
-        </label>
-
-        <label class="cookie-cat">
-          <input type="checkbox" value="marketing" checked />
-          <span class="cookie-cat-label">Marketing</span>
-        </label>
-
+        <div class="cookie-actions">
+          <button id="brb-cookie-accept" class="cookie-btn-accept">Aceitar cookies</button>
+          <button id="brb-cookie-reject" class="cookie-btn-reject">Só necessários</button>
+        </div>
       </div>
     </div>
 
-    <!-- Botões -->
-    <div class="cookie-actions">
-      <button id="brb-cookie-accept" class="cookie-btn-accept">
-        Aceitar cookies
-      </button>
-      <button id="brb-cookie-reject" class="cookie-btn-reject">
-        Só necessários
-      </button>
-    </div>
-
-  </div>
-
-</div>
-
-<!-- Estilos e script do banner de cookies -->
-<link rel="stylesheet" href="../css/cookies.css" />
-<script src="../js/cookies.js"></script>
-
-  <body>
+    <link rel="stylesheet" href="../css/cookies.css" />
+    <script src="../js/cookies.js"></script>
 
     <div class="reading-progress" aria-hidden="true">
       <div class="reading-progress__bar" id="readingBar"></div>
@@ -97,36 +108,26 @@
             </a>
             <ul class="dropdown-menu" role="menu">
               <li role="none" class="has-submenu">
-                <a href="renda-fixa.html" role="menuitem">
-                  Renda Fixa <span class="chevron-right"></span>
-                </a>
+                <a href="renda-fixa.html" role="menuitem">Renda Fixa <span class="chevron-right"></span></a>
               </li>
               <li role="none" class="has-submenu">
-                <a href="renda-variavel.html" role="menuitem">
-                  Renda Variável <span class="chevron-right"></span>
-                </a>
+                <a href="renda-variavel.html" role="menuitem">Renda Variável <span class="chevron-right"></span></a>
               </li>
               <li role="none" class="has-submenu">
-                <a href="previdencia.html" role="menuitem">
-                  Previdência <span class="chevron-right"></span>
-                </a>
+                <a href="previdencia.html" role="menuitem">Previdência <span class="chevron-right"></span></a>
               </li>
-               <li class="has-submenu">
-              <a href="../produtos/fundos.html">Fundos <span class="chevron-right">▶</span></a>
-              <ul class="submenu">
-                <li class="mobile-only-item"><a href="../produtos/fundos.html">Visão Geral de Fundos</a></li>
-                <li><a href="../fundos-tipos/fundos-todos.html">Fundos BRB </a></li>
-              </ul>
-            </li>
-              <li role="none" class="has-submenu">
-                <a href="mercado-futuro.html" role="menuitem">
-                  Mercado Futuro <span class="chevron-right"></span>
-                </a>
+              <li class="has-submenu">
+                <a href="../produtos/fundos.html">Fundos <span class="chevron-right">▶</span></a>
+                <ul class="submenu">
+                  <li class="mobile-only-item"><a href="../produtos/fundos.html">Visão Geral de Fundos</a></li>
+                  <li><a href="../fundos-tipos/fundos-todos.html">Fundos BRB </a></li>
+                </ul>
               </li>
               <li role="none" class="has-submenu">
-                <a href="tesouro-direto.html" role="menuitem">
-                  Tesouro Direto <span class="chevron-right"></span>
-                </a>
+                <a href="mercado-futuro.html" role="menuitem">Mercado Futuro <span class="chevron-right"></span></a>
+              </li>
+              <li role="none" class="has-submenu">
+                <a href="tesouro-direto.html" role="menuitem">Tesouro Direto <span class="chevron-right"></span></a>
               </li>
             </ul>
           </li>
@@ -171,7 +172,6 @@
     </header>
 
     <section class="pv-hero" id="topo">
-      
       <img src="../img/img-previdencia.png" alt="" class="hero-bg-cover" aria-hidden="true" />
       <div class="hero-overlay"></div>
 
@@ -217,9 +217,15 @@
               <div class="edu-card__title">PGBL</div>
               <div class="edu-card__desc">Plano Gerador de Benefício Livre — ideal para quem faz a declaração completa do Imposto de Renda.</div>
               <div class="edu-card__attrs">
-                <span class="edu-attr edu-attr--cdb">📉 Benefício Fiscal</span>
-                <span class="edu-attr edu-attr--cdb">Dedução de 12%</span>
-                <span class="edu-attr edu-attr--cdb">Foco Longo Prazo</span>
+                <span class="edu-attr edu-attr--cdb">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 17 13.5 8.5 8.5 13.5 2 7"/><polyline points="16 17 22 17 22 11"/></svg> Benefício Fiscal
+                </span>
+                <span class="edu-attr edu-attr--cdb">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg> Dedução de 12%
+                </span>
+                <span class="edu-attr edu-attr--cdb">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Foco Longo Prazo
+                </span>
               </div>
             </div>
             <div class="edu-card__cta edu-card__cta--cdb">
@@ -245,9 +251,15 @@
               <div class="edu-card__title">VGBL</div>
               <div class="edu-card__desc">Vida Gerador de Benefício Livre — indicado para quem usa a declaração simplificada ou já atingiu o teto do PGBL.</div>
               <div class="edu-card__attrs">
-                <span class="edu-attr edu-attr--lci">💰 IR s/ Rendimento</span>
-                <span class="edu-attr edu-attr--lci">⚖️ Sucessão Fácil</span>
-                <span class="edu-attr edu-attr--lci">Versatilidade</span>
+                <span class="edu-attr edu-attr--lci">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg> IR s/ Rendimento
+                </span>
+                <span class="edu-attr edu-attr--lci">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg> Sucessão Fácil
+                </span>
+                <span class="edu-attr edu-attr--lci">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg> Versatilidade
+                </span>
               </div>
             </div>
             <div class="edu-card__cta edu-card__cta--lci">
@@ -273,9 +285,15 @@
               <div class="edu-card__title">Regimes de IR</div>
               <div class="edu-card__desc">Progressivo ou Regressivo? Entenda como as alíquotas impactam o seu resgate no futuro.</div>
               <div class="edu-card__attrs">
-                <span class="edu-attr edu-attr--deb">📉 10% após 10 anos</span>
-                <span class="edu-attr edu-attr--deb">📑 Tabela da Receita</span>
-                <span class="edu-attr edu-attr--deb">Escolha Estratégica</span>
+                <span class="edu-attr edu-attr--deb">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 17 13.5 8.5 8.5 13.5 2 7"/><polyline points="16 17 22 17 22 11"/></svg> 10% após 10 anos
+                </span>
+                <span class="edu-attr edu-attr--deb">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg> Tabela da Receita
+                </span>
+                <span class="edu-attr edu-attr--deb">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg> Escolha Estratégica
+                </span>
               </div>
             </div>
             <div class="edu-card__cta edu-card__cta--deb">
@@ -292,7 +310,6 @@
     </section>
 
     <div class="edu-overlay" id="eduOverlay" role="dialog" aria-modal="true" aria-labelledby="eduModalTitle">
-
       <div class="edu-modal" id="modal-cdb" style="display:none">
         <div class="edu-modal__header">
           <button class="edu-modal__close" aria-label="Fechar">
@@ -541,7 +558,6 @@
         </div>
         <p style="font-size:.78rem; color:#aaa; margin-top:1rem;">* Simulação ilustrativa. Resultados reais dependem das condições de mercado.</p>
 
-        <!-- ── TEASER: SIMULADOR DE IR ── -->
         <button class="ir-teaser" id="irTeaserBtn" aria-expanded="false" aria-controls="irSimuladorPanel">
           <div class="ir-teaser__left">
             <div class="ir-teaser__icon">
@@ -565,10 +581,8 @@
           </div>
         </button>
 
-        <!-- ── PAINEL IR EXPANSÍVEL ── -->
         <div class="ir-panel" id="irSimuladorPanel" aria-hidden="true">
           <div class="ir-panel__inner">
-
             <div class="ir-panel__header">
               <div class="ir-panel__badge">Simulador de IR · Previdência</div>
               <h3>Compare os regimes de <span style="color:var(--primary-blue)">Imposto de Renda</span></h3>
@@ -576,7 +590,6 @@
             </div>
 
             <div class="ir-panel__layout">
-
               <div class="sim-inputs-panel">
                 <div class="sim-inputs-title">Seus dados</div>
 
@@ -687,7 +700,11 @@
                   </div>
 
                   <div class="sim-recomendacao">
-                    <div class="sim-recomendacao__icon">💡</div>
+                    <div class="sim-recomendacao__icon">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0056A8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.9 1.2 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/>
+                      </svg>
+                    </div>
                     <div class="sim-recomendacao__text" id="res-recomendacao">—</div>
                   </div>
 
@@ -717,32 +734,44 @@
 
       <div class="advantages-grid">
         <div class="adv-card reveal">
-          <div class="adv-icon">💸</div>
+          <div class="adv-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0056A8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
           <h3>Benefício Fiscal no IR</h3>
           <p>Com o PGBL, você pode deduzir até 12% da renda bruta tributável anual na declaração completa do Imposto de Renda, reduzindo o imposto a pagar ou aumentando a restituição.</p>
         </div>
         <div class="adv-card reveal">
-          <div class="adv-icon">🕐</div>
+          <div class="adv-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0056A8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
           <h3>Diferimento Tributário</h3>
           <p>O imposto só é pago no resgate, permitindo que os recursos cresçam de forma mais eficiente ao longo dos anos, sem o impacto do come-cotas semestral dos fundos convencionais.</p>
         </div>
         <div class="adv-card reveal">
-          <div class="adv-icon">📜</div>
+          <div class="adv-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0056A8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          </div>
           <h3>Planejamento Sucessório</h3>
           <p>Os recursos de previdência privada podem ser transferidos diretamente aos beneficiários sem passar pelo inventário, com mais agilidade e menos custos para a família.</p>
         </div>
         <div class="adv-card reveal">
-          <div class="adv-icon">🔄</div>
+          <div class="adv-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0056A8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+          </div>
           <h3>Portabilidade</h3>
           <p>Você pode migrar entre planos ou gestoras sem pagar imposto na transferência. A portabilidade permite buscar sempre as melhores condições disponíveis no mercado.</p>
         </div>
         <div class="adv-card reveal">
-          <div class="adv-icon">📊</div>
+          <div class="adv-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0056A8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          </div>
           <h3>Estratégias Diversificadas</h3>
           <p>Fundos de previdência com diferentes perfis de risco: conservador, moderado e arrojado. Você escolhe a estratégia mais adequada a cada fase da sua vida.</p>
         </div>
         <div class="adv-card reveal">
-          <div class="adv-icon"></div>
+          <div class="adv-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0056A8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg>
+          </div>
           <h3>Flexibilidade de Aportes</h3>
           <p>Contribua mensalmente, faça aportes extras quando quiser e ajuste as contribuições de acordo com sua situação financeira — sem burocracia.</p>
         </div>
@@ -885,11 +914,6 @@
       </div>
     </section>
 
-    <!-- ============================================================
-       SIMULADOR DE IR — PREVIDÊNCIA PRIVADA
-       ============================================================ -->
-
-
     <footer>
       <div class="footer-content">
         <div class="footer-brand">
@@ -982,232 +1006,232 @@
     </footer>
 
     <script>
-    /* ── Teaser toggle ── */
-    (function () {
-      const btn   = document.getElementById('irTeaserBtn');
-      const panel = document.getElementById('irSimuladorPanel');
-      const arrow = document.getElementById('irTeaserArrow');
-      if (!btn || !panel) return;
+      /* ── Teaser toggle ── */
+      (function () {
+        const btn   = document.getElementById('irTeaserBtn');
+        const panel = document.getElementById('irSimuladorPanel');
+        const arrow = document.getElementById('irTeaserArrow');
+        if (!btn || !panel) return;
 
-      btn.addEventListener('click', function () {
-        const open = panel.classList.toggle('ir-panel--open');
-        btn.setAttribute('aria-expanded', open);
-        panel.setAttribute('aria-hidden', !open);
-        if (open) {
-          panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        btn.addEventListener('click', function () {
+          const open = panel.classList.toggle('ir-panel--open');
+          btn.setAttribute('aria-expanded', open);
+          panel.setAttribute('aria-hidden', !open);
+          if (open) {
+            panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }
+        });
+      })();
+
+      /* ── Simulador de IR (Versão Corrigida - PEPS e Taxa Equivalente) ── */
+      (function () {
+        'use strict';
+
+        // Tabela Progressiva Anual Atualizada (Ano-Calendário 2024)
+        const TABELA_PROGRESSIVA_ANUAL = [
+          { limite: 27110.40, aliq: 0,     deducao: 0 },
+          { limite: 33919.80, aliq: 0.075, deducao: 2033.28 },
+          { limite: 45012.60, aliq: 0.15,  deducao: 4577.28 },
+          { limite: 55976.16, aliq: 0.225, deducao: 7953.24 },
+          { limite: Infinity, aliq: 0.275, deducao: 10752.00 },
+        ];
+
+        // Funções Utilitárias
+        function fmtBRL(v) { return v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', minimumFractionDigits: 2 }); }
+        function fmtPct(v) { return (v * 100).toFixed(2).replace('.', ',') + '%'; }
+        function parseNum(s) { return parseFloat(s.replace(/\./g, '').replace(',', '.')) || 0; }
+
+        // Função para Cálculo do IR Progressivo Anual
+        function calcIrProgressivoAnual(base) {
+          for (const f of TABELA_PROGRESSIVA_ANUAL) {
+            if (base <= f.limite) return (base * f.aliq) - f.deducao;
+          }
+          return 0;
         }
-      });
-    })();
 
-    /* ── Simulador de IR (Versão Corrigida - PEPS e Taxa Equivalente) ── */
-(function () {
-  'use strict';
+        // Novo Motor de Simulação com método PEPS (Primeiro a Entrar, Primeiro a Sair)
+        function calcularSimulacao(aporteMensal, rentAnual, anos, plano) {
+          // Conversão de taxa anual para taxa mensal equivalente
+          const rMensal = Math.pow(1 + rentAnual, 1 / 12) - 1;
+          const mesesTotais = anos * 12;
 
-  // Tabela Progressiva Anual Atualizada (Ano-Calendário 2024)
-  const TABELA_PROGRESSIVA_ANUAL = [
-    { limite: 27110.40, aliq: 0,     deducao: 0 },
-    { limite: 33919.80, aliq: 0.075, deducao: 2033.28 },
-    { limite: 45012.60, aliq: 0.15,  deducao: 4577.28 },
-    { limite: 55976.16, aliq: 0.225, deducao: 7953.24 },
-    { limite: Infinity, aliq: 0.275, deducao: 10752.00 },
-  ];
+          let totalInvestido = 0;
+          let patrimonioTotal = 0;
+          let impostoRegressivoTotal = 0;
 
-  // Funções Utilitárias
-  function fmtBRL(v) { return v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', minimumFractionDigits: 2 }); }
-  function fmtPct(v) { return (v * 100).toFixed(2).replace('.', ',') + '%'; }
-  function parseNum(s) { return parseFloat(s.replace(/\./g, '').replace(',', '.')) || 0; }
+          // Loop calculando o rendimento e o tempo de vida de cada aporte individualmente
+          for (let i = 1; i <= mesesTotais; i++) {
+            const mesesRendendo = mesesTotais - i + 1;
+            const anosRendendo = mesesRendendo / 12;
 
-  // Função para Cálculo do IR Progressivo Anual
-  function calcIrProgressivoAnual(base) {
-    for (const f of TABELA_PROGRESSIVA_ANUAL) {
-      if (base <= f.limite) return (base * f.aliq) - f.deducao;
-    }
-    return 0;
-  }
+            // Juros compostos para este aporte específico
+            const montante = aporteMensal * Math.pow(1 + rMensal, mesesRendendo);
+            const lucro = montante - aporteMensal;
 
-  // Novo Motor de Simulação com método PEPS (Primeiro a Entrar, Primeiro a Sair)
-  function calcularSimulacao(aporteMensal, rentAnual, anos, plano) {
-    // Conversão de taxa anual para taxa mensal equivalente
-    const rMensal = Math.pow(1 + rentAnual, 1 / 12) - 1;
-    const mesesTotais = anos * 12;
+            totalInvestido += aporteMensal;
+            patrimonioTotal += montante;
 
-    let totalInvestido = 0;
-    let patrimonioTotal = 0;
-    let impostoRegressivoTotal = 0;
+            // Descobre a alíquota regressiva apenas deste lote
+            let aliquotaReg = 0.10;
+            if (anosRendendo <= 2) aliquotaReg = 0.35;
+            else if (anosRendendo <= 4) aliquotaReg = 0.30;
+            else if (anosRendendo <= 6) aliquotaReg = 0.25;
+            else if (anosRendendo <= 8) aliquotaReg = 0.20;
+            else if (anosRendendo <= 10) aliquotaReg = 0.15;
 
-    // Loop calculando o rendimento e o tempo de vida de cada aporte individualmente
-    for (let i = 1; i <= mesesTotais; i++) {
-      const mesesRendendo = mesesTotais - i + 1;
-      const anosRendendo = mesesRendendo / 12;
+            const baseCalculo = (plano === 'vgbl') ? lucro : montante;
+            impostoRegressivoTotal += (baseCalculo * aliquotaReg);
+          }
 
-      // Juros compostos para este aporte específico
-      const montante = aporteMensal * Math.pow(1 + rMensal, mesesRendendo);
-      const lucro = montante - aporteMensal;
+          const rendimentoTotal = patrimonioTotal - totalInvestido;
+          const baseTotalProg = (plano === 'vgbl') ? rendimentoTotal : patrimonioTotal;
 
-      totalInvestido += aporteMensal;
-      patrimonioTotal += montante;
+          return {
+            totalInvestido: totalInvestido,
+            patrimonioTotal: patrimonioTotal,
+            rendimentoTotal: rendimentoTotal,
+            baseTotalProg: baseTotalProg,
+            impostoRegressivoTotal: impostoRegressivoTotal
+          };
+        }
 
-      // Descobre a alíquota regressiva apenas deste lote
-      let aliquotaReg = 0.10;
-      if (anosRendendo <= 2) aliquotaReg = 0.35;
-      else if (anosRendendo <= 4) aliquotaReg = 0.30;
-      else if (anosRendendo <= 6) aliquotaReg = 0.25;
-      else if (anosRendendo <= 8) aliquotaReg = 0.20;
-      else if (anosRendendo <= 10) aliquotaReg = 0.15;
+        let planoAtivo = 'pgbl';
 
-      const baseCalculo = (plano === 'vgbl') ? lucro : montante;
-      impostoRegressivoTotal += (baseCalculo * aliquotaReg);
-    }
+        /* Toggles PGBL/VGBL */
+        document.querySelectorAll('.sim-toggle[data-group="plano"]').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            document.querySelectorAll('.sim-toggle[data-group="plano"]').forEach(function (b) { b.classList.remove('active'); });
+            btn.classList.add('active');
+            planoAtivo = btn.dataset.val;
+            const fieldRenda = document.getElementById('field-renda');
+            const hint = document.getElementById('plano-hint');
+            
+            if (planoAtivo === 'pgbl') {
+              fieldRenda.style.display = '';
+              hint.textContent = 'Ideal para quem usa Declaração Completa · Deduz até 12% da renda bruta';
+            } else {
+              fieldRenda.style.display = 'none';
+              hint.textContent = 'Ideal para Declaração Simplificada ou quem já atingiu o teto PGBL · IR apenas sobre rendimentos';
+            }
+          });
+        });
 
-    const rendimentoTotal = patrimonioTotal - totalInvestido;
-    const baseTotalProg = (plano === 'vgbl') ? rendimentoTotal : patrimonioTotal;
+        /* Sliders */
+        var prazoRange = document.getElementById('input-prazo');
+        var rentRange = document.getElementById('input-rentabilidade');
 
-    return {
-      totalInvestido: totalInvestido,
-      patrimonioTotal: patrimonioTotal,
-      rendimentoTotal: rendimentoTotal,
-      baseTotalProg: baseTotalProg,
-      impostoRegressivoTotal: impostoRegressivoTotal
-    };
-  }
+        function updateSliderBg(el, min, max) {
+          var pct = ((el.value - min) / (max - min)) * 100;
+          el.style.background = 'linear-gradient(to right, #0056A8 0%, #0056A8 ' + pct + '%, #d0dcea ' + pct + '%, #d0dcea 100%)';
+        }
 
-  let planoAtivo = 'pgbl';
+        prazoRange.addEventListener('input', function () {
+          document.getElementById('prazo-display').textContent = prazoRange.value + ' anos';
+          updateSliderBg(prazoRange, 2, 40);
+        });
+        
+        rentRange.addEventListener('input', function () {
+          document.getElementById('rent-display').textContent = rentRange.value.replace('.', ',') + '% a.a.';
+          updateSliderBg(rentRange, 4, 20);
+        });
 
-  /* Toggles PGBL/VGBL */
-  document.querySelectorAll('.sim-toggle[data-group="plano"]').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      document.querySelectorAll('.sim-toggle[data-group="plano"]').forEach(function (b) { b.classList.remove('active'); });
-      btn.classList.add('active');
-      planoAtivo = btn.dataset.val;
-      const fieldRenda = document.getElementById('field-renda');
-      const hint = document.getElementById('plano-hint');
-      
-      if (planoAtivo === 'pgbl') {
-        fieldRenda.style.display = '';
-        hint.textContent = 'Ideal para quem usa Declaração Completa · Deduz até 12% da renda bruta';
-      } else {
-        fieldRenda.style.display = 'none';
-        hint.textContent = 'Ideal para Declaração Simplificada ou quem já atingiu o teto PGBL · IR apenas sobre rendimentos';
-      }
-    });
-  });
+        /* Máscaras de Input */
+        ['input-renda', 'input-aporte'].forEach(function (id) {
+          var el = document.getElementById(id);
+          if (!el) return;
+          el.addEventListener('input', function () {
+            var raw = el.value.replace(/\D/g, '');
+            el.value = raw ? parseInt(raw, 10).toLocaleString('pt-BR') : '';
+          });
+        });
 
-  /* Sliders */
-  var prazoRange = document.getElementById('input-prazo');
-  var rentRange = document.getElementById('input-rentabilidade');
+        /* Ação Principal: Calcular */
+        document.getElementById('btn-calcular').addEventListener('click', function () {
+          var aporteMensal = parseNum(document.getElementById('input-aporte').value);
+          var prazoAnos = parseInt(prazoRange.value, 10);
+          var rentAnual = parseFloat(rentRange.value) / 100;
+          var rendaBruta = parseNum(document.getElementById('input-renda').value);
 
-  function updateSliderBg(el, min, max) {
-    var pct = ((el.value - min) / (max - min)) * 100;
-    el.style.background = 'linear-gradient(to right, #0056A8 0%, #0056A8 ' + pct + '%, #d0dcea ' + pct + '%, #d0dcea 100%)';
-  }
+          // Validação básica
+          if (aporteMensal <= 0) {
+            var el = document.getElementById('input-aporte');
+            el.focus(); 
+            el.style.borderColor = '#e53e3e';
+            setTimeout(function () { el.style.borderColor = ''; }, 2000);
+            return;
+          }
 
-  prazoRange.addEventListener('input', function () {
-    document.getElementById('prazo-display').textContent = prazoRange.value + ' anos';
-    updateSliderBg(prazoRange, 2, 40);
-  });
-  
-  rentRange.addEventListener('input', function () {
-    document.getElementById('rent-display').textContent = rentRange.value.replace('.', ',') + '% a.a.';
-    updateSliderBg(rentRange, 4, 20);
-  });
+          // Processa os cálculos com o novo motor
+          var sim = calcularSimulacao(aporteMensal, rentAnual, prazoAnos, planoAtivo);
+          
+          // Calcula Imposto Progressivo (Aviso: Assumindo Resgate Total)
+          var irProg = Math.max(0, calcIrProgressivoAnual(sim.baseTotalProg));
+          var liqProg = sim.patrimonioTotal - irProg;
+          var aliqProgEfetiva = sim.baseTotalProg > 0 ? (irProg / sim.baseTotalProg) : 0;
 
-  /* Máscaras de Input */
-  ['input-renda', 'input-aporte'].forEach(function (id) {
-    var el = document.getElementById(id);
-    if (!el) return;
-    el.addEventListener('input', function () {
-      var raw = el.value.replace(/\D/g, '');
-      el.value = raw ? parseInt(raw, 10).toLocaleString('pt-BR') : '';
-    });
-  });
+          // Imposto Regressivo (Já calculado no loop PEPS)
+          var irReg = sim.impostoRegressivoTotal;
+          var liqReg = sim.patrimonioTotal - irReg;
+          var aliqRegEfetiva = sim.baseTotalProg > 0 ? (irReg / sim.baseTotalProg) : 0;
 
-  /* Ação Principal: Calcular */
-  document.getElementById('btn-calcular').addEventListener('click', function () {
-    var aporteMensal = parseNum(document.getElementById('input-aporte').value);
-    var prazoAnos = parseInt(prazoRange.value, 10);
-    var rentAnual = parseFloat(rentRange.value) / 100;
-    var rendaBruta = parseNum(document.getElementById('input-renda').value);
+          // Benefício Fiscal PGBL
+          var economiaPGBL = 0;
+          if (planoAtivo === 'pgbl' && rendaBruta > 0) {
+            var aporteAnual = aporteMensal * 12;
+            var deducaoReal = Math.min(aporteAnual, rendaBruta * 0.12); // Limite de 12%
+            economiaPGBL = Math.max(0, calcIrProgressivoAnual(rendaBruta)) - Math.max(0, calcIrProgressivoAnual(rendaBruta - deducaoReal));
+          }
 
-    // Validação básica
-    if (aporteMensal <= 0) {
-      var el = document.getElementById('input-aporte');
-      el.focus(); 
-      el.style.borderColor = '#e53e3e';
-      setTimeout(function () { el.style.borderColor = ''; }, 2000);
-      return;
-    }
+          // Define qual modelo foi o vencedor
+          var melhor = irReg < irProg ? 'regressivo' : 'progressivo';
 
-    // Processa os cálculos com o novo motor
-    var sim = calcularSimulacao(aporteMensal, rentAnual, prazoAnos, planoAtivo);
-    
-    // Calcula Imposto Progressivo (Aviso: Assumindo Resgate Total)
-    var irProg = Math.max(0, calcIrProgressivoAnual(sim.baseTotalProg));
-    var liqProg = sim.patrimonioTotal - irProg;
-    var aliqProgEfetiva = sim.baseTotalProg > 0 ? (irProg / sim.baseTotalProg) : 0;
+          // Atualização da Interface (DOM)
+          document.getElementById('res-patrimonio').textContent = fmtBRL(sim.patrimonioTotal);
+          document.getElementById('res-total-investido').textContent = 'Total investido: ' + fmtBRL(sim.totalInvestido) + ' · Rendimento: ' + fmtBRL(sim.rendimentoTotal);
+          
+          document.getElementById('res-aliq-prog').textContent = fmtPct(aliqProgEfetiva);
+          document.getElementById('res-ir-prog').textContent = fmtBRL(irProg);
+          document.getElementById('res-liq-prog').textContent = fmtBRL(liqProg);
+          
+          document.getElementById('res-aliq-reg').textContent = fmtPct(aliqRegEfetiva);
+          document.getElementById('res-ir-reg').textContent = fmtBRL(irReg);
+          document.getElementById('res-liq-reg').textContent = fmtBRL(liqReg);
 
-    // Imposto Regressivo (Já calculado no loop PEPS)
-    var irReg = sim.impostoRegressivoTotal;
-    var liqReg = sim.patrimonioTotal - irReg;
-    var aliqRegEfetiva = sim.baseTotalProg > 0 ? (irReg / sim.baseTotalProg) : 0;
+          // Destaque visual no vencedor
+          var tProg = document.getElementById('tag-prog');
+          var tReg = document.getElementById('tag-reg');
+          
+          tProg.textContent = melhor === 'progressivo' ? '✓ Melhor opção' : '';
+          tProg.className = 'sim-regime-tag' + (melhor === 'progressivo' ? ' sim-regime-tag--winner' : '');
+          
+          tReg.textContent = melhor === 'regressivo' ? '✓ Melhor opção' : '';
+          tReg.className = 'sim-regime-tag' + (melhor === 'regressivo' ? ' sim-regime-tag--winner' : '');
+          
+          document.querySelector('.sim-regime-card--prog').classList.toggle('sim-regime-card--winner', melhor === 'progressivo');
+          document.querySelector('.sim-regime-card--reg').classList.toggle('sim-regime-card--winner', melhor === 'regressivo');
 
-    // Benefício Fiscal PGBL
-    var economiaPGBL = 0;
-    if (planoAtivo === 'pgbl' && rendaBruta > 0) {
-      var aporteAnual = aporteMensal * 12;
-      var deducaoReal = Math.min(aporteAnual, rendaBruta * 0.12); // Limite de 12%
-      economiaPGBL = Math.max(0, calcIrProgressivoAnual(rendaBruta)) - Math.max(0, calcIrProgressivoAnual(rendaBruta - deducaoReal));
-    }
+          // Bônus PGBL
+          var bonusEl = document.getElementById('sim-pgbl-bonus');
+          if (planoAtivo === 'pgbl' && rendaBruta > 0) {
+            document.getElementById('res-economia-pgbl').textContent = fmtBRL(economiaPGBL);
+            bonusEl.style.display = '';
+          } else {
+            bonusEl.style.display = 'none';
+          }
 
-    // Define qual modelo foi o vencedor
-    var melhor = irReg < irProg ? 'regressivo' : 'progressivo';
+          // Recomendação final dinâmica
+          var rec = melhor === 'regressivo'
+            ? 'Para um prazo de <strong>' + prazoAnos + ' anos</strong>, o Regime <strong>Regressivo</strong> tende a ser mais vantajoso — a alíquota efetiva média fica em ' + fmtPct(aliqRegEfetiva) + ' e você economiza <strong>' + fmtBRL(Math.abs(irReg - irProg)) + '</strong> em comparação ao resgate único no Progressivo.'
+            : 'Com prazo de <strong>' + prazoAnos + ' anos</strong>, o Regime <strong>Progressivo</strong> simulou melhor. Mas atenção: o regime progressivo costuma ser vantajoso apenas se transformado em <strong>retiradas mensais baixas</strong> no futuro. Converse com seu assessor.';
+          
+          document.getElementById('res-recomendacao').innerHTML = rec;
 
-    // Atualização da Interface (DOM)
-    document.getElementById('res-patrimonio').textContent = fmtBRL(sim.patrimonioTotal);
-    document.getElementById('res-total-investido').textContent = 'Total investido: ' + fmtBRL(sim.totalInvestido) + ' · Rendimento: ' + fmtBRL(sim.rendimentoTotal);
-    
-    document.getElementById('res-aliq-prog').textContent = fmtPct(aliqProgEfetiva);
-    document.getElementById('res-ir-prog').textContent = fmtBRL(irProg);
-    document.getElementById('res-liq-prog').textContent = fmtBRL(liqProg);
-    
-    document.getElementById('res-aliq-reg').textContent = fmtPct(aliqRegEfetiva);
-    document.getElementById('res-ir-reg').textContent = fmtBRL(irReg);
-    document.getElementById('res-liq-reg').textContent = fmtBRL(liqReg);
+          // Transição de tela
+          document.getElementById('sim-placeholder').style.display = 'none';
+          document.getElementById('sim-content').style.display = '';
+        });
 
-    // Destaque visual no vencedor
-    var tProg = document.getElementById('tag-prog');
-    var tReg = document.getElementById('tag-reg');
-    
-    tProg.textContent = melhor === 'progressivo' ? '✓ Melhor opção' : '';
-    tProg.className = 'sim-regime-tag' + (melhor === 'progressivo' ? ' sim-regime-tag--winner' : '');
-    
-    tReg.textContent = melhor === 'regressivo' ? '✓ Melhor opção' : '';
-    tReg.className = 'sim-regime-tag' + (melhor === 'regressivo' ? ' sim-regime-tag--winner' : '');
-    
-    document.querySelector('.sim-regime-card--prog').classList.toggle('sim-regime-card--winner', melhor === 'progressivo');
-    document.querySelector('.sim-regime-card--reg').classList.toggle('sim-regime-card--winner', melhor === 'regressivo');
-
-    // Bônus PGBL
-    var bonusEl = document.getElementById('sim-pgbl-bonus');
-    if (planoAtivo === 'pgbl' && rendaBruta > 0) {
-      document.getElementById('res-economia-pgbl').textContent = fmtBRL(economiaPGBL);
-      bonusEl.style.display = '';
-    } else {
-      bonusEl.style.display = 'none';
-    }
-
-    // Recomendação final dinâmica
-    var rec = melhor === 'regressivo'
-      ? 'Para um prazo de <strong>' + prazoAnos + ' anos</strong>, o Regime <strong>Regressivo</strong> tende a ser mais vantajoso — a alíquota efetiva média fica em ' + fmtPct(aliqRegEfetiva) + ' e você economiza <strong>' + fmtBRL(Math.abs(irReg - irProg)) + '</strong> em comparação ao resgate único no Progressivo.'
-      : 'Com prazo de <strong>' + prazoAnos + ' anos</strong>, o Regime <strong>Progressivo</strong> simulou melhor. Mas atenção: o regime progressivo costuma ser vantajoso apenas se transformado em <strong>retiradas mensais baixas</strong> no futuro. Converse com seu assessor.';
-    
-    document.getElementById('res-recomendacao').innerHTML = rec;
-
-    // Transição de tela
-    document.getElementById('sim-placeholder').style.display = 'none';
-    document.getElementById('sim-content').style.display = '';
-  });
-
-})();
+      })();
     </script>
 
     <script src="../js/script.js"></script>

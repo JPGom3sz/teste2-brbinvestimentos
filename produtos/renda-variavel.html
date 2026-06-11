@@ -12,69 +12,82 @@
     <link rel="stylesheet" href="../css/renda-variavel.css" />
     <link rel="stylesheet" href="../css/mobile-nav.css" />
     <link rel="stylesheet" href="../css/hero-responsive-fix.css" />
+
+    <style>
+      .edu-attr {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+      }
+      .edu-attr svg {
+        flex-shrink: 0;
+      }
+      
+      /* Trava o grid de vantagens em exatamente 3 colunas no desktop */
+      .advantages-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr) !important;
+      }
+
+      /* Responsividade para telas médias (tablets) */
+      @media (max-width: 992px) {
+        .advantages-grid {
+          grid-template-columns: repeat(2, 1fr) !important;
+        }
+      }
+
+      /* Responsividade para telas pequenas (celulares) */
+      @media (max-width: 768px) {
+        .advantages-grid {
+          grid-template-columns: 1fr !important;
+        }
+      }
+    </style>
   </head>
   
+  <body>
+    <div id="brb-cookie-banner" role="dialog" aria-modal="false" aria-label="Preferências de cookies">
+      <div class="cookie-inner">
+        <div class="cookie-icon" aria-hidden="true">
+          <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 0a6 6 0 0 1 6 6m-6 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-4 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm5 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+          </svg>
+        </div>
 
-<div id="brb-cookie-banner" role="dialog" aria-modal="false" aria-label="Preferências de cookies">
+        <div class="cookie-text">
+          <strong>Utilizamos cookies</strong>
+          <p>
+            Para melhorar sua experiência e personalizar conteúdos. Veja nossa
+            <a href="pdfs/Política de Privacidade.pdf" target="_blank" rel="noopener noreferrer">Política de Privacidade</a>.
+          </p>
 
-  <div class="cookie-inner">
+          <div class="cookie-categories">
+            <label class="cookie-cat">
+              <input type="checkbox" value="necessários" checked disabled />
+              <span class="cookie-cat-label">Necessários <em>(obrigatório)</em></span>
+            </label>
 
-    <!-- Ícone -->
-    <div class="cookie-icon" aria-hidden="true">
-      <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-        <path stroke-linecap="round" stroke-linejoin="round"
-          d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 0a6 6 0 0 1 6 6m-6 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-4 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm5 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
-      </svg>
-    </div>
+            <label class="cookie-cat">
+              <input type="checkbox" value="analíticos" checked />
+              <span class="cookie-cat-label">Analíticos</span>
+            </label>
 
-    <!-- Texto + Categorias -->
-    <div class="cookie-text">
-      <strong>Utilizamos cookies</strong>
-      <p>
-        Para melhorar sua experiência e personalizar conteúdos. Veja nossa
-        <a href="pdfs/Política de Privacidade.pdf" target="_blank" rel="noopener noreferrer">Política de Privacidade</a>.
-      </p>
+            <label class="cookie-cat">
+              <input type="checkbox" value="marketing" checked />
+              <span class="cookie-cat-label">Marketing</span>
+            </label>
+          </div>
+        </div>
 
-      <!-- Categorias -->
-      <div class="cookie-categories">
-
-        <label class="cookie-cat">
-          <input type="checkbox" value="necessários" checked disabled />
-          <span class="cookie-cat-label">Necessários <em>(obrigatório)</em></span>
-        </label>
-
-        <label class="cookie-cat">
-          <input type="checkbox" value="analíticos" checked />
-          <span class="cookie-cat-label">Analíticos</span>
-        </label>
-
-        <label class="cookie-cat">
-          <input type="checkbox" value="marketing" checked />
-          <span class="cookie-cat-label">Marketing</span>
-        </label>
-
+        <div class="cookie-actions">
+          <button id="brb-cookie-accept" class="cookie-btn-accept">Aceitar cookies</button>
+          <button id="brb-cookie-reject" class="cookie-btn-reject">Só necessários</button>
+        </div>
       </div>
     </div>
 
-    <!-- Botões -->
-    <div class="cookie-actions">
-      <button id="brb-cookie-accept" class="cookie-btn-accept">
-        Aceitar cookies
-      </button>
-      <button id="brb-cookie-reject" class="cookie-btn-reject">
-        Só necessários
-      </button>
-    </div>
-
-  </div>
-
-</div>
-
-<!-- Estilos e script do banner de cookies -->
-<link rel="stylesheet" href="../css/cookies.css" />
-<script src="../js/cookies.js"></script>
-
-  <body>
+    <link rel="stylesheet" href="../css/cookies.css" />
+    <script src="../js/cookies.js"></script>
 
     <div class="reading-progress" aria-hidden="true">
       <div class="reading-progress__bar" id="readingBar"></div>
@@ -195,7 +208,13 @@
 
     <div class="risk-banner" role="alert">
       <div class="risk-banner-inner">
-        <span class="risk-icon" aria-hidden="true">⚠️</span>
+        <span class="risk-icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/>
+            <line x1="12" y1="9" x2="12" y2="13"/>
+            <line x1="12" y1="17" x2="12.01" y2="17"/>
+          </svg>
+        </span>
         <p>
           <strong>Aviso de Risco:</strong> A Renda Variável envolve riscos, incluindo a possibilidade de perda do capital investido. Retornos passados não garantem rentabilidade futura. Invista de acordo com o seu perfil.
         </p>
@@ -224,9 +243,23 @@
               <div class="edu-card__title">Ações</div>
               <div class="edu-card__desc">Torne-se sócio das maiores empresas do Brasil e do mundo. Busque valorização do capital e recebimento de dividendos.</div>
               <div class="edu-card__attrs">
-                <span class="edu-attr edu-attr--cdb">📈 Potencial de Alta</span>
-                <span class="edu-attr edu-attr--cdb">🏢 Sócio de Empresas</span>
-                <span class="edu-attr edu-attr--cdb">Dividendos</span>
+                <span class="edu-attr edu-attr--cdb">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/>
+                    <polyline points="16 7 22 7 22 13"/>
+                  </svg> Potencial de Alta
+                </span>
+                <span class="edu-attr edu-attr--cdb">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="4" y="2" width="16" height="20" rx="2"/>
+                    <path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/>
+                  </svg> Sócio de Empresas
+                </span>
+                <span class="edu-attr edu-attr--cdb">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/>
+                  </svg> Dividendos
+                </span>
               </div>
             </div>
             <div class="edu-card__cta edu-card__cta--cdb">
@@ -253,9 +286,21 @@
               <div class="edu-card__title">Fundos Imobiliários</div>
               <div class="edu-card__desc">Invista em grandes empreendimentos imobiliários com pouco dinheiro e receba aluguéis mensais isentos de IR.</div>
               <div class="edu-card__attrs">
-                <span class="edu-attr edu-attr--lci">🏢 Imóveis Reais</span>
-                <span class="edu-attr edu-attr--lci">💸 Renda Mensal</span>
-                <span class="edu-attr edu-attr--lci">Isento de IR</span>
+                <span class="edu-attr edu-attr--lci">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/>
+                  </svg> Imóveis Reais
+                </span>
+                <span class="edu-attr edu-attr--lci">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/>
+                  </svg> Renda Mensal
+                </span>
+                <span class="edu-attr edu-attr--lci">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"/>
+                  </svg> Isento de IR
+                </span>
               </div>
             </div>
             <div class="edu-card__cta edu-card__cta--lci">
@@ -282,9 +327,21 @@
               <div class="edu-card__title">BDRs e ETFs</div>
               <div class="edu-card__desc">Acesse o mercado internacional e fundos de índice com facilidade, diversificando seu capital globalmente.</div>
               <div class="edu-card__attrs">
-                <span class="edu-attr edu-attr--deb">🌍 Diversificação Global</span>
-                <span class="edu-attr edu-attr--deb">💵 Moeda Forte</span>
-                <span class="edu-attr edu-attr--deb">Baixo Custo</span>
+                <span class="edu-attr edu-attr--deb">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><path d="M2 12h20"/>
+                  </svg> Diversificação Global
+                </span>
+                <span class="edu-attr edu-attr--deb">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/>
+                  </svg> Moeda Forte
+                </span>
+                <span class="edu-attr edu-attr--deb">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/>
+                  </svg> Baixo Custo
+                </span>
               </div>
             </div>
             <div class="edu-card__cta edu-card__cta--deb">
@@ -301,7 +358,6 @@
     </section>
 
     <div class="edu-overlay" id="eduOverlay" role="dialog" aria-modal="true" aria-labelledby="eduModalTitle">
-
       <div class="edu-modal" id="modal-cdb" style="display:none">
         <div class="edu-modal__header">
           <button class="edu-modal__close" aria-label="Fechar">
@@ -495,32 +551,72 @@
 
       <div class="advantages-grid">
         <div class="adv-card reveal">
-          <div class="adv-icon">💻</div>
+          <div class="adv-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0056A8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+              <line x1="8" y1="21" x2="16" y2="21"/>
+              <line x1="12" y1="17" x2="12" y2="21"/>
+            </svg>
+          </div>
           <h3>Plataformas Profissionais</h3>
           <p>Acesse o ProfitChart, Tryd e outras plataformas de ponta. Gráficos em tempo real, tape reading e agilidade no roteamento de ordens.</p>
         </div>
         <div class="adv-card reveal">
-          <div class="adv-icon">📊</div>
+          <div class="adv-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0056A8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="20" x2="18" y2="10"/>
+              <line x1="12" y1="20" x2="12" y2="4"/>
+              <line x1="6" y1="20" x2="6" y2="14"/>
+            </svg>
+          </div>
           <h3>Análise Qualificada</h3>
           <p>Acesso exclusivo à Genial Analisa. Receba carteiras recomendadas, calls de compra/venda, análise técnica e fundamentalista feita por especialistas.</p>
         </div>
         <div class="adv-card reveal">
-          <div class="adv-icon">🛡️</div>
+          <div class="adv-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0056A8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
           <h3>Suporte e Estabilidade</h3>
           <p>Infraestrutura tecnológica robusta para garantir que suas ordens cheguem à Bolsa na velocidade da luz, além de atendimento ágil pelo nosso time.</p>
         </div>
         <div class="adv-card reveal">
-          <div class="adv-icon">🎯</div>
+          <div class="adv-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0056A8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <circle cx="12" cy="12" r="6"/>
+              <circle cx="12" cy="12" r="2"/>
+            </svg>
+          </div>
           <h3>Alavancagem Intraday</h3>
           <p>Maximize seus resultados em operações Day Trade operando um volume financeiro superior ao que você tem em conta, utilizando garantias reduzidas.</p>
         </div>
         <div class="adv-card reveal">
-          <div class="adv-icon">🧩</div>
+          <div class="adv-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0056A8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="7" height="7"/>
+              <rect x="14" y="3" width="7" height="7"/>
+              <rect x="14" y="14" width="7" height="7"/>
+              <rect x="3" y="14" width="7" height="7"/>
+            </svg>
+          </div>
           <h3>Variedade de Produtos</h3>
           <p>Em um só lugar você negocia Ações, FIIs, BDRs, ETFs, Opções e Mercado Futuro. Diversificação completa para todos os cenários.</p>
         </div>
         <div class="adv-card reveal">
-          <div class="adv-icon">📝</div>
+          <div class="adv-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0056A8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="4" y="2" width="16" height="20" rx="2" ry="2"/>
+              <line x1="8" y1="6" x2="16" y2="6"/>
+              <line x1="16" y1="14" x2="16.01" y2="14"/>
+              <line x1="12" y1="14" x2="12.01" y2="14"/>
+              <line x1="8" y1="14" x2="8.01" y2="14"/>
+              <line x1="16" y1="18" x2="16.01" y2="18"/>
+              <line x1="12" y1="18" x2="12.01" y2="18"/>
+              <line x1="8" y1="18" x2="8.01" y2="18"/>
+            </svg>
+          </div>
           <h3>Calculadora de IR</h3>
           <p>Ferramentas integradas para facilitar a apuração dos seus lucros mensais, emissão de DARF e declaração anual do Imposto de Renda.</p>
         </div>
@@ -597,13 +693,13 @@
         <div class="footer-column">
           <h4>Produtos</h4>
           <ul>
-           <li><a href="renda-fixa.html">Renda Fixa</a></li>
-          <li><a href="fundos.html">Fundos</a></li>
-          <li><a href="previdencia.html">Previdência</a></li>
-          <li><a href="renda-variavel.html">Renda Variável</a></li>
-          <li><a href="mercado-futuro.html">Mercado Futuro</a></li>
-          <li><a href="tesouro-direto.html">Tesouro Direto</a></li>
-          <li><a href="javascript: void(0)">Criptoativos</a></li>
+            <li><a href="renda-fixa.html">Renda Fixa</a></li>
+            <li><a href="fundos.html">Fundos</a></li>
+            <li><a href="previdencia.html">Previdência</a></li>
+            <li><a href="renda-variavel.html">Renda Variável</a></li>
+            <li><a href="mercado-futuro.html">Mercado Futuro</a></li>
+            <li><a href="tesouro-direto.html">Tesouro Direto</a></li>
+            <li><a href="javascript: void(0)">Criptoativos</a></li>
           </ul>
         </div>
 
