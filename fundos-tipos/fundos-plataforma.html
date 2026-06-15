@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Fundos Plataforma — BRB Investimentos</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&amp;display=swap" rel="stylesheet"/>
+  <link href="../css/style.css" rel="stylesheet"/>
+  <link href="../css/style-enhance.css" rel="stylesheet"/>
+  <link href="../css/mobile-nav.css" rel="stylesheet"/>
+  <link href="../css/fundos-informativos.css" rel="stylesheet"/>
+  
+  <style>
+    /* ══════════════════════════════════════
+       BARRA DE FILTROS
+    ══════════════════════════════════════ */
+    .fd-filters-bar {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 2px 12px rgba(0,31,63,0.05);
+    }
+
+    /* Linha superior: busca + toggle distribuição */
+    .fd-filters-top {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      margin-bottom: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    /* Busca */
+    .fd-search {
+      flex: 1;
+      min-width: 200px;
+      position: relative;
+    }
+    .fd-search input {
+      width: 100%;
+      padding: 0.6rem 1rem 0.6rem 2.5rem;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 99px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.85rem;
+      color: #1a2940;
+      outline: none;
+      transition: border-color 0.2s;
+      background: #f8fafc;
+    }
+    .fd-search input:focus {
+      border-color: #0056A8;
+      background: #fff;
+    }
+    .fd-search input::placeholder { color: #94a3b8; }
+    .fd-search__icon {
+      position: absolute;
+      left: 0.85rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #94a3b8;
+      pointer-events: none;
+    }
+
+    /* Toggle Balcão / Plataforma */
+    .fd-toggle-group {
+      display: flex;
+      gap: 0.4rem;
+      background: #f1f5f9;
+      border-radius: 99px;
+      padding: 0.25rem;
+      flex-shrink: 0;
+    }
+    .fd-toggle-btn {
+      padding: 0.4rem 1rem;
+      border-radius: 99px;
+      border: none;
+      background: transparent;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #64748b;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      white-space: nowrap;
+    }
+    .fd-toggle-btn.active {
+      background: #0056A8;
+      color: #fff;
+    }
+
+    /* Contador de resultados */
+    .fd-results-count {
+      font-size: 0.75rem;
+      color: #94a3b8;
+      font-weight: 600;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .fd-results-count strong { color: #0056A8; }
+
+    /* Separador */
+    .fd-filters-divider {
+      height: 1px;
+      background: #f1f5f9;
+      margin-bottom: 1.25rem;
+    }
+
+    /* Grupos de filtros */
+    .fd-filters-groups {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+    .fd-filter-group { flex: 1; min-width: 200px; }
+    .fd-filter-group__label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: #94a3b8;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+    .fd-filter-chips {
+      display: flex;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+    }
+
+    /* Chips de filtro */
+    .fd-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.35rem 0.85rem;
+      border-radius: 99px;
+      border: 1.5px solid #e2e8f0;
+      background: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #475569;
+      cursor: pointer;
+      transition: all 0.18s ease;
+      white-space: nowrap;
+    }
+    .fd-chip:hover { border-color: #0056A8; color: #0056A8; background: #eff6ff; }
+    .fd-chip.active { background: #0056A8; border-color: #0056A8; color: #fff; }
+
+    /* Dots de perfil */
+    .fd-chip .dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .fd-chip.active .dot { filter: brightness(0) invert(1); }
+    .dot-cons  { background: #16a34a; }
+    .dot-mod   { background: #f7f30c; }
+    .dot-arr   { background: #af1c1c; }
+    .dot-agr   { background: #000000; }
+
+    /* Botão limpar filtros */
+    .fd-clear-btn {
+      display: none;
+      align-items: center;
+      gap: 0.3rem;
+      padding: 0.35rem 0.85rem;
+      border-radius: 99px;
+      border: 1.5px dashed #cbd5e1;
+      background: transparent;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #94a3b8;
+      cursor: pointer;
+      transition: all 0.18s;
+    }
+    .fd-clear-btn:hover { border-color: #ef4444; color: #ef4444; }
+    .fd-clear-btn.visible { display: inline-flex; }
+
+    /* ══════════════════════════════════════
+       SEPARADORES DE CATEGORIA
+    ══════════════════════════════════════ */
+    .fd-category-section {
+      margin-top: 2rem;
+    }
+    .fd-category-section:first-of-type { margin-top: 0; }
+
+    .fd-cat-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.85rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 2px solid #f1f5f9;
+    }
+    .fd-cat-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+    .fd-cat-icon--rf  { background: #dbeafe; color: #1e40af; }
+    .fd-cat-icon--rfs { background: #dcfce7; color: #166534; }
+    .fd-cat-icon--ac  { background: #fee2e2; color: #991b1b; }
+    .fd-cat-icon--mm  { background: #e0f2fe; color: #0369a1; }
+    .fd-cat-icon--fii { background: #f3e8ff; color: #6b21a8; }
+
+    .fd-cat-title { font-size: 1rem; font-weight: 800; color: #1a2940; }
+    .fd-cat-count {
+      font-size: 0.7rem;
+      font-weight: 700;
+      background: #f1f5f9;
+      color: #64748b;
+      padding: 0.15rem 0.55rem;
+      border-radius: 99px;
+    }
+
+    /* Estado vazio */
+    .fd-empty-state {
+      display: none;
+      text-align: center;
+      padding: 4rem 2rem;
+      color: #94a3b8;
+    }
+    .fd-empty-state.visible { display: block; }
+    .fd-empty-state svg { opacity: 0.3; margin-bottom: 1rem; }
+    .fd-empty-state h3 { font-size: 1rem; font-weight: 700; color: #64748b; margin-bottom: 0.4rem; }
+    .fd-empty-state p { font-size: 0.82rem; }
+
+    /* ══════════════════════════════════════
+       RESPONSIVO E CARDS
+    ══════════════════════════════════════ */
+    .fd-funds-grid { overflow: visible !important; }
+    .fund-card     { overflow: visible !important; }
+
+    .fund-card__name {
+      font-size: 0.82rem !important;
+      font-weight: 700 !important;
+      color: #1a2940 !important;
+    }
+
+    .fund-card__internal-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #1a2940;
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.65rem;
+      border-bottom: 1px solid #f1f5f9;
+      line-height: 1.4;
+    }
+
+    @media (max-width: 640px) {
+      .fd-filters-top { gap: 0.75rem; }
+      .fd-filters-groups { gap: 1.25rem; }
+      .fd-filter-group { min-width: 100%; }
+      .fd-toggle-group { width: 100%; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="brb-cookie-banner" role="dialog" aria-modal="false" aria-label="Preferências de cookies">
+    <div class="cookie-inner">
+      <div class="cookie-icon" aria-hidden="true">
+        <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 0a6 6 0 0 1 6 6m-6 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-4 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm5 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+        </svg>
+      </div>
+
+      <div class="cookie-text">
+        <strong>Utilizamos cookies</strong>
+        <p>
+          Para melhorar sua experiência e personalizar conteúdos. Veja nossa
+          <a href="../pdfs/Política de Privacidade.pdf" target="_blank" rel="noopener noreferrer">Política de Privacidade</a>.
+        </p>
+
+        <div class="cookie-categories">
+          <label class="cookie-cat">
+            <input type="checkbox" value="necessários" checked disabled />
+            <span class="cookie-cat-label">Necessários <em>(obrigatório)</em></span>
+          </label>
+          <label class="cookie-cat">
+            <input type="checkbox" value="analíticos" checked />
+            <span class="cookie-cat-label">Analíticos</span>
+          </label>
+          <label class="cookie-cat">
+            <input type="checkbox" value="marketing" checked />
+            <span class="cookie-cat-label">Marketing</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="cookie-actions">
+        <button id="brb-cookie-accept" class="cookie-btn-accept">Aceitar cookies</button>
+        <button id="brb-cookie-reject" class="cookie-btn-reject">Só necessários</button>
+      </div>
+    </div>
+  </div>
+
+  <link rel="stylesheet" href="../css/cookies.css" />
+  <script src="../js/cookies.js"></script>
+
+  <header id="site-header">
+    <nav>
+      <div class="logo">
+        <a aria-label="BRB Investimentos — Início" href="../index.html">
+          <img alt="BRB Investimentos" src="../img/quartinho(1).png"/>
+        </a>
+      </div>
+      
+      <ul class="nav-links" id="mobileMenu" role="menubar">
+        <li class="dropdown" role="none">
+          <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle active" href="javascript:void(0)" role="menuitem">
+            Produtos e Serviços <span aria-hidden="true" class="chevron">▾</span>
+          </a>
+          <ul class="dropdown-menu" role="menu">
+            <li role="none"><a href="../produtos/renda-fixa.html">Renda Fixa</a></li>
+            <li role="none"><a href="../produtos/renda-variavel.html">Renda Variável</a></li>
+            <li role="none"><a href="../produtos/previdencia.html">Previdência</a></li>
+            <li class="has-submenu">
+              <a href="../produtos/fundos.html">Fundos <span class="chevron-right">▶</span></a>
+              <ul class="submenu">
+                <li class="mobile-only-item"><a href="../produtos/fundos.html">Visão Geral de Fundos</a></li>
+                <li><a href="../fundos-tipos/fundos-todos.html">Fundos BRB </a></li>
+              </ul>
+            </li>
+            <li role="none"><a href="../produtos/mercado-futuro.html">Mercado Futuro</a></li>
+            <li role="none"><a href="../produtos/tesouro-direto.html">Tesouro Direto</a></li>
+          </ul>
+        </li>
+        <li class="dropdown" role="none">
+          <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" href="javascript:void(0)" role="menuitem">
+            Conteúdo <span aria-hidden="true" class="chevron">▾</span>
+          </a>
+          <ul class="dropdown-menu" role="menu">
+            <li role="none"><a href="https://analisa.genialinvestimentos.com.br/" rel="noopener noreferrer" target="_blank">Genial Analisa</a></li>
+            <li role="none"><a href="../institucional/newsletter.html">Newsletter</a></li>
+            <li role="none"><a href="../institucional/guias-praticos.html">Guias Práticos</a></li>
+          </ul>
+        </li>
+        <li role="none"><a href="../institucional/sobrenos.html">Sobre nós</a></li>
+        <li role="none"><a href="../institucional/contato.html">Contato</a></li>
+      </ul>
+      
+      <div class="nav-buttons">
+        <button class="account-link" onclick="window.open('https://brb.genialinvestimentos.com.br/auth/login','_blank','noopener,noreferrer')" type="button">
+          Acesse seus Investimentos
+        </button>
+      </div>
+      
+      <button aria-controls="mobileMenu" aria-expanded="false" aria-label="Abrir menu" class="mobile-menu-toggle" type="button">
+        <span></span><span></span><span></span>
+      </button>
+      <div aria-hidden="true" class="menu-overlay"></div>
+      <button aria-label="Fechar menu" class="mobile-menu-close" type="button">×</button>
+    </nav>
+  </header>
+
+  <main class="fd-main">
+    <a class="fd-back" href="../produtos/fundos.html">
+      <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24" width="16">
+        <line x1="19" x2="5" y1="12" y2="12"></line>
+        <polyline points="12 19 5 12 12 5"></polyline>
+      </svg>
+      Voltar para Fundos
+    </a>
+
+    <div class="fd-section-header" style="margin-bottom:1.5rem;">
+      <span class="fd-section-pill">BRB Investimentos</span>
+      <h1 class="fd-section-title">Fundos de Plataforma</h1>
+      <p class="fd-section-desc">Explore os fundos disponíveis exclusivamente através da nossa Plataforma Digital de Investimentos.</p>
+      <div class="fd-section-stats">
+        <div class="fd-stat"><span class="fd-stat__value">1 fundo</span><span class="fd-stat__label">Disponível</span></div>
+        <div class="fd-stat"><span class="fd-stat__value">Digital</span><span class="fd-stat__label">Canal de acesso</span></div>
+      </div>
+    </div>
+
+    <div class="fd-filters-bar">
+      <div class="fd-filters-top">
+        <div class="fd-search">
+          <svg class="fd-search__icon" fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-width="2.2" viewbox="0 0 24 24" width="16"><circle cx="11" cy="11" r="8"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line></svg>
+          <input autocomplete="off" id="searchInput" placeholder="Buscar pelo nome do fundo..." type="text"/>
+        </div>
+        
+        <div class="fd-results-count"><strong id="countVisible">5</strong> fundo(s)</div>
+      </div>
+      
+      <div class="fd-filters-divider"></div>
+      
+      <div class="fd-filters-groups">
+        <div class="fd-filter-group">
+          <div class="fd-filter-group__label">Categoria</div>
+          <div class="fd-filter-chips">
+            <button class="fd-chip active" data-cat="todos">Todos</button>
+            <button class="fd-chip" data-cat="renda-fixa-simples">RF Simples</button>
+            <button class="fd-chip" data-cat="renda-fixa">Renda Fixa</button>
+            <button class="fd-chip" data-cat="acoes">Ações</button>
+            <button class="fd-chip" data-cat="multimercado">Multimercado</button>
+            <button class="fd-chip" data-cat="estruturados">Estruturados</button>
+          </div>
+        </div>
+        
+        <div class="fd-filter-group">
+          <div class="fd-filter-group__label">Perfil de risco</div>
+          <div class="fd-filter-chips">
+            <button class="fd-chip" data-risco="todos">Todos</button>
+            <button class="fd-chip" data-risco="conservador"><span class="dot dot-cons"></span>Conservador</button>
+            <button class="fd-chip" data-risco="moderado"><span class="dot dot-mod"></span>Moderado</button>
+            <button class="fd-chip" data-risco="arrojado"><span class="dot dot-arr"></span>Arrojado</button>
+            <button class="fd-chip" data-risco="qualificado"><span class="dot dot-agr"></span>Qualificado</button>
+          </div>
+        </div>
+        
+        <div class="fd-filter-group" style="flex:0;min-width:auto;display:flex;align-items:flex-end;padding-bottom:0.1rem;">
+          <button class="fd-clear-btn" id="clearFilters">
+            <svg fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="12"><line x1="18" x2="6" y1="6" y2="18"></line><line x1="6" x2="18" y1="6" y2="18"></line></svg>
+            Limpar filtros
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="fd-empty-state" id="emptyState">
+      <svg fill="none" height="48" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" width="48"><circle cx="11" cy="11" r="8"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line></svg>
+      <h3>Nenhum fundo encontrado</h3>
+      <p>Tente ajustar os filtros ou buscar por outro nome.</p>
+    </div>
+
+    <section class="fd-category-section" data-section="renda-fixa-simples">
+      <div class="fd-cat-header">
+        <div class="fd-cat-icon fd-cat-icon--rfs">
+          <svg fill="none" height="16" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" width="16"><rect height="14" rx="2" width="20" x="2" y="7"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+        </div>
+        <span class="fd-cat-title">Renda Fixa Simples</span>
+        <span class="fd-cat-count" id="count-rfs">1</span>
+      </div>
+      
+      <div class="fd-funds-grid">
+        <article class="fund-card" id="fundo-31" data-cat="renda-fixa-simples" data-dist="plataforma" data-risco="conservador" data-name="BRB Rende Mais FIRF Simples RL Renda Fixa Simples">
+          <button class="fund-card__header fund-toggle-btn" aria-expanded="false" aria-controls="collapse-31">
+            <div class="fund-card__title-group">
+              <div class="fund-card__name">BRB RENDE MAIS FIRF SIMPLES RL · Cód. 31</div>
+            </div>
+            <div class="fund-card__header-right">
+              <span class="fund-card__badge badge--low">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                Baixo a médio risco
+              </span>
+              <span style="font-size:0.65rem;background:#f1f5f9;color:#64748b;padding:0.2rem 0.55rem;border-radius:99px;font-weight:700;margin-right:0.25rem;">Plataforma</span>
+              <span class="fund-chevron" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+              </span>
+            </div>
+          </button>
+
+          <div class="fund-card__collapse" id="collapse-31" role="region" aria-labelledby="fundo-31">
+            <div class="fund-card__body">
+              <div class="fund-card__internal-title">BRB Rende Mais — Fundo de Investimento em Renda Fixa Simples</div>
+              <p class="fund-card__desc">
+                Fundo de investimento em renda fixa simples que busca rentabilidade por meio de aplicações em ativos de renda fixa de qualidade, com gestão focada em agregar valor acima das taxas básicas. Classificação ANBIMA: <strong>Renda Fixa Simples</strong>. Perfil: Conservador.
+              </p>
+             <div class="fund-card__chars">
+                <div class="char-item"><div class="char-item__label">Aplicação inicial</div><div class="char-item__value highlight">N/A</div></div>
+                <div class="char-item"><div class="char-item__label">Aplicações subsequentes</div><div class="char-item__value">—</div></div>
+                <div class="char-item"><div class="char-item__label">Resgate mínimo</div><div class="char-item__value">—</div></div>
+                <div class="char-item"><div class="char-item__label">Saldo mínimo remanescente</div><div class="char-item__value">—</div></div>
+                <div class="char-item"><div class="char-item__label">Cotização de aplicação</div><div class="char-item__value">D+0</div></div>
+                <div class="char-item"><div class="char-item__label">Carência</div><div class="char-item__value">Não possui</div></div>
+                <div class="char-item"><div class="char-item__label">Cotização de resgate</div><div class="char-item__value">D+0</div></div>
+                <div class="char-item"><div class="char-item__label">Crédito em conta corrente BRB</div><div class="char-item__value"> D+0</div></div>
+                <div class="char-item"><div class="char-item__label">Resgate automático</div><div class="char-item__value">Não</div></div>
+                <div class="char-item"><div class="char-item__label">Taxa de administração</div><div class="char-item__value highlight">0,50% a.a.</div></div>
+                <div class="char-item"><div class="char-item__label">Taxa de performance</div><div class="char-item__value">Não há</div></div>
+                <div class="char-item"><div class="char-item__label">Regime de cotização</div><div class="char-item__value">—</div></div>
+                <div class="char-item"><div class="char-item__label">Horário limite aplicação/resgate</div><div class="char-item__value">16h00 (horário de Brasília)</div></div>
+                <div class="char-item"><div class="char-item__label">Perfil investidor</div><div class="char-item__value">Conservador</div></div>
+                <div class="char-item"><div class="char-item__label">Termo de investimento</div><div class="char-item__value">—</div></div>
+                <div class="char-item"><div class="char-item__label">Funcionamento desde:</div><div class="char-item__value">15/05/2024</div></div>
+             </div>
+                
+              <div class="fund-tax-notice">
+                <strong>Tributação:</strong> IR pela tabela regressiva com come-cotas semestral em maio e novembro. IOF regressivo para resgates antes de 30 dias.
+              </div>
+            </div>
+
+            <div class="fund-card__docs">
+             <span class="fund-card__docs-label">📄 Documentos</span>
+              <a class="doc-link" href="../pdfs-regulamento-fundos\F.RDM_Regulamento_21.10.2024_Ajuste Distribuidor 1.pdf" target="_blank">Regulamento</a>
+              <a class="doc-link" href="../pdfs-informes-mensais\F.RDM_05_2026.pdf" target="_blank">Informativo Mensal</a>
+              <a class="doc-link" href="../pdfs-demonstrações-finan-fundos\F.RDM_263GN-071-PB BRB Rende Mais FIC FIRF (EF).pdf" target="_blank">Demonstrações Financeiras</a>
+              <a class="doc-link" href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank">Política de Remuneração</a>
+              <a href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank" class="doc-link">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                Assembleia
+              </a>
+            </div>
+
+            <div class="fund-card__meta">
+              <span>Código FFA: <strong>31</strong></span>
+              <span>Classificação ANBIMA: <strong>Renda Fixa Simples</strong></span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="fd-category-section" data-section="renda-fixa">
+      <div class="fd-cat-header">
+        <div class="fd-cat-icon fd-cat-icon--rf">
+          <svg fill="none" height="16" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24" width="16"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+        </div>
+        <span class="fd-cat-title">Renda Fixa</span>
+        <span class="fd-cat-count" id="count-rf">12</span>
+      </div>
+
+ <!-- F1 · BRB FIRF ZERAGEM RL · Cód 17 -->
+   <article class="fund-card" data-cat="renda-fixa" data-dist="balcao" data-name="BRB FIRF IMA-S LP RL Cód 102 IMA-S Conservador" data-risco="conservador" id="fundo-brb-firf-ima-s-lp-rl-cod-102">
+<button aria-controls="collapse-brb-firf-ima-s-lp-rl-cod-102" aria-expanded="false" class="fund-card__header fund-toggle-btn">
+<div class="fund-card__title-group">
+<div class="fund-card__name">BRB FIRF IMA-S LP RL · Cód. 102</div>
+</div>
+<div class="fund-card__header-right">
+<span class="fund-card__badge badge--very-low">
+<svg fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="12"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              Risco muito baixo
+            </span>
+<span aria-hidden="true" class="fund-chevron">
+<svg viewbox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</span>
+</div>
+</button>
+<div class="fund-card__collapse" id="collapse-brb-firf-ima-s-lp-rl-cod-102" role="region">
+<div class="fund-card__body">
+            <div class="fund-card__internal-title">BRB Fundo de Investimento em Renda Fixa IMA-S Longo Prazo Responsabilidade Limitada</div>
+<p class="fund-card__desc">Gestão passiva que acompanha o <strong>IMA-S</strong> (LFTs — Tesouro Selic). Aplica diretamente em Títulos Públicos Federais. Voltado a investidores em geral e fundos de investimento. Possui resgate automático. <strong>Não há IOF.</strong> ANBIMA: RF Indexados.</p>
+<div class="fund-card__chars">
+<div class="char-item"><div class="char-item__label">Aplicação inicial</div><div class="char-item__value highlight">R$ 100,00</div></div>
+<div class="char-item"><div class="char-item__label">Aplicações subsequentes</div><div class="char-item__value">R$ 100,00</div></div>
+<div class="char-item"><div class="char-item__label">Resgate mínimo</div><div class="char-item__value">R$ 100,00</div></div>
+<div class="char-item"><div class="char-item__label">Saldo mínimo remanescente</div><div class="char-item__value">R$ 100,00</div></div>
+<div class="char-item"><div class="char-item__label">Cotização de aplicação</div><div class="char-item__value">D+0 — Abertura</div></div>
+<div class="char-item"><div class="char-item__label">Carência</div><div class="char-item__value">Não possui</div></div>
+<div class="char-item"><div class="char-item__label">Cotização de resgate</div><div class="char-item__value">D+0 — Abertura</div></div>
+<div class="char-item"><div class="char-item__label">Crédito em conta corrente BRB</div><div class="char-item__value">D+0</div></div>
+<div class="char-item"><div class="char-item__label">Resgate automático</div><div class="char-item__value">Sim</div></div>
+<div class="char-item"><div class="char-item__label">Taxa de administração</div><div class="char-item__value highlight">0,20% a.a.</div></div>
+<div class="char-item"><div class="char-item__label">Taxa de performance</div><div class="char-item__value">Não há</div></div>
+<div class="char-item"><div class="char-item__label">Regime de cotização</div><div class="char-item__value">Abertura de mercado</div></div>
+<div class="char-item"><div class="char-item__label">Horário limite aplicação/resgate</div><div class="char-item__value">16h00 (horário de Brasília)</div></div>
+<div class="char-item"><div class="char-item__label">Perfil investidor</div><div class="char-item__value">Conservador</div></div>
+<div class="char-item"><div class="char-item__label">Termo de investimento</div><div class="char-item__value">Dispensável</div></div>
+<div class="char-item"><div class="char-item__label">Funcionamento desde:</div><div class="char-item__value">12/07/2017</div></div>
+</div>
+<div class="fund-tax-notice"><strong>IR:</strong> Come-cotas semestral à 15%. Resgate: tabela regressiva de longo prazo. <strong>Não há IOF.</strong></div>
+</div>
+<div class="fund-card__docs">
+<span class="fund-card__docs-label">📄 Documentos</span>
+<a class="doc-link" href="../pdfs-regulamento-fundos\102_Regulamento_CVM 175_02.09.2024_v3.pdf" target="_blank">Regulamento</a>
+<a class="doc-link" href="../pdfs-informes-mensais\F102_05_2026.pdf" target="_blank">Informativo Mensal</a>
+<a class="doc-link" href="../pdfs-demonstrações-finan-fundos\F102 - 263GR-077-PB BRB IMA-S FIRF (EF).pdf" target="_blank">Demonstrações Financeiras</a>
+<a class="doc-link" href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank">Política de Remuneração</a>
+<a href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Assembleia
+            </a>
+</div>
+<div class="fund-card__meta">
+<span>CNPJ: <strong>27.943.585/0001-30</strong></span><span>FFA: <strong>102</strong></span><span>ANBIMA: <strong>RF Indexados (IMA-S)</strong></span>
+</div>
+</div>
+</article>
+
+<article class="fund-card" data-cat="renda-fixa" data-dist="balcao" data-name="BRB FIRF IMA-B MASTER LP RL Cód 100 IMA-B Master Moderado" data-risco="moderado" id="fundo-brb-firf-ima-b-master-lp-rl-cod-100">
+<button aria-controls="collapse-brb-firf-ima-b-master-lp-rl-cod-100" aria-expanded="false" class="fund-card__header fund-toggle-btn">
+<div class="fund-card__title-group">
+<div class="fund-card__name">BRB FIRF IMA-B MASTER LP RL · Cód. 100</div>
+</div>
+<div class="fund-card__header-right">
+<span class="fund-card__badge badge--medium">
+<svg fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="12"><path d="M12 9v4m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"></path></svg>
+              Risco médio
+            </span>
+<span aria-hidden="true" class="fund-chevron">
+<svg viewbox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</span>
+</div>
+</button>
+<div class="fund-card__collapse" id="collapse-brb-firf-ima-b-master-lp-rl-cod-100" role="region">
+<div class="fund-card__body">
+            <div class="fund-card__internal-title">BRB Fundo de Investimento em Renda Fixa IMA-B Longo Prazo Responsabilidade Limitada</div>
+<p class="fund-card__desc">Gestão passiva que acompanha o <strong>IMA-B</strong>. Aplica diretamente em NTN-Bs (Tesouro IPCA+). Fundo master — voltado a outros fundos da BRB DTVM e investidores em geral. <strong>Não há IOF.</strong> Aplicação mínima de R$ 1,00. ANBIMA: RF Indexados.</p>
+<div class="fund-card__chars">
+<div class="char-item"><div class="char-item__label">Aplicação inicial</div><div class="char-item__value highlight">R$ 1,00</div></div>
+<div class="char-item"><div class="char-item__label">Aplicações subsequentes</div><div class="char-item__value">R$ 1,00</div></div>
+<div class="char-item"><div class="char-item__label">Resgate mínimo</div><div class="char-item__value">R$ 1,00</div></div>
+<div class="char-item"><div class="char-item__label">Saldo mínimo remanescente</div><div class="char-item__value">R$ 1,00</div></div>
+<div class="char-item"><div class="char-item__label">Cotização de aplicação</div><div class="char-item__value">D+0 — Fechamento</div></div>
+<div class="char-item"><div class="char-item__label">Carência</div><div class="char-item__value">Não possui</div></div>
+<div class="char-item"><div class="char-item__label">Cotização de resgate</div><div class="char-item__value">D+0 — Fechamento</div></div>
+<div class="char-item"><div class="char-item__label">Crédito em conta corrente BRB</div><div class="char-item__value">D+0</div></div>
+<div class="char-item"><div class="char-item__label">Resgate automático</div><div class="char-item__value">Não possui</div></div>
+<div class="char-item"><div class="char-item__label">Taxa de administração</div><div class="char-item__value highlight">0,25% a.a.</div></div>
+<div class="char-item"><div class="char-item__label">Taxa de performance</div><div class="char-item__value">Não cobra</div></div>
+<div class="char-item"><div class="char-item__label">Regime de cotização</div><div class="char-item__value">Fechamento de mercado</div></div>
+<div class="char-item"><div class="char-item__label">Horário limite aplicação/resgate</div><div class="char-item__value">16h00 (horário de Brasília)</div></div>
+<div class="char-item"><div class="char-item__label">Perfil investidor</div><div class="char-item__value">Moderado</div></div>
+<div class="char-item"><div class="char-item__label">Termo de investimento</div><div class="char-item__value">Dispensável</div></div>
+<div class="char-item"><div class="char-item__label">Funcionamento desde:</div><div class="char-item__value">12/07/2017</div></div>
+</div>
+<div class="fund-tax-notice"><strong>IR:</strong> Come-cotas semestral à 15%. Resgate: tabela regressiva de longo prazo. <strong>Não há IOF.</strong></div>
+</div>
+<div class="fund-card__docs">
+<span class="fund-card__docs-label">📄 Documentos</span>
+<a class="doc-link" href="../pdfs-regulamento-fundos\F100_Regulamento_CVM175_FINAL v.2.pdf" target="_blank">Regulamento</a>
+<a class="doc-link" href="../pdfs-informes-mensais\F100_05_2026.pdf" target="_blank">Informativo Mensal</a>
+<a class="doc-link" href="../pdfs-demonstrações-finan-fundos\F100 - 263GR-074-PB BRB IMA-B Master (EF).pdf" target="_blank">Demonstrações Financeiras</a>
+<a class="doc-link" href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank">Política de Remuneração</a>
+<a href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Assembleia
+            </a>
+</div>
+<div class="fund-card__meta">
+<span>CNPJ: <strong>27.943.626/0001-98</strong></span><span>FFA: <strong>100</strong></span><span>ANBIMA: <strong>RF Indexados (IMA-B)</strong></span>
+</div>
+</div>
+</article>
+
+
+<article class="fund-card" data-cat="renda-fixa" data-dist="balcao" data-name="BRB CREDITO CORPORATIVO FIRF CRED PRIVADO RL F57 Crédito Corporativo" data-risco="conservador" id="fundo-brb-credito-corporativo-firf-cred-privad">
+<button aria-controls="collapse-brb-credito-corporativo-firf-cred-privad" aria-expanded="false" class="fund-card__header fund-toggle-btn">
+<div class="fund-card__title-group">
+<div class="fund-card__name">BRB CRÉDITO CORPORATIVO FIRF CRÉD. PRIVADO RL · F57</div>
+</div>
+<div class="fund-card__header-right">
+<span class="fund-card__badge badge--low">
+<svg fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="12"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              Risco baixo
+            </span>
+<span aria-hidden="true" class="fund-chevron">
+<svg viewbox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</span>
+</div>
+</button>
+<div class="fund-card__collapse" id="collapse-brb-credito-corporativo-firf-cred-privad" role="region">
+<div class="fund-card__body">
+            <div class="fund-card__internal-title">BRB Crédito Corporativo Fundo de Investimento em Renda Fixa Crédito Privado Longo Prazo Responsabilidade Limitada</div>
+<p class="fund-card__desc">Busca <strong>superar o CDI</strong> via ativos pré, pós-fixados ou índice de preços. Público-alvo exclusivo: <strong>fundos de investimento administrados/geridos pela BRB DTVM</strong>. Estratégia de crédito privado. ANBIMA: RF Duração Baixa Invest Grade.</p>
+<div class="fund-card__chars">
+<div class="char-item"><div class="char-item__label">Aplicação inicial</div><div class="char-item__value highlight">R$ 1,00</div></div>
+<div class="char-item"><div class="char-item__label">Aplicações subsequentes</div><div class="char-item__value">R$ 1,00</div></div>
+<div class="char-item"><div class="char-item__label">Resgate mínimo</div><div class="char-item__value">R$ 1,00</div></div>
+<div class="char-item"><div class="char-item__label">Saldo mínimo remanescente</div><div class="char-item__value">R$ 1,00</div></div>
+<div class="char-item"><div class="char-item__label">Cotização de aplicação</div><div class="char-item__value">D+0 — Fechamento</div></div>
+<div class="char-item"><div class="char-item__label">Carência</div><div class="char-item__value">Não possui</div></div>
+<div class="char-item"><div class="char-item__label">Cotização de resgate</div><div class="char-item__value">D+0 — Fechamento</div></div>
+<div class="char-item"><div class="char-item__label">Crédito em conta corrente BRB</div><div class="char-item__value">D+0</div></div>
+<div class="char-item"><div class="char-item__label">Resgate automático</div><div class="char-item__value">Não há</div></div>
+<div class="char-item"><div class="char-item__label">Taxa de administração</div><div class="char-item__value">—</div></div>
+<div class="char-item"><div class="char-item__label">Taxa de performance</div><div class="char-item__value">Não cobra</div></div>
+<div class="char-item"><div class="char-item__label">Regime de cotização</div><div class="char-item__value">Fechamento de mercado</div></div>
+<div class="char-item"><div class="char-item__label">Horário limite aplicação/resgate</div><div class="char-item__value">16h00 (horário de Brasília)</div></div>
+<div class="char-item"><div class="char-item__label">Perfil investidor</div><div class="char-item__value">Moderado</div></div>
+<div class="char-item"><div class="char-item__label">Termo de investimento</div><div class="char-item__value">Dispensável</div></div>
+<div class="char-item"><div class="char-item__label">Funcionamento desde:</div><div class="char-item__value">30/04/2012</div></div>
+</div>
+<div class="fund-tax-notice"><strong>IR:</strong> Come-cotas semestral. Resgate: tabela regressiva. IOF regressivo antes de 30 dias.</div>
+</div>
+<div class="fund-card__docs">
+<span class="fund-card__docs-label">📄 Documentos</span>
+<a class="doc-link" href="../pdfs-regulamento-fundos\F57_CVM175_Regulamento_02.09.2024.pdf" target="_blank">Regulamento</a>
+<a class="doc-link" href="../pdfs-informes-mensais\F57_05_2026.pdf" target="_blank">Informativo Mensal</a>
+<a class="doc-link" href="../pdfs-demonstrações-finan-fundos\F57_- 263GA-069-PB BRB Crédito Coroporativo (EF).pdf" target="_blank">Demonstrações Financeiras</a>
+<a class="doc-link" href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank">Política de Remuneração</a>
+<a href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Assembleia
+            </a>
+</div>
+<div class="fund-card__meta">
+<span>Código: <strong>F57</strong></span><span>ANBIMA: <strong>RF Dur. Baixa Invest Grade</strong></span>
+</div>
+</div>
+</article>
+</section>
+
+
+<section class="fd-category-section" data-section="acoes">
+      <div class="fd-cat-header">
+        <div class="fd-cat-icon fd-cat-icon--ac">
+          <svg fill="none" height="16" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24" width="16"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline><polyline points="16 7 22 7 22 13"></polyline></svg>
+        </div>
+        <span class="fd-cat-title">Ações</span>
+        <span class="fd-cat-count" id="count-ac">3</span>
+      </div>
+
+
+
+<article class="fund-card" id="fundo-fia" data-cat="acoes" data-dist="balcao" data-risco="arrojado" data-name="BRB FIA Dividendos Ações">
+
+        <button class="fund-card__header fund-toggle-btn" aria-expanded="false" aria-controls="collapse-fia">
+          <div class="fund-card__title-group">
+            <div class="fund-card__name">BRB DIVIDENDOS FIA RL</div>
+          </div>
+          <div class="fund-card__header-right">
+            <span class="fund-card__badge" style="background:#fee2e2;color:#991b1b;">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 9v4m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg>
+              Risco alto
+            </span>
+            <span class="fund-chevron" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </div>
+        </button>
+
+        <div class="fund-card__collapse" id="collapse-fia" role="region" aria-labelledby="fundo-fia">
+          <div class="fund-card__body">
+            <div class="fund-card__internal-title">BRB Dividendos — Fundo de Investimento em Ações</div>
+            <p class="fund-card__desc">
+              Fundo de ações com investimento direto em empresas pagadoras de dividendos, buscando construir uma carteira de alta geração de renda passiva e valorização de longo prazo. Diferente do FIC FIA, este fundo investe diretamente nas ações, sem intermediação de outros fundos. Classificação ANBIMA: <strong>Ações — Ativos Dividendos</strong>. Público-alvo: investidores com perfil arrojado.
+            </p>
+           <div class="fund-card__chars">
+             <div class="char-item"><div class="char-item__label">Aplicação inicial</div><div class="char-item__value highlight">R$ 100,00</div></div>
+              <div class="char-item"><div class="char-item__label">Aplicações subsequentes</div><div class="char-item__value">R$ 100,00</div></div>
+              <div class="char-item"><div class="char-item__label">Resgate mínimo</div><div class="char-item__value">R$ 100,00</div></div>
+              <div class="char-item"><div class="char-item__label">Saldo mínimo remanescente</div><div class="char-item__value">R$ 100,00</div></div>
+              <div class="char-item"><div class="char-item__label">Cotização de aplicação</div><div class="char-item__value">D+0 - Fechamento</div></div>
+              <div class="char-item"><div class="char-item__label">Carência</div><div class="char-item__value">Não possui</div></div>
+              <div class="char-item"><div class="char-item__label">Cotização de resgate</div><div class="char-item__value">D+1 - Fechamento </div></div>
+              <div class="char-item"><div class="char-item__label">Crédito em conta corrente BRB</div><div class="char-item__value">D+2</div></div>
+              <div class="char-item"><div class="char-item__label">Resgate automático</div><div class="char-item__value">Não</div></div>
+              <div class="char-item"><div class="char-item__label">Taxa de administração</div><div class="char-item__value highlight">2,00% a.a.</div></div>
+              <div class="char-item"><div class="char-item__label">Taxa de performance</div><div class="char-item__value">20% sobre o que exceder o Ibovespa</div></div>
+              <div class="char-item"><div class="char-item__label">Regime de cotização</div><div class="char-item__value">Fechamento de mercado</div></div>
+              <div class="char-item"><div class="char-item__label">Horário limite aplicação/resgate</div><div class="char-item__value">16h00 (Horario de Brasília)</div></div>
+              <div class="char-item"><div class="char-item__label">Perfil investidor</div><div class="char-item__value">Arrojado</div></div>
+              <div class="char-item"><div class="char-item__label">Termo de investimento</div><div class="char-item__value">Dispensável</div></div>
+              <div class="char-item"><div class="char-item__label">Funcionamento desde:</div><div class="char-item__value">14/06/2022</div></div>
+            </div>
+            <div class="fund-tax-notice">
+              <strong>Tributação:</strong> IR de 15% sobre o ganho de capital no resgate. Fundos de ações não possuem come-cotas. IOF não incide após 30 dias.
+            </div>
+          </div>
+
+          <div class="fund-card__docs">
+            <span class="fund-card__docs-label">📄 Documentos</span>
+<a class="doc-link" href="../pdfs-regulamento-fundos\F.DIV_12_12_2023.pdf" target="_blank">Regulamento</a>
+<a class="doc-link" href="../pdfs-informes-mensais\F.DIV_05_2026.pdf" target="_blank">Informativo Mensal</a>
+<a class="doc-link" href="../pdfs-demonstrações-finan-fundos\F.DIV_263GC-073-PB BRB Dividendos FIA (EF).pdf" target="_blank">Demonstrações Financeiras</a>
+<a class="doc-link" href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank">Política de Remuneração</a>
+<a href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank" class="doc-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Assembleia
+            </a>
+          </div>
+
+          <div class="fund-card__meta">
+            <span>Classificação ANBIMA: <strong>Ações — Ativos Dividendos</strong></span>
+          </div>
+        </div>
+
+      </article>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="legal-box" style="margin-top:2.5rem;">
+      <div class="legal-box__title">⚠️ Avisos Importantes</div>
+      <ol>
+        <li>Fundos de investimento não contam com garantia do administrador, do gestor, de qualquer mecanismo de seguro ou Fundo Garantidor de Crédito – FGC.</li>
+        <li>Rentabilidade passada não representa garantia de rentabilidade futura.</li>
+        <li>Leia a lâmina de informações essenciais, se houver, e o regulamento antes de investir.</li>
+        <li>O distribuidor receberá remuneração de distribuição dos administradores e/ou dos fundos em que seus clientes aplicarem recursos.</li>
+        <li>Portal de educação financeira da ANBIMA: <a href="http://www.comoinvestir.com.br" rel="noopener" target="_blank">www.comoinvestir.com.br</a></li>
+      </ol>
+    </div>
+    
+    <div class="fd-help">
+      <div class="fd-help__text">
+        <h3>Ainda tem dúvidas?</h3>
+        <p>Para mais informações sobre os fundos da plataforma, acesse a BRB Investimentos.</p>
+      </div>
+      <a href="javascript:void(0)" class="fd-help__btn">Acesse a plataforma</a>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-brand">
+        <img alt="BRB Investimentos" class="footer-logo-img" src="../img/LOGO BRANCA (1).png"/>
+        <p class="footer-brand-text">Investindo no futuro dos brasileiros com segurança, tecnologia e tradição.</p>
+        <div class="footer-social">
+          <a aria-label="Instagram" class="footer-social-btn" href="https://www.instagram.com/brbinvestimentos/" rel="noopener noreferrer" target="_blank">
+            <svg viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+          </a>
+          <a aria-label="Youtube" class="footer-social-btn" href="https://www.youtube.com/@BRBInvestimentos" rel="noopener noreferrer" target="_blank">
+            <svg viewbox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg>
+          </a>
+          <a aria-label="Facebook" class="footer-social-btn" href="https://www.facebook.com/share/1CRVbq4UXf/?mibextid=wwXIfr" rel="noopener noreferrer" target="_blank">
+            <svg viewbox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg>
+          </a>
+        </div>
+      </div>
+      
+      <div class="footer-column">
+        <h4>Produtos</h4>
+        <ul>
+          <li><a href="../produtos/renda-fixa.html">Renda Fixa</a></li>
+          <li><a href="../produtos/fundos.html">Fundos</a></li>
+          <li><a href="../produtos/previdencia.html">Previdência</a></li>
+          <li><a href="../produtos/renda-variavel.html">Renda Variável</a></li>
+          <li><a href="../produtos/mercado-futuro.html">Mercado Futuro</a></li>
+          <li><a href="../produtos/tesouro-direto.html">Tesouro Direto</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h4>Quem Somos</h4>
+        <ul>
+          <li><a href="../institucional/sobrenos.html#missao">Nossa Missão</a></li>
+          <li><a href="../institucional/sobrenos.html#historia">Nossa História</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h4>Fale Conosco</h4>
+        <ul>
+          <li><a href="https://novo.brb.com.br/atendimento/" rel="noopener noreferrer" target="_blank">Central de Atendimento</a></li>
+          <li><a href="https://novo.brb.com.br/atendimento/ouvidoria-brb/" rel="noopener noreferrer" target="_blank">Ouvidoria BRB</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h4>Institucional</h4>
+        <ul>
+          <li><a href="https://www.anbima.com.br/" target="_blank">Anbima</a></li>
+          <li><a href="https://www.b3.com.br/" target="_blank">B3</a></li>
+          <li><a href="https://www.gov.br/cvm/" target="_blank">CVM</a></li>
+          <li><a href="https://www.fgc.org.br/" target="_blank">FGC</a></li>
+          <li><a href="https://www.bcb.gov.br/" target="_blank">Bacen</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column regulatorio">
+        <h4>Regulatórios</h4>
+        <ul>
+          <li><a href="../pdfs/Política de Privacidade.pdf" target="_blank">Política de Privacidade</a></li>
+          <li><a href="../pdfs/4. Termo Abertura Conta Corrente  PF.pdf" target="_blank">Termos de Abertura de conta Genial</a></li>
+          <li><a href="../pdfs/RPA_B3_Genial_Janeiro_2026.pdf" target="_blank">Regras e parâmetros de atuação</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <div class="footer-left">
+        <img alt="Banco Central" class="footer-mark" src="https://framerusercontent.com/images/ZRAogsRUCyrDvJX2BCEBRqoGhWY.svg?width=142&amp;height=33"/>
+        <img alt="B3" class="footer-mark" src="https://framerusercontent.com/images/mHJ8wt4h7RrXbxoN3I2zNtlIMw.svg?width=90&amp;height=41"/>
+      </div>
+      <div class="footer-center">
+        <p class="brbdireitos">© 2026 BRB Investimentos</p>
+        <p class="footer-address">BL B - Centro Empresarial CNC - SAUN Quadra 5, Lote C, 2º andar - Brasília/DF</p>
+      </div>
+      <div class="footer-right footer-certificados">
+        <img alt="Certificado Anbima" src="../img/distribuicao-geral.jpg"/>
+        <img alt="Certificado Administração" src="../img/art-administracao.jpg"/>
+      </div>
+    </div>
+  </footer>
+
+  <script defer="" src="../js/script.js"></script>
+  <script>
+    (function () {
+      /* Accordion gerido pelo script.js (initFundCardsAccordion) */
+
+      /* ── Filtros ── */
+      const allCards   = Array.from(document.querySelectorAll('.fund-card[data-cat]'));
+      const allSects   = Array.from(document.querySelectorAll('.fd-category-section'));
+      const searchInput = document.getElementById('searchInput');
+      const countEl    = document.getElementById('countVisible');
+      const emptyEl    = document.getElementById('emptyState');
+      const clearBtn   = document.getElementById('clearFilters');
+
+      let activeCat   = 'todos';
+      let activeRisco = 'todos';
+      let searchVal   = '';
+
+      function applyFilters() {
+        let visible = 0;
+
+        allCards.forEach(card => {
+          const cat   = card.dataset.cat;
+          const risco = card.dataset.risco;
+          const name  = (card.dataset.name || '').toLowerCase();
+
+          const matchCat   = activeCat   === 'todos' || cat === activeCat;
+          const matchRisco = activeRisco === 'todos' || risco === activeRisco;
+          const matchSearch = !searchVal || name.includes(searchVal);
+
+          const show = matchCat && matchRisco && matchSearch;
+          card.style.display = show ? '' : 'none';
+          if (show) visible++;
+        });
+
+        allSects.forEach(sect => {
+          const hasSect = activeCat === 'todos' || sect.dataset.section === activeCat;
+          const visibleCards = Array.from(sect.querySelectorAll('.fund-card[data-cat]'))
+            .filter(c => c.style.display !== 'none');
+          const hasVisible = visibleCards.length > 0;
+          sect.style.display = (hasSect && hasVisible) ? '' : 'none';
+
+          const secName = sect.dataset.section;
+          const countId = {
+            'renda-fixa-simples': 'count-rfs'
+          }[secName];
+          if (countId) {
+            const el = document.getElementById(countId);
+            if (el) el.textContent = visibleCards.length;
+          }
+        });
+
+        countEl.textContent = visible;
+        emptyEl.classList.toggle('visible', visible === 0);
+
+        const dirty = activeCat !== 'todos' || activeRisco !== 'todos' || searchVal;
+        clearBtn.classList.toggle('visible', !!dirty);
+      }
+
+      // Chips categoria
+      document.querySelectorAll('[data-cat]').forEach(chip => {
+        if (!chip.classList.contains('fund-card')) {
+          chip.addEventListener('click', () => {
+            document.querySelectorAll('[data-cat]:not(.fund-card)').forEach(c => c.classList.remove('active'));
+            chip.classList.add('active');
+            activeCat = chip.dataset.cat;
+            applyFilters();
+          });
+        }
+      });
+
+      // Chips risco
+      document.querySelectorAll('[data-risco]:not(.fund-card)').forEach(chip => {
+        chip.addEventListener('click', () => {
+          document.querySelectorAll('[data-risco]:not(.fund-card)').forEach(c => c.classList.remove('active'));
+          chip.classList.add('active');
+          activeRisco = chip.dataset.risco;
+          applyFilters();
+        });
+      });
+
+      // Busca
+      searchInput.addEventListener('input', () => {
+        searchVal = searchInput.value.trim().toLowerCase();
+        applyFilters();
+      });
+
+      // Limpar tudo
+      clearBtn.addEventListener('click', () => {
+        activeCat = 'todos';
+        activeRisco = 'todos';
+        searchVal = '';
+        searchInput.value = '';
+        document.querySelectorAll('[data-cat]:not(.fund-card)').forEach(c => c.classList.toggle('active', c.dataset.cat === 'todos'));
+        document.querySelectorAll('[data-risco]').forEach(c => c.classList.remove('active'));
+        applyFilters();
+      });
+
+      applyFilters();
+    })();
+  </script>
+</body>
+</html>

@@ -984,95 +984,107 @@ function initPageSpecificLogic() {
 // ============================================================
 // 4. TICKER PTAX (Banco Central do Brasil)
 // ============================================================
+// ============================================================
+// 4. RADAR DE MERCADO (IBOV, Taxas e Moedas)
+// ============================================================
 
 async function iniciarCotacaoTicker() {
   const contentEl = document.getElementById('cotacaoContent');
   if (!contentEl) return;
 
-  const formatarData = (date) => {
-    const mm = String(date.getMonth() + 1).padStart(2, '0');
-    const dd = String(date.getDate()).padStart(2, '0');
-    const yyyy = date.getFullYear();
-    return `${mm}-${dd}-${yyyy}`;
+  // Função auxiliar para formatar a variação percentual
+  const formatarVariacao = (variacao) => {
+    const val = parseFloat(variacao);
+    if (isNaN(val)) return '';
+    const isPositive = val >= 0;
+    const icon = isPositive ? '▲' : '▼';
+    const cssClass = isPositive ? 'cotacao-var-up' : 'cotacao-var-down';
+    return `<span class="${cssClass}">${icon} ${Math.abs(val).toFixed(2).replace('.', ',')}%</span>`;
   };
 
-  const buscarCotacao = async (moeda, nome) => {
-    // Tenta procurar a cotação nos últimos 7 dias
-    for (let diasAtras = 0; diasAtras <= 7; diasAtras++) {
-      const data = new Date();
-      data.setDate(data.getDate() - diasAtras);
-      const dataFormatada = formatarData(data);
-
-      const url = moeda === 'USD'
-        ? `https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?@dataCotacao=%27${dataFormatada}%27&$top=1&$orderby=dataHoraCotacao%20desc&$format=json&$select=cotacaoCompra,cotacaoVenda,dataHoraCotacao`
-        : `https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoMoedaDia(moeda=@moeda,dataCotacao=@dataCotacao)?@moeda=%27${moeda}%27&@dataCotacao=%27${dataFormatada}%27&$top=1&$orderby=dataHoraCotacao%20desc&$format=json&$select=cotacaoCompra,cotacaoVenda,dataHoraCotacao`;
-
-      try {
-        const res = await fetch(url);
-        if (!res.ok) continue;
-        
-        const json = await res.json();
-        if (json.value && json.value.length > 0) {
-          const item = json.value[0];
-          return {
-            nome,
-            moeda,
-            compra: item.cotacaoCompra.toFixed(4).replace('.', ','),
-            venda:  item.cotacaoVenda.toFixed(4).replace('.', ','),
-            hora:   item.dataHoraCotacao.slice(11, 16),
-            data:   dataFormatada,
-          };
-        }
-      } catch (_) {
-        // Ignora erros e tenta a data do dia anterior
-      }
+  // Função auxiliar para formatar os valores numéricos
+  const formatarValor = (valor, prefixo = '') => {
+    if (!valor) return '-';
+    // Se for um índice grande (ex: Ibovespa 120.000)
+    if (valor > 1000) {
+        return prefixo + parseInt(valor).toLocaleString('pt-BR');
     }
-    return null;
+    // Para moedas e taxas
+    return prefixo + parseFloat(valor).toFixed(2).replace('.', ',');
+  };
+
+  const buscarIndicadores = async () => {
+    try {
+      // 1. Busca o Ibovespa e as Moedas da HG Brasil (sem necessitar de chave)
+      const resHg = await fetch('https://api.hgbrasil.com/finance?format=json-cors');
+      if (!resHg.ok) throw new Error('Falha na resposta da API HG Brasil');
+      
+      const jsonHg = await resHg.json();
+      const data = jsonHg.results;
+
+      const ibov = data?.stocks?.IBOVESPA || {};
+      const usd  = data?.currencies?.USD || {};
+      const eur  = data?.currencies?.EUR || {};
+      const btc  = data?.currencies?.BTC || {};
+
+      // 2. Busca a Meta Selic diretamente do Banco Central (SGS - Série 432)
+      let selicStr = '-';
+      let cdiStr = '-';
+      
+      try {
+        const resBcb = await fetch('https://api.bcb.gov.br/dados/serie/bcdata.sgs.432/dados/ultimos/1?formato=json');
+        const bcbData = await resBcb.json();
+        
+        const selicNum = parseFloat(bcbData[0].valor);
+        selicStr = formatarValor(selicNum, '');
+        
+        // O CDI no Brasil é historicamente a Selic - 0.10% a.a.
+        cdiStr = formatarValor(selicNum - 0.10, ''); 
+      } catch (err) {
+        console.warn("Aviso: Falha ao buscar a Selic no BCB", err);
+      }
+
+      // 3. Monta os itens do carrossel misturando os dados das duas fontes
+      const cotacoes = [
+        { nome: 'IBOVESPA',  valor: formatarValor(ibov.points, ''), varHTML: formatarVariacao(ibov.variation), tipo: 'pts' },
+        { nome: 'CDI',       valor: cdiStr,   varHTML: '', tipo: '% a.a.' },
+        { nome: 'SELIC',     valor: selicStr, varHTML: '', tipo: '% a.a.' },
+        { nome: 'USD/BRL',   valor: formatarValor(usd.buy, 'R$ '),  varHTML: formatarVariacao(usd.variation), tipo: '' },
+        { nome: 'EUR/BRL',   valor: formatarValor(eur.buy, 'R$ '),  varHTML: formatarVariacao(eur.variation), tipo: '' },
+        { nome: 'BTC/BRL',   valor: formatarValor(btc.buy, 'R$ '),  varHTML: formatarVariacao(btc.variation), tipo: '' },
+      ];
+
+      renderTicker(cotacoes);
+
+    } catch (error) {
+      console.error("Erro ao carregar o Radar de Mercado:", error);
+      // Fallback amigável caso exista uma falha grave de rede
+      contentEl.innerHTML = '<span class="cotacao-erro">Indicadores indisponíveis no momento. Tente novamente mais tarde.</span>';
+    }
   };
 
   const renderTicker = (cotacoes) => {
-    if (!cotacoes.length) {
-      contentEl.innerHTML = '<span class="cotacao-erro">Cotação indisponível no momento.</span>';
-      return;
-    }
-
     const itemsHTML = cotacoes.map(c => `
       <span class="cotacao-item">
-        <span class="cotacao-item-flag">${c.flag}</span>
-        <span class="cotacao-item-name">${c.moeda}/BRL</span>
-        <span class="cotacao-item-buy">Compra: <span>R$ ${c.compra}</span></span>
-        <span class="cotacao-item-sell">Venda: <span>R$ ${c.venda}</span></span>
-        <span class="cotacao-item-time">PTAX ${c.hora}</span>
+        <span class="cotacao-item-name">${c.nome}:</span>
+        <span class="cotacao-item-buy">
+          ${c.valor} <small>${c.tipo}</small>
+        </span>
+        ${c.varHTML}
       </span>
-      <span class="cotacao-separator" aria-hidden="true"></span>
+      <span class="cotacao-separator" aria-hidden="true">|</span>
     `).join('');
 
-    // Repete os itens várias vezes para garantir que preencham até monitores ultrawide
-    const bloco = itemsHTML.repeat(8); 
-
-    // Junta dois blocos gigantes idênticos. 
-    // Assim, ao mover -50% (metade do total) no CSS, o loop de reinício fica invisível!
+    // Repetimos o bloco para preencher toda a largura da tela sem quebrar a animação
+    const bloco = itemsHTML.repeat(6); 
     contentEl.innerHTML = bloco + bloco;
   };
 
-  const atualizarTudo = async () => {
-    const [usd, eur] = await Promise.all([
-      buscarCotacao('USD', 'Dólar'), 
-      buscarCotacao('EUR', 'Euro')
-    ]);
-    
-    const cotacoes = [
-      usd ? { ...usd, flag: '🇺🇸' } : null,
-      eur ? { ...eur, flag: '🇪🇺' } : null,
-    ].filter(Boolean);
-    
-    renderTicker(cotacoes);
-  };
-
-  await atualizarTudo();
+  // Chama a função imediatamente no carregamento da página
+  await buscarIndicadores();
   
-  // Atualiza as cotações a cada 5 minutos
-  setInterval(atualizarTudo, 5 * 60 * 1000);
+  // Atualiza os dados a cada 10 minutos para não estourar o limite da API gratuita
+  setInterval(buscarIndicadores, 10 * 60 * 1000);
 }
 
 // ============================================================

@@ -177,14 +177,9 @@
 <svg class="fd-search__icon" fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-width="2.2" viewbox="0 0 24 24" width="16"><circle cx="11" cy="11" r="8"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line></svg>
 <input autocomplete="off" id="searchInput" placeholder="Buscar pelo nome do fundo..." type="text"/>
 </div>
-<!-- Toggle distribuição -->
-<div aria-label="Filtrar por distribuição" class="fd-toggle-group" role="group">
-<button class="fd-toggle-btn active" data-dist="todos">Todos</button>
-<button class="fd-toggle-btn" data-dist="balcao">Balcão</button>
-<button class="fd-toggle-btn" data-dist="plataforma">Plataforma</button>
-</div>
+
 <!-- Contador -->
-<div class="fd-results-count"><strong id="countVisible">25</strong> fundo(s)</div>
+<div class="fd-results-count"><strong id="countVisible">19</strong> fundo(s)</div>
 </div>
 <div class="fd-filters-divider"></div>
 <div class="fd-filters-groups">
@@ -371,70 +366,7 @@
       <!-- ═══════════════════════════════════
            FUNDO 3 · BRB DIVIDENDOS FIA RL
       ═══════════════════════════════════ -->
-      <article class="fund-card" id="fundo-fia" data-cat="acoes" data-dist="balcao" data-risco="arrojado" data-name="BRB FIA Dividendos Ações">
-
-        <button class="fund-card__header fund-toggle-btn" aria-expanded="false" aria-controls="collapse-fia">
-          <div class="fund-card__title-group">
-            <div class="fund-card__name">BRB DIVIDENDOS FIA RL</div>
-          </div>
-          <div class="fund-card__header-right">
-            <span class="fund-card__badge" style="background:#fee2e2;color:#991b1b;">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 9v4m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg>
-              Risco alto
-            </span>
-            <span class="fund-chevron" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-            </span>
-          </div>
-        </button>
-
-        <div class="fund-card__collapse" id="collapse-fia" role="region" aria-labelledby="fundo-fia">
-          <div class="fund-card__body">
-            <div class="fund-card__internal-title">BRB Dividendos — Fundo de Investimento em Ações</div>
-            <p class="fund-card__desc">
-              Fundo de ações com investimento direto em empresas pagadoras de dividendos, buscando construir uma carteira de alta geração de renda passiva e valorização de longo prazo. Diferente do FIC FIA, este fundo investe diretamente nas ações, sem intermediação de outros fundos. Classificação ANBIMA: <strong>Ações — Ativos Dividendos</strong>. Público-alvo: investidores com perfil arrojado.
-            </p>
-           <div class="fund-card__chars">
-             <div class="char-item"><div class="char-item__label">Aplicação inicial</div><div class="char-item__value highlight">R$ 100,00</div></div>
-              <div class="char-item"><div class="char-item__label">Aplicações subsequentes</div><div class="char-item__value">R$ 100,00</div></div>
-              <div class="char-item"><div class="char-item__label">Resgate mínimo</div><div class="char-item__value">R$ 100,00</div></div>
-              <div class="char-item"><div class="char-item__label">Saldo mínimo remanescente</div><div class="char-item__value">R$ 100,00</div></div>
-              <div class="char-item"><div class="char-item__label">Cotização de aplicação</div><div class="char-item__value">D+0 - Fechamento</div></div>
-              <div class="char-item"><div class="char-item__label">Carência</div><div class="char-item__value">Não possui</div></div>
-              <div class="char-item"><div class="char-item__label">Cotização de resgate</div><div class="char-item__value">D+1 - Fechamento </div></div>
-              <div class="char-item"><div class="char-item__label">Crédito em conta corrente BRB</div><div class="char-item__value">D+2</div></div>
-              <div class="char-item"><div class="char-item__label">Resgate automático</div><div class="char-item__value">Não</div></div>
-              <div class="char-item"><div class="char-item__label">Taxa de administração</div><div class="char-item__value highlight">2,00% a.a.</div></div>
-              <div class="char-item"><div class="char-item__label">Taxa de performance</div><div class="char-item__value">20% sobre o que exceder o Ibovespa</div></div>
-              <div class="char-item"><div class="char-item__label">Regime de cotização</div><div class="char-item__value">Fechamento de mercado</div></div>
-              <div class="char-item"><div class="char-item__label">Horário limite aplicação/resgate</div><div class="char-item__value">16h00 (Horario de Brasília)</div></div>
-              <div class="char-item"><div class="char-item__label">Perfil investidor</div><div class="char-item__value">Arrojado</div></div>
-              <div class="char-item"><div class="char-item__label">Termo de investimento</div><div class="char-item__value">Dispensável</div></div>
-              <div class="char-item"><div class="char-item__label">Funcionamento desde:</div><div class="char-item__value">14/06/2022</div></div>
-            </div>
-            <div class="fund-tax-notice">
-              <strong>Tributação:</strong> IR de 15% sobre o ganho de capital no resgate. Fundos de ações não possuem come-cotas. IOF não incide após 30 dias.
-            </div>
-          </div>
-
-          <div class="fund-card__docs">
-            <span class="fund-card__docs-label">📄 Documentos</span>
-<a class="doc-link" href="../pdfs-regulamento-fundos\F.DIV_12_12_2023.pdf" target="_blank">Regulamento</a>
-<a class="doc-link" href="../pdfs-informes-mensais\F.DIV_05_2026.pdf" target="_blank">Informativo Mensal</a>
-<a class="doc-link" href="../pdfs-demonstrações-finan-fundos\F.DIV_263GC-073-PB BRB Dividendos FIA (EF).pdf" target="_blank">Demonstrações Financeiras</a>
-<a class="doc-link" href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank">Política de Remuneração</a>
-<a href="../pdfs/fundos/politica_remuneracao.pdf" target="_blank" class="doc-link">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-              Assembleia
-            </a>
-          </div>
-
-          <div class="fund-card__meta">
-            <span>Classificação ANBIMA: <strong>Ações — Ativos Dividendos</strong></span>
-          </div>
-        </div>
-
-      </article>
+      
 
     </div><!-- /fd-funds-grid -->
 

@@ -687,10 +687,9 @@ nav {
 }
 
 .carousel-btn:hover {
-  background: rgba(255, 255, 255, 0.26);
-  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
 }
-
 .carousel-dots {
   display: flex;
   gap: 8px;
@@ -715,28 +714,29 @@ nav {
 }
 
 /* ============================================================
-   TICKER COTAÇÃO DO DÓLAR
+   RADAR DE MERCADO (TICKER) - VISUAL PREMIUM
    ============================================================ */
 .cotacao-ticker-bar {
   width: 100%;
-  background: #0a2a5e;
-  border-bottom: 1px solid rgba(255,255,255,0.10);
+  background: #001F3F; /* Azul muito escuro e elegante */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   padding: 0;
-  height: var(--ticker-h);
+  height: var(--ticker-h, 40px);
   overflow: hidden;
   position: fixed;
-  top: var(--header-h);
+  top: var(--header-h, 75px);
   left: 0;
   right: 0;
   z-index: 999;
   display: flex;
   align-items: center;
-  transition: transform var(--ease);
+  transition: transform var(--ease, 0.3s ease);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
 }
 
 header.header-hidden ~ .cotacao-ticker-bar,
 .cotacao-ticker-bar.ticker-hidden {
-  transform: translateY(calc(-1 * (var(--header-h) + var(--ticker-h))));
+  transform: translateY(calc(-1 * (var(--header-h, 75px) + var(--ticker-h, 40px))));
 }
 
 .cotacao-ticker-inner {
@@ -751,40 +751,62 @@ header.header-hidden ~ .cotacao-ticker-bar,
   height: 100%;
 }
 
+/* Badge lateral esquerdo do Radar */
 .cotacao-label {
   display: flex;
   align-items: center;
-  gap: 0.4rem;
-  font-size: 13px;
-  font-weight: 700;
-  color: #4db8ff;
+  gap: 0.5rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #ffffff;
   text-transform: uppercase;
-  letter-spacing: 0.07em;
+  letter-spacing: 0.08em;
   white-space: nowrap;
   flex-shrink: 0;
-  border-right: 1px solid rgba(255,255,255,0.15);
   padding-right: 1.2rem;
+  position: relative;
+}
+
+/* Linha divisória após o título do radar */
+.cotacao-label::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 60%;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.2);
 }
 
 .cotacao-label svg {
-  color: #4db8ff;
+  color: #00AEEF; /* Azul claro BRB */
   flex-shrink: 0;
+  filter: drop-shadow(0 0 6px rgba(0, 174, 239, 0.6));
 }
 
+/* Área que rola os números */
 .cotacao-ticker-track {
   flex: 1;
   overflow: hidden;
   position: relative;
+  /* Efeito de desvanecimento sutil nas laterais */
+  -webkit-mask-image: linear-gradient(to right, transparent, black 2%, black 98%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 2%, black 98%, transparent);
 }
 
 .cotacao-ticker-content {
   display: flex;
-  width: max-content; /* É ISSO AQUI QUE RESOLVE O PROBLEMA */
+  width: max-content;
   align-items: center;
-  gap: 0;
-  animation: ticker-scroll 140s linear infinite;
+  animation: ticker-scroll 120s linear infinite; /* Ajuste a velocidade aqui se necessário */
   white-space: nowrap;
   will-change: transform;
+}
+
+/* Pausar animação ao passar o mouse */
+.cotacao-ticker-content:hover {
+  animation-play-state: paused;
 }
 
 @keyframes ticker-scroll {
@@ -792,80 +814,83 @@ header.header-hidden ~ .cotacao-ticker-bar,
   100% { transform: translateX(-50%); }
 }
 
+/* Estilização individual dos números */
 .cotacao-item {
   display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  padding: 0 2rem;
-  font-size: 0.82rem;
-  color: rgba(255,255,255,0.9);
-  font-weight: 500;
-  border-right: 1px solid rgba(255,255,255,0.12);
-}
-
-.cotacao-item:last-child {
-  border-right: none;
-}
-
-.cotacao-item-flag {
-  font-size: 1rem;
+  align-items: baseline;
+  gap: 0.4rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85rem;
 }
 
 .cotacao-item-name {
   font-weight: 700;
-  color: #fff;
-  font-size: 0.82rem;
+  color: #94a3b8;
   text-transform: uppercase;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.04em;
 }
 
 .cotacao-item-buy {
-  color: rgba(255,255,255,0.75);
-  font-size: 0.75rem;
-}
-
-.cotacao-item-buy span {
-  color: #7ed8a4;
+  color: #ffffff;
   font-weight: 700;
+  font-size: 0.95rem;
 }
 
-.cotacao-item-sell {
-  color: rgba(255,255,255,0.75);
-  font-size: 0.75rem;
+.cotacao-item-buy small {
+  color: #64748b;
+  font-size: 0.7em;
+  margin-left: 0.1rem;
 }
 
-.cotacao-item-sell span {
-  color: #f4a261;
-  font-weight: 700;
+/* Cores das variações financeiras */
+.cotacao-var-up {
+  color: #10b981; /* Verde de alta */
+  font-weight: 800;
+  font-size: 0.8rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.15rem;
+}
+
+.cotacao-var-down {
+  color: #ef4444; /* Vermelho de baixa */
+  font-weight: 800;
+  font-size: 0.8rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.15rem;
 }
 
 .cotacao-separator {
-  display: inline-block;
-  width: 4px;
-  height: 4px;
-  background: rgba(255,255,255,0.3);
-  border-radius: 50%;
-  margin: 0 1rem;
-  vertical-align: middle;
+  color: rgba(255, 255, 255, 0.12);
+  margin: 0 1.5rem;
+  font-weight: 300;
 }
 
-.cotacao-item-time {
-  font-size: 0.7rem;
-  color: rgba(255,255,255,0.4);
-  font-style: italic;
-}
-
-.cotacao-loading {
-  font-size: 0.78rem;
-  color: rgba(255,255,255,0.4);
-  font-style: italic;
+.cotacao-loading, .cotacao-erro {
+  font-size: 0.8rem;
+  font-weight: 600;
   padding: 0 1rem;
 }
 
-.cotacao-erro {
-  font-size: 0.78rem;
-  color: rgba(255,100,100,0.7);
-  padding: 0 1rem;
+.cotacao-loading { color: #94a3b8; }
+.cotacao-erro { color: #ef4444; }
+
+/* Responsividade Mobile do Ticker */
+@media (max-width: 768px) {
+  .cotacao-label {
+    font-size: 0.65rem;
+    padding-right: 0.8rem;
+  }
+  .cotacao-item {
+    font-size: 0.75rem;
+  }
+  .cotacao-item-buy {
+    font-size: 0.85rem;
+  }
+  .cotacao-separator {
+    margin: 0 1rem;
+  }
 }
 
 /* ============================================================
