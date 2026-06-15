@@ -417,6 +417,16 @@
             </div>
           </div>
         </div>
+        <div class="edu-modal__footer">
+          <a class="edu-modal__btn edu-modal__btn--cdb" href="https://analisa.genialinvestimentos.com.br/" data-plataforma="1" target="_blank" rel="noopener noreferrer">
+            Operar Ações na plataforma →
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </a>
+          <p class="edu-modal__disclaimer">* Disponibilidade sujeita às condições da plataforma.</p>
+        </div>
       </div>
 
       <div class="edu-modal" id="modal-lci" style="display:none">
@@ -479,6 +489,16 @@
             </div>
           </div>
         </div>
+        <div class="edu-modal__footer">
+          <a class="edu-modal__btn edu-modal__btn--lci" href="https://analisa.genialinvestimentos.com.br/" data-plataforma="1" target="_blank" rel="noopener noreferrer">
+            Investir em FIIs na plataforma →
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </a>
+          <p class="edu-modal__disclaimer">* Disponibilidade sujeita às condições da plataforma.</p>
+        </div>
       </div>
 
       <div class="edu-modal" id="modal-debenture" style="display:none">
@@ -538,6 +558,16 @@
               <div class="attr-value">Atrelado ao Dólar</div>
             </div>
           </div>
+        </div>
+        <div class="edu-modal__footer">
+          <a class="edu-modal__btn edu-modal__btn--deb" href="https://analisa.genialinvestimentos.com.br/" data-plataforma="1" target="_blank" rel="noopener noreferrer">
+            Investir em BDRs/ETFs na plataforma →
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </a>
+          <p class="edu-modal__disclaimer">* Disponibilidade sujeita às condições da plataforma.</p>
         </div>
       </div>
     </div>
@@ -761,5 +791,27 @@
     <button class="floating-cta" id="floatingCta" onclick="window.open('https://brb.genialinvestimentos.com.br/auth/login','_blank','noopener,noreferrer')">
        Começar a investir
     </button>
-  </body>
+  
+<script>
+(function() {
+  var DESKTOP_URL = "https://analisa.genialinvestimentos.com.br/";
+  var MOBILE_URL  = "#mobile-link"; /* substituir quando definir o link mobile */
+
+  function isMobile() {
+    return window.matchMedia("(max-width: 768px)").matches;
+  }
+
+  document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll(".edu-modal__btn[data-plataforma]").forEach(function(btn) {
+      btn.addEventListener("click", function(e) {
+        e.preventDefault();
+        var url = isMobile() ? MOBILE_URL : DESKTOP_URL;
+        window.open(url, "_blank", "noopener,noreferrer");
+      });
+    });
+  });
+})();
+</script>
+
+</body>
 </html>

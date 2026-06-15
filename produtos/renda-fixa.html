@@ -383,14 +383,14 @@
           </div>
         </div>
         <div class="edu-modal__footer">
-          <a class="edu-modal__btn edu-modal__btn--cdb" href="taxas.html">
-            Ver taxas de CDB disponíveis
+          <a class="edu-modal__btn edu-modal__btn--cdb" href="https://analisa.genialinvestimentos.com.br/" data-plataforma="1" target="_blank" rel="noopener noreferrer">
+            Investir em CDB na plataforma 
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
               <line x1="5" y1="12" x2="19" y2="12" />
               <polyline points="12 5 19 12 12 19" />
             </svg>
           </a>
-          <p class="edu-modal__disclaimer">* Consulte a página de taxas para as condições vigentes de cada emissor.</p>
+          <p class="edu-modal__disclaimer">* Disponibilidade sujeita às condições da plataforma.</p>
         </div>
       </div>
 
@@ -454,14 +454,14 @@
           </div>
         </div>
         <div class="edu-modal__footer">
-          <a class="edu-modal__btn edu-modal__btn--lci" href="taxas.html">
-            Ver taxas de LCI/LCA disponíveis
+          <a class="edu-modal__btn edu-modal__btn--lci" href="https://analisa.genialinvestimentos.com.br/" data-plataforma="1" target="_blank" rel="noopener noreferrer">
+            Investir em LCI/LCA na plataforma 
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
               <line x1="5" y1="12" x2="19" y2="12" />
               <polyline points="12 5 19 12 12 19" />
             </svg>
           </a>
-          <p class="edu-modal__disclaimer">* Consulte a página de taxas para as condições vigentes de cada emissor.</p>
+          <p class="edu-modal__disclaimer">* Disponibilidade sujeita às condições da plataforma.</p>
         </div>
       </div>
 
@@ -525,14 +525,14 @@
           </div>
         </div>
         <div class="edu-modal__footer">
-          <a class="edu-modal__btn edu-modal__btn--deb" href="taxas.html">
-            Ver taxas de Debêntures disponíveis
+          <a class="edu-modal__btn edu-modal__btn--deb" href="https://analisa.genialinvestimentos.com.br/" data-plataforma="1" target="_blank" rel="noopener noreferrer">
+            Investir em Debêntures na plataforma 
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
               <line x1="5" y1="12" x2="19" y2="12" />
               <polyline points="12 5 19 12 12 19" />
             </svg>
           </a>
-          <p class="edu-modal__disclaimer">* Consulte a página de taxas para as condições vigentes de cada emissor.</p>
+          <p class="edu-modal__disclaimer">* Disponibilidade sujeita às condições da plataforma.</p>
         </div>
       </div>
     </div>
@@ -813,5 +813,33 @@
     </button>
 
     <script src="../js/script.js"></script>
-  </body>
+  
+<script>
+(function() {
+  var DESKTOP_URL = "https://analisa.genialinvestimentos.com.br/";
+  var MOBILE_URL  = "#mobile-link"; /* substituir quando definir o link mobile */
+
+  function isMobile() {
+    return window.matchMedia("(max-width: 768px)").matches;
+  }
+
+  function applySmartLinks() {
+    document.querySelectorAll(".edu-modal__btn[data-plataforma]").forEach(function(btn) {
+      btn.addEventListener("click", function(e) {
+        e.preventDefault();
+        var url = isMobile() ? MOBILE_URL : DESKTOP_URL;
+        window.open(url, "_blank", "noopener,noreferrer");
+      });
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", applySmartLinks);
+  } else {
+    applySmartLinks();
+  }
+})();
+</script>
+
+</body>
 </html>

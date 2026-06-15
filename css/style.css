@@ -757,7 +757,7 @@ header.header-hidden ~ .cotacao-ticker-bar,
   align-items: center;
   gap: 0.5rem;
   font-size: 0.72rem;
-  font-weight: 800;
+  font-weight: 700;
   color: #ffffff;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -831,7 +831,7 @@ header.header-hidden ~ .cotacao-ticker-bar,
 
 .cotacao-item-buy {
   color: #ffffff;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 0.95rem;
 }
 
@@ -843,7 +843,7 @@ header.header-hidden ~ .cotacao-ticker-bar,
 
 .cotacao-var-up {
   color: #10b981; /* Verde de alta */
-  font-weight: 800;
+  font-weight: 700;
   font-size: 0.8rem;
   display: inline-flex;
   align-items: center;
@@ -1787,33 +1787,6 @@ footer {
   .menu-overlay { display: block; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
   .menu-overlay.active { opacity: 1; pointer-events: auto; }
 
-  /* ── Ticker ── */
-  .cotacao-ticker-bar {
-    display: flex; /* Substituído o display: none */
-  }
-
-  .cotacao-ticker-inner {
-    padding: 0 0.5rem; /* Menos espaçamento lateral */
-    gap: 0.5rem;
-  }
-
-  .cotacao-label {
-    font-size: 11px; /* Fonte menor para caber na tela */
-    padding-right: 0.5rem;
-  }
-
-  .cotacao-item {
-    padding: 0 1rem; /* Aproximar as cotações */
-    font-size: 0.75rem;
-  }
-
-  .cotacao-item-name {
-    font-size: 0.75rem;
-  }
-
-  .cotacao-item-buy, .cotacao-item-sell {
-    font-size: 0.7rem;
-  }
 
   /* ── Hero ── */
   .main-hero-wrapper { 
