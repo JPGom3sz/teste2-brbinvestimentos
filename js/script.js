@@ -982,17 +982,13 @@ function initPageSpecificLogic() {
 }
 
 // ============================================================
-// 4. TICKER PTAX (Banco Central do Brasil)
-// ============================================================
-// ============================================================
-// 4. RADAR DE MERCADO (IBOV, Taxas e Moedas)
+// 4. RADAR DE MERCADO (Taxas e Moedas)
 // ============================================================
 
 async function iniciarCotacaoTicker() {
   const contentEl = document.getElementById('cotacaoContent');
   if (!contentEl) return;
 
-  // Função auxiliar para formatar a variação percentual
   const formatarVariacao = (variacao) => {
     const val = parseFloat(variacao);
     if (isNaN(val)) return '';
@@ -1002,64 +998,49 @@ async function iniciarCotacaoTicker() {
     return `<span class="${cssClass}">${icon} ${Math.abs(val).toFixed(2).replace('.', ',')}%</span>`;
   };
 
-  // Função auxiliar para formatar os valores numéricos
   const formatarValor = (valor, prefixo = '') => {
     if (!valor) return '-';
-    // Se for um índice grande (ex: Ibovespa 120.000)
-    if (valor > 1000) {
-        return prefixo + parseInt(valor).toLocaleString('pt-BR');
-    }
-    // Para moedas e taxas
     return prefixo + parseFloat(valor).toFixed(2).replace('.', ',');
   };
 
   const buscarIndicadores = async () => {
     try {
-      // 1. Busca o Ibovespa e as Moedas da HG Brasil (sem necessitar de chave)
-      const resHg = await fetch('https://api.hgbrasil.com/finance?format=json-cors');
-      if (!resHg.ok) throw new Error('Falha na resposta da API HG Brasil');
-      
-      const jsonHg = await resHg.json();
-      const data = jsonHg.results;
+      // 1. AwesomeAPI: 100% Gratuita e com passe livre no firewall (mesma da página de RV)
+      const resMoedas = await fetch('https://economia.awesomeapi.com.br/json/last/USD-BRL,EUR-BRL,BTC-BRL');
+      const dataMoedas = resMoedas.ok ? await resMoedas.json() : {};
 
-      const ibov = data?.stocks?.IBOVESPA || {};
-      const usd  = data?.currencies?.USD || {};
-      const eur  = data?.currencies?.EUR || {};
-      const btc  = data?.currencies?.BTC || {};
+      const usd = dataMoedas.USDBRL || {};
+      const eur = dataMoedas.EURBRL || {};
+      const btc = dataMoedas.BTCBRL || {};
 
-      // 2. Busca a Meta Selic diretamente do Banco Central (SGS - Série 432)
+      // 2. Banco Central (SGS Série 432): Domínio gov.br passa facilmente por redes bancárias
       let selicStr = '-';
       let cdiStr = '-';
-      
       try {
         const resBcb = await fetch('https://api.bcb.gov.br/dados/serie/bcdata.sgs.432/dados/ultimos/1?formato=json');
-        const bcbData = await resBcb.json();
-        
-        const selicNum = parseFloat(bcbData[0].valor);
-        selicStr = formatarValor(selicNum, '');
-        
-        // O CDI no Brasil é historicamente a Selic - 0.10% a.a.
-        cdiStr = formatarValor(selicNum - 0.10, ''); 
+        if (resBcb.ok) {
+          const bcbData = await resBcb.json();
+          const selicNum = parseFloat(bcbData[0].valor);
+          selicStr = formatarValor(selicNum, '');
+          cdiStr = formatarValor(selicNum - 0.10, ''); // CDI é a Selic Meta - 0.10%
+        }
       } catch (err) {
-        console.warn("Aviso: Falha ao buscar a Selic no BCB", err);
+        console.warn('Aviso: Erro ao buscar Selic no BCB:', err);
       }
 
-      // 3. Monta os itens do carrossel misturando os dados das duas fontes
+      // 3. Montagem do Carrossel de Dados
       const cotacoes = [
-        { nome: 'IBOVESPA',  valor: formatarValor(ibov.points, ''), varHTML: formatarVariacao(ibov.variation), tipo: 'pts' },
-        { nome: 'CDI',       valor: cdiStr,   varHTML: '', tipo: '% a.a.' },
+        { nome: 'CDI',       valor: cdiStr, varHTML: '', tipo: '% a.a.' },
         { nome: 'SELIC',     valor: selicStr, varHTML: '', tipo: '% a.a.' },
-        { nome: 'USD/BRL',   valor: formatarValor(usd.buy, 'R$ '),  varHTML: formatarVariacao(usd.variation), tipo: '' },
-        { nome: 'EUR/BRL',   valor: formatarValor(eur.buy, 'R$ '),  varHTML: formatarVariacao(eur.variation), tipo: '' },
-        { nome: 'BTC/BRL',   valor: formatarValor(btc.buy, 'R$ '),  varHTML: formatarVariacao(btc.variation), tipo: '' },
+        { nome: 'USD/BRL',   valor: formatarValor(usd.bid, 'R$ '), varHTML: formatarVariacao(usd.pctChange), tipo: '' },
+        { nome: 'EUR/BRL',   valor: formatarValor(eur.bid, 'R$ '), varHTML: formatarVariacao(eur.pctChange), tipo: '' },
+        { nome: 'BTC/BRL',   valor: formatarValor(btc.bid, 'R$ '), varHTML: formatarVariacao(btc.pctChange), tipo: '' },
       ];
 
       renderTicker(cotacoes);
-
     } catch (error) {
       console.error("Erro ao carregar o Radar de Mercado:", error);
-      // Fallback amigável caso exista uma falha grave de rede
-      contentEl.innerHTML = '<span class="cotacao-erro">Indicadores indisponíveis no momento. Tente novamente mais tarde.</span>';
+      contentEl.innerHTML = '<span class="cotacao-erro">Indicadores atualizando...</span>';
     }
   };
 
@@ -1075,16 +1056,15 @@ async function iniciarCotacaoTicker() {
       <span class="cotacao-separator" aria-hidden="true">|</span>
     `).join('');
 
-    // Repetimos o bloco para preencher toda a largura da tela sem quebrar a animação
-    const bloco = itemsHTML.repeat(6); 
+    // Repete os blocos para garantir fluidez em monitores ultrawide
+    const bloco = itemsHTML.repeat(8); 
     contentEl.innerHTML = bloco + bloco;
   };
 
-  // Chama a função imediatamente no carregamento da página
   await buscarIndicadores();
   
-  // Atualiza os dados a cada 10 minutos para não estourar o limite da API gratuita
-  setInterval(buscarIndicadores, 10 * 60 * 1000);
+  // Atualiza a cada 1 minuto (A AwesomeAPI suporta alta frequência)
+  setInterval(buscarIndicadores, 60 * 1000);
 }
 
 // ============================================================

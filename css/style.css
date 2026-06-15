@@ -721,7 +721,7 @@ nav {
   background: #001F3F; /* Azul muito escuro e elegante */
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   padding: 0;
-  height: var(--ticker-h, 40px);
+  height: var(--ticker-h, 38px);
   overflow: hidden;
   position: fixed;
   top: var(--header-h, 75px);
@@ -736,7 +736,7 @@ nav {
 
 header.header-hidden ~ .cotacao-ticker-bar,
 .cotacao-ticker-bar.ticker-hidden {
-  transform: translateY(calc(-1 * (var(--header-h, 75px) + var(--ticker-h, 40px))));
+  transform: translateY(calc(-1 * (var(--header-h, 75px) + var(--ticker-h, 38px))));
 }
 
 .cotacao-ticker-inner {
@@ -767,7 +767,6 @@ header.header-hidden ~ .cotacao-ticker-bar,
   position: relative;
 }
 
-/* Linha divisória após o título do radar */
 .cotacao-label::after {
   content: '';
   position: absolute;
@@ -780,7 +779,7 @@ header.header-hidden ~ .cotacao-ticker-bar,
 }
 
 .cotacao-label svg {
-  color: #00AEEF; /* Azul claro BRB */
+  color: #00AEEF;
   flex-shrink: 0;
   filter: drop-shadow(0 0 6px rgba(0, 174, 239, 0.6));
 }
@@ -790,7 +789,7 @@ header.header-hidden ~ .cotacao-ticker-bar,
   flex: 1;
   overflow: hidden;
   position: relative;
-  /* Efeito de desvanecimento sutil nas laterais */
+  /* Desvanecimento sutil nas laterais */
   -webkit-mask-image: linear-gradient(to right, transparent, black 2%, black 98%, transparent);
   mask-image: linear-gradient(to right, transparent, black 2%, black 98%, transparent);
 }
@@ -799,12 +798,12 @@ header.header-hidden ~ .cotacao-ticker-bar,
   display: flex;
   width: max-content;
   align-items: center;
-  animation: ticker-scroll 120s linear infinite; /* Ajuste a velocidade aqui se necessário */
+  animation: ticker-scroll 120s linear infinite;
   white-space: nowrap;
   will-change: transform;
 }
 
-/* Pausar animação ao passar o mouse */
+/* Pausar ao passar o mouse */
 .cotacao-ticker-content:hover {
   animation-play-state: paused;
 }
@@ -814,7 +813,7 @@ header.header-hidden ~ .cotacao-ticker-bar,
   100% { transform: translateX(-50%); }
 }
 
-/* Estilização individual dos números */
+/* Estilização individual dos indicadores */
 .cotacao-item {
   display: inline-flex;
   align-items: baseline;
@@ -842,7 +841,6 @@ header.header-hidden ~ .cotacao-ticker-bar,
   margin-left: 0.1rem;
 }
 
-/* Cores das variações financeiras */
 .cotacao-var-up {
   color: #10b981; /* Verde de alta */
   font-weight: 800;
@@ -867,14 +865,12 @@ header.header-hidden ~ .cotacao-ticker-bar,
   font-weight: 300;
 }
 
-.cotacao-loading, .cotacao-erro {
+.cotacao-erro {
   font-size: 0.8rem;
   font-weight: 600;
   padding: 0 1rem;
+  color: #ef4444;
 }
-
-.cotacao-loading { color: #94a3b8; }
-.cotacao-erro { color: #ef4444; }
 
 /* Responsividade Mobile do Ticker */
 @media (max-width: 768px) {
