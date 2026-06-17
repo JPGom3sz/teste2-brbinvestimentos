@@ -233,41 +233,44 @@ function initPortfolio() {
       botao1   : { texto: 'Faça uma simulação agora', link: 'https://lp.brbinvestimentos.com.br/perfis-brb-brb01-a/?gcode=GI-CRM-WEB-BRB01-X-CLIENTE-X-X-PON-X-HOTLIST-X&e=null&n=null&t=null&vlp=brb01-lpa' },
       botao2   : null 
     },
+
+
     1: { 
-      titulo: 'Renda Fixa',      
-      descricao: 'Os produtos de renda fixa da BRB Investimentos oferecem segurança e previsibilidade de retorno, ideais para investidores que buscam preservação de capital e rendimento consistente. Inclui CDBs, LCIs, LCAs, Tesouro Direto e debêntures, com diferentes prazos e rentabilidades para atender ao seu perfil.',                                                                                                                                                                               
-      botao1: { texto: 'Saiba mais sobre Renda Fixa', link: 'produtos/renda-fixa.html' },
-      botao2: { texto: 'Custos Renda Fixa',           link: 'taxas.html' } // <-- Altere o link secundário aqui
-    },
-    2: { 
-      titulo: 'Renda Variável',  
-      descricao: 'Os produtos de renda variável da BRB Investimentos incluem ações de empresas listadas, fundos de investimento em ações (FIAs), fundos multimercado e ETFs. Esses instrumentos permitem ao investidor participar do desempenho de diferentes setores da economia, com potencial de valorização no longo prazo e recebimento de proventos, como dividendos.',                                                                                                                                   
-      botao1: { texto: 'Saiba mais sobre Renda Variável', link: 'produtos/renda-variavel.html' },
-      botao2: { texto: 'Custos Operacionais',             link: 'taxas.html' } // <-- Altere o link secundário aqui
-    },
-    3: { 
       titulo: 'Fundos',          
       descricao: 'Os fundos de investimento oferecem diversificação imediata com gestão profissional, permitindo ao investidor acessar uma variedade de estratégias de forma prática. A BRB Investimentos disponibiliza uma ampla gama de fundos, incluindo multimercados, renda fixa, ações e internacionais, atendendo a diferentes perfis de risco e objetivos de retorno.',                                                                                                                                 
       botao1: { texto: 'Saiba mais sobre Fundos', link: 'produtos/fundos.html' },
       botao2: { texto: 'Conheça os fundos do BRB', link: 'fundos-tipos/fundos-todos.html' } // <-- Altere o link secundário aqui
     },    
+    2: { 
+      titulo: 'Renda Fixa',      
+      descricao: 'Os produtos de renda fixa da BRB Investimentos oferecem segurança e previsibilidade de retorno, ideais para investidores que buscam preservação de capital e rendimento consistente. Inclui CDBs, LCIs, LCAs, Tesouro Direto e debêntures, com diferentes prazos e rentabilidades para atender ao seu perfil.',                                                                                                                                                                               
+      botao1: { texto: 'Saiba mais sobre Renda Fixa', link: 'produtos/renda-fixa.html' },
+      //botao2: { texto: 'Custos Renda Fixa',           link: 'taxas.html' } // <-- Altere o link secundário aqui
+    },
+    3: { 
+      titulo: 'Renda Variável',  
+      descricao: 'Os produtos de renda variável da BRB Investimentos incluem ações de empresas listadas, fundos de investimento em ações (FIAs), fundos multimercado e ETFs. Esses instrumentos permitem ao investidor participar do desempenho de diferentes setores da economia, com potencial de valorização no longo prazo e recebimento de proventos, como dividendos.',                                                                                                                                   
+      botao1: { texto: 'Saiba mais sobre Renda Variável', link: 'produtos/renda-variavel.html' },
+      //botao2: { texto: 'Custos Operacionais',             link: 'taxas.html' } // <-- Altere o link secundário aqui
+    },
+    
     4: { 
       titulo: 'Previdência',     
       descricao: 'Os planos de previdência da BRB Investimentos são voltados para o planejamento financeiro de longo prazo, auxiliando na construção de uma aposentadoria mais segura. Com opções como PGBL e VGBL, esses produtos oferecem benefícios fiscais e flexibilidade de contribuições, adaptando-se a diferentes perfis de investidores.',                                                                                                                                                              
       botao1: { texto: 'Saiba mais sobre Previdência', link: 'produtos/previdencia.html' },
-      botao2: { texto: 'Custos e Previdência',         link: null } // <-- Altere o link secundário aqui
+      //botao2: { texto: 'Custos e Previdência',         link: null } // <-- Altere o link secundário aqui
     },
     5: { 
       titulo: 'Mercado Futuro',  
       descricao: 'O mercado de futuros permite aos investidores negociar contratos para a compra ou venda de ativos em uma data futura, com o objetivo de especular sobre as variações de preços ou hedging de riscos. A BRB Investimentos oferece acesso a esse mercado com ferramentas e suporte especializado.',                                                                                                                                                                                               
       botao1: { texto: 'Saiba mais sobre Mercado Futuro', link: 'produtos/mercado-futuro.html' },
-      botao2: { texto: 'Condições Comerciais',            link: 'taxas.html' } // <-- Altere o link secundário aqui
+      //botao2: { texto: 'Condições Comerciais',            link: 'taxas.html' } // <-- Altere o link secundário aqui
     },
     6: { 
       titulo: 'Tesouro Direto',  
       descricao: 'O Tesouro Direto é um programa do Tesouro Nacional que permite a compra e venda de títulos públicos diretamente pelo investidor, com rentabilidade vinculada à inflação e prazos variáveis. A BRB Investimentos oferece acesso a esse mercado com suporte especializado.',                                                                                                                                                                                                                      
       botao1: { texto: 'Saiba mais sobre Tesouro Direto', link: 'produtos/tesouro-direto.html' },
-      botao2: { texto: 'Taxas do Tesouro Direto',         link: 'taxas.html' } // <-- Altere o link secundário aqui
+     // botao2: { texto: 'Taxas do Tesouro Direto',         link: 'taxas.html' } // <-- Altere o link secundário aqui
     },
     7: { 
       titulo: 'O que vem por aí', 
