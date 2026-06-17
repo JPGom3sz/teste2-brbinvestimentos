@@ -42,6 +42,40 @@
           grid-template-columns: 1fr !important;
         }
       }
+
+      /* Modal footer e botao CTA */
+      .edu-modal__footer {
+        border-top: 1px solid rgba(0, 86, 168, 0.07);
+        padding: 1.4rem 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.8rem;
+      }
+      .edu-modal__btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.6rem;
+        padding: 0.9rem 1.8rem;
+        border-radius: 10px;
+        font-size: 0.92rem;
+        font-weight: 700;
+        font-family: inherit;
+        text-decoration: none;
+        transition: filter 0.2s, transform 0.15s;
+        color: #fff;
+      }
+      .edu-modal__btn:hover { filter: brightness(1.1); transform: translateY(-1px); }
+      .edu-modal__btn--cdb { background: #0056A8; }
+      .edu-modal__btn--lci { background: #059669; }
+      .edu-modal__btn--deb { background: #7c3aed; }
+      .edu-modal__disclaimer {
+        font-size: 0.75rem;
+        color: #9ca3af;
+        text-align: center;
+        margin: 0;
+      }
     </style>
   </head>
   
@@ -400,25 +434,7 @@
               <li>Liquidez: facilidade para comprar e vender ações das principais empresas do país</li>
             </ul>
           </div>
-          <div class="edu-modal__attrs-grid">
-            <div class="edu-modal__attr-item">
-              <div class="attr-label">Tributação (Comum)</div>
-              <div class="attr-value">15% s/ lucro <small>(isento até 20k/mês)</small></div>
-            </div>
-            <div class="edu-modal__attr-item">
-              <div class="attr-label">Tributação (Day Trade)</div>
-              <div class="attr-value">20% s/ lucro</div>
-            </div>
-            <div class="edu-modal__attr-item">
-              <div class="attr-label">Perfil de Risco</div>
-              <div class="attr-value">Arrojado</div>
-            </div>
-            <div class="edu-modal__attr-item">
-              <div class="attr-label">Horizonte ideal</div>
-              <div class="attr-value">Longo Prazo</div>
-            </div>
           </div>
-        </div>
         <div class="edu-modal__footer">
           <a class="edu-modal__btn edu-modal__btn--cdb" href="https://analisa.genialinvestimentos.com.br/" data-plataforma="1" target="_blank" rel="noopener noreferrer">
             Operar Ações na plataforma →
@@ -472,25 +488,7 @@
               <li>Diversificação automática, já que um FII costuma ter vários imóveis e inquilinos</li>
             </ul>
           </div>
-          <div class="edu-modal__attrs-grid">
-            <div class="edu-modal__attr-item">
-              <div class="attr-label">Tributação s/ Renda</div>
-              <div class="attr-value" style="color:#059669">Isento <small>(para PF)</small></div>
-            </div>
-            <div class="edu-modal__attr-item">
-              <div class="attr-label">Tributação s/ Venda</div>
-              <div class="attr-value">20% s/ lucro da cota</div>
-            </div>
-            <div class="edu-modal__attr-item">
-              <div class="attr-label">Perfil de Risco</div>
-              <div class="attr-value">Moderado/Arrojado</div>
-            </div>
-            <div class="edu-modal__attr-item">
-              <div class="attr-label">Foco principal</div>
-              <div class="attr-value">Renda Mensal</div>
-            </div>
           </div>
-        </div>
         <div class="edu-modal__footer">
           <a class="edu-modal__btn edu-modal__btn--lci" href="https://analisa.genialinvestimentos.com.br/" data-plataforma="1" target="_blank" rel="noopener noreferrer">
             Investir em FIIs na plataforma →
@@ -542,25 +540,7 @@
               <li>Diversificação instantânea através dos ETFs, reduzindo o risco de escolher empresas individuais</li>
             </ul>
           </div>
-          <div class="edu-modal__attrs-grid">
-            <div class="edu-modal__attr-item">
-              <div class="attr-label">Tributação BDR</div>
-              <div class="attr-value">15% s/ lucro <small>(sem isenção)</small></div>
-            </div>
-            <div class="edu-modal__attr-item">
-              <div class="attr-label">Tributação ETF</div>
-              <div class="attr-value">15% s/ lucro <small>(sem isenção)</small></div>
-            </div>
-            <div class="edu-modal__attr-item">
-              <div class="attr-label">Vantagem Principal</div>
-              <div class="attr-value">Exposição Global</div>
-            </div>
-            <div class="edu-modal__attr-item">
-              <div class="attr-label">Moeda Forte</div>
-              <div class="attr-value">Atrelado ao Dólar</div>
-            </div>
           </div>
-        </div>
         <div class="edu-modal__footer">
           <a class="edu-modal__btn edu-modal__btn--deb" href="https://analisa.genialinvestimentos.com.br/" data-plataforma="1" target="_blank" rel="noopener noreferrer">
             Investir em BDRs/ETFs na plataforma →
