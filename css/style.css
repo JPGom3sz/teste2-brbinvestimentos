@@ -591,6 +591,35 @@ nav {
 }
 
 /* ============================================================
+   BOTÃO "ACESSE SEUS INVESTIMENTOS" — VISÍVEL APENAS NO MOBILE
+   ============================================================ */
+
+/* Escondido por padrão (desktop e notebook) */
+.btn-outline--mobile-only {
+  display: none;
+}
+
+/* Aparece apenas em telas pequenas (mobile ≤ 768px) */
+@media (max-width: 768px) {
+  .btn-outline--mobile-only {
+    display: inline-flex;
+  }
+}
+
+/* Quando o btn-outline está oculto, o btn-primary fica harmonioso sozinho */
+@media (min-width: 769px) {
+  .hero-ctas {
+    justify-content: flex-start;
+  }
+
+  .hero-ctas .btn-primary {
+    min-width: 200px;
+    padding: 0.9rem 2.2rem;
+    font-size: 1rem;
+  }
+}
+
+/* ============================================================
    7. HERO CAROUSEL
    ============================================================ */
 .home-content {
