@@ -42,51 +42,12 @@
         }
       }
     </style>
-  </head>
+    <link rel="stylesheet" href="../css/cookies.css" />
+</head>
   
   <body>
-    <div id="brb-cookie-banner" role="dialog" aria-modal="false" aria-label="Preferências de cookies">
-      <div class="cookie-inner">
-        <div class="cookie-icon" aria-hidden="true">
-          <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 0a6 6 0 0 1 6 6m-6 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-4 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm5 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
-          </svg>
-        </div>
 
-        <div class="cookie-text">
-          <strong>Utilizamos cookies</strong>
-          <p>
-            Para melhorar sua experiência e personalizar conteúdos. Veja nossa
-            <a href="../pdfs/Política de Privacidade.pdf" target="_blank" rel="noopener noreferrer">Política de Privacidade</a>.
-          </p>
-
-          <div class="cookie-categories">
-            <label class="cookie-cat">
-              <input type="checkbox" value="necessários" checked disabled />
-              <span class="cookie-cat-label">Necessários <em>(obrigatório)</em></span>
-            </label>
-            <label class="cookie-cat">
-              <input type="checkbox" value="analíticos" checked />
-              <span class="cookie-cat-label">Analíticos</span>
-            </label>
-            <label class="cookie-cat">
-              <input type="checkbox" value="marketing" checked />
-              <span class="cookie-cat-label">Marketing</span>
-            </label>
-          </div>
-        </div>
-
-        <div class="cookie-actions">
-          <button id="brb-cookie-accept" class="cookie-btn-accept">Aceitar cookies</button>
-          <button id="brb-cookie-reject" class="cookie-btn-reject">Só necessários</button>
-        </div>
-      </div>
-    </div>
-
-    <link rel="stylesheet" href="../css/cookies.css" />
-    <script src="../js/cookies.js"></script>
-
-    <div class="reading-progress" aria-hidden="true">
+<div class="reading-progress" aria-hidden="true">
       <div class="reading-progress__bar" id="readingBar"></div>
     </div>
 
@@ -230,7 +191,7 @@
               </div>
               <div class="edu-card__label">Renda Fixa</div>
               <div class="edu-card__title">CDB</div>
-              <div class="edu-card__desc">Certificado de Depósito Bancário — empreste dinheiro ao banco e receba juros com proteção do FGC.</div>
+              <div class="edu-card__desc">Certificado de Depósito Bancário empreste dinheiro ao banco e receba juros com proteção do FGC.</div>
               <div class="edu-card__attrs">
                 <span class="edu-attr edu-attr--cdb">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Proteção FGC
@@ -264,7 +225,7 @@
               </div>
               <div class="edu-card__label">Renda Fixa</div>
               <div class="edu-card__title">LCI / LCA</div>
-              <div class="edu-card__desc">Letras de Crédito Imobiliário e do Agronegócio — isentas de Imposto de Renda para pessoas físicas.</div>
+              <div class="edu-card__desc">Letras de Crédito Imobiliário e do Agronegócio isentas de Imposto de Renda para pessoas físicas.</div>
               <div class="edu-card__attrs">
                 <span class="edu-attr edu-attr--lci">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Isento de IR
@@ -298,7 +259,7 @@
               </div>
               <div class="edu-card__label">Renda Fixa</div>
               <div class="edu-card__title">Debênture Incentivada</div>
-              <div class="edu-card__desc">Títulos emitidos por empresas para financiar infraestrutura — isentos de IR e com proteção contra a inflação.</div>
+              <div class="edu-card__desc">Títulos emitidos por empresas para financiar infraestrutura isentos de IR e com proteção contra a inflação.</div>
               <div class="edu-card__attrs">
                 <span class="edu-attr edu-attr--deb">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Isento de IR
@@ -350,40 +311,22 @@
           <div class="edu-modal__section">
             <div class="edu-modal__section-title edu-modal__section-title--cdb">Como funciona</div>
             <ul class="edu-modal__list edu-modal__list--cdb">
-              <li>Você aplica um valor e define o prazo — pode ser dias, meses ou anos</li>
-              <li>A rentabilidade pode ser pós-fixada (% do CDI), pré-fixada ou híbrida (IPCA + taxa)</li>
-              <li>Ao vencimento, você resgata o valor corrigido pelos juros combinados</li>
-              <li>O IR é descontado automaticamente na fonte, com alíquota decrescente conforme o prazo</li>
+              <li>O investidor define o valor e o prazo, que pode variar de poucos dias a vários anos</li>
+              <li>A rentabilidade pode ser pós-fixada (atrelada ao CDI), pré-fixada ou híbrida (IPCA + taxa)</li>
+              <li>No vencimento, o investidor resgata o capital acrescido dos juros contratados</li>
+              <li>O IR é descontado na fonte com alíquota decrescente conforme o prazo de aplicação</li>
             </ul>
           </div>
           <div class="edu-modal__section">
             <div class="edu-modal__section-title edu-modal__section-title--cdb">Por que escolher</div>
             <ul class="edu-modal__list edu-modal__list--cdb">
-              <li>Proteção do FGC até R$ 250 mil por CPF — seguro mesmo que a instituição quebre</li>
-              <li>Disponível com liquidez diária para quem precisa de acesso rápido ao dinheiro</li>
-              <li>Ideal para reserva de emergência ou objetivos de curto e médio prazo</li>
+              <li>Proteção do FGC até o limite regulamentar por CPF por instituição financeira</li>
+              <li>Disponível em versões com liquidez diária ou no vencimento, conforme o emissor</li>
+              <li>Adequado para reserva de emergência ou objetivos de curto e médio prazo</li>
               <li>Rentabilidade historicamente superior à poupança, sem risco de renda variável</li>
             </ul>
           </div>
-          <div class="edu-modal__attrs-grid">
-            <div class="edu-modal__attr-item">
-              <div class="attr-label">Imposto de Renda</div>
-              <div class="attr-value">Tabela regressiva <small>(22,5% → 15%)</small></div>
-            </div>
-            <div class="edu-modal__attr-item">
-              <div class="attr-label">Garantia</div>
-              <div class="attr-value">FGC <small>até R$ 250 mil/CPF</small></div>
-            </div>
-            <div class="edu-modal__attr-item">
-              <div class="attr-label">Aplicação mínima</div>
-              <div class="attr-value">A partir de <small>R$ 100</small></div>
-            </div>
-            <div class="edu-modal__attr-item">
-              <div class="attr-label">Liquidez</div>
-              <div class="attr-value">Diária ou <small>no vencimento</small></div>
-            </div>
           </div>
-        </div>
         <div class="edu-modal__footer">
           <a class="edu-modal__btn edu-modal__btn--cdb" href="https://brb.genialinvestimentos.com.br/auth/login" data-plataforma="1" target="_blank" rel="noopener noreferrer">
             Investir em CDB na plataforma 
@@ -406,7 +349,7 @@
           </button>
           <div class="edu-modal__pill edu-modal__pill--lci">Letras de Crédito</div>
           <h2 class="edu-modal__title">O que são LCI e LCA?</h2>
-          <p class="edu-modal__subtitle">Investimentos isentos de IR — o benefício tributário que transforma cada real aplicado em mais rendimento.</p>
+          <p class="edu-modal__subtitle">Investimentos isentos de IR o benefício tributário que transforma cada real aplicado em mais rendimento.</p>
         </div>
         <div class="edu-modal__body">
           <div class="edu-modal__explainer">
@@ -421,40 +364,22 @@
           <div class="edu-modal__section">
             <div class="edu-modal__section-title edu-modal__section-title--lci">Como funciona</div>
             <ul class="edu-modal__list edu-modal__list--lci">
-              <li>Você investe pelo prazo mínimo de carência (geralmente 90 dias) e resgata no vencimento</li>
-              <li>A rentabilidade segue o CDI, o IPCA ou uma taxa pré-fixada — sem nenhum desconto de IR</li>
-              <li>100% do rendimento vai para o seu bolso, ao contrário do CDB tributado</li>
-              <li>O banco destina os recursos ao mercado imobiliário (LCI) ou ao agronegócio (LCA)</li>
+              <li>Há prazo mínimo de carência definido pela regulamentação vigente antes do resgate</li>
+              <li>A rentabilidade pode ser pós-fixada, pré-fixada ou híbrida, sem incidência de IR</li>
+              <li>O rendimento bruto equivale ao rendimento líquido, pois não há desconto de IR</li>
+              <li>Os recursos captados são direcionados obrigatoriamente ao setor imobiliário (LCI) ou ao agronegócio (LCA)</li>
             </ul>
           </div>
           <div class="edu-modal__section">
             <div class="edu-modal__section-title edu-modal__section-title--lci">Por que escolher</div>
             <ul class="edu-modal__list edu-modal__list--lci">
-              <li>Isenção total de IR — o rendimento bruto já é o rendimento líquido</li>
-              <li>Proteção do FGC até R$ 250 mil por CPF</li>
-              <li>Ideal para objetivos de médio prazo com data definida de resgate</li>
+              <li>Isenção total de IR o rendimento bruto já é o rendimento líquido</li>
+              <li>Proteção do FGC até o limite regulamentar por CPF por instituição financeira</li>
+              <li>Adequado para objetivos de médio prazo com data definida de resgate</li>
               <li>Rentabilidade líquida frequentemente superior ao CDB equivalente</li>
             </ul>
           </div>
-          <div class="edu-modal__attrs-grid">
-            <div class="edu-modal__attr-item">
-              <div class="attr-label">Imposto de Renda</div>
-              <div class="attr-value" style="color:#059669">✓ Isento <small>para pessoa física</small></div>
-            </div>
-            <div class="edu-modal__attr-item">
-              <div class="attr-label">Garantia</div>
-              <div class="attr-value">FGC <small>até R$ 250 mil/CPF</small></div>
-            </div>
-            <div class="edu-modal__attr-item">
-              <div class="attr-label">Prazo mínimo</div>
-              <div class="attr-value">90 dias <small>de carência</small></div>
-            </div>
-            <div class="edu-modal__attr-item">
-              <div class="attr-label">Liquidez</div>
-              <div class="attr-value">No vencimento <small>ou mercado sec.</small></div>
-            </div>
           </div>
-        </div>
         <div class="edu-modal__footer">
           <a class="edu-modal__btn edu-modal__btn--lci" href="https://analisa.genialinvestimentos.com.br/" data-plataforma="1" target="_blank" rel="noopener noreferrer">
             Investir em LCI/LCA na plataforma 
@@ -487,45 +412,27 @@
                 <polyline points="16 7 22 7 22 13" />
               </svg>
             </div>
-            <p>Ao comprar uma debênture, você <strong>empresta dinheiro diretamente a uma empresa</strong>. As <strong>Debêntures Incentivadas</strong> (Lei 12.431) financiam projetos de infraestrutura — energia, transporte, saneamento — e são completamente isentas de IR para pessoas físicas.</p>
+            <p>Ao comprar uma debênture, você <strong>empresta dinheiro diretamente a uma empresa</strong>. As <strong>Debêntures Incentivadas</strong> (Lei 12.431) financiam projetos de infraestrutura energia, transporte, saneamento e são completamente isentas de IR para pessoas físicas.</p>
           </div>
           <div class="edu-modal__section">
             <div class="edu-modal__section-title edu-modal__section-title--deb">Como funciona</div>
             <ul class="edu-modal__list edu-modal__list--deb">
-              <li>Você compra o título e a empresa paga juros periódicos (semestral ou anual) durante o prazo</li>
-              <li>No vencimento, recebe o valor principal corrigido pelo IPCA mais o spread combinado</li>
-              <li>As debêntures incentivadas financiam projetos aprovados pelo governo — daí a isenção de IR</li>
-              <li>Podem ser negociadas no mercado secundário antes do vencimento, se necessário</li>
+              <li>O emissor paga juros periódicos ao detentor do título durante toda a vigência do contrato</li>
+              <li>No vencimento, o investidor recebe o valor principal acrescido da rentabilidade contratada</li>
+              <li>As debêntures incentivadas financiam projetos de infraestrutura aprovados pelo governo, o que garante a isenção de IR</li>
+              <li>Podem ser negociadas no mercado secundário antes do vencimento</li>
             </ul>
           </div>
           <div class="edu-modal__section">
             <div class="edu-modal__section-title edu-modal__section-title--deb">Por que escolher</div>
             <ul class="edu-modal__list edu-modal__list--deb">
-              <li>Isenção de IR para pessoas físicas — 100% do rendimento fica com você</li>
+              <li>Isenção de IR para pessoas físicas 100% do rendimento fica com você</li>
               <li>Proteção real contra a inflação: seu poder de compra é preservado ao longo do tempo</li>
               <li>Rentabilidade historicamente superior a títulos bancários de prazo equivalente</li>
               <li>Diversificação: exposição ao setor produtivo fora do sistema bancário tradicional</li>
             </ul>
           </div>
-          <div class="edu-modal__attrs-grid">
-            <div class="edu-modal__attr-item">
-              <div class="attr-label">Imposto de Renda</div>
-              <div class="attr-value" style="color:#7c3aed">✓ Isento <small>nas incentivadas (PF)</small></div>
-            </div>
-            <div class="edu-modal__attr-item">
-              <div class="attr-label">Garantia</div>
-              <div class="attr-value">Sem FGC <small>risco do emissor</small></div>
-            </div>
-            <div class="edu-modal__attr-item">
-              <div class="attr-label">Prazo típico</div>
-              <div class="attr-value">3 a 10 anos <small>longo prazo</small></div>
-            </div>
-            <div class="edu-modal__attr-item">
-              <div class="attr-label">Liquidez</div>
-              <div class="attr-value">Mercado sec. <small>ou no vencimento</small></div>
-            </div>
           </div>
-        </div>
         <div class="edu-modal__footer">
           <a class="edu-modal__btn edu-modal__btn--deb" href="https://analisa.genialinvestimentos.com.br/" data-plataforma="1" target="_blank" rel="noopener noreferrer">
             Investir em Debêntures na plataforma 
@@ -842,6 +749,46 @@
   }
 })();
 </script>
+
+
+<div id="brb-cookie-banner" role="dialog" aria-modal="false" aria-label="Preferências de cookies" style="display:none">
+      <div class="cookie-inner">
+        <div class="cookie-icon" aria-hidden="true">
+          <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 0a6 6 0 0 1 6 6m-6 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-4 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm5 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+          </svg>
+        </div>
+
+        <div class="cookie-text">
+          <strong>Utilizamos cookies</strong>
+          <p>
+            Para melhorar sua experiência e personalizar conteúdos. Veja nossa
+            <a href="../pdfs/Política de Privacidade.pdf" target="_blank" rel="noopener noreferrer">Política de Privacidade</a>.
+          </p>
+
+          <div class="cookie-categories">
+            <label class="cookie-cat">
+              <input type="checkbox" value="necessários" checked disabled />
+              <span class="cookie-cat-label">Necessários <em>(obrigatório)</em></span>
+            </label>
+            <label class="cookie-cat">
+              <input type="checkbox" value="analíticos" checked />
+              <span class="cookie-cat-label">Analíticos</span>
+            </label>
+            <label class="cookie-cat">
+              <input type="checkbox" value="marketing" checked />
+              <span class="cookie-cat-label">Marketing</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="cookie-actions">
+          <button id="brb-cookie-accept" class="cookie-btn-accept">Aceitar cookies</button>
+          <button id="brb-cookie-reject" class="cookie-btn-reject">Só necessários</button>
+        </div>
+      </div>
+    </div>
+<script src="../js/cookies.js"></script>
 
 </body>
 </html>

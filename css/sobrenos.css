@@ -839,6 +839,7 @@ nav {
 
 .sn-about__image img {
   width: 100%;
+  border-radius: 100px;
   height: 100%;
   object-fit: cover;
   display: block;

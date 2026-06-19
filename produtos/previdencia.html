@@ -44,51 +44,12 @@
         }
       }
     </style>
-  </head>
+    <link rel="stylesheet" href="../css/cookies.css" />
+</head>
 
   <body>
-    <div id="brb-cookie-banner" role="dialog" aria-modal="false" aria-label="Preferências de cookies">
-      <div class="cookie-inner">
-        <div class="cookie-icon" aria-hidden="true">
-          <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 0a6 6 0 0 1 6 6m-6 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-4 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm5 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
-          </svg>
-        </div>
 
-        <div class="cookie-text">
-          <strong>Utilizamos cookies</strong>
-          <p>
-            Para melhorar sua experiência e personalizar conteúdos. Veja nossa
-            <a href="../pdfs/Política de Privacidade.pdf" target="_blank" rel="noopener noreferrer">Política de Privacidade</a>.
-          </p>
-
-          <div class="cookie-categories">
-            <label class="cookie-cat">
-              <input type="checkbox" value="necessários" checked disabled />
-              <span class="cookie-cat-label">Necessários <em>(obrigatório)</em></span>
-            </label>
-            <label class="cookie-cat">
-              <input type="checkbox" value="analíticos" checked />
-              <span class="cookie-cat-label">Analíticos</span>
-            </label>
-            <label class="cookie-cat">
-              <input type="checkbox" value="marketing" checked />
-              <span class="cookie-cat-label">Marketing</span>
-            </label>
-          </div>
-        </div>
-
-        <div class="cookie-actions">
-          <button id="brb-cookie-accept" class="cookie-btn-accept">Aceitar cookies</button>
-          <button id="brb-cookie-reject" class="cookie-btn-reject">Só necessários</button>
-        </div>
-      </div>
-    </div>
-
-    <link rel="stylesheet" href="../css/cookies.css" />
-    <script src="../js/cookies.js"></script>
-
-    <div class="reading-progress" aria-hidden="true">
+<div class="reading-progress" aria-hidden="true">
       <div class="reading-progress__bar" id="readingBar"></div>
     </div>
 
@@ -217,7 +178,7 @@
               </div>
               <div class="edu-card__label">Previdência</div>
               <div class="edu-card__title">PGBL</div>
-              <div class="edu-card__desc">Plano Gerador de Benefício Livre — ideal para quem faz a declaração completa do Imposto de Renda.</div>
+              <div class="edu-card__desc">Plano Gerador de Benefício Livre ideal para quem faz a declaração completa do Imposto de Renda.</div>
               <div class="edu-card__attrs">
                 <span class="edu-attr edu-attr--cdb">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 17 13.5 8.5 8.5 13.5 2 7"/><polyline points="16 17 22 17 22 11"/></svg> Benefício Fiscal
@@ -251,7 +212,7 @@
               </div>
               <div class="edu-card__label">Previdência</div>
               <div class="edu-card__title">VGBL</div>
-              <div class="edu-card__desc">Vida Gerador de Benefício Livre — indicado para quem usa a declaração simplificada ou já atingiu o teto do PGBL.</div>
+              <div class="edu-card__desc">Vida Gerador de Benefício Livre indicado para quem usa a declaração simplificada ou já atingiu o teto do PGBL.</div>
               <div class="edu-card__attrs">
                 <span class="edu-attr edu-attr--lci">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg> IR s/ Rendimento
@@ -348,29 +309,11 @@
             <ul class="edu-modal__list edu-modal__list--cdb">
               <li>Diferimento fiscal: você paga menos imposto agora para investir mais</li>
               <li>Poder dos juros compostos sobre o valor que seria pago em impostos</li>
-              <li>Gestão profissional dos fundos de previdência da BRB Investimentos</li>
+              <li>Gestão profissional por meio de fundos de previdência regulamentados pela SUSEP</li>
               <li>Excelente ferramenta de planejamento sucessório</li>
             </ul>
           </div>
-          <div class="edu-modal__attrs-grid">
-            <div class="edu-modal__attr-item">
-              <div class="attr-label">Indicação</div>
-              <div class="attr-value">Declaração Completa</div>
-            </div>
-            <div class="edu-modal__attr-item">
-              <div class="attr-label">Dedução Fiscal</div>
-              <div class="attr-value">Até 12% <small>da renda bruta</small></div>
-            </div>
-            <div class="edu-modal__attr-item">
-              <div class="attr-label">Incidência IR</div>
-              <div class="attr-value">Sobre o total <small>resgatado</small></div>
-            </div>
-            <div class="edu-modal__attr-item">
-              <div class="attr-label">Taxa de Carregamento</div>
-              <div class="attr-value">Consulte o plano</div>
-            </div>
           </div>
-        </div>
         <div class="edu-modal__footer">
           <a class="edu-modal__btn edu-modal__btn--cdb" href="https://brb.genialinvestimentos.com.br/auth/login" data-plataforma="1" target="_blank" rel="noopener noreferrer">
             Contratar PGBL na plataforma 
@@ -423,25 +366,7 @@
               <li>Flexibilidade de aportes e prazos de resgate</li>
             </ul>
           </div>
-          <div class="edu-modal__attrs-grid">
-            <div class="edu-modal__attr-item">
-              <div class="attr-label">Indicação</div>
-              <div class="attr-value">Declaração Simplificada</div>
-            </div>
-            <div class="edu-modal__attr-item">
-              <div class="attr-label">Dedução Fiscal</div>
-              <div class="attr-value">Não possui</div>
-            </div>
-            <div class="edu-modal__attr-item">
-              <div class="attr-label">Incidência IR</div>
-              <div class="attr-value">Apenas s/ rendimento</div>
-            </div>
-            <div class="edu-modal__attr-item">
-              <div class="attr-label">Sucessão</div>
-              <div class="attr-value">Rápida e Facilitada</div>
-            </div>
           </div>
-        </div>
         <div class="edu-modal__footer">
           <a class="edu-modal__btn edu-modal__btn--lci" href="https://analisa.genialinvestimentos.com.br/" data-plataforma="1" target="_blank" rel="noopener noreferrer">
             Contratar VGBL na plataforma 
@@ -494,25 +419,7 @@
               <li>Indicado para quem planeja resgates em prazos mais curtos ou valores baixos</li>
             </ul>
           </div>
-          <div class="edu-modal__attrs-grid">
-            <div class="edu-modal__attr-item">
-              <div class="attr-label">Regressivo Min.</div>
-              <div class="attr-value" style="color:#7c3aed">10% <small>(após 10 anos)</small></div>
-            </div>
-            <div class="edu-modal__attr-item">
-              <div class="attr-label">Progressivo Max.</div>
-              <div class="attr-value">27,5% <small>(conforme renda)</small></div>
-            </div>
-            <div class="edu-modal__attr-item">
-              <div class="attr-label">Portabilidade</div>
-              <li>Pode mudar do Prog. para o Reg.</li>
-            </div>
-            <div class="edu-modal__attr-item">
-              <div class="attr-label">Pode inverter?</div>
-              <div class="attr-value">Não <small>do Reg. para o Prog.</small></div>
-            </div>
           </div>
-        </div>
         <div class="edu-modal__footer">
           <a class="edu-modal__btn edu-modal__btn--deb" href="https://analisa.genialinvestimentos.com.br/" data-plataforma="1" target="_blank" rel="noopener noreferrer">
             Simular tributação na plataforma 
@@ -778,7 +685,7 @@
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0056A8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg>
           </div>
           <h3>Flexibilidade de Aportes</h3>
-          <p>Contribua mensalmente, faça aportes extras quando quiser e ajuste as contribuições de acordo com sua situação financeira — sem burocracia.</p>
+          <p>Contribua mensalmente, faça aportes extras quando quiser e ajuste as contribuições de acordo com sua situação financeira sem burocracia.</p>
         </div>
       </div>
     </section>
@@ -1000,7 +907,7 @@
         </div>
         <div class="footer-center">
           <p class="brbdireitos">© 2026 BRB Investimentos</p>
-          <p class="footer-address">BL B — Centro Empresarial CNC — SAUN Quadra 5, Lote C, 2º andar — Brasília/DF</p>
+          <p class="footer-address">BL B Centro Empresarial CNC SAUN Quadra 5, Lote C, 2º andar Brasília/DF</p>
         </div>
         <div class="footer-right footer-certificados">
           <img src="../img/distribuicao-geral.jpg" alt="Certificado Anbima Distribuição" />
@@ -1260,6 +1167,46 @@
   });
 })();
 </script>
+
+
+<div id="brb-cookie-banner" role="dialog" aria-modal="false" aria-label="Preferências de cookies" style="display:none">
+      <div class="cookie-inner">
+        <div class="cookie-icon" aria-hidden="true">
+          <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 0a6 6 0 0 1 6 6m-6 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-4 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm5 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+          </svg>
+        </div>
+
+        <div class="cookie-text">
+          <strong>Utilizamos cookies</strong>
+          <p>
+            Para melhorar sua experiência e personalizar conteúdos. Veja nossa
+            <a href="../pdfs/Política de Privacidade.pdf" target="_blank" rel="noopener noreferrer">Política de Privacidade</a>.
+          </p>
+
+          <div class="cookie-categories">
+            <label class="cookie-cat">
+              <input type="checkbox" value="necessários" checked disabled />
+              <span class="cookie-cat-label">Necessários <em>(obrigatório)</em></span>
+            </label>
+            <label class="cookie-cat">
+              <input type="checkbox" value="analíticos" checked />
+              <span class="cookie-cat-label">Analíticos</span>
+            </label>
+            <label class="cookie-cat">
+              <input type="checkbox" value="marketing" checked />
+              <span class="cookie-cat-label">Marketing</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="cookie-actions">
+          <button id="brb-cookie-accept" class="cookie-btn-accept">Aceitar cookies</button>
+          <button id="brb-cookie-reject" class="cookie-btn-reject">Só necessários</button>
+        </div>
+      </div>
+    </div>
+<script src="../js/cookies.js"></script>
 
 </body>
 </html>

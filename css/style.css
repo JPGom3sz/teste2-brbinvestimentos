@@ -62,7 +62,7 @@
   --container:     1400px;
   --px:            3rem;
   --header-h:      75px;
-  --ticker-h:      38px;
+  --ticker-h:      48px;
   --ease:          0.25s ease;
   --card-bg:       rgba(255, 255, 255, 0.06);
   --card-border:   rgba(255, 255, 255, 0.13);
@@ -874,18 +874,53 @@ header.header-hidden ~ .cotacao-ticker-bar,
 
 /* Responsividade Mobile do Ticker */
 @media (max-width: 768px) {
+  :root {
+    --ticker-h: 64px;
+  }
   .cotacao-label {
-    font-size: 0.65rem;
-    padding-right: 0.8rem;
+    font-size: 0.74rem;
+    padding-right: 0.9rem;
+    gap: 0.4rem;
+  }
+  .cotacao-label svg {
+    width: 17px;
+    height: 17px;
   }
   .cotacao-item {
-    font-size: 0.75rem;
+    font-size: 0.85rem;
+    gap: 0.35rem;
   }
   .cotacao-item-buy {
+    font-size: 1rem;
+  }
+  .cotacao-item-buy small {
+    font-size: 0.75em;
+  }
+  .cotacao-var-up,
+  .cotacao-var-down {
     font-size: 0.85rem;
   }
   .cotacao-separator {
     margin: 0 1rem;
+  }
+}
+
+/* Telas pequenas: encolhe ainda mais o label e libera espaço para os números */
+@media (max-width: 600px) {
+  .cotacao-label-sub {
+    display: none;
+  }
+  .cotacao-label {
+    font-size: 0.68rem;
+    padding-right: 0.55rem;
+    gap: 0.3rem;
+  }
+  .cotacao-label svg {
+    width: 14px;
+    height: 14px;
+  }
+  .cotacao-ticker-inner {
+    gap: 0.6rem;
   }
 }
 
@@ -2138,4 +2173,45 @@ footer {
     opacity: 1;
     visibility: visible;
   }
+}
+
+
+.btn-rf-primary {
+  background: var(--primary-blue);
+  color: #fff;
+  border: none;
+  padding: 0.9rem 2rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-rf-primary:hover {
+  background: var(--bright-blue);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 128, 216, 0.35);
+}
+
+.btn-rf-outline {
+  background: transparent;
+  color: #fff;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  padding: 0.9rem 1.8rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-rf-outline:hover {
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
 }

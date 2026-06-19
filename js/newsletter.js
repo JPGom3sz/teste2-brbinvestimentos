@@ -48,13 +48,23 @@ if (form) {
     let valid = true;
 
     /* --- e-mail obrigatório e válido --- */
-    if (!email.value || !email.checkValidity()) {
-      showError(email, 'Informe um e-mail válido.');
-      valid = false;
-    } else if (!nome.value|| !nome.checkValidity()){
-        showError(nome, 'Informe seu nome.');
-        valid = false
-    }
+    // Removemos os "else if" para que o código verifique todos os campos de uma vez.
+if (!email.value || !email.checkValidity()) {
+    showError(email, 'Informe um e-mail válido.');
+    valid = false;
+} 
+
+if (!nome.value || !nome.checkValidity()){
+    showError(nome, 'Informe seu nome.');
+    valid = false;
+}
+
+// O telefone agora é verificado de forma independente
+if (telefone && (!telefone.value || !telefone.checkValidity())) {
+    showError(telefone, 'Informe seu telefone.');
+    valid = false;
+}
+    
 
     /* --- regra dos checkboxes ---
          Mínimo 2 marcados, privacidade OBRIGATÓRIA entre eles.
