@@ -1801,4 +1801,119 @@ footer {
     flex-direction: column;
     gap: 0.8rem;
   }
+} /* <--- CHAVE FECHANDO O MEDIA QUERY max-width: 600px */
+
+/* ============================================================
+   FAQ RENDA VARIAVEL
+   ============================================================ */
+.rv-faq {
+  background: #fff;
+  padding: 6rem var(--px, 3rem);
+}
+
+.rv-faq-layout {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+.rv-faq-left h2 {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 800;
+  color: #001F3F;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.rv-faq-left p {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.rv-faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.rv-faq-item {
+  border: 1px solid #e8edf2;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+
+.rv-faq-item.is-open {
+  border-color: #0056A8;
+}
+
+.rv-faq-trigger {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 1.3rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  font-family: inherit;
+  text-align: left;
+}
+
+.rv-faq-trigger span {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #001F3F;
+}
+
+.rv-faq-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #E8F4FF;
+  color: #0056A8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  transition: background 0.2s, transform 0.3s;
+}
+
+.rv-faq-item.is-open .rv-faq-icon {
+  background: #0056A8;
+  color: #fff;
+  transform: rotate(45deg);
+}
+
+.rv-faq-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.rv-faq-item.is-open .rv-faq-body {
+  max-height: 600px;
+}
+
+.rv-faq-body-inner {
+  padding: 0 1.5rem 1.4rem;
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.75;
+}
+
+
+
+@media (max-width: 768px) {
+  .rv-faq-layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
 }

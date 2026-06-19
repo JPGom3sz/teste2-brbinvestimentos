@@ -528,7 +528,7 @@ nav {
   align-items: center;
   gap: 1.2rem;
   flex-wrap: wrap;
-  margin-top: -30px;
+  margin-top: 0px;
 }
 
 .btn-primary {
