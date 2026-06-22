@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/mobile-nav.css" />
     <link rel="stylesheet" href="../css/hero-responsive-fix.css" />
+    <link rel="stylesheet" href="../css/cookies.css" />
+    <link rel="stylesheet" href="../css/popup.css" />
 
     <style>
       .edu-attr {
@@ -741,10 +743,11 @@
         <div class="footer-column regulatorio">
           <h4>Regulatórios</h4>
           <ul>
-            <li><a href="../pdfs/Política de Privacidade.pdf" target="_blank" rel="noopener noreferrer">Política de Privacidade</a></li>
-            <li><a href="../pdfs/4. Termo Abertura Conta Corrente  PF.pdf" target="_blank" rel="noopener noreferrer">Termos de Abertura de Conta Genial</a></li>
-            <li><a href="../pdfs/RPA_B3_Genial_Janeiro_2026.pdf" target="_blank" rel="noopener noreferrer">Regras e Parâmetros de Atuação</a></li>
-            <li><a href="../pdfs/CONTRATO DE INTERMEDIAÇÃO.pdf" target="_blank" rel="noopener noreferrer">Contrato de Intermediação</a></li>
+            <li><a href="../pdfs/Política de Privacidade.pdf" target="_blank">Política de Privacidade</a></li>
+            <li><a href="../pdfs/4. Termo Abertura Conta Corrente  PF.pdf" target="_blank">Termos de Abertura de conta</a></li>
+            <li><a href="../pdfs/RPA_B3_Genial_Janeiro_2026.pdf" target="_blank">Regras e Parâmetros de Atuação</a></li>
+            <li><a href="../pdfs/Termo de Renda Fixa.pdf" target="_blank">Termo de Renda Fixa</a></li>
+            <li><a href="../pdfs/CONTRATO DE INTERMEDIAÇÃO.pdf" target="_blank">Contrato de Intermediação</a></li>
           </ul>
         </div>
       </div>
@@ -789,6 +792,121 @@
   });
 })();
 </script>
+
+<!-- ════════════════════════════════════════════════════════
+       BANNER DE COOKIES (LGPD)
+       ════════════════════════════════════════════════════════ -->
+  <div id="brb-cookie-banner" role="dialog" aria-live="polite" aria-label="Aviso de cookies">
+    <div class="cookie-inner">
+      <div class="cookie-icon" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="9"/>
+          <circle cx="9" cy="10" r="1" fill="currentColor"/>
+          <circle cx="14.5" cy="9" r="1" fill="currentColor"/>
+          <circle cx="9.5" cy="15" r="1" fill="currentColor"/>
+          <circle cx="14" cy="14.5" r="1" fill="currentColor"/>
+        </svg>
+      </div>
+
+      <div class="cookie-text">
+        <strong>Nós usamos cookies</strong>
+        <p>
+          Utilizamos cookies para melhorar sua experiência, personalizar conteúdo e analisar o tráfego do site. Você pode escolher quais categorias aceitar. Saiba mais em nossa
+          <a href="pdfs/Política de Privacidade.pdf" target="_blank" rel="noopener noreferrer">Política de Privacidade</a>.
+        </p>
+
+        <div class="cookie-categories">
+          <label class="cookie-cat">
+            <input type="checkbox" value="necessários" checked disabled />
+            <span class="cookie-cat-label">Necessários<em>(sempre ativos)</em></span>
+          </label>
+          <label class="cookie-cat">
+            <input type="checkbox" value="analíticos" />
+            <span class="cookie-cat-label">Analíticos</span>
+          </label>
+          <label class="cookie-cat">
+            <input type="checkbox" value="marketing" />
+            <span class="cookie-cat-label">Marketing</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="cookie-actions">
+        <button type="button" class="cookie-btn-accept" id="brb-cookie-accept">Aceitar todos</button>
+        <button type="button" class="cookie-btn-reject" id="brb-cookie-reject">Apenas necessários</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════════════════
+       POPUP DE CAPTAÇÃO DE LEADS
+       ════════════════════════════════════════════════════════ -->
+  <div id="brb-popup-overlay" role="dialog" aria-modal="true" aria-label="Cadastro de interesse">
+    <div id="brb-popup">
+      <button type="button" id="brb-popup-close" aria-label="Fechar">&times;</button>
+
+      <div id="popup-form-body">
+        <div class="popup-badge">
+          <span class="popup-badge-dot" aria-hidden="true"></span>
+          <span>BRB Investimentos</span>
+        </div>
+
+        <h3 class="popup-title">
+          Receba <span class="popup-highlight">conteúdo exclusivo</span> sobre investimentos
+        </h3>
+        <p class="popup-subtitle">
+          Cadastre-se e fique por dentro das melhores oportunidades, análises de mercado e novidades da plataforma.
+        </p>
+
+        <form id="brb-popup-form" class="popup-form">
+          <div class="popup-field">
+            <label for="popup-name">Nome completo</label>
+            <input type="text" id="popup-name" name="nome" placeholder="Digite seu nome" autocomplete="name" />
+            <span class="popup-error-msg" id="popup-name-error"></span>
+          </div>
+
+          <div class="popup-field">
+            <label for="popup-email">E-mail</label>
+            <input type="email" id="popup-email" name="email" placeholder="seu@email.com" autocomplete="email" />
+            <span class="popup-error-msg" id="popup-email-error"></span>
+          </div>
+
+          <div class="popup-field">
+            <label for="popup-phone">Telefone</label>
+            <input type="tel" id="popup-phone" name="telefone" placeholder="(00) 00000-0000" autocomplete="tel" />
+            <span class="popup-error-msg" id="popup-phone-error"></span>
+          </div>
+
+          <label class="popup-lgpd" for="popup-lgpd">
+            <input type="checkbox" id="popup-lgpd" name="lgpd" />
+            <span class="popup-lgpd-text">
+              Estou de acordo com a
+              <a href="pdfs/Política de Privacidade.pdf" target="_blank" rel="noopener noreferrer">Política de Privacidade</a>
+              e autorizo o contato da BRB Investimentos.
+            </span>
+          </label>
+          <span class="popup-error-msg" id="popup-lgpd-error"></span>
+
+          <button type="submit" class="popup-btn-submit">
+            Quero receber novidades
+          </button>
+        </form>
+      </div>
+
+      <div id="popup-success" class="popup-success">
+        <div class="popup-success-icon" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+        </div>
+        <h3>Cadastro recebido!</h3>
+        <p>Em breve nossa equipe entrará em contato com novidades exclusivas para você.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/cookies.js"></script>
+  <script src="../js/popup.js"></script>
 
 </body>
 </html>

@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="../css/newsletter.css" />
   <link rel="stylesheet" href="../css/mobile-nav.css" />
   <link rel="stylesheet" href="../css/cookies.css" />
+  <link rel="stylesheet" href="../css/popup.css" />
 </head>
 
 <!-- Estilos e script do banner de cookies -->
@@ -321,61 +322,55 @@
   </script>
   <script src="../js/newsletter.js?v=2"></script>
 
-<div id="brb-cookie-banner" role="dialog" aria-modal="false" aria-label="Preferências de cookies" style="display:none">
+<!-- ════════════════════════════════════════════════════════
+       BANNER DE COOKIES (LGPD)
+       ════════════════════════════════════════════════════════ -->
+  <div id="brb-cookie-banner" role="dialog" aria-live="polite" aria-label="Aviso de cookies">
+    <div class="cookie-inner">
+      <div class="cookie-icon" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="9"/>
+          <circle cx="9" cy="10" r="1" fill="currentColor"/>
+          <circle cx="14.5" cy="9" r="1" fill="currentColor"/>
+          <circle cx="9.5" cy="15" r="1" fill="currentColor"/>
+          <circle cx="14" cy="14.5" r="1" fill="currentColor"/>
+        </svg>
+      </div>
 
-  <div class="cookie-inner">
+      <div class="cookie-text">
+        <strong>Nós usamos cookies</strong>
+        <p>
+          Utilizamos cookies para melhorar sua experiência, personalizar conteúdo e analisar o tráfego do site. Você pode escolher quais categorias aceitar. Saiba mais em nossa
+          <a href="pdfs/Política de Privacidade.pdf" target="_blank" rel="noopener noreferrer">Política de Privacidade</a>.
+        </p>
 
-    <!-- Ícone -->
-    <div class="cookie-icon" aria-hidden="true">
-      <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-        <path stroke-linecap="round" stroke-linejoin="round"
-          d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 0a6 6 0 0 1 6 6m-6 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-4 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm5 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
-      </svg>
-    </div>
+        <div class="cookie-categories">
+          <label class="cookie-cat">
+            <input type="checkbox" value="necessários" checked disabled />
+            <span class="cookie-cat-label">Necessários<em>(sempre ativos)</em></span>
+          </label>
+          <label class="cookie-cat">
+            <input type="checkbox" value="analíticos" />
+            <span class="cookie-cat-label">Analíticos</span>
+          </label>
+          <label class="cookie-cat">
+            <input type="checkbox" value="marketing" />
+            <span class="cookie-cat-label">Marketing</span>
+          </label>
+        </div>
+      </div>
 
-    <!-- Texto + Categorias -->
-    <div class="cookie-text">
-      <strong>Utilizamos cookies</strong>
-      <p>
-        Para melhorar sua experiência e personalizar conteúdos. Veja nossa
-        <a href="../pdfs/Política de Privacidade.pdf" target="_blank" rel="noopener noreferrer">Política de Privacidade</a>.
-      </p>
-
-      <!-- Categorias -->
-      <div class="cookie-categories">
-
-        <label class="cookie-cat">
-          <input type="checkbox" value="necessários" checked disabled />
-          <span class="cookie-cat-label">Necessários <em>(obrigatório)</em></span>
-        </label>
-
-        <label class="cookie-cat">
-          <input type="checkbox" value="analíticos" checked />
-          <span class="cookie-cat-label">Analíticos</span>
-        </label>
-
-        <label class="cookie-cat">
-          <input type="checkbox" value="marketing" checked />
-          <span class="cookie-cat-label">Marketing</span>
-        </label>
-
+      <div class="cookie-actions">
+        <button type="button" class="cookie-btn-accept" id="brb-cookie-accept">Aceitar todos</button>
+        <button type="button" class="cookie-btn-reject" id="brb-cookie-reject">Apenas necessários</button>
       </div>
     </div>
-
-    <!-- Botões -->
-    <div class="cookie-actions">
-      <button id="brb-cookie-accept" class="cookie-btn-accept">
-        Aceitar cookies
-      </button>
-      <button id="brb-cookie-reject" class="cookie-btn-reject">
-        Só necessários
-      </button>
-    </div>
-
   </div>
 
-</div>
-<script src="../js/cookies.js"></script>
+
+  <script src="../js/cookies.js"></script>
+  
+
 
 </body>
 </html>
