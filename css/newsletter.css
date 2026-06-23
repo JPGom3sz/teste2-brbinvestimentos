@@ -398,6 +398,16 @@ nav {
   overflow: hidden;
 }
 
+.hero-newsletter::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 85% 20%, rgba(145, 212, 250, 0.16) 0%, transparent 45%),
+    radial-gradient(circle at 10% 85%, rgba(0, 128, 216, 0.18) 0%, transparent 50%);
+  pointer-events: none;
+}
+
 .hero-newsletter .hero-grid {
   width: 100%;
   position: relative;
@@ -410,7 +420,37 @@ nav {
   max-width: 620px;
 }
 
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(6px);
+  color: var(--accent-gold);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
 
+.hero-eyebrow__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent-gold);
+  box-shadow: 0 0 0 0 rgba(145, 212, 250, 0.6);
+  animation: pulseDot 1.8s ease-in-out infinite;
+}
+
+@keyframes pulseDot {
+  0%   { box-shadow: 0 0 0 0 rgba(145, 212, 250, 0.55); }
+  70%  { box-shadow: 0 0 0 6px rgba(145, 212, 250, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(145, 212, 250, 0); }
+}
 
 .hero-text h1 {
   font-size: clamp(2.4rem, 4vw, 3.8rem);
@@ -430,7 +470,69 @@ nav {
   color: rgba(255, 255, 255, 0.85);
   line-height: 1.7;
   max-width: 520px;
+  margin-bottom: 2.4rem;
 }
+
+/* ----- Prova social / stats no hero ----- */
+.hero-proof {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+  flex-wrap: wrap;
+}
+
+.hero-proof__stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-proof__num {
+  font-size: 1.7rem;
+  font-weight: 900;
+  color: #fff;
+  line-height: 1.1;
+}
+
+.hero-proof__label {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.65);
+  font-weight: 600;
+  margin-top: 0.15rem;
+}
+
+.hero-proof__divider {
+  width: 1px;
+  height: 38px;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.hero-proof__avatars {
+  display: flex;
+  align-items: center;
+}
+
+.hero-proof__avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 2px solid var(--deep-navy);
+  margin-left: -10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+.hero-proof__avatar:first-child {
+  margin-left: 0;
+}
+
+.hero-proof__avatar:nth-child(1) { background: linear-gradient(135deg, #0056A8, #0080D8); }
+.hero-proof__avatar:nth-child(2) { background: linear-gradient(135deg, #1e9e5b, #22c55e); }
+.hero-proof__avatar:nth-child(3) { background: linear-gradient(135deg, #91d4fa, #0080D8); color: var(--deep-navy); }
+.hero-proof__avatar:nth-child(4) { background: rgba(255, 255, 255, 0.12); border-style: dashed; }
 
 /* ============================================================
    7. FORMULÁRIO DE INSCRIÇÃO
@@ -497,6 +599,12 @@ nav {
   font-size: 0.92rem;
   color: var(--text-dark);
   line-height: 1.5;
+  padding: 0.4rem 0;
+  transition: transform 0.25s ease;
+}
+
+.nl-features li:hover {
+  transform: translateX(4px);
 }
 
 .nl-features__dot {
@@ -509,6 +617,12 @@ nav {
   justify-content: center;
   flex-shrink: 0;
   margin-top: 1px;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.nl-features li:hover .nl-features__dot {
+  background: var(--bright-blue);
+  transform: scale(1.12);
 }
 
 .nl-features__dot::after {
@@ -539,6 +653,23 @@ nav {
 
 .nl-frequency__icon {
   font-size: 1.1rem;
+}
+
+/* ----- Selo de confiança extra ----- */
+.nl-trust {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 1.1rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.nl-trust svg {
+  width: 17px;
+  height: 17px;
+  color: var(--primary-blue);
+  flex-shrink: 0;
 }
 
 .newsletter-form-wrap {
@@ -576,7 +707,38 @@ nav {
 .newsletter-form .form-sub {
   font-size: 0.83rem;
   color: var(--text-muted);
-  margin-bottom: 2rem;
+  margin-bottom: 1.4rem;
+}
+
+/* ----- Barra de progresso do preenchimento ----- */
+.form-progress {
+  margin-bottom: 1.8rem;
+}
+
+.form-progress__track {
+  width: 100%;
+  height: 5px;
+  background: #eef1f6;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.form-progress__bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--primary-blue), var(--accent-gold));
+  border-radius: 999px;
+  transition: width 0.35s ease;
+}
+
+.form-progress__label {
+  display: block;
+  font-size: 0.7rem;
+  color: #8a9ab0;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-top: 0.5rem;
 }
 
 .input-group {
@@ -643,14 +805,34 @@ nav {
   display: block;
 }
 
+/* ----- Temas de interesse como cards/toggle (visual novo, checkbox real escondido) ----- */
+.checkbox-group {
+  margin-bottom: 1.6rem;
+}
+
 .checkbox-group label {
   display: flex;
   align-items: center;
   gap: 10px;
   font-size: 0.88rem;
   color: var(--text-dark);
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.6rem;
   cursor: pointer;
+  padding: 0.75rem 0.9rem;
+  border-radius: 10px;
+  border: 1.5px solid #e7ebf1;
+  background: #f7f9fc;
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.15s ease;
+}
+
+.checkbox-group label:hover {
+  border-color: var(--primary-blue);
+  transform: translateX(2px);
+}
+
+.checkbox-group label:has(input:checked) {
+  border-color: var(--primary-blue);
+  background: var(--light-blue);
 }
 
 .checkbox-group input[type="checkbox"],
@@ -1137,6 +1319,10 @@ footer {
 
   .hero-text h1 { font-size: 1.9rem; }
 
+  .hero-proof {
+    gap: 1.2rem;
+  }
+
   .newsletter { padding: 60px 1.5rem; }
 
   .newsletter-grid {
@@ -1208,6 +1394,13 @@ footer {
 
   .hero-text h1 { font-size: 1.65rem; }
   .hero-text p  { font-size: 0.95rem; }
+
+  .hero-proof {
+    gap: 1rem;
+  }
+
+  .hero-proof__divider { display: none; }
+
   .newsletter { padding: 48px 1.25rem; }
 
   .newsletter-form { padding: 1.6rem; }
@@ -1291,7 +1484,6 @@ footer {
   transition: width 0.1s ease;
   border-radius: 0 2px 2px 0;
 }
-
 
 
 

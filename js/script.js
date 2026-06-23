@@ -97,20 +97,39 @@ function initMobileMenu() {
     return;
   }
 
+  // Guarda a posição do scroll para restaurar ao fechar (necessário no iOS/Safari)
+  let scrollY = 0;
+
+  const lockScroll = () => {
+    scrollY = window.scrollY;
+    document.body.style.overflow   = 'hidden';
+    document.body.style.position   = 'fixed';
+    document.body.style.top        = `-${scrollY}px`;
+    document.body.style.width      = '100%';
+  };
+
+  const unlockScroll = () => {
+    document.body.style.overflow   = '';
+    document.body.style.position   = '';
+    document.body.style.top        = '';
+    document.body.style.width      = '';
+    window.scrollTo(0, scrollY); // Restaura a posição exata onde o usuário estava
+  };
+
   const openMenu = () => {
+    lockScroll();
     navLinks.classList.add('active');
     mobileToggle.classList.add('active');
     menuOverlay.classList.add('active');
     mobileToggle.setAttribute('aria-expanded', 'true');
-    document.body.style.overflow = 'hidden'; // Impede o scroll na página ao abrir o menu
   };
 
   const closeMenu = () => {
+    unlockScroll();
     navLinks.classList.remove('active');
     mobileToggle.classList.remove('active');
     menuOverlay.classList.remove('active');
     mobileToggle.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
   };
 
   mobileToggle.addEventListener('click', () => {
@@ -1285,3 +1304,5 @@ function initFundCardsAccordion() {
     // Init
     applyFilters();
 })();
+
+

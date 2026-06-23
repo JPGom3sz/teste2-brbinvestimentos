@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Guias Práticos - BRB Investimentos</title>
-  
+
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../css/style-enhance.css" />
   <link rel="stylesheet" href="../css/style.css" />
@@ -119,26 +119,83 @@
       <p class="tutoriais-hero__eyebrow">Central de Ajuda</p>
       <h1 class="tutoriais-hero__title">Guias Práticos</h1>
       <p class="tutoriais-hero__subtitle">Aprenda a utilizar a plataforma BRB Investimentos com nossos guias práticos e passo a passo detalhados.</p>
+
+      <div class="tutoriais-hero__stats">
+        <div class="tutoriais-hero__stat">
+          <span class="tutoriais-hero__stat-num" id="statTotal">7</span>
+          <span class="tutoriais-hero__stat-label">Guias disponíveis</span>
+        </div>
+        <div class="tutoriais-hero__stat">
+          <span class="tutoriais-hero__stat-num">100%</span>
+          <span class="tutoriais-hero__stat-label">Gratuitos</span>
+        </div>
+        <div class="tutoriais-hero__stat">
+          <span class="tutoriais-hero__stat-num">PDF</span>
+          <span class="tutoriais-hero__stat-label">Para baixar e guardar</span>
+        </div>
+      </div>
+
+      <div class="tutoriais-search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="11" cy="11" r="7"/>
+          <path d="M21 21L16.65 16.65"/>
+        </svg>
+        <input type="text" id="tutorialSearch" placeholder="Buscar por tema: conta, CDB, renda fixa..." aria-label="Buscar tutorial" autocomplete="off" />
+        <button type="button" class="tutoriais-search__clear" id="tutorialSearchClear" aria-label="Limpar busca">&times;</button>
+      </div>
     </div>
   </section>
 
+  <div class="tutoriais-filters-wrap">
+    <div class="tutoriais-filters" id="tutorialFilters" role="tablist" aria-label="Filtrar tutoriais por categoria">
+      <button type="button" class="filter-chip is-active" data-filter="todos" role="tab" aria-selected="true">
+        Todos <span class="filter-chip__count" id="countTodos">7</span>
+      </button>
+      <button type="button" class="filter-chip" data-filter="cadastro" role="tab" aria-selected="false">
+        Cadastro &amp; Conta <span class="filter-chip__count" id="countCadastro">2</span>
+      </button>
+      <button type="button" class="filter-chip" data-filter="investimentos" role="tab" aria-selected="false">
+        Investimentos <span class="filter-chip__count" id="countInvestimentos">3</span>
+      </button>
+      <button type="button" class="filter-chip" data-filter="documentos" role="tab" aria-selected="false">
+        Documentos &amp; Impostos <span class="filter-chip__count" id="countDocumentos">1</span>
+      </button>
+      <button type="button" class="filter-chip" data-filter="plataforma" role="tab" aria-selected="false">
+        Plataforma <span class="filter-chip__count" id="countPlataforma">1</span>
+      </button>
+    </div>
+  </div>
+
   <section class="tutoriais-section">
-    <div class="tutoriais-container">
+    <div class="tutoriais-container" id="tutorialGrid">
 
-      <div class="tutorial-card" data-animate>
-        <div class="tutorial-card__icon">
-          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="24" cy="16" r="8" stroke="currentColor" stroke-width="2.5"/>
-            <path d="M10 40C10 32 16 26 24 26C32 26 38 32 38 40" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-            <path d="M32 18L36 14L40 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
+      <div class="tutorial-card" data-animate data-category="cadastro" data-search="abertura de conta brb investimentos passo a passo completo para abrir sua conta na plataforma de forma rápida e fácil">
+        <div class="tutorial-card__top">
+          <div class="tutorial-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="24" cy="16" r="8" stroke="currentColor" stroke-width="2.5"/>
+              <path d="M10 40C10 32 16 26 24 26C32 26 38 32 38 40" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M32 18L36 14L40 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <span class="tutorial-card__category">Cadastro &amp; Conta</span>
         </div>
-        <h3 class="tutorial-card__title">Abertura de Conta BRB Investimentos</h3>
-        <p class="tutorial-card__desc">Passo a passo completo para abrir sua conta na plataforma BRB Investimentos de forma rápida e fácil.</p>
+        <h3 class="tutorial-card__title" data-title>Abertura de Conta BRB Investimentos</h3>
+        <p class="tutorial-card__desc" data-desc>Passo a passo completo para abrir sua conta na plataforma BRB Investimentos de forma rápida e fácil.</p>
+        <div class="tutorial-card__meta">
+          <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7V12L15.5 14.5"/></svg>
+            5 min de leitura
+          </span>
+        </div>
         <div class="tutorial-card__footer">
           <span class="tutorial-card__badge">PDF</span>
-          <a href="../pdfs/Passo a passo -Abertura-de-conta-na-Plataforma-BRB-Investimentos.pdf" download class="btn-baixar-pdf">
-            <span>Baixar tutorial</span>
+          <a href="../pdfs/Passo a passo -Abertura-de-conta-na-Plataforma-BRB-Investimentos.pdf" download class="btn-baixar-pdf" data-download-link>
+            <span class="btn-baixar-pdf__label">Baixar tutorial</span>
+            <span class="btn-baixar-pdf__check">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Baixado
+            </span>
             <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
               <path d="M8 12L3 7L4.4 5.6L7 8.2V0H9V8.2L11.6 5.6L13 7L8 12Z"/>
               <path d="M0 14H16V16H0V14Z"/>
@@ -147,19 +204,32 @@
         </div>
       </div>
 
-      <div class="tutorial-card" data-animate>
-        <div class="tutorial-card__icon">
-          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="2.5"/>
-            <path d="M24 14V24L30 30" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-          </svg>
+      <div class="tutorial-card" data-animate data-category="cadastro" data-search="atualização de dados cadastrais mantenha seus dados sempre atualizados veja como atualizar suas informações cadastrais na plataforma">
+        <div class="tutorial-card__top">
+          <div class="tutorial-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="2.5"/>
+              <path d="M24 14V24L30 30" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <span class="tutorial-card__category">Cadastro &amp; Conta</span>
         </div>
-        <h3 class="tutorial-card__title">Atualização de Dados Cadastrais</h3>
-        <p class="tutorial-card__desc">Mantenha seus dados sempre atualizados. Veja como atualizar suas informações cadastrais na plataforma.</p>
+        <h3 class="tutorial-card__title" data-title>Atualização de Dados Cadastrais</h3>
+        <p class="tutorial-card__desc" data-desc>Mantenha seus dados sempre atualizados. Veja como atualizar suas informações cadastrais na plataforma.</p>
+        <div class="tutorial-card__meta">
+          <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7V12L15.5 14.5"/></svg>
+            3 min de leitura
+          </span>
+        </div>
         <div class="tutorial-card__footer">
           <span class="tutorial-card__badge">PDF</span>
-          <a href="../pdfs/atualizacao-cadastral.pdf.pdf" download class="btn-baixar-pdf">
-            <span>Baixar tutorial</span>
+          <a href="../pdfs/atualizacao-cadastral.pdf.pdf" download class="btn-baixar-pdf" data-download-link>
+            <span class="btn-baixar-pdf__label">Baixar tutorial</span>
+            <span class="btn-baixar-pdf__check">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Baixado
+            </span>
             <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
               <path d="M8 12L3 7L4.4 5.6L7 8.2V0H9V8.2L11.6 5.6L13 7L8 12Z"/>
               <path d="M0 14H16V16H0V14Z"/>
@@ -168,23 +238,36 @@
         </div>
       </div>
 
-      <div class="tutorial-card" data-animate>
-        <div class="tutorial-card__icon">
-          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M8 12H40V36H8V12Z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
-            <path d="M14 8V12M24 8V12M34 8V12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-            <path d="M8 18H40" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-            <circle cx="16" cy="26" r="2" fill="currentColor"/>
-            <circle cx="24" cy="26" r="2" fill="currentColor"/>
-            <circle cx="32" cy="26" r="2" fill="currentColor"/>
-          </svg>
+      <div class="tutorial-card" data-animate data-category="investimentos" data-search="preenchimento do perfil de investidor conheça o passo a passo do preenchimento do seu perfil de investidor e invista com mais assertividade suitability">
+        <div class="tutorial-card__top">
+          <div class="tutorial-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 12H40V36H8V12Z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+              <path d="M14 8V12M24 8V12M34 8V12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M8 18H40" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+              <circle cx="16" cy="26" r="2" fill="currentColor"/>
+              <circle cx="24" cy="26" r="2" fill="currentColor"/>
+              <circle cx="32" cy="26" r="2" fill="currentColor"/>
+            </svg>
+          </div>
+          <span class="tutorial-card__category">Investimentos</span>
         </div>
-        <h3 class="tutorial-card__title">Preenchimento do Perfil de Investidor</h3>
-        <p class="tutorial-card__desc">Conheça o passo a passo do preenchimento do seu perfil de investidor e invista com mais assertividade.</p>
+        <h3 class="tutorial-card__title" data-title>Preenchimento do Perfil de Investidor</h3>
+        <p class="tutorial-card__desc" data-desc>Conheça o passo a passo do preenchimento do seu perfil de investidor e invista com mais assertividade.</p>
+        <div class="tutorial-card__meta">
+          <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7V12L15.5 14.5"/></svg>
+            4 min de leitura
+          </span>
+        </div>
         <div class="tutorial-card__footer">
           <span class="tutorial-card__badge">PDF</span>
-          <a href="../pdfs/Passo a passo-Perfil-de-investidor.pdf" download class="btn-baixar-pdf">
-            <span>Baixar tutorial</span>
+          <a href="../pdfs/Passo a passo-Perfil-de-investidor.pdf" download class="btn-baixar-pdf" data-download-link>
+            <span class="btn-baixar-pdf__label">Baixar tutorial</span>
+            <span class="btn-baixar-pdf__check">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Baixado
+            </span>
             <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
               <path d="M8 12L3 7L4.4 5.6L7 8.2V0H9V8.2L11.6 5.6L13 7L8 12Z"/>
               <path d="M0 14H16V16H0V14Z"/>
@@ -193,22 +276,35 @@
         </div>
       </div>
 
-      <div class="tutorial-card" data-animate>
-        <div class="tutorial-card__icon">
-          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M8 36L18 24L26 30L40 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="40" cy="12" r="3" fill="currentColor"/>
-            <circle cx="26" cy="30" r="3" fill="currentColor"/>
-            <circle cx="18" cy="24" r="3" fill="currentColor"/>
-            <circle cx="8" cy="36" r="3" fill="currentColor"/>
-          </svg>
+      <div class="tutorial-card" data-animate data-category="investimentos" data-search="como investir em renda fixa guia completo para realizar seus primeiros investimentos de forma segura e eficiente cdb lci lca tesouro">
+        <div class="tutorial-card__top">
+          <div class="tutorial-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 36L18 24L26 30L40 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="40" cy="12" r="3" fill="currentColor"/>
+              <circle cx="26" cy="30" r="3" fill="currentColor"/>
+              <circle cx="18" cy="24" r="3" fill="currentColor"/>
+              <circle cx="8" cy="36" r="3" fill="currentColor"/>
+            </svg>
+          </div>
+          <span class="tutorial-card__category">Investimentos</span>
         </div>
-        <h3 class="tutorial-card__title">Como Investir em Renda Fixa</h3>
-        <p class="tutorial-card__desc">Guia completo para realizar seus primeiros investimentos em renda fixa de forma segura e eficiente.</p>
+        <h3 class="tutorial-card__title" data-title>Como Investir em Renda Fixa</h3>
+        <p class="tutorial-card__desc" data-desc>Guia completo para realizar seus primeiros investimentos em renda fixa de forma segura e eficiente.</p>
+        <div class="tutorial-card__meta">
+          <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7V12L15.5 14.5"/></svg>
+            6 min de leitura
+          </span>
+        </div>
         <div class="tutorial-card__footer">
           <span class="tutorial-card__badge">PDF</span>
-          <a href="../pdfs/Passo a passo-Como-Investir-em-Renda-Fixa.pdf" download class="btn-baixar-pdf">
-            <span>Baixar tutorial</span>
+          <a href="../pdfs/Passo a passo-Como-Investir-em-Renda-Fixa.pdf" download class="btn-baixar-pdf" data-download-link>
+            <span class="btn-baixar-pdf__label">Baixar tutorial</span>
+            <span class="btn-baixar-pdf__check">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Baixado
+            </span>
             <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
               <path d="M8 12L3 7L4.4 5.6L7 8.2V0H9V8.2L11.6 5.6L13 7L8 12Z"/>
               <path d="M0 14H16V16H0V14Z"/>
@@ -217,20 +313,33 @@
         </div>
       </div>
 
-      <div class="tutorial-card" data-animate>
-        <div class="tutorial-card__icon">
-          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="8" y="12" width="32" height="24" rx="2" stroke="currentColor" stroke-width="2.5"/>
-            <path d="M16 22H32M16 28H24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-            <path d="M24 6V12M24 36V42" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-          </svg>
+      <div class="tutorial-card" data-animate data-category="investimentos" data-search="resgate de cdb aprenda como realizar o resgate de cdb de forma simples e prática retirar dinheiro resgatar">
+        <div class="tutorial-card__top">
+          <div class="tutorial-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="8" y="12" width="32" height="24" rx="2" stroke="currentColor" stroke-width="2.5"/>
+              <path d="M16 22H32M16 28H24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M24 6V12M24 36V42" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <span class="tutorial-card__category">Investimentos</span>
         </div>
-        <h3 class="tutorial-card__title">Resgate de CDB</h3>
-        <p class="tutorial-card__desc">Aprenda como realizar o resgate de CDB de forma simples e prática.</p>
+        <h3 class="tutorial-card__title" data-title>Resgate de CDB</h3>
+        <p class="tutorial-card__desc" data-desc>Aprenda como realizar o resgate de CDB de forma simples e prática.</p>
+        <div class="tutorial-card__meta">
+          <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7V12L15.5 14.5"/></svg>
+            2 min de leitura
+          </span>
+        </div>
         <div class="tutorial-card__footer">
           <span class="tutorial-card__badge">PDF</span>
-          <a href="../pdfs/Passo a passo-ResgatedeCDB.pdf" download class="btn-baixar-pdf">
-            <span>Baixar tutorial</span>
+          <a href="../pdfs/Passo a passo-ResgatedeCDB.pdf" download class="btn-baixar-pdf" data-download-link>
+            <span class="btn-baixar-pdf__label">Baixar tutorial</span>
+            <span class="btn-baixar-pdf__check">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Baixado
+            </span>
             <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
               <path d="M8 12L3 7L4.4 5.6L7 8.2V0H9V8.2L11.6 5.6L13 7L8 12Z"/>
               <path d="M0 14H16V16H0V14Z"/>
@@ -239,19 +348,32 @@
         </div>
       </div>
 
-      <div class="tutorial-card" data-animate>
-        <div class="tutorial-card__icon">
-          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M14 8H34C36.2 8 38 9.8 38 12V36C38 38.2 36.2 40 34 40H14C11.8 40 10 38.2 10 36V12C10 9.8 11.8 8 14 8Z" stroke="currentColor" stroke-width="2.5"/>
-            <path d="M16 18H32M16 24H32M16 30H24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-          </svg>
+      <div class="tutorial-card" data-animate data-category="documentos" data-search="informes de rendimentos aprenda como acessar e utilizar os informes de rendimentos facilitando a organização para a declaração de impostos imposto de renda ir">
+        <div class="tutorial-card__top">
+          <div class="tutorial-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14 8H34C36.2 8 38 9.8 38 12V36C38 38.2 36.2 40 34 40H14C11.8 40 10 38.2 10 36V12C10 9.8 11.8 8 14 8Z" stroke="currentColor" stroke-width="2.5"/>
+              <path d="M16 18H32M16 24H32M16 30H24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <span class="tutorial-card__category">Documentos &amp; Impostos</span>
         </div>
-        <h3 class="tutorial-card__title">Informes de Rendimentos</h3>
-        <p class="tutorial-card__desc">Aprenda como acessar e utilizar os informes de rendimentos, facilitando a organização para a declaração de impostos.</p>
+        <h3 class="tutorial-card__title" data-title>Informes de Rendimentos</h3>
+        <p class="tutorial-card__desc" data-desc>Aprenda como acessar e utilizar os informes de rendimentos, facilitando a organização para a declaração de impostos.</p>
+        <div class="tutorial-card__meta">
+          <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7V12L15.5 14.5"/></svg>
+            3 min de leitura
+          </span>
+        </div>
         <div class="tutorial-card__footer">
           <span class="tutorial-card__badge">PDF</span>
-          <a href="../pdfs/Passo a passo-Informes-de-Rendimentos.pdf" download class="btn-baixar-pdf">
-            <span>Baixar tutorial</span>
+          <a href="../pdfs/Passo a passo-Informes-de-Rendimentos.pdf" download class="btn-baixar-pdf" data-download-link>
+            <span class="btn-baixar-pdf__label">Baixar tutorial</span>
+            <span class="btn-baixar-pdf__check">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Baixado
+            </span>
             <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
               <path d="M8 12L3 7L4.4 5.6L7 8.2V0H9V8.2L11.6 5.6L13 7L8 12Z"/>
               <path d="M0 14H16V16H0V14Z"/>
@@ -260,18 +382,31 @@
         </div>
       </div>
 
-      <div class="tutorial-card" data-animate>
-        <div class="tutorial-card__icon">
-          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M10 24H38M28 14L38 24L28 34" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
+      <div class="tutorial-card" data-animate data-category="plataforma" data-search="passo a passo stvm in entenda como utilizar o sistema de transferência de valores mobiliários para receber ativos de outras corretoras transferência custódia">
+        <div class="tutorial-card__top">
+          <div class="tutorial-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10 24H38M28 14L38 24L28 34" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <span class="tutorial-card__category">Plataforma</span>
         </div>
-        <h3 class="tutorial-card__title">Passo a Passo STVM IN</h3>
-        <p class="tutorial-card__desc">Entenda como utilizar o Sistema de Transferência de Valores Mobiliários para receber ativos de outras corretoras.</p>
+        <h3 class="tutorial-card__title" data-title>Passo a Passo STVM IN</h3>
+        <p class="tutorial-card__desc" data-desc>Entenda como utilizar o Sistema de Transferência de Valores Mobiliários para receber ativos de outras corretoras.</p>
+        <div class="tutorial-card__meta">
+          <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7V12L15.5 14.5"/></svg>
+            4 min de leitura
+          </span>
+        </div>
         <div class="tutorial-card__footer">
           <span class="tutorial-card__badge">PDF</span>
-          <a href="../pdfs/Passo a passo-STVM.pdf" download class="btn-baixar-pdf">
-            <span>Baixar tutorial</span>
+          <a href="../pdfs/Passo a passo-STVM.pdf" download class="btn-baixar-pdf" data-download-link>
+            <span class="btn-baixar-pdf__label">Baixar tutorial</span>
+            <span class="btn-baixar-pdf__check">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Baixado
+            </span>
             <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
               <path d="M8 12L3 7L4.4 5.6L7 8.2V0H9V8.2L11.6 5.6L13 7L8 12Z"/>
               <path d="M0 14H16V16H0V14Z"/>
@@ -280,20 +415,33 @@
         </div>
       </div>
 
-      <div class="tutorial-card" data-animate>
-        <div class="tutorial-card__icon">
-          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="6" y="10" width="36" height="26" rx="2" stroke="currentColor" stroke-width="2.5"/>
-            <path d="M16 42H32M24 36V42" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-            <path d="M12 22L20 16L26 20L36 14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
+      <div class="tutorial-card" data-animate data-category="plataforma" data-search="como acessar o home broker aprenda como acessar o home broker e começar a operar com facilidade e segurança bolsa de valores ações">
+        <div class="tutorial-card__top">
+          <div class="tutorial-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="6" y="10" width="36" height="26" rx="2" stroke="currentColor" stroke-width="2.5"/>
+              <path d="M16 42H32M24 36V42" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M12 22L20 16L26 20L36 14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <span class="tutorial-card__category">Plataforma</span>
         </div>
-        <h3 class="tutorial-card__title">Como Acessar o Home Broker</h3>
-        <p class="tutorial-card__desc">Aprenda como acessar o Home Broker e começar a operar com facilidade e segurança.</p>
+        <h3 class="tutorial-card__title" data-title>Como Acessar o Home Broker</h3>
+        <p class="tutorial-card__desc" data-desc>Aprenda como acessar o Home Broker e começar a operar com facilidade e segurança.</p>
+        <div class="tutorial-card__meta">
+          <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7V12L15.5 14.5"/></svg>
+            3 min de leitura
+          </span>
+        </div>
         <div class="tutorial-card__footer">
           <span class="tutorial-card__badge">PDF</span>
-          <a href="../pdfs\Passo a passo - Como acessar a Home Broker.pdf" download class="btn-baixar-pdf">
-            <span>Baixar tutorial</span>
+          <a href="../pdfs\Passo a passo - Como acessar a Home Broker.pdf" download class="btn-baixar-pdf" data-download-link>
+            <span class="btn-baixar-pdf__label">Baixar tutorial</span>
+            <span class="btn-baixar-pdf__check">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Baixado
+            </span>
             <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
               <path d="M8 12L3 7L4.4 5.6L7 8.2V0H9V8.2L11.6 5.6L13 7L8 12Z"/>
               <path d="M0 14H16V16H0V14Z"/>
@@ -302,6 +450,17 @@
         </div>
       </div>
 
+    </div>
+
+    <div class="tutoriais-empty" id="tutorialEmpty">
+      <div class="tutoriais-empty__icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="7"/>
+          <path d="M21 21L16.65 16.65"/>
+        </svg>
+      </div>
+      <h3>Nenhum guia encontrado</h3>
+      <p>Tente buscar por outro termo ou escolha outra categoria.</p>
     </div>
   </section>
 
@@ -403,14 +562,14 @@
   </footer>
 
   <script src="../js/script.js"></script>
-  
+
   <script>
     // Animação de entrada dos cards
     const animEls = document.querySelectorAll('[data-animate]');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((e, i) => {
         if (e.isIntersecting) {
-          setTimeout(() => e.target.classList.add('is-visible'), i * 100);
+          setTimeout(() => e.target.classList.add('is-visible'), i * 80);
           observer.unobserve(e.target);
         }
       });
@@ -427,6 +586,148 @@
           bar.style.width = (window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100) + "%";
         });
       }
+    })();
+  </script>
+
+  <script>
+    // ============================================================
+    // BUSCA + FILTROS DE CATEGORIA + FEEDBACK DE DOWNLOAD
+    // ============================================================
+    (function () {
+      var grid = document.getElementById('tutorialGrid');
+      var cards = Array.prototype.slice.call(grid.querySelectorAll('.tutorial-card'));
+      var searchInput = document.getElementById('tutorialSearch');
+      var clearBtn = document.getElementById('tutorialSearchClear');
+      var filtersWrap = document.getElementById('tutorialFilters');
+      var filterChips = Array.prototype.slice.call(filtersWrap.querySelectorAll('.filter-chip'));
+      var emptyState = document.getElementById('tutorialEmpty');
+      var statTotal = document.getElementById('statTotal');
+
+      var currentFilter = 'todos';
+      var currentQuery = '';
+
+      function normalize(str) {
+        return (str || '')
+          .toLowerCase()
+          .normalize('NFD')
+          .replace(/[\u0300-\u036f]/g, '');
+      }
+
+      function highlight(el, query) {
+        var original = el.getAttribute('data-original') || el.textContent;
+        el.setAttribute('data-original', original);
+
+        if (!query) {
+          el.textContent = original;
+          return;
+        }
+
+        var normOriginal = normalize(original);
+        var normQuery = normalize(query);
+        var idx = normOriginal.indexOf(normQuery);
+
+        if (idx === -1) {
+          el.textContent = original;
+          return;
+        }
+
+        var before = original.slice(0, idx);
+        var match = original.slice(idx, idx + query.length);
+        var after = original.slice(idx + query.length);
+
+        el.innerHTML = '';
+        el.appendChild(document.createTextNode(before));
+        var mark = document.createElement('mark');
+        mark.className = 'tutorial-highlight';
+        mark.textContent = match;
+        el.appendChild(mark);
+        el.appendChild(document.createTextNode(after));
+      }
+
+      function updateCounts(visibleCards) {
+        var byCategory = { todos: cards.length };
+        cards.forEach(function (card) {
+          var cat = card.getAttribute('data-category');
+          byCategory[cat] = (byCategory[cat] || 0) + 1;
+        });
+
+        Object.keys(byCategory).forEach(function (cat) {
+          var countEl = document.getElementById('count' + cat.charAt(0).toUpperCase() + cat.slice(1));
+          if (countEl) countEl.textContent = byCategory[cat];
+        });
+
+        if (statTotal) statTotal.textContent = cards.length;
+      }
+
+      function applyFilters() {
+        var query = normalize(currentQuery.trim());
+        var visibleCount = 0;
+
+        cards.forEach(function (card) {
+          var matchesCategory = currentFilter === 'todos' || card.getAttribute('data-category') === currentFilter;
+          var searchData = normalize(card.getAttribute('data-search'));
+          var matchesQuery = !query || searchData.indexOf(query) !== -1;
+
+          var titleEl = card.querySelector('[data-title]');
+          var descEl = card.querySelector('[data-desc]');
+
+          if (matchesCategory && matchesQuery) {
+            card.classList.remove('is-filtered-out');
+            if (!card.classList.contains('is-visible')) {
+              card.classList.add('is-visible');
+            }
+            visibleCount++;
+            if (titleEl) highlight(titleEl, currentQuery.trim());
+            if (descEl) highlight(descEl, currentQuery.trim());
+          } else {
+            card.classList.add('is-filtered-out');
+            if (titleEl) highlight(titleEl, '');
+            if (descEl) highlight(descEl, '');
+          }
+        });
+
+        emptyState.classList.toggle('is-active', visibleCount === 0);
+        clearBtn.classList.toggle('is-active', currentQuery.trim().length > 0);
+      }
+
+      searchInput.addEventListener('input', function (e) {
+        currentQuery = e.target.value;
+        applyFilters();
+      });
+
+      clearBtn.addEventListener('click', function () {
+        currentQuery = '';
+        searchInput.value = '';
+        searchInput.focus();
+        applyFilters();
+      });
+
+      filterChips.forEach(function (chip) {
+        chip.addEventListener('click', function () {
+          filterChips.forEach(function (c) {
+            c.classList.remove('is-active');
+            c.setAttribute('aria-selected', 'false');
+          });
+          chip.classList.add('is-active');
+          chip.setAttribute('aria-selected', 'true');
+          currentFilter = chip.getAttribute('data-filter');
+          applyFilters();
+        });
+      });
+
+      updateCounts();
+
+      // Feedback visual ao clicar em "Baixar tutorial"
+      var downloadLinks = grid.querySelectorAll('[data-download-link]');
+      downloadLinks.forEach(function (link) {
+        link.addEventListener('click', function () {
+          var el = link;
+          el.classList.add('is-downloaded');
+          setTimeout(function () {
+            el.classList.remove('is-downloaded');
+          }, 2200);
+        });
+      });
     })();
   </script>
 

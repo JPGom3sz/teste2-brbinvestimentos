@@ -5,7 +5,7 @@
 /* ===== HERO TUTORIAIS ===== */
 .tutoriais-hero {
   background: linear-gradient(135deg, var(--deep-navy) 0%, var(--primary-blue) 100%);
-  padding: 10rem var(--px) 6rem;
+  padding: 10rem var(--px) 7rem;
   margin-top: var(--header-h);
   text-align: center;
   position: relative;
@@ -15,13 +15,25 @@
 .tutoriais-hero::before {
   content: '';
   position: absolute;
-  top: 0; 
-  left: 0; 
-  right: 0; 
+  top: 0;
+  left: 0;
+  right: 0;
   bottom: 0;
-  background-image: 
+  background-image:
     radial-gradient(circle at 20% 50%, rgba(145, 212, 250, 0.1) 0%, transparent 50%),
     radial-gradient(circle at 80% 80%, rgba(145, 212, 250, 0.15) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.tutoriais-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, #000 0%, transparent 75%);
   pointer-events: none;
 }
 
@@ -56,12 +68,172 @@
   color: rgba(255, 255, 255, 0.85);
   line-height: 1.7;
   max-width: 600px;
+  margin: 0 auto 2.5rem;
+}
+
+/* ===== STATS RÁPIDAS NO HERO ===== */
+.tutoriais-hero__stats {
+  display: flex;
+  justify-content: center;
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  margin: 0 auto 2.8rem;
+  flex-wrap: wrap;
+}
+
+.tutoriais-hero__stat {
+  text-align: center;
+}
+
+.tutoriais-hero__stat-num {
+  display: block;
+  font-size: clamp(1.7rem, 3vw, 2.2rem);
+  font-weight: 900;
+  color: #fff;
+  line-height: 1.1;
+}
+
+.tutoriais-hero__stat-label {
+  display: block;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.65);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  margin-top: 0.25rem;
+}
+
+/* ===== BUSCA ===== */
+.tutoriais-search {
+  position: relative;
+  max-width: 560px;
   margin: 0 auto;
+}
+
+.tutoriais-search input {
+  width: 100%;
+  padding: 1.1rem 1.4rem 1.1rem 3.2rem;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all 0.25s ease;
+}
+
+.tutoriais-search input::placeholder {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.tutoriais-search input:focus {
+  outline: none;
+  border-color: var(--accent-gold);
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 0 4px rgba(145, 212, 250, 0.15);
+}
+
+.tutoriais-search svg {
+  position: absolute;
+  left: 1.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 19px;
+  height: 19px;
+  color: rgba(255, 255, 255, 0.55);
+  pointer-events: none;
+}
+
+.tutoriais-search__clear {
+  position: absolute;
+  right: 0.9rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.tutoriais-search__clear:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.tutoriais-search__clear.is-active {
+  display: flex;
+}
+
+/* ===== FILTROS DE CATEGORIA ===== */
+.tutoriais-filters-wrap {
+  background: #f9f9f9;
+  padding: 2.2rem var(--px) 0;
+  position: sticky;
+  top: var(--header-h);
+  z-index: 20;
+}
+
+.tutoriais-filters {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+  padding-bottom: 1.8rem;
+  border-bottom: 1px solid rgba(0, 86, 168, 0.08);
+}
+
+.filter-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.2rem;
+  border-radius: 999px;
+  border: 1.5px solid rgba(0, 86, 168, 0.15);
+  background: #fff;
+  color: var(--deep-navy);
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-family: inherit;
+  white-space: nowrap;
+}
+
+.filter-chip:hover {
+  border-color: var(--primary-blue);
+  transform: translateY(-2px);
+}
+
+.filter-chip.is-active {
+  background: var(--primary-blue);
+  border-color: var(--primary-blue);
+  color: #fff;
+  box-shadow: 0 6px 16px rgba(0, 86, 168, 0.25);
+}
+
+.filter-chip__count {
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: 999px;
+  padding: 0.1rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+.filter-chip.is-active .filter-chip__count {
+  background: rgba(255, 255, 255, 0.25);
 }
 
 /* ===== GRID DE TUTORIAIS ===== */
 .tutoriais-section {
-  padding: 6rem var(--px);
+  padding: 3rem var(--px) 6rem;
   background: #f9f9f9;
 }
 
@@ -71,6 +243,37 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
+}
+
+.tutoriais-empty {
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 4rem 1rem;
+  display: none;
+}
+
+.tutoriais-empty.is-active {
+  display: block;
+}
+
+.tutoriais-empty__icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1.5rem;
+  color: rgba(0, 86, 168, 0.3);
+}
+
+.tutoriais-empty h3 {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--deep-navy);
+  margin-bottom: 0.6rem;
+}
+
+.tutoriais-empty p {
+  color: #777;
+  font-size: 0.98rem;
 }
 
 /* ===== CARDS DE TUTORIAL ===== */
@@ -85,6 +288,8 @@
   opacity: 0;
   transform: translateY(30px);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  position: relative;
+  overflow: hidden;
 }
 
 .tutorial-card.is-visible {
@@ -92,10 +297,38 @@
   transform: translateY(0);
 }
 
+.tutorial-card.is-filtered-out {
+  display: none;
+}
+
+.tutorial-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-blue), var(--accent-gold));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
 .tutorial-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 20px 60px rgba(0, 86, 168, 0.15);
   border-color: var(--primary-blue);
+}
+
+.tutorial-card:hover::before {
+  transform: scaleX(1);
+}
+
+.tutorial-card__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 1.8rem;
 }
 
 .tutorial-card__icon {
@@ -106,13 +339,32 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1.8rem;
   color: var(--primary-blue);
+  flex-shrink: 0;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.tutorial-card:hover .tutorial-card__icon {
+  transform: scale(1.08) rotate(-4deg);
+  background: linear-gradient(135deg, var(--primary-blue), var(--deep-navy));
+  color: #fff;
 }
 
 .tutorial-card__icon svg {
   width: 32px;
   height: 32px;
+}
+
+.tutorial-card__category {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--primary-blue);
+  background: var(--light-blue);
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  white-space: nowrap;
 }
 
 .tutorial-card__title {
@@ -131,12 +383,35 @@
   flex: 1;
 }
 
+.tutorial-card__meta {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  margin-bottom: 1.3rem;
+  font-size: 0.82rem;
+  color: #8a8a8a;
+  font-weight: 600;
+}
+
+.tutorial-card__meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.tutorial-card__meta svg {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+}
+
 .tutorial-card__footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding-top: 1.5rem;
   border-top: 1px solid rgba(0, 86, 168, 0.08);
+  gap: 1rem;
 }
 
 .tutorial-card__badge {
@@ -150,7 +425,7 @@
   border-radius: 6px;
 }
 
-.btn-baixar-pdf { 
+.btn-baixar-pdf {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -174,6 +449,43 @@
   transform: translateY(2px);
 }
 
+.btn-baixar-pdf.is-downloaded svg {
+  color: #1e9e5b;
+}
+
+/* feedback de clique no download */
+.btn-baixar-pdf__check {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #1e9e5b;
+  font-weight: 700;
+  font-size: 0.85rem;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  position: absolute;
+  pointer-events: none;
+}
+
+.btn-baixar-pdf.is-downloaded .btn-baixar-pdf__check {
+  opacity: 1;
+  transform: translateY(0);
+  position: static;
+}
+
+.btn-baixar-pdf.is-downloaded .btn-baixar-pdf__label {
+  display: none;
+}
+
+/* ===== highlight de busca ===== */
+mark.tutorial-highlight {
+  background: rgba(255, 209, 102, 0.45);
+  color: inherit;
+  border-radius: 3px;
+  padding: 0 2px;
+}
+
 /* ===== CTA DE SUPORTE ===== */
 .tutoriais-cta {
   background: linear-gradient(135deg, var(--deep-navy) 0%, var(--primary-blue) 100%);
@@ -186,11 +498,11 @@
 .tutoriais-cta::before {
   content: '';
   position: absolute;
-  top: 0; 
-  left: 0; 
-  right: 0; 
+  top: 0;
+  left: 0;
+  right: 0;
   bottom: 0;
-  background-image: 
+  background-image:
     radial-gradient(circle at 30% 50%, rgba(145, 212, 250, 0.1) 0%, transparent 50%),
     radial-gradient(circle at 70% 20%, rgba(145, 212, 250, 0.15) 0%, transparent 50%);
   pointer-events: none;
@@ -434,8 +746,17 @@ footer {
     font-size: 1rem;
   }
 
+  .tutoriais-hero__stats {
+    gap: 1.6rem;
+  }
+
+  .tutoriais-filters-wrap {
+    position: static;
+    padding-top: 1.8rem;
+  }
+
   .tutoriais-section {
-    padding: 4rem var(--px);
+    padding: 2.5rem var(--px) 4rem;
   }
 
   .tutoriais-container {
@@ -482,8 +803,26 @@ footer {
     font-size: 2rem;
   }
 
+  .tutoriais-hero__stats {
+    gap: 1.2rem 1.8rem;
+  }
+
+  .tutoriais-filters-wrap {
+    padding: 1.5rem 1.5rem 0;
+  }
+
+  .tutoriais-filters {
+    gap: 0.5rem;
+    padding-bottom: 1.3rem;
+  }
+
+  .filter-chip {
+    padding: 0.55rem 1rem;
+    font-size: 0.82rem;
+  }
+
   .tutoriais-section {
-    padding: 3rem 1.5rem;
+    padding: 2rem 1.5rem 3rem;
   }
 
   .tutorial-card {

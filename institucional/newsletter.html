@@ -109,9 +109,31 @@
   <section class="hero-newsletter">
     <div class="container hero-grid">
       <div class="hero-text">
+        <span class="hero-eyebrow">
+          <span class="hero-eyebrow__dot" aria-hidden="true"></span>
+          Conteúdo exclusivo por e-mail
+        </span>
         <h1>O mercado não espera.<br><em>Esteja um passo à frente.</em></h1>
         <p>Receba as principais movimentações do mercado, análises de especialistas e oportunidades de investimento direto na sua caixa de entrada. 100% gratuito.</p>
-       
+
+        <div class="hero-proof">
+          <div class="hero-proof__stat">
+            <span class="hero-proof__num">5x</span>
+            <span class="hero-proof__label">Por semana</span>
+          </div>
+          <div class="hero-proof__divider" aria-hidden="true"></div>
+          <div class="hero-proof__stat">
+            <span class="hero-proof__num">100%</span>
+            <span class="hero-proof__label">Gratuito, sempre</span>
+          </div>
+          <div class="hero-proof__divider" aria-hidden="true"></div>
+          <div class="hero-proof__avatars" aria-hidden="true">
+            <span class="hero-proof__avatar">RF</span>
+            <span class="hero-proof__avatar">AC</span>
+            <span class="hero-proof__avatar">TD</span>
+            <span class="hero-proof__avatar">+</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -146,12 +168,24 @@
           <span class="nl-frequency__icon">📅</span>
           Envios <strong>de segunda a sexta</strong>
         </div>
+
+        <div class="nl-trust">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L4 6V12C4 16.5 7.5 20.5 12 22C16.5 20.5 20 16.5 20 12V6L12 2Z"/></svg>
+          Seus dados protegidos conforme a LGPD
+        </div>
       </div>
 
      <div class="newsletter-form-wrap">
         <form class="newsletter-form" novalidate id="newsletterForm">
           <h3>Assine gratuitamente</h3>
           <p class="form-sub">Leva menos de 1 minuto. Sem spam, prometemos.</p>
+
+          <div class="form-progress" aria-hidden="true">
+            <div class="form-progress__track">
+              <div class="form-progress__bar" id="formProgressBar"></div>
+            </div>
+            <span class="form-progress__label" id="formProgressLabel">0% preenchido</span>
+          </div>
 
           <div class="input-group">
             <input type="text" name="nome" id="f-nome" placeholder="Nome completo" required autocomplete="name" />
@@ -318,7 +352,38 @@
         });
       }, { threshold: 0.12 }).observe(el);
     });
-    
+
+    /* Barra de progresso de preenchimento do formulário (puramente visual) */
+    (function () {
+      var form = document.getElementById('newsletterForm');
+      var bar = document.getElementById('formProgressBar');
+      var label = document.getElementById('formProgressLabel');
+      if (!form || !bar || !label) return;
+
+      var nome = document.getElementById('f-nome');
+      var email = document.getElementById('f-email');
+      var privacidade = form.querySelector('input[name="privacidade"]');
+
+      function calcProgress() {
+        var total = 3;
+        var done = 0;
+        if (nome && nome.value.trim().length > 1) done++;
+        if (email && email.value.trim().length > 3 && email.value.includes('@')) done++;
+        if (privacidade && privacidade.checked) done++;
+
+        var pct = Math.round((done / total) * 100);
+        bar.style.width = pct + '%';
+        label.textContent = pct + '% preenchido';
+      }
+
+      [nome, email, privacidade].forEach(function (el) {
+        if (!el) return;
+        el.addEventListener('input', calcProgress);
+        el.addEventListener('change', calcProgress);
+      });
+
+      calcProgress();
+    })();
   </script>
   <script src="../js/newsletter.js?v=2"></script>
 
