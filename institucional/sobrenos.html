@@ -55,7 +55,7 @@
               <ul class="submenu">
                 <li class="mobile-only-item"><a href="../produtos/fundos.html">Visão Geral de Fundos</a></li>
                 <li><a href="../fundos-tipos/fundos-todos.html">Fundos BRB </a></li>
-                <li><a href="../fundos-tipos\fundos-plataforma.html">Fundos Plataforma </a></li>
+                <li><a href="../fundos-tiposundos-plataforma.html">Fundos Plataforma </a></li>
                 
               </ul>
             </li>
@@ -375,7 +375,7 @@
             </svg>
           </div>
           <h4>Segurança Total</h4>
-          <p>Ativos selecionados sob normas da CVM e ANBIMA. Para renda fixa, opções com proteção do FGC — garantindo a solidez que o seu patrimônio merece.</p>
+          <p>Ativos selecionados sob normas da CVM e ANBIMA. Para renda fixa, opções com proteção do FGC, garantindo a solidez que o seu patrimônio merece.</p>
         </div>
 
         <div class="sn-why__card" data-animate>
@@ -580,7 +580,7 @@
         requestAnimationFrame(animate);
       })();
 
-      document.querySelectorAll('a, button, .sn-why__card, .sn-timeline__card, .sn-stats__item').forEach(function(el) {
+      document.querySelectorAll('a, button, .sn-timeline__card, .sn-stats__item').forEach(function(el) {
         el.addEventListener('mouseenter', function() { document.body.classList.add('hovering'); });
         el.addEventListener('mouseleave', function() { document.body.classList.remove('hovering'); });
       });
@@ -658,24 +658,6 @@
         tab.classList.add('sn-about__tab--active');
         var targetEl = document.getElementById('tab-' + target);
         if (targetEl) targetEl.classList.add('sn-about__content--active');
-      });
-    });
-
-    // Efeito 3D (Tilt) nos Cards de Benefícios
-    document.querySelectorAll('.sn-why__card').forEach(function(card) {
-      card.addEventListener('mousemove', function(e) {
-        var rect   = card.getBoundingClientRect();
-        var cx     = rect.left + rect.width  / 2;
-        var cy     = rect.top  + rect.height / 2;
-        var dx     = (e.clientX - cx) / (rect.width  / 2);
-        var dy     = (e.clientY - cy) / (rect.height / 2);
-        var tiltX  = dy * -6;
-        var tiltY  = dx * 6;
-        card.style.transform = 'perspective(700px) rotateX(' + tiltX + 'deg) rotateY(' + tiltY + 'deg) scale(1.02)';
-      });
-
-      card.addEventListener('mouseleave', function() {
-        card.style.transform = '';
       });
     });
 
