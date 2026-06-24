@@ -6,7 +6,7 @@
     delay:          5000,
     storageKey:     'brb_popup_shown',
     registeredKey:  'brb_popup_done',
-    cooldownDays:   5,
+    cooldownDays:   3,
     exitIntent:     true,
 
     

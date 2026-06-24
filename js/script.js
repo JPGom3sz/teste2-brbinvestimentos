@@ -214,9 +214,9 @@ function initSmoothScroll() {
 
 /**
  * Lida com redirecionamentos globais, como cliques no logo e botões de conta
- */
+ */ 
 function initGlobalLinks() {
-  const logoLink = document.querySelector('.logo a');
+const logoLink = document.querySelector('.logo a');
   if (logoLink) {
     logoLink.addEventListener('click', (e) => {
       e.preventDefault();
