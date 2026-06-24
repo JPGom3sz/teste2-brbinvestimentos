@@ -263,9 +263,7 @@ nav {
   z-index: 2;
 }
 
-.nav-links .dropdown-menu li + li {
-  border-top: 1px solid rgba(0, 86, 168, 0.07);
-}
+
 
 .nav-links .dropdown-menu a {
   display: block;
@@ -2067,3 +2065,46 @@ footer {
 .risk-banner-inner strong {
   color: #78350f;
 }
+
+
+
+
+/* ============================================================
+   AJUSTE DE RESPONSIVIDADE PARA 4 CARDS (CRI/CRA)
+   ============================================================ */
+.edu-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 1.4rem !important;
+}
+
+@media (max-width: 1100px) {
+  .edu-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.2rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .edu-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.1rem !important;
+  }
+}
+
+/* ============================================================
+   ESTILOS ESPECÍFICOS DO CARD CRI/CRA (Laranja)
+   ============================================================ */
+.edu-card__stripe--cri { background: linear-gradient(90deg, #ea580c, #f97316); }
+.edu-card__icon--cri { background: rgba(234, 88, 12, 0.08); }
+.edu-attr--cri { background: rgba(234, 88, 12, 0.07); color: #ea580c; }
+.edu-card__cta--cri { color: #ea580c; }
+.edu-card:hover .edu-card__cta--cri { background: rgba(234, 88, 12, 0.04); }
+.edu-card__arrow--cri { background: #ea580c; }
+
+/* Estilos do Modal CRI/CRA */
+.edu-modal__pill--cri { background: rgba(234, 88, 12, 0.08); color: #ea580c; }
+.edu-modal__explainer-icon--cri { background: rgba(234, 88, 12, 0.08); }
+.edu-modal__section-title--cri { color: #ea580c; }
+.edu-modal__list--cri li::before { background: rgba(234, 88, 12, 0.1); color: #ea580c; }
+.edu-modal__btn--cri { background: #ea580c; }

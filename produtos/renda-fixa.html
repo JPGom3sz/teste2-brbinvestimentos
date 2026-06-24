@@ -7,6 +7,7 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/produtos-base.css" />
     <link rel="stylesheet" href="../css/style-enhance.css" />
     <link rel="stylesheet" href="../css/renda-fixa.css" />
     <link rel="stylesheet" href="../css/mobile-nav.css" />
@@ -45,6 +46,49 @@
       }
     </style>
     <link rel="stylesheet" href="../css/cookies.css" />
+<style>
+
+/* ============================================================
+   AJUSTE DE RESPONSIVIDADE PARA 4 CARDS (CRI/CRA)
+   ============================================================ */
+.edu-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 1.4rem;
+}
+
+@media (max-width: 1100px) {
+  .edu-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .edu-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.1rem;
+  }
+}
+
+/* ============================================================
+   ESTILOS ESPECÍFICOS DO CARD CRI/CRA (Laranja)
+   ============================================================ */
+.edu-card__stripe--cri { background: linear-gradient(90deg, #ea580c, #f97316); }
+.edu-card__icon--cri { background: rgba(234, 88, 12, 0.08); }
+.edu-attr--cri { background: rgba(234, 88, 12, 0.07); color: #ea580c; }
+.edu-card__cta--cri { color: #ea580c; }
+.edu-card:hover .edu-card__cta--cri { background: rgba(234, 88, 12, 0.04); }
+.edu-card__arrow--cri { background: #ea580c; }
+
+/* Estilos do Modal CRI/CRA */
+.edu-modal__pill--cri { background: rgba(234, 88, 12, 0.08); color: #ea580c; }
+.edu-modal__explainer-icon--cri { background: rgba(234, 88, 12, 0.08); }
+.edu-modal__section-title--cri { color: #ea580c; }
+.edu-modal__list--cri li::before { background: rgba(234, 88, 12, 0.1); color: #ea580c; }
+.edu-modal__btn--cri { background: #ea580c; }
+
+</style>
 </head>
   
   <body>
@@ -91,7 +135,7 @@
                 <ul class="submenu">
                 <li class="mobile-only-item"><a href="../produtos/fundos.html">Visão Geral de Fundos</a></li>
                 <li><a href="../fundos-tipos/fundos-todos.html">Fundos BRB </a></li>
-                <li><a href="../fundos-tipos\fundos-plataforma.html">Fundos Plataforma </a></li>
+                <li><a href="../fundos-tiposundos-plataforma.html">Fundos Plataforma </a></li>
                 
               </ul>
               </li>
@@ -298,8 +342,50 @@
               </div>
             </div>
           </div>
+
+          <div class="edu-card" data-modal="cri" role="button" tabindex="0" aria-label="Saiba mais sobre CRI e CRA">
+            <div class="edu-card__stripe edu-card__stripe--cri"></div>
+            <div class="edu-card__body">
+              <div class="edu-card__icon edu-card__icon--cri">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#ea580c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 21h18"></path>
+                  <path d="M5 21V7l8-4v18"></path>
+                  <path d="M19 21V11l-6-4"></path>
+                  <path d="M9 9v.01"></path>
+                  <path d="M9 13v.01"></path>
+                  <path d="M9 17v.01"></path>
+                </svg>
+              </div>
+              <div class="edu-card__label">Renda Fixa</div>
+              <div class="edu-card__title">CRI / CRA</div>
+              <div class="edu-card__desc">Certificados de Recebíveis lastreados em imóveis ou agronegócio, com isenção de IR e foco em retornos diferenciados.</div>
+              <div class="edu-card__attrs">
+                <span class="edu-attr edu-attr--cri">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Isento de IR
+                </span>
+                <span class="edu-attr edu-attr--cri">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Longo prazo
+                </span>
+                <span class="edu-attr edu-attr--cri">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg> Sem FGC
+                </span>
+              </div>
+            </div>
+            <div class="edu-card__cta edu-card__cta--cri">
+              <span>Saiba mais</span>
+              <div class="edu-card__arrow edu-card__arrow--cri">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
+
+
+      
     </section>
 
     <div class="edu-overlay" id="eduOverlay" role="dialog" aria-modal="true" aria-labelledby="eduModalTitle">
@@ -461,6 +547,63 @@
           <p class="edu-modal__disclaimer">* Disponibilidade sujeita às condições da plataforma.</p>
         </div>
       </div>
+      
+      <div class="edu-modal" id="modal-cri" style="display:none">
+        <div class="edu-modal__header">
+          <button class="edu-modal__close" aria-label="Fechar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          </button>
+          <div class="edu-modal__pill edu-modal__pill--cri">Certificados de Recebíveis</div>
+          <h2 class="edu-modal__title">O que são CRI e CRA?</h2>
+          <p class="edu-modal__subtitle">Títulos de dívida lastreados no setor imobiliário e do agronegócio, combinando isenção fiscal e rentabilidade superior.</p>
+        </div>
+        <div class="edu-modal__body">
+          <div class="edu-modal__explainer">
+            <div class="edu-modal__explainer-icon edu-modal__explainer-icon--cri">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ea580c" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 21h18"></path>
+                <path d="M5 21V7l8-4v18"></path>
+                <path d="M19 21V11l-6-4"></path>
+                <path d="M9 9v.01"></path>
+                <path d="M9 13v.01"></path>
+                <path d="M9 17v.01"></path>
+              </svg>
+            </div>
+            <p>Ao investir em <strong>CRI</strong> (Imobiliário) ou <strong>CRA</strong> (Agronegócio), você adquire direitos de recebimento de dívidas desses setores vitais para a economia. Emitidos por securitizadoras, eles oferecem taxas geralmente mais atrativas e <strong>isenção total de IR</strong> para pessoa física.</p>
+          </div>
+          <div class="edu-modal__section">
+            <div class="edu-modal__section-title edu-modal__section-title--cri">Como funciona</div>
+            <ul class="edu-modal__list edu-modal__list--cri">
+              <li>Securitizadoras "empacotam" dívidas de empresas (como construtoras ou produtores rurais) e as oferecem ao mercado financeiro</li>
+              <li>A rentabilidade costuma ser híbrida (IPCA + taxa fixa) ou atrelada a percentuais do CDI</li>
+              <li>O fluxo de recebimento pode variar: alguns pagam juros semestrais, outros apenas no vencimento</li>
+              <li>Diferente do CDB e LCI/LCA, não possuem a garantia do FGC, o que justifica seu prêmio de risco (taxas maiores)</li>
+            </ul>
+          </div>
+          <div class="edu-modal__section">
+            <div class="edu-modal__section-title edu-modal__section-title--cri">Por que escolher</div>
+            <ul class="edu-modal__list edu-modal__list--cri">
+              <li>100% de isenção no Imposto de Renda para pessoas físicas</li>
+              <li>Ganhos frequentemente superiores ao CDI e a outras opções conservadoras de Renda Fixa</li>
+              <li>Excelente alternativa para diversificar o portfólio fora do sistema bancário tradicional</li>
+              <li>Possibilidade de forte proteção do patrimônio contra a inflação quando indexados ao IPCA</li>
+            </ul>
+          </div>
+        </div>
+        <div class="edu-modal__footer">
+          <a class="edu-modal__btn edu-modal__btn--cri" href="https://analisa.genialinvestimentos.com.br/" data-plataforma="1" target="_blank" rel="noopener noreferrer">
+            Investir em CRI/CRA na plataforma 
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </a>
+          <p class="edu-modal__disclaimer">* Disponibilidade sujeita às condições da plataforma. Produto sem cobertura do FGC.</p>
+        </div>
+      </div>
     </div>
 
     <section class="rf-advantages">
@@ -619,7 +762,7 @@
             </button>
             <div class="faq-body">
               <div class="faq-body-inner">
-                Para pessoas físicas residentes no Brasil, são isentos de IR: LCI, LCA, CRI, CRA e Debêntures Incentivadas (emitidas conforme a Lei 12.431). Já o CDB, Letras de Crédito (LC), Letras Financeiras (LF), DGPE, Commercial Papers e Debentures convencionais seguem a tabela regressiva do IR, que começa em 22,5% para aplicações de até 180 dias e vai até 15% para aplicações acima de 720 dias.
+                Para pessoas físicas residentes no Brasil, são isentos de IR: LCI, LCA, CRI, CRA e Debêntures Incentivadas (emitidas conforme a Lei 12.431). Já o CDB, Letras de Câmbio (LC), Letras Financeiras (LF), DGPE, Commercial Papers e Debentures convencionais seguem a tabela regressiva do IR, que começa em 22,5% para aplicações de até 180 dias e vai até 15% para aplicações acima de 720 dias.
               </div>
             </div>
           </div>

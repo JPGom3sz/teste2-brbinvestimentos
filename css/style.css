@@ -258,9 +258,7 @@ nav {
   z-index: 2;
 }
 
-.nav-links .dropdown-menu li + li {
-  border-top: 1px solid rgba(0, 86, 168, 0.07);
-}
+
 
 .nav-links .dropdown-menu a {
   display: block;
@@ -379,9 +377,7 @@ nav {
   transform: translateX(0);
 }
 
-.submenu li + li {
-  border-top: 1px solid rgba(0, 86, 168, 0.07);
-}
+
 
 .submenu a {
   padding: 10px 16px;
