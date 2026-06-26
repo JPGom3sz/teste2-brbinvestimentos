@@ -615,7 +615,7 @@ function initHeroCarousel() {
     clearInterval(autoplayTimer);
     autoplayTimer = setInterval(() => {
       goTo(current + 1);
-    }, 5000);
+    }, 11000);
   };
 
   if (prevBtn) {
@@ -1304,5 +1304,3 @@ function initFundCardsAccordion() {
     // Init
     applyFilters();
 })();
-
-

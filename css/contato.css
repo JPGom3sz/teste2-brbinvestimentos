@@ -266,11 +266,11 @@
 .scroll-indicator {
   display: flex;
   justify-content: center;
-  padding-bottom: 2rem;
-  position: relative;
-  z-index: 1;
-  align-self: center;
-  width: 100%;
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
 }
 
 .scroll-indicator span {

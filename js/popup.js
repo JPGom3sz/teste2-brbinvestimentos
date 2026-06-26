@@ -3,7 +3,7 @@
 
   // ── CONFIGURAÇÕES ──────────────────────────────────────────
   const CONFIG = {
-    delay:          5000,
+    delay:          1000,
     storageKey:     'brb_popup_shown',
     registeredKey:  'brb_popup_done',
     cooldownDays:   3,

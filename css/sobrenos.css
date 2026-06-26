@@ -856,13 +856,15 @@ nav {
   box-shadow: 0 20px 60px rgba(0, 86, 168, 0.15);
 }
 
-.sn-about__video iframe {
+.sn-about__video video {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   border: none;
+  object-fit: cover;
+  display: block;
 }
 
 .sn-about__text h2 {
@@ -1547,15 +1549,15 @@ footer {
 
   .sn-hero__content {
     padding: calc(var(--header-h) + 2rem) 2rem 2rem 2rem;
-    text-align: center;
+    text-align: left;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     max-width: 100%;
   }
 
   .sn-hero__desc {
-    margin-left: auto;
+    margin-left: 0;
     margin-right: auto;
   }
 

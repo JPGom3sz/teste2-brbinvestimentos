@@ -1,16 +1,26 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+  <!-- Codificação de caracteres: garante acentos e símbolos corretos -->
   <meta charset="UTF-8" />
+  <!-- Responsividade: ajusta o layout à tela do dispositivo -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Título da aba/resultado de busca -->
   <title>Sobre Nós - BRB Investimentos</title>
-  
+  <!-- Descrição exibida no Google embaixo do título -->
+  <meta name="description" content="Conheça a BRB Investimentos: nascemos em Brasília para levar o melhor do mercado financeiro a quem constrói o futuro com planejamento." />
+
+  <!-- Open Graph: como o link aparece quando compartilhado no WhatsApp/redes sociais -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.SEUDOMINIO.com.br/institucional/sobrenos.html" />
+  <meta property="og:title" content="Sobre Nós - BRB Investimentos" />
+  <meta property="og:description" content="Investir com propósito é a nossa essência. Conheça a história da BRB Investimentos." />
+  <meta property="og:image" content="https://www.SEUDOMINIO.com.br/img/capa-compartilhamento.jpg" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../css/style-enhance.css" />
+  <link rel="stylesheet" href="/css/global.css" />
   <link rel="stylesheet" href="../css/sobrenos.css" />
-  <link rel="stylesheet" href="../css/mobile-nav.css" />
-  <link rel="stylesheet" href="../css/cookies.css" />
-  <link rel="stylesheet" href="../css/popup.css" />
+  
+  
 </head>
 
 <!-- Estilos e script do banner de cookies -->
@@ -110,7 +120,7 @@
     </nav>
   </header>
 
-  <section class="sn-hero" id="home">
+  <section class="sn-hero" id="sn-home">
 
     <div class="sn-hero__orbs" aria-hidden="true">
       <div class="sn-hero__orb sn-hero__orb--a"></div>
@@ -191,15 +201,7 @@
         <div class="sn-about__layout">
 
           <div class="sn-about__video-wrapper">
-            <div class="sn-about__video">
-              <iframe
-                src="../videos/BRB-Investimentos.mp4"
-                title="Vídeo BRB Investimentos"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-              </iframe>
-            </div>
+            <div class="sn-about__video" id="sobreNosVideoContainer" data-video-src="../videos/BRB-Investimentos.mp4"></div>
           </div>
 
           <div class="sn-about__text">
@@ -659,6 +661,39 @@
         var targetEl = document.getElementById('tab-' + target);
         if (targetEl) targetEl.classList.add('sn-about__content--active');
       });
+    });
+
+    // Vídeo "Quem Somos": criado dinamicamente após o load completo
+    // (evita que o navegador calcule o layout do <video> antes da página estar pronta)
+    window.addEventListener('load', function() {
+      var videoContainer = document.getElementById('sobreNosVideoContainer');
+      if (!videoContainer) return;
+
+      var videoSrc = videoContainer.dataset.videoSrc;
+      var video = document.createElement('video');
+      video.id = 'sobreNosVideo';
+      video.src = videoSrc;
+      video.title = 'Vídeo BRB Investimentos';
+      video.setAttribute('playsinline', '');
+      video.setAttribute('controls', '');
+      video.setAttribute('muted', '');
+      video.setAttribute('disablepictureinpicture', '');
+      video.preload = 'metadata';
+      video.muted = true;
+
+      videoContainer.appendChild(video);
+
+      var videoObs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            video.play().catch(function() {});
+          } else {
+            video.pause();
+          }
+        });
+      }, { threshold: 0.5 });
+
+      videoObs.observe(video);
     });
 
     // Botões Magnéticos
