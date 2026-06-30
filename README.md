@@ -109,6 +109,7 @@ O projeto foi construído com **HTML5, CSS3 e JavaScript puro (Vanilla JS)**, se
 - Simplicidade de manutenção e hospedagem (não exige build/bundler);
 - Leveza e bom desempenho (sem overhead de framework);
 - Facilidade de deploy estático (atualmente hospedado na Vercel).
+- Facilidade ao importar o site para a ferramenta WordPress
 
 ### Integrações externas em uso
 
@@ -135,7 +136,7 @@ Conforme o projeto crescer, algumas evoluções fazem sentido dependendo da nece
 - **Plataforma de CRM/Marketing (RD Station, Mailchimp, HubSpot)**: caso a captação de leads precise de automações mais robustas (fluxos de nutrição, segmentação avançada).
 - **Service Worker / PWA**: se houver demanda por funcionamento offline ou instalação como app.
 
-A escolha de qualquer uma dessas tecnologias deve ser avaliada conforme a demanda real do negócio, evitando complexidade desnecessária enquanto o site funciona bem como está.
+A escolha de qualquer uma dessas tecnologias deve ser avaliada conforme a demanda e necessidade da BRB Investimentos, evitando complexidade desnecessária enquanto o site funciona bem como está.
 
 ---
 
@@ -215,10 +216,10 @@ Caso seja necessário trocar a planilha ou reimplantar o script:
 - O uso de `mode: 'no-cors'` impede a confirmação real de sucesso do envio — o front-end sempre mostra "sucesso" mesmo se o Apps Script falhar silenciosamente;
 - Não há validação server-side dos dados (toda validação está no front-end, podendo ser burlada);
 - O Google Sheets como banco de dados tem limite de linhas/performance — vale reavaliar para um banco real se o volume de leads crescer muito;
-- Substituir os placeholders `SEUDOMINIO` (meta tags Open Graph) e `INSIRA_O_LINK_DO_PORTAL_AQUI` / `INSIRA_O_LINK_DO_APP_AQUI` (botões de acesso) antes de ir para produção definitiva.
+
 
 ---
 
-##  Autor
+##  Autor João Pedro Gomes Barreto
 
 Projeto desenvolvido para BRB Investimentos.
