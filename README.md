@@ -109,7 +109,7 @@ O projeto foi construído com **HTML5, CSS3 e JavaScript puro (Vanilla JS)**, se
 - Simplicidade de manutenção e hospedagem (não exige build/bundler);
 - Leveza e bom desempenho (sem overhead de framework);
 - Facilidade de deploy estático (atualmente hospedado na Vercel).
-- Facilidade ao importar o site para a ferramenta WordPress
+- Facilidade ao exportar o site para a ferramenta WordPress
 
 ### Integrações externas em uso
 
